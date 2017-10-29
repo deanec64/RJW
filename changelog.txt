@@ -1,3 +1,8 @@
+v1.5.4b changes:
+- Added Wild Mode: No rules for sex. All limiting requirements are turned off. You can find it in option > mod settings.
+- Minor bugfix
+- Disabled ingame notification bug.
+
 v1.5.3 changes:
 - Fixed a critical bug that pregnancy coefficients didn't work
 - Tweaked many values
