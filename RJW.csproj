@@ -14,7 +14,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>Assemblies\Debug\</OutputPath>
+    <OutputPath>Assemblies\1.5.4\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -405,8 +405,6 @@
     <Compile Include="Source\Works\WorkGiver_RapeCP.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Source\bin\Debug\" />
-    <Folder Include="Source\bin\Release\" />
     <Folder Include="Source\obj\Debug\TempPE\" />
     <Folder Include="Source\obj\Release\TempPE\" />
   </ItemGroup>

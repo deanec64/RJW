@@ -20,12 +20,13 @@ namespace rjw
 
         private bool BootStrapTriggered = false;
 
-        //private bool isSexualized = false;
-        
-        private int needsex_tick = 10;
-        //private int std_tick = 1;
+		//private bool isSexualized = false;
+		
+		private int needsex_tick = needsex_tick_timer;
+		private static int needsex_tick_timer => (HugsLibInj.WildMode) ? 10 : 10;       
+		//private int std_tick = 1;
 
-        private static readonly SimpleCurve sex_need_factor_from_age = new SimpleCurve
+		private static readonly SimpleCurve sex_need_factor_from_age = new SimpleCurve
         {
             /* Edited by nizhuan-jjr: This is the old unrealistic curve， I use a more realistic curve
             new CurvePoint(5f,  0.25f),
@@ -36,15 +37,17 @@ namespace rjw
  			new CurvePoint(60f, 0.50f),
   			new CurvePoint(80f, 0.25f)
             */
-            new CurvePoint(12f, 0f),
-            new CurvePoint(14f, 0.143f),
+            new CurvePoint(5f,  0f),
+			new CurvePoint(12f, 0.5f),
+            new CurvePoint(14f, 0.75f),
             new CurvePoint(17f, 1.00f),
             new CurvePoint(28f, 1.00f),
             new CurvePoint(30f, 0.90f),
-            new CurvePoint(39f, 0.65f),
-            new CurvePoint(44f, 0.15f),
-            new CurvePoint(55f, 0f),
-        };
+            new CurvePoint(40f, 0.75f),
+            new CurvePoint(50f, 0.50f),
+			new CurvePoint(60f, 0.20f),
+  			new CurvePoint(80f, 0f),
+		};
 
         /* Edited by nizhuan-jjr : Animals' Sex Need is removed now
         private static readonly SimpleCurve animal_sex_need_factor_from_age = new SimpleCurve
@@ -119,7 +122,7 @@ namespace rjw
             if (needsex_tick <= 0)
             {
                 //Log.Message("[RJW]Need_Sex::NeedInterval is called0 - pawn is "+pawn.NameStringShort);
-                needsex_tick = 10;//This means every 0.6 hour will have an fall on Need_Sex, which should save a lot of computing power.
+                needsex_tick = needsex_tick_timer;//This means every 0.6 hour will have an fall on Need_Sex, which should save a lot of computing power.
                 if (!def.freezeWhileSleeping || pawn.Awake())
                 {
                     float age = pawn.ageTracker.AgeBiologicalYearsFloat;
