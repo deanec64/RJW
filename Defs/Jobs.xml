@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<JobDefs>
+
+  <JobDef>
+    <defName>Fappin</defName>
+    <driverClass>rjw.JobDriver_Fappin</driverClass>
+    <reportString>fappin'.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+  <!-- No longer need to override this def since the additional code is patched into the original driver
+  <JobDef>
+    <defName>Lovin</defName>
+    <driverClass>rjw.JobDriver_LovinPP</driverClass>
+    <reportString>lovin'.</reportString>
+    <checkOverrideOnDamage>true</checkOverrideOnDamage>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  -->
+
+  <JobDef>
+    <defName>NymphJoinInBed</defName>
+    <driverClass>rjw.JobDriver_NymphJoinInBed</driverClass>
+    <reportString>lovin'.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+  <JobDef>
+    <defName>ComfortPrisonerRapin</defName>
+    <driverClass>rjw.JobDriver_ComfortPrisonerRapin</driverClass>
+    <reportString>rapin'.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+  <JobDef>
+    <defName>GettinLoved</defName>
+    <driverClass>rjw.JobDriver_GettinLoved</driverClass>
+    <reportString>lovin'.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+  <JobDef>
+    <defName>GettinRaped</defName>
+    <driverClass>rjw.JobDriver_GettinRaped</driverClass>
+    <reportString>gettin' raped.</reportString>
+    <checkOverrideOnDamage>Never</checkOverrideOnDamage>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+  <JobDef>
+    <defName>StruggleInBondageGear</defName>
+    <driverClass>rjw.JobDriver_StruggleInBondageGear</driverClass>
+    <reportString>struggling</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>UnlockBondageGear</defName>
+    <driverClass>rjw.JobDriver_UseItemOn</driverClass>
+    <reportString>unlocking</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>GiveBondageGear</defName>
+    <driverClass>rjw.JobDriver_UseItemOn</driverClass>
+    <reportString>equipping</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>ViolateCorpse</defName>
+    <driverClass>rjw.JobDriver_ViolateCorpse</driverClass>
+    <reportString>violating corpse</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+  <JobDef>
+    <defName>Beastiality</defName>
+    <driverClass>rjw.JobDriver_Beastiality</driverClass>
+    <reportString>lovin' animal</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  
+  <JobDef>
+    <defName>RandomRape</defName>
+    <driverClass>rjw.JobDriver_RandomRape</driverClass>
+    <reportString>randomly raping</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  
+  <JobDef>
+    <defName>WhoreIsServingVisitors</defName>
+    <driverClass>rjw.JobDriver_WhoreIsServingVisitors</driverClass>
+    <reportString>serving visitors</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+  <JobDef>
+    <defName>InvitingVisitors</defName>
+    <driverClass>rjw.JobDriver_InvitingVisitors</driverClass>
+    <reportString>attempting hookup</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  
+</JobDefs>

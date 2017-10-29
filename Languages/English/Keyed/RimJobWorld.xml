@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Settings-->
+  <WildMode_name>Wild mode</WildMode_name>
+  <WildMode_desc>EXPERIMENTAL. No rules for sex. All limiting requirements are turned off. Enjoy the wildest side of Rimworld.</WildMode_desc>
+  <NymphsJoin>Nymphs join</NymphsJoin>
+  <NymphsJoin_desc>Will nymphos join your colony?</NymphsJoin_desc>
+  <STD_FromFloors>STD from floors</STD_FromFloors>
+  <STD_FromFloors_desc>If enabled, STD will be catched not only from the persons carrying it, but also from the environment</STD_FromFloors_desc>
+  <PrisonersBeating>Prisoners beating</PrisonersBeating>
+  <PrisonersBeating_desc>Will comfort prisoners get beaten in the acts?</PrisonersBeating_desc>
+  <OffspringLookLikeTheirMother>Offspring look like their mother</OffspringLookLikeTheirMother>
+  <OffspringLookLikeTheirMother_desc>Percent chance the offspring will take after the mother</OffspringLookLikeTheirMother_desc>
+  <OffspringIsHuman>Offspring look human</OffspringIsHuman>
+  <OffspringIsHuman_desc>Percent chance the offspring will be human</OffspringIsHuman_desc>
+  <PregnantCoeffecientForHuman>Pregnant coeffecient for human</PregnantCoeffecientForHuman>
+  <PregnantCoeffecientForHuman_desc>Percent multiplier applied to women's pregnant chance</PregnantCoeffecientForHuman_desc>
+  <PregnantCoeffecientForAnimals>Pregnant coeffecient for animals</PregnantCoeffecientForAnimals>
+  <PregnantCoeffecientForAnimals_desc>Percent multiplier applied to female animals' pregnant chance</PregnantCoeffecientForAnimals_desc>
+  <UseParentMethod>Use parent method</UseParentMethod>
+  <UseParentMethod_desc>Use either the parent weighting or the species weighting when creating offspring</UseParentMethod_desc>
+  <SexFreeForAllAge>Sex free for all age</SexFreeForAllAge>
+  <SexFreeForAllAge_desc>Pawns older than the free-for-all age will be allowed to have sex with animals and, people that also reached the age.
+  	\nPawns younger than the free-for-all age will only have sex with others within 2 biological years of their own age</SexFreeForAllAge_desc>
+  <SexMinimumAge>Sex minimum age</SexMinimumAge>
+  <SexMinimumAge_desc>Pawns must be this old to have sex at all (should be lower or equal to free-for-all age).It should only affect the behaviors introduced by RJW.</SexMinimumAge_desc>
+  <NonFutaWomenRaping_MaxVulnerability>Max vulnerability level that will allow non-futa women go raping</NonFutaWomenRaping_MaxVulnerability>
+  <NonFutaWomenRaping_MaxVulnerability_desc>(Vulnerability varies between 0 to 3) Setting the value to negative number to disable non-futa women raping.\n
+  	If the value is non-negative, then the non-futa women with vulnerability not larger than the value will rape.</NonFutaWomenRaping_MaxVulnerability_desc>
+  <Rapee_MinVulnerability_human>Min vulnerability that allow a human being raped</Rapee_MinVulnerability_human>
+  <Rapee_MinVulnerability_human_desc>(Vulnerability varies between 0 to 3) Setting the value to negative number to disallow human being raped.\n
+  	If the value is non-negative, then the people with vulnerability not less than the value may be raped.</Rapee_MinVulnerability_human_desc>
+  <Rapee_MinVulnerability_animals>Min vulnerability that allow an animal being raped</Rapee_MinVulnerability_animals>
+  <Rapee_MinVulnerability_animals_desc>(Vulnerability varies between 0 to 3, you might not see the value in-game but it exists)\n
+  	Setting the value to negative number to disallow animals being raped.\n
+  	If the value is non-negative, then the animals with vulnerability not less than the value may be raped.</Rapee_MinVulnerability_animals_desc>
+
+  <!-- Bed -->
+  <ForWhoreUse>For Whore Use</ForWhoreUse>
+  <WhoreBedFormat>whore {0}</WhoreBedFormat>
+  <CommandBedSetAsWhoreLabel>For whores</CommandBedSetAsWhoreLabel>
+  <CommandBedSetAsWhoreDesc>Whether this bed is for whores.</CommandBedSetAsWhoreDesc>
+
+  <!-- std.cs -->
+  <RJW_Opportunistic_Infection_Message>{0} has developed an infection due to the weakened immune system.</RJW_Opportunistic_Infection_Message>
+  <!--RJW_Poisoned_by_Rimming_Message>{0} has gotten food poisoning by rimming {1}</RJW_Poisoned_by_Rimming_Message-->
+  <RJW_Syphilis_Damage_Message>{0} has suffered permanent damage to {1} {2} due to an advanced {3} infection.</RJW_Syphilis_Damage_Message>
+
+	<!--Whore Activities-->
+  <RJW_VisitorAcceptWhore>{0} accepted the deal {1} offered.</RJW_VisitorAcceptWhore>
+  <RJW_VisitorRejectWhore>{0} rejected the deal {1} offered.</RJW_VisitorRejectWhore>
+  
+  <!-- Notifications on right-clicking CP -->
+  <PawnCantRapeCP>The target isn't healthy enough or is in a forbidden position.</PawnCantRapeCP>
+  <PawnCantRapeCP0>The pawn don't need sex, is not healthy, or cannot rape.</PawnCantRapeCP0>
+  <PawnCantRapeCP1>The pawn is not single or has his partner around.</PawnCantRapeCP1>
+  <PawnCantRapeCP2>The pawn is not zoophiliac so can't rape animals.</PawnCantRapeCP2>
+  
+  <!-- Anal Sex Notificaitons-->
+  <AnalSexSucceeded>{0} had a successful anal sex with {1}.</AnalSexSucceeded>
+  <AnalSexFailed>{0} failed to have an anal sex with {1}.</AnalSexFailed>
+
+</LanguageData>

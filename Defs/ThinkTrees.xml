@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ThinkTrees>
+
+  <ThinkTreeDef>
+    <defName>ViolateCorpseTree</defName>
+    <insertTag>Humanlike_PreMain</insertTag>
+    <insertPriority>16</insertPriority>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="rjw.ThinkNode_ConditionalNecro">
+          <subNodes>
+            <li Class="rjw.ThinkNode_ChancePerHour_Necro">
+              <subNodes>
+                <li Class="rjw.JobGiver_ViolateCorpse"/>
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+  <ThinkTreeDef>
+    <defName>BeastialityTree</defName>
+    <insertTag>Humanlike_PreMain</insertTag>
+    <insertPriority>16</insertPriority>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="rjw.ThinkNode_ConditionalBeastiality">
+          <subNodes>
+            <li Class="rjw.ThinkNode_ChancePerHour_Beastiality">
+              <subNodes>
+                <li Class="rjw.JobGiver_Beastiality"/>
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+  <ThinkTreeDef>
+    <defName>RandomRapeTree</defName>
+    <insertTag>Humanlike_PreMain</insertTag>
+    <insertPriority>16</insertPriority>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="rjw.ThinkNode_ConditionalRapist">
+          <subNodes>
+            <li Class="rjw.ThinkNode_ChancePerHour_RandomRape">
+              <subNodes>
+                <li Class="rjw.JobGiver_RandomRape"/>
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+  <ThinkTreeDef>
+    <defName>FapTree</defName>
+    <insertTag>Humanlike_PostMentalState</insertTag>
+    <insertPriority>11</insertPriority>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="ThinkNode_ConditionalLyingDown">
+          <subNodes>
+            <li Class="rjw.ThinkNode_ChancePerHour_Fappin">
+              <subNodes>
+               <li Class="rjw.JobGiver_DoFappin" />
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+	<!-- Animals won't do fapping
+  <ThinkTreeDef>
+    <defName>AnimalFapTree</defName>
+    <insertTag>Animal_PostMentalState</insertTag>
+    <insertPriority>15</insertPriority>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="ThinkNode_ConditionalLyingDown">
+          <subNodes>
+            <li Class="rjw.ThinkNode_ChancePerHour_Fappin">
+              <subNodes>
+                <li Class="rjw.JobGiver_DoFappin" />
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  -->
+
+  <!-- Check to "use" comfort prisoners before looking for work to do -->
+  <ThinkTreeDef>
+    <defName>ColonistSexualEmergencyTree</defName>
+    <insertTag>Humanlike_PostMain</insertTag>
+    <insertPriority>14</insertPriority>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="rjw.ThinkNode_ConditionalCanRapeCP">
+          <subNodes>
+            <li Class="rjw.ThinkNode_ChancePerHour_RapeCP">
+              <subNodes>
+                <li Class="rjw.JobGiver_ComfortPrisonerRape" />
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+  <!-- Check to "use" comfort prisoners if they have nothing else to do -->
+  <ThinkTreeDef>
+    <defName>AnimalSexualEmergencyTree</defName>
+    <insertTag>Animal_PreWander</insertTag>
+    <insertPriority>14</insertPriority>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="rjw.ThinkNode_ConditionalCanRapeCP">
+          <subNodes>
+            <li Class="rjw.ThinkNode_ChancePerHour_RapeCP">
+              <subNodes>
+                <li Class="rjw.JobGiver_ComfortPrisonerRape" />
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+  <!-- If they're horny, nymphs will find someone to fuck before doing any work -->
+  <ThinkTreeDef>
+    <defName>NymphSexualEmergencyTree</defName>
+    <insertTag>Humanlike_PreMain</insertTag>
+    <insertPriority>12</insertPriority>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="rjw.ThinkNode_ConditionalNympho">
+          <subNodes>
+            <li Class="rjw.ThinkNode_ConditionalHorny">
+              <subNodes>
+                <li Class="rjw.JobGiver_NymphJoinInBed" />
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+  <!-- Nymphs will always look for sex if they have nothing else to do -->
+  <ThinkTreeDef>
+    <defName>NymphRapeTree</defName>
+    <insertTag>Humanlike_PostMain</insertTag>
+    <insertPriority>12</insertPriority>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+				<li Class="rjw.ThinkNode_ConditionalNympho">
+	  			<subNodes>
+	    			<li Class="rjw.JobGiver_NymphJoinInBed" />
+	  			</subNodes>
+				</li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+  <!-- Whores will find visitors before looking for work to do -->
+  <ThinkTreeDef>
+    <defName>WhoreSexualEmergencyTree</defName>
+    <insertTag>Humanlike_PreMain</insertTag>
+    <insertPriority>15</insertPriority>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="rjw.ThinkNode_ConditionalWhore">
+        	<subNodes>
+         		<li Class="rjw.JobGiver_WhoreInvitingVisitors" />
+         	</subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+   
+  <!-- Whores will always look for sex if they have nothing else to do -->
+  <ThinkTreeDef>
+    <defName>WhoreJobTree</defName>
+    <insertTag>Humanlike_PostMain</insertTag>
+    <insertPriority>15</insertPriority>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+				<li Class="rjw.ThinkNode_ConditionalWhore">
+	 					<subNodes>
+	    				<li Class="rjw.JobGiver_WhoreInvitingVisitors" />
+	  				</subNodes>
+				</li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+</ThinkTrees>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DesignationDefs>
+
+  <DesignationDef>
+    <defName>ComfortPrisoner</defName>
+    <texturePath>comfort_prisoner</texturePath>
+    <targetType>Thing</targetType>
+  </DesignationDef>
+
+  <DesignationDef>
+    <defName>ComfortPrisonerNoSticky</defName>
+    <texturePath>comfort_prisoner_invisible</texturePath>
+    <targetType>Thing</targetType>
+  </DesignationDef>
+
+</DesignationDefs>

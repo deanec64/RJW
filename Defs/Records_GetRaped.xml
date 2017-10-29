@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- A RecordDef that will count the number of times a pawn being raped as a comfort prisoner-->
+ 
+  <RecordDef>
+    <defName>GetRapedAsComfortPrisoner</defName>
+    <label>rapedAsCP</label>
+    <description>The number of times I was raped as a comfort prisoner.</description>
+    <type>Int</type>
+  </RecordDef>
+  
+</Defs>
