@@ -330,18 +330,22 @@ namespace rjw
 
         public static bool can_rape(Pawn pawn, bool AllowNonFutaFemaleRaping=false)
         {
-            if (is_human(pawn))
-            {
-                int age = pawn.ageTracker.AgeBiologicalYears;
-                return (age >= HugsLibInj.sex_minimum_age) && (need_some_sex(pawn) > 0) && (!Genital_Helper.genitals_blocked(pawn)) 
-                    && (HugsLibInj.NonFutaWomenRaping_MaxVulnerability < 0 ? Genital_Helper.has_penis(pawn): (Genital_Helper.has_penis(pawn)|| AllowNonFutaFemaleRaping && is_female(pawn)&&get_vulnerability(pawn)<= HugsLibInj.NonFutaWomenRaping_MaxVulnerability)
-                    );
-            }
-            else
-            {
-                //return true;
-                return is_animal(pawn) && config.animals_enabled && !is_mechanoid(pawn) && (pawn.ageTracker.CurLifeStageIndex >= 2) && get_sex_ability(pawn) > 0.0f && pawn.gender==Gender.Male;
-            }
+			if (HugsLibInj.WildMode)
+			{
+				return true;
+			}
+			else if (is_human(pawn))
+			{
+				int age = pawn.ageTracker.AgeBiologicalYears;
+				return (age >= HugsLibInj.sex_minimum_age) && (need_some_sex(pawn) > 0) && (!Genital_Helper.genitals_blocked(pawn))
+					&& (HugsLibInj.NonFutaWomenRaping_MaxVulnerability < 0 ? Genital_Helper.has_penis(pawn) : (Genital_Helper.has_penis(pawn) || AllowNonFutaFemaleRaping && is_female(pawn) && get_vulnerability(pawn) <= HugsLibInj.NonFutaWomenRaping_MaxVulnerability)
+					);
+			}
+			else
+			{
+				//return true;
+				return is_animal(pawn) && config.animals_enabled && !is_mechanoid(pawn) && (pawn.ageTracker.CurLifeStageIndex >= 2) && get_sex_ability(pawn) > 0.0f && pawn.gender == Gender.Male;
+			}
         }
 
         public static bool can_get_raped(Pawn pawn) {

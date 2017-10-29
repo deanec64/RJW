@@ -405,8 +405,6 @@
     <Compile Include="Source\Works\WorkGiver_RapeCP.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Source\bin\Debug\" />
-    <Folder Include="Source\bin\Release\" />
     <Folder Include="Source\obj\Debug\TempPE\" />
     <Folder Include="Source\obj\Release\TempPE\" />
   </ItemGroup>
