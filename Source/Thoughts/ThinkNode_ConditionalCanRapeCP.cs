@@ -15,8 +15,9 @@ namespace rjw {
                 //Log.Message("[RJW]ThinkNode_ConditionalCanRapeCP::satisfied called 0");
                 return false;
             }
-            // Due to the existence of whore system, no longer allow pawns from other factions to rape comfort prisoners
-            if (!pawn.Faction.IsPlayer)
+			// Due to the existence of whore system, no longer allow pawns from other factions to rape comfort prisoners
+			if (HugsLibInj.WildMode) return true;
+			if (!pawn.Faction.IsPlayer)
             {
                 //Log.Message("[RJW]ThinkNode_ConditionalCanRapeCP::satisfied called 1");
                 return false;

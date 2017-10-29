@@ -13,7 +13,8 @@ namespace rjw {
         {
             if (!xxx.config.random_rape_enabled)
                 return false;
-            if (!xxx.is_rapist(p))
+			if (HugsLibInj.WildMode) return true;
+			if (!xxx.is_rapist(p))
                 return false;
             if (!xxx.isSingleOrPartnerNotHere(p))
             {
