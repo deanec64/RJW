@@ -353,7 +353,7 @@ namespace rjw
             // Animals can always be raped regardless of age
             if (is_human(pawn)) {
                 int age = pawn.ageTracker.AgeBiologicalYears;
-                return (age >= HugsLibInj.sex_minimum_age) && (get_sex_ability(pawn) > 0.0f) && !Genital_Helper.genitals_blocked(pawn) && (HugsLibInj.Rapee_MinVulnerability_human < 0 ? false : get_vulnerability(pawn) >= HugsLibInj.Rapee_MinVulnerability_human);
+                return (HugsLibInj.WildMode || (age >= HugsLibInj.sex_minimum_age) && (get_sex_ability(pawn) > 0.0f) && !Genital_Helper.genitals_blocked(pawn) && (HugsLibInj.Rapee_MinVulnerability_human < 0 ? false : get_vulnerability(pawn) >= HugsLibInj.Rapee_MinVulnerability_human));
             } else if (is_animal(pawn) && config.animals_enabled )
             {
                 float combatPower = pawn.kindDef.combatPower;

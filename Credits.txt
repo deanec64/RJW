@@ -9,9 +9,9 @@ Soronarr		Surgery recipes, monstergirls
 semigimp		general coding
 AngleWyrm		textures
 Alanetsai		chinese traditional translations
-nizhuan-jjr		chinese simplified translations, general coding, bugsfix, whore system, broken body system, balancing, testing, textures, Previews, etc.
+nizhuan-jjr		chinese simplified translations, general coding, bugsfix, whore system, broken body system, balancing, testing, textures, previews, etc.
 g0ring			coding idea, bugfix
 StarlightG		coding idea, bugfix
-SuperHotSausage xml improvements
+SuperHotSausage xml improvements, stuff
 
-And many others who contributed in this project
+And many others who contributed to this project.
