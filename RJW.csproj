@@ -64,7 +64,7 @@
     <Content Include="Assemblies\RJW.dll" />
     <Content Include="changelog.txt" />
     <Content Include="compatibility.txt" />
-    <Content Include="Credits.txt" />
+    <Content Include="credits.txt" />
     <Content Include="Defs\Body\PrivateParts.xml" />
     <Content Include="Defs\BondageGear\Hediffs.xml" />
     <Content Include="Defs\BondageGear\Items.xml" />
