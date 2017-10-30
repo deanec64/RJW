@@ -231,10 +231,6 @@
     <Content Include="Sounds\Sex\cum.wav" />
     <Content Include="Sounds\Sex\kucyu04.wav" />
     <Content Include="Source\Notes.txt" />
-    <Content Include="Source\obj\Debug\RJW_Source.csproj.FileListAbsolute.txt" />
-    <Content Include="Source\obj\Debug\RJW_Source.dll" />
-    <Content Include="Source\obj\Release\RJW_Source.csproj.FileListAbsolute.txt" />
-    <Content Include="Source\obj\Release\RJW_Source.dll" />
     <Content Include="Textures\anus.png" />
     <Content Include="Textures\armbinder.png" />
     <Content Include="Textures\big_penis.png" />
@@ -284,11 +280,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Defs\RandomDialoguesxml" />
-    <None Include="Source\obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
-    <None Include="Source\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="Source\obj\Debug\RJW_Source.csprojResolveAssemblyReference.cache" />
-    <None Include="Source\obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="Source\obj\Release\RJW_Source.csproj.CoreCompileInputs.cache" />
     <None Include="Textures\anus.xcf" />
     <None Include="Textures\armbinder.xcf" />
     <None Include="Textures\bionic_anus.xcf" />
@@ -404,10 +395,7 @@
     <Compile Include="Source\Thoughts\ThoughtWorker_WastingAway.cs" />
     <Compile Include="Source\Works\WorkGiver_RapeCP.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Source\obj\Debug\TempPE\" />
-    <Folder Include="Source\obj\Release\TempPE\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>
     <VisualStudio AllowExistingFolder="true" />
