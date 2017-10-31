@@ -234,17 +234,23 @@
     <Content Include="Sounds\Sex\kucyu04.wav" />
     <Content Include="Source\Notes.txt" />
     <Content Include="Textures\anus.png" />
+    <Content Include="Textures\anus_old.png" />
     <Content Include="Textures\armbinder.png" />
+    <Content Include="Textures\artificial_anus.png" />
+    <Content Include="Textures\artificial_breast.png" />
     <Content Include="Textures\big_penis.png" />
     <Content Include="Textures\bionic_anus.png" />
     <Content Include="Textures\bionic_boobs.png" />
     <Content Include="Textures\bionic_penis.png" />
     <Content Include="Textures\bionic_vagina.png" />
     <Content Include="Textures\boobs.png" />
+    <Content Include="Textures\breast.png" />
     <Content Include="Textures\chastity_belt.png" />
     <Content Include="Textures\comfort_prisoner.png" />
     <Content Include="Textures\comfort_prisoner_invisible.png" />
+    <Content Include="Textures\female_artificial_genital.png" />
     <Content Include="Textures\female_artificial_private.png" />
+    <Content Include="Textures\female_genital.png" />
     <Content Include="Textures\female_private.png" />
     <Content Include="Textures\gag.png" />
     <Content Include="Textures\generic_artificial_private.png" />
@@ -255,7 +261,9 @@
     <Content Include="Textures\hydraulic_anus.png" />
     <Content Include="Textures\hydraulic_boobs.png" />
     <Content Include="Textures\hydraulic_vagina.png" />
+    <Content Include="Textures\male_artificial_genital.png" />
     <Content Include="Textures\male_artificial_private.png" />
+    <Content Include="Textures\male_genital.png" />
     <Content Include="Textures\male_private.png" />
     <Content Include="Textures\micropenis.png" />
     <Content Include="Textures\noheart.png" />
@@ -289,7 +297,7 @@
   <ItemGroup>
     <None Include="Defs\RandomDialoguesxml" />
     <None Include="LICENSE" />
-    <None Include="Textures\anus.xcf" />
+    <None Include="Textures\anus_old.xcf" />
     <None Include="Textures\armbinder.xcf" />
     <None Include="Textures\bionic_anus.xcf" />
     <None Include="Textures\bionic_boobs.xcf" />
