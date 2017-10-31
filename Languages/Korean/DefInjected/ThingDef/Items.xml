@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Hololock.label>홀로그램 구속구</Hololock.label>
+  <Hololock.description>첨단 기술로 개발된 구속구입니다. 반드시 열쇠를 사용해야만 해제 가능합니다. 원래 군용으로 개발되었습니다만, BDSM계에서 컬트적인 인기를 끌면서 민간에 널리 보급되었습니다. 다음과 같은 특징이 있습니다.
+    - 플라스틸 재질로 매우 견고함.
+    - 홀로그램 방식의 암호화 UID를 사용하여 키와 잠금 장치를 등록. 결코 위조할 수 없음을 보증합니다.
+    - 잠금장치를 완력으로 해제하려는 시도가 감지되면 즉시 자폭하여 적에게 포로를 넘겨주는 것을 방지합니다.</Hololock.description>
+
+  <Holokey.label>홀로그램 열쇠</Holokey.label>
+  <Holokey.description>홀로그램 구속구의 잠금을 해제하는 장치입니다.</Holokey.description>
+  <Holokey.comps.2.useLabel>잠금 해제</Holokey.comps.2.useLabel>
+
+
+</LanguageData>

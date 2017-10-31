@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <DesignatorComfortPrisoner.label>성노예 낙인</DesignatorComfortPrisoner.label>
+  <DesignatorComfortPrisoner.description>해당 정착민 또는 포로를 성노예로 지정합니다.</DesignatorComfortPrisoner.description>
+
+  <rjw_vatgrown_sex_slave.label>배양된 성노예</rjw_vatgrown_sex_slave.label>
+  <rjw_vatgrown_sex_slave.description>NAME은(는) 인간이라기보다 섹스 기계에 가깝습니다. 클론 공장에서 배양되면서, NAME(은)는 다양한 취향의 고객을 만족시키기 위한 지식과 기술을 익혔습니다.</rjw_vatgrown_sex_slave.description>
+
+  <rjw_feisty.label>충성스런 님프</rjw_feisty.label>
+  <rjw_feisty.description>NAME struts around the colony like a conqueror examining a newly annexed territory. You try to focus on your work but HE won't let you.\n
+    	"I heard what you said about me!" HE accuses. You didn't say anything about HIM. HECAP knows that. 
+    	"Wanna fight?" HE challenges. You already know what HE means: a few minutes of play wrestling and then you take HIM, or, if you hesitate, HE takes you. \n
+    	Though NAME can be hard to get along with you've come to appreciate how HE's more practical than the others.\n
+    	You explain to HIM, "See these things here? They need to be over there" and "Those people are trying to kill us, so let's kill them first." HECAP listens, and does what is necessary. </rjw_feisty.description>
+
+  <rjw_curious.label>공돌이 님프</rjw_curious.label>
+  <rjw_curious.description>Hold the covering plate back and place the actuator in slot C. Line the rod up. No, that won't do, it needs to be perfect. Now pop the JC-444 chip in place.\n
+    	Solder the orange wire to pin #16 and the striped wire to pin #5.\n
+					Suddenly, there HE is. You aren't surprised to see NAME, you just didn't hear HIM approach. By now you're used to it.\n
+					You continue your work in silence as HE hovers over you, her large eyes fixated on the rapid, rythmic, deliberate motions of your hands.</rjw_curious.description>
+
+  <rjw_tender.label>헌신적인 님프</rjw_tender.label>
+  <rjw_tender.description>NAME은(는) 매력적인 눈빛과 달콤한 목소리를 지녔습니다. 이전에 간호사 일을 했기 때문에 HE은(는) 사람들을 돌보는데에 익숙합니다.</rjw_tender.description>
+
+  <rjw_chatty.label>수다쟁이 님프</rjw_chatty.label>
+  <rjw_chatty.description>누구도 NAME보다 수다스러울 수는 없을 것입니다. HECAP은(는) 유연한 혀와 얄팍한 정신, 뜨거운 입술의 소유자입니다.</rjw_chatty.description>
+
+  <rjw_broken.label>망가진 님프</rjw_broken.label>
+  <rjw_broken.description>NAME(는) 아마도 끔찍한 일을 겪었던 것으로 보입니다. HE(는) 무기력하며, 누구하고도 대화하려 하지 않습니다. HECAP이(가) 약간이라도 반응을 보이는 대상은 오직 조각상들 뿐입니다.</rjw_broken.description>
+
+
+</LanguageData>

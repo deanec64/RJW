@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <MakePegDick.label>목봉 조각</MakePegDick.label>
+  <MakePegDick.description>성불구자를 위한 간단한 목봉을 조각합니다.</MakePegDick.description>
+  <MakePegDick.jobString>목봉 조각 중.</MakePegDick.jobString>
+
+  <MakeBionicPenis.label>강화 자지 제작</MakeBionicPenis.label>
+  <MakeBionicPenis.description>성감을 극대화시켜주는 생체공학 강화 자지를 합성합니다.</MakeBionicPenis.description>
+  <MakeBionicPenis.jobString>강화 자지 합성 중.</MakeBionicPenis.jobString>
+
+  <!--[Duplicated] <MakeHydraulicVagina.label>craft hydraulic vagina</MakeHydraulicVagina.label>-->
+  <!--[Duplicated] <MakeHydraulicVagina.description>Crafts a hydraulic vagina from steel and components.</MakeHydraulicVagina.description>-->
+  <!--[Duplicated] <MakeHydraulicVagina.jobString>Crafting hydraulic vagina.</MakeHydraulicVagina.jobString>-->
+
+  <!--[Duplicated] <MakeBionicVagina.label>craft bionic vagina</MakeBionicVagina.label>-->
+  <!--[Duplicated] <MakeBionicVagina.description>Crafts a bionic vagina from hyperweave, plasteel, and components.</MakeBionicVagina.description>-->
+  <!--[Duplicated] <MakeBionicVagina.jobString>Crafting bionic vagina.</MakeBionicVagina.jobString>-->
+
+  <MakeHydraulicVagina.label>실리콘 보지 제작</MakeHydraulicVagina.label>
+  <MakeHydraulicVagina.description>어설프지만 그럭저럭 쓸만한 실리콘 보지를 제작합니다.</MakeHydraulicVagina.description>
+  <MakeHydraulicVagina.jobString>실리콘 보지 제작 중.</MakeHydraulicVagina.jobString>
+
+  <MakeBionicVagina.label>쾌락 보지 제작</MakeBionicVagina.label>
+  <MakeBionicVagina.description>성감을 극대화시켜주는 생체공학 보지를 합성합니다.</MakeBionicVagina.description>
+  <MakeBionicVagina.jobString>쾌락 보지 합성 중.</MakeBionicVagina.jobString>
+
+  <MakeHydraulicBreasts.label>실리콘 가슴 제작</MakeHydraulicBreasts.label>
+  <MakeHydraulicBreasts.description>어설프지만 그럭저럭 쓸만한 실리콘 가슴을 제작합니다.</MakeHydraulicBreasts.description>
+  <MakeHydraulicBreasts.jobString>실리콘 가슴 제작 중.</MakeHydraulicBreasts.jobString>
+
+  <MakeBionicBreasts.label>쾌락 가슴 제작</MakeBionicBreasts.label>
+  <MakeBionicBreasts.description>성감을 극대화시켜주는 생체공학 가슴을 합성합니다.</MakeBionicBreasts.description>
+  <MakeBionicBreasts.jobString>쾌락 가슴 합성 중.</MakeBionicBreasts.jobString>
+
+  <MakeHydraulicAnus.label>실리콘 항문 제작</MakeHydraulicAnus.label>
+  <MakeHydraulicAnus.description>어설프지만 그럭저럭 쓸만한 실리콘 항문을 제작합니다.</MakeHydraulicAnus.description>
+  <MakeHydraulicAnus.jobString>실리콘 항문 제작 중.</MakeHydraulicAnus.jobString>
+
+  <MakeBionicAnus.label>쾌락 항문 제작</MakeBionicAnus.label>
+  <MakeBionicAnus.description>성감을 극대화시켜주는 생체공학 항문을 합성합니다.</MakeBionicAnus.description>
+  <MakeBionicAnus.jobString>쾌락 항문 합성 중.</MakeBionicAnus.jobString>
+
+
+</LanguageData>

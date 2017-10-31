@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Bound.stages.0.label>결박당함</Bound.stages.0.label>
+  <Bound.stages.0.description>괴로워... 제발 이것좀 풀어줄 수 없을까...?</Bound.stages.0.description>
+  <Bound.stages.1.label>입막힘</Bound.stages.1.label>
+  <Bound.stages.1.description>으으르는그으... 프르드르그...</Bound.stages.1.description>
+  <Bound.stages.2.label>결박당한 채로 입막힘</Bound.stages.2.label>
+  <Bound.stages.2.description>즈블 프르즈 브트긔으...!</Bound.stages.2.description>
+
+  <MasochistBound.stages.0.label>결박당함 (피학적)</MasochistBound.stages.0.label>
+  <MasochistBound.stages.0.description>헤... 헤헤...</MasochistBound.stages.0.description>
+  <MasochistBound.stages.1.label>입막힘 (피학적)</MasochistBound.stages.1.label>
+  <MasochistBound.stages.1.description>흔븐듸스... 므츠브르...</MasochistBound.stages.1.description>
+  <MasochistBound.stages.2.label>결박당한 채로 입막힘 (피학적)</MasochistBound.stages.2.label>
+  <MasochistBound.stages.2.description>브즈크... 드 그릅흐즈... 흐으흐으!</MasochistBound.stages.2.description>
+
+  <NeedSex.stages.0.label>섹스하고 싶음</NeedSex.stages.0.label>
+  <NeedSex.stages.0.description>섹스하고 싶어. 섹스하고 싶어. 섹스하고 싶어...</NeedSex.stages.0.description>
+  <NeedSex.stages.1.label>흥분함</NeedSex.stages.1.label>
+  <NeedSex.stages.1.description>그동안 너무 참았어. 충동을 멈출 수가 없어.</NeedSex.stages.1.description>
+  <NeedSex.stages.2.label>오르가즘</NeedSex.stages.2.label>
+  <NeedSex.stages.2.description>오늘은 충분히 즐겼어.</NeedSex.stages.2.description>
+  <NeedSex.stages.3.label>아헤가오</NeedSex.stages.3.label>
+  <NeedSex.stages.3.description>다리에 힘이 들어가지 않아. 모든 감각이 쾌감으로 대체된 느낌이야.</NeedSex.stages.3.description>
+
+  <ItchyCrotch.stages.0.label>가려움</ItchyCrotch.stages.0.label>
+  <ItchyCrotch.stages.0.description>누가 쳐다보고 있지는 않겠지? 그냥...</ItchyCrotch.stages.0.description>
+  <ItchyCrotch.stages.1.label>쓰라림</ItchyCrotch.stages.1.label>
+  <ItchyCrotch.stages.1.description>긁힌 상처가 불타는 것처럼 쓰라려.</ItchyCrotch.stages.1.description>
+
+  <SyphiliticThoughts.stages.0.label>매독 착란</SyphiliticThoughts.stages.0.label>
+  <SyphiliticThoughts.stages.0.description>이곳은 멍청하고 성가신 놈들로만 가득해. 긍정적인 생각을 할 수 있을 리가.</SyphiliticThoughts.stages.0.description>
+  <SyphiliticThoughts.stages.1.label>매독 광란</SyphiliticThoughts.stages.1.label>
+  <SyphiliticThoughts.stages.1.description>알았어, 내가 지금 원하는 건... 어... 내가 뭐라고 했지? 오, 이거 맞아. 빌어먹을 똥쓰레기같으니.</SyphiliticThoughts.stages.1.description>
+
+  <WastingAway.stages.0.label>무의미한 여생</WastingAway.stages.0.label>
+  <WastingAway.stages.0.description>나는 매일 조금씩 쇠약해지고 죽어가고 있어.</WastingAway.stages.0.description>
+
+  <FeelingBroken.stages.0.label>흔들리는 정신</FeelingBroken.stages.0.label>
+  <FeelingBroken.stages.0.description>이번이 몇번째인지 기억도 나지 않아. 정신이 흐려져. 어지럽고 혼란스러워.</FeelingBroken.stages.0.description>
+  <FeelingBroken.stages.1.label>망가진 정신</FeelingBroken.stages.1.label>
+  <FeelingBroken.stages.1.description>안돼... 더 이상은... 놈들은 미쳤어... 아니면, 내가 미쳤는지도.</FeelingBroken.stages.1.description>
+  <FeelingBroken.stages.2.label>파괴된 정신</FeelingBroken.stages.2.label>
+  <FeelingBroken.stages.2.description>주인님, 제발 더 괴롭혀 주세요. 더 많이 뿌려주세요. 오줌이든, 정액이든, 뭐라도 어서.</FeelingBroken.stages.2.description>
+
+  <SawDiseasedPrivates1.stages.0.label>{0}의 성기에서 피부병 발견</SawDiseasedPrivates1.stages.0.label>
+  <SawDiseasedPrivates2.stages.0.label>{0}의 성기에서 농포 발견</SawDiseasedPrivates2.stages.0.label>
+  <SawDiseasedPrivates3.stages.0.label>{0}의 성기에서 썩은 냄새를 맡음</SawDiseasedPrivates3.stages.0.label>
+
+  <GotRaped.stages.0.label>범해짐</GotRaped.stages.0.label>
+  <GotRaped.stages.0.labelSocial>범해짐</GotRaped.stages.0.labelSocial>
+  <GotRaped.stages.0.description>더럽혀졌어... 죽고 싶어.</GotRaped.stages.0.description>
+
+  <MasochistGotRaped.stages.0.label>범해짐 (피학적)</MasochistGotRaped.stages.0.label>
+  <MasochistGotRaped.stages.0.labelSocial>범해짐 (피학적)</MasochistGotRaped.stages.0.labelSocial>
+  <MasochistGotRaped.stages.0.description>내 꼴을 봐. 젖은 걸레처럼 엉망이 되어버렸어. 그런데 그 느낌이 꽤... 정말.... 괜찮았어.</MasochistGotRaped.stages.0.description>
+
+  <GotRapedByAnimal.stages.0.label>짐승에게 범해짐</GotRapedByAnimal.stages.0.label>
+  <GotRapedByAnimal.stages.0.labelSocial>짐승에게 범해짐</GotRapedByAnimal.stages.0.labelSocial>
+  <GotRapedByAnimal.stages.0.description>짐승에게 더럽혀졌어...</GotRapedByAnimal.stages.0.description>
+
+  <MasochistGotRapedByAnimal.stages.0.label>짐승에게 범해짐 (피학적)</MasochistGotRapedByAnimal.stages.0.label>
+  <MasochistGotRapedByAnimal.stages.0.labelSocial>짐승에게 범해짐 (피학적)</MasochistGotRapedByAnimal.stages.0.labelSocial>
+  <MasochistGotRapedByAnimal.stages.0.description>짐승에게 더럽혀졌어... 정말 진귀한 경험이었지!</MasochistGotRapedByAnimal.stages.0.description>
+
+  <HateMyRapist.stages.0.label>범해짐</HateMyRapist.stages.0.label>
+  <HateMyRapist.stages.0.description>{0}에게 더럽혀졌어.</HateMyRapist.stages.0.description>
+
+  <KindaLikeMyRapist.stages.0.label>범해짐 (피학적)</KindaLikeMyRapist.stages.0.label>
+  <KindaLikeMyRapist.stages.0.labelSocial>범해짐 (피학적)</KindaLikeMyRapist.stages.0.labelSocial>
+  <KindaLikeMyRapist.stages.0.description>{0}에게 당했어. 꽤나 능숙했어.</KindaLikeMyRapist.stages.0.description>
+
+  <AllowedMeToGetRaped.stages.0.label>배신감</AllowedMeToGetRaped.stages.0.label>
+  <AllowedMeToGetRaped.stages.0.labelSocial>배신감</AllowedMeToGetRaped.stages.0.labelSocial>
+  <AllowedMeToGetRaped.stages.0.description>{0}는 내가 당하도록 내버려뒀어.</AllowedMeToGetRaped.stages.0.description>
+
+  <StoleSomeLovin.stages.0.label>강간함</StoleSomeLovin.stages.0.label>
+  <StoleSomeLovin.stages.0.labelSocial>강간함</StoleSomeLovin.stages.0.labelSocial>
+  <StoleSomeLovin.stages.0.description>결국 저질러버리고 말았어. 별로 능숙하진 않았지만... 뭐, 아무것도 안한 것보단 좋았지.</StoleSomeLovin.stages.0.description>
+
+  <BloodlustStoleSomeLovin.stages.0.label>강간함 (피에 굶주림)</BloodlustStoleSomeLovin.stages.0.label>
+  <BloodlustStoleSomeLovin.stages.0.labelSocial>강간함 (피에 굶주림)</BloodlustStoleSomeLovin.stages.0.labelSocial>
+  <BloodlustStoleSomeLovin.stages.0.description>녀석에게 본때를 보여줬다. 비명도 지르고, 눈물도 쏟고, 피까지 흘렸지!</BloodlustStoleSomeLovin.stages.0.description>
+
+  <ViolatedCorpse.stages.0.label>시체와의 즐거운 시간</ViolatedCorpse.stages.0.label>
+  <ViolatedCorpse.stages.0.labelSocial>시체와의 즐거운 시간</ViolatedCorpse.stages.0.labelSocial>
+  <ViolatedCorpse.stages.0.description>그녀석, 뻣뻣해 보이지만 약간은 부드러운 부분도 남아 있었어. 무슨 뜻인지 알지?</ViolatedCorpse.stages.0.description>
+
+
+</LanguageData>

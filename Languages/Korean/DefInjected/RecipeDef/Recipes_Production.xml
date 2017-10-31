@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <MakeHololock.label>홀로그램 구속구 제조</MakeHololock.label>
+  <MakeHololock.description>홀로그램 구속구를 제작합니다.</MakeHololock.description>
+  <MakeHololock.jobString>홀로그램 구속구 제작 중.</MakeHololock.jobString>
+
+  <MakeArmbinder.label>수갑 제작</MakeArmbinder.label>
+  <MakeArmbinder.description>수갑을 만듭니다.</MakeArmbinder.description>
+  <MakeArmbinder.jobString>수갑 만드는 중.</MakeArmbinder.jobString>
+
+  <MakeGag.label>재갈 제작</MakeGag.label>
+  <MakeGag.description>재갈을 만듭니다.</MakeGag.description>
+  <MakeGag.jobString>재갈 만드는 중.</MakeGag.jobString>
+
+  <MakeChastityBelt.label>정조대 제작</MakeChastityBelt.label>
+  <MakeChastityBelt.description>정조대를 만듭니다.</MakeChastityBelt.description>
+  <MakeChastityBelt.jobString>정조대 만드는 중.</MakeChastityBelt.jobString>
+
+
+</LanguageData>

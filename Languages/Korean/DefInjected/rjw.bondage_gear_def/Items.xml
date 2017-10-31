@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Armbinder.label>수갑</Armbinder.label>
+  <Armbinder.description>첨단 기술이 적용된 수갑입니다. 장착하면 양팔을 사용할 수 없게 됩니다.</Armbinder.description>
+  <Armbinder.comps.2.useLabel>수갑 착용 중.</Armbinder.comps.2.useLabel>
+
+  <Gag.label>재갈</Gag.label>
+  <Gag.description>첨단 기술이 적용된 재갈입니다. 장착하면 대화할 수 없게 됩니다.</Gag.description>
+  <Gag.comps.2.useLabel>재갈 착용 중.</Gag.comps.2.useLabel>
+
+  <ChastityBelt.label>정조대</ChastityBelt.label>
+  <ChastityBelt.description>첨단 기술이 적용된 정조대입니다. 장착하면 어떤 형태의 성행위도 할 수 없게 됩니다.</ChastityBelt.description>
+  <ChastityBelt.comps.2.useLabel>정조대 착용 중.</ChastityBelt.comps.2.useLabel>
+
+
+</LanguageData>

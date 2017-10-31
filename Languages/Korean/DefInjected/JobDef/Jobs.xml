@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Fappin.reportString>자위 중.</Fappin.reportString>
+
+
+  <!-- No longer need to override this def since the additional code is patched into the original driver
+  <JobDef>
+    <defName>Lovin</defName>
+    <driverClass>rjw.JobDriver_LovinPP</driverClass>
+    <reportString>lovin'.</reportString>
+    <checkOverrideOnDamage>true</checkOverrideOnDamage>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef> -->
+
+  <NymphJoinInBed.reportString>사랑 나누는 중.</NymphJoinInBed.reportString>
+  <ComfortPrisonerRapin.reportString>강간 중.</ComfortPrisonerRapin.reportString>
+  <GettinLoved.reportString>사랑 나누는 중.</GettinLoved.reportString>
+  <GettinRaped.reportString>강간당하는 중.</GettinRaped.reportString>
+  <StruggleInBondageGear.reportString>고통을 즐기는 중.</StruggleInBondageGear.reportString>
+  <UnlockBondageGear.reportString>구속구 해제 중.</UnlockBondageGear.reportString>
+  <GiveBondageGear.reportString>구속구 착용 중.</GiveBondageGear.reportString>
+  <ViolateCorpse.reportString>시간 중.</ViolateCorpse.reportString>
+  <Beastiality.reportString>수간 중.</Beastiality.reportString>
+  <RandomRape.reportString>강간 대상 찾는 중.</RandomRape.reportString>
+  <WhoreIsServingVisitors.reportString>봉사 중.</WhoreIsServingVisitors.reportString>
+  <InvitingVisitors.reportString>유혹 중.</InvitingVisitors.reportString>
+
+
+  <!-- <JobDef>
+    <defName>ComfortPrisonerGangRapin</defName>
+    <driverClass>rjw.JobDriver_ComfortPrisonerGangRapin</driverClass>
+    <reportString>gang rapin'.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef> -->
+
+</LanguageData>

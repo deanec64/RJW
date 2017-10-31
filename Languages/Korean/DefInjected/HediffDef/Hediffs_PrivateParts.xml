@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Dummy hediff: Triggers creation of real privates for newly created pawns -->
+
+  <DummyPrivates.label>국부</DummyPrivates.label>
+
+
+  <!-- Regular privates -->
+
+  <Penis.label>평범한 자지</Penis.label>
+
+
+  <!-- Additional dick sizes -->
+
+  <Micropenis.label>초라한 자지</Micropenis.label>
+  <SmallPenis.label>작은 자지</SmallPenis.label>
+  <BigPenis.label>큰 자지</BigPenis.label>
+  <HugePenis.label>대물</HugePenis.label>
+  <HorsePenis.label>말자지</HorsePenis.label>
+  <CatPenis.label>소자지</CatPenis.label>
+  <DogPenis.label>개자지</DogPenis.label>
+  <DragonPenis.label>용자지</DragonPenis.label>
+  <Vagina.label>평범한 보지</Vagina.label>
+  <TightVagina.label>조이는 보지</TightVagina.label>
+  <LooseVagina.label>헐거운 보지</LooseVagina.label>
+
+
+  <!-- Natural Breasts -->
+
+  <Breasts.label>평범한 가슴</Breasts.label>
+  <SmallBreasts.label>절벽 가슴</SmallBreasts.label>
+  <LargeBreasts.label>거유</LargeBreasts.label>
+  <HugeBreasts.label>폭유</HugeBreasts.label>
+
+
+  <!-- Natural anuses -->
+
+  <Anus.label>평범한 항문</Anus.label>
+  <TightAnus.label>조이는 항문</TightAnus.label>
+  <LooseAnus.label>헐거운 항문</LooseAnus.label>
+
+
+  <!-- Simple prosthetic privates -->
+
+  <PegDick.label>목봉</PegDick.label>
+  <HydraulicVagina.label>실리콘 보지</HydraulicVagina.label>
+  <HydraulicBreasts.label>실리콘 가슴</HydraulicBreasts.label>
+  <HydraulicAnus.label>실리콘 항문</HydraulicAnus.label>
+
+
+  <!-- Bionic privates -->
+
+  <BionicPenis.label>강화 자지</BionicPenis.label>
+  <BionicVagina.label>쾌락 보지</BionicVagina.label>
+  <BionicBreasts.label>쾌락 가슴</BionicBreasts.label>
+  <BionicAnus.label>쾌락 항문</BionicAnus.label>
+
+
+</LanguageData>

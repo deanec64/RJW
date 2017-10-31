@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- A RecordDef that will count the number of times a pawn being raped as a comfort prisoner -->
+
+  <GetRapedAsComfortPrisoner.label>봉사 점수</GetRapedAsComfortPrisoner.label>
+  <GetRapedAsComfortPrisoner.description>성노예로서 봉사한 횟수</GetRapedAsComfortPrisoner.description>
+
+
+</LanguageData>

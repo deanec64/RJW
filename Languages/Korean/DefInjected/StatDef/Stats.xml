@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <SexAbility.label>쾌감</SexAbility.label>
+  <SexAbility.description>정착민이 성관계를 가질 수 있는지, 그리고 얼마나 능숙한지를 나타냅니다.</SexAbility.description>
+
+  <Vulnerability.label>매력</Vulnerability.label>
+  <Vulnerability.description>정말 핵심만 짚고 넘어가자면, 정착민이 강간당할 확률을 나타냅니다.</Vulnerability.description>
+
+
+</LanguageData>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Settings-->
+  <WildMode_name>야생 모드</WildMode_name>
+  <WildMode_desc>모든 섹스 제한 규칙을 해제합니다. 폭풍같은 삶을 즐기십시오.</WildMode_desc>
+  <NymphsJoin>님프 합류</NymphsJoin>
+  <NymphsJoin_desc>활성화하면 님프들이 당신의 정착지에 합류할 수 있습니다.</NymphsJoin_desc>
+  <STD_FromFloors>자연 감염</STD_FromFloors>
+  <STD_FromFloors_desc>활성화하면 성병이 자연적인 경로로도 감염될 수 있습니다.</STD_FromFloors_desc>
+  <PrisonersBeating>구타 강간</PrisonersBeating>
+  <PrisonersBeating_desc>활성화하면 정착민들이 강간을 시도할 때 대상을 마구 때릴 것입니다.</PrisonersBeating_desc>
+  <OffspringLookLikeTheirMother>유전</OffspringLookLikeTheirMother>
+  <OffspringLookLikeTheirMother_desc>자식이 어머니의 특성을 물려받을 확률을 설정합니다.</OffspringLookLikeTheirMother_desc>
+  <OffspringIsHuman>인간 유전자 발현</OffspringIsHuman>
+  <OffspringIsHuman_desc>님프와의 관계로 낳은 자식이 인간이 될 확률을 설정합니다.</OffspringIsHuman_desc>
+  <PregnantCoeffecientForHuman>임신율 (인간)</PregnantCoeffecientForHuman>
+  <PregnantCoeffecientForHuman_desc>인간 임신율 가중치를 설정합니다. 최저점에서는 임신하지 않습니다.</PregnantCoeffecientForHuman_desc>
+  <PregnantCoeffecientForAnimals>임신율 (동물)</PregnantCoeffecientForAnimals>
+  <PregnantCoeffecientForAnimals_desc>동물 임신율 가중치를 설정합니다. 최저점에서는 임신하지 않습니다.</PregnantCoeffecientForAnimals_desc>
+  <UseParentMethod>혈연</UseParentMethod>
+  <UseParentMethod_desc>아이가 태어나면 부모 관계가 설정됩니다.</UseParentMethod_desc>
+  <SexFreeForAllAge>섹스 제한 연령</SexFreeForAllAge>
+  <SexFreeForAllAge_desc>설정치보다 나이가 어린 정착민은 나이차 두 살 이하인 상대하고만 섹스할 것입니다.</SexFreeForAllAge_desc>
+  <SexMinimumAge>섹스 자유 연령</SexMinimumAge>
+  <SexMinimumAge_desc>설정치보다 나이가 많은 정착민은 마음에 드는 상대와 자유롭게 섹스할 것입니다.</SexMinimumAge_desc>
+  <NonFutaWomenRaping_MaxVulnerability>강간 허용 기준 (여성)</NonFutaWomenRaping_MaxVulnerability>
+  <NonFutaWomenRaping_MaxVulnerability_desc>설정치보다 높은 매력 수준을 지닌 여성 정착민은 높은 확률로 강간에 노출됩니다. 
+  정착민의 매력 수준은 게임상에서 확인할 수 없지만 1~3 사이이며, 외모와 성기의 영향을 받습니다. 
+  정착민이 강간당하지 않도록 하려면 이 값을 음수로 지정하십시오.</NonFutaWomenRaping_MaxVulnerability_desc>
+  <Rapee_MinVulnerability_human>강간 허용 기준 (남성)</Rapee_MinVulnerability_human>
+  <Rapee_MinVulnerability_human_desc>설정치보다 높은 매력 수준을 지닌 남성 및 후타나리 정착민은 높은 확률로 강간에 노출됩니다. 
+  정착민의 매력 수준은 게임상에서 확인할 수 없지만 1~3 사이이며, 외모와 성기의 영향을 받습니다. 
+  정착민이 강간당하지 않도록 하려면 이 값을 음수로 지정하십시오.</Rapee_MinVulnerability_human_desc>
+  <Rapee_MinVulnerability_animals>강간 허용 기준 (동물)</Rapee_MinVulnerability_animals>
+  <Rapee_MinVulnerability_animals_desc>설정치보다 높은 매력 수준을 지닌 동물은 높은 확률로 강간에 노출됩니다. 
+  동물의 매력 수준은 게임상에서 확인할 수 없지만 1~3 사이입니다. 
+  동물이 강간당하지 않도록 하려면 이 값을 음수로 지정하십시오.</Rapee_MinVulnerability_animals_desc>
+
+  <!-- Bed -->
+  <ForWhoreUse>성노예 전용</ForWhoreUse>
+  <WhoreBedFormat>성노예 {0}</WhoreBedFormat>
+  <CommandBedSetAsWhoreLabel>성노예 전용</CommandBedSetAsWhoreLabel>
+  <CommandBedSetAsWhoreDesc>침대를 성노예 전용으로 지정합니다.</CommandBedSetAsWhoreDesc>
+
+  <!-- std.cs -->
+  <RJW_Opportunistic_Infection_Message>{0}의 약화된 면역력 때문에 감염이 발생했습니다.</RJW_Opportunistic_Infection_Message>
+  <!--RJW_Poisoned_by_Rimming_Message>{0} has gotten food poisoning by rimming {1}</RJW_Poisoned_by_Rimming_Message-->
+  <RJW_Syphilis_Damage_Message>{0}은 {1} {2}에 의한 {3} 감염에 의하여 영구적인 장애를 얻었습니다.</RJW_Syphilis_Damage_Message>
+
+  <!--Whore Activities-->
+  <RJW_VisitorAcceptWhore>{0}(은)는  {1}의 성매매 권유를 받아들였습니다.</RJW_VisitorAcceptWhore>
+  <RJW_VisitorRejectWhore>{0}(은)는  {1}의 성매매 권유를 거절했습니다.</RJW_VisitorRejectWhore>
+
+  <!-- Notifications on right-clicking CP -->
+  <PawnCantRapeCP>정착민은 움직일 수 없는 상태입니다.</PawnCantRapeCP>
+  <PawnCantRapeCP0>정착민은 성관계가 불가능한 상태입니다.</PawnCantRapeCP0>
+  <PawnCantRapeCP1>정착민의 섹스파트너가 근처에 있습니다. 눈치 좀!</PawnCantRapeCP1>
+  <PawnCantRapeCP2>정착민은 수간을 좋아하지 않습니다.</PawnCantRapeCP2>
+
+  <!-- Anal Sex Notificaitons-->
+  <AnalSexSucceeded>{0}(은)는 {1}과의 후장 섹스를 깔끔하게 끝마쳤습니다.</AnalSexSucceeded>
+  <AnalSexFailed>{0}(은)는 {1}과의 후장 섹스에 실패했습니다.</AnalSexFailed>
+  
+</LanguageData>

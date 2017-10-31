@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <AcuteHIV.label>급성 에이즈</AcuteHIV.label>
+  <AcuteHIV.stages.0.label>검출됨</AcuteHIV.stages.0.label>
+  <AcuteHIV.stages.1.label>사소함</AcuteHIV.stages.1.label>
+  <AcuteHIV.stages.2.label>사소함</AcuteHIV.stages.2.label>
+  <AcuteHIV.stages.3.label>사소함</AcuteHIV.stages.3.label>
+  <AcuteHIV.stages.4.label>사소함</AcuteHIV.stages.4.label>
+  <AcuteHIV.stages.5.label>심각함</AcuteHIV.stages.5.label>
+  <AcuteHIV.stages.6.label>심각함</AcuteHIV.stages.6.label>
+  <AcuteHIV.stages.7.label>심각함</AcuteHIV.stages.7.label>
+  <AcuteHIV.stages.8.label>극심한</AcuteHIV.stages.8.label>
+  <AcuteHIV.stages.9.label>극심한</AcuteHIV.stages.9.label>
+
+  <ChronicHIV.label>만성 에이즈</ChronicHIV.label>
+  <ChronicHIV.stages.0.label>검출됨</ChronicHIV.stages.0.label>
+  <ChronicHIV.stages.1.label>사소함</ChronicHIV.stages.1.label>
+  <ChronicHIV.stages.2.label>사소함</ChronicHIV.stages.2.label>
+  <ChronicHIV.stages.3.label>사소함</ChronicHIV.stages.3.label>
+  <ChronicHIV.stages.4.label>사소함</ChronicHIV.stages.4.label>
+  <ChronicHIV.stages.5.label>심각함</ChronicHIV.stages.5.label>
+  <ChronicHIV.stages.6.label>심각함</ChronicHIV.stages.6.label>
+  <ChronicHIV.stages.7.label>심각함</ChronicHIV.stages.7.label>
+  <ChronicHIV.stages.8.label>치명적</ChronicHIV.stages.8.label>
+  <ChronicHIV.stages.9.label>치명적</ChronicHIV.stages.9.label>
+
+  <Herpes.label>헤르페스</Herpes.label>
+  <Herpes.stages.0.label>사소함</Herpes.stages.0.label>
+  <Herpes.stages.1.label>심각함</Herpes.stages.1.label>
+  <Herpes.stages.2.label>치명적</Herpes.stages.2.label>
+
+  <Warts.label>농포</Warts.label>
+  <Warts.stages.0.label>사소함</Warts.stages.0.label>
+  <Warts.stages.1.label>심각함</Warts.stages.1.label>
+
+  <Syphilis.label>매독</Syphilis.label>
+  <Syphilis.stages.0.label>사소함</Syphilis.stages.0.label>
+  <Syphilis.stages.1.label>사소함</Syphilis.stages.1.label>
+  <Syphilis.stages.2.label>심각함</Syphilis.stages.2.label>
+  <Syphilis.stages.3.label>심각함</Syphilis.stages.3.label>
+  <Syphilis.stages.4.label>치명적</Syphilis.stages.4.label>
+  <Syphilis.stages.5.label>치명적</Syphilis.stages.5.label>
+
+
+</LanguageData>
