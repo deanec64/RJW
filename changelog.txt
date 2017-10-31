@@ -4,6 +4,7 @@ v1.5.4d changes:
 - Added research tree for whore beds by Sidfu.
 - Added new mod preview by NEPH.
 - Added new private parts textures by NEPH.
+- Added Korean translation by NEPH.
 
 
 v1.5.4b changes:
