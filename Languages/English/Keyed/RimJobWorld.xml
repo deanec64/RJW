@@ -13,13 +13,14 @@
 	<PrisonersBeating>Comfort prisoners beating</PrisonersBeating>
 	<PrisonersBeating_desc>Pawns will beat the hell out of comfort prisoners while raping them.</PrisonersBeating_desc>
 	<OffspringLookLikeTheirMother>Genetic inheritance (%)</OffspringLookLikeTheirMother>
-	<OffspringLookLikeTheirMother_desc>100% means born babies will look exactly like their mothers. Set it to 0% for random appearance.</OffspringLookLikeTheirMother_desc>
+	<OffspringLookLikeTheirMother_desc>100% means born babies will look exactly like their mothers. Set it to 0% for random appearance.<br/><br/>Valid range: 0 - 100%</OffspringLookLikeTheirMother_desc>
 	<OffspringIsHuman>Human DNA inheritance (%)</OffspringIsHuman>
-	<OffspringIsHuman_desc>100% means born babies will be humans. Set it to 0% for random monster.</OffspringIsHuman_desc>
+	<OffspringIsHuman_desc>100% means born babies will be humans. Set it to 0% for random monster.<br/><br/>Valid range: 0 - 100%</OffspringIsHuman_desc>
 	<PregnantCoeffecientForHuman>Human Pregnancy chances (%)</PregnantCoeffecientForHuman>
-	<PregnantCoeffecientForHuman_desc>Human pregnancy chances in percent.</PregnantCoeffecientForHuman_desc>
+	<PregnantCoeffecientForHuman_desc>Human pregnancy chances in percent.<br/><br/>Valid range: 0 - 100%
+</PregnantCoeffecientForHuman_desc>
 	<PregnantCoeffecientForAnimals>Animal pregnancy chances (%)</PregnantCoeffecientForAnimals>
-	<PregnantCoeffecientForAnimals_desc>Animal pregnancy chances in percent.</PregnantCoeffecientForAnimals_desc>
+	<PregnantCoeffecientForAnimals_desc>Animal pregnancy chances in percent.<br/><br/>Valid range: 0 - 100%</PregnantCoeffecientForAnimals_desc>
 	<UseParentMethod>Babies race</UseParentMethod>
 	<UseParentMethod_desc>Born babies will have the same race as their mothers.</UseParentMethod_desc>
 	<SexFreeForAllAge>Free sex min. age</SexFreeForAllAge>
@@ -27,14 +28,11 @@
 	<SexMinimumAge>Sex min. age</SexMinimumAge>
 	<SexMinimumAge_desc>Pawns younger than this will not have sex at all.</SexMinimumAge_desc>
 	<NonFutaWomenRaping_MaxVulnerability>Girls go rapin' (%)</NonFutaWomenRaping_MaxVulnerability>
-	<NonFutaWomenRaping_MaxVulnerability_desc>Only women with vulnerability lower than this will ever rape others.<br/><br/>Every pawns have 'vulnerability' status in their status info.
-	</NonFutaWomenRaping_MaxVulnerability_desc>
+	<NonFutaWomenRaping_MaxVulnerability_desc>Only women with vulnerability lower than this will ever rape others.<br/><br/>To check 'vulnerability' status, go to 'view information about this object' > stats.<br/><br/>Valid range: 0 - 300%</NonFutaWomenRaping_MaxVulnerability_desc>
 	<Rapee_MinVulnerability_human>'To-be raped' vulnerability (%)</Rapee_MinVulnerability_human>
-	<Rapee_MinVulnerability_human_desc>Human pawns with vulnerabilty higher than this will be raping targets.<br/><br/>Every pawns have 'vulnerability' status in their status info.
-	</Rapee_MinVulnerability_human_desc>
+	<Rapee_MinVulnerability_human_desc>Human pawns with vulnerabilty higher than this will be raping targets.<br/><br/>To check 'vulnerability' status, go to 'view information about this object' > stats.<br/><br/>Valid range: 0 - 300%</Rapee_MinVulnerability_human_desc>
 	<Rapee_MinVulnerability_animals>Animals' to-be-raped vulnerability (%)</Rapee_MinVulnerability_animals>
-	<Rapee_MinVulnerability_animals_desc>Animals with vulnerabilty higher than this will be raping targets for zoophiliacs.<br/><br/>Every pawns have 'vulnerability' status in their status info.
-	</Rapee_MinVulnerability_animals_desc>
+	<Rapee_MinVulnerability_animals_desc>Animals with vulnerabilty higher than this will be raping targets for zoophiliacs.<br/><br/>To check 'vulnerability' status, go to 'view information about this object' > stats.<br/><br/>Valid range: 0 - 300%</Rapee_MinVulnerability_animals_desc>
 
 	<!-- Bed -->
 	<ForWhoreUse>For Whore Use</ForWhoreUse>
