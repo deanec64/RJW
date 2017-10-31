@@ -3,26 +3,33 @@
 
   <FilthCum.label>정액</FilthCum.label>
 
+  <WhoreSleepingSpot.label>손님맞이 자리</WhoreSleepingSpot.label>
+  <WhoreSleepingSpot.description>초라하지만 아무 때나 질펀하게 싸지르기 좋은 자리입니다.</WhoreSleepingSpot.description>
+  <WhoreSleepingSpot_Blueprint.label>손님맞이 자리 (청사진)</WhoreSleepingSpot_Blueprint.label>
+  <WhoreSleepingSpot_Blueprint_Install.label>손님맞이 자리 (청사진)</WhoreSleepingSpot_Blueprint_Install.label>
+  <WhoreSleepingSpot_Frame.label>손님맞이 자리 (설치 중)</WhoreSleepingSpot_Frame.label>
+  <WhoreSleepingSpot_Frame.description>초라하지만 아무 때나 질펀하게 싸지르기 좋은 자리입니다.</WhoreSleepingSpot_Frame.description>
+
   <BedWhore.label>접객 침대</BedWhore.label>
-  <BedWhore.description>손님을 '접대'하기 위해 꾸며진 침대입니다.</BedWhore.description>
+  <BedWhore.description>창부가 본업에 집중하려면 편안한 침대가 필요합니다.</BedWhore.description>
   <BedWhore_Blueprint.label>접객 침대 (청사진)</BedWhore_Blueprint.label>
   <BedWhore_Blueprint_Install.label>접객 침대 (청사진)</BedWhore_Blueprint_Install.label>
-  <BedWhore_Frame.label>접객 침대 (건설 중)</BedWhore_Frame.label>
-  <BedWhore_Frame.description>손님을 '접대'하기 위해 꾸며진 침대입니다.</BedWhore_Frame.description>
+  <BedWhore_Frame.label>접객 침대 (설치 중)</BedWhore_Frame.label>
+  <BedWhore_Frame.description>창부가 본업에 집중하려면 편안한 침대가 필요합니다.</BedWhore_Frame.description>
 
   <DoubleBedWhore.label>큰 접객 침대</DoubleBedWhore.label>
-  <DoubleBedWhore.description>손님을 '접대'하기 위해 꾸며진 2인용 침대입니다.</DoubleBedWhore.description>
+  <DoubleBedWhore.description>넓은 접객 침대입니다. 난교도 문제 없을 것 같습니다. 능력만 된다면.</DoubleBedWhore.description>
   <DoubleBedWhore_Blueprint.label>큰 접객 침대 (청사진)</DoubleBedWhore_Blueprint.label>
   <DoubleBedWhore_Blueprint_Install.label>큰 접객 침대 (청사진)</DoubleBedWhore_Blueprint_Install.label>
-  <DoubleBedWhore_Frame.label>큰 접객 침대 (건설 중)</DoubleBedWhore_Frame.label>
-  <DoubleBedWhore_Frame.description>손님을 '접대'하기 위해 꾸며진 2인용 침대입니다.</DoubleBedWhore_Frame.description>
+  <DoubleBedWhore_Frame.label>큰 접객 침대 (설치 중)</DoubleBedWhore_Frame.label>
+  <DoubleBedWhore_Frame.description>넓은 접객 침대입니다. 난교도 문제 없을 것 같습니다. 능력만 된다면.</DoubleBedWhore_Frame.description>
 
   <RoyalBedWhore.label>고급 접객 침대</RoyalBedWhore.label>
-  <RoyalBedWhore.description>손님을 '접대'하기 위해 꾸며진 고급 금장식 침대입니다. 아주 편안합니다.</RoyalBedWhore.description>
+  <RoyalBedWhore.description>넓고 고급스러운 접객 침대입니다. 이런 곳에서 일을 치르려면 꽤 큰 돈이 필요할 겁니다.</RoyalBedWhore.description>
   <RoyalBedWhore_Blueprint.label>고급 접객 침대 (청사진)</RoyalBedWhore_Blueprint.label>
   <RoyalBedWhore_Blueprint_Install.label>고급 접객 침대 (청사진)</RoyalBedWhore_Blueprint_Install.label>
-  <RoyalBedWhore_Frame.label>고급 접객 침대 (건설 중)</RoyalBedWhore_Frame.label>
-  <RoyalBedWhore_Frame.description>손님을 '접대'하기 위해 꾸며진 고급 금장식 침대입니다. 아주 편안합니다.</RoyalBedWhore_Frame.description>
+  <RoyalBedWhore_Frame.label>고급 접객 침대 (설치 중)</RoyalBedWhore_Frame.label>
+  <RoyalBedWhore_Frame.description>넓고 고급스러운 접객 침대입니다. 이런 곳에서 일을 치르려면 꽤 큰 돈이 필요할 겁니다.</RoyalBedWhore_Frame.description>
 
 
 </LanguageData>
