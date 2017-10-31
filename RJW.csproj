@@ -58,6 +58,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
     <Content Include="About\About.xml" />
     <Content Include="About\Preview.png" />
     <Content Include="Assemblies\%24HugsLibChecker.dll" />
@@ -242,13 +244,19 @@
     <Content Include="Textures\chastity_belt.png" />
     <Content Include="Textures\comfort_prisoner.png" />
     <Content Include="Textures\comfort_prisoner_invisible.png" />
+    <Content Include="Textures\female_artificial_private.png" />
+    <Content Include="Textures\female_private.png" />
     <Content Include="Textures\gag.png" />
+    <Content Include="Textures\generic_artificial_private.png" />
+    <Content Include="Textures\generic_private.png" />
     <Content Include="Textures\holokey.png" />
     <Content Include="Textures\hololock.png" />
     <Content Include="Textures\huge_penis.png" />
     <Content Include="Textures\hydraulic_anus.png" />
     <Content Include="Textures\hydraulic_boobs.png" />
     <Content Include="Textures\hydraulic_vagina.png" />
+    <Content Include="Textures\male_artificial_private.png" />
+    <Content Include="Textures\male_private.png" />
     <Content Include="Textures\micropenis.png" />
     <Content Include="Textures\noheart.png" />
     <Content Include="Textures\peg_dick.png" />
@@ -280,6 +288,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Defs\RandomDialoguesxml" />
+    <None Include="LICENSE" />
     <None Include="Textures\anus.xcf" />
     <None Include="Textures\armbinder.xcf" />
     <None Include="Textures\bionic_anus.xcf" />
