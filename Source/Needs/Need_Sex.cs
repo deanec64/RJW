@@ -29,8 +29,8 @@ namespace rjw
 		private static int needsex_tick_timer = 10;
 		private static float decay_per_day = 0.3f * HugsLibInj.sexneed_decay_rate;
 
-		private int startInterval = Find.TickManager.TicksGame;
-		private static int tickInterval = 10;
+		//private int startInterval = Find.TickManager.TicksGame;
+		//private static int tickInterval = 10;
 		
 
 		//private int std_tick = 1;
