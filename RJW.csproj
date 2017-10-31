@@ -63,6 +63,7 @@
     <Content Include="About\About.xml" />
     <Content Include="About\Preview.png" />
     <Content Include="Assemblies\%24HugsLibChecker.dll" />
+    <Content Include="Assemblies\ArchitectSense.dll" />
     <Content Include="Assemblies\RJW.dll" />
     <Content Include="changelog.txt" />
     <Content Include="compatibility.txt" />
