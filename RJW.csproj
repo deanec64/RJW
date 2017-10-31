@@ -76,6 +76,7 @@
     <Content Include="Defs\BondageGear\Thoughts.xml" />
     <Content Include="Defs\ConceptDefs\Concepts_NotedOpportunistic.xml" />
     <Content Include="Defs\DamageDefs\Damage.xml" />
+    <Content Include="Defs\DesignationSubCategoryDefs\RJW_SubCategory.xml" />
     <Content Include="Defs\Designations\Designations.xml" />
     <Content Include="Defs\HediffDefs\Hediffs_FeelingBroken.xml" />
     <Content Include="Defs\HediffDefs\Hediffs_Other.xml" />
@@ -95,6 +96,8 @@
     <Content Include="Defs\RecipeDefs\Recipes_Prosthetics.xml" />
     <Content Include="Defs\RecipeDefs\Recipes_Surgery.xml" />
     <Content Include="Defs\RecordDef\Records_GetRaped.xml" />
+    <Content Include="Defs\ResearchProjectDefs\ResearchProjects_XxXx.xml" />
+    <Content Include="Defs\ResearchProjectDefs\ResearchTabs.xml" />
     <Content Include="Defs\RulePackDefs\RulePacks_AnalRape.xml" />
     <Content Include="Defs\RulePackDefs\RulePacks_AnalSex.xml" />
     <Content Include="Defs\RulePackDefs\RulePacks_EngravedNames.xml" />
