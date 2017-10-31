@@ -23,7 +23,8 @@ namespace rjw
 		//private bool isSexualized = false;
 		
 		private int needsex_tick = needsex_tick_timer;
-		private static int needsex_tick_timer => (HugsLibInj.WildMode) ? 10 : 10;       
+		private static int needsex_tick_timer = 150;   
+		
 		//private int std_tick = 1;
 
 		private static readonly SimpleCurve sex_need_factor_from_age = new SimpleCurve
@@ -122,17 +123,23 @@ namespace rjw
             if (needsex_tick <= 0)
             {
                 //Log.Message("[RJW]Need_Sex::NeedInterval is called0 - pawn is "+pawn.NameStringShort);
-                needsex_tick = needsex_tick_timer;//This means every 0.6 hour will have an fall on Need_Sex, which should save a lot of computing power.
+                needsex_tick = needsex_tick_timer;
+
                 if (!def.freezeWhileSleeping || pawn.Awake())
                 {
                     float age = pawn.ageTracker.AgeBiologicalYearsFloat;
-                    float age_factor = sex_need_factor_from_age.Evaluate(age);
-                    
-                    float gender_factor = isFemale ? .9f : 1.0f;
+					float decay_per_day = 0.5;
 
-                    //every 200 calls will have a real functioning call
-                    var fall_per_tick = (isNympho ? 3.0f : 1.0f) * brokenbodyfactor(pawn) * age_factor * gender_factor /* balance_factor(CurLevel) */* def.fallPerDay / 60000.0f;
-                    CurLevel -= fall_per_tick * 150.0f * needsex_tick; // 150 ticks between each call, each day has 60000 ticks, each hour has 2500 ticks, so each hour has 50/3 calls, in other words, each call takes .06 hour.
+					//every 200 calls will have a real functioning call
+					var fall_per_tick =
+						//def.fallPerDay *
+						decay_per_day *
+						(isNympho ? 3.0f : 1.0f) * 
+						brokenbodyfactor(pawn) * 
+						sex_need_factor_from_age.Evaluate(age) * 
+						(isFemale ? .95f : 1.0f) / 
+						60000.0f;
+                    CurLevel -= fall_per_tick * needsex_tick_timer * HugsLibInj.sexneed_decay_rate; // 150 ticks between each call, each day has 60000 ticks, each hour has 2500 ticks, so each hour has 50/3 calls, in other words, each call takes .06 hour.
                 }
                 
                 // I just put this here so that it gets called on every pawn on a regular basis. There's probably a
