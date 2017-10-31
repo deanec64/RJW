@@ -1,7 +1,16 @@
+v1.5.4d changes:
+- Removed toggle whore bed button that's applied to all beds as it causes errors.
+- Added new 'Whore Beds' category in furniture tab by Sidfu.
+- Added research tree for whore beds by Sidfu.
+- Added new mod preview by NEPH.
+- Added new private parts textures by NEPH.
+
+
 v1.5.4b changes:
 - Added Wild Mode: No rules for sex. All limiting requirements are turned off. You can find it in option > mod settings.
 - Minor bugfix
 - Disabled ingame notification bug.
+- Fixed reappearing double pregnancy bug.
 
 v1.5.3 changes:
 - Fixed a critical bug that pregnancy coefficients didn't work

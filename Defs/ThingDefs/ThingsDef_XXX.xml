@@ -19,6 +19,45 @@
     </filth>
   </ThingDef>
 
+    <ThingDef ParentName="FurnitureBase">
+    <defName>WhoreSleepingSpot</defName>
+    <label>whore sleeping spot</label>
+    <Description>Designates a spot on the ground where people whore.</Description>
+    <ThingClass>rjw.Building_WhoreBed</ThingClass>
+    <graphicData>
+      <texPath>Things/Building/Furniture/Bed/SleepSpot</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,4)</drawSize>
+    </graphicData>
+    <AltitudeLayer>FloorEmplacement</AltitudeLayer>
+    <statBases>
+      <WorkToBuild>0</WorkToBuild>
+      <Comfort>0.4</Comfort>
+    </statBases>
+		<scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>False</useHitPoints>
+    <Size>(1,2)</Size>
+    <DesignationCategory>Furniture</DesignationCategory>
+    <Passability>Standable</Passability>
+    <DrawGUIOverlay>True</DrawGUIOverlay>
+    <building>
+      <Bed_ShowSleeperBody>True</Bed_ShowSleeperBody>
+      <sowTag>SupportPlantsOnly</sowTag>
+      <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+      <ai_chillDestination>false</ai_chillDestination>
+    </building>
+    <designationHotkey>Misc1</designationHotkey>
+		<comps>
+			<li Class="CompProperties_RoomIdentifier">
+				<roomStat>Impressiveness</roomStat>
+			</li>
+		</comps>
+	<researchPrerequisites>
+       <li>Whore_Sleeping_Spot</li>
+    </researchPrerequisites>
+  </ThingDef>
+  
+
   <ThingDef ParentName="FurnitureBase">
     <defName>BedWhore</defName>
     <label>whore bed</label>
@@ -76,6 +115,9 @@
     <placeWorkers>
       <li>PlaceWorker_ShowFacilitiesConnections</li>
     </placeWorkers>
+	<researchPrerequisites>
+       <li>Bed_Whore</li>
+    </researchPrerequisites>
   </ThingDef>
 
   <ThingDef ParentName="ArtableFurnitureBase">
@@ -137,6 +179,9 @@
     <placeWorkers>
       <li>PlaceWorker_ShowFacilitiesConnections</li>
     </placeWorkers>
+	<researchPrerequisites>
+       <li>Double_Bed_Whore</li>
+    </researchPrerequisites>
   </ThingDef>
 
   <ThingDef ParentName="ArtableFurnitureBase">
@@ -201,6 +246,9 @@
     <placeWorkers>
       <li>PlaceWorker_ShowFacilitiesConnections</li>
     </placeWorkers>
+	<researchPrerequisites>
+       <li>Royal_Bed_Whore</li>
+    </researchPrerequisites>
   </ThingDef>
   
 </ThingDefs>

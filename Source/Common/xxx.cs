@@ -1278,6 +1278,7 @@ namespace rjw
             return (Rand.Range(0f, 1f) < num2);
         }
         //===========↑=======Section of utilities of the whore system====================↑=============
+		/*
         //============↓======Section of Building_WhoreBed system===============↓=============
         public static void Swap(ref Building_Bed bed)
         {
@@ -1327,6 +1328,7 @@ namespace rjw
             return ThingMaker.MakeThing(newDef, bed.Stuff);
         }
         //===========↑=======Section of Building_WhoreBed system====================↑=============
+		*/
         //============↓======Section of processing the broken body system===============↓=============
         public static bool BodyIsBroken(Pawn p)
         {
