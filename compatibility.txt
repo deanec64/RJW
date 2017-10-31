@@ -8,10 +8,10 @@
 
 5. RJW should be loaded after Children & Pregnancy mod for the lovin job patches to work properly.
 
-6. RJW should be loaded after RomanceDiversified mod if yoyu want the best compatibility. RJW will use some of its features.
+6. RJW should be loaded after RomanceDiversified mod if you want the best compatibility. RJW will use some of its features.
 
 7. It's not advised to remove RJW after your save used RJW. The save could be corrupted by RJW.
 
 8. RJW may not be compatible with The birds and the Bees. There're functional overlappings which could cause weired things if you use both. I'd suggest you pick only one to use.
 
-9. Compatible with Misc.MAI£¨and many other mods that add races, if you know how to modify the BodyPatches.xml.£©
+9. Compatible with Misc.MAI£¨and many other mods that add races, if you know how to modify the BodyPatches.xml

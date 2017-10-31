@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ThingDefs>
 
-  <!-- From core -->
+  <!-- ThingDef base fFrom core -->
   <ThingDef Name="rjw_BodyPartBase" Abstract="True">
     <thingClass>ThingWithComps</thingClass>
     <category>Item</category>
@@ -25,7 +25,6 @@
     <pathCost>10</pathCost>
   </ThingDef>
 
-  <!-- Also from core -->
   <ThingDef ParentName="rjw_BodyPartBase" Name="rjw_BodyPartNaturalBase" Abstract="True">
     <thingCategories>
       <li>BodyPartsNatural</li>
@@ -36,11 +35,12 @@
     <tickerType>Rare</tickerType>
     <comps>
       <li Class="CompProperties_Rottable">
-        <daysToRotStart>3.0</daysToRotStart>
+        <daysToRotStart>1.0</daysToRotStart>
         <rotDestroys>true</rotDestroys>
       </li>
     </comps>
   </ThingDef>
+	
   <ThingDef ParentName="rjw_BodyPartBase" Name="rjw_BodyPartArtificialBase" Abstract="True">
     <thingCategories>
       <li>BodyPartsArtificial</li>
@@ -57,7 +57,7 @@
     <label>penis</label>
     <description>A severed penis. It's average size, and that's fine. Nothing wrong with that at all. Really, it's OK. There's no shame in being average. It's just... you know... just average.</description>
     <graphicData>
-      <texPath>penis</texPath>
+      <texPath>male_genital</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -75,7 +75,7 @@
       Uh, no wait...
     </description>
     <graphicData>
-      <texPath>micropenis</texPath>
+      <texPath>male_genital</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -89,7 +89,7 @@
     <label>small penis</label>
     <description>A severed penis. It's rather small, so I hope you've got a great severed personality.</description>
     <graphicData>
-      <texPath>small_penis</texPath>
+      <texPath>male_genital</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -103,7 +103,7 @@
     <label>big penis</label>
     <description>A large severed penis.</description>
     <graphicData>
-      <texPath>big_penis</texPath>
+      <texPath>male_genital</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -117,7 +117,7 @@
     <label>huge penis</label>
     <description>A huge severed penis.</description>
     <graphicData>
-      <texPath>huge_penis</texPath>
+      <texPath>male_genital</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -131,7 +131,7 @@
     <label>horse penis</label>
     <description>A severed horse penis from a centaur. Huge for a human.</description>
     <graphicData>
-      <texPath>huge_penis</texPath>
+      <texPath>male_genital</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -145,7 +145,7 @@
     <label>cat penis</label>
     <description>A severed catgirl penis. Long, thin and barbed.</description>
     <graphicData>
-      <texPath>penis</texPath>
+      <texPath>male_genital</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -159,7 +159,7 @@
     <label>cat penis</label>
     <description>A severed dog penis. Thick and knotted.</description>
     <graphicData>
-      <texPath>penis</texPath>
+      <texPath>male_genital</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -173,7 +173,7 @@
     <label>dragon penis</label>
     <description>A severed dragon penis. Thick and HARD.</description>
     <graphicData>
-      <texPath>penis</texPath>
+      <texPath>male_genital</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -188,7 +188,7 @@
     <label>vagina</label>
     <description>A severed vagina, whatever that means.</description>
     <graphicData>
-      <texPath>vagina</texPath>
+      <texPath>female_genital</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -202,7 +202,7 @@
     <label>tight vagina</label>
     <description>A severed tight vagina, whatever that means.</description>
     <graphicData>
-      <texPath>vagina</texPath>
+      <texPath>female_genital</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -216,7 +216,7 @@
     <label>loose vagina</label>
     <description>A severed loose vagina, whatever that means.</description>
     <graphicData>
-      <texPath>vagina</texPath>
+      <texPath>female_genital</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -231,7 +231,7 @@
     <label>breasts</label>
     <description>A pair of severed breasts.</description>
     <graphicData>
-      <texPath>boobs</texPath>
+      <texPath>breast</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -246,7 +246,7 @@
     <label>small breasts</label>
     <description>A pair of severed small breasts.</description>
     <graphicData>
-      <texPath>boobs</texPath>
+      <texPath>breast</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -261,7 +261,7 @@
     <label>large breasts</label>
     <description>A pair of severed large breasts.</description>
     <graphicData>
-      <texPath>boobs</texPath>
+      <texPath>breast</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -276,7 +276,7 @@
     <label>huge breasts</label>
     <description>A pair of severed huge breasts.</description>
     <graphicData>
-      <texPath>boobs</texPath>
+      <texPath>breast</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -336,7 +336,7 @@
     <label>peg dick</label>
     <description>A wooden dildo designed to replace a missing penis. Be careful of splinters.</description>
     <graphicData>
-      <texPath>peg_dick</texPath>
+      <texPath>male_artificial_genital</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -351,7 +351,7 @@
     <label>hydraulic vagina</label>
     <description>A low-tech prosthetic vagina. Its cold metal grip is uncomfortable but it has great suction power.</description>
     <graphicData>
-      <texPath>hydraulic_vagina</texPath>
+      <texPath>female_artificial_genital</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -366,7 +366,7 @@
     <label>hydraulic breasts</label>
     <description>Low-tech prosthetic breasts.  Conical metal with increased pumping action, spray your friends.</description>
     <graphicData>
-      <texPath>hydraulic_boobs</texPath>
+      <texPath>artificial_breast</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -381,7 +381,7 @@
     <label>hydraulic anus</label>
     <description>A low-tech prosthetic anus. Its cold metal grip is uncomfortable but it has great suction power.</description>
     <graphicData>
-      <texPath>hydraulic_anus</texPath>
+      <texPath>artificial_anus</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -401,7 +401,7 @@
       - State-of-the-art neural interface activates neural pathways you didn't even know you had to make you feel things you never even imagined
     </description>
     <graphicData>
-      <texPath>bionic_penis</texPath>
+      <texPath>male_artificial_genital</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -421,7 +421,7 @@
       - Auto-lubrication with boro-graphitic pseudofluid, smooth but never slimy (includes toggleable sliminess in case you're into that)
       - SenseID technology identifies the man you're fucking, automatically adds him on Facebook, and contacts his mother introducing you as his new girlfriend.</description>
     <graphicData>
-      <texPath>bionic_vagina</texPath>
+      <texPath>female_artificial_genital</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -439,7 +439,7 @@
       - Resizes to any desired size
     </description>
     <graphicData>
-      <texPath>bionic_boobs</texPath>
+      <texPath>artificial_breast</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -458,7 +458,7 @@
       - Auto-lubrication with boro-graphitic pseudofluid, smooth but never slimy (includes toggleable sliminess in case you're into that)
     </description>
     <graphicData>
-      <texPath>bionic_anus</texPath>
+      <texPath>artificial_anus</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
