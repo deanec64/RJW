@@ -77,7 +77,7 @@ namespace rjw
 		public static uint pregnancy_weight_parent;
 		public static uint pregnancy_weight_species;
 		public static uint pregnancy_coefficient_human;
-		public static uint pregnancy_coefficient_animals
+		public static uint pregnancy_coefficient_animals;
 		public static bool pregnancy_use_parent_method;
 		public static uint sex_free_for_all_age;
 		public static uint sex_minimum_age;
@@ -96,7 +96,7 @@ namespace rjw
 		{
 			Logger.Message("DefsLoaded() called");
 			option_WildMode = Settings.GetHandle<bool>("WildMode", "WildMode_name".Translate(), "WildMode_desc".Translate(), false);
-			option_sexneed_decay_rate = Settings.GetHandle<float>("sexneed_decay_rate", "sexneed_decay_rate_name".Translate(), "sexneed_decay_rate_desc".Translate(), 100, Validators.IntRangeValidator(0, 10000));
+			option_sexneed_decay_rate = Settings.GetHandle<uint>("sexneed_decay_rate", "sexneed_decay_rate_name".Translate(), "sexneed_decay_rate_desc".Translate(), 100, Validators.IntRangeValidator(0, 10000));
 			option_nymphs_join = Settings.GetHandle<bool>("nymphs_join", "NymphsJoin".Translate(), "NymphsJoin_desc".Translate(), true);
 			option_STD_floor_catch = Settings.GetHandle<bool>("STD_floor_catch", "STD_FromFloors".Translate(), "STD_FromFloors_desc".Translate(), true);
 			option_rape_beating = Settings.GetHandle<bool>("rape_beating", "PrisonersBeating".Translate(), "PrisonersBeating_desc".Translate(), true);
@@ -107,9 +107,9 @@ namespace rjw
 			option_pregnancy_use_parent_method = Settings.GetHandle<bool>("pregnancy_use_parent_method", "UseParentMethod".Translate(), "UseParentMethod_desc".Translate(), true);
 			option_sex_free_for_all_age = Settings.GetHandle<uint>("sex_free_for_all_age", "SexFreeForAllAge".Translate(), "SexFreeForAllAge_desc".Translate(), 15);
 			option_sex_minimum_age = Settings.GetHandle<uint>("sex_minimum_age", "SexMinimumAge".Translate(), "SexMinimumAge_desc".Translate(), 15);
-			option_NonFutaWomenRaping_MaxVulnerability = Settings.GetHandle<float>("nonFutaWomenRaping_MaxVulnerability", "NonFutaWomenRaping_MaxVulnerability".Translate(), "NonFutaWomenRaping_MaxVulnerability_desc".Translate(), 20, Validators.IntRangeValidator(0, 300));
-			option_Rapee_MinVulnerability_human = Settings.GetHandle<float>("rapee_MinVulnerability_human", "Rapee_MinVulnerability_human".Translate(), "Rapee_MinVulnerability_human_desc".Translate(), 50, Validators.IntRangeValidator(0, 300));
-			option_Rapee_MinVulnerability_animals = Settings.GetHandle<float>("rapee_MinVulnerability_animals", "Rapee_MinVulnerability_animals".Translate(), "Rapee_MinVulnerability_animals_desc".Translate(), 40, Validators.IntRangeValidator(0, 300));
+			option_NonFutaWomenRaping_MaxVulnerability = Settings.GetHandle<uint>("nonFutaWomenRaping_MaxVulnerability", "NonFutaWomenRaping_MaxVulnerability".Translate(), "NonFutaWomenRaping_MaxVulnerability_desc".Translate(), 20, Validators.IntRangeValidator(0, 300));
+			option_Rapee_MinVulnerability_human = Settings.GetHandle<uint>("rapee_MinVulnerability_human", "Rapee_MinVulnerability_human".Translate(), "Rapee_MinVulnerability_human_desc".Translate(), 50, Validators.IntRangeValidator(0, 300));
+			option_Rapee_MinVulnerability_animals = Settings.GetHandle<uint>("rapee_MinVulnerability_animals", "Rapee_MinVulnerability_animals".Translate(), "Rapee_MinVulnerability_animals_desc".Translate(), 40, Validators.IntRangeValidator(0, 300));
 
 			WildMode = option_WildMode.Value;
 			sexneed_decay_rate = option_sexneed_decay_rate;
@@ -152,21 +152,21 @@ namespace rjw
 		public override void MapLoaded(Map map)
 		{
 			Logger.Message("RimJobWorld settings loaded:");
-			Logger.Message("WildMode = " + (string)WildMode);
-			Logger.Message("sexneed_decay_rate = " + (string)sexneed_decay_rate);
-			Logger.Message("nymphos = " + (string)nymphos);
-			Logger.Message("std_floor = " + (string)std_floor);
-			Logger.Message("prisoner_beating = " + (string)prisoner_beating);
-			Logger.Message("pregnancy_weight_parent = " + (string)pregnancy_weight_parent);
-			Logger.Message("pregnancy_weight_species = " + (string)pregnancy_weight_species);
-			Logger.Message("pregnancy_coefficient_human = " + (string)pregnancy_coefficient_human);
-			Logger.Message("pregnancy_coefficient_animals = " + (string)pregnancy_coefficient_animals);
-			Logger.Message("pregnancy_use_parent_method = " + (string)pregnancy_use_parent_method);
-			Logger.Message("sex_free_for_all_age = " + (string)sex_free_for_all_age);
-			Logger.Message("sex_minimum_age = " + (string)sex_minimum_age);
-			Logger.Message("NonFutaWomenRaping_MaxVulnerability = " + (string)NonFutaWomenRaping_MaxVulnerability);
-			Logger.Message("Rapee_MinVulnerability_human = " + (string)Rapee_MinVulnerability_human);
-			Logger.Message("Rapee_MinVulnerability_animals = " + (string)Rapee_MinVulnerability_animals);
+			Logger.Message("WildMode = " + WildMode);
+			Logger.Message("sexneed_decay_rate = " + sexneed_decay_rate);
+			Logger.Message("nymphos = " + nymphos);
+			Logger.Message("std_floor = " + std_floor);
+			Logger.Message("prisoner_beating = " + prisoner_beating);
+			Logger.Message("pregnancy_weight_parent = " + pregnancy_weight_parent);
+			Logger.Message("pregnancy_weight_species = " + pregnancy_weight_species);
+			Logger.Message("pregnancy_coefficient_human = " + pregnancy_coefficient_human);
+			Logger.Message("pregnancy_coefficient_animals = " + pregnancy_coefficient_animals);
+			Logger.Message("pregnancy_use_parent_method = " + pregnancy_use_parent_method);
+			Logger.Message("sex_free_for_all_age = " + sex_free_for_all_age);
+			Logger.Message("sex_minimum_age = " + sex_minimum_age);
+			Logger.Message("NonFutaWomenRaping_MaxVulnerability = " + NonFutaWomenRaping_MaxVulnerability);
+			Logger.Message("Rapee_MinVulnerability_human = " + Rapee_MinVulnerability_human);
+			Logger.Message("Rapee_MinVulnerability_animals = " + Rapee_MinVulnerability_animals);
 			base.MapLoaded(map);
 		}
 

@@ -128,7 +128,7 @@ namespace rjw
                 if (!def.freezeWhileSleeping || pawn.Awake())
                 {
                     float age = pawn.ageTracker.AgeBiologicalYearsFloat;
-					float decay_per_day = 0.5;
+					float decay_per_day = 0.5f;
 
 					//every 200 calls will have a real functioning call
 					var fall_per_tick =
