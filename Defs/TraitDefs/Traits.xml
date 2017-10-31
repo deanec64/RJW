@@ -27,7 +27,7 @@
     <degreeDatas>
       <li>
         <label>Rapist</label>
-        <description>NAME doesn't take No as an answer.</description>
+        <description>NAME doesn't take &#34;No&#34; as an answer.</description>
       </li>
     </degreeDatas>
     <conflictingTraits>
@@ -45,7 +45,7 @@
     <degreeDatas>
       <li>
         <label>Necrophiliac</label>
-        <description>Dead girls can't say no...</description>
+        <description>Dead people can't say no, can they?</description>
       </li>
     </degreeDatas>
   </TraitDef>
@@ -57,7 +57,7 @@
     <degreeDatas>
       <li>
         <label>Zoophiliac</label>
-        <description>NAME likes to walk on the wild side</description>
+        <description>NAME likes to walk on the wild side.</description>
       </li>
     </degreeDatas>
   </TraitDef>

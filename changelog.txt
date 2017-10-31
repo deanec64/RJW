@@ -6,11 +6,12 @@ v1.5.4d changes:
 - Added new private parts textures by NEPH.
 - Added Korean translation by NEPH.
 
-
 v1.5.4b changes:
-- Added Wild Mode: No rules for sex. All limiting requirements are turned off. You can find it in option > mod settings.
-- Minor bugfix
-- Disabled ingame notification bug.
+- Added Wild Mode.
+- Mod directory optimization.
+- Some value optimization.
+- Minor bugfixes.
+- Temporary fix for ingame notification bug.
 - Fixed reappearing double pregnancy bug.
 
 v1.5.3 changes:

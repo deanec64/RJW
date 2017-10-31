@@ -260,3 +260,4 @@ paket-files/
 __pycache__/
 *.pyc
 /Archived
+/MyTo-Do.txt

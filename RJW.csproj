@@ -229,6 +229,7 @@
     <Content Include="Languages\English\Keyed\RimJobWorld.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Languages\Korean\DefInjected\ArchitectSense.DesignationSubCategoryDef\RJW_SubCategory.xml" />
     <Content Include="Languages\Korean\DefInjected\BodyPartDef\PrivateParts.xml" />
     <Content Include="Languages\Korean\DefInjected\ConceptDef\Concepts_NotedOpportunistic.xml" />
     <Content Include="Languages\Korean\DefInjected\DamageDef\Damage.xml" />
@@ -249,6 +250,8 @@
     <Content Include="Languages\Korean\DefInjected\RecipeDef\Recipes_Prosthetics.xml" />
     <Content Include="Languages\Korean\DefInjected\RecipeDef\Recipes_Surgery.xml" />
     <Content Include="Languages\Korean\DefInjected\RecordDef\Records_GetRaped.xml" />
+    <Content Include="Languages\Korean\DefInjected\ResearchProjectDef\ResearchProjects_XxXx.xml" />
+    <Content Include="Languages\Korean\DefInjected\ResearchTabDef\ResearchTabs.xml" />
     <Content Include="Languages\Korean\DefInjected\rjw.bondage_gear_def\Items.xml" />
     <Content Include="Languages\Korean\DefInjected\rjw.force_off_gear_def\Recipes_Surgery.xml" />
     <Content Include="Languages\Korean\DefInjected\rjw.MiscTranslationDef\MiscTranslationDefs.xml" />
