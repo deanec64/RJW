@@ -5,7 +5,7 @@
 	<WildMode_desc>EXPERIMENTAL. No rules for sex. All limiting requirements are turned off. Enjoy the wildest side of Rimworld.</WildMode_desc>
 	<sexneed_decay_rate_name>Sex need decay multiplier (%)</sexneed_decay_rate_name>
 	<sexneed_decay_rate_desc>0% for no decay.
-10000% for Rapeturnus Planet.
+1000000% for Rapeturnus Planet.
 	</sexneed_decay_rate_desc>
 	<NymphsJoin>Nymphomaniacs</NymphsJoin>
 	<NymphsJoin_desc>Spawns pawns with nymphomaniac trait to join the colony.</NymphsJoin_desc>
