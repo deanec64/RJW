@@ -137,10 +137,14 @@ namespace rjw
 						(isNympho ? 3.0f : 1.0f) * 
 						brokenbodyfactor(pawn) * 
 						sex_need_factor_from_age.Evaluate(age) * 
-						(isFemale ? .95f : 1.0f) / 
+						(isFemale ? .95f : 1.0f) *
+						needsex_tick_timer / 
 						60000.0f;
-                    CurLevel -= fall_per_tick * needsex_tick_timer * HugsLibInj.sexneed_decay_rate; // 150 ticks between each call, each day has 60000 ticks, each hour has 2500 ticks, so each hour has 50/3 calls, in other words, each call takes .06 hour.
-                }
+                    CurLevel -= (fall_per_tick * needsex_tick_timer * HugsLibInj.sexneed_decay_rate);
+					// 150 ticks between each call, each day has 60000 ticks, each hour has 2500 ticks, so each hour has 50/3 calls, in other words, each call takes .06 hour.
+					Log.Message(fall_per_tick);
+					Log.Message(CurLevel);
+				}
                 
                 // I just put this here so that it gets called on every pawn on a regular basis. There's probably a
                 // better way to do this sort of thing, but whatever. This works.
