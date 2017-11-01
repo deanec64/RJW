@@ -21,7 +21,7 @@
     <FileAlignment>4096</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>Assemblies\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
@@ -68,6 +68,8 @@
     <Content Include="changelog.txt" />
     <Content Include="compatibility.txt" />
     <Content Include="credits.txt" />
+    <Content Include="Defs\Body\InsectBodyParts.xml" />
+    <Content Include="Defs\Body\MechBodyParts.xml" />
     <Content Include="Defs\Body\PrivateParts.xml" />
     <Content Include="Defs\BondageGear\Hediffs.xml" />
     <Content Include="Defs\BondageGear\Items.xml" />
@@ -87,6 +89,7 @@
     <Content Include="Defs\HediffGiverSetDefs\HediffGiverSets.xml" />
     <Content Include="Defs\IncidentDef\Incidents.xml" />
     <Content Include="Defs\InteractionDef\Interactions.xml" />
+    <Content Include="Defs\JobDefs\ABFJobs.xml" />
     <Content Include="Defs\JobDefs\Jobs.xml" />
     <Content Include="Defs\MiscTranslationDef\MiscTranslationDefs.xml" />
     <Content Include="Defs\Motes\Motes.xml" />
@@ -307,7 +310,9 @@
     <Content Include="Languages\Korean\DefInjected\TraitDef\Traits.xml" />
     <Content Include="Languages\Korean\DefInjected\WorkGiverDef\WorkGivers.xml" />
     <Content Include="Languages\Korean\Keyed\RimJobWorld.xml" />
+    <Content Include="Patches\AddBodyPartsToInsect.xml" />
     <Content Include="Patches\BodyPatches.xml" />
+    <Content Include="Patches\Tweak_Duty.xml" />
     <Content Include="Sounds\Sex\blowjob.wav" />
     <Content Include="Sounds\Sex\cum.wav" />
     <Content Include="Sounds\Sex\kucyu04.wav" />
@@ -401,6 +406,7 @@
     <None Include="Textures\Things\Building\Furniture\Bed\RoyalBedWhore_side.psd" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Source\Common\ABFCommon.cs" />
     <Compile Include="Source\Common\bondage_gear.cs" />
     <Compile Include="Source\Common\comfort_prisoners.cs" />
     <Compile Include="Source\Common\config.cs" />
@@ -421,6 +427,7 @@
     <Compile Include="Source\Harmony\patches_lovin.cs" />
     <Compile Include="Source\Harmony\patches_need.cs" />
     <Compile Include="Source\Harmony\patches_pregnancy.cs" />
+    <Compile Include="Source\Harmony\patches_ABF.cs" />
     <Compile Include="Source\Hediffs\Hediff_ID.cs" />
     <Compile Include="Source\Hediffs\Hediff_InitPrivates.cs" />
     <Compile Include="Source\Hediffs\Hediff_InvisibleImplant.cs" />
@@ -438,6 +445,10 @@
     <Compile Include="Source\Jobs\JobDriver_LovinPP.cs" />
     <Compile Include="Source\Jobs\JobDriver_NymphJoinInBed.cs" />
     <Compile Include="Source\Jobs\JobDriver_RandomRape.cs" />
+    <Compile Include="Source\Jobs\JobDriver_Rape.cs" />
+    <Compile Include="Source\Jobs\JobDriver_RapeEnemy.cs" />
+    <Compile Include="Source\Jobs\JobDriver_RapeEnemyByInsect.cs" />
+    <Compile Include="Source\Jobs\JobDriver_RapeEnemyByMech.cs" />
     <Compile Include="Source\Jobs\JobDriver_StruggleInBondageGear.cs" />
     <Compile Include="Source\Jobs\JobDriver_UseItemOn.cs" />
     <Compile Include="Source\Jobs\JobDriver_ViolateCorpse.cs" />
@@ -447,8 +458,10 @@
     <Compile Include="Source\Jobs\JobGiver_DoFappin.cs" />
     <Compile Include="Source\Jobs\JobGiver_NymphJoinInBed.cs" />
     <Compile Include="Source\Jobs\JobGiver_RandomRape.cs" />
+    <Compile Include="Source\Jobs\JobGiver_RapeEnemy.cs" />
     <Compile Include="Source\Jobs\JobGiver_ViolateCorpse.cs" />
     <Compile Include="Source\Jobs\JobGiver_WhoreInvitingVisitors.cs" />
+    <Compile Include="Source\Jobs\LordJob_RapeColonists.cs" />
     <Compile Include="Source\Needs\Need_Sex.cs" />
     <Compile Include="Source\Needs\PawnCapacityWorker_Fertility.cs" />
     <Compile Include="Source\Pawns\nymph_backstories.cs" />
@@ -490,6 +503,7 @@
     <Compile Include="Source\Thoughts\ThoughtWorker_NeedSex.cs" />
     <Compile Include="Source\Thoughts\ThoughtWorker_SyphiliticThoughts.cs" />
     <Compile Include="Source\Thoughts\ThoughtWorker_WastingAway.cs" />
+    <Compile Include="Source\Trigger\Trigger_SexSatisfy.cs" />
     <Compile Include="Source\Works\WorkGiver_RapeCP.cs" />
   </ItemGroup>
   <ItemGroup />
