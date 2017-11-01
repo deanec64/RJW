@@ -1,9 +1,12 @@
 ﻿
+using RimWorld;
+using Verse;
+
 using System;
 using System.Collections.Generic;
 
-using Verse;
-using RimWorld;
+using UnityEngine;
+
 
 namespace rjw
 {
@@ -23,7 +26,14 @@ namespace rjw
 		//private bool isSexualized = false;
 		
 		private int needsex_tick = needsex_tick_timer;
-		private static int needsex_tick_timer => (HugsLibInj.WildMode) ? 10 : 10;       
+		private static int needsex_tick_timer = 10;
+		private static float decay_per_day = 0.3f;
+		private float decay_rate_modifier = HugsLibInj.sexneed_decay_rate;
+
+		//private int startInterval = Find.TickManager.TicksGame;
+		//private static int tickInterval = 10;
+
+
 		//private int std_tick = 1;
 
 		private static readonly SimpleCurve sex_need_factor_from_age = new SimpleCurve
@@ -37,6 +47,7 @@ namespace rjw
  			new CurvePoint(60f, 0.50f),
   			new CurvePoint(80f, 0.25f)
             */
+
             new CurvePoint(5f,  0f),
 			new CurvePoint(12f, 0.5f),
             new CurvePoint(14f, 0.75f),
@@ -116,43 +127,59 @@ namespace rjw
             return broken_body_factor;
         }
 
-        public override void NeedInterval()
-        {
-            if (isInvisible) return;
-            if (needsex_tick <= 0)
-            {
-                //Log.Message("[RJW]Need_Sex::NeedInterval is called0 - pawn is "+pawn.NameStringShort);
-                needsex_tick = needsex_tick_timer;//This means every 0.6 hour will have an fall on Need_Sex, which should save a lot of computing power.
-                if (!def.freezeWhileSleeping || pawn.Awake())
-                {
-                    float age = pawn.ageTracker.AgeBiologicalYearsFloat;
-                    float age_factor = sex_need_factor_from_age.Evaluate(age);
-                    
-                    float gender_factor = isFemale ? .9f : 1.0f;
+		public override void NeedInterval() //150 ticks between each calls
+		{
+			if (isInvisible) return;
+			if (needsex_tick <= 0)
+			{
+				//Log.Message("[RJW]Need_Sex::NeedInterval is called0 - pawn is "+pawn.NameStringShort);
+				needsex_tick = needsex_tick_timer;
 
-                    //every 200 calls will have a real functioning call
-                    var fall_per_tick = (isNympho ? 3.0f : 1.0f) * brokenbodyfactor(pawn) * age_factor * gender_factor /* balance_factor(CurLevel) */* def.fallPerDay / 60000.0f;
-                    CurLevel -= fall_per_tick * 150.0f * needsex_tick; // 150 ticks between each call, each day has 60000 ticks, each hour has 2500 ticks, so each hour has 50/3 calls, in other words, each call takes .06 hour.
-                }
-                
-                // I just put this here so that it gets called on every pawn on a regular basis. There's probably a
-                // better way to do this sort of thing, but whatever. This works.
-                //Log.Message("[RJW]Need_Sex::NeedInterval is called1");
-                std.update(pawn);
+				if (!def.freezeWhileSleeping || pawn.Awake())
+				{
+					float age = pawn.ageTracker.AgeBiologicalYearsFloat;
+					decay_rate_modifier = HugsLibInj.sexneed_decay_rate;
+
+					//every 200 calls will have a real functioning call
+					var fall_per_tick =
+						//def.fallPerDay *
+						decay_per_day *
+						(isNympho ? 3.0f : 1.0f) *
+						brokenbodyfactor(pawn) *
+						sex_need_factor_from_age.Evaluate(age) *
+						(isFemale ? .95f : 1.0f) /
+						60000.0f;
+					var fall_per_call = 
+						150 * 
+						fall_per_tick * 
+						needsex_tick_timer;
+					CurLevel -= fall_per_call * decay_rate_modifier;
+					// Each day has 60000 ticks, each hour has 2500 ticks, so each hour has 50/3 calls, in other words, each call takes .06 hour.
+					Log.Message(pawn.NameStringShort + "'s sex need stats: Decay/call : " + fall_per_call * decay_rate_modifier + ", Cur.lvl : " + CurLevel);
+				}
+
+				// I just put this here so that it gets called on every pawn on a regular basis. There's probably a
+				// better way to do this sort of thing, but whatever. This works.
+				//Log.Message("[RJW]Need_Sex::NeedInterval is called1");
+				std.update(pawn);
 
 
-                // the bootstrap of the mapInjector will only be triggered once per visible pawn.
-                if (!BootStrapTriggered)
-                {
-                    Log.Message("[RJW]Need_Sex::NeedInterval::calling boostrap - pawn is "+pawn.NameStringShort);
-                    xxx.bootstrap(pawn.Map);
-                    BootStrapTriggered = true;
-                }
+				// the bootstrap of the mapInjector will only be triggered once per visible pawn.
+				if (!BootStrapTriggered)
+				{
+					Log.Message("[RJW]Need_Sex::NeedInterval::calling boostrap - pawn is " + pawn.NameStringShort);
+					xxx.bootstrap(pawn.Map);
+					BootStrapTriggered = true;
+				}
 
-            }
-            else
-                needsex_tick--;
-                //Log.Message("[RJW]Need_Sex::NeedInterval is called2 - needsex_tick is "+needsex_tick);
-        }
-    }
+			}
+			else
+			{
+				needsex_tick--;
+				decay_rate_modifier = HugsLibInj.sexneed_decay_rate;
+			}
+			//Log.Message("[RJW]Need_Sex::NeedInterval is called2 - needsex_tick is "+needsex_tick);
+		}
+		
+	}
 }
