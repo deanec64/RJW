@@ -1,5 +1,9 @@
+- Added sex need decay option.
+- Overhauled mod settings.
+
 v1.5.4d changes:
 - Removed toggle whore bed button that's applied to all beds as it causes errors.
+- Added ArchitectSense's DLL by fluffy.
 - Added new 'Whore Beds' category in furniture tab by Sidfu.
 - Added research tree for whore beds by Sidfu.
 - Added new mod preview by NEPH.
