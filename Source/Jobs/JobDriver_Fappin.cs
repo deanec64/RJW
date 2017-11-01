@@ -6,14 +6,14 @@ using Verse;
 using Verse.AI;
 using RimWorld;
 
-namespace rjw {
-	public class JobDriver_Fappin : JobDriver {
+namespace rjw
+{
+	public class JobDriver_Fappin : JobDriver
+	{
 
 		private const int ticks_between_hearts = 100;
-		
+
 		private int ticks_left;
-		
-		private TargetIndex ibed = TargetIndex.A;
 		
 		private static readonly SimpleCurve fap_interval_from_age = new SimpleCurve {
 			new CurvePoint (16f, 0.75f),
@@ -22,52 +22,76 @@ namespace rjw {
 			new CurvePoint (50f, 3.00f),
 			new CurvePoint (75f, 5.00f)
 		};
-		
-		private Building_Bed Bed
+
+		private const TargetIndex BedOrRestSpotIndex = TargetIndex.A;
+
+		public Building_Bed Bed
 		{
-			get {
-				return (Building_Bed)((Thing)base.CurJob.GetTarget(ibed));
+			get
+			{
+				return (Building_Bed)base.CurJob.GetTarget(TargetIndex.A).Thing;
 			}
 		}
-		
-		protected override IEnumerable<Toil> MakeNewToils ()
-		{
-			ticks_left = (int)(2000.0f * Rand.Range (0.20f, 0.70f));
-			
-			this.FailOnDespawnedOrNull (ibed);
-			this.KeepLyingDown (ibed);
-			yield return Toils_Bed.ClaimBedIfNonMedical (ibed, TargetIndex.None);
-			yield return Toils_Bed.GotoBed (ibed);
 
-			Toil do_fappin = Toils_LayDown.LayDown (ibed, true, false, false, false);
-            do_fappin.initAction = delegate
-            {
-                Log.Message("[RJW]JobDriver_Fappin::MakeNewToils - do_fappin.initAction is called");
-            };
-			do_fappin.AddPreTickAction (delegate {
+		protected override IEnumerable<Toil> MakeNewToils()
+		{
+			ticks_left = (int)(2000.0f * Rand.Range(0.20f, 0.70f));
+
+			this.FailOnDespawnedOrNull(TargetIndex.A);
+
+			bool hasBed = this.pawn.CurJob.GetTarget(TargetIndex.A).HasThing;
+			if (hasBed)
+			{
+				yield return Toils_Reserve.Reserve(TargetIndex.A, this.Bed.SleepingSlotsCount, 0, null);
+				yield return Toils_Bed.ClaimBedIfNonMedical(TargetIndex.A, TargetIndex.None);
+				yield return Toils_Bed.GotoBed(TargetIndex.A);
+			}
+			else
+			{
+				yield return Toils_Goto.GotoCell(TargetIndex.A, PathEndMode.OnCell);
+			}
+			Toil do_fappin = Toils_LayDown.LayDown(TargetIndex.A, hasBed, true, true, true);
+			yield return do_fappin;
+
+			//this.KeepLyingDown(ibed);
+			//yield return Toils_Bed.ClaimBedIfNonMedical(ibed, TargetIndex.None);
+			//yield return Toils_Bed.GotoBed(ibed);
+
+			//Toil do_fappin = Toils_LayDown.LayDown(ibed, true, false, false, false);
+			//do_fappin.initAction = delegate
+			//{
+			//	Log.Message("[RJW]JobDriver_Fappin::MakeNewToils - do_fappin.initAction is called");
+			//};
+
+
+			do_fappin.AddPreTickAction(delegate
+			{
 				--this.ticks_left;
-			    if (this.ticks_left <= 0)
-			    	this.ReadyForNextToil ();
-			    else if (pawn.IsHashIntervalTick (ticks_between_hearts))
-			    	MoteMaker.ThrowMetaIcon (pawn.Position, pawn.Map, ThingDefOf.Mote_Heart);
+				if (this.ticks_left <= 0)
+					this.ReadyForNextToil();
+				else if (pawn.IsHashIntervalTick(ticks_between_hearts))
+					MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, ThingDefOf.Mote_Heart);
 			});
-			do_fappin.AddFinishAction (delegate {
-			    pawn.mindState.canLovinTick = Find.TickManager.TicksGame + generate_min_ticks_to_next_fappin (pawn);
-				xxx.satisfy (pawn, null);
+			do_fappin.AddFinishAction(delegate
+			{
+				pawn.mindState.canLovinTick = Find.TickManager.TicksGame + generate_min_ticks_to_next_fappin(pawn);
+				xxx.satisfy(pawn, null);
 			});
 			do_fappin.socialMode = RandomSocialMode.Off;
 			yield return do_fappin;
 		}
-		
-		private int generate_min_ticks_to_next_fappin (Pawn p)
+
+		private int generate_min_ticks_to_next_fappin(Pawn p)
 		{
-			if (! DebugSettings.alwaysDoLovin) {
-				var interval = fap_interval_from_age.Evaluate (pawn.ageTracker.AgeBiologicalYearsFloat);
-				var rinterval = Math.Max (0.5f, Rand.Gaussian (interval, 0.3f));
-				return (int)((xxx.is_nympho (p) ? 0.5f : 1.0f) * rinterval * 2500.0f);
-			} else
+			if (!DebugSettings.alwaysDoLovin)
+			{
+				var interval = fap_interval_from_age.Evaluate(pawn.ageTracker.AgeBiologicalYearsFloat);
+				var rinterval = Math.Max(0.5f, Rand.Gaussian(interval, 0.3f));
+				return (int)((xxx.is_nympho(p) ? 0.5f : 1.0f) * rinterval * 2500.0f);
+			}
+			else
 				return 50;
 		}
-		
+
 	}
 }
