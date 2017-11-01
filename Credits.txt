@@ -26,7 +26,7 @@ g0ring            Coding idea, bugfix
 StarlightG        Coding idea, bugfix
 SuperHotSausage   XML improvements, stuff
 Sidfu             XML modder
-NEPH              Graphics & textures
+NEPH              Graphics & textures, tester
 
 
 And anyone we might have missed.
