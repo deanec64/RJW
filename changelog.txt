@@ -1,6 +1,5 @@
 - Added sex need decay option.
 - Overhauled mod settings.
-- Added live updating feature to the need decay option so you can change it ingame.
 
 v1.5.4d changes:
 - Removed toggle whore bed button that's applied to all beds as it causes errors.
