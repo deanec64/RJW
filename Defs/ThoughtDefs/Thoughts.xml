@@ -297,4 +297,20 @@
     </stages>
   </ThoughtDef>
 
+	<ThoughtDef>
+		<defName>Fapped</defName>
+		<thoughtClass>Thought_Memory</thoughtClass>
+		<durationDays>1.0</durationDays>
+		<stackLimit>3</stackLimit>
+		<stackedEffectMultiplier>0.4</stackedEffectMultiplier>
+		<stages>
+			<li>
+				<label>just fapped</label>
+				<labelSocial>just fapped</labelSocial>
+				<description>I just fapped. Alone.</description>
+				<baseMoodEffect>-1</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
 </Defs>

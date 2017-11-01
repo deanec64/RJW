@@ -38,6 +38,7 @@ namespace rjw
 			ticks_left = (int)(2000.0f * Rand.Range(0.20f, 0.70f));
 
 			this.FailOnDespawnedOrNull(TargetIndex.A);
+			this.KeepLyingDown(TargetIndex.A);
 
 			bool hasBed = this.pawn.CurJob.GetTarget(TargetIndex.A).HasThing;
 			if (hasBed)
@@ -50,14 +51,9 @@ namespace rjw
 			{
 				yield return Toils_Goto.GotoCell(TargetIndex.A, PathEndMode.OnCell);
 			}
-			Toil do_fappin = Toils_LayDown.LayDown(TargetIndex.A, hasBed, false, false, false);
 
+			Toil do_fappin = Toils_LayDown.LayDown(TargetIndex.A, hasBed, false, true, false);
 
-			//this.KeepLyingDown(ibed);
-			//yield return Toils_Bed.ClaimBedIfNonMedical(ibed, TargetIndex.None);
-			//yield return Toils_Bed.GotoBed(ibed);
-
-			//Toil do_fappin = Toils_LayDown.LayDown(ibed, true, false, false, false);
 			do_fappin.initAction = delegate
 			{
 				Log.Message("[RJW]JobDriver_Fappin::MakeNewToils - do_fappin.initAction is called");
@@ -72,11 +68,14 @@ namespace rjw
 				else if (pawn.IsHashIntervalTick(ticks_between_hearts))
 					MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, ThingDefOf.Mote_Heart);
 			});
+
 			do_fappin.AddFinishAction(delegate
 			{
+				//Thought_Memory newThought = (Thought_Memory)ThoughtMaker.MakeThought(ThoughtDefOf.Fapped);
 				pawn.mindState.canLovinTick = Find.TickManager.TicksGame + generate_min_ticks_to_next_fappin(pawn);
 				xxx.satisfy(pawn, null);
 			});
+			
 			do_fappin.socialMode = RandomSocialMode.Off;
 			yield return do_fappin;
 		}
