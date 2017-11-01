@@ -40,25 +40,20 @@ namespace rjw
 			this.FailOnDespawnedOrNull(TargetIndex.A);
 			this.KeepLyingDown(TargetIndex.A);
 
-			bool hasBed = this.pawn.CurJob.GetTarget(TargetIndex.A).HasThing;
-			if (hasBed)
-			{
-				yield return Toils_Reserve.Reserve(TargetIndex.A, this.Bed.SleepingSlotsCount, 0, null);
-				yield return Toils_Bed.ClaimBedIfNonMedical(TargetIndex.A, TargetIndex.None);
-				yield return Toils_Bed.GotoBed(TargetIndex.A);
-			}
-			else
-			{
-				yield return Toils_Goto.GotoCell(TargetIndex.A, PathEndMode.OnCell);
-			}
+			//bool hasBed = this.pawn.CurJob.GetTarget(TargetIndex.A).HasThing;
 
-			Toil do_fappin = Toils_LayDown.LayDown(TargetIndex.A, hasBed, false, true, false);
+			//yield return Toils_Reserve.Reserve(TargetIndex.A, this.Bed.SleepingSlotsCount, 0, null);
+			//yield return Toils_Bed.ClaimBedIfNonMedical(TargetIndex.A, TargetIndex.None);
+			//yield return Toils_Bed.GotoBed(TargetIndex.A);
+
+			yield return Toils_Goto.GotoCell(TargetIndex.A, PathEndMode.OnCell);
+
+			Toil do_fappin = Toils_LayDown.LayDown(TargetIndex.A, false, false, false, false);
 
 			do_fappin.initAction = delegate
 			{
 				Log.Message("[RJW]JobDriver_Fappin::MakeNewToils - do_fappin.initAction is called");
 			};
-
 
 			do_fappin.AddPreTickAction(delegate
 			{
@@ -75,7 +70,7 @@ namespace rjw
 				pawn.mindState.canLovinTick = Find.TickManager.TicksGame + generate_min_ticks_to_next_fappin(pawn);
 				xxx.satisfy(pawn, null);
 			});
-			
+
 			do_fappin.socialMode = RandomSocialMode.Off;
 			yield return do_fappin;
 		}
