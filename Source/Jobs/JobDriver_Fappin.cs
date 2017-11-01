@@ -14,7 +14,7 @@ namespace rjw
 		private const int ticks_between_hearts = 100;
 
 		private int ticks_left;
-		
+
 		private static readonly SimpleCurve fap_interval_from_age = new SimpleCurve {
 			new CurvePoint (16f, 0.75f),
 			new CurvePoint (22f, 0.75f),
@@ -25,7 +25,7 @@ namespace rjw
 
 		private const TargetIndex BedOrRestSpotIndex = TargetIndex.A;
 
-		public Building_Bed Bed
+		private Building_Bed Bed
 		{
 			get
 			{
@@ -50,18 +50,18 @@ namespace rjw
 			{
 				yield return Toils_Goto.GotoCell(TargetIndex.A, PathEndMode.OnCell);
 			}
-			Toil do_fappin = Toils_LayDown.LayDown(TargetIndex.A, hasBed, true, true, true);
-			yield return do_fappin;
+			Toil do_fappin = Toils_LayDown.LayDown(TargetIndex.A, hasBed, false, false, false);
+
 
 			//this.KeepLyingDown(ibed);
 			//yield return Toils_Bed.ClaimBedIfNonMedical(ibed, TargetIndex.None);
 			//yield return Toils_Bed.GotoBed(ibed);
 
 			//Toil do_fappin = Toils_LayDown.LayDown(ibed, true, false, false, false);
-			//do_fappin.initAction = delegate
-			//{
-			//	Log.Message("[RJW]JobDriver_Fappin::MakeNewToils - do_fappin.initAction is called");
-			//};
+			do_fappin.initAction = delegate
+			{
+				Log.Message("[RJW]JobDriver_Fappin::MakeNewToils - do_fappin.initAction is called");
+			};
 
 
 			do_fappin.AddPreTickAction(delegate
