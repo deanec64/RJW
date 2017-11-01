@@ -1,6 +1,15 @@
-- Added sex need decay option.
-- Overhauled mod settings.
-- Added live updating feature to the need decay option so you can change it ingame.
+v1.5.4f changes:
+- Standing fappin' bug fix.
+- New whore bed textures by NEPH.
+- Reworked vulnerability factors. Vulnerability is now affected by melee skill, sight, moving, and consciousness. 
+
+v1.5.4e changes:
+- Added sex need decay option. You can change it anytime.
+- Overhauled mod settings: 
+	- Edited titles & descriptions.
+	- Added plus & minus buttons.
+	- Added validators.
+	- Optimized live ingame changes.
 
 v1.5.4d changes:
 - Removed toggle whore bed button that's applied to all beds as it causes errors.

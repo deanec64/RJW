@@ -27,6 +27,7 @@ StarlightG        Coding idea, bugfix
 SuperHotSausage   XML improvements, stuff
 Sidfu             XML modder
 NEPH              Graphics & textures, tester
+hogehoge1942      Coder
 
 
 And anyone we might have missed.
