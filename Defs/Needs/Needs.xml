@@ -8,7 +8,6 @@
 		<description>Represents fulfillment of sexual need, which is gained by doing sexual related activities and declined by time &amp; turn-ons. Sleeping pauses the need.</description>
 		<baseLevel>0.60</baseLevel>
 		<fallPerDay>0.00</fallPerDay>
-		<seekerFallPerHour>0.0167</seekerFallPerHour>
 		<showOnNeedList>true</showOnNeedList>
 		<listPriority>49</listPriority>
 		<major>false</major>

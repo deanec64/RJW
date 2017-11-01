@@ -27,7 +27,7 @@ namespace rjw
 		
 		private int needsex_tick = needsex_tick_timer;
 		private static int needsex_tick_timer = 10;
-		private static float decay_per_day = 0.3f * HugsLibInj.sexneed_decay_rate;
+		private static float decay_per_day = 0.3f;
 
 		//private int startInterval = Find.TickManager.TicksGame;
 		//private static int tickInterval = 10;
@@ -151,9 +151,9 @@ namespace rjw
 						150 * 
 						fall_per_tick * 
 						needsex_tick_timer;
-					CurLevel -= fall_per_call;
+					CurLevel -= fall_per_call * HugsLibInj.sexneed_decay_rate;
 					// Each day has 60000 ticks, each hour has 2500 ticks, so each hour has 50/3 calls, in other words, each call takes .06 hour.
-					Log.Message(pawn.NameStringShort + "Fall per tick : " + fall_per_tick + "CurLevel : " + CurLevel);
+					Log.Message("{0}'s sex need stats: Decay/call : {1}, Cur.lvl : {2}", pawn.NameStringShort, fall_per_call * HugsLibInj.sexneed_decay_rate, CurLevel);
 				}
 
 				// I just put this here so that it gets called on every pawn on a regular basis. There's probably a
