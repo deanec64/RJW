@@ -28,10 +28,11 @@ namespace rjw
 		private int needsex_tick = needsex_tick_timer;
 		private static int needsex_tick_timer = 10;
 		private static float decay_per_day = 0.3f;
+		private float decay_rate_modifier = HugsLibInj.sexneed_decay_rate;
 
 		//private int startInterval = Find.TickManager.TicksGame;
 		//private static int tickInterval = 10;
-		
+
 
 		//private int std_tick = 1;
 
@@ -137,6 +138,7 @@ namespace rjw
 				if (!def.freezeWhileSleeping || pawn.Awake())
 				{
 					float age = pawn.ageTracker.AgeBiologicalYearsFloat;
+					decay_rate_modifier = HugsLibInj.sexneed_decay_rate
 
 					//every 200 calls will have a real functioning call
 					var fall_per_tick =
@@ -151,9 +153,9 @@ namespace rjw
 						150 * 
 						fall_per_tick * 
 						needsex_tick_timer;
-					CurLevel -= fall_per_call * HugsLibInj.sexneed_decay_rate;
+					CurLevel -= fall_per_call * decay_rate_modifier;
 					// Each day has 60000 ticks, each hour has 2500 ticks, so each hour has 50/3 calls, in other words, each call takes .06 hour.
-					Log.Message("{0}'s sex need stats: Decay/call : {1}, Cur.lvl : {2}", pawn.NameStringShort, fall_per_call * HugsLibInj.sexneed_decay_rate, CurLevel);
+					Log.Message("{0}'s sex need stats: Decay/call : {1}, Cur.lvl : {2}", pawn.NameStringShort, fall_per_call * decay_rate_modifier, CurLevel);
 				}
 
 				// I just put this here so that it gets called on every pawn on a regular basis. There's probably a
@@ -174,6 +176,7 @@ namespace rjw
 			else
 			{
 				needsex_tick--;
+				decay_rate_modifier = HugsLibInj.sexneed_decay_rate
 			}
 			//Log.Message("[RJW]Need_Sex::NeedInterval is called2 - needsex_tick is "+needsex_tick);
 		}
