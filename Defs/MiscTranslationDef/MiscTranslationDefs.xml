@@ -4,8 +4,8 @@
   <rjw.MiscTranslationDef>
     <DefName>DesignatorComfortPrisoner</DefName>
     <targetClass>rjw.Designator_ComfortPrisoner</targetClass>
-    <label>DesignateAsComfortPrisoner</label>
-    <description>Designate the pawn as a Comfort Prisoner</description>
+    <label>comfort prisoner</label>
+    <description>Tag the prisoner as comfort prisoner</description>
   </rjw.MiscTranslationDef>
 
   <rjw.MiscTranslationDef>
