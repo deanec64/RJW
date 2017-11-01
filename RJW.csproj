@@ -232,6 +232,42 @@
     <Content Include="Languages\English\Keyed\RimJobWorld.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Languages\Japanese\DefInjected\BodyPartDef\PrivateParts.xml" />
+    <Content Include="Languages\Japanese\DefInjected\ConceptDef\Concepts.xml" />
+    <Content Include="Languages\Japanese\DefInjected\ConceptDef\Concepts_NotedOpportunistic.xml" />
+    <Content Include="Languages\Japanese\DefInjected\DamageDef\Damage.xml" />
+    <Content Include="Languages\Japanese\DefInjected\HediffDef\Hediffs.xml" />
+    <Content Include="Languages\Japanese\DefInjected\HediffDef\Hediffs_FeelingBroken.xml" />
+    <Content Include="Languages\Japanese\DefInjected\HediffDef\Hediffs_Other.xml" />
+    <Content Include="Languages\Japanese\DefInjected\HediffDef\Hediffs_PrivateParts.xml" />
+    <Content Include="Languages\Japanese\DefInjected\HediffDef\Hediffs_SimpleBaby.xml" />
+    <Content Include="Languages\Japanese\DefInjected\HediffDef\Hediffs_STDs.xml" />
+    <Content Include="Languages\Japanese\DefInjected\HediffDef\Hediffs_Sterilized.xml" />
+    <Content Include="Languages\Japanese\DefInjected\IncidentDef\Incidents.xml" />
+    <Content Include="Languages\Japanese\DefInjected\InteractionDef\Interactions.xml" />
+    <Content Include="Languages\Japanese\DefInjected\JobDef\Jobs.xml" />
+    <Content Include="Languages\Japanese\DefInjected\NeedDef\Needs.xml" />
+    <Content Include="Languages\Japanese\DefInjected\PawnCapacityDef\PawnCapacity.xml" />
+    <Content Include="Languages\Japanese\DefInjected\PawnKindDef\PawnKinds.xml" />
+    <Content Include="Languages\Japanese\DefInjected\RecipeDef\Recipes_Production.xml" />
+    <Content Include="Languages\Japanese\DefInjected\RecipeDef\Recipes_Prosthetics.xml" />
+    <Content Include="Languages\Japanese\DefInjected\RecipeDef\Recipes_Surgery.xml" />
+    <Content Include="Languages\Japanese\DefInjected\RecordDef\Records_GetRaped.xml" />
+    <Content Include="Languages\Japanese\DefInjected\rjw.bondage_gear_def\Items.xml" />
+    <Content Include="Languages\Japanese\DefInjected\rjw.force_off_gear_def\Recipes_Surgery.xml" />
+    <Content Include="Languages\Japanese\DefInjected\rjw.MiscTranslationDef\MiscTranslationDefs.xml" />
+    <Content Include="Languages\Japanese\DefInjected\rjw.std_def\STDs.xml" />
+    <Content Include="Languages\Japanese\DefInjected\RulePackDef\RulePacks_AnalRape.xml" />
+    <Content Include="Languages\Japanese\DefInjected\RulePackDef\RulePacks_EngravedNames.xml" />
+    <Content Include="Languages\Japanese\DefInjected\StatDef\Stats.xml" />
+    <Content Include="Languages\Japanese\DefInjected\ThingDef\Items.xml" />
+    <Content Include="Languages\Japanese\DefInjected\ThingDef\Items_PrivateParts.xml" />
+    <Content Include="Languages\Japanese\DefInjected\ThingDef\ThingsDef_XXX.xml" />
+    <Content Include="Languages\Japanese\DefInjected\ThingDef\_Things_Mote.xml" />
+    <Content Include="Languages\Japanese\DefInjected\ThoughtDef\Thoughts.xml" />
+    <Content Include="Languages\Japanese\DefInjected\TraitDef\Traits.xml" />
+    <Content Include="Languages\Japanese\DefInjected\WorkGiverDef\WorkGivers.xml" />
+    <Content Include="Languages\Japanese\Keyed\RimJobWorld.xml" />
     <Content Include="Languages\Korean\DefInjected\ArchitectSense.DesignationSubCategoryDef\RJW_SubCategory.xml" />
     <Content Include="Languages\Korean\DefInjected\BodyPartDef\PrivateParts.xml" />
     <Content Include="Languages\Korean\DefInjected\ConceptDef\Concepts_NotedOpportunistic.xml" />
@@ -339,6 +375,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Defs\RandomDialoguesxml" />
+    <None Include="Languages\Japanese\Keyed\RimJobWorld.xml.bak" />
     <None Include="LICENSE" />
     <None Include="Textures\anus_old.xcf" />
     <None Include="Textures\armbinder.xcf" />
