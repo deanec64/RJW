@@ -30,9 +30,15 @@ namespace rjw
 			new CurvePoint(75f, 24f)
 		};
 
-		public abstract void think_after_sex(Pawn pawn, Pawn part, bool violent = false, bool isCoreLovin = false);
+		public virtual void think_after_sex(Pawn pawn, Pawn part, bool violent = false, bool isCoreLovin = false)
+		{
 
-		public abstract void aftersex(Pawn pawn, Pawn part, bool violent = false, bool isCoreLovin = false, bool isAnalSex = false);
+		}
+
+		public virtual void aftersex(Pawn pawn, Pawn part, bool violent = false, bool isCoreLovin = false, bool isAnalSex = false)
+		{
+			xxx.aftersex(pawn, part, true, isAnalSex: isAnalSex);
+		}
 
 		protected Pawn Target
 		{
