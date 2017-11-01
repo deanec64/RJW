@@ -1,3 +1,8 @@
+v1.5.4d A1 changes:
+-Added Japanese translation(Partial)
+-Added Enemy(Humans, Mechanoids, Insects) rape colonist.
+-Assault Colony wont end if not satisfied sex.(or timeout)
+
 - Added sex need decay option.
 - Overhauled mod settings.
 
