@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<JobDef>
+		<defName>RapeEnemy</defName>
+		<driverClass>rjw.JobDriver_RapeEnemy</driverClass>
+		<reportString>Rapin' Enemy</reportString>
+	</JobDef>
+	<JobDef>
+		<defName>RapeEnemyByInsect</defName>
+		<driverClass>rjw.JobDriver_RapeEnemyByInsect</driverClass>
+		<reportString>Rapin' Enemy</reportString>
+	</JobDef>
+	<JobDef>
+		<defName>RapeEnemyByMech</defName>
+		<driverClass>rjw.JobDriver_RapeEnemyByMech</driverClass>
+		<reportString>Rapin' Enemy</reportString>
+	</JobDef>
+</Defs>
