@@ -69,6 +69,7 @@
           <subNodes>
             <li Class="rjw.ThinkNode_ChancePerHour_Fappin">
               <subNodes>
+                <li Class="JobGiver_DoLovin" />
                <li Class="rjw.JobGiver_DoFappin" />
               </subNodes>
             </li>
