@@ -332,6 +332,7 @@
     <Content Include="Textures\chastity_belt.png" />
     <Content Include="Textures\comfort_prisoner.png" />
     <Content Include="Textures\comfort_prisoner_invisible.png" />
+    <Content Include="Textures\Credits.txt" />
     <Content Include="Textures\female_artificial_genital.png" />
     <Content Include="Textures\female_artificial_private.png" />
     <Content Include="Textures\female_genital.png" />
