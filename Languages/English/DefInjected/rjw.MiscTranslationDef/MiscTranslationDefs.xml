@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-  <DesignatorComfortPrisoner.label>DesignateAsComfortPrisoner</DesignatorComfortPrisoner.label>
+  <DesignatorComfortPrisoner.label>comfort prisoner</DesignatorComfortPrisoner.label>
   <DesignatorComfortPrisoner.description>Designate the pawn as a Comfort Prisoner</DesignatorComfortPrisoner.description>
 
   <rjw_vatgrown_sex_slave.label>Vat-Grown Sex Slave</rjw_vatgrown_sex_slave.label>

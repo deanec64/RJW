@@ -13,12 +13,12 @@ namespace rjw {
 	
 	[StaticConstructorOnStartup]
 	internal static class comfort_prisoner_tex {
-		public static Texture2D gizmo = ContentFinder<Texture2D>.Get("comfort_prisoner");
+		public static Texture2D gizmo = ContentFinder<Texture2D>.Get("UI/Commands/comfort_prisoner");
 	}
     [StaticConstructorOnStartup]
     internal static class comfort_prisoner_invisible_tex
     {
-        public static Texture2D gizmo = ContentFinder<Texture2D>.Get("comfort_prisoner_invisible");
+        public static Texture2D gizmo = ContentFinder<Texture2D>.Get("UI/Commands/comfort_prisoner_invisible");
     }
 	
 	public static class comfort_prisoners {
