@@ -25,38 +25,6 @@ namespace rjw {
             return true;
         }
 	}
-	[HarmonyPatch(typeof(JobGiver_DoLovin))]
-	[HarmonyPatch("TryGiveJob")]
-	static class PATCH_JobGiver_DoLovin_TryGiveJob
-	{
-		[HarmonyPrefix]
-		static bool on_TryGiveJob(Job __result , Pawn pawn)
-		{
-			Log.Message("[RJW]PATCH_JobGiver_DoLovin_TryGiveJob::hijacking");
-			/*if (Find.TickManager.TicksGame < pawn.mindState.canLovinTick)
-			{
-				__result = null;
-			}*/
-			if (pawn.CurrentBed() == null || pawn.CurrentBed().Medical || !pawn.health.capacities.CanBeAwake)
-			{
-				__result = null;
-			}
-			Pawn partnerInMyBed = LovePartnerRelationUtility.GetPartnerInMyBed(pawn);
-			if (partnerInMyBed == null || !partnerInMyBed.health.capacities.CanBeAwake || Find.TickManager.TicksGame < partnerInMyBed.mindState.canLovinTick)
-			{
-				__result = null;
-			}
-			if (!pawn.CanReserve(partnerInMyBed, 1, -1, null, false) || !partnerInMyBed.CanReserve(pawn, 1, -1, null, false))
-			{
-				__result = null;
-			}
-			pawn.mindState.awokeVoluntarily = true;
-			partnerInMyBed.mindState.awokeVoluntarily = true;
-			Log.Message("[RJW]PATCH_JobGiver_DoLovin_TryGiveJob::makingJob");
-			__result = new Job(JobDefOf.Lovin, partnerInMyBed, pawn.CurrentBed());
-			return false;
-		}
-	}
 
 
 
