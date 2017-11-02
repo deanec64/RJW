@@ -15,6 +15,7 @@ namespace rjw {
 	internal static class comfort_prisoner_tex {
 		public static Texture2D gizmo = ContentFinder<Texture2D>.Get("UI/Commands/comfort_prisoner");
 	}
+
     [StaticConstructorOnStartup]
     internal static class comfort_prisoner_invisible_tex
     {
