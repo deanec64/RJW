@@ -24,17 +24,52 @@ namespace rjw {
             __instance.FailOn(() => (!xxx.can_fuck(__instance.pawn)));
             return true;
         }
+	}
+	[HarmonyPatch(typeof(JobGiver_DoLovin))]
+	[HarmonyPatch("TryGiveJob")]
+	static class PATCH_JobGiver_DoLovin_TryGiveJob
+	{
+		[HarmonyPrefix]
+		static bool on_TryGiveJob(Job __result , Pawn pawn)
+		{
+			Log.Message("[RJW]PATCH_JobGiver_DoLovin_TryGiveJob::hijacking");
+			/*if (Find.TickManager.TicksGame < pawn.mindState.canLovinTick)
+			{
+				__result = null;
+			}*/
+			if (pawn.CurrentBed() == null || pawn.CurrentBed().Medical || !pawn.health.capacities.CanBeAwake)
+			{
+				__result = null;
+			}
+			Pawn partnerInMyBed = LovePartnerRelationUtility.GetPartnerInMyBed(pawn);
+			if (partnerInMyBed == null || !partnerInMyBed.health.capacities.CanBeAwake || Find.TickManager.TicksGame < partnerInMyBed.mindState.canLovinTick)
+			{
+				__result = null;
+			}
+			if (!pawn.CanReserve(partnerInMyBed, 1, -1, null, false) || !partnerInMyBed.CanReserve(pawn, 1, -1, null, false))
+			{
+				__result = null;
+			}
+			pawn.mindState.awokeVoluntarily = true;
+			partnerInMyBed.mindState.awokeVoluntarily = true;
+			Log.Message("[RJW]PATCH_JobGiver_DoLovin_TryGiveJob::makingJob");
+			__result = new Job(JobDefOf.Lovin, partnerInMyBed, pawn.CurrentBed());
+			return false;
+		}
+	}
 
-    }
-    //JobDriver_DoLovinCasual from RomanceDiversified should have handled whether pawns can do casual lovin,
-    //so I don't bothered to do a check here,unless some bugs occur due to this.
 
-    // Call xxx.aftersex after pawns have finished lovin'
-    // You might be thinking, "wouldn't it be easier to add this code as a finish condition to JobDriver_Lovin in the patch above?" I tried that
-    // at first but it didn't work because the finish condition is always called regardless of how the job ends (i.e. if it's interrupted or not)
-    // and there's no way to find out from within the finish condition how the job ended. I want to make sure not apply the effects of sex if the
-    // job was interrupted somehow.
-    [HarmonyPatch (typeof (JobDriver))]
+
+
+	//JobDriver_DoLovinCasual from RomanceDiversified should have handled whether pawns can do casual lovin,
+	//so I don't bothered to do a check here,unless some bugs occur due to this.
+
+	// Call xxx.aftersex after pawns have finished lovin'
+	// You might be thinking, "wouldn't it be easier to add this code as a finish condition to JobDriver_Lovin in the patch above?" I tried that
+	// at first but it didn't work because the finish condition is always called regardless of how the job ends (i.e. if it's interrupted or not)
+	// and there's no way to find out from within the finish condition how the job ended. I want to make sure not apply the effects of sex if the
+	// job was interrupted somehow.
+	[HarmonyPatch (typeof (JobDriver))]
 	[HarmonyPatch ("Cleanup")]
 	static class PATCH_JobDriver_Cleanup {
 
