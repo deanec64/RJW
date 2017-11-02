@@ -24,17 +24,20 @@ namespace rjw {
             __instance.FailOn(() => (!xxx.can_fuck(__instance.pawn)));
             return true;
         }
+	}
 
-    }
-    //JobDriver_DoLovinCasual from RomanceDiversified should have handled whether pawns can do casual lovin,
-    //so I don't bothered to do a check here,unless some bugs occur due to this.
 
-    // Call xxx.aftersex after pawns have finished lovin'
-    // You might be thinking, "wouldn't it be easier to add this code as a finish condition to JobDriver_Lovin in the patch above?" I tried that
-    // at first but it didn't work because the finish condition is always called regardless of how the job ends (i.e. if it's interrupted or not)
-    // and there's no way to find out from within the finish condition how the job ended. I want to make sure not apply the effects of sex if the
-    // job was interrupted somehow.
-    [HarmonyPatch (typeof (JobDriver))]
+
+
+	//JobDriver_DoLovinCasual from RomanceDiversified should have handled whether pawns can do casual lovin,
+	//so I don't bothered to do a check here,unless some bugs occur due to this.
+
+	// Call xxx.aftersex after pawns have finished lovin'
+	// You might be thinking, "wouldn't it be easier to add this code as a finish condition to JobDriver_Lovin in the patch above?" I tried that
+	// at first but it didn't work because the finish condition is always called regardless of how the job ends (i.e. if it's interrupted or not)
+	// and there's no way to find out from within the finish condition how the job ended. I want to make sure not apply the effects of sex if the
+	// job was interrupted somehow.
+	[HarmonyPatch (typeof (JobDriver))]
 	[HarmonyPatch ("Cleanup")]
 	static class PATCH_JobDriver_Cleanup {
 

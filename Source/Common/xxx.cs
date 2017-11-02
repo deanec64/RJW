@@ -527,17 +527,17 @@ namespace rjw
         public static void satisfy(Pawn pawn, Pawn part, bool violent = false,bool isCoreLovin = false) {
             string pawn_name = (pawn != null) ? pawn.NameStringShort : "NULL";
             string part_name = (part != null) ? part.NameStringShort : "NULL";
-            Log.Message("xxx::satisfy( " + pawn_name + ", " + part_name + ", " + violent + " ) called");
+            Log.Message("xxx::satisfy( " + pawn_name + ", " + part_name + ", " + violent + "," + isCoreLovin + " ) called");
             var base_satisfaction_per_event = base_sat_per_fuck;
             var pawn_ability = (pawn != null) ? get_sex_ability(pawn) : no_partner_ability;
             var part_ability = (part != null) ? get_sex_ability(part) : no_partner_ability;
 
-            Log.Message("xxx::satisfy( " + pawn_name + ", " + part_name + ", " + violent + " ) - calculate base satisfaction");
+            Log.Message("xxx::satisfy( " + pawn_name + ", " + part_name + ", " + violent + "," + isCoreLovin + " ) - calculate base satisfaction");
             // Base satisfaction is based on partner's ability
             var pawn_satisfaction = base_satisfaction_per_event * part_ability;
             var part_satisfaction = base_satisfaction_per_event * pawn_ability;
 
-            Log.Message("xxx::satisfy( " + pawn_name + ", " + part_name + ", " + violent + " ) - modifying pawn satisfaction");
+            Log.Message("xxx::satisfy( " + pawn_name + ", " + part_name + ", " + violent + "," + isCoreLovin + " ) - modifying pawn satisfaction");
             if (pawn != null && (xxx.is_rapist(pawn) || xxx.is_bloodlust(pawn))) {
                 // Rapists and Bloodlusts get more satisfaction from violetn encounters
                 // Rapists and Bloodlusts get less satisfaction from non-violent encounters
@@ -548,7 +548,7 @@ namespace rjw
                 pawn_satisfaction *= (violent) ? 0.8f : 1.0f;
             }
 
-            Log.Message("xxx::satisfy( " + pawn_name + ", " + part_name + ", " + violent + " ) - modifying part satisfaction");
+            Log.Message("xxx::satisfy( " + pawn_name + ", " + part_name + ", " + violent + "," + isCoreLovin + " ) - modifying part satisfaction");
             if (part!=null && !part.Dead && xxx.is_masochist(part) ) {
                 // masochists get some satisfaction from violent encounters
                 // masochists get less satisfaction from non-violent encounters
@@ -559,7 +559,7 @@ namespace rjw
                 part_satisfaction *= (violent) ? 0.2f : 1.0f;
             }
 
-            Log.Message("xxx::satisfy( " + pawn_name + ", " + part_name + ", " + violent + " ) - setting pawn joy");
+            Log.Message("xxx::satisfy( " + pawn_name + ", " + part_name + ", " + violent + "," + isCoreLovin + " ) - setting pawn joy");
             if (pawn != null && pawn.needs != null) {
                 if (pawn.needs.TryGetNeed<Need_Sex>() != null)
                 {
@@ -570,12 +570,14 @@ namespace rjw
                     
             }
 
-            if (part != null && part.needs != null && !part.Dead && !isCoreLovin) {
-                if (part.needs.TryGetNeed<Need_Sex>() != null)
+            //if (part != null && part.needs != null && !part.Dead && !isCoreLovin) {
+            if (part != null && part.needs != null && !part.Dead)
+				{
+					if (part.needs.TryGetNeed<Need_Sex>() != null)
                 {
                     if (is_female(pawn)&&!is_female(part))  //Males are being fucked by female may feel a bit better. I don't bother to check the sex orientations here, because it'll be quite a work.
                         part_satisfaction *= 1.05f;
-                    Log.Message("xxx::satisfy( " + pawn_name + ", " + part_name + ", " + violent + " ) - setting part joy");
+                    Log.Message("xxx::satisfy( " + pawn_name + ", " + part_name + ", " + violent + "," + isCoreLovin + " ) - setting part joy");
                     part.needs.TryGetNeed<Need_Sex>().CurLevel += part_satisfaction;
                     if (part.needs.joy != null)
                         part.needs.joy.CurLevel += part_satisfaction * 0.50f;       // convert half of satisfaction to joy
@@ -691,8 +693,10 @@ namespace rjw
                     pawn.needs.mood.thoughts.memories.TryGainMemory(memory, part);
                 }
 
-                if (!part.Dead && !isCoreLovin) {
-                    var part_rash_severity = std.genital_rash_severity(part) - std.genital_rash_severity(pawn);
+                //if (!part.Dead && !isCoreLovin) {
+                if (!part.Dead)
+					{
+						var part_rash_severity = std.genital_rash_severity(part) - std.genital_rash_severity(pawn);
                     ThoughtDef part_thought_about_rash = null;
                     if (part_rash_severity == 1) part_thought_about_rash = saw_rash_1;
                     else if (part_rash_severity == 2) part_thought_about_rash = saw_rash_2;

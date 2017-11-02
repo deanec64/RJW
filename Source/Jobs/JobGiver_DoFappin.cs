@@ -12,7 +12,7 @@ namespace rjw {
 		protected override Job TryGiveJob (Pawn p)
         {
             Log.Message("[RJW] JobGiver_DoFappin::TryGiveJob( " + p.NameStringShort + " ) called");
-            if ((Find.TickManager.TicksGame >= p.mindState.canLovinTick) &&
+			if ((Find.TickManager.TicksGame >= p.mindState.canLovinTick) &&
 				(p.CurJob != null)) {
 
 				Building_Bed bed = null;
@@ -38,7 +38,6 @@ namespace rjw {
 					}
 				}
 			}
-
 			return null;
 		}
 	}
