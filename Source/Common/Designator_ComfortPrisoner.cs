@@ -15,7 +15,7 @@ namespace rjw {
 			icon = comfort_prisoner_invisible_tex.gizmo;
 
 			// TODO: Can this be null?
-			//hotKey = KeyBindingDefOf.Misc12;
+			hotKey = KeyBindingDefOf.Misc12;
 			
 			// These don't matter but set them just in case
 			soundDragSustain = SoundDefOf.DesignateDragStandard;
