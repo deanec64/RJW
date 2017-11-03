@@ -231,7 +231,8 @@ namespace rjw
                 return;
             }
             */
-            Log.Message("[RJW]Hediff_SimpleBaby::PostTick is called");
+			//This void call every frame. should not logmes no reason
+            //Log.Message("[RJW]Hediff_SimpleBaby::PostTick is called");
             base.PostTick();
             if (pawn.Spawned) {
 				if (pawn.IsHashIntervalTick (120)) {

@@ -3,7 +3,7 @@
 
   <DesignationDef>
     <defName>ComfortPrisoner</defName>
-    <texturePath>UI/Commands/comfort_prisoner</texturePath>
+    <texturePath>UI/Commands/comfort_prisoner_true</texturePath>
     <targetType>Thing</targetType>
   </DesignationDef>
 

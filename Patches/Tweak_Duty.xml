@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  
+  <Operation Class="PatchOperationInsert">
+    <xpath>*/DutyDef[defName = "AssaultColony"]/thinkNode/subNodes/li[2]</xpath>
+      <value>
+        <li Class=" rjw.JobGiver_RapeEnemy"/>
+      </value>
+  </Operation>
+  <Operation Class="PatchOperationInsert">
+    <xpath>*/DutyDef[defName = "Defend"]/thinkNode/subNodes/li[3]</xpath>
+    <value>
+      <li Class=" rjw.JobGiver_RapeEnemy"/>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationInsert">
+      <xpath>*/DutyDef[defName = "HuntEnemiesIndividual"]/thinkNode/subNodes/li[2]</xpath>
+      <value>
+        <li Class=" rjw.JobGiver_RapeEnemy"/>
+      </value>
+    </Operation>
+  <Operation Class="PatchOperationInsert">
+    <xpath>*/DutyDef[defName = "DefendAndExpandHive"]/thinkNode/subNodes/li[3]</xpath>
+    <value>
+      <li Class=" rjw.JobGiver_RapeEnemy"/>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationInsert">
+    <xpath>*/DutyDef[defName = "DefendBase"]/thinkNode/subNodes/li[2]</xpath>
+    <value>
+      <li Class=" rjw.JobGiver_RapeEnemy"/>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationInsert">
+    <xpath>/ThinkTrees/ThinkTreeDef[6]/thinkRoot[@Class="ThinkNode_Tagger"]/subNodes/li[7]/subNodes/li[@Class="ThinkNode_Priority"]/subNodes/li[1]</xpath>
+    <value>
+      <li Class=" rjw.JobGiver_RapeEnemy"/>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationInsert">
+    <xpath>/ThinkTrees/ThinkTreeDef[6]/thinkRoot[@Class="ThinkNode_Tagger"]/subNodes/li[8]/subNodes/li[@Class="ThinkNode_Priority"]/subNodes/li[1]</xpath>
+    <value>
+      <li Class=" rjw.JobGiver_RapeEnemy"/>
+    </value>
+  </Operation>
+  <!--
+  <Operation Class="PatchOperationInsert">
+      <xpath>*/DutyDef[defName = "TakeWoundedGuest"]/thinkNode/subNodes/li[0]</xpath>
+      <value>
+        <li Class=" rjw.JobGiver_RapeEnemy"/>
+      </value>
+  </Operation>
+  <Operation Class="PatchOperationInsert">
+      <xpath>*/DutyDef[defName = "Kidnap"]/thinkNode/subNodes/li[0]</xpath>
+      <value>
+        <li Class=" rjw.JobGiver_RapeEnemy"/>
+      </value>
+  </Operation>
+-->
+
+</Patch>
