@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace rjw
 {
-	public abstract class Designator_Toggle : Designator
+	public abstract class Designator_Toggle : Command
 	{
 
 		public Designator_Toggle()
@@ -57,8 +57,8 @@ namespace rjw
 		}
 
 	}
-	
-	public class Designator_ComfortPrisoner : Designator_Toggle
+
+	public class Designator_ComfortPrisoner : Designator
 	{
 		private static readonly MiscTranslationDef MTdef = DefDatabase<MiscTranslationDef>.GetNamedSilentFail("DesignatorComfortPrisoner");
 
@@ -68,7 +68,7 @@ namespace rjw
 			defaultLabel = MTdef.label;
 			defaultDesc = MTdef.description;
 
-			icon = comfort_prisoner_invisible_tex.gizmo;
+			icon = comfort_prisoner_tex.gizmo;
 
 			// TODO: Can this be null?
 			hotKey = KeyBindingDefOf.Misc12;
@@ -78,6 +78,18 @@ namespace rjw
 			// soundDragChanged = SoundDefOf.DesignateDragStandardChanged;
 			// useMouseIcon = false;
 			// soundSucceeded = SoundDefOf.DesignateClaim;			
+		}
+
+		public Func<bool> isActive;
+
+		public override GizmoResult GizmoOnGUI(Vector2 loc)
+		{
+			GizmoResult result = base.GizmoOnGUI(loc);
+			Rect rect = new Rect(loc.x, loc.y, this.Width, 75f);
+			Rect position = new Rect(rect.x + rect.width - 24f, rect.y, 24f, 24f);
+			Texture2D image = (!this.isActive()) ? Widgets.CheckboxOffTex : Widgets.CheckboxOnTex;
+			GUI.DrawTexture(position, image);
+			return result;
 		}
 
 		public override AcceptanceReport CanDesignateCell(IntVec3 c) { return false; }
