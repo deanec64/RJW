@@ -376,7 +376,9 @@
     <Content Include="Textures\Things\Building\Furniture\Bed\RoyalBedWhore_sidem.png" />
     <Content Include="Textures\UI\Commands\AsWhore.png" />
     <Content Include="Textures\UI\Commands\comfort_prisoner.png" />
+    <Content Include="Textures\UI\Commands\comfort_prisoner_false.png" />
     <Content Include="Textures\UI\Commands\comfort_prisoner_invisible.png" />
+    <Content Include="Textures\UI\Commands\comfort_prisoner_true.png" />
     <Content Include="Textures\UI\Icons\SubcategoryIndicator.png" />
     <Content Include="Textures\vagina.png" />
     <Content Include="todo.txt" />
