@@ -1,6 +1,6 @@
 1. Rimjobworld is compatible with existing saves. However be aware that the private parts won't appear immediately on your pawns, you have to unpause the game and let the injection code trigger (which won't take more than a few seconds).
 
-2. Newer versions should work in place of older ones without breaking save games. If you load a save created with v0.9 with a newer version you'll probably get an error message about a missing MapComponent, this is safe to ignore.
+2. Newer versions should work in place of older ones without breaking save games.
 
 3. Through the magic of def injection, RJW integrates automatically with EPOE. That means, if you have EPOE installed, the recipes to craft the artificial private parts will appear in the EPOE benches, otherwise they'll appear in the regular places (machining bench & crafting spot).
 
@@ -12,6 +12,6 @@
 
 7. It's not advised to remove RJW after your save used RJW. The save could be corrupted by RJW.
 
-8. RJW may not be compatible with The birds and the Bees. There're functional overlappings which could cause weired things if you use both. I'd suggest you pick only one to use.
+8. RJW is not compatible with The Birds and The Bees. There're functional overlappings which could cause weired things if you use both. I'd suggest you pick only one to use.
 
 9. Compatible with Misc.MAI£¨and many other mods that add races, if you know how to modify the BodyPatches.xml
