@@ -1,5 +1,5 @@
 v1.5.4g changes:
-NOTE: This version still contains relationship and mod buff/debuff bugs. They bugs will be fixed on the next release.
+NOTE: This version still contains relationship and mod buff/debuff bugs. The bugs will be fixed on the next release.
 - Added new texture for comfort prisoner button by NEPH.
 - Fixed inability to designate a prisoner as comfort prisoner that's caused by low vulnerability.
 - Fixed comfort prisoner button bug. It will only appear on prisoners only now.
