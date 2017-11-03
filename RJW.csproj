@@ -333,6 +333,7 @@
     <Content Include="Textures\Things\Building\Furniture\Bed\RoyalBedWhore_side.png" />
     <Content Include="Textures\Things\Building\Furniture\Bed\RoyalBedWhore_sidem.png" />
     <Content Include="Textures\UI\Commands\AsWhore.png" />
+    <Content Include="Textures\UI\Icons\SubcategoryIndicator.png" />
     <Content Include="Textures\vagina.png" />
     <Content Include="todo.txt" />
     <Content Include="version.txt" />

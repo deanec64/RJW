@@ -68,7 +68,7 @@ namespace rjw
 			defaultLabel = MTdef.label;
 			defaultDesc = MTdef.description;
 
-			icon = comfort_prisoner_tex.gizmo;
+			icon = ContentFinder<Texture2D>.Get("UI/Commands/UI/Commands/comfort_prisoner_true");
 
 			// TODO: Can this be null?
 			hotKey = KeyBindingDefOf.Misc12;
