@@ -363,15 +363,6 @@
     <None Include="Defs\RandomDialoguesxml" />
     <None Include="Languages\Japanese\Keyed\RimJobWorld.xml.bak" />
     <None Include="LICENSE" />
-    <None Include="Textures\Things\Building\Furniture\Bed\BedGuest_back.psd" />
-    <None Include="Textures\Things\Building\Furniture\Bed\BedGuest_front.psd" />
-    <None Include="Textures\Things\Building\Furniture\Bed\BedGuest_side.psd" />
-    <None Include="Textures\Things\Building\Furniture\Bed\DoubleBedGuest_back.psd" />
-    <None Include="Textures\Things\Building\Furniture\Bed\DoubleBedGuest_front.psd" />
-    <None Include="Textures\Things\Building\Furniture\Bed\DoubleBedGuest_side.psd" />
-    <None Include="Textures\Things\Building\Furniture\Bed\RoyalBedWhore_back.psd" />
-    <None Include="Textures\Things\Building\Furniture\Bed\RoyalBedWhore_front.psd" />
-    <None Include="Textures\Things\Building\Furniture\Bed\RoyalBedWhore_side.psd" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Source\Common\ABFCommon.cs" />
