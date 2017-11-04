@@ -28,7 +28,7 @@ namespace rjw
 		private int needsex_tick = needsex_tick_timer;
 		private static int needsex_tick_timer = 10;
 		private static float decay_per_day = 0.3f;
-		private float decay_rate_modifier = HugsLibInj.sexneed_decay_rate;
+		private float decay_rate_modifier = ModSettings.sexneed_decay_rate;
 
 		//private int startInterval = Find.TickManager.TicksGame;
 		//private static int tickInterval = 10;
@@ -138,7 +138,7 @@ namespace rjw
 				if (!def.freezeWhileSleeping || pawn.Awake())
 				{
 					float age = pawn.ageTracker.AgeBiologicalYearsFloat;
-					decay_rate_modifier = HugsLibInj.sexneed_decay_rate;
+					decay_rate_modifier = ModSettings.sexneed_decay_rate;
 
 					//every 200 calls will have a real functioning call
 					var fall_per_tick =
@@ -176,7 +176,7 @@ namespace rjw
 			else
 			{
 				needsex_tick--;
-				decay_rate_modifier = HugsLibInj.sexneed_decay_rate;
+				decay_rate_modifier = ModSettings.sexneed_decay_rate;
 			}
 			//Log.Message("[RJW]Need_Sex::NeedInterval is called2 - needsex_tick is "+needsex_tick);
 		}

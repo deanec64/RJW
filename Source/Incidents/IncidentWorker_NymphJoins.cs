@@ -12,7 +12,7 @@ namespace rjw {
         
 		protected override bool CanFireNowSub (IIncidentTarget target)
 		{            
-			if (HugsLibInj.nymphos) {
+			if (ModSettings.nymphos) {
 				var m = (Map)target;
 				var colonist_count = 0;
 				var nymph_count = 0;
@@ -31,7 +31,7 @@ namespace rjw {
 		{
             //Log.Message("IncidentWorker_NymphJoins::TryExecute() called");
 
-            if (!HugsLibInj.nymphos)
+            if (!ModSettings.nymphos)
 			{
 				return false;
 			}
