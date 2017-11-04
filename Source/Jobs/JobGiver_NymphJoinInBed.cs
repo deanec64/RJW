@@ -23,18 +23,17 @@ namespace rjw
 		{
 			Pawn best_fuckee = null;
 			float best_distance = 1.0e6f;
-			foreach (var q in map.mapPawns.FreeColonistsAndPrisoners.Where(x => xxx.is_laying_down_alone(x) && xxx.can_be_fucked(x) && xxx.need_some_sex(x) > 1))  //need_some_sex assumes q as humans
-				if ((q != nymph) &&
-					nymph.CanReserve(q, 1, 0) &&
-					q.CanReserve(nymph, 1, 0) &&
-					!q.Position.IsForbidden(nymph) &&
-					xxx.is_healthy_enough(q) &&
-					roll_to_skip(nymph, q))
+			foreach (var NymphTarget in map.mapPawns.FreeColonistsAndPrisoners.Where(x => x != nymph && xxx.is_laying_down_alone(x) && xxx.can_be_fucked(x)))  //need_some_sex assumes q as humans
+				if (nymph.CanReserve(NymphTarget, 1, 0) &&
+					NymphTarget.CanReserve(nymph, 1, 0) &&
+					!NymphTarget.Position.IsForbidden(nymph) &&
+					//xxx.is_healthy_enough(NymphTarget) &&
+					//roll_to_skip(nymph, NymphTarget))
 				{
-					var dis = nymph.Position.DistanceToSquared(q.Position);
+					var dis = nymph.Position.DistanceToSquared(NymphTarget.Position);
 					if (dis < best_distance)
 					{
-						best_fuckee = q;
+						best_fuckee = NymphTarget;
 						best_distance = dis;
 					}
 				}
@@ -53,36 +52,67 @@ namespace rjw
 					var partner = find_pawn_to_fuck(p, p.Map);
 
 					Building_Bed bed = null;
-					Log.Message("[RJW] JobGiver_NymphJoinInBed called2 - partner is " + partner.NameStringShort);
-					if (partner == null)
+
+					if (partner != null && partner.jobs.curDriver is JobDriver_LayDown)
 					{
-						p.mindState.canLovinTick = Find.TickManager.TicksGame + Rand.Range(100, 300);
-						return null;
-					}
-					if (partner.jobs.curDriver is JobDriver_LayDown)
-					{
+						Log.Message("[RJW] JobGiver_NymphJoinInBed::TryGiveJob( " + p.NameStringShort + " ) - found victim " + partner.NameStringShort);
 						bed = ((JobDriver_LayDown)partner.jobs.curDriver).Bed;
 					}
-					//Log.Message("[RJW] JobGiver_NymphJoinInBed called3 - checking partner's job");
-					if (partner.CurJob != null)
+
+					//Log.Message("   checking partner");
+					if (partner != null)
 					{
-						//Log.Message("   checking bed");
-						if ((bed != null))
+						//Log.Message("   checking partner's job");
+						if (partner.CurJob != null)
 						{
-							Log.Message("[RJW]JobGiver_NymphJoinInBed called4 - returning job");
-							return new Job(xxx.nymph_rapin, partner, bed);
-						}
-						else
-						{
-							//Log.Message("   resetting ticks");
-							if (xxx.config.nymphs_always_JoinInBed)
-								p.mindState.canLovinTick = Find.TickManager.TicksGame + 5;
-							else p.mindState.canLovinTick = Find.TickManager.TicksGame + Rand.Range(100, 300);
+							//Log.Message("   checking partner again");
+							if ((partner != null))
+							{
+								//Log.Message("   checking bed");
+								if ((bed != null))
+								{
+									//Log.Message("   returning job");
+									return new Job(DefDatabase<JobDef>.GetNamed("NymphJoinInBed"), partner, bed);
+								}
+								else
+								{
+									//Log.Message("   resetting ticks");
+									p.mindState.canLovinTick = Find.TickManager.TicksGame + Rand.Range(75, 150);
+								}
+							}
 						}
 					}
+
+					//if (partner == null)
+					//{
+					//	p.mindState.canLovinTick = Find.TickManager.TicksGame + Rand.Range(100, 300);
+					//	return null;
+					//}
+					//if (partner.jobs.curDriver is JobDriver_LayDown)
+					//{
+					//	bed = ((JobDriver_LayDown)partner.jobs.curDriver).Bed;
+					//}
+					////Log.Message("[RJW] JobGiver_NymphJoinInBed called3 - checking partner's job");
+					//if (partner.CurJob != null)
+					//{
+					//	//Log.Message("   checking bed");
+					//	if ((bed != null))
+					//	{
+					//		Log.Message("[RJW]JobGiver_NymphJoinInBed called4 - returning job");
+					//		return new Job(xxx.nymph_rapin, partner, bed);
+					//	}
+					//	else
+					//	{
+					//		//Log.Message("   resetting ticks");
+					//		if (xxx.config.nymphs_always_JoinInBed)
+					//			p.mindState.canLovinTick = Find.TickManager.TicksGame + 5;
+					//		else p.mindState.canLovinTick = Find.TickManager.TicksGame + Rand.Range(100, 300);
+					//	}
+					//}
 				}
 			}
 			return null;
 		}
+		
 	}
 }
