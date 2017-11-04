@@ -26,7 +26,7 @@ namespace rjw
 			foreach (var NymphTarget in map.mapPawns.FreeColonistsAndPrisoners.Where(x => x != nymph && xxx.is_laying_down_alone(x) && xxx.can_be_fucked(x)))  //need_some_sex assumes q as humans
 				if (nymph.CanReserve(NymphTarget, 1, 0) &&
 					NymphTarget.CanReserve(nymph, 1, 0) &&
-					!NymphTarget.Position.IsForbidden(nymph) &&
+					!NymphTarget.Position.IsForbidden(nymph))
 					//xxx.is_healthy_enough(NymphTarget) &&
 					//roll_to_skip(nymph, NymphTarget))
 				{
