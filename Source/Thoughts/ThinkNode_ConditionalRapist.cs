@@ -13,7 +13,7 @@ namespace rjw {
         {
             if (!xxx.config.random_rape_enabled)
                 return false;
-			if (ModSettings.WildMode) return true;
+			if (Mod_Settings.WildMode) return true;
 			if (!xxx.is_rapist(p))
                 return false;
             if (!xxx.isSingleOrPartnerNotHere(p))

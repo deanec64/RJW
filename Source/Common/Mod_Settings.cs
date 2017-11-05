@@ -11,7 +11,7 @@ using HugsLib.Core;
 
 namespace rjw
 {
-	public class ModSettings : ModBase
+	public class Mod_Settings : ModBase
 	{
 
 		public override string ModIdentifier

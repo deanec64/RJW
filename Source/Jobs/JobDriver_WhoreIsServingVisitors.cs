@@ -199,9 +199,10 @@ namespace rjw
                 loveToil.AddFinishAction(delegate {
                     Log.Message("[RJW] JobDriver_WhoreIsServingVisitors::MakeNewToils() - finished loveToil");
                     //// Trying to add some interactions and social logs
-                    xxx.processAnalSex(Partner, Actor, ref isAnalSex, partnerHasPenis);
+                    //xxx.processAnalSex(Partner, Actor, ref isAnalSex, partnerHasPenis);
+					
 
-                });
+				});
                 loveToil.AddFailCondition(() => Partner.Dead || !IsInOrByBed(Bed, Partner));
                 loveToil.socialMode = RandomSocialMode.Off;
                 yield return loveToil;
