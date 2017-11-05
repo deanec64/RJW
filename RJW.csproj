@@ -438,8 +438,10 @@
     <Compile Include="Source\Hediffs\Hediff_MechImplants.cs" />
     <Compile Include="Source\Hediffs\Hediff_InsectEgg.cs" />
     <Compile Include="Source\Hediffs\Hediff_InvisibleImplant.cs" />
+    <Compile Include="Source\Hediffs\Hediff_MicroComputer.cs" />
     <Compile Include="Source\Hediffs\Hediff_Parasite.cs" />
     <Compile Include="Source\Hediffs\Hediff_SimpleBaby.cs" />
+    <Compile Include="Source\Hediffs\Hediff_Orgasm.cs" />
     <Compile Include="Source\Incidents\IncidentWorker_NymphJoins.cs" />
     <Compile Include="Source\Incidents\IncidentWorker_Sexualize.cs" />
     <Compile Include="Source\Incidents\IncidentWorker_TestInc.cs" />
