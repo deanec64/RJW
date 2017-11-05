@@ -46,7 +46,7 @@ namespace rjw
 
         public static void roll_to_hit(Pawn rapist, Pawn p)
         {
-            if (!HugsLibInj.prisoner_beating)
+            if (!ModSettings.prisoner_beating)
             {
                 return;
             }
