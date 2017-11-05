@@ -304,7 +304,7 @@ namespace rjw
 
         public static bool can_fuck(Pawn pawn) {
             if (is_human(pawn)) {
-                return (pawn.ageTracker.AgeBiologicalYears >= ModSettings.sex_minimum_age) &&
+                return (pawn.ageTracker.AgeBiologicalYears >= Mod_Settings.sex_minimum_age) &&
                     Genital_Helper.has_genitals(pawn) && !Genital_Helper.genitals_blocked(pawn);
             }
             else
@@ -318,7 +318,7 @@ namespace rjw
         {
             if (is_human(pawn))
             {
-                return (pawn.ageTracker.AgeBiologicalYears >= ModSettings.sex_minimum_age) &&
+                return (pawn.ageTracker.AgeBiologicalYears >= Mod_Settings.sex_minimum_age) &&
                     (get_sex_ability(pawn) > 0.0f) && (!Genital_Helper.genitals_blocked(pawn));
             }
             else
@@ -330,15 +330,15 @@ namespace rjw
 
         public static bool can_rape(Pawn pawn, bool AllowNonFutaFemaleRaping=false)
         {
-			if (ModSettings.WildMode)
+			if (Mod_Settings.WildMode)
 			{
 				return true;
 			}
 			else if (is_human(pawn))
 			{
 				int age = pawn.ageTracker.AgeBiologicalYears;
-				return (age >= ModSettings.sex_minimum_age) && (need_some_sex(pawn) > 0) && (!Genital_Helper.genitals_blocked(pawn))
-					&& (ModSettings.NonFutaWomenRaping_MaxVulnerability < 0 ? Genital_Helper.has_penis(pawn) : (Genital_Helper.has_penis(pawn) || AllowNonFutaFemaleRaping && is_female(pawn) && get_vulnerability(pawn) <= ModSettings.NonFutaWomenRaping_MaxVulnerability)
+				return (age >= Mod_Settings.sex_minimum_age) && (need_some_sex(pawn) > 0) && (!Genital_Helper.genitals_blocked(pawn))
+					&& (Mod_Settings.NonFutaWomenRaping_MaxVulnerability < 0 ? Genital_Helper.has_penis(pawn) : (Genital_Helper.has_penis(pawn) || AllowNonFutaFemaleRaping && is_female(pawn) && get_vulnerability(pawn) <= Mod_Settings.NonFutaWomenRaping_MaxVulnerability)
 					);
 			}
 			else
@@ -353,13 +353,13 @@ namespace rjw
             // Animals can always be raped regardless of age
             if (is_human(pawn)) {
                 int age = pawn.ageTracker.AgeBiologicalYears;
-                return (ModSettings.WildMode || (age >= ModSettings.sex_minimum_age) && (get_sex_ability(pawn) > 0.0f) && !Genital_Helper.genitals_blocked(pawn) && (ModSettings.Rapee_MinVulnerability_human < 0 ? false : get_vulnerability(pawn) >= ModSettings.Rapee_MinVulnerability_human));
+                return (Mod_Settings.WildMode || (age >= Mod_Settings.sex_minimum_age) && (get_sex_ability(pawn) > 0.0f) && !Genital_Helper.genitals_blocked(pawn) && (Mod_Settings.Rapee_MinVulnerability_human < 0 ? false : get_vulnerability(pawn) >= Mod_Settings.Rapee_MinVulnerability_human));
             } else if (is_animal(pawn) && config.animals_enabled )
             {
                 float combatPower = pawn.kindDef.combatPower;
                 float bodySize = pawn.RaceProps.baseBodySize;
                 //Log.Message("[RJW]xxx::can_get_raped - animal pawn - vulnerability is "+ get_vulnerability(pawn));
-                return combatPower <= 80 && bodySize<= 1.2 && bodySize>=0.25 && (get_sex_ability(pawn) > 0.0f) && !is_mechanoid(pawn) && (ModSettings.Rapee_MinVulnerability_animals<0? false:get_vulnerability(pawn) >= ModSettings.Rapee_MinVulnerability_animals);
+                return combatPower <= 80 && bodySize<= 1.2 && bodySize>=0.25 && (get_sex_ability(pawn) > 0.0f) && !is_mechanoid(pawn) && (Mod_Settings.Rapee_MinVulnerability_animals<0? false:get_vulnerability(pawn) >= Mod_Settings.Rapee_MinVulnerability_animals);
             }
             return false;
         }
@@ -378,16 +378,16 @@ namespace rjw
             {
                 //var ffa_age = config.sex_free_for_all_age;
                 //if (xxx.is_animal(fucker) && xxx.config.animals_enabled && (p_age >= xxx.config.sex_free_for_all_age)) {
-                if (is_animal(fucker) && (p_age >= ModSettings.sex_free_for_all_age)) {
+                if (is_animal(fucker) && (p_age >= Mod_Settings.sex_free_for_all_age)) {
                     age_ok = true;
-                } else if (is_animal(p) && (fucker_age >= ModSettings.sex_free_for_all_age)) {
+                } else if (is_animal(p) && (fucker_age >= Mod_Settings.sex_free_for_all_age)) {
                     // don't check the age of animals when they are the victim
                     age_ok = true;
                     //} else if ((fucker_age >= xxx.config.sex_free_for_all_age) && (p_age >= xxx.config.sex_free_for_all_age)) {
-                } else if ((fucker_age >= ModSettings.sex_free_for_all_age) && (p_age >= ModSettings.sex_free_for_all_age)) {
+                } else if ((fucker_age >= Mod_Settings.sex_free_for_all_age) && (p_age >= Mod_Settings.sex_free_for_all_age)) {
                     age_ok = true;
                     //} else if ((fucker_age < xxx.config.sex_minimum_age) || (p_age < xxx.config.sex_minimum_age)) {
-                } else if ((fucker_age < ModSettings.sex_minimum_age) || (p_age < ModSettings.sex_minimum_age)) {
+                } else if ((fucker_age < Mod_Settings.sex_minimum_age) || (p_age < Mod_Settings.sex_minimum_age)) {
                     age_ok = false;
                 } else {
                     age_ok = Math.Abs(fucker.ageTracker.AgeBiologicalYearsFloat - p.ageTracker.AgeBiologicalYearsFloat) < 2.05f;
@@ -850,7 +850,7 @@ namespace rjw
             }
 
             // fertility check
-            float fertility = (xxx.is_animal(female)? ModSettings.pregnancy_coefficient_animals / 100f : ModSettings.pregnancy_coefficient_human / 100f);
+            float fertility = (xxx.is_animal(female)? Mod_Settings.pregnancy_coefficient_animals / 100f : Mod_Settings.pregnancy_coefficient_human / 100f);
             float ReproductionFactor = Math.Min(male.health.capacities.GetLevel(reproduction), female.health.capacities.GetLevel(reproduction));
             float pregnancy_threshold = fertility * ReproductionFactor;
             float pregnancy_chance = Rand.Value;
@@ -869,7 +869,7 @@ namespace rjw
 
         public static void TryImpregnate_RimWorldChildren(Pawn female, Pawn male) {
             // fertility check
-            float fertility = (xxx.is_animal(female) ? ModSettings.pregnancy_coefficient_animals / 100f : ModSettings.pregnancy_coefficient_human / 100f);
+            float fertility = (xxx.is_animal(female) ? Mod_Settings.pregnancy_coefficient_animals / 100f : Mod_Settings.pregnancy_coefficient_human / 100f);
             float ReproductionFactor = Math.Min(male.health.capacities.GetLevel(reproduction), female.health.capacities.GetLevel(reproduction));
             float pregnancy_threshold = fertility * ReproductionFactor;
             float pregnancy_chance = Rand.Value;
