@@ -38,9 +38,20 @@
     </parentDefs>
     <tendable>false</tendable>
   </HediffDef>
-  <HediffDef ParentName="RJW_ImplantMech">
+  
+  
+  <HediffDef ParentName="RJW_ImplantMech" Class="rjw.HediffDef_MicroComputer">
+    <hediffClass>rjw.Hediff_MicroComputer</hediffClass>
     <defName>RJW_MicroComputer</defName>
+    <tendable>false</tendable>
+    <isBad>true</isBad>
     <label>MicroComputer</label>
+    <minEventInterval>3000</minEventInterval>
+    <maxEventInterval>9000</maxEventInterval>
+    <randomHediffDefs>
+      <li>RJW_Orgasm</li>
+      <li>TransportCums</li>
+    </randomHediffDefs>
   </HediffDef>
 
   <HediffDef>

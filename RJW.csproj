@@ -37,15 +37,15 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\RimWorld\RimWorldWin_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\RimWorldWin_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="HugsLib">
-      <HintPath>..\HugsLib\Assemblies\HugsLib.dll</HintPath>
+      <HintPath>..\..\hoge\Assemblies\HugsLib.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RimWorldChildren">
-      <HintPath>..\..\RimWorld\Mods\ChildrenAndPregnancy-master\Assemblies\RimWorldChildren.dll</HintPath>
+      <HintPath>..\ChildrenAndPregnancy-master\Assemblies\RimWorldChildren.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -53,7 +53,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>..\..\RimWorld\RimWorldWin_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>..\..\RimWorldWin_Data\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
@@ -81,6 +81,7 @@
     <Content Include="Defs\DesignationSubCategoryDefs\RJW_SubCategory.xml" />
     <Content Include="Defs\Designations\Designations.xml" />
     <Content Include="Defs\HediffDefs\Hediffs_FeelingBroken.xml" />
+    <Content Include="Defs\HediffDefs\Hediffs_MCEvents.xml" />
     <Content Include="Defs\HediffDefs\Hediffs_Other.xml" />
     <Content Include="Defs\HediffDefs\Hediffs_PrivateParts.xml" />
     <Content Include="Defs\HediffDefs\Hediffs_SimpleBaby.xml" />
@@ -90,7 +91,9 @@
     <Content Include="Defs\HediffGiverSetDefs\HediffGiverSets.xml" />
     <Content Include="Defs\IncidentDef\Incidents.xml" />
     <Content Include="Defs\InteractionDef\Interactions.xml" />
-    <Content Include="Defs\JobDefs\ABFJobs.xml" />
+    <Content Include="Defs\JobDefs\ABFJobs.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Defs\JobDefs\Jobs.xml" />
     <Content Include="Defs\MiscTranslationDef\MiscTranslationDefs.xml" />
     <Content Include="Defs\Motes\Motes.xml" />
@@ -400,7 +403,7 @@
     <Compile Include="Source\Hediffs\Hediff_MicroComputer.cs" />
     <Compile Include="Source\Hediffs\Hediff_Parasite.cs" />
     <Compile Include="Source\Hediffs\Hediff_SimpleBaby.cs" />
-    <Compile Include="Source\Hediffs\Hediff_Orgasm.cs" />
+    <Compile Include="Source\Hediffs\Hediff_MCEvents.cs" />
     <Compile Include="Source\Incidents\IncidentWorker_NymphJoins.cs" />
     <Compile Include="Source\Incidents\IncidentWorker_Sexualize.cs" />
     <Compile Include="Source\Incidents\IncidentWorker_TestInc.cs" />
