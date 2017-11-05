@@ -94,27 +94,23 @@ namespace rjw
 						Log.Message("[RJW] JobGiver_NymphJoinInBed::TryGiveJob( " + p.NameStringShort + " ) - found target: " + partner.NameStringShort);
 						bed = ((JobDriver_LayDown)partner.jobs.curDriver).Bed;
 					}
-					//Log.Message("[RJW] JobGiver_NymphJoinInBed called3 - checking partner's job");
-					if (partner.CurJob != null)
+					Log.Message("[RJW] JobGiver_NymphJoinInBed called3 - checking partner's job");
+					if (partner.CurJob != null && bed != null)
 					{
-						//Log.Message("   checking bed");
-						if ((bed != null))
-						{
-							Log.Message("[RJW]JobGiver_NymphJoinInBed called4 - returning job");
-							return new Job(xxx.nymph_rapin, partner, bed);
-						}
-						else
-						{
-							//Log.Message("   resetting ticks");
-							if (xxx.config.nymphs_always_JoinInBed)
-								p.mindState.canLovinTick = Find.TickManager.TicksGame + 5;
-							else p.mindState.canLovinTick = Find.TickManager.TicksGame + Rand.Range(100, 300);
-						}
+						Log.Message("[RJW]JobGiver_NymphJoinInBed called4 - returning job");
+						return new Job(xxx.nymph_rapin, partner, bed);
+					}
+					else
+					{
+						Log.Message("   resetting ticks");
+						if (xxx.config.nymphs_always_JoinInBed)
+							p.mindState.canLovinTick = Find.TickManager.TicksGame + 5;
+						else p.mindState.canLovinTick = Find.TickManager.TicksGame + Rand.Range(100, 300);
 					}
 				}
 			}
 			return null;
 		}
-		
-	}
+
+}
 }
