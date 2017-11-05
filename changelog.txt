@@ -2,6 +2,7 @@ v1.5.4h changes:
 - Fixed nymph joining bed and no effect bug.
 - Temporary fix for anal rape thought memory.
 - Tweaked overpriced whores' service price. Normal whores are now cost around 20-40 silvers. 
+- Updated Korean translation.
 
 v1.5.4g changes:
 - Added new texture for comfort prisoner button by NEPH.
