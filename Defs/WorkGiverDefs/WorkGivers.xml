@@ -3,8 +3,9 @@
 
 	<WorkGiverDef>
 		<defName>RapeCP</defName>
-		<label>Rape Comfort Prisoner</label>
+		<label>Rapin' comfort prisoner</label>
 		<giverClass>rjw.WorkGiver_RapeCP</giverClass>
+		<!--TODO change it to a worktype everyone can do-->
 		<workType>Warden</workType>
 		<verb>rape</verb>
 		<gerund>raping</gerund>
@@ -13,6 +14,5 @@
 			<li>Manipulation</li>
 		</requiredCapacities>
 	</WorkGiverDef>
-
 
 </WorkGivers>

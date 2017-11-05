@@ -5,7 +5,7 @@
     <DefName>DesignatorComfortPrisoner</DefName>
     <targetClass>rjw.Designator_ComfortPrisoner</targetClass>
     <label>comfort prisoner</label>
-    <description>Designate NAME as a tool to satisfy everyone's sexual need.</description>
+    <description>Designate the prisoner as a tool to satisfy everyone's sexual need.</description>
   </rjw.MiscTranslationDef>
 
   <rjw.MiscTranslationDef>

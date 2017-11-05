@@ -6,7 +6,7 @@
     <xpath>*/BodyDef[defName = "BeetleLikeWithClaw"]/corePart/parts</xpath>
     <value>
       <li>
-        <def>InsectGenitals</def>
+        <def>MechGenitals</def>
         <coverage>0.01</coverage>
         <depth>Inside</depth>
       </li>
@@ -16,7 +16,7 @@
     <xpath>*/BodyDef[defName = "MechanicalCentipede"]/corePart/parts</xpath>
     <value>
       <li>
-        <def>InsectGenitals</def>
+        <def>MechGenitals</def>
         <coverage>0.01</coverage>
         <depth>Inside</depth>
       </li>
@@ -26,7 +26,7 @@
     <xpath>*/BodyDef[defName = "Scyther"]/corePart/parts</xpath>
     <value>
       <li>
-        <def>InsectGenitals</def>
+        <def>MechGenitals</def>
         <coverage>0.01</coverage>
         <depth>Inside</depth>
       </li>

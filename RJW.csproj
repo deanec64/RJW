@@ -86,6 +86,7 @@
     <Content Include="Defs\HediffDefs\Hediffs_SimpleBaby.xml" />
     <Content Include="Defs\HediffDefs\Hediffs_STDs.xml" />
     <Content Include="Defs\HediffDefs\Hediffs_Sterilized.xml" />
+    <Content Include="Defs\HediffDefs\Hediffs_EnemyImplants.xml" />
     <Content Include="Defs\HediffGiverSetDefs\HediffGiverSets.xml" />
     <Content Include="Defs\IncidentDef\Incidents.xml" />
     <Content Include="Defs\InteractionDef\Interactions.xml" />
@@ -98,6 +99,7 @@
     <Content Include="Defs\PawnKinds\PawnKinds.xml" />
     <Content Include="Defs\RecipeDefs\Recipes_Prosthetics.xml" />
     <Content Include="Defs\RecipeDefs\Recipes_Surgery.xml" />
+    <Content Include="Defs\RecipeDefs\Recipes_RemoveEnemyImplants.xml" />
     <Content Include="Defs\RecordDef\Records_GetRaped.xml" />
     <Content Include="Defs\ResearchProjectDefs\ResearchProjects_XxXx.xml" />
     <Content Include="Defs\ResearchProjectDefs\ResearchTabs.xml" />
@@ -109,7 +111,9 @@
     <Content Include="Defs\STDs.xml" />
     <Content Include="Defs\ThingDefs\Items_PrivateParts.xml" />
     <Content Include="Defs\ThingDefs\ThingsDef_XXX.xml" />
-    <Content Include="Defs\ThinkTreeDefs\ThinkTrees.xml" />
+    <Content Include="Defs\ThinkTreeDefs\ThinkTrees.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Defs\ThoughtDefs\Thoughts.xml" />
     <Content Include="Defs\TraitDefs\Traits.xml" />
     <Content Include="Defs\WorkGiverDefs\WorkGivers.xml" />
@@ -363,15 +367,6 @@
     <None Include="Defs\RandomDialoguesxml" />
     <None Include="Languages\Japanese\Keyed\RimJobWorld.xml.bak" />
     <None Include="LICENSE" />
-    <None Include="Textures\Things\Building\Furniture\Bed\BedGuest_back.psd" />
-    <None Include="Textures\Things\Building\Furniture\Bed\BedGuest_front.psd" />
-    <None Include="Textures\Things\Building\Furniture\Bed\BedGuest_side.psd" />
-    <None Include="Textures\Things\Building\Furniture\Bed\DoubleBedGuest_back.psd" />
-    <None Include="Textures\Things\Building\Furniture\Bed\DoubleBedGuest_front.psd" />
-    <None Include="Textures\Things\Building\Furniture\Bed\DoubleBedGuest_side.psd" />
-    <None Include="Textures\Things\Building\Furniture\Bed\RoyalBedWhore_back.psd" />
-    <None Include="Textures\Things\Building\Furniture\Bed\RoyalBedWhore_front.psd" />
-    <None Include="Textures\Things\Building\Furniture\Bed\RoyalBedWhore_side.psd" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Source\Common\ABFCommon.cs" />
@@ -381,9 +376,9 @@
     <Compile Include="Source\Common\CORE_EXPOSED.cs" />
     <Compile Include="Source\Common\Designator_ComfortPrisoner.cs" />
     <Compile Include="Source\Common\Genital_Helper.cs" />
-    <Compile Include="Source\Common\HugsLibInj.cs" />
     <Compile Include="Source\Common\MapCom_Injector.cs" />
     <Compile Include="Source\Common\MiscTranslationDef.cs" />
+    <Compile Include="Source\Common\ModSettings.cs" />
     <Compile Include="Source\Common\RandomDialogues.cs" />
     <Compile Include="Source\Common\std.cs" />
     <Compile Include="Source\Common\Verb_Fuck.cs" />
@@ -396,10 +391,16 @@
     <Compile Include="Source\Harmony\patches_need.cs" />
     <Compile Include="Source\Harmony\patches_pregnancy.cs" />
     <Compile Include="Source\Harmony\patches_ABF.cs" />
+    <Compile Include="Source\Hediffs\HediffDef_EnemyImplants.cs" />
     <Compile Include="Source\Hediffs\Hediff_ID.cs" />
     <Compile Include="Source\Hediffs\Hediff_InitPrivates.cs" />
+    <Compile Include="Source\Hediffs\Hediff_MechImplants.cs" />
+    <Compile Include="Source\Hediffs\Hediff_InsectEgg.cs" />
     <Compile Include="Source\Hediffs\Hediff_InvisibleImplant.cs" />
+    <Compile Include="Source\Hediffs\Hediff_MicroComputer.cs" />
+    <Compile Include="Source\Hediffs\Hediff_Parasite.cs" />
     <Compile Include="Source\Hediffs\Hediff_SimpleBaby.cs" />
+    <Compile Include="Source\Hediffs\Hediff_Orgasm.cs" />
     <Compile Include="Source\Incidents\IncidentWorker_NymphJoins.cs" />
     <Compile Include="Source\Incidents\IncidentWorker_Sexualize.cs" />
     <Compile Include="Source\Incidents\IncidentWorker_TestInc.cs" />
@@ -413,8 +414,9 @@
     <Compile Include="Source\Jobs\JobDriver_LovinPP.cs" />
     <Compile Include="Source\Jobs\JobDriver_NymphJoinInBed.cs" />
     <Compile Include="Source\Jobs\JobDriver_RandomRape.cs" />
-    <Compile Include="Source\Jobs\JobDriver_Rape.cs" />
+    <Compile Include="Source\Jobs\JobDriver_RapeEnemyByAnimal.cs" />
     <Compile Include="Source\Jobs\JobDriver_RapeEnemy.cs" />
+    <Compile Include="Source\Jobs\JobDriver_RapeEnemyToParasite.cs" />
     <Compile Include="Source\Jobs\JobDriver_RapeEnemyByInsect.cs" />
     <Compile Include="Source\Jobs\JobDriver_RapeEnemyByMech.cs" />
     <Compile Include="Source\Jobs\JobDriver_StruggleInBondageGear.cs" />
@@ -429,7 +431,7 @@
     <Compile Include="Source\Jobs\JobGiver_RapeEnemy.cs" />
     <Compile Include="Source\Jobs\JobGiver_ViolateCorpse.cs" />
     <Compile Include="Source\Jobs\JobGiver_WhoreInvitingVisitors.cs" />
-    <Compile Include="Source\Jobs\LordJob_RapeColonists.cs" />
+    <Compile Include="Source\Jobs\JobDef_RapeEnemy.cs" />
     <Compile Include="Source\Needs\Need_Sex.cs" />
     <Compile Include="Source\Needs\PawnCapacityWorker_Fertility.cs" />
     <Compile Include="Source\Pawns\nymph_backstories.cs" />

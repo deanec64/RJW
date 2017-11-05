@@ -1,18 +1,44 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	<JobDef>
-		<defName>RapeEnemy</defName>
-		<driverClass>rjw.JobDriver_RapeEnemy</driverClass>
-		<reportString>Rapin' Enemy</reportString>
-	</JobDef>
-	<JobDef>
-		<defName>RapeEnemyByInsect</defName>
-		<driverClass>rjw.JobDriver_RapeEnemyByInsect</driverClass>
-		<reportString>Rapin' Enemy</reportString>
-	</JobDef>
-	<JobDef>
-		<defName>RapeEnemyByMech</defName>
-		<driverClass>rjw.JobDriver_RapeEnemyByMech</driverClass>
-		<reportString>Rapin' Enemy</reportString>
-	</JobDef>
+    <JobDef Class="rjw.JobDef_RapeEnemy">
+        <defName>RapeEnemy</defName>
+	    <driverClass>rjw.JobDriver_RapeEnemy</driverClass>
+	    <reportString>Rapin' Enemy</reportString> 
+	    <priority>100</priority><!-- High value is high priority. -->
+      <!-- Add defNames to do this type of rape-->
+    <TargetDefNames>
+    </TargetDefNames>
+    </JobDef>
+  <JobDef Class="rjw.JobDef_RapeEnemy">
+    <defName>RapeEnemyByInsect</defName> <!-- Rape to plant egg. see Hediffs_EnemyImplants.xml more detail-->
+    <driverClass>rjw.JobDriver_RapeEnemyByInsect</driverClass>
+    <reportString>Rapin' Enemy</reportString>
+	    <priority>1000</priority>
+    <TargetDefNames>
+    </TargetDefNames>
+  </JobDef>
+  <JobDef Class="rjw.JobDef_RapeEnemy">
+    <defName>RapeEnemyByMech</defName> <!-- Rape to Implant something. see Hediffs_EnemyImplants.xml more detail-->
+    <driverClass>rjw.JobDriver_RapeEnemyByMech</driverClass>
+    <reportString>Rapin' Enemy</reportString>
+	    <priority>1000</priority>
+    <TargetDefNames>
+    </TargetDefNames>
+  </JobDef>
+  <JobDef Class="rjw.JobDef_RapeEnemy">
+    <defName>RapeEnemyByAnimal</defName>
+    <driverClass>rjw.JobDriver_RapeEnemyByAnimal</driverClass>
+    <reportString>Rapin' Enemy</reportString>
+    <priority>1000</priority>
+    <TargetDefNames>
+    </TargetDefNames>
+  </JobDef>
+  <JobDef Class="rjw.JobDef_RapeEnemy">
+    <defName>RapeEnemyToParasite</defName> <!-- Rape to pregnant same kind of male.-->
+    <driverClass>rjw.JobDriver_RapeEnemyToParasite</driverClass>
+    <reportString>Rapin' Enemy</reportString>
+    <priority>2000</priority>
+    <TargetDefNames>
+    </TargetDefNames>
+  </JobDef>
 </Defs>

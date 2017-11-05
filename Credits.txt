@@ -1,7 +1,9 @@
-﻿
-RimJobWorld Community Project
-Special thanks to
+﻿=========================================
+|||   RimJobWorld Community Project   |||
+=========================================
 
+
+Special thanks to
 
 Void Main              Original Author
 
