@@ -48,6 +48,10 @@
       <HintPath>..\..\RimWorld\Mods\ChildrenAndPregnancy-master\Assemblies\RimWorldChildren.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="SexualitySpectrum">
+      <HintPath>..\..\RimWorld\Mods\Romance Diversified A17\Assemblies\SexualitySpectrum.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml" />
