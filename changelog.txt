@@ -3,6 +3,7 @@ v1.5.4h changes:
 - Temporary fix for anal rape thought memory.
 - Tweaked overpriced whores' service price. Normal whores are now cost around 20-40 silvers. 
 - Updated Korean translation.
+- Fixed "Allowed me to get raped" social debuff on masochists.
 
 v1.5.4g changes:
 - Added new texture for comfort prisoner button by NEPH.
