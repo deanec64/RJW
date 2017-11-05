@@ -14,7 +14,7 @@ namespace rjw
 
 		public override void roll_to_hit(Pawn rapist, Pawn p)
 		{
-			if (!ModSettings.prisoner_beating)
+			if (!Mod_Settings.prisoner_beating)
 			{
 				return;
 			}
