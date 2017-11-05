@@ -673,7 +673,7 @@ namespace rjw
                 }
 
                 foreach (var bystander in part.Map.mapPawns.SpawnedPawnsInFaction(part.Faction)) {
-                    if ((bystander != pawn) && (bystander != part) && !xxx.is_animal(bystander)) {
+                    if ((bystander != pawn) && (bystander != part) && !xxx.is_animal(bystander) && !xxx.is_masochist(part)) {
                         part.needs.mood.thoughts.memories.TryGainMemory(xxx.allowed_me_to_get_raped, bystander);
                     }
                 }
