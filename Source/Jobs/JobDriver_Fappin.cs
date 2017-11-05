@@ -32,7 +32,7 @@ namespace rjw {
 		
 		protected override IEnumerable<Toil> MakeNewToils ()
 		{
-			ticks_left = (int)(2000.0f * Rand.Range (0.20f, 0.70f));
+			ticks_left = (int)(2500.0f * Rand.Range (0.20f, 0.70f));
 			
 			this.FailOnDespawnedOrNull (ibed);
 			this.KeepLyingDown (ibed);
@@ -40,10 +40,6 @@ namespace rjw {
 			yield return Toils_Bed.GotoBed (ibed);
 
 			Toil do_fappin = Toils_LayDown.LayDown (ibed, true, false, false, false);
-            do_fappin.initAction = delegate
-            {
-                Log.Message("[RJW]JobDriver_Fappin::MakeNewToils - do_fappin.initAction is called");
-            };
 			do_fappin.AddPreTickAction (delegate {
 				--this.ticks_left;
 			    if (this.ticks_left <= 0)

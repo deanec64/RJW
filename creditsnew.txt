@@ -1,9 +1,7 @@
-﻿=========================================
-|||   RimJobWorld Community Project   |||
-=========================================
-
-
+﻿
+RimJobWorld Community Project
 Special thanks to
+
 
 Void Main              Original Author
 
@@ -27,9 +25,56 @@ nizhuan-jjr            Chinese simplified translations, general coding, bugsfix,
                        previews, etc.
 g0ring                 Coding idea, bugfix
 StarlightG             Coding idea, bugfix
-SuperHotSausage        Coding, stuff
-Sidfu                  Coding, XML modding
+SuperHotSausage        XML improvements, stuff
+Sidfu                  XML 
 NEPH                   Graphics & textures, testing, Korean translation
 hogehoge1942           Coding, Japanese translation
 
 And anyone we might have missed.
+
+
+
+RimJobWorld Community Project
+
+
+ORIGINAL AUTHOR        Void Main
+
+CODERS                 nethrez1m
+					   prkr_jmsn
+					   semigimp
+					   Soronarr
+					   StarlightG
+					   g0ring
+					   nizhuan-jjr
+					   SuperHotSausage
+					   Sidfu
+					   hogehoge1942
+
+GRAPHIC ARTISTS        shark510
+                       prkr_jmsn
+                       AngleWyrm
+					   nizhuan-jjr
+					   NEPH
+                       
+SOUND ARTISTS          prkr_jmsn
+
+TRANSLATORS
+CHINESE TRADITIONAL    Alanetsai
+CHINESE SIMPLIFIED     nizhuan-jjr
+KOREAN                 NEPH
+JAPANESE               hogehoge1942
+
+TESTERS                shark510
+                       nizhuan-jjr
+
+BUG HUNTERS            g0ring
+                       nizhuan-jjr
+                       SuperHotSausage
+
+SPECIAL THANKS TO      Loverslab
+                       Skystreet
+                       Goddifist
+					   UnlimitedHugs
+                       pardeike
+					   Fluffy
+					   You

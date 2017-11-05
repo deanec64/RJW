@@ -12,15 +12,21 @@ using RimWorld;
 namespace rjw {
 	
 	[StaticConstructorOnStartup]
-	internal static class comfort_prisoner_tex {
-		public static Texture2D gizmo = ContentFinder<Texture2D>.Get("comfort_prisoner");
+	internal static class comfort_prisoner_true_tex {
+		public static Texture2D gizmo = ContentFinder<Texture2D>.Get("UI/Commands/comfort_prisoner_true");
 	}
     [StaticConstructorOnStartup]
-    internal static class comfort_prisoner_invisible_tex
+    internal static class comfort_prisoner_false_tex
     {
-        public static Texture2D gizmo = ContentFinder<Texture2D>.Get("comfort_prisoner_invisible");
+        public static Texture2D gizmo = ContentFinder<Texture2D>.Get("UI/Commands/comfort_prisoner_false");
     }
-	
+
+	[StaticConstructorOnStartup]
+	internal static class comfort_prisoner_invisible_tex
+	{
+		public static Texture2D gizmo = ContentFinder<Texture2D>.Get("UI/Commands/comfort_prisoner_invisible");
+	}
+
 	public static class comfort_prisoners {
 		
 		public const int max_rapists_per_prisoner = 2;// original value is 6

@@ -1,10 +1,25 @@
-v1.5.4d A1 changes:
--Added Japanese translation(Partial)
--Added Enemy(Humans, Mechanoids, Insects) rape colonist.
--Assault Colony wont end if not satisfied sex.(or timeout)
+v1.5.4g changes:
+NOTE: This version still contains relationship and mod buff/debuff bugs. The bugs will be fixed on the next release.
+- Added new texture for comfort prisoner button by NEPH.
+- Fixed inability to designate a prisoner as comfort prisoner that's caused by low vulnerability.
+- Fixed comfort prisoner button bug. It will only appear on prisoners only now.
+- Added Japanese translation by hogehoge1942.
+- Merged ABF with RJW.
+- Added new raping system from ABF by hogehoge1942. Raiders will now rape incapacitated/knocked down/unsconcious pawns who are enemies to them.
+- Fixed pawns prefer fappin' than do lovin'.
 
-- Added sex need decay option.
-- Overhauled mod settings.
+v1.5.4f changes:
+- Standing fappin' bug fix.
+- New whore bed textures by NEPH.
+- Reworked vulnerability factors. Vulnerability is now affected by melee skill, sight, moving, and consciousness. 
+
+v1.5.4e changes:
+- Added sex need decay option. You can change it anytime.
+- Overhauled mod settings: 
+	- Edited titles & descriptions.
+	- Added plus & minus buttons.
+	- Added validators.
+	- Optimized live ingame changes.
 
 v1.5.4d changes:
 - Removed toggle whore bed button that's applied to all beds as it causes errors.

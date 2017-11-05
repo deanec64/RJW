@@ -44,7 +44,7 @@ namespace rjw
 			}
 			else
 			{
-				bool flag2 = !xxx.is_human(fucker) && (long)ageBiologicalYears2 >= (long)((ulong)HugsLibInj.sex_free_for_all_age);
+				bool flag2 = xxx.is_animal(fucker) && (long)ageBiologicalYears2 >= (long)((ulong)ModSettings.sex_free_for_all_age);
 				bool flag3;
 				if (flag2)
 				{
@@ -52,21 +52,21 @@ namespace rjw
 				}
 				else
 				{
-					bool flag4 = !xxx.is_human(p) && (long)ageBiologicalYears >= (long)((ulong)HugsLibInj.sex_free_for_all_age);
+					bool flag4 = xxx.is_animal(p) && (long)ageBiologicalYears >= (long)((ulong)ModSettings.sex_free_for_all_age);
 					if (flag4)
 					{
 						flag3 = true;
 					}
 					else
 					{
-						bool flag5 = (long)ageBiologicalYears >= (long)((ulong)HugsLibInj.sex_free_for_all_age) && (long)ageBiologicalYears2 >= (long)((ulong)HugsLibInj.sex_free_for_all_age);
+						bool flag5 = (long)ageBiologicalYears >= (long)((ulong)ModSettings.sex_free_for_all_age) && (long)ageBiologicalYears2 >= (long)((ulong)ModSettings.sex_free_for_all_age);
 						if (flag5)
 						{
 							flag3 = true;
 						}
 						else
 						{
-							bool flag6 = (long)ageBiologicalYears < (long)((ulong)HugsLibInj.sex_minimum_age) || (long)ageBiologicalYears2 < (long)((ulong)HugsLibInj.sex_minimum_age);
+							bool flag6 = (long)ageBiologicalYears < (long)((ulong)ModSettings.sex_minimum_age) || (long)ageBiologicalYears2 < (long)((ulong)ModSettings.sex_minimum_age);
 							flag3 = (!flag6 && Math.Abs(fucker.ageTracker.AgeBiologicalYearsFloat - p.ageTracker.AgeBiologicalYearsFloat) < 2.05f);
 						}
 					}
@@ -86,7 +86,7 @@ namespace rjw
 						}
 						else
 						{
-							bool flag10 = xxx.is_bisexual(fucker) || (fucker.gender == Gender.None);
+							bool flag10 = xxx.is_bisexual(fucker);
 							if (flag10)
 							{
 								num = 1f;

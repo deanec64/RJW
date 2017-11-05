@@ -263,7 +263,7 @@ namespace rjw
                                 {
                                     pitch_source = "the environment";
                                     pitch_chance = sd.environment_pitch_chance * cleanliness_factor;
-                                    if (!HugsLibInj.std_floor)
+                                    if (!ModSettings.std_floor)
                                     {
                                         pitch_chance = -9001f;
                                     }

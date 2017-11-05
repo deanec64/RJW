@@ -52,7 +52,7 @@ namespace rjw {
             List<Pawn> siblings = new List<Pawn>();
             for (int i = 0; i < litter_size; i++) {
                 Pawn spawn_parent = mother;
-                if (father != null && HugsLibInj.pregnancy_use_parent_method && (100 * Rand.Value) > HugsLibInj.pregnancy_weight_parent) {
+                if (father != null && ModSettings.pregnancy_use_parent_method && (100 * Rand.Value) > ModSettings.pregnancy_weight_parent) {
                     spawn_parent = father;
                 }
                 PawnGenerationRequest request = new PawnGenerationRequest(spawn_parent.kindDef, spawn_parent.Faction, PawnGenerationContext.NonPlayer, spawn_parent.Map.Tile, false, true, false, false, false, false, 1, false, true, true, false, false, null, 0, 0, null, skin_whiteness, last_name);

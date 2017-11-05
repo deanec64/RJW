@@ -37,15 +37,15 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\RimWorldWin_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\RimWorld\RimWorldWin_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="HugsLib">
-      <HintPath>..\..\hoge\Assemblies\HugsLib.dll</HintPath>
+      <HintPath>..\HugsLib\Assemblies\HugsLib.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RimWorldChildren">
-      <HintPath>..\ChildrenAndPregnancy-master\Assemblies\RimWorldChildren.dll</HintPath>
+      <HintPath>..\..\RimWorld\Mods\ChildrenAndPregnancy-master\Assemblies\RimWorldChildren.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -53,7 +53,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>..\..\RimWorldWin_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>..\..\RimWorld\RimWorldWin_Data\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
@@ -322,43 +322,21 @@
     <Content Include="Sounds\Sex\kucyu04.wav" />
     <Content Include="Source\Notes.txt" />
     <Content Include="Textures\anus.png" />
-    <Content Include="Textures\anus_old.png" />
     <Content Include="Textures\armbinder.png" />
     <Content Include="Textures\artificial_anus.png" />
     <Content Include="Textures\artificial_breast.png" />
-    <Content Include="Textures\big_penis.png" />
-    <Content Include="Textures\bionic_anus.png" />
-    <Content Include="Textures\bionic_boobs.png" />
-    <Content Include="Textures\bionic_penis.png" />
-    <Content Include="Textures\bionic_vagina.png" />
-    <Content Include="Textures\boobs.png" />
     <Content Include="Textures\breast.png" />
     <Content Include="Textures\chastity_belt.png" />
     <Content Include="Textures\comfort_prisoner.png" />
-    <Content Include="Textures\comfort_prisoner_invisible.png" />
     <Content Include="Textures\female_artificial_genital.png" />
-    <Content Include="Textures\female_artificial_private.png" />
     <Content Include="Textures\female_genital.png" />
-    <Content Include="Textures\female_private.png" />
     <Content Include="Textures\gag.png" />
-    <Content Include="Textures\generic_artificial_private.png" />
-    <Content Include="Textures\generic_private.png" />
     <Content Include="Textures\holokey.png" />
     <Content Include="Textures\hololock.png" />
-    <Content Include="Textures\huge_penis.png" />
-    <Content Include="Textures\hydraulic_anus.png" />
-    <Content Include="Textures\hydraulic_boobs.png" />
-    <Content Include="Textures\hydraulic_vagina.png" />
     <Content Include="Textures\male_artificial_genital.png" />
-    <Content Include="Textures\male_artificial_private.png" />
     <Content Include="Textures\male_genital.png" />
-    <Content Include="Textures\male_private.png" />
-    <Content Include="Textures\micropenis.png" />
     <Content Include="Textures\noheart.png" />
-    <Content Include="Textures\peg_dick.png" />
-    <Content Include="Textures\penis.png" />
     <Content Include="Textures\placeholder_part.png" />
-    <Content Include="Textures\small_penis.png" />
     <Content Include="Textures\Things\Building\Furniture\Bed\BedWhore_back.png" />
     <Content Include="Textures\Things\Building\Furniture\Bed\BedWhore_backm.png" />
     <Content Include="Textures\Things\Building\Furniture\Bed\BedWhore_front.png" />
@@ -378,7 +356,10 @@
     <Content Include="Textures\Things\Building\Furniture\Bed\RoyalBedWhore_side.png" />
     <Content Include="Textures\Things\Building\Furniture\Bed\RoyalBedWhore_sidem.png" />
     <Content Include="Textures\UI\Commands\AsWhore.png" />
-    <Content Include="Textures\vagina.png" />
+    <Content Include="Textures\UI\Commands\comfort_prisoner_false.png" />
+    <Content Include="Textures\UI\Commands\comfort_prisoner_invisible.png" />
+    <Content Include="Textures\UI\Commands\comfort_prisoner_true.png" />
+    <Content Include="Textures\UI\Icons\SubcategoryIndicator.png" />
     <Content Include="todo.txt" />
     <Content Include="version.txt" />
   </ItemGroup>
@@ -386,28 +367,6 @@
     <None Include="Defs\RandomDialoguesxml" />
     <None Include="Languages\Japanese\Keyed\RimJobWorld.xml.bak" />
     <None Include="LICENSE" />
-    <None Include="Textures\anus_old.xcf" />
-    <None Include="Textures\armbinder.xcf" />
-    <None Include="Textures\bionic_anus.xcf" />
-    <None Include="Textures\bionic_boobs.xcf" />
-    <None Include="Textures\boobs.xcf" />
-    <None Include="Textures\chastity_belt.xcf" />
-    <None Include="Textures\comfort_prisoner.xcf" />
-    <None Include="Textures\comfort_prisoner_invisible.xcf" />
-    <None Include="Textures\gag.xcf" />
-    <None Include="Textures\holokey.xcf" />
-    <None Include="Textures\hololock.xcf" />
-    <None Include="Textures\hydraulic_anus.xcf" />
-    <None Include="Textures\hydraulic_boobs.xcf" />
-    <None Include="Textures\Things\Building\Furniture\Bed\BedGuest_back.psd" />
-    <None Include="Textures\Things\Building\Furniture\Bed\BedGuest_front.psd" />
-    <None Include="Textures\Things\Building\Furniture\Bed\BedGuest_side.psd" />
-    <None Include="Textures\Things\Building\Furniture\Bed\DoubleBedGuest_back.psd" />
-    <None Include="Textures\Things\Building\Furniture\Bed\DoubleBedGuest_front.psd" />
-    <None Include="Textures\Things\Building\Furniture\Bed\DoubleBedGuest_side.psd" />
-    <None Include="Textures\Things\Building\Furniture\Bed\RoyalBedWhore_back.psd" />
-    <None Include="Textures\Things\Building\Furniture\Bed\RoyalBedWhore_front.psd" />
-    <None Include="Textures\Things\Building\Furniture\Bed\RoyalBedWhore_side.psd" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Source\Common\ABFCommon.cs" />
@@ -417,9 +376,9 @@
     <Compile Include="Source\Common\CORE_EXPOSED.cs" />
     <Compile Include="Source\Common\Designator_ComfortPrisoner.cs" />
     <Compile Include="Source\Common\Genital_Helper.cs" />
-    <Compile Include="Source\Common\HugsLibInj.cs" />
     <Compile Include="Source\Common\MapCom_Injector.cs" />
     <Compile Include="Source\Common\MiscTranslationDef.cs" />
+    <Compile Include="Source\Common\ModSettings.cs" />
     <Compile Include="Source\Common\RandomDialogues.cs" />
     <Compile Include="Source\Common\std.cs" />
     <Compile Include="Source\Common\Verb_Fuck.cs" />
