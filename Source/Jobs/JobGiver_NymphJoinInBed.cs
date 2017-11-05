@@ -52,37 +52,7 @@ namespace rjw
 					var partner = find_pawn_to_fuck(p, p.Map);
 
 					Building_Bed bed = null;
-
-					//if (partner != null && partner.jobs.curDriver is JobDriver_LayDown)
-					//{
-					//	Log.Message("[RJW] JobGiver_NymphJoinInBed::TryGiveJob( " + p.NameStringShort + " ) - found victim " + partner.NameStringShort);
-					//	bed = ((JobDriver_LayDown)partner.jobs.curDriver).Bed;
-					//}
-
-					////Log.Message("   checking partner");
-					//if (partner != null)
-					//{
-					//	//Log.Message("   checking partner's job");
-					//	if (partner.CurJob != null)
-					//	{
-					//		//Log.Message("   checking partner again");
-					//		if ((partner != null))
-					//		{
-					//			//Log.Message("   checking bed");
-					//			if ((bed != null))
-					//			{
-					//				//Log.Message("   returning job");
-					//				return new Job(DefDatabase<JobDef>.GetNamed("NymphJoinInBed"), partner, bed);
-					//			}
-					//			else
-					//			{
-					//				//Log.Message("   resetting ticks");
-					//				p.mindState.canLovinTick = Find.TickManager.TicksGame + Rand.Range(75, 150);
-					//			}
-					//		}
-					//	}
-					//}
-
+					
 					if (partner == null)
 					{
 						Log.Message("[RJW] JobGiver_NymphJoinInBed::TryGiveJob( " + p.NameStringShort + " ) - no target found");
@@ -103,9 +73,10 @@ namespace rjw
 					else
 					{
 						Log.Message("   resetting ticks");
-						if (xxx.config.nymphs_always_JoinInBed)
-							p.mindState.canLovinTick = Find.TickManager.TicksGame + 5;
-						else p.mindState.canLovinTick = Find.TickManager.TicksGame + Rand.Range(100, 300);
+						//if (xxx.config.nymphs_always_JoinInBed)
+						//	p.mindState.canLovinTick = Find.TickManager.TicksGame + 5;
+						//else p.mindState.canLovinTick = Find.TickManager.TicksGame + Rand.Range(100, 300);
+						p.mindState.canLovinTick = Find.TickManager.TicksGame + Rand.Range(100, 300);
 					}
 				}
 			}
