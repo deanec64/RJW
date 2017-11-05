@@ -21,7 +21,7 @@
   <JobDef>
     <defName>NymphJoinInBed</defName>
     <driverClass>rjw.JobDriver_NymphJoinInBed</driverClass>
-    <reportString>lovin'.</reportString>
+    <reportString>joining random bed.</reportString>
     <casualInterruptible>false</casualInterruptible>
   </JobDef>
 
