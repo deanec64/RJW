@@ -1076,7 +1076,7 @@ namespace rjw
 
         public static int PriceOfWhore(Pawn whore)
         {
-            float price = (whore.gender==Gender.Female) ? Rand.RangeInclusive(80,120): Rand.RangeInclusive(3, 25);
+            float price = (whore.gender==Gender.Female) ? Rand.RangeInclusive(20,40): Rand.RangeInclusive(10, 25);
             if (!xxx.has_traits(whore))
             {
                 Log.Message("[RJW] xxx::PriceOfWhore - whore has no traits");
