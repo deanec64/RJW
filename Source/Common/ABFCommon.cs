@@ -44,7 +44,7 @@ namespace rjw
 			}
 			else
 			{
-				bool flag2 = xxx.is_animal(fucker) && (long)ageBiologicalYears2 >= (long)((ulong)HugsLibInj.sex_free_for_all_age);
+				bool flag2 = !xxx.is_human(fucker) && (long)ageBiologicalYears2 >= (long)((ulong)HugsLibInj.sex_free_for_all_age);
 				bool flag3;
 				if (flag2)
 				{
@@ -52,7 +52,7 @@ namespace rjw
 				}
 				else
 				{
-					bool flag4 = xxx.is_animal(p) && (long)ageBiologicalYears >= (long)((ulong)HugsLibInj.sex_free_for_all_age);
+					bool flag4 = !xxx.is_human(p) && (long)ageBiologicalYears >= (long)((ulong)HugsLibInj.sex_free_for_all_age);
 					if (flag4)
 					{
 						flag3 = true;
@@ -86,7 +86,7 @@ namespace rjw
 						}
 						else
 						{
-							bool flag10 = xxx.is_bisexual(fucker);
+							bool flag10 = xxx.is_bisexual(fucker) || (fucker.gender == Gender.None);
 							if (flag10)
 							{
 								num = 1f;

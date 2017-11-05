@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- this is mod test to add rape action to Rim of Maddness. -->
+  <Operation Class="PatchOperationInsert">
+    <xpath>*/DutyDef[defName = "ROM_AssaultAndKidnap"]/thinkNode/subNodes/li[1]</xpath>
+    <value>
+      <li Class=" rjw.JobGiver_RapeEnemy"/>
+      <!-- Call "rjw.JobGiver_RapeEnemy" on ThinkTree to rape enemy. after AIAttack and before Kidnap or exit will good. -->
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <!-- Add Creatures defName to TargetDefNames. There are some rape type. see ABFJobs.xml for more detail  -->
+    <xpath>*/JobDef[defName = "RapeEnemyToParasite"]/TargetDefNames</xpath>
+    <value>
+      <li>ROM_Chthonian</li>
+      <li>ROM_DarkYoung</li>
+      <li>ROM_StarSpawnOfCthulhu</li>
+      <li>ROM_Shoggoth</li>
+      <li>ROM_MiGo</li>
+      <li>ROM_DeepOne</li>
+      <li>ROM_StarVampire</li>
+    </value>
+  </Operation>
+</Patch>

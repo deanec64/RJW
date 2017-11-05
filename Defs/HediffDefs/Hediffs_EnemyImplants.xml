@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+  <!--Used for JobDriver_RapeEnemyByInsect. Insects plant egg when success rape.-->
+  <HediffDef Name="RJW_ImplantEgg" Abstract="True" Class="rjw.HediffDef_InsectEgg">
+    <defName>RJW_InsectEgg</defName>
+    <hediffClass>rjw.Hediff_InsectEgg</hediffClass>
+    <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
+    <initialSeverity>0.1</initialSeverity>
+    <isBad>true</isBad>
+    <tendable>false</tendable>
+  </HediffDef>
+
+  <HediffDef ParentName="RJW_ImplantEgg">
+    <defName>RJW_MegascarabEgg</defName>
+    <label>Megascarab's Egg</label>
+    <parentDef>Megascarab</parentDef>
+  </HediffDef>
+  <HediffDef ParentName="RJW_ImplantEgg">
+    <defName>RJW_MegaspiderEgg</defName>
+    <label>Megaspider's Egg</label>
+    <parentDef>Megaspider</parentDef>
+  </HediffDef>
+  <HediffDef ParentName="RJW_ImplantEgg">
+    <defName>RJW_SpelopedeEgg</defName>
+    <label>Spelopede's Egg</label>
+    <parentDef>Spelopede</parentDef>
+  </HediffDef>
+
+  <!--Used for JobDriver_RapeEnemyByMech. Mechs implant things when success rape.-->
+  <HediffDef Name="RJW_ImplantMech" Abstract="True" Class="rjw.HediffDef_MechImplants">
+    <hediffClass>rjw.Hediff_MechImplants</hediffClass>
+    <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
+    <initialSeverity>0.1</initialSeverity>
+    <parentDefs>
+      <li>Mechanoid_Scyther</li>
+      <li>Mechanoid_Centipede</li>
+    </parentDefs>
+    <tendable>false</tendable>
+  </HediffDef>
+  <HediffDef ParentName="RJW_ImplantMech">
+    <defName>RJW_MicroPsychoSoothe</defName>
+    <label>MicroPsychoSoothe</label>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>Parasite</defName>
+    <hediffClass>rjw.Hediff_Parasite</hediffClass>
+    <defaultLabelColor>(0.7, 1.0, 0.7)</defaultLabelColor>
+    <initialSeverity>0.1</initialSeverity>
+    <label>pregnant</label>
+    <comps>
+      <li Class="HediffCompProperties_Discoverable">
+        <sendLetterWhenDiscovered>true</sendLetterWhenDiscovered>
+        <discoverLetterLabel>{0} Parasited</discoverLetterLabel>
+        <discoverLetterText>{0} is parasited!</discoverLetterText>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>early-stage-hidden</label>
+        <everVisible>false</everVisible>
+        <vomitMtbDays>2.5</vomitMtbDays>
+      </li>
+      <li>
+        <label>middle-stage</label>
+        <minSeverity>0.333</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.15</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>late-stage</label>
+        <minSeverity>0.666</minSeverity>
+        <vomitMtbDays>2</vomitMtbDays>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.30</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>
