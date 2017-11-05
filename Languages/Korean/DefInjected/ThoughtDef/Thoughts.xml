@@ -73,7 +73,7 @@
 
   <AllowedMeToGetRaped.stages.0.label>배신감</AllowedMeToGetRaped.stages.0.label>
   <AllowedMeToGetRaped.stages.0.labelSocial>배신감</AllowedMeToGetRaped.stages.0.labelSocial>
-  <AllowedMeToGetRaped.stages.0.description>{0}는 내가 당하도록 내버려뒀어.</AllowedMeToGetRaped.stages.0.description>
+  <AllowedMeToGetRaped.stages.0.description>{0}(은)는 내가 당하도록 내버려뒀어.</AllowedMeToGetRaped.stages.0.description>
 
   <StoleSomeLovin.stages.0.label>강간함</StoleSomeLovin.stages.0.label>
   <StoleSomeLovin.stages.0.labelSocial>강간함</StoleSomeLovin.stages.0.labelSocial>
@@ -86,6 +86,10 @@
   <ViolatedCorpse.stages.0.label>시체와의 즐거운 시간</ViolatedCorpse.stages.0.label>
   <ViolatedCorpse.stages.0.labelSocial>시체와의 즐거운 시간</ViolatedCorpse.stages.0.labelSocial>
   <ViolatedCorpse.stages.0.description>그녀석, 뻣뻣해 보이지만 약간은 부드러운 부분도 남아 있었어. 무슨 뜻인지 알지?</ViolatedCorpse.stages.0.description>
+
+  <Fapped.stages.0.label>쓸쓸한 자위</Fapped.stages.0.label>
+  <Fapped.stages.0.labelSocial>쓸쓸한 자위</Fapped.stages.0.labelSocial>
+  <Fapped.stages.0.description>옆구리가 허전해.</Fapped.stages.0.description>
 
 
 </LanguageData>

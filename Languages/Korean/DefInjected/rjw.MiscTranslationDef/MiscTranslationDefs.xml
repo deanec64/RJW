@@ -2,32 +2,32 @@
 <LanguageData>
 
   <DesignatorComfortPrisoner.label>성노예 낙인</DesignatorComfortPrisoner.label>
-  <DesignatorComfortPrisoner.description>해당 정착민 또는 포로를 성노예로 지정합니다.</DesignatorComfortPrisoner.description>
+  <DesignatorComfortPrisoner.description>해당 포로를 성노예로 지정합니다. 성노예는 오직 정착민들의 성욕을 만족시키기 위해서만 존재합니다.</DesignatorComfortPrisoner.description>
 
   <rjw_vatgrown_sex_slave.label>배양된 성노예</rjw_vatgrown_sex_slave.label>
-  <rjw_vatgrown_sex_slave.description>NAME은(는) 인간이라기보다 섹스 기계에 가깝습니다. 클론 공장에서 배양되면서, NAME(은)는 다양한 취향의 고객을 만족시키기 위한 지식과 기술을 익혔습니다.</rjw_vatgrown_sex_slave.description>
+  <rjw_vatgrown_sex_slave.description>NAME(은)는 인간이라기보다 섹스 기계에 가깝습니다. 클론 공장에서 배양되면서, NAME(은)는 다양한 취향의 고객을 만족시키기 위한 지식과 기술을 익혔습니다.</rjw_vatgrown_sex_slave.description>
 
-  <rjw_feisty.label>충성스런 님프</rjw_feisty.label>
-  <rjw_feisty.description>NAME struts around the colony like a conqueror examining a newly annexed territory. You try to focus on your work but HE won't let you.\n
-    	"I heard what you said about me!" HE accuses. You didn't say anything about HIM. HECAP knows that. 
-    	"Wanna fight?" HE challenges. You already know what HE means: a few minutes of play wrestling and then you take HIM, or, if you hesitate, HE takes you. \n
-    	Though NAME can be hard to get along with you've come to appreciate how HE's more practical than the others.\n
-    	You explain to HIM, "See these things here? They need to be over there" and "Those people are trying to kill us, so let's kill them first." HECAP listens, and does what is necessary. </rjw_feisty.description>
+  <rjw_feisty.label>전투광 님프</rjw_feisty.label>
+  <rjw_feisty.description>NAME(은)는 마치 정복자라도 된 것처럼 정착지 주변을 어슬렁거립니다. 당신은 일에 집중하려고 노력하지만 HE(은)는 당신을 조용히 내버려두지 않습니다.\n
+"네가 내 험담을 했다고 들었는데." HE(은)는 시비를 겁니다. 사실 당신은 아무 말도 하지 않았고 HECAP도 그것을 알고 있을 겁니다.\n
+"싸움을 원해?" HE(은)는 또다시 도전합니다. 당신은  이미 HE(이)가 무엇을 원하는지 알고 있습니다. 싸움이 시작되고 몇 분쯤 지나면 당신은 HE(와)과 격렬히 뒹굴고 있을 것입니다. 언제나 그랬듯이.\n
+귀찮은 녀석이지만, 당신은 HE(이)가 꽤 쓸만하다는 것을 압니다. \n
+"이 쓰레기는 저쪽에 가져다 둬." "우릴 죽이려는 놈들이야. 우리가 먼저 해치워야 돼." HECAP(은)는 의외로 당신이 시킨 일들을 성실히 수행합니다.</rjw_feisty.description>
 
   <rjw_curious.label>공돌이 님프</rjw_curious.label>
-  <rjw_curious.description>Hold the covering plate back and place the actuator in slot C. Line the rod up. No, that won't do, it needs to be perfect. Now pop the JC-444 chip in place.\n
-    	Solder the orange wire to pin #16 and the striped wire to pin #5.\n
-					Suddenly, there HE is. You aren't surprised to see NAME, you just didn't hear HIM approach. By now you're used to it.\n
-					You continue your work in silence as HE hovers over you, her large eyes fixated on the rapid, rythmic, deliberate motions of your hands.</rjw_curious.description>
+  <rjw_curious.description>"덮개를 뒤로 열고 액츄에이터를 슬롯 C에 놔. 그리고 막대를 위로 당겨. 아니, 그렇게 말고. 이제 JC-444 칩을 제자리에 부착해."\n
+"오렌지색 전선을 16번 핀에, 그리고 줄무늬 전선을 5번 핀에 접합해."\n
+당신은 작업 도중 NAME이 끼어드는 데에 익숙합니다. 첨단 부품을 다루는 데에 있어 HE의 접근방식은 항상 신선합니다.\n
+당신이 조용히 작업을 하는 동안 HE(은)는 당신 주변을 맴돕니다. HE의 큰 눈은 당신의 빠르고 리드미컬하고 신중한 손놀림에 고정되어 있습니다.</rjw_curious.description>
 
   <rjw_tender.label>헌신적인 님프</rjw_tender.label>
-  <rjw_tender.description>NAME은(는) 매력적인 눈빛과 달콤한 목소리를 지녔습니다. 이전에 간호사 일을 했기 때문에 HE은(는) 사람들을 돌보는데에 익숙합니다.</rjw_tender.description>
+  <rjw_tender.description>NAME(은)는 매력적인 눈빛과 달콤한 목소리를 지녔습니다. 이전에 간호사 일을 했기 때문에 HE은(는) 사람들을 돌보는데에 익숙합니다.</rjw_tender.description>
 
   <rjw_chatty.label>수다쟁이 님프</rjw_chatty.label>
-  <rjw_chatty.description>누구도 NAME보다 수다스러울 수는 없을 것입니다. HECAP은(는) 유연한 혀와 얄팍한 정신, 뜨거운 입술의 소유자입니다.</rjw_chatty.description>
+  <rjw_chatty.description>누구도 NAME보다 수다스러울 수는 없을 겁니다. HECAP은(은)는 유연한 혀와 얄팍한 정신, 뜨거운 입술의 소유자입니다.</rjw_chatty.description>
 
   <rjw_broken.label>망가진 님프</rjw_broken.label>
-  <rjw_broken.description>NAME(는) 아마도 끔찍한 일을 겪었던 것으로 보입니다. HE(는) 무기력하며, 누구하고도 대화하려 하지 않습니다. HECAP이(가) 약간이라도 반응을 보이는 대상은 오직 조각상들 뿐입니다.</rjw_broken.description>
+  <rjw_broken.description>NAME(은)는 아마도 끔찍한 일을 겪었던 것으로 보입니다. HE(은)는 무기력하며, 누구하고도 대화하려 하지 않습니다. HECAP(이)가 약간이라도 반응을 보이는 대상은 오직 조각상들 뿐입니다.</rjw_broken.description>
 
 
 </LanguageData>
