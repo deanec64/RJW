@@ -315,7 +315,6 @@
     <Content Include="Languages\Korean\DefInjected\WorkGiverDef\WorkGivers.xml" />
     <Content Include="Languages\Korean\Keyed\RimJobWorld.xml" />
     <Content Include="Patches\AddBodyPartsToInsect.xml" />
-    <Content Include="Patches\AddCoCCreatures.xml" />
     <Content Include="Patches\BodyPatches.xml" />
     <Content Include="Patches\Tweak_Duty.xml" />
     <Content Include="Sounds\Sex\blowjob.wav" />

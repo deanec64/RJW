@@ -39,8 +39,8 @@
     <tendable>false</tendable>
   </HediffDef>
   <HediffDef ParentName="RJW_ImplantMech">
-    <defName>RJW_MicroPsychoSoothe</defName>
-    <label>MicroPsychoSoothe</label>
+    <defName>RJW_MicroComputer</defName>
+    <label>MicroComputer</label>
   </HediffDef>
 
   <HediffDef>

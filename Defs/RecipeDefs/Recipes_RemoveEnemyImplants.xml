@@ -51,13 +51,13 @@
   
   
   <RecipeDef ParentName="SurgeryFlesh">
-    <defName>RemoveMicroPsychoSoothe</defName>
-    <label>remove MicroPsychoSoothe</label>
-    <description>Removes MicroPsychoSoothe.</description>
+    <defName>RemoveMicroComputer</defName>
+    <label>remove MicroComputer</label>
+    <description>Removes MicroComputer.</description>
     <workerClass>Recipe_RemoveHediff</workerClass>
-    <jobString>Removing MicroPsychoSoothe.</jobString>
+    <jobString>Removing MicroComputer.</jobString>
     <workAmount>2000</workAmount>
-    <removesHediff>RJW_MicroPsychoSoothe</removesHediff>
+    <removesHediff>RJW_MicroComputer</removesHediff>
     <ingredients>
       <li>
         <filter>
