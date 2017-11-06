@@ -11,96 +11,112 @@ using RimWorld;
 using RimWorld.Planet;
 
 
-namespace rjw {
-    
-    [HarmonyPatch(typeof(Hediff_Pregnant), "DoBirthSpawn")]
-    static class PATCH_Hediff_Pregnant_DoBirthSpawn {
-        [HarmonyPrefix]
-        static bool on_begin_DoBirthSpawn(ref Pawn mother,ref Pawn father ) {
-            //Log.Message("patches_pregnancy::PATCH_Hediff_Pregnant::DoBirthSpawn() called");
-            var mother_name = (mother != null) ? mother.NameStringShort : "NULL";
-            var father_name = (father != null) ? father.NameStringShort : "NULL";
+namespace rjw
+{
 
-            if (mother == null) {
-                Log.Error("Hediff_Pregnant::DoBirthSpawn() - no mother defined");
-                return false;
-            }
+	[HarmonyPatch(typeof(Hediff_Pregnant), "DoBirthSpawn")]
+	static class PATCH_Hediff_Pregnant_DoBirthSpawn
+	{
+		[HarmonyPrefix]
+		static bool on_begin_DoBirthSpawn(ref Pawn mother, ref Pawn father)
+		{
+			//Log.Message("patches_pregnancy::PATCH_Hediff_Pregnant::DoBirthSpawn() called");
+			var mother_name = (mother != null) ? mother.NameStringShort : "NULL";
+			var father_name = (father != null) ? father.NameStringShort : "NULL";
 
-            if (father == null) {
-                Log.Warning("Hediff_Pregnant::DoBirthSpawn() - no father defined");
-            }
-            // get a reference to the hediff we are applying
-            Hediff_Pregnant self = (Hediff_Pregnant)mother.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("Pregnant"));
+			if (mother == null)
+			{
+				Log.Error("Hediff_Pregnant::DoBirthSpawn() - no mother defined");
+				return false;
+			}
 
-            // determine litter size
-            int litter_size = (mother.RaceProps.litterSizeCurve == null) ? 1 : Mathf.RoundToInt(Rand.ByCurve(mother.RaceProps.litterSizeCurve, 300));
-            if (litter_size < 1) {
-                litter_size = 1;
-            }
-            float skin_whiteness = Rand.Range(0, 1);
-            string last_name = null;
+			if (father == null)
+			{
+				Log.Warning("Hediff_Pregnant::DoBirthSpawn() - no father defined");
+			}
+			// get a reference to the hediff we are applying
+			Hediff_Pregnant self = (Hediff_Pregnant)mother.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("Pregnant"));
 
-            // send a message about giving birth
-            //Log.Message("Hediff_Pregnancy::DoBirthSpawn( " + mother_name + ", " + father_name + ", " + chance_successful + " ) - generating baby pawns");
-            if (self.Visible && PawnUtility.ShouldSendNotificationAbout(mother)) {
-                Messages.Message("GivingBirth".Translate(new object[] { mother.LabelIndefinite() }).CapitalizeFirst(), mother, MessageSound.Standard);
-            }
+			// determine litter size
+			int litter_size = (mother.RaceProps.litterSizeCurve == null) ? 1 : Mathf.RoundToInt(Rand.ByCurve(mother.RaceProps.litterSizeCurve, 300));
+			if (litter_size < 1)
+			{
+				litter_size = 1;
+			}
+			float skin_whiteness = Rand.Range(0, 1);
+			string last_name = null;
 
-            //Log.Message("Hediff_Pregnancy::DoBirthSpawn( " + mother_name + ", " + father_name + ", " + chance_successful + " ) - creating spawn request");
+			// send a message about giving birth
+			//Log.Message("Hediff_Pregnancy::DoBirthSpawn( " + mother_name + ", " + father_name + ", " + chance_successful + " ) - generating baby pawns");
+			if (self.Visible && PawnUtility.ShouldSendNotificationAbout(mother))
+			{
+				Messages.Message("GivingBirth".Translate(new object[] { mother.LabelIndefinite() }).CapitalizeFirst(), mother, MessageSound.Standard);
+			}
+
+			//Log.Message("Hediff_Pregnancy::DoBirthSpawn( " + mother_name + ", " + father_name + ", " + chance_successful + " ) - creating spawn request");
 
 
-            List<Pawn> siblings = new List<Pawn>();
-            for (int i = 0; i < litter_size; i++) {
-                Pawn spawn_parent = mother;
-                if (father != null && ModSettings.pregnancy_use_parent_method && (100 * Rand.Value) > ModSettings.pregnancy_weight_parent) {
-                    spawn_parent = father;
-                }
-                PawnGenerationRequest request = new PawnGenerationRequest(spawn_parent.kindDef, spawn_parent.Faction, PawnGenerationContext.NonPlayer, spawn_parent.Map.Tile, false, true, false, false, false, false, 1, false, true, true, false, false, null, 0, 0, null, skin_whiteness, last_name);
+			List<Pawn> siblings = new List<Pawn>();
+			for (int i = 0; i < litter_size; i++)
+			{
+				Pawn spawn_parent = mother;
+				if (father != null && Mod_Settings.pregnancy_use_parent_method && (100 * Rand.Value) > Mod_Settings.pregnancy_weight_parent)
+				{
+					spawn_parent = father;
+				}
+				PawnGenerationRequest request = new PawnGenerationRequest(spawn_parent.kindDef, spawn_parent.Faction, PawnGenerationContext.NonPlayer, spawn_parent.Map.Tile, false, true, false, false, false, false, 1, false, true, true, false, false, null, 0, 0, null, skin_whiteness, last_name);
 
-                //Log.Message("Hediff_GenericPregnancy::DoBirthSpawn( " + mother_name + ", " + father_name + ", " + chance_successful + " ) - spawning baby");
-                Pawn baby = PawnGenerator.GeneratePawn(request);
+				//Log.Message("Hediff_GenericPregnancy::DoBirthSpawn( " + mother_name + ", " + father_name + ", " + chance_successful + " ) - spawning baby");
+				Pawn baby = PawnGenerator.GeneratePawn(request);
 
-                if (PawnUtility.TrySpawnHatchedOrBornPawn(baby, mother)) {
-                    if (baby.playerSettings != null && mother.playerSettings != null) {
-                        baby.playerSettings.AreaRestriction = mother.playerSettings.AreaRestriction;
-                    }
-                    if (baby.RaceProps.IsFlesh) {
-                        baby.relations.AddDirectRelation(PawnRelationDefOf.Parent, mother);
-                        if (father != null) {
-                            baby.relations.AddDirectRelation(PawnRelationDefOf.Parent, father);
-                        }
-                    
-                        foreach (Pawn sibling in siblings) {
-                            baby.relations.AddDirectRelation(PawnRelationDefOf.Sibling, sibling);
-                        }
-                        siblings.Add(baby);
+				if (PawnUtility.TrySpawnHatchedOrBornPawn(baby, mother))
+				{
+					if (baby.playerSettings != null && mother.playerSettings != null)
+					{
+						baby.playerSettings.AreaRestriction = mother.playerSettings.AreaRestriction;
+					}
+					if (baby.RaceProps.IsFlesh)
+					{
+						baby.relations.AddDirectRelation(PawnRelationDefOf.Parent, mother);
+						if (father != null)
+						{
+							baby.relations.AddDirectRelation(PawnRelationDefOf.Parent, father);
+						}
 
-                        //inject RJW_BabyState to the newborn if RimWorldChildren is not active
-                        if (!xxx.RimWorldChildrenIsActive && baby.kindDef.race == ThingDefOf.Human && baby.ageTracker.CurLifeStageIndex <= 1 &&baby.ageTracker.AgeBiologicalYears < 1&&!baby.Dead)
-                        {
-                            // Clean out drug randomly generated drug addictions
-                            baby.health.hediffSet.Clear();
-                            baby.health.AddHediff(HediffDef.Named("RJW_BabyState"), null, null);
-                            Hediff_SimpleBaby babystate = (Hediff_SimpleBaby)baby.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("RJW_BabyState"));
-                            if (babystate != null)
-                            {
-                                babystate.GrowUpTo(0, true);
-                            }
-                        }
-                    }
-                } else {
-                    Find.WorldPawns.PassToWorld(baby, PawnDiscardDecideMode.Discard);
-                }
-            }
+						foreach (Pawn sibling in siblings)
+						{
+							baby.relations.AddDirectRelation(PawnRelationDefOf.Sibling, sibling);
+						}
+						siblings.Add(baby);
 
-            //Log.Message("Hediff_Pregnancy::DoBirthSpawn( " + mother_name + ", " + father_name + ", " + chance_successful + " ) - removing pregnancy");
-            mother.health.RemoveHediff(self);
+						//inject RJW_BabyState to the newborn if RimWorldChildren is not active
+						if (!xxx.RimWorldChildrenIsActive && baby.kindDef.race == ThingDefOf.Human && baby.ageTracker.CurLifeStageIndex <= 1 && baby.ageTracker.AgeBiologicalYears < 1 && !baby.Dead)
+						{
+							// Clean out drug randomly generated drug addictions
+							baby.health.hediffSet.Clear();
+							baby.health.AddHediff(HediffDef.Named("RJW_BabyState"), null, null);
+							Hediff_SimpleBaby babystate = (Hediff_SimpleBaby)baby.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("RJW_BabyState"));
+							if (babystate != null)
+							{
+								babystate.GrowUpTo(0, true);
+							}
+						}
+					}
+				}
+				else
+				{
+					Find.WorldPawns.PassToWorld(baby, PawnDiscardDecideMode.Discard);
+				}
+			}
 
-            return false;
-        }
-    }
+			//Log.Message("Hediff_Pregnancy::DoBirthSpawn( " + mother_name + ", " + father_name + ", " + chance_successful + " ) - removing pregnancy");
+			mother.health.RemoveHediff(self);
 
-    /*
+			return false;
+		}
+	}
+
+	/*
     [HarmonyPatch(typeof(Hediff_Pregnant), "Tick")]
     class PATCH_Hediff_Pregnant_Tick {
         [HarmonyPrefix]
@@ -117,7 +133,7 @@ namespace rjw {
     }
     */
 
-    /*
+	/*
     [HarmonyPatch(typeof(PawnRenderer), "RenderPawnInternal")]
     class PATCH_PawnRenderer_RenderPawnInternal {
         [HarmonyPrefix]
@@ -177,5 +193,5 @@ namespace rjw {
         }
     }
     */
-    
+
 }

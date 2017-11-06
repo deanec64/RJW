@@ -48,6 +48,10 @@
       <HintPath>..\..\RimWorld\Mods\ChildrenAndPregnancy-master\Assemblies\RimWorldChildren.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="SexualitySpectrum">
+      <HintPath>..\..\RimWorld\Mods\Romance Diversified A17\Assemblies\SexualitySpectrum.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml" />
@@ -90,7 +94,6 @@
     <Content Include="Defs\HediffGiverSetDefs\HediffGiverSets.xml" />
     <Content Include="Defs\IncidentDef\Incidents.xml" />
     <Content Include="Defs\InteractionDef\Interactions.xml" />
-    <Content Include="Defs\JobDefs\ABFJobs.xml" />
     <Content Include="Defs\JobDefs\Jobs.xml" />
     <Content Include="Defs\MiscTranslationDef\MiscTranslationDefs.xml" />
     <Content Include="Defs\Motes\Motes.xml" />
@@ -358,13 +361,14 @@
     <Content Include="Textures\UI\Commands\AsWhore.png" />
     <Content Include="Textures\UI\Commands\comfort_prisoner_false.png" />
     <Content Include="Textures\UI\Commands\comfort_prisoner_invisible.png" />
+    <Content Include="Textures\UI\Commands\comfort_prisoner_tagged.png" />
     <Content Include="Textures\UI\Commands\comfort_prisoner_true.png" />
     <Content Include="Textures\UI\Icons\SubcategoryIndicator.png" />
     <Content Include="todo.txt" />
     <Content Include="version.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Defs\RandomDialoguesxml" />
+    <Content Include="Defs\RandomDialogues.xml" />
     <None Include="Languages\Japanese\Keyed\RimJobWorld.xml.bak" />
     <None Include="LICENSE" />
   </ItemGroup>
@@ -378,7 +382,7 @@
     <Compile Include="Source\Common\Genital_Helper.cs" />
     <Compile Include="Source\Common\MapCom_Injector.cs" />
     <Compile Include="Source\Common\MiscTranslationDef.cs" />
-    <Compile Include="Source\Common\ModSettings.cs" />
+    <Compile Include="Source\Common\Mod_Settings.cs" />
     <Compile Include="Source\Common\RandomDialogues.cs" />
     <Compile Include="Source\Common\std.cs" />
     <Compile Include="Source\Common\Verb_Fuck.cs" />
