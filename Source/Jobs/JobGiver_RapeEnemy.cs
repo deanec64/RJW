@@ -44,12 +44,12 @@ namespace rjw
                     
             if (downedPlayer != null)
             {
-                Log.Message("[RJW]" + this.GetType().ToString() + "::TryGiveJob( " + p.NameStringShort + " ) - found victim " + downedPlayer.NameStringShort);
+                //Log.Message("[RJW]" + this.GetType().ToString() + "::TryGiveJob( " + p.NameStringShort + " ) - found victim " + downedPlayer.NameStringShort);
                 p.mindState.canLovinTick = Find.TickManager.TicksGame + Rand.Range(75, 150);
                 return new Job(rapeEnemyJobDef, downedPlayer);
             }
             else {
-                Log.Message("[RJW]" + this.GetType().ToString() + "::TryGiveJob( " + p.NameStringShort + " ) - unable to find victim");
+                //Log.Message("[RJW]" + this.GetType().ToString() + "::TryGiveJob( " + p.NameStringShort + " ) - unable to find victim");
                 p.mindState.canLovinTick = Find.TickManager.TicksGame + 1;
             }
 			//else {  Log.Message("[RJW] JobGiver_RapeEnemy::TryGiveJob( " + p.NameStringShort + " ) - too fast to play next"); }

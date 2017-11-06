@@ -221,7 +221,13 @@ namespace rjw
             //Edited by nizhuan-jjr:to make Misc.Robots not allowed to have sex. This change makes those robots not counted as animals.
             return pawn.RaceProps.Animal;
         }
-        public static bool is_mechanoid(Pawn pawn) {//Added by nizhuan-jjr:to make Misc.Robots not allowed to have sex. Note:Misc.MAI is not a mechanoid. 
+
+		public static bool is_insect(Pawn pawn)
+		{
+			//added by hoge. Insect is Animal too. should check before is_Animal
+			return pawn.RaceProps.FleshType.defName == "Insectoid";
+		}
+		public static bool is_mechanoid(Pawn pawn) {//Added by nizhuan-jjr:to make Misc.Robots not allowed to have sex. Note:Misc.MAI is not a mechanoid. 
 
             return pawn.RaceProps.IsMechanoid;
         }
@@ -365,7 +371,7 @@ namespace rjw
         }
 
         // Returns how fuckable 'fucker' thinks 'p' is on a scale from 0.0 to 1.0
-        public static float would_fuck(Pawn fucker, Pawn p, bool invert_opinion = false) {
+        public static float would_fuck(Pawn fucker, Pawn p, bool invert_opinion = false , bool ignoreBleeding = false) {
             var fucker_age = fucker.ageTracker.AgeBiologicalYears;
             var p_age = p.ageTracker.AgeBiologicalYears;
             //Log.Message("[RJW]would_fuck("+fucker.NameStringShort+","+p.NameStringShort+","+invert_opinion.ToString()+") is called");
@@ -398,7 +404,7 @@ namespace rjw
             if (age_ok) {
                 if ((!(fucker.Dead || p.Dead)) &&
                     (!(fucker.needs.food.Starving || p.needs.food.Starving)) &&
-                    (fucker.health.hediffSet.BleedRateTotal <= 0.0f) && (p.health.hediffSet.BleedRateTotal <= 0.0f)) {
+                    ( (fucker.health.hediffSet.BleedRateTotal <= 0.0f) && (p.health.hediffSet.BleedRateTotal <= 0.0f) || ignoreBleeding) ) {
 
                     float orientation_factor;  //0 or 1
                     {
@@ -649,7 +655,8 @@ namespace rjw
             Log.Message("xxx::think_after_sex( " + pawn.NameStringShort + ", " + part.NameStringShort + ", " + violent + " ) - setting pawn thoughts");
             // pawn thoughts
             // Edited by nizhuan-jjr:The two types of stole_sone_lovin are violent due to the description, so I make sure the thought would only trigger after violent behaviors. 
-            if (!xxx.is_animal(pawn) && violent ) {
+			// Edited by hoge. xxx.is_human changed from !xxx.is_animal mech is not animal. and not has mood.
+            if (xxx.is_human(pawn) && violent ) {
                 var pawn_thought = ( xxx.is_rapist(pawn) || xxx.is_bloodlust(pawn)) ? xxx.bloodlust_stole_some_lovin : xxx.stole_some_lovin;
                 pawn.needs.mood.thoughts.memories.TryGainMemory(pawn_thought);
 
@@ -672,11 +679,16 @@ namespace rjw
                     part.needs.mood.thoughts.memories.TryGainMemory(part_thought_about_rapist, pawn);
                 }
 
-                foreach (var bystander in part.Map.mapPawns.SpawnedPawnsInFaction(part.Faction)) {
-                    if ((bystander != pawn) && (bystander != part) && !xxx.is_animal(bystander)) {
-                        part.needs.mood.thoughts.memories.TryGainMemory(xxx.allowed_me_to_get_raped, bystander);
-                    }
-                }
+				if (pawn.Faction != null) // added by hoge. wild animals faction is null
+				{
+					foreach (var bystander in part.Map.mapPawns.SpawnedPawnsInFaction(part.Faction))
+					{
+						if ((bystander != pawn) && (bystander != part) && !xxx.is_animal(bystander))
+						{
+							part.needs.mood.thoughts.memories.TryGainMemory(xxx.allowed_me_to_get_raped, bystander);
+						}
+					}
+				}
             }
 
             Log.Message("xxx::think_after_sex( " + pawn.NameStringShort + ", " + part.NameStringShort + ", " + violent + " ) - setting disease thoughts");

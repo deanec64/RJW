@@ -77,7 +77,7 @@ namespace rjw
 			return false;
 		}
 	}
-
+	/*
 	[HarmonyPatch(typeof(JobGiver_Manhunter), "TryGiveJob")]
 	static class Patches_ABF_MunHunt
 	{
@@ -89,5 +89,5 @@ namespace rjw
 			if (__result.def == JobDefOf.Wait || __result.def == JobDefOf.Goto) __result = null;
 		}
 	}
-
+	*/
 }

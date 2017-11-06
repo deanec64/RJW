@@ -382,7 +382,6 @@
     <None Include="LICENSE" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Source\Common\ABFCommon.cs" />
     <Compile Include="Source\Common\bondage_gear.cs" />
     <Compile Include="Source\Common\comfort_prisoners.cs" />
     <Compile Include="Source\Common\config.cs" />

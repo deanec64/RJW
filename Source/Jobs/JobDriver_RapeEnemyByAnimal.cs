@@ -32,10 +32,5 @@ namespace rjw
 				}
 			}
 		}
-		public override float GetFuckability(Pawn rapist, Pawn target)
-		{
-			//Log.Message("[RJW]JobDriver_RapeEnemy::GetFuckability(" + rapist.ToString() + "," + target.ToString() + ")");
-			return ABFCommon.would_fuck_ignoreSatisfy(rapist, target);
-		}
 	}
 }

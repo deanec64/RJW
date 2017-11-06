@@ -11,7 +11,7 @@ namespace rjw
 
 		public override bool CanUseThisJobForPawn(Pawn rapist)
 		{
-			return ABFCommon.is_Insect(rapist);
+			return xxx.is_insect(rapist);
 		}
 		public override void roll_to_hit(Pawn rapist, Pawn p)
 		{
@@ -29,18 +29,16 @@ namespace rjw
 				}
 			}
 		}
-		public override void aftersex(Pawn pawn, Pawn part, bool violent = false, bool isCoreLovin = false, bool isAnalSex = false)
-        {
-            base.aftersex(pawn,part,violent,isCoreLovin,isAnalSex);
+		protected override void Impregnate(Pawn pawn, Pawn part, bool isAnalSex)
+		{
 			if (xxx.is_human(part))
 			{
-
 				if (pawn.gender == Gender.Female)
 				{
 					HediffDef_InsectEgg egg = (from x in DefDatabase<HediffDef_InsectEgg>.AllDefs where x.IsParent(pawn.def.defName) select x).RandomElement<HediffDef_InsectEgg>();
 					if (egg != null)
 					{
-						Log.Message("[RJW]JobDriver_RapeEnemyByInsect::aftersex() - planting egg " + egg.ToString());
+						Log.Message("[RJW]JobDriver_RapeEnemyByInsect::aftersex() - Planting egg " + egg.ToString());
 						PlantSomething(egg, part, isAnalSex, Rand.Range(1, 2));
 					}
 					else
@@ -50,7 +48,8 @@ namespace rjw
 				}
 				else
 				{
-					foreach (var egg in (from x in part.health.hediffSet.GetHediffs<Hediff_InsectEgg>() where x.IsParent(pawn.def.defName) select x) )
+					Log.Message("[RJW]JobDriver_RapeEnemyByInsect::aftersex() - Fertilize eggs");
+					foreach (var egg in (from x in part.health.hediffSet.GetHediffs<Hediff_InsectEgg>() where x.IsParent(pawn.def.defName) select x))
 					{
 						egg.Fertilize(pawn);
 					}

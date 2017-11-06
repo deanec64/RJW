@@ -13,7 +13,7 @@ namespace rjw
 
 		public override bool CanUseThisJobForPawn(Pawn rapist)
 		{
-			return rapist.RaceProps.IsMechanoid;
+			return xxx.is_mechanoid(rapist);
 		}
 		public override float GetFuckability(Pawn rapist, Pawn target)
 		{
@@ -37,10 +37,8 @@ namespace rjw
 				}
 			}
 		}
-		public override void aftersex(Pawn pawn, Pawn part, bool violent = false, bool isCoreLovin = false, bool isAnalSex = false)
+		protected override void Impregnate(Pawn pawn, Pawn part, bool isAnalSex)
 		{
-			base.aftersex(pawn, part, violent, isCoreLovin, isAnalSex);
-
 			if (pawn.RaceProps.IsMechanoid && xxx.is_human(part))
             {
                 //Log.Message("[RJW]JobDriver_RapeEnemyByMech::aftersex - mech raped humans");
