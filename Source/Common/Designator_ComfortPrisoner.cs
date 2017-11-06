@@ -104,18 +104,18 @@ namespace rjw
 			{
 				if (p.IsPrisonerOfColony)
 				{
-					defaultLabel = "comfort prisoner test";
+					defaultLabel = "comfort prisoner"; //TODO: adds translationdef.
 				}
 				else if (xxx.is_animal(p))
 				{
-					defaultLabel = "comfort animal test";
+					defaultLabel = "comfort animal";
 				}
 				else
 				{
-					defaultLabel = "rape target test";
+					defaultLabel = "comfort colonist";
 				}
 			}
-			return ((p != null) && (!comfort_prisoners.is_designated(p)) && ((p.IsColonist || p.Faction == Faction.OfPlayer) || (xxx.is_animal(p)) || (p.IsColonist || p.Faction == Faction.OfPlayer)));
+			return ((p != null) && (!comfort_prisoners.is_designated(p)) && ((p.IsColonist || p.Faction == Faction.OfPlayer) || (xxx.is_animal(p)) || (p.IsColonist || p.Faction == Faction.OfPlayer))); //TODO: Rape target button?
 		}
 
 		public override void DesignateThing(Thing t)

@@ -21,16 +21,26 @@ namespace rjw
 				{
 
 					//Log.Message("[RJW] JobGiver_ComfortPrisonerRape::TryGiveJob( " + p.NameStringShort + " ) called2");
-					Pawn prisoner = xxx.find_prisoner_to_rape(p, p.Map);
+					Pawn target = xxx.find_prisoner_to_rape(p, p.Map);
 					//Log.Message("[RJW] JobGiver_ComfortPrisonerRape::TryGiveJob( " + p.NameStringShort + " ) called3 - ("+((prisoner==null)? "NULL":prisoner.NameStringShort)+") is the prisoner");
-					if (prisoner != null)
-						return new Job(xxx.comfort_prisoner_rapin, prisoner);
-					else if (xxx.config.pawns_always_rapeCP)
-						p.mindState.canLovinTick = Find.TickManager.TicksGame + 5;
-					else
-						p.mindState.canLovinTick = Find.TickManager.TicksGame + Rand.Range(75, 150);
+					if (target != null)
+					{
 
+						if (xxx.is_human(target) && (xxx.is_rapist(p) || xxx.is_nympho(p)))
+						{
+							return new Job(xxx.comfort_prisoner_rapin, target);
+						}
+						else if (xxx.is_animal(target) && xxx.is_zoophiliac(p))
+						{
+							return new Job(xxx.comfort_prisoner_rapin, target);
+						}
+						else if (xxx.config.pawns_always_rapeCP)
+							p.mindState.canLovinTick = Find.TickManager.TicksGame + 5;
+						else
+							p.mindState.canLovinTick = Find.TickManager.TicksGame + Rand.Range(75, 150);
+					}
 				}
+
 			}
 
 			return null;
