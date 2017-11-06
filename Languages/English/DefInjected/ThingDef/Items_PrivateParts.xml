@@ -1,141 +1,143 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-  <!-- Natural Penises -->
+	<!-- Natural Penises -->
 
-  <Penis.label>penis</Penis.label>
-  <Penis.description>A severed penis. It's average size, and that's fine. Nothing wrong with that at all. Really, it's OK. There's no shame in being average. It's just... you know... just average.</Penis.description>
+	<Penis.label>penis</Penis.label>
+	<Penis.description>A severed penis. It's average size, and that's fine. Nothing wrong with that at all. Really, it's OK. There's no shame in being average. It's just... you know... just average.</Penis.description>
 
-  <Micropenis.label>micropenis</Micropenis.label>
-  <Micropenis.description>
-      A severed pinky.
+	<Micropenis.label>micropenis</Micropenis.label>
+	<Micropenis.description>
+		A severed pinky.
 
-      Uh, no wait...
-    </Micropenis.description>
+		Uh, no wait...
+	</Micropenis.description>
 
-  <SmallPenis.label>small penis</SmallPenis.label>
-  <SmallPenis.description>A severed penis. It's rather small, so I hope you've got a great severed personality.</SmallPenis.description>
+	<SmallPenis.label>small penis</SmallPenis.label>
+	<SmallPenis.description>A severed penis. It's rather small, so I hope you've got a great severed personality.</SmallPenis.description>
 
-  <BigPenis.label>big penis</BigPenis.label>
-  <BigPenis.description>A large severed penis.</BigPenis.description>
+	<BigPenis.label>big penis</BigPenis.label>
+	<BigPenis.description>A large severed penis.</BigPenis.description>
 
-  <HugePenis.label>huge penis</HugePenis.label>
-  <HugePenis.description>A huge severed penis.</HugePenis.description>
+	<HugePenis.label>huge penis</HugePenis.label>
+	<HugePenis.description>A huge severed penis.</HugePenis.description>
 
-  <HorsePenis.label>horse penis</HorsePenis.label>
-  <HorsePenis.description>A severed horse penis from a centaur. Huge for a human.</HorsePenis.description>
+	<HorsePenis.label>horse penis</HorsePenis.label>
+	<HorsePenis.description>A severed horse penis from a centaur. Huge for a human.</HorsePenis.description>
 
-  <CatPenis.label>cat penis</CatPenis.label>
-  <CatPenis.description>A severed catgirl penis. Long, thin and barbed.</CatPenis.description>
+	<CatPenis.label>cat penis</CatPenis.label>
+	<CatPenis.description>A severed catgirl penis. Long, thin and barbed.</CatPenis.description>
 
-  <DogPenis.label>dog penis</DogPenis.label>
-  <DogPenis.description>A severed dog penis. Thick and knotted.</DogPenis.description>
+	<DogPenis.label>dog penis</DogPenis.label>
+	<DogPenis.description>A severed dog penis. Thick and knotted.</DogPenis.description>
 
-  <DragonPenis.label>dragon penis</DragonPenis.label>
-  <DragonPenis.description>A severed dragon penis. Thick and HARD.</DragonPenis.description>
-
-
-  <!-- Natural Vaginas -->
-
-  <Vagina.label>vagina</Vagina.label>
-  <Vagina.description>A severed vagina, whatever that means.</Vagina.description>
-
-  <TightVagina.label>tight vagina</TightVagina.label>
-  <TightVagina.description>A severed tight vagina, whatever that means.</TightVagina.description>
-
-  <LooseVagina.label>loose vagina</LooseVagina.label>
-  <LooseVagina.description>A severed loose vagina, whatever that means.</LooseVagina.description>
+	<DragonPenis.label>dragon penis</DragonPenis.label>
+	<DragonPenis.description>A severed dragon penis. Thick and HARD.</DragonPenis.description>
 
 
-  <!-- Natural Breasts -->
+	<!-- Natural Vaginas -->
 
-  <Breasts.label>breasts</Breasts.label>
-  <Breasts.description>A pair of severed breasts.</Breasts.description>
+	<Vagina.label>vagina</Vagina.label>
+	<Vagina.description>A severed vagina, whatever that means.</Vagina.description>
 
-  <SmallBreasts.label>small breasts</SmallBreasts.label>
-  <SmallBreasts.description>A pair of severed small breasts.</SmallBreasts.description>
+	<TightVagina.label>tight vagina</TightVagina.label>
+	<TightVagina.description>A severed tight vagina, whatever that means.</TightVagina.description>
 
-  <LargeBreasts.label>large breasts</LargeBreasts.label>
-  <LargeBreasts.description>A pair of severed large breasts.</LargeBreasts.description>
-
-  <HugeBreasts.label>huge breasts</HugeBreasts.label>
-  <HugeBreasts.description>A pair of severed huge breasts.</HugeBreasts.description>
+	<LooseVagina.label>loose vagina</LooseVagina.label>
+	<LooseVagina.description>A severed loose vagina, whatever that means.</LooseVagina.description>
 
 
-  <!-- Natural Anuses -->
+	<!-- Natural Breasts -->
 
-  <Anus.label>anus</Anus.label>
-  <Anus.description>A severed anus... yeah I don't know what that is either.</Anus.description>
+	<Breasts.label>breasts</Breasts.label>
+	<Breasts.description>A pair of severed breasts.</Breasts.description>
 
-  <TightAnus.label>tight anus</TightAnus.label>
-  <TightAnus.description>A severed tight anus... yeah I don't know what that is either.</TightAnus.description>
+	<SmallBreasts.label>small breasts</SmallBreasts.label>
+	<SmallBreasts.description>A pair of severed small breasts.</SmallBreasts.description>
 
-  <LooseAnus.label>loose anus</LooseAnus.label>
-  <LooseAnus.description>Hey, look a donut.  Just kidding, it's an anus.</LooseAnus.description>
+	<LargeBreasts.label>large breasts</LargeBreasts.label>
+	<LargeBreasts.description>A pair of severed large breasts.</LargeBreasts.description>
 
-
-  <!-- Simple prosthetic penises -->
-
-  <PegDick.label>peg dick</PegDick.label>
-  <PegDick.description>A wooden dildo designed to replace a missing penis. Be careful of splinters.</PegDick.description>
+	<HugeBreasts.label>huge breasts</HugeBreasts.label>
+	<HugeBreasts.description>A pair of severed huge breasts.</HugeBreasts.description>
 
 
-  <!-- Simple prosthetic vaginas -->
+	<!-- Natural Anuses -->
 
-  <HydraulicVagina.label>hydraulic vagina</HydraulicVagina.label>
-  <HydraulicVagina.description>A low-tech prosthetic vagina. Its cold metal grip is uncomfortable but it has great suction power.</HydraulicVagina.description>
+	<Anus.label>anus</Anus.label>
+	<Anus.description>A severed anus... yeah I don't know what that is either.</Anus.description>
 
+	<TightAnus.label>tight anus</TightAnus.label>
+	<TightAnus.description>A severed tight anus... yeah I don't know what that is either.</TightAnus.description>
 
-  <!-- Simple prosthetic breasts -->
-
-  <HydraulicBreasts.label>hydraulic breasts</HydraulicBreasts.label>
-  <HydraulicBreasts.description>Low-tech prosthetic breasts.  Conical metal with increased pumping action, spray your friends.</HydraulicBreasts.description>
-
-
-  <!-- Simple prosthetic anuses -->
-
-  <HydraulicAnus.label>hydraulic anus</HydraulicAnus.label>
-  <HydraulicAnus.description>A low-tech prosthetic anus. Its cold metal grip is uncomfortable but it has great suction power.</HydraulicAnus.description>
+	<LooseAnus.label>loose anus</LooseAnus.label>
+	<LooseAnus.description>Hey, look a donut.  Just kidding, it's an anus.</LooseAnus.description>
 
 
-  <!-- Bionic penises -->
+	<!-- Simple prosthetic penises -->
 
-  <BionicPenis.label>bionic penis</BionicPenis.label>
-  <BionicPenis.description>
-      A high-tech prosthetic penis. Features include:
-      - ABSOLUTELY MASSIVE, this prosthetic is larger than any known natural penis, and is in fact the largest penile prosthetic permissible under federal law.
-      - Over 50 different vibration modes, including 10 of the most stimulating waveforms known to science
-      - State-of-the-art neural interface activates neural pathways you didn't even know you had to make you feel things you never even imagined
-    </BionicPenis.description>
+	<PegDick.label>peg dick</PegDick.label>
+	<PegDick.description>A wooden dildo designed to replace a missing penis. Be careful of splinters.</PegDick.description>
 
 
-  <!-- Bionic vaginas -->
+	<!-- Simple prosthetic vaginas -->
 
-  <BionicVagina.label>bionic vagina</BionicVagina.label>
-  <BionicVagina.description>A high-tech prosthetic vagina. Features include:
-    - Interior lined with 150 million micro-g-spots
-    - Resizes to fit any penis
-    - Auto-lubrication with boro-graphitic pseudofluid, smooth but never slimy (includes toggleable sliminess in case you're into that)
-    - SenseID technology identifies the man you're fucking, automatically adds him on Facebook, and contacts his mother introducing you as his new girlfriend.</BionicVagina.description>
+	<HydraulicVagina.label>hydraulic vagina</HydraulicVagina.label>
+	<HydraulicVagina.description>A low-tech prosthetic vagina. Its cold metal grip is uncomfortable but it has great suction power.</HydraulicVagina.description>
 
 
-  <!-- Bionic breasts -->
+	<!-- Simple prosthetic breasts -->
 
-  <BionicBreasts.label>bionic breasts</BionicBreasts.label>
-  <BionicBreasts.description>
-      High-tech prosthetic breasts. Features include:
-      - Resizes to any desired size
-    </BionicBreasts.description>
+	<HydraulicBreasts.label>hydraulic breasts</HydraulicBreasts.label>
+	<HydraulicBreasts.description>Low-tech prosthetic breasts.  Conical metal with increased pumping action, spray your friends.</HydraulicBreasts.description>
 
 
-  <!-- Bionic anuses -->
+	<!-- Simple prosthetic anuses -->
 
-  <BionicAnus.label>bionic anus</BionicAnus.label>
-  <BionicAnus.description>
-      A high-tech prosthetic anus. Features include:
-      - Resizes to fit any penis
-      - Auto-lubrication with boro-graphitic pseudofluid, smooth but never slimy (includes toggleable sliminess in case you're into that)
-    </BionicAnus.description>
+	<HydraulicAnus.label>hydraulic anus</HydraulicAnus.label>
+	<HydraulicAnus.description>A low-tech prosthetic anus. Its cold metal grip is uncomfortable but it has great suction power.</HydraulicAnus.description>
+
+
+	<!-- Bionic penises -->
+
+	<BionicPenis.label>bionic penis</BionicPenis.label>
+	<BionicPenis.description>
+		A high-tech prosthetic penis. Features include:
+		- ABSOLUTELY MASSIVE, this prosthetic is larger than any known natural penis, and is in fact the largest penile prosthetic permissible under federal law.
+		- Over 50 different vibration modes, including 10 of the most stimulating waveforms known to science
+		- State-of-the-art neural interface activates neural pathways you didn't even know you had to make you feel things you never even imagined
+	</BionicPenis.description>
+
+
+	<!-- Bionic vaginas -->
+
+	<BionicVagina.label>bionic vagina</BionicVagina.label>
+	<BionicVagina.description>
+		A high-tech prosthetic vagina. Features include:
+		- Interior lined with 150 million micro-g-spots
+		- Resizes to fit any penis
+		- Auto-lubrication with boro-graphitic pseudofluid, smooth but never slimy (includes toggleable sliminess in case you're into that)
+		- SenseID technology identifies the man you're fucking, automatically adds him on Facebook, and contacts his mother introducing you as his new girlfriend.
+	</BionicVagina.description>
+
+
+	<!-- Bionic breasts -->
+
+	<BionicBreasts.label>bionic breasts</BionicBreasts.label>
+	<BionicBreasts.description>
+		High-tech prosthetic breasts. Features include:
+		- Resizes to any desired size
+	</BionicBreasts.description>
+
+
+	<!-- Bionic anuses -->
+
+	<BionicAnus.label>bionic anus</BionicAnus.label>
+	<BionicAnus.description>
+		A high-tech prosthetic anus. Features include:
+		- Resizes to fit any penis
+		- Auto-lubrication with boro-graphitic pseudofluid, smooth but never slimy (includes toggleable sliminess in case you're into that)
+	</BionicAnus.description>
 
 
 </LanguageData>

@@ -1,21 +1,21 @@
 <Defs>
-  
-   <RulePackDef>
-    <defName>AnalRapeSucceeded</defName>
-    <rulePack>
-      <rulesStrings>
-        <li>sent-> [recipient_nameShortDef] was anally raped successfully.</li>
-      </rulesStrings>
-    </rulePack>
-  </RulePackDef>
 
-   <RulePackDef>
-    <defName>AnalRapeFailed</defName>
-    <rulePack>
-      <rulesStrings>
-        <li>sent-> [recipient_nameShortDef] has no anus.</li>
-      </rulesStrings>
-    </rulePack>
-  </RulePackDef>
-    
+	<RulePackDef>
+		<defName>AnalRapeSucceeded</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>sent-> [recipient_nameShortDef] was anally raped successfully.</li>
+			</rulesStrings>
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>AnalRapeFailed</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>sent-> [recipient_nameShortDef] has no anus.</li>
+			</rulesStrings>
+		</rulePack>
+	</RulePackDef>
+
 </Defs>

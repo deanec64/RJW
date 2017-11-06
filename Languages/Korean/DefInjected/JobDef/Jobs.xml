@@ -22,16 +22,9 @@
   <GiveBondageGear.reportString>구속구 착용 중.</GiveBondageGear.reportString>
   <ViolateCorpse.reportString>시간 중.</ViolateCorpse.reportString>
   <Beastiality.reportString>수간 중.</Beastiality.reportString>
-  <RandomRape.reportString>강간 대상 찾는 중.</RandomRape.reportString>
+  <RandomRape.reportString>강간 중.</RandomRape.reportString>
   <WhoreIsServingVisitors.reportString>봉사 중.</WhoreIsServingVisitors.reportString>
   <InvitingVisitors.reportString>유혹 중.</InvitingVisitors.reportString>
 
-
-  <!-- <JobDef>
-    <defName>ComfortPrisonerGangRapin</defName>
-    <driverClass>rjw.JobDriver_ComfortPrisonerGangRapin</driverClass>
-    <reportString>gang rapin'.</reportString>
-    <casualInterruptible>false</casualInterruptible>
-  </JobDef> -->
 
 </LanguageData>
