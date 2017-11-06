@@ -11,41 +11,49 @@ namespace rjw
 {
 	class Hediff_MicroComputer : Hediff_MechImplants
 	{
-		//protected int nextEventTick = 60000;
-		protected int nextEventTick = 2000;
+		protected int nextEventTick = 60000;
+
 		public override void ExposeData()
 		{
+			base.ExposeData();
 			Scribe_Values.Look<int>(ref this.nextEventTick, "nextEventTick", 60000, false);
+		}
+		public override void PostMake()
+		{
+			base.PostMake();
+			nextEventTick = Rand.Range(mcDef.minEventInterval, mcDef.maxEventInterval);
 		}
 		public override void Tick()
 		{
-			if (this.pawn.IsHashIntervalTick(nextEventTick))
-			{
-				Log.Warning("Something happen");
-				pawn.health.AddHediff(DefDatabase<HediffDef>.GetNamed(randomEffect));
-				nextEventTick = Rand.Range(mcDef.minEventInterval, mcDef.maxEventInterval);
-			}
 			base.Tick();
+			if (this.pawn.IsHashIntervalTick(1000))
+			{
+				if (this.ageTicks >= nextEventTick)
+				{
+					HediffDef randomEffectDef = DefDatabase<HediffDef>.GetNamed(randomEffect);
+					if (randomEffectDef != null)
+					{
+						pawn.health.AddHediff(randomEffectDef);
+					}
+					else
+					{
+						Log.Message("[RJW]" + this.GetType().ToString() + "::Tick() - There is no Random Effect");
+					}
+					this.ageTicks = 0;
+				}
+			}
 		}
-		protected HediffDef_MicroComputer mcDef
+		protected HediffDef_MechImplants mcDef
 		{
-			get { return ((HediffDef_MicroComputer)def); }
+			get { return ((HediffDef_MechImplants)def); }
 		}
 		protected List<string> randomEffects
 		{
-			get{ return ((HediffDef_MicroComputer)def).randomHediffDefs; }
+			get{ return mcDef.randomHediffDefs; }
 		}
 		protected string randomEffect
 		{
-			get { return randomEffects[Rand.Range(0, randomEffects.Count)]; }
+			get { return randomEffects.RandomElement<string>(); }
 		}
-	}
-
-	[StaticConstructorOnStartup]
-	class HediffDef_MicroComputer : HediffDef_EnemyImplants
-	{
-		public List<string> randomHediffDefs = new List<string>();
-		public int minEventInterval = 30000;
-		public int maxEventInterval = 90000;
 	}
 }

@@ -12,7 +12,7 @@
     <tendable>false</tendable>
     <comps>
       <li Class="HediffCompProperties_SeverityPerDay">
-        <severityPerDay>-24</severityPerDay>
+        <severityPerDay>-1</severityPerDay>
       </li>
     </comps>
     <stages>

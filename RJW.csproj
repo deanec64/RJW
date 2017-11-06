@@ -64,7 +64,9 @@
   <ItemGroup>
     <Content Include=".gitattributes" />
     <Content Include=".gitignore" />
-    <Content Include="About\About.xml" />
+    <Content Include="About\About.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="About\Preview.png" />
     <Content Include="Assemblies\%24HugsLibChecker.dll" />
     <Content Include="Assemblies\ArchitectSense.dll" />
@@ -85,13 +87,17 @@
     <Content Include="Defs\DesignationSubCategoryDefs\RJW_SubCategory.xml" />
     <Content Include="Defs\Designations\Designations.xml" />
     <Content Include="Defs\HediffDefs\Hediffs_FeelingBroken.xml" />
-    <Content Include="Defs\HediffDefs\Hediffs_MCEvents.xml" />
+    <Content Include="Defs\HediffDefs\Hediffs_MCEvents.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Defs\HediffDefs\Hediffs_Other.xml" />
     <Content Include="Defs\HediffDefs\Hediffs_PrivateParts.xml" />
     <Content Include="Defs\HediffDefs\Hediffs_SimpleBaby.xml" />
     <Content Include="Defs\HediffDefs\Hediffs_STDs.xml" />
     <Content Include="Defs\HediffDefs\Hediffs_Sterilized.xml" />
-    <Content Include="Defs\HediffDefs\Hediffs_EnemyImplants.xml" />
+    <Content Include="Defs\HediffDefs\Hediffs_EnemyImplants.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Defs\HediffGiverSetDefs\HediffGiverSets.xml" />
     <Content Include="Defs\IncidentDef\Incidents.xml" />
     <Content Include="Defs\InteractionDef\Interactions.xml" />

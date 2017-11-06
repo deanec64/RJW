@@ -48,7 +48,7 @@ namespace rjw
 				{
 					Log.Message(pawn.def.defName + "Getting Implants\n" +item.defName + "\nParentDef:" + item.parentDef + "\nParentDefs:" + String.Join(",",item.parentDefs.ToArray()) );
 				}*/
-				HediffDef_MechImplants egg = (from x in DefDatabase<HediffDef_MechImplants>.AllDefs where x.parentDef == pawn.def.defName || x.parentDefs.Contains(pawn.def.defName) select x).RandomElement<HediffDef_MechImplants>();
+				HediffDef_MechImplants egg = (from x in DefDatabase<HediffDef_MechImplants>.AllDefs where x.IsParent(pawn.def.defName) select x).RandomElement<HediffDef_MechImplants>();
 
 				PlantSomething(egg, part, isAnalSex, 1);
             }
