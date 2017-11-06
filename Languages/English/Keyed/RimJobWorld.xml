@@ -71,7 +71,7 @@ Valid range: 0 - 300%</Rapee_MinVulnerability_animals_desc>
 	<PawnCantRapeCP2>The pawn is not zoophiliac so can't rape animals.</PawnCantRapeCP2>
 
 	<!-- Anal Sex Notificaitons-->
-	<AnalSexSucceeded>{0} had a successful anal sex with {1}.</AnalSexSucceeded>
-	<AnalSexFailed>{0} failed to have an anal sex with {1}.</AnalSexFailed>
+	<AnalSexSucceeded> </AnalSexSucceeded>
+	<AnalSexFailed> </AnalSexFailed>
 
 </LanguageData>

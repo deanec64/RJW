@@ -12,7 +12,7 @@ namespace rjw
     {
         protected override Job TryGiveJob(Pawn p)
         {
-			//Log.Message("[ABF] JobGiver_RapeEnemy::TryGiveJob( " + p.NameStringShort + " ) called");
+			//Log.Message("[RJW] JobGiver_RapeEnemy::TryGiveJob( " + p.NameStringShort + " ) called");
 			if (!p.health.capacities.CanBeAwake || Find.TickManager.TicksGame < p.mindState.canLovinTick || p.CurJob != null ) return null;
 
 			JobDef_RapeEnemy rapeEnemyJobDef = null;
@@ -44,17 +44,17 @@ namespace rjw
                     
             if (downedPlayer != null)
             {
-                //Log.Message("[ABF]" + this.GetType().ToString() + "::TryGiveJob( " + p.NameStringShort + " ) - found victim " + downedPlayer.NameStringShort);
+                //Log.Message("[RJW]" + this.GetType().ToString() + "::TryGiveJob( " + p.NameStringShort + " ) - found victim " + downedPlayer.NameStringShort);
                 p.mindState.canLovinTick = Find.TickManager.TicksGame + Rand.Range(75, 150);
                 return new Job(rapeEnemyJobDef, downedPlayer);
             }
             else {
-                //Log.Message("[ABF]" + this.GetType().ToString() + "::TryGiveJob( " + p.NameStringShort + " ) - unable to find victim");
+                //Log.Message("[RJW]" + this.GetType().ToString() + "::TryGiveJob( " + p.NameStringShort + " ) - unable to find victim");
                 p.mindState.canLovinTick = Find.TickManager.TicksGame + 1;
             }
-            //else {  Log.Message("[ABF] JobGiver_RapeEnemy::TryGiveJob( " + p.NameStringShort + " ) - too fast to play next"); }
+			//else {  Log.Message("[RJW] JobGiver_RapeEnemy::TryGiveJob( " + p.NameStringShort + " ) - too fast to play next"); }
 
-            return null;
+			return null;
         }
         
     }

@@ -11,7 +11,7 @@ using HugsLib.Core;
 
 namespace rjw
 {
-	public class HugsLibInj : ModBase
+	public class Mod_Settings : ModBase
 	{
 
 		public override string ModIdentifier
@@ -95,7 +95,7 @@ namespace rjw
 		public override void DefsLoaded()
 		{
 			Logger.Message("DefsLoaded() called");
-			option_WildMode = Settings.GetHandle<bool>("WildMode", "WildMode_name".Translate(), "WildMode_desc".Translate(), false);			
+			option_WildMode = Settings.GetHandle<bool>("WildMode", "WildMode_name".Translate(), "WildMode_desc".Translate(), false);
 			option_sexneed_decay_rate = Settings.GetHandle<int>("sexneed_decay_rate", "sexneed_decay_rate_name".Translate(), "sexneed_decay_rate_desc".Translate(), 100, Validators.IntRangeValidator(0, 1000000));
 			option_sexneed_decay_rate.SpinnerIncrement = 25;
 			option_nymphs_join = Settings.GetHandle<bool>("nymphs_join", "NymphsJoin".Translate(), "NymphsJoin_desc".Translate(), true);
@@ -141,7 +141,7 @@ namespace rjw
 
 		public override void SettingsChanged()
 		{
-			
+
 			WildMode = option_WildMode.Value;
 			sexneed_decay_rate = (float)(option_sexneed_decay_rate / 100);
 			nymphos = option_nymphs_join.Value;
@@ -174,7 +174,7 @@ namespace rjw
 			Log.Message("NonFutaWomenRaping_MaxVulnerability = " + NonFutaWomenRaping_MaxVulnerability);
 			Log.Message("Rapee_MinVulnerability_human = " + Rapee_MinVulnerability_human);
 			Log.Message("Rapee_MinVulnerability_animals = " + Rapee_MinVulnerability_animals);
-			
+
 		}
 
 		public override void MapLoaded(Map map)

@@ -9,38 +9,38 @@ using Harmony;
 
 namespace rjw
 {
-    public enum RandomDialogueJobType
-    {
-        Rape=0,
-        Love=1,
-        Other=2
-    }
-    public sealed class RandomDialoguesDef : Def
-    {
-        public RandomDialogueJobType JobType;
-        public string RD0;
-        public string RD1;
-        public string RD2;
-        public string RD3;
-        public string RD4;
-        public string RD5;
-        public string RD6;
-        public string RD7;
-        public string RD8;
-        public string RD9;
-        public string RD10;
-        public string RD11;
-        public string RD12;
-        public string RD13;
-        public string RD14;
-        public string RD15;
-        public string RD16;
-        public string RD17;
-        public string RD18;
-        public string RD19;
-    }
+	public enum RandomDialogueJobType
+	{
+		Rape = 0,
+		Love = 1,
+		Other = 2
+	}
+	public sealed class RandomDialoguesDef : Def
+	{
+		public RandomDialogueJobType JobType;
+		public string RD0;
+		public string RD1;
+		public string RD2;
+		public string RD3;
+		public string RD4;
+		public string RD5;
+		public string RD6;
+		public string RD7;
+		public string RD8;
+		public string RD9;
+		public string RD10;
+		public string RD11;
+		public string RD12;
+		public string RD13;
+		public string RD14;
+		public string RD15;
+		public string RD16;
+		public string RD17;
+		public string RD18;
+		public string RD19;
+	}
 
-    /* TO BE FINISHED
+	/* TO BE FINISHED
     [DefOf]
     public static class RandomDialoguesDefOf
     {
@@ -59,8 +59,8 @@ namespace rjw
     }
     */
 
-    // TO BE FINISHED
-    /*
+	// TO BE FINISHED
+	/*
     public static class RandomDialogues
     {
         public static void processBeforeDialogue(Pawn psubject,Pawn pobject,int Type = 4)
