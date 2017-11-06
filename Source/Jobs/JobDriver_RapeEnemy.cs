@@ -34,7 +34,7 @@ namespace rjw
 
 		public virtual void roll_to_hit(Pawn rapist, Pawn p)
 		{
-			float rand_value = Rand.Value;
+			float rand_value = (1 - Rand.Value * p.health.capacities.GetLevel(PawnCapacityDefOf.Consciousness));
 			float victim_pain = p.health.hediffSet.PainTotal;
 
 			float beating_chance = xxx.config.base_chance_to_hit_prisoner * (xxx.is_bloodlust(rapist) ? 1.25f : 1.0f);
@@ -227,7 +227,7 @@ namespace rjw
 		public virtual Pawn FindVictim(Pawn rapist, Map m, float targetAcquireRadius)
 		{
 			if (rapist == null || m == null) return null;
-			if (!xxx.can_rape(rapist) && xxx.is_human(rapist)) return null;
+			if (!xxx.can_rape(rapist)) return null;
 			Pawn best_rapee = null;
 			var best_fuckability = 0.20f; // Don't rape prisoners with <20% fuckability
 			foreach (var target in m.mapPawns.AllPawns)
