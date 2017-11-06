@@ -33,7 +33,7 @@ namespace rjw
 
 		protected override IEnumerable<Toil> MakeNewToils()
 		{
-			Log.Message("[RJW]JobDriver_GettinLoved::MakeNewToils is called");
+			//--Log.Message("[RJW]JobDriver_GettinLoved::MakeNewToils is called");
 
 			if (Partner.CurJob.def == xxx.nymph_rapin)
 			{
@@ -83,7 +83,7 @@ namespace rjw
 				get_loved.defaultCompleteMode = ToilCompleteMode.Never;
 				get_loved.initAction = delegate
 				{
-					Log.Message("[RJW]JobDriver_GettinLoved::MakeNewToils - whore section is called");
+					//--Log.Message("[RJW]JobDriver_GettinLoved::MakeNewToils - whore section is called");
 				};
 				get_loved.AddPreTickAction(delegate
 				{

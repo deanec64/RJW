@@ -77,7 +77,7 @@ namespace rjw
 				if (!pawnHasPenis)
 					animal.Drawer.rotator.Face(pawn.DrawPos);
 
-				Log.Message("[RJW] JobDriver_Beastiality::MakeNewToils() - Setting animal job driver");
+				//--Log.Message("[RJW] JobDriver_Beastiality::MakeNewToils() - Setting animal job driver");
 				var dri = animal.jobs.curDriver as JobDriver_GettinRaped;
 				if (dri == null)
 				{
@@ -114,7 +114,7 @@ namespace rjw
 			};
 			rape.AddFinishAction(delegate
 			{
-				Log.Message("[RJW] JobDriver_Beastiality::MakeNewToils() - finished violating");
+				//--Log.Message("[RJW] JobDriver_Beastiality::MakeNewToils() - finished violating");
 				//// Trying to add some interactions and social logs
 				xxx.processAnalSex(pawn, animal, ref isAnalSex, pawnHasPenis);
 

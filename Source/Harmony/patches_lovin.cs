@@ -59,7 +59,7 @@ namespace rjw
 			//Edited by nizhuan-jjr: The PostFix method cannot do this.
 			if ((lov != null) && (condition == JobCondition.Succeeded))
 			{
-				Log.Message("[RJW]patches_lovin::on_cleanup_driver is called0");
+				//--Log.Message("[RJW]patches_lovin::on_cleanup_driver is called0");
 				var par = find_partner(lov);
 				xxx.aftersex(lov.pawn, par, false, true); // note that JobDriver_Lovin will be called for both pawns
 														  //lov.pawn.mindState.canLovinTick = Find.TickManager.TicksGame + xxx.generate_min_ticks_to_next_lovin(lov.pawn);
@@ -68,7 +68,7 @@ namespace rjw
 			}
 			else if (xxx.RomanceDiversifiedIsActive && condition == JobCondition.Succeeded && __instance.GetType() == JobDriverDoLovinCasual)
 			{
-				Log.Message("[RJW]patches_lovin::on_cleanup_driver is called1");
+				//--Log.Message("[RJW]patches_lovin::on_cleanup_driver is called1");
 				var any_ins = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
 				var casuallovin_par = (Pawn)(__instance.GetType().GetProperty("Partner", any_ins).GetValue(__instance, null));
 				if (casuallovin_par != null)

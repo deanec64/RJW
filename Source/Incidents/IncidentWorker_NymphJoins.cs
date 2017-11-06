@@ -45,12 +45,12 @@ namespace rjw
 
 			if (m == null)
 			{
-				Log.Message("IncidentWorker_NymphJoins::TryExecute() - map is null, abort!");
+				//--Log.Message("IncidentWorker_NymphJoins::TryExecute() - map is null, abort!");
 				return false;
 			}
 			else
 			{
-				Log.Message("IncidentWorker_NymphJoins::TryExecute() - map is ok");
+				//--Log.Message("IncidentWorker_NymphJoins::TryExecute() - map is ok");
 			}
 
 			IntVec3 loc;

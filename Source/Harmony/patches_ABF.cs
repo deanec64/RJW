@@ -44,7 +44,7 @@ namespace rjw
 	{
 		public static void Postfix(StateGraph __result)
 		{
-			Log.Message("[ABF]AssaultColonyForRape::CreateGraph");
+			//--Log.Message("[ABF]AssaultColonyForRape::CreateGraph");
 			if (__result == null) return;
 			foreach (var trans in __result.transitions)
 			{
@@ -61,7 +61,7 @@ namespace rjw
 							t.filters.Add(new Trigger_SexSatisfy(0.3f));
 						}
 					}
-					Log.Message("[ABF]AssaultColonyForRape::CreateGraph Adding SexSatisfyTrigger to " + trans.ToString());
+					//--Log.Message("[ABF]AssaultColonyForRape::CreateGraph Adding SexSatisfyTrigger to " + trans.ToString());
 				}
 			}
 		}

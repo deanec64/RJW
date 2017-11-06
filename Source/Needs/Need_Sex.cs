@@ -167,7 +167,7 @@ namespace rjw
 				// the bootstrap of the mapInjector will only be triggered once per visible pawn.
 				if (!BootStrapTriggered)
 				{
-					Log.Message("[RJW]Need_Sex::NeedInterval::calling boostrap - pawn is " + pawn.NameStringShort);
+					//--Log.Message("[RJW]Need_Sex::NeedInterval::calling boostrap - pawn is " + pawn.NameStringShort);
 					xxx.bootstrap(pawn.Map);
 					BootStrapTriggered = true;
 				}

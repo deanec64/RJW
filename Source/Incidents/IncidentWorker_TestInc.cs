@@ -67,7 +67,7 @@ namespace rjw
 			{
 				if (pawn.needs.TryGetNeed<Need_Sex>() != null)
 				{
-					Log.Message("[RJW]TestInc::reduce_sex_need_on_select is called");
+					//--Log.Message("[RJW]TestInc::reduce_sex_need_on_select is called");
 					pawn.needs.TryGetNeed<Need_Sex>().CurLevel -= 0.5f;
 				}
 			}

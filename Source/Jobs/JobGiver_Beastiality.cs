@@ -48,14 +48,14 @@ namespace rjw
 
 		protected override Job TryGiveJob(Pawn p)
 		{
-			Log.Message("[RJW] JobGiver_Beastiality::TryGiveJob( " + p.NameStringShort + " ) called");
+			//--Log.Message("[RJW] JobGiver_Beastiality::TryGiveJob( " + p.NameStringShort + " ) called");
 			if ((Find.TickManager.TicksGame >= p.mindState.canLovinTick) && (p.CurJob == null))
 			{
 
 				if (xxx.is_healthy(p) && xxx.can_rape(p, true))
 				{
 					var target = find_target(p, p.Map);
-					Log.Message("[RJW] JobGiver_Beastiality::TryGiveJob - target is " + (target == null ? "NULL" : target.NameStringShort));
+					//--Log.Message("[RJW] JobGiver_Beastiality::TryGiveJob - target is " + (target == null ? "NULL" : target.NameStringShort));
 					if (target != null)
 					{
 						return new Job(xxx.beastiality, target);

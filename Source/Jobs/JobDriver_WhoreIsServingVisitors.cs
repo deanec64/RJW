@@ -130,7 +130,7 @@ namespace rjw
 			{
 				initAction = delegate
 				{
-					Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - waitInBed, initAction is called");
+					//--Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - waitInBed, initAction is called");
 					ticksLeftThisToil = 5000;
 					ticks_left = (int)(2000.0f * Rand.Range(0.30f, 1.30f));
 					//Actor.pather.StopDead();  //Let's just make whores standing at the bed
@@ -145,7 +145,7 @@ namespace rjw
 					Actor.GainComfortFromCellIfPossible();
 					if (IsInOrByBed(Bed, Partner))
 					{
-						Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - waitInBed, tickAction pass");
+						//--Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - waitInBed, tickAction pass");
 						ticksLeftThisToil = 0;
 
 					}
@@ -164,7 +164,7 @@ namespace rjw
 					{
 						//Actor.jobs.curDriver.ticksLeftThisToil = 1200;
 						//Using ticks_left to control the time of sex
-						Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - loveToil, setting initAction");
+						//--Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - loveToil, setting initAction");
 						if (xxx.HasNonPolyPartner(Actor))
 						{
 							Pawn pawn = LovePartnerRelationUtility.ExistingLovePartner(Actor);
@@ -201,7 +201,7 @@ namespace rjw
 				});
 				loveToil.AddFinishAction(delegate
 				{
-					Log.Message("[RJW] JobDriver_WhoreIsServingVisitors::MakeNewToils() - finished loveToil");
+					//--Log.Message("[RJW] JobDriver_WhoreIsServingVisitors::MakeNewToils() - finished loveToil");
 					//// Trying to add some interactions and social logs
 					//xxx.processAnalSex(Partner, Actor, ref isAnalSex, partnerHasPenis);
 
@@ -225,11 +225,11 @@ namespace rjw
 						//Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - Partner should pay the price now in afterSex.initAction");
 						if (xxx.PayPriceToWhore(Partner, price, Actor))
 						{
-							Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - Paying price is success");
+							//--Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - Paying price is success");
 						}
 						else
 						{
-							Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - Paying price failed");
+							//--Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - Paying price failed");
 						}
 					},
 					defaultCompleteMode = ToilCompleteMode.Instant

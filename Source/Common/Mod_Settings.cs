@@ -158,43 +158,43 @@ namespace rjw
 			Rapee_MinVulnerability_human = (float)(option_Rapee_MinVulnerability_human.Value / 100);
 			Rapee_MinVulnerability_animals = (float)(option_Rapee_MinVulnerability_animals.Value / 100);
 
-			Log.Message("[RJW] Settings Changed:");
-			Log.Message("WildMode = " + WildMode);
-			Log.Message("sexneed_decay_rate = " + sexneed_decay_rate);
-			Log.Message("nymphos = " + nymphos);
-			Log.Message("std_floor = " + std_floor);
-			Log.Message("prisoner_beating = " + prisoner_beating);
-			Log.Message("pregnancy_weight_parent = " + pregnancy_weight_parent);
-			Log.Message("pregnancy_weight_species = " + pregnancy_weight_species);
-			Log.Message("pregnancy_coefficient_human = " + pregnancy_coefficient_human);
-			Log.Message("pregnancy_coefficient_animals = " + pregnancy_coefficient_animals);
-			Log.Message("pregnancy_use_parent_method = " + pregnancy_use_parent_method);
-			Log.Message("sex_free_for_all_age = " + sex_free_for_all_age);
-			Log.Message("sex_minimum_age = " + sex_minimum_age);
-			Log.Message("NonFutaWomenRaping_MaxVulnerability = " + NonFutaWomenRaping_MaxVulnerability);
-			Log.Message("Rapee_MinVulnerability_human = " + Rapee_MinVulnerability_human);
-			Log.Message("Rapee_MinVulnerability_animals = " + Rapee_MinVulnerability_animals);
+			//--Log.Message("[RJW] Settings Changed:");
+			//--Log.Message("WildMode = " + WildMode);
+			//--Log.Message("sexneed_decay_rate = " + sexneed_decay_rate);
+			//--Log.Message("nymphos = " + nymphos);
+			//--Log.Message("std_floor = " + std_floor);
+			//--Log.Message("prisoner_beating = " + prisoner_beating);
+			//--Log.Message("pregnancy_weight_parent = " + pregnancy_weight_parent);
+			//--Log.Message("pregnancy_weight_species = " + pregnancy_weight_species);
+			//--Log.Message("pregnancy_coefficient_human = " + pregnancy_coefficient_human);
+			//--Log.Message("pregnancy_coefficient_animals = " + pregnancy_coefficient_animals);
+			//--Log.Message("pregnancy_use_parent_method = " + pregnancy_use_parent_method);
+			//--Log.Message("sex_free_for_all_age = " + sex_free_for_all_age);
+			//--Log.Message("sex_minimum_age = " + sex_minimum_age);
+			//--Log.Message("NonFutaWomenRaping_MaxVulnerability = " + NonFutaWomenRaping_MaxVulnerability);
+			//--Log.Message("Rapee_MinVulnerability_human = " + Rapee_MinVulnerability_human);
+			//--Log.Message("Rapee_MinVulnerability_animals = " + Rapee_MinVulnerability_animals);
 
 		}
 
 		public override void MapLoaded(Map map)
 		{
-			Log.Message("[RJW] Settings loaded:");
-			Log.Message("WildMode = " + WildMode);
-			Log.Message("sexneed_decay_rate = " + sexneed_decay_rate);
-			Log.Message("nymphos = " + nymphos);
-			Log.Message("std_floor = " + std_floor);
-			Log.Message("prisoner_beating = " + prisoner_beating);
-			Log.Message("pregnancy_weight_parent = " + pregnancy_weight_parent);
-			Log.Message("pregnancy_weight_species = " + pregnancy_weight_species);
-			Log.Message("pregnancy_coefficient_human = " + pregnancy_coefficient_human);
-			Log.Message("pregnancy_coefficient_animals = " + pregnancy_coefficient_animals);
-			Log.Message("pregnancy_use_parent_method = " + pregnancy_use_parent_method);
-			Log.Message("sex_free_for_all_age = " + sex_free_for_all_age);
-			Log.Message("sex_minimum_age = " + sex_minimum_age);
-			Log.Message("NonFutaWomenRaping_MaxVulnerability = " + NonFutaWomenRaping_MaxVulnerability);
-			Log.Message("Rapee_MinVulnerability_human = " + Rapee_MinVulnerability_human);
-			Log.Message("Rapee_MinVulnerability_animals = " + Rapee_MinVulnerability_animals);
+			//--Log.Message("[RJW] Settings loaded:");
+			//--Log.Message("WildMode = " + WildMode);
+			//--Log.Message("sexneed_decay_rate = " + sexneed_decay_rate);
+			//--Log.Message("nymphos = " + nymphos);
+			//--Log.Message("std_floor = " + std_floor);
+			//--Log.Message("prisoner_beating = " + prisoner_beating);
+			//--Log.Message("pregnancy_weight_parent = " + pregnancy_weight_parent);
+			//--Log.Message("pregnancy_weight_species = " + pregnancy_weight_species);
+			//--Log.Message("pregnancy_coefficient_human = " + pregnancy_coefficient_human);
+			//--Log.Message("pregnancy_coefficient_animals = " + pregnancy_coefficient_animals);
+			//--Log.Message("pregnancy_use_parent_method = " + pregnancy_use_parent_method);
+			//--Log.Message("sex_free_for_all_age = " + sex_free_for_all_age);
+			//--Log.Message("sex_minimum_age = " + sex_minimum_age);
+			//--Log.Message("NonFutaWomenRaping_MaxVulnerability = " + NonFutaWomenRaping_MaxVulnerability);
+			//--Log.Message("Rapee_MinVulnerability_human = " + Rapee_MinVulnerability_human);
+			//--Log.Message("Rapee_MinVulnerability_animals = " + Rapee_MinVulnerability_animals);
 			base.MapLoaded(map);
 		}
 

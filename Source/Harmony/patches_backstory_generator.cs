@@ -69,7 +69,7 @@ namespace rjw
 				//Log.Message("[RJW]Patch_PawnGenerator_GenerateNewNakedPawn::OnBegin_GenerateNewNakedPawn is called1");
 				if (pkd.minGenerationAge != 20)
 				{
-					Log.Message("[RJW]Patch_PawnGenerator_GenerateNewNakedPawn::OnBegin_GenerateNewNakedPawn is called2");
+					//--Log.Message("[RJW]Patch_PawnGenerator_GenerateNewNakedPawn::OnBegin_GenerateNewNakedPawn is called2");
 					pkd.minGenerationAge = 20;
 					pkd.maxGenerationAge = 27;
 					PGR = new PawnGenerationRequest(pkd,

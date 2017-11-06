@@ -82,7 +82,7 @@ namespace rjw
 				bs.ResolveReferences();
 				BackstoryDatabase.AddBackstory(bs);
 				child.vatgrown_sex_slave = bs;
-				Log.Message("[RJW]nymph_backstories::init() succeed0");
+				//--Log.Message("[RJW]nymph_backstories::init() succeed0");
 
 			}
 			{
@@ -126,7 +126,7 @@ namespace rjw
 				bs.ResolveReferences();
 				BackstoryDatabase.AddBackstory(bs);
 				adult.feisty = bs;
-				Log.Message("[RJW]nymph_backstories::init() succeed1");
+				//--Log.Message("[RJW]nymph_backstories::init() succeed1");
 			}
 
 			{
@@ -168,7 +168,7 @@ namespace rjw
 				bs.ResolveReferences();
 				BackstoryDatabase.AddBackstory(bs);
 				adult.curious = bs;
-				Log.Message("[RJW]nymph_backstories::init() succeed2");
+				//--Log.Message("[RJW]nymph_backstories::init() succeed2");
 			}
 
 			{
@@ -207,7 +207,7 @@ namespace rjw
 				bs.ResolveReferences();
 				BackstoryDatabase.AddBackstory(bs);
 				adult.tender = bs;
-				Log.Message("[RJW]nymph_backstories::init() succeed3");
+				//--Log.Message("[RJW]nymph_backstories::init() succeed3");
 			}
 
 			{
@@ -244,7 +244,7 @@ namespace rjw
 				bs.ResolveReferences();
 				BackstoryDatabase.AddBackstory(bs);
 				adult.chatty = bs;
-				Log.Message("[RJW]nymph_backstories::init() succeed4");
+				//--Log.Message("[RJW]nymph_backstories::init() succeed4");
 			}
 
 			{
@@ -283,7 +283,7 @@ namespace rjw
 				bs.ResolveReferences();
 				BackstoryDatabase.AddBackstory(bs);
 				adult.broken = bs;
-				Log.Message("[RJW]nymph_backstories::init() succeed5");
+				//--Log.Message("[RJW]nymph_backstories::init() succeed5");
 			}
 
 

@@ -562,7 +562,7 @@ namespace rjw
 					//The maximium would be 1.25*1.3*1.25*1.5*2.5=7.6171875; average is .5*1.025*1.025*1.25*2=1.31328125; minimium except 0 is .1*.1*.8*.7*.8*.5 = 0.00224
 					var prenymph_att = Mathf.InverseLerp(0f, 4f, base_attraction * orientation_factor * age_factor * body_factor * trait_factor * opinion_factor * horniness_factor * vulnerability_factor); // 0 to 1
 					var final_att = (!is_nympho(fucker)) ? prenymph_att : 0.2f + 0.8f * prenymph_att;
-					Log.Message("would_fuck( " + fucker.NameStringShort + ", " + p.NameStringShort + " ) - prenymph_att = " + prenymph_att.ToString() + ", final_att = " + final_att.ToString());
+					//--Log.Message("would_fuck( " + fucker.NameStringShort + ", " + p.NameStringShort + " ) - prenymph_att = " + prenymph_att.ToString() + ", final_att = " + final_att.ToString());
 
 					return final_att;
 
@@ -578,17 +578,17 @@ namespace rjw
 		{
 			string pawn_name = (pawn != null) ? pawn.NameStringShort : "NULL";
 			string part_name = (part != null) ? part.NameStringShort : "NULL";
-			Log.Message("xxx::satisfy( " + pawn_name + ", " + part_name + ", " + violent + "," + isCoreLovin + " ) called");
+			//--Log.Message("xxx::satisfy( " + pawn_name + ", " + part_name + ", " + violent + "," + isCoreLovin + " ) called");
 			var base_satisfaction_per_event = base_sat_per_fuck;
 			var pawn_ability = (pawn != null) ? get_sex_ability(pawn) : no_partner_ability;
 			var part_ability = (part != null) ? get_sex_ability(part) : no_partner_ability;
 
-			Log.Message("xxx::satisfy( " + pawn_name + ", " + part_name + ", " + violent + "," + isCoreLovin + " ) - calculate base satisfaction");
+			//--Log.Message("xxx::satisfy( " + pawn_name + ", " + part_name + ", " + violent + "," + isCoreLovin + " ) - calculate base satisfaction");
 			// Base satisfaction is based on partner's ability
 			var pawn_satisfaction = base_satisfaction_per_event * part_ability;
 			var part_satisfaction = base_satisfaction_per_event * pawn_ability;
 
-			Log.Message("xxx::satisfy( " + pawn_name + ", " + part_name + ", " + violent + "," + isCoreLovin + " ) - modifying pawn satisfaction");
+			//--Log.Message("xxx::satisfy( " + pawn_name + ", " + part_name + ", " + violent + "," + isCoreLovin + " ) - modifying pawn satisfaction");
 			if (pawn != null && (xxx.is_rapist(pawn) || xxx.is_bloodlust(pawn)))
 			{
 				// Rapists and Bloodlusts get more satisfaction from violetn encounters
@@ -602,7 +602,7 @@ namespace rjw
 				pawn_satisfaction *= (violent) ? 0.8f : 1.0f;
 			}
 
-			Log.Message("xxx::satisfy( " + pawn_name + ", " + part_name + ", " + violent + "," + isCoreLovin + " ) - modifying part satisfaction");
+			//--Log.Message("xxx::satisfy( " + pawn_name + ", " + part_name + ", " + violent + "," + isCoreLovin + " ) - modifying part satisfaction");
 			if (part != null && !part.Dead && xxx.is_masochist(part))
 			{
 				// masochists get some satisfaction from violent encounters
@@ -616,7 +616,7 @@ namespace rjw
 				part_satisfaction *= (violent) ? 0.2f : 1.0f;
 			}
 
-			Log.Message("xxx::satisfy( " + pawn_name + ", " + part_name + ", " + violent + "," + isCoreLovin + " ) - setting pawn joy");
+			//--Log.Message("xxx::satisfy( " + pawn_name + ", " + part_name + ", " + violent + "," + isCoreLovin + " ) - setting pawn joy");
 			if (pawn != null && pawn.needs != null)
 			{
 				if (pawn.needs.TryGetNeed<Need_Sex>() != null)
@@ -635,7 +635,7 @@ namespace rjw
 				{
 					if (is_female(pawn) && !is_female(part))  //Males are being fucked by female may feel a bit better. I don't bother to check the sex orientations here, because it'll be quite a work.
 						part_satisfaction *= 1.05f;
-					Log.Message("xxx::satisfy( " + pawn_name + ", " + part_name + ", " + violent + "," + isCoreLovin + " ) - setting part joy");
+					//--Log.Message("xxx::satisfy( " + pawn_name + ", " + part_name + ", " + violent + "," + isCoreLovin + " ) - setting part joy");
 					part.needs.TryGetNeed<Need_Sex>().CurLevel += part_satisfaction;
 					if (part.needs.joy != null)
 						part.needs.joy.CurLevel += part_satisfaction * 0.50f;       // convert half of satisfaction to joy
@@ -643,7 +643,7 @@ namespace rjw
 
 			}
 
-			Log.Message("xxx::satisfy( " + pawn_name + ", " + part_name + ", " + violent + " ) - pawn_satisfaction = " + pawn_satisfaction + ", part_satisfaction = " + part_satisfaction);
+			//--Log.Message("xxx::satisfy( " + pawn_name + ", " + part_name + ", " + violent + " ) - pawn_satisfaction = " + pawn_satisfaction + ", part_satisfaction = " + part_satisfaction);
 
 		}
 
@@ -713,9 +713,9 @@ namespace rjw
 
 		public static void think_after_sex(Pawn pawn, Pawn part, bool violent = false, bool isCoreLovin = false)
 		{
-			Log.Message("xxx::think_after_sex( " + pawn.NameStringShort + ", " + part.NameStringShort + ", " + violent + " ) called");
+			//--Log.Message("xxx::think_after_sex( " + pawn.NameStringShort + ", " + part.NameStringShort + ", " + violent + " ) called");
 
-			Log.Message("xxx::think_after_sex( " + pawn.NameStringShort + ", " + part.NameStringShort + ", " + violent + " ) - setting pawn thoughts");
+			//--Log.Message("xxx::think_after_sex( " + pawn.NameStringShort + ", " + part.NameStringShort + ", " + violent + " ) - setting pawn thoughts");
 			// pawn thoughts
 			// Edited by nizhuan-jjr:The two types of stole_sone_lovin are violent due to the description, so I make sure the thought would only trigger after violent behaviors. 
 			if (!xxx.is_animal(pawn) && violent)
@@ -729,7 +729,7 @@ namespace rjw
 				}
 			}
 
-			Log.Message("xxx::think_after_sex( " + pawn.NameStringShort + ", " + part.NameStringShort + ", " + violent + " ) - setting part thoughts");
+			//--Log.Message("xxx::think_after_sex( " + pawn.NameStringShort + ", " + part.NameStringShort + ", " + violent + " ) - setting part thoughts");
 			// partner thoughts
 			if (!xxx.is_animal(part) && violent && !part.Dead && !isCoreLovin)
 			{
@@ -756,7 +756,7 @@ namespace rjw
 				}
 			}
 
-			Log.Message("xxx::think_after_sex( " + pawn.NameStringShort + ", " + part.NameStringShort + ", " + violent + " ) - setting disease thoughts");
+			//--Log.Message("xxx::think_after_sex( " + pawn.NameStringShort + ", " + part.NameStringShort + ", " + violent + " ) - setting disease thoughts");
 			// check for visible diseases
 			if (xxx.is_human(pawn) && xxx.is_human(part))
 			{
@@ -803,7 +803,7 @@ namespace rjw
 		{
 			var pawn_name = (pawn != null) ? pawn.NameStringShort : "NULL";
 			var part_name = (pawn != null) ? part.NameStringShort : "NULL";
-			Log.Message("xxx::aftersex( " + pawn_name + ", " + part_name + " ) called");
+			//--Log.Message("xxx::aftersex( " + pawn_name + ", " + part_name + " ) called");
 			pawn.Drawer.rotator.Face(part.DrawPos);
 			pawn.Drawer.rotator.FaceCell(part.Position);
 
@@ -822,7 +822,7 @@ namespace rjw
 
 			bool pawnIsAnimal = is_animal(pawn);
 			bool partIsAnimal = is_animal(part);
-			Log.Message("xxx::aftersex( " + pawn_name + ", " + part_name + " ) - applying cum effect");
+			//--Log.Message("xxx::aftersex( " + pawn_name + ", " + part_name + " ) - applying cum effect");
 			if (xxx.config.cum_enabled)
 			{
 				int pawn_cum = pawnIsAnimal ? 4 : Math.Min((int)(pawn.RaceProps.lifeExpectancy / pawn.ageTracker.AgeBiologicalYears), 2);
@@ -838,20 +838,20 @@ namespace rjw
 				}
 			}
 
-			Log.Message("xxx::aftersex( " + pawn_name + ", " + part_name + " ) - checking satisfaction");
+			//--Log.Message("xxx::aftersex( " + pawn_name + ", " + part_name + " ) - checking satisfaction");
 			satisfy(pawn, part, violent, isCoreLovin);
-			Log.Message("xxx::aftersex( " + pawn_name + ", " + part_name + " ) - checking thoughts");
+			//--Log.Message("xxx::aftersex( " + pawn_name + ", " + part_name + " ) - checking thoughts");
 			think_after_sex(pawn, part, violent, isCoreLovin);
 
 			if (!isAnalSex)
 			{
-				Log.Message("xxx::aftersex( " + pawn_name + ", " + part_name + " ) - checking pregnancy");
+				//--Log.Message("xxx::aftersex( " + pawn_name + ", " + part_name + " ) - checking pregnancy");
 				impregnate(pawn, part);
 			}
 
 			if (pawnIsAnimal || partIsAnimal)
 				return;
-			Log.Message("xxx::aftersex( " + pawn_name + ", " + part_name + " ) - checking disease");
+			//--Log.Message("xxx::aftersex( " + pawn_name + ", " + part_name + " ) - checking disease");
 			std.roll_to_catch(pawn, part);
 		}
 
@@ -862,7 +862,7 @@ namespace rjw
 			var necro_name = (necro != null && !xxx.is_animal(necro)) ? necro.NameStringShort : "NULL";
 			Pawn deadpawn = (corpse != null && corpse.InnerPawn != null) ? corpse.InnerPawn : null;
 			var corpse_name = (deadpawn != null) ? deadpawn.NameStringShort : "NULL";
-			Log.Message("xxx::aftersex( " + necro_name + ", " + corpse_name + "[a deadpawn name]" + " ) called");
+			//--Log.Message("xxx::aftersex( " + necro_name + ", " + corpse_name + "[a deadpawn name]" + " ) called");
 			necro.Drawer.rotator.Face(corpse.DrawPos);
 			necro.Drawer.rotator.FaceCell(corpse.Position);
 
@@ -878,16 +878,16 @@ namespace rjw
 				SoundDef.Named("Cum").PlayOneShot(new TargetInfo(corpse.Position, necro.Map, false));
 			}
 
-			Log.Message("xxx::aftersex( " + necro_name + ", " + corpse_name + "[a deadpawn name]" + " ) - applying cum effect");
+			//--Log.Message("xxx::aftersex( " + necro_name + ", " + corpse_name + "[a deadpawn name]" + " ) - applying cum effect");
 			if (xxx.config.cum_enabled)
 			{
 				var necro_cum = (int)(necro.RaceProps.lifeExpectancy / necro.ageTracker.AgeBiologicalYears);
 				FilthMaker.MakeFilth(necro.PositionHeld, necro.MapHeld, cum, necro.LabelIndefinite(), necro_cum);
 			}
 
-			Log.Message("xxx::aftersex( " + necro_name + ", " + corpse_name + "[a deadpawn name]" + " ) - checking satisfaction");
+			//--Log.Message("xxx::aftersex( " + necro_name + ", " + corpse_name + "[a deadpawn name]" + " ) - checking satisfaction");
 			satisfy(necro, deadpawn, violent);
-			Log.Message("xxx::aftersex( " + necro_name + ", " + corpse_name + "[a deadpawn name]" + " ) - checking thoughts");
+			//--Log.Message("xxx::aftersex( " + necro_name + ", " + corpse_name + "[a deadpawn name]" + " ) - checking thoughts");
 			think_after_sex(necro, deadpawn, violent);
 
 			//The dead have no hediff, so no need to roll_to_catch; TO DO: add a roll_to_catch_from_corpse to std
@@ -898,7 +898,7 @@ namespace rjw
 		public static void impregnate(Pawn pawn, Pawn part)
 		{
 			if (pawn == null || part == null) return;
-			Log.Message("xxx::impregnate( " + pawn.NameStringShort + ", " + part.NameStringShort + " ) called");
+			//--Log.Message("xxx::impregnate( " + pawn.NameStringShort + ", " + part.NameStringShort + " ) called");
 
 			if (pawn.health.hediffSet.HasHediff(sterilized) || part.health.hediffSet.HasHediff(sterilized))
 				return;
@@ -918,7 +918,7 @@ namespace rjw
 			}
 			else
 			{
-				Log.Message("[RJW] Same sex pregnancies not currently supported...");
+				//--Log.Message("[RJW] Same sex pregnancies not currently supported...");
 				return;
 			}
 
@@ -933,13 +933,13 @@ namespace rjw
 					}
 					catch (System.TypeLoadException)
 					{
-						Log.Message("[RJW] RimWorldChildren does not appear to be available, reverting to default pregnancy method");
+						//--Log.Message("[RJW] RimWorldChildren does not appear to be available, reverting to default pregnancy method");
 					}
 				}
 			}
 			else
 			{
-				Log.Message("[RJW] Can't use RimWorldChildren for hybrid pregnancies, using default");
+				//--Log.Message("[RJW] Can't use RimWorldChildren for hybrid pregnancies, using default");
 			}
 
 			// fertility check
@@ -950,14 +950,14 @@ namespace rjw
 
 			if (pregnancy_chance > pregnancy_threshold)
 			{
-				Log.Message("[RJW] Impregnation failed. Chance was " + pregnancy_chance + " vs " + pregnancy_threshold);
+				//--Log.Message("[RJW] Impregnation failed. Chance was " + pregnancy_chance + " vs " + pregnancy_threshold);
 				return;
 			}
 
 			Hediff_Pregnant hediff_pregnant = (Hediff_Pregnant)HediffMaker.MakeHediff(HediffDef.Named("Pregnant"), female);
 			hediff_pregnant.father = male;
 			female.health.AddHediff(hediff_pregnant);
-			Log.Message("[RJW] Impregnation succeeded. Chance was " + pregnancy_chance + " vs " + pregnancy_threshold);
+			//--Log.Message("[RJW] Impregnation succeeded. Chance was " + pregnancy_chance + " vs " + pregnancy_threshold);
 
 		}
 
@@ -973,7 +973,7 @@ namespace rjw
 			var human_pregnancy = DefDatabase<HediffDef>.GetNamed("HumanPregnancy", false);
 			if (female.health.hediffSet.HasHediff(HediffDefOf.Pregnant) || female.health.hediffSet.HasHediff(human_pregnancy, torso))
 			{
-				Log.Message("[RJW] C&P target is already pregnant, bailing");
+				//--Log.Message("[RJW] C&P target is already pregnant, bailing");
 				return;
 			}
 
@@ -985,14 +985,14 @@ namespace rjw
 
 			if (pregnancy_chance > pregnancy_threshold)
 			{
-				Log.Message("[RJW] C&P impregnation failed. Chance was " + pregnancy_chance + " vs " + pregnancy_threshold);
+				//--Log.Message("[RJW] C&P impregnation failed. Chance was " + pregnancy_chance + " vs " + pregnancy_threshold);
 				return;
 			}
 
 			Hediff_HumanPregnancy hediff_Pregnant = (Hediff_HumanPregnancy)HediffMaker.MakeHediff(HediffDef.Named("HumanPregnancy"), female, torso);
 			hediff_Pregnant.father = male;
 			female.health.AddHediff(hediff_Pregnant, torso, null);
-			Log.Message("[RJW] C&P impregnation succeeded. Chance was " + pregnancy_chance + " vs " + pregnancy_threshold);
+			//--Log.Message("[RJW] C&P impregnation succeeded. Chance was " + pregnancy_chance + " vs " + pregnancy_threshold);
 
 		}
 
@@ -1001,7 +1001,7 @@ namespace rjw
 		{
 			if (pawnHasPenis && (!is_female(Prisoner) || Rand.Value < .33f))
 			{
-				Log.Message("[RJW]xxx::processAnalSex is called");
+				//--Log.Message("[RJW]xxx::processAnalSex is called");
 				List<RulePackDef> extraSentencePacks = new List<RulePackDef>();
 				if (Genital_Helper.has_anus(Prisoner) && !Genital_Helper.anus_blocked(Prisoner))
 				{
@@ -1177,7 +1177,7 @@ namespace rjw
 			float price = (whore.gender == Gender.Female) ? Rand.RangeInclusive(20, 40) : Rand.RangeInclusive(10, 25);
 			if (!xxx.has_traits(whore))
 			{
-				Log.Message("[RJW] xxx::PriceOfWhore - whore has no traits");
+				//--Log.Message("[RJW] xxx::PriceOfWhore - whore has no traits");
 				price /= 2;
 			}
 			else
@@ -1204,7 +1204,7 @@ namespace rjw
 			}
 			float NeedSexFactor = (need_some_sex(whore) > 1) ? (1 - (need_some_sex(whore) / 8)) : 1f;
 			price *= NeedSexFactor;
-			Log.Message("[RJW] xxx::PriceOfWhore - price is " + price);
+			//--Log.Message("[RJW] xxx::PriceOfWhore - price is " + price);
 			return (int)Math.Round(price);
 		}
 
@@ -1220,7 +1220,7 @@ namespace rjw
 				if (caravanAnimals == null)
 				{
 					int totalAmountOfSilvers = targetPawn.inventory.innerContainer.TotalStackCountOfDef(ThingDefOf.Silver);
-					Log.Message("[RJW]CanAfford::(" + targetPawn.NameStringShort + "," + whore.NameStringShort + ") - totalAmountOfSilvers is " + totalAmountOfSilvers);
+					//--Log.Message("[RJW]CanAfford::(" + targetPawn.NameStringShort + "," + whore.NameStringShort + ") - totalAmountOfSilvers is " + totalAmountOfSilvers);
 					return totalAmountOfSilvers >= price;
 				}
 				else
@@ -1232,10 +1232,10 @@ namespace rjw
 					}
 					if (totalAmountOfSilvers >= price)
 					{
-						Log.Message("[RJW]CanAfford:: caravan can afford the price");
+						//--Log.Message("[RJW]CanAfford:: caravan can afford the price");
 						return true;
 					}
-					Log.Message("[RJW]CanAfford:: caravan cannot afford the price");
+					//--Log.Message("[RJW]CanAfford:: caravan cannot afford the price");
 					return false;
 				}
 
@@ -1249,7 +1249,7 @@ namespace rjw
 		{
 			if (targetPawn.Faction == whore.Faction || priceOfWhore == 0)
 			{
-				Log.Message("[RJW] xxx::PayPriceToWhore - No need to pay price");
+				//--Log.Message("[RJW] xxx::PayPriceToWhore - No need to pay price");
 				return true;
 			}
 			//Caravan guestCaravan = Find.WorldObjects.Caravans.Where(x => x.Spawned && x.ContainsPawn(targetPawn) && x.Faction == targetPawn.Faction && !x.IsPlayerControlled).FirstOrDefault();
@@ -1269,7 +1269,7 @@ namespace rjw
 					{
 						if (resultingSilvers is null)
 						{
-							Log.Message("[RJW] xxx::PayPriceToWhore - silvers is null0");
+							//--Log.Message("[RJW] xxx::PayPriceToWhore - silvers is null0");
 							return false;
 						}
 						AmountLeft -= resultingSilvers.stackCount;
@@ -1280,7 +1280,7 @@ namespace rjw
 					}
 					else
 					{
-						Log.Message("[RJW] xxx::PayPriceToWhore - TryDrop failed0");
+						//--Log.Message("[RJW] xxx::PayPriceToWhore - TryDrop failed0");
 						return false;
 					}
 				}
@@ -1300,7 +1300,7 @@ namespace rjw
 						{
 							if (resultingSilvers is null)
 							{
-								Log.Message("[RJW] xxx::PayPriceToWhore - silvers is null1");
+								//--Log.Message("[RJW] xxx::PayPriceToWhore - silvers is null1");
 								return false;
 							}
 							AmountLeft -= resultingSilvers.stackCount;
@@ -1311,7 +1311,7 @@ namespace rjw
 						}
 						else
 						{
-							Log.Message("[RJW] xxx::PayPriceToWhore - TryDrop failed1");
+							//--Log.Message("[RJW] xxx::PayPriceToWhore - TryDrop failed1");
 							continue;
 						}
 					}

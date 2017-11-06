@@ -97,7 +97,7 @@ namespace rjw
 			price = 0;
 			if (p1 == null)
 			{
-				Log.Message("[RJW] JobGiver_WhoreInvitingVisitors::FindAttractivePawn - p1 is null");
+				//--Log.Message("[RJW] JobGiver_WhoreInvitingVisitors::FindAttractivePawn - p1 is null");
 				return null;
 			}
 			FindAttractivePawnHelper findPawnHelper = new FindAttractivePawnHelper
@@ -123,7 +123,7 @@ namespace rjw
 			{
 				return result;
 			}
-			Log.Message("[RJW] JobGiver_WhoreInvitingVisitors::FindAttractivePawn - found no visitors");
+			//--Log.Message("[RJW] JobGiver_WhoreInvitingVisitors::FindAttractivePawn - found no visitors");
 			if (!xxx.WillPawnTryHookup(p1))
 			{
 				return null;
@@ -162,7 +162,7 @@ namespace rjw
 			{
 				int price;
 				Pawn pawn2 = FindAttractivePawn(pawn, out price);
-				Log.Message("[RJW] JobGiver_WhoreInvitingVisitors::TryGiveJob( " + pawn.NameStringShort + " ) called1 - pawn2 is " + (pawn2 == null ? "NULL" : pawn2.NameStringShort));
+				//--Log.Message("[RJW] JobGiver_WhoreInvitingVisitors::TryGiveJob( " + pawn.NameStringShort + " ) called1 - pawn2 is " + (pawn2 == null ? "NULL" : pawn2.NameStringShort));
 				if (pawn2 == null)
 				{
 					return null;
@@ -176,7 +176,7 @@ namespace rjw
 					else pawn.mindState.canLovinTick = Find.TickManager.TicksGame + Rand.Range(75, 150);
 					return null;
 				}
-				Log.Message("[RJW] JobGiver_WhoreInvitingVisitors::TryGiveJob( " + pawn.NameStringShort + " ) called2 - " + pawn2.NameStringShort + " is pawn2.");
+				//--Log.Message("[RJW] JobGiver_WhoreInvitingVisitors::TryGiveJob( " + pawn.NameStringShort + " ) called2 - " + pawn2.NameStringShort + " is pawn2.");
 				whorebed.priceOfWhore = price;
 				return new Job(xxx.inviting_visitors, pawn2, whorebed);
 			}

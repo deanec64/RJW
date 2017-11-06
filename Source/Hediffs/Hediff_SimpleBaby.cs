@@ -208,7 +208,7 @@ namespace rjw
 
 		public void TickRare()
 		{
-			Log.Message("[RJW]Hediff_SimpleBaby::TickRare is called");
+			//--Log.Message("[RJW]Hediff_SimpleBaby::TickRare is called");
 			if (pawn.ageTracker.CurLifeStageIndex > Grown_To)
 			{
 				GrowUpTo(Grown_To + 1, false);
@@ -236,7 +236,7 @@ namespace rjw
 						!pawn.health.hediffSet.HasHediff(HediffDef.Named("UnhappyBaby"))
 					)
 					{
-						Log.Message("Adding unhappy baby hediff");
+						//--Log.Message("Adding unhappy baby hediff");
 						pawn.health.AddHediff(HediffDef.Named("UnhappyBaby"), null, null);
 					}
 				}

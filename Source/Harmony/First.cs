@@ -19,7 +19,7 @@ namespace rjw
 		// Generate a HediffGiver for the dummy hediff, then inject it into the OrganicStandard HediffGiverSet
 		static void inject_sexualizer()
 		{
-			Log.Message("First::inject_sexualizer() called");
+			//--Log.Message("First::inject_sexualizer() called");
 			/* Edited by nizhuan-jjr: I'm using the xpath approach to do this
             var hgs = DefDatabase<HediffGiverSetDef>.GetNamed("OrganicStandard");
             if (hgs != null) {
@@ -47,16 +47,16 @@ namespace rjw
 		{
 
 			var bpr = BodyDefOf.Human.AllParts.Find((BodyPartRecord can) => String.Equals(can.def.defName, body_part_record_def_name));
-			Log.Message(body_part_record_def_name + " BPR internals:");
-			Log.Message("  def: " + bpr.def.ToString());
-			Log.Message("  parts: " + bpr.parts.ToString());
-			Log.Message("  parts.count: " + bpr.parts.Count.ToString());
-			Log.Message("  height: " + bpr.height.ToString());
-			Log.Message("  depth: " + bpr.depth.ToString());
-			Log.Message("  coverage: " + bpr.coverage.ToString());
-			Log.Message("  groups: " + bpr.groups.ToString());
-			Log.Message("  groups.count: " + bpr.groups.Count.ToString());
-			Log.Message("  parent: " + bpr.parent.ToString());
+			//--Log.Message(body_part_record_def_name + " BPR internals:");
+			//--Log.Message("  def: " + bpr.def.ToString());
+			//--Log.Message("  parts: " + bpr.parts.ToString());
+			//--Log.Message("  parts.count: " + bpr.parts.Count.ToString());
+			//--Log.Message("  height: " + bpr.height.ToString());
+			//--Log.Message("  depth: " + bpr.depth.ToString());
+			//--Log.Message("  coverage: " + bpr.coverage.ToString());
+			//--Log.Message("  groups: " + bpr.groups.ToString());
+			//--Log.Message("  groups.count: " + bpr.groups.Count.ToString());
+			//--Log.Message("  parent: " + bpr.parent.ToString());
 			//Log.Message ("  fleshCoverage: " + bpr.fleshCoverage.ToString ());
 			//Log.Message ("  absoluteCoverage: " + bpr.absoluteCoverage.ToString ());
 			//Log.Message ("  absoluteFleshCoverage: " + bpr.absoluteFleshCoverage.ToString ());
@@ -68,7 +68,7 @@ namespace rjw
 		// I don't think this is used anymore
 		public static void inject_genitals(BodyDef target = null)
 		{
-			Log.Message("[RJW] First::inject_genitals() called");
+			//--Log.Message("[RJW] First::inject_genitals() called");
 			if (target == null)
 			{
 				target = BodyDefOf.Human;
@@ -82,7 +82,7 @@ namespace rjw
 
 		static void inject_recipes()
 		{
-			Log.Message("[RJW] First::inject_recipes");
+			//--Log.Message("[RJW] First::inject_recipes");
 			var cra_spo = DefDatabase<ThingDef>.GetNamed("CraftingSpot");
 			var mac_ben = DefDatabase<ThingDef>.GetNamed("TableMachining");
 			var tai_ben = DefDatabase<ThingDef>.GetNamed("ElectricTailoringBench");
@@ -118,7 +118,7 @@ namespace rjw
 
 		static void inject_items()
 		{
-			Log.Message("[RJW] First::inject_items() called");
+			//--Log.Message("[RJW] First::inject_items() called");
 			/* Just use the Def to add ThingDef
             if (xxx.config.whore_beds_enabled)
             {
@@ -148,23 +148,23 @@ namespace rjw
 
 		static void show_bs(Backstory bs)
 		{
-			Log.Message("Backstory \"" + bs.Title + "\" internals:");
-			Log.Message("  identifier: " + bs.identifier);
-			Log.Message("  slot: " + bs.slot.ToString());
-			Log.Message("  Title: " + bs.Title);
-			Log.Message("  TitleShort: " + bs.TitleShort);
-			Log.Message("  baseDesc: " + bs.baseDesc);
-			Log.Message("  skillGains: " + ((bs.skillGains == null) ? "null" : bs.skillGains.ToString()));
-			Log.Message("  skillGainsResolved: " + ((bs.skillGainsResolved == null) ? "null" : bs.skillGainsResolved.ToString()));
-			Log.Message("  workDisables: " + bs.workDisables.ToString());
-			Log.Message("  requiredWorkTags: " + bs.requiredWorkTags.ToString());
-			Log.Message("  spawnCategories: " + bs.spawnCategories.ToString());
-			Log.Message("  bodyTypeGlobal: " + bs.bodyTypeGlobal.ToString());
-			Log.Message("  bodyTypeFemale: " + bs.bodyTypeFemale.ToString());
-			Log.Message("  bodyTypeMale: " + bs.bodyTypeMale.ToString());
-			Log.Message("  forcedTraits: " + ((bs.forcedTraits == null) ? "null" : bs.forcedTraits.ToString()));
-			Log.Message("  disallowedTraits: " + ((bs.disallowedTraits == null) ? "null" : bs.disallowedTraits.ToString()));
-			Log.Message("  shuffleable: " + bs.shuffleable.ToString());
+			//--Log.Message("Backstory \"" + bs.Title + "\" internals:");
+			//--Log.Message("  identifier: " + bs.identifier);
+			//--Log.Message("  slot: " + bs.slot.ToString());
+			//--Log.Message("  Title: " + bs.Title);
+			//--Log.Message("  TitleShort: " + bs.TitleShort);
+			//--Log.Message("  baseDesc: " + bs.baseDesc);
+			//--Log.Message("  skillGains: " + ((bs.skillGains == null) ? "null" : bs.skillGains.ToString()));
+			//--Log.Message("  skillGainsResolved: " + ((bs.skillGainsResolved == null) ? "null" : bs.skillGainsResolved.ToString()));
+			//--Log.Message("  workDisables: " + bs.workDisables.ToString());
+			//--Log.Message("  requiredWorkTags: " + bs.requiredWorkTags.ToString());
+			//--Log.Message("  spawnCategories: " + bs.spawnCategories.ToString());
+			//--Log.Message("  bodyTypeGlobal: " + bs.bodyTypeGlobal.ToString());
+			//--Log.Message("  bodyTypeFemale: " + bs.bodyTypeFemale.ToString());
+			//--Log.Message("  bodyTypeMale: " + bs.bodyTypeMale.ToString());
+			//--Log.Message("  forcedTraits: " + ((bs.forcedTraits == null) ? "null" : bs.forcedTraits.ToString()));
+			//--Log.Message("  disallowedTraits: " + ((bs.disallowedTraits == null) ? "null" : bs.disallowedTraits.ToString()));
+			//--Log.Message("  shuffleable: " + bs.shuffleable.ToString());
 		}
 		static void CheckingCompatibleMods()
 		{
@@ -179,13 +179,13 @@ namespace rjw
 				if (xxx.straight is null)
 				{
 					xxx.RomanceDiversifiedIsActive = false;
-					Log.Message("[RJW]RomanceDiversified is not detected.0");
+					//--Log.Message("[RJW]RomanceDiversified is not detected.0");
 
 				}
 				else
 				{
 					xxx.RomanceDiversifiedIsActive = true;
-					Log.Message("[RJW]RomanceDiversified is detected.");
+					//--Log.Message("[RJW]RomanceDiversified is detected.");
 				}
 
 			}
@@ -198,7 +198,7 @@ namespace rjw
 				xxx.faithful = null;
 				xxx.philanderer = null;
 				xxx.polyamorous = null;
-				Log.Message("[RJW]RomanceDiversified is not detected.1");
+				//--Log.Message("[RJW]RomanceDiversified is not detected.1");
 			}
 			try
 			{
@@ -206,12 +206,12 @@ namespace rjw
 				if (xxx.babystate is null)
 				{
 					xxx.RimWorldChildrenIsActive = false;
-					Log.Message("[RJW]Children&Pregnancy is not detected.0");
+					//--Log.Message("[RJW]Children&Pregnancy is not detected.0");
 				}
 				else
 				{
 					xxx.RimWorldChildrenIsActive = true;
-					Log.Message("[RJW]Children&Pregnancy is detected.");
+					//--Log.Message("[RJW]Children&Pregnancy is detected.");
 				}
 
 			}
@@ -219,13 +219,13 @@ namespace rjw
 			{
 				xxx.RimWorldChildrenIsActive = false; //A dirty way to check if the mod is active
 				xxx.babystate = null;
-				Log.Message("[RJW]Children&Pregnancy is not detected.1");
+				//--Log.Message("[RJW]Children&Pregnancy is not detected.1");
 			}
 		}
 
 		static First()
 		{
-			Log.Message("[RJW] First::First() called");
+			//--Log.Message("[RJW] First::First() called");
 
 			// check for required mods
 			//CheckModRequirements();
@@ -250,7 +250,7 @@ namespace rjw
 
 		internal static void CheckModRequirements()
 		{
-			Log.Message("First::CheckModRequirements() called");
+			//--Log.Message("First::CheckModRequirements() called");
 			List<string> required_mods = new List<string> {
 				"HugsLib",
 			};
@@ -275,7 +275,7 @@ namespace rjw
 
 		internal static void CheckIncompatibleMods()
 		{
-			Log.Message("First::CheckIncompatibleMods() called");
+			//--Log.Message("First::CheckIncompatibleMods() called");
 			List<string> incompatible_mods = new List<string> {
 				"Bogus Test Mod That Doesn't Exist"
 			};

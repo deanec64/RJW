@@ -120,7 +120,7 @@ namespace rjw
 		{
 			var pawn_name = (pawn != null) ? pawn.NameStringShort : "NULL";
 			var part_name = (pawn != null) ? part.NameStringShort : "NULL";
-			Log.Message("[ABF]JobDriver_RapeEnemy::aftersex( " + pawn_name + ", " + part_name + " ) called");
+			//--Log.Message("[ABF]JobDriver_RapeEnemy::aftersex( " + pawn_name + ", " + part_name + " ) called");
 			pawn.Drawer.rotator.Face(part.DrawPos);
 			pawn.Drawer.rotator.FaceCell(part.Position);
 
@@ -139,7 +139,7 @@ namespace rjw
 
 			bool pawnIsNotHuman = xxx.is_animal(pawn) || xxx.is_mechanoid(pawn);
 			bool partIsNotHuman = xxx.is_animal(part) || xxx.is_mechanoid(pawn);
-			Log.Message("[ABF]JobDriver_RapeEnemy::aftersex( " + pawn_name + ", " + part_name + " ) - applying cum effect");
+			//--Log.Message("[ABF]JobDriver_RapeEnemy::aftersex( " + pawn_name + ", " + part_name + " ) - applying cum effect");
 			if (xxx.config.cum_enabled)
 			{
 				int pawn_cum = pawnIsNotHuman ? 4 : Math.Min((int)(pawn.RaceProps.lifeExpectancy / pawn.ageTracker.AgeBiologicalYears), 2);
@@ -155,27 +155,27 @@ namespace rjw
 				}
 			}
 
-			Log.Message("[ABF]JobDriver_RapeEnemy::aftersex( " + pawn_name + ", " + part_name + " ) - checking satisfaction");
+			//--Log.Message("[ABF]JobDriver_RapeEnemy::aftersex( " + pawn_name + ", " + part_name + " ) - checking satisfaction");
 			xxx.satisfy(pawn, part, violent, isCoreLovin);
-			Log.Message("[ABF]JobDriver_RapeEnemy::aftersex( " + pawn_name + ", " + part_name + " ) - checking thoughts");
+			//--Log.Message("[ABF]JobDriver_RapeEnemy::aftersex( " + pawn_name + ", " + part_name + " ) - checking thoughts");
 			think_after_sex(pawn, part, violent, isCoreLovin);
 
 			if (!isAnalSex)
 			{
-				Log.Message("[ABF]JobDriver_RapeEnemy::aftersex( " + pawn_name + ", " + part_name + " ) - checking pregnancy");
+				//--Log.Message("[ABF]JobDriver_RapeEnemy::aftersex( " + pawn_name + ", " + part_name + " ) - checking pregnancy");
 				xxx.impregnate(pawn, part);
 			}
 
 			if (pawnIsNotHuman || partIsNotHuman) return;
-			Log.Message("[ABF]JobDriver_RapeEnemy::aftersex( " + pawn_name + ", " + part_name + " ) - checking disease");
+			//--Log.Message("[ABF]JobDriver_RapeEnemy::aftersex( " + pawn_name + ", " + part_name + " ) - checking disease");
 			std.roll_to_catch(pawn, part);
 		}
 
 
 		public override void think_after_sex(Pawn pawn, Pawn part, bool violent = false, bool isCoreLovin = false)
 		{
-			Log.Message("[ABF]JobDriver_RapeEnemy::think_after_sex( " + pawn.NameStringShort + ", " + part.NameStringShort + ", " + violent + " ) called");
-			Log.Message("[ABF]JobDriver_RapeEnemy::think_after_sex( " + pawn.NameStringShort + ", " + part.NameStringShort + ", " + violent + " ) - setting part thoughts");
+			//--Log.Message("[ABF]JobDriver_RapeEnemy::think_after_sex( " + pawn.NameStringShort + ", " + part.NameStringShort + ", " + violent + " ) called");
+			//--Log.Message("[ABF]JobDriver_RapeEnemy::think_after_sex( " + pawn.NameStringShort + ", " + part.NameStringShort + ", " + violent + " ) - setting part thoughts");
 
 
 			// partner thoughts
@@ -204,7 +204,7 @@ namespace rjw
 				}
 			}
 
-			Log.Message("[ABF]JobDriver_RapeEnemy::think_after_sex( " + pawn.NameStringShort + ", " + part.NameStringShort + ", " + violent + " ) - setting disease thoughts");
+			//--Log.Message("[ABF]JobDriver_RapeEnemy::think_after_sex( " + pawn.NameStringShort + ", " + part.NameStringShort + ", " + violent + " ) - setting disease thoughts");
 			// check for visible diseases
 			if (xxx.is_human(pawn) && xxx.is_human(part))
 			{

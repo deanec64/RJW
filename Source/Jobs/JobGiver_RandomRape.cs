@@ -36,7 +36,7 @@ namespace rjw
 
 		protected override Job TryGiveJob(Pawn p)
 		{
-			Log.Message("[RJW] JobGiver_RandomRape::TryGiveJob( " + p.NameStringShort + " ) called");
+			//--Log.Message("[RJW] JobGiver_RandomRape::TryGiveJob( " + p.NameStringShort + " ) called");
 
 			if ((Find.TickManager.TicksGame >= p.mindState.canLovinTick) && (p.CurJob == null))
 			{
@@ -50,12 +50,12 @@ namespace rjw
 
 					if (prisoner != null)
 					{
-						Log.Message("[RJW] JobGiver_RandomRape::TryGiveJob( " + p.NameStringShort + " ) - found victim " + prisoner.NameStringShort);
+						//--Log.Message("[RJW] JobGiver_RandomRape::TryGiveJob( " + p.NameStringShort + " ) - found victim " + prisoner.NameStringShort);
 						return new Job(xxx.random_rape, prisoner);
 					}
 					else
 					{
-						Log.Message("[RJW] JobGiver_RandomRape::TryGiveJob( " + p.NameStringShort + " ) - unable to find victim");
+						//--Log.Message("[RJW] JobGiver_RandomRape::TryGiveJob( " + p.NameStringShort + " ) - unable to find victim");
 						if (xxx.config.rapists_always_rape)
 							p.mindState.canLovinTick = Find.TickManager.TicksGame + 5;
 						else p.mindState.canLovinTick = Find.TickManager.TicksGame + Rand.Range(75, 150);
