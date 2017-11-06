@@ -382,7 +382,8 @@ namespace rjw
 				float combatPower = pawn.kindDef.combatPower;
 				float bodySize = pawn.RaceProps.baseBodySize;
 				//Log.Message("[RJW]xxx::can_get_raped - animal pawn - vulnerability is "+ get_vulnerability(pawn));
-				return combatPower <= 80 && bodySize <= 1.2 && bodySize >= 0.25 && (get_sex_ability(pawn) > 0.0f) && !is_mechanoid(pawn) && (Mod_Settings.Rapee_MinVulnerability_animals < 0 ? false : get_vulnerability(pawn) >= Mod_Settings.Rapee_MinVulnerability_animals);
+				return true;
+				//return combatPower <= 80 && bodySize <= 1.2 && bodySize >= 0.25 && (get_sex_ability(pawn) > 0.0f) && !is_mechanoid(pawn) && (Mod_Settings.Rapee_MinVulnerability_animals < 0 ? false : get_vulnerability(pawn) >= Mod_Settings.Rapee_MinVulnerability_animals);
 			}
 			return false;
 		}
@@ -1045,18 +1046,29 @@ namespace rjw
 				{
 					if ((q != rapist) && rapist.CanReserve(q, comfort_prisoners.max_rapists_per_prisoner, 0) && (!q.Position.IsForbidden(rapist)) && is_healthy_enough(q) && can_get_raped(q))
 					{
-						if (!is_animal(q) || is_zoophiliac(rapist))
-						{
-							var fuc = would_fuck(rapist, q, true);
-							//var log_msg = rapist.Name + " -> " + q.Name + " (" + fuc.ToString() + " / " + best_fuckability.ToString() + ")";
-							//Log.Message(log_msg);
 
-							if (xxx.config.pawns_always_rapeCP || (fuc > best_fuckability) && (Rand.Value < fuc))
-							{
-								best_rapee = q;
-								best_fuckability = fuc;
-							}
+						var fuc = would_fuck(rapist, q, true);
+						//var log_msg = rapist.Name + " -> " + q.Name + " (" + fuc.ToString() + " / " + best_fuckability.ToString() + ")";
+						//Log.Message(log_msg);
+
+						if (xxx.config.pawns_always_rapeCP || (fuc > best_fuckability) && (Rand.Value < fuc))
+						{
+							best_rapee = q;
+							best_fuckability = fuc;
 						}
+
+						//if (!is_animal(q) || is_zoophiliac(rapist))
+						//{
+						//	var fuc = would_fuck(rapist, q, true);
+						//	//var log_msg = rapist.Name + " -> " + q.Name + " (" + fuc.ToString() + " / " + best_fuckability.ToString() + ")";
+						//	//Log.Message(log_msg);
+
+						//	if (xxx.config.pawns_always_rapeCP || (fuc > best_fuckability) && (Rand.Value < fuc))
+						//	{
+						//		best_rapee = q;
+						//		best_fuckability = fuc;
+						//	}
+						//}
 
 					}
 				}

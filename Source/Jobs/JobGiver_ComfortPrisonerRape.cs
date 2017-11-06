@@ -17,7 +17,7 @@ namespace rjw
 
 				//Log.Message("[RJW] JobGiver_ComfortPrisonerRape::TryGiveJob( " + p.NameStringShort + " ) called1");
 				// don't allow pawns marked as comfort prisoners to rape others
-				if ((xxx.is_healthy(p) && xxx.can_rape(p, xxx.has_traits(p) && xxx.is_nympho_or_rapist_or_zoophiliac(p)) && !comfort_prisoners.is_designated(p)) || wildmode)
+				if ((xxx.is_healthy(p) && xxx.can_rape(p, xxx.has_traits(p) && xxx.is_nympho_or_rapist_or_zoophiliac(p)) || wildmode) && !comfort_prisoners.is_designated(p))
 				{
 
 					//Log.Message("[RJW] JobGiver_ComfortPrisonerRape::TryGiveJob( " + p.NameStringShort + " ) called2");
@@ -26,11 +26,11 @@ namespace rjw
 					if (target != null)
 					{
 
-						if (xxx.is_human(target) && (xxx.is_rapist(p) || xxx.is_nympho(p)))
+						if (xxx.is_human(target) && (xxx.is_rapist(p) || xxx.is_nympho(p) || wildmode)) //TODO: make a designation target for animals
 						{
 							return new Job(xxx.comfort_prisoner_rapin, target);
 						}
-						else if (xxx.is_animal(target) && xxx.is_zoophiliac(p))
+						else if (xxx.is_animal(target) && (xxx.is_zoophiliac(p) || wildmode))
 						{
 							return new Job(xxx.comfort_prisoner_rapin, target);
 						}

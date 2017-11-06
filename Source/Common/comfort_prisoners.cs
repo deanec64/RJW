@@ -32,7 +32,7 @@ namespace rjw
 	public static class comfort_prisoners
 	{
 
-		public const int max_rapists_per_prisoner = 2;// original value is 6
+		public const int max_rapists_per_prisoner = 4;//TODO: make option
 
 		public static DesignationDef designation_def = DefDatabase<DesignationDef>.GetNamed("ComfortPrisoner");
 
