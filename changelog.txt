@@ -1,3 +1,6 @@
+v1.5.4i
+- 
+
 v1.5.4h changes:
 - Fixed nymph joining bed and no effect bug.
 - Temporary fix for anal rape thought memory.
