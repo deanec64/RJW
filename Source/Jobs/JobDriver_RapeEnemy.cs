@@ -227,7 +227,7 @@ namespace rjw
 		public virtual Pawn FindVictim(Pawn rapist, Map m, float targetAcquireRadius)
 		{
 			if (rapist == null || m == null) return null;
-			if (!xxx.can_rape(rapist)) return null;
+			if (!xxx.can_rape(rapist) && xxx.is_human(rapist)) return null;
 			Pawn best_rapee = null;
 			var best_fuckability = 0.20f; // Don't rape prisoners with <20% fuckability
 			foreach (var target in m.mapPawns.AllPawns)

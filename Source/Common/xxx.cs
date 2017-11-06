@@ -723,7 +723,8 @@ namespace rjw
 			Log.Message("xxx::think_after_sex( " + pawn.NameStringShort + ", " + part.NameStringShort + ", " + violent + " ) - setting pawn thoughts");
 			// pawn thoughts
 			// Edited by nizhuan-jjr:The two types of stole_sone_lovin are violent due to the description, so I make sure the thought would only trigger after violent behaviors. 
-			if (!xxx.is_animal(pawn) && violent)
+			// Edited by hoge: !is_animal is include mech. mech has no mood.
+			if (xxx.is_human(pawn) && violent)
 			{
 				var pawn_thought = (xxx.is_rapist(pawn) || xxx.is_bloodlust(pawn)) ? xxx.bloodlust_stole_some_lovin : xxx.stole_some_lovin;
 				pawn.needs.mood.thoughts.memories.TryGainMemory(pawn_thought);
@@ -752,11 +753,14 @@ namespace rjw
 					part.needs.mood.thoughts.memories.TryGainMemory(part_thought_about_rapist, pawn);
 				}
 
-				foreach (var bystander in part.Map.mapPawns.SpawnedPawnsInFaction(part.Faction))
+				if (part.Faction != null) //wild animals faction is null. should check.
 				{
-					if ((bystander != pawn) && (bystander != part) && !xxx.is_animal(bystander) && !xxx.is_masochist(part))
+					foreach (var bystander in part.Map.mapPawns.SpawnedPawnsInFaction(part.Faction))
 					{
-						part.needs.mood.thoughts.memories.TryGainMemory(xxx.allowed_me_to_get_raped, bystander);
+						if ((bystander != pawn) && (bystander != part) && !xxx.is_animal(bystander) && !xxx.is_masochist(part))
+						{
+							part.needs.mood.thoughts.memories.TryGainMemory(xxx.allowed_me_to_get_raped, bystander);
+						}
 					}
 				}
 			}
