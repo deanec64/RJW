@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-  <FeelingBroken.label>Stages to broken body</FeelingBroken.label>
-  <FeelingBroken.stages.0.label>In a trance</FeelingBroken.stages.0.label>
-  <FeelingBroken.stages.1.label>Broken body</FeelingBroken.stages.1.label>
-  <FeelingBroken.stages.2.label>Extremely broken body</FeelingBroken.stages.2.label>
+	<FeelingBroken.label>Stages to broken body</FeelingBroken.label>
+	<FeelingBroken.stages.0.label>In a trance</FeelingBroken.stages.0.label>
+	<FeelingBroken.stages.1.label>Broken body</FeelingBroken.stages.1.label>
+	<FeelingBroken.stages.2.label>Extremely broken body</FeelingBroken.stages.2.label>
 
 
 </LanguageData>

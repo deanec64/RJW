@@ -2,13 +2,13 @@
 
 
 <PawnCapacityDefs>
-  <PawnCapacityDef>
-    <defName>Reproduction</defName>
-    <workerClass>rjw.PawnCapacityWorker_Fertility</workerClass>
-    <label>fertility</label>
-    <listOrder>200</listOrder>
-    <lethalFlesh>false</lethalFlesh>
-    <showOnMechanoids>false</showOnMechanoids>
-  </PawnCapacityDef>
+	<PawnCapacityDef>
+		<defName>Reproduction</defName>
+		<workerClass>rjw.PawnCapacityWorker_Fertility</workerClass>
+		<label>fertility</label>
+		<listOrder>200</listOrder>
+		<lethalFlesh>false</lethalFlesh>
+		<showOnMechanoids>false</showOnMechanoids>
+	</PawnCapacityDef>
 </PawnCapacityDefs>
 

@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <BodyPartDefs>
 
-  <BodyPartDef>
-    <defName>Genitals</defName>
-    <label>genitals</label>
-    <hitPoints>12</hitPoints>
-    <frostbiteVulnerability>0.1</frostbiteVulnerability>
-    <oldInjuryBaseChance>0.015</oldInjuryBaseChance>
-    <skinCovered>true</skinCovered>
-    <isSolid>false</isSolid>
-    <dontSuggestAmputation>false</dontSuggestAmputation>
-    <bleedingRateMultiplier>1.0</bleedingRateMultiplier>
-    <tags>
-      <li>RJW_FertilitySource</li>
-    </tags>
-  </BodyPartDef>
+	<BodyPartDef>
+		<defName>Genitals</defName>
+		<label>genitals</label>
+		<hitPoints>12</hitPoints>
+		<frostbiteVulnerability>0.1</frostbiteVulnerability>
+		<oldInjuryBaseChance>0.015</oldInjuryBaseChance>
+		<skinCovered>true</skinCovered>
+		<isSolid>false</isSolid>
+		<dontSuggestAmputation>false</dontSuggestAmputation>
+		<bleedingRateMultiplier>1.0</bleedingRateMultiplier>
+		<tags>
+			<li>RJW_FertilitySource</li>
+		</tags>
+	</BodyPartDef>
 
 
-  <BodyPartDef>
-    <defName>Chest</defName>
-    <label>chest</label>
-    <hitPoints>12</hitPoints>
-    <frostbiteVulnerability>0.1</frostbiteVulnerability>
-    <oldInjuryBaseChance>0.015</oldInjuryBaseChance>
-    <skinCovered>true</skinCovered>
-    <isSolid>false</isSolid>
-    <dontSuggestAmputation>true</dontSuggestAmputation>
-    <bleedingRateMultiplier>1.0</bleedingRateMultiplier>
-  </BodyPartDef>
+	<BodyPartDef>
+		<defName>Chest</defName>
+		<label>chest</label>
+		<hitPoints>12</hitPoints>
+		<frostbiteVulnerability>0.1</frostbiteVulnerability>
+		<oldInjuryBaseChance>0.015</oldInjuryBaseChance>
+		<skinCovered>true</skinCovered>
+		<isSolid>false</isSolid>
+		<dontSuggestAmputation>true</dontSuggestAmputation>
+		<bleedingRateMultiplier>1.0</bleedingRateMultiplier>
+	</BodyPartDef>
 
-  
-  <BodyPartDef>
-    <defName>Anus</defName>
-    <label>anus</label>
-    <hitPoints>8</hitPoints>
-    <frostbiteVulnerability>0.1</frostbiteVulnerability>
-    <oldInjuryBaseChance>0.015</oldInjuryBaseChance>
-    <skinCovered>true</skinCovered>
-    <isSolid>false</isSolid>
-    <dontSuggestAmputation>false</dontSuggestAmputation>
-    <bleedingRateMultiplier>1.0</bleedingRateMultiplier>
-  </BodyPartDef>
+
+	<BodyPartDef>
+		<defName>Anus</defName>
+		<label>anus</label>
+		<hitPoints>8</hitPoints>
+		<frostbiteVulnerability>0.1</frostbiteVulnerability>
+		<oldInjuryBaseChance>0.015</oldInjuryBaseChance>
+		<skinCovered>true</skinCovered>
+		<isSolid>false</isSolid>
+		<dontSuggestAmputation>false</dontSuggestAmputation>
+		<bleedingRateMultiplier>1.0</bleedingRateMultiplier>
+	</BodyPartDef>
 
 </BodyPartDefs>

@@ -14,7 +14,7 @@
 		<researchViewX>0</researchViewX>
 		<researchViewY>0</researchViewY>
 	</ResearchProjectDef>
-	
+
 	<ResearchProjectDef>
 		<defName>Bed_Whore</defName>
 		<label>Bed Whore</label>
@@ -31,7 +31,7 @@
 		<researchViewX>1</researchViewX>
 		<researchViewY>0</researchViewY>
 	</ResearchProjectDef>
-	
+
 	<ResearchProjectDef>
 		<defName>Double_Bed_Whore</defName>
 		<label>Double Whore Bed</label>
