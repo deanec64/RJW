@@ -218,6 +218,7 @@
     <Content Include="Languages\English\DefInjected\HediffDef\Hediffs_SimpleBaby.xml" />
     <Content Include="Languages\English\DefInjected\HediffDef\Hediffs_STDs.xml" />
     <Content Include="Languages\English\DefInjected\HediffDef\Hediffs_Sterilized.xml" />
+    <Content Include="Languages\English\DefInjected\HediffDef\Hediff_EnemyImplants.xml" />
     <Content Include="Languages\English\DefInjected\IncidentDef\Incidents.xml" />
     <Content Include="Languages\English\DefInjected\InteractionDef\Interactions.xml" />
     <Content Include="Languages\English\DefInjected\JobDef\Jobs.xml" />
@@ -420,6 +421,7 @@
     <Compile Include="Source\Jobs\JobDriver_NymphJoinInBed.cs" />
     <Compile Include="Source\Jobs\JobDriver_RandomRape.cs" />
     <Compile Include="Source\Jobs\JobDriver_RapeEnemy.cs" />
+    <Compile Include="Source\Jobs\JobDriver_RapeEnemyByAnimal.cs" />
     <Compile Include="Source\Jobs\JobDriver_RapeEnemyToParasite.cs" />
     <Compile Include="Source\Jobs\JobDriver_RapeEnemyByInsect.cs" />
     <Compile Include="Source\Jobs\JobDriver_RapeEnemyByMech.cs" />

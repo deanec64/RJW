@@ -110,6 +110,7 @@
     <TargetDefNames>
     </TargetDefNames>
   </JobDef>
+  
   <JobDef Class="rjw.JobDef_RapeEnemy">
     <defName>RapeEnemyByInsect</defName>
     <!-- Rape to plant egg. see Hediffs_EnemyImplants.xml more detail-->
@@ -119,6 +120,17 @@
     <TargetDefNames>
     </TargetDefNames>
   </JobDef>
+  
+  <JobDef Class="rjw.JobDef_RapeEnemy">
+    <defName>RapeEnemyByAnimal</defName>
+    <!-- Rape to Implant something. see Hediffs_EnemyImplants.xml more detail-->
+    <driverClass>rjw.JobDriver_RapeEnemyByAnimal</driverClass>
+    <reportString>Rapin' Enemy</reportString>
+    <priority>1000</priority>
+    <TargetDefNames>
+    </TargetDefNames>
+  </JobDef>
+  
   <JobDef Class="rjw.JobDef_RapeEnemy">
     <defName>RapeEnemyByMech</defName>
     <!-- Rape to Implant something. see Hediffs_EnemyImplants.xml more detail-->
@@ -128,6 +140,7 @@
     <TargetDefNames>
     </TargetDefNames>
   </JobDef>
+  
   <JobDef Class="rjw.JobDef_RapeEnemy">
     <defName>RapeEnemyToParasite</defName>
     <!-- Rape to pregnant same kind of male.-->
