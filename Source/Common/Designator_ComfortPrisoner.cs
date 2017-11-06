@@ -100,7 +100,22 @@ namespace rjw
 		{
 			var p = t as Pawn;
 			//return (p != null) && (p.IsPrisonerOfColony || p.IsColonist || p.Faction == Faction.OfPlayer) && xxx.can_get_raped(p) && (!comfort_prisoners.is_designated(p));
-			return (p != null) && (p.IsPrisonerOfColony) && (!comfort_prisoners.is_designated(p)); //comfor prisoner button will only appear on prisoners
+			if (p != null)
+			{
+				if (p.IsPrisonerOfColony)
+				{
+					defaultLabel = "comfort prisoner test";
+				}
+				else if (xxx.is_animal(p))
+				{
+					defaultLabel = "comfort animal test";
+				}
+				else
+				{
+					defaultLabel = "rape target test";
+				}
+			}
+			return ((p != null) && (!comfort_prisoners.is_designated(p)) && ((p.IsColonist || p.Faction == Faction.OfPlayer) || (xxx.is_animal(p)) || (p.IsColonist || p.Faction == Faction.OfPlayer)));
 		}
 
 		public override void DesignateThing(Thing t)
