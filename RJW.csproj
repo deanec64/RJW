@@ -37,7 +37,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\RimWorld\RimWorldWin_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\RimWorldWin_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="HugsLib">
@@ -45,7 +45,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="RimWorldChildren">
-      <HintPath>..\..\RimWorld\Mods\ChildrenAndPregnancy-master\Assemblies\RimWorldChildren.dll</HintPath>
+      <HintPath>..\ChildrenAndPregnancy-master\Assemblies\RimWorldChildren.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="SexualitySpectrum">
@@ -57,7 +57,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>..\..\RimWorld\RimWorldWin_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>..\..\RimWorldWin_Data\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
@@ -90,11 +90,15 @@
     <Content Include="Defs\HediffDefs\Hediffs_SimpleBaby.xml" />
     <Content Include="Defs\HediffDefs\Hediffs_STDs.xml" />
     <Content Include="Defs\HediffDefs\Hediffs_Sterilized.xml" />
-    <Content Include="Defs\HediffDefs\Hediffs_EnemyImplants.xml" />
+    <Content Include="Defs\HediffDefs\Hediffs_EnemyImplants.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Defs\HediffGiverSetDefs\HediffGiverSets.xml" />
     <Content Include="Defs\IncidentDef\Incidents.xml" />
     <Content Include="Defs\InteractionDef\Interactions.xml" />
-    <Content Include="Defs\JobDefs\Jobs.xml" />
+    <Content Include="Defs\JobDefs\Jobs.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Defs\MiscTranslationDef\MiscTranslationDefs.xml" />
     <Content Include="Defs\Motes\Motes.xml" />
     <Content Include="Defs\Needs\Needs.xml" />
@@ -214,6 +218,7 @@
     <Content Include="Languages\English\DefInjected\HediffDef\Hediffs_SimpleBaby.xml" />
     <Content Include="Languages\English\DefInjected\HediffDef\Hediffs_STDs.xml" />
     <Content Include="Languages\English\DefInjected\HediffDef\Hediffs_Sterilized.xml" />
+    <Content Include="Languages\English\DefInjected\HediffDef\Hediff_EnemyImplants.xml" />
     <Content Include="Languages\English\DefInjected\IncidentDef\Incidents.xml" />
     <Content Include="Languages\English\DefInjected\InteractionDef\Interactions.xml" />
     <Content Include="Languages\English\DefInjected\JobDef\Jobs.xml" />
@@ -371,7 +376,6 @@
     <None Include="LICENSE" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Source\Common\ABFCommon.cs" />
     <Compile Include="Source\Common\bondage_gear.cs" />
     <Compile Include="Source\Common\comfort_prisoners.cs" />
     <Compile Include="Source\Common\config.cs" />
@@ -396,13 +400,13 @@
     <Compile Include="Source\Hediffs\HediffDef_EnemyImplants.cs" />
     <Compile Include="Source\Hediffs\Hediff_ID.cs" />
     <Compile Include="Source\Hediffs\Hediff_InitPrivates.cs" />
+    <Compile Include="Source\Hediffs\Hediff_MCEvents.cs" />
     <Compile Include="Source\Hediffs\Hediff_MechImplants.cs" />
     <Compile Include="Source\Hediffs\Hediff_InsectEgg.cs" />
     <Compile Include="Source\Hediffs\Hediff_InvisibleImplant.cs" />
     <Compile Include="Source\Hediffs\Hediff_MicroComputer.cs" />
     <Compile Include="Source\Hediffs\Hediff_Parasite.cs" />
     <Compile Include="Source\Hediffs\Hediff_SimpleBaby.cs" />
-    <Compile Include="Source\Hediffs\Hediff_Orgasm.cs" />
     <Compile Include="Source\Incidents\IncidentWorker_NymphJoins.cs" />
     <Compile Include="Source\Incidents\IncidentWorker_Sexualize.cs" />
     <Compile Include="Source\Incidents\IncidentWorker_TestInc.cs" />
@@ -417,6 +421,7 @@
     <Compile Include="Source\Jobs\JobDriver_NymphJoinInBed.cs" />
     <Compile Include="Source\Jobs\JobDriver_RandomRape.cs" />
     <Compile Include="Source\Jobs\JobDriver_RapeEnemy.cs" />
+    <Compile Include="Source\Jobs\JobDriver_RapeEnemyByAnimal.cs" />
     <Compile Include="Source\Jobs\JobDriver_RapeEnemyToParasite.cs" />
     <Compile Include="Source\Jobs\JobDriver_RapeEnemyByInsect.cs" />
     <Compile Include="Source\Jobs\JobDriver_RapeEnemyByMech.cs" />

@@ -15,7 +15,7 @@ namespace rjw
 	class JobDef_RapeEnemy : JobDef
 	{
 		public List<string> TargetDefNames = new List<string>();
-		public float targetAcquireRadius = 20f;
+		public float targetAcquireRadius = 60f;
 		public int priority = 0;
 		protected JobDriver_RapeEnemy intance
 		{

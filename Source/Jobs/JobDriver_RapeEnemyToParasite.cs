@@ -8,6 +8,10 @@ namespace rjw
 {
     class JobDriver_RapeEnemyToParasite : JobDriver_RapeEnemy
 	{
+		public JobDriver_RapeEnemyToParasite()
+		{
+			this.requierCanRape = false;
+		}
 		public override bool CanUseThisJobForPawn(Pawn rapist)
 		{
 			return false;

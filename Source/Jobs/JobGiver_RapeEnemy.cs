@@ -36,7 +36,7 @@ namespace rjw
 
 			if (rapeEnemyJobDef == null)
 			{
-				Log.Warning("[RJW] JobGiver_RapeEnemy::ChoosedJobDef( " + p.ToString()+ " ) no defined JobDef_RapeEnemy for him.");
+				//Log.Warning("[RJW] JobGiver_RapeEnemy::ChoosedJobDef( " + p.ToString()+ " ) no defined JobDef_RapeEnemy for him.");
 				return null;
 			}
 			//Log.Message("[RJW] JobGiver_RapeEnemy::ChoosedJobDef( " + p.ToString() + " ) - " + rapeEnemyJobDef.ToString() + " choosed");
