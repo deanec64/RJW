@@ -11,7 +11,7 @@ namespace rjw
 {
 	public class ABFCommon
 	{
-		
+
 		public static bool is_Insect(Pawn pawn)
 		{
 			if (pawn.def == ThingDef.Named("Megascarab"))

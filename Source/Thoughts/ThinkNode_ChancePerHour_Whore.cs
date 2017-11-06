@@ -10,8 +10,8 @@ using RimWorld;
 
 namespace rjw
 {
-    //This class is not used now.
-    /*
+	//This class is not used now.
+	/*
     public class ThinkNode_ChancePerHour_Whore : ThinkNode_ChancePerHour
     {
         protected override float MtbHours(Pawn pawn)

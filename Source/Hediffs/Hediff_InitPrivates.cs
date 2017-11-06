@@ -9,21 +9,24 @@ using System.Collections.Generic;
 using Verse;
 using RimWorld;
 
-namespace rjw {
-	public class Hediff_InitPrivates : Hediff_AddedPart {
+namespace rjw
+{
+	public class Hediff_InitPrivates : Hediff_AddedPart
+	{
 
-		public override void PostAdd (DamageInfo? dinfo)
+		public override void PostAdd(DamageInfo? dinfo)
 		{
-            //Log.Message("[RJW]Hediff_InitPrivates::PostAdd is called0 - pawn is " + pawn.NameStringShort);
-			if (! Genital_Helper.is_sexualized(pawn)) {
-                Genital_Helper.sexualize(pawn);
-                //Log.Message("[RJW]Hediff_InitPrivates::PostAdd is called1 - pawn is " + pawn.NameStringShort);
+			//Log.Message("[RJW]Hediff_InitPrivates::PostAdd is called0 - pawn is " + pawn.NameStringShort);
+			if (!Genital_Helper.is_sexualized(pawn))
+			{
+				Genital_Helper.sexualize(pawn);
+				//Log.Message("[RJW]Hediff_InitPrivates::PostAdd is called1 - pawn is " + pawn.NameStringShort);
 
-                std.generate_on(pawn);
+				std.generate_on(pawn);
 			}
 
 			// Remove the dummy hediff
-			pawn.health.RemoveHediff (this);
+			pawn.health.RemoveHediff(this);
 		}
 
 	}

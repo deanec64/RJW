@@ -4,13 +4,13 @@ using Verse;
 
 namespace rjw
 {
-    class JobDriver_RapeEnemyByInsect : JobDriver_RapeEnemy
-    {
+	class JobDriver_RapeEnemyByInsect : JobDriver_RapeEnemy
+	{
 
-        public override void aftersex(Pawn pawn, Pawn part, bool violent = false, bool isCoreLovin = false, bool isAnalSex = false)
-        {
-            base.aftersex(pawn,part,violent,isCoreLovin,isAnalSex);
-            /*if (pawn.RaceProps.Animal && xxx.is_human(part))
+		public override void aftersex(Pawn pawn, Pawn part, bool violent = false, bool isCoreLovin = false, bool isAnalSex = false)
+		{
+			base.aftersex(pawn, part, violent, isCoreLovin, isAnalSex);
+			/*if (pawn.RaceProps.Animal && xxx.is_human(part))
             {
                 if (pawn.def == ThingDef.Named("Megascarab"))
                 {
@@ -46,6 +46,6 @@ namespace rjw
                     }
                 }
             }*/
-        }
-    }
+		}
+	}
 }
