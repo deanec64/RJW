@@ -101,9 +101,6 @@
     <Content Include="Defs\HediffGiverSetDefs\HediffGiverSets.xml" />
     <Content Include="Defs\IncidentDef\Incidents.xml" />
     <Content Include="Defs\InteractionDef\Interactions.xml" />
-    <Content Include="Defs\JobDefs\ABFJobs.xml">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Defs\JobDefs\Jobs.xml" />
     <Content Include="Defs\MiscTranslationDef\MiscTranslationDefs.xml" />
     <Content Include="Defs\Motes\Motes.xml" />
@@ -377,7 +374,6 @@
     <Content Include="version.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Defs\RandomDialoguesxml" />
     <None Include="Languages\Japanese\Keyed\RimJobWorld.xml.bak" />
     <None Include="LICENSE" />
   </ItemGroup>
@@ -426,7 +422,6 @@
     <Compile Include="Source\Jobs\JobDriver_LovinPP.cs" />
     <Compile Include="Source\Jobs\JobDriver_NymphJoinInBed.cs" />
     <Compile Include="Source\Jobs\JobDriver_RandomRape.cs" />
-    <Compile Include="Source\Jobs\JobDriver_RapeEnemyByAnimal.cs" />
     <Compile Include="Source\Jobs\JobDriver_RapeEnemy.cs" />
     <Compile Include="Source\Jobs\JobDriver_RapeEnemyToParasite.cs" />
     <Compile Include="Source\Jobs\JobDriver_RapeEnemyByInsect.cs" />

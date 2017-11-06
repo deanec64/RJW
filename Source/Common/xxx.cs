@@ -235,6 +235,11 @@ namespace rjw
 			//Edited by nizhuan-jjr:to make Misc.Robots not allowed to have sex. This change makes those robots not counted as animals.
 			return pawn.RaceProps.Animal;
 		}
+		public static bool is_insect(Pawn pawn)
+		{
+			//Added by Hoge: Insects are also animal. you need check is_insect before is_animal.
+			return pawn.RaceProps.FleshType.defName == "Insectoid";
+		}
 		public static bool is_mechanoid(Pawn pawn)
 		{//Added by nizhuan-jjr:to make Misc.Robots not allowed to have sex. Note:Misc.MAI is not a mechanoid. 
 
@@ -388,7 +393,7 @@ namespace rjw
 		}
 
 		// Returns how fuckable 'fucker' thinks 'p' is on a scale from 0.0 to 1.0
-		public static float would_fuck(Pawn fucker, Pawn p, bool invert_opinion = false)
+		public static float would_fuck(Pawn fucker, Pawn p, bool invert_opinion = false, bool ignore_bleeding = false)
 		{
 			var fucker_age = fucker.ageTracker.AgeBiologicalYears;
 			var p_age = p.ageTracker.AgeBiologicalYears;
@@ -432,7 +437,7 @@ namespace rjw
 			{
 				if ((!(fucker.Dead || p.Dead)) &&
 					(!(fucker.needs.food.Starving || p.needs.food.Starving)) &&
-					(fucker.health.hediffSet.BleedRateTotal <= 0.0f) && (p.health.hediffSet.BleedRateTotal <= 0.0f))
+					( (fucker.health.hediffSet.BleedRateTotal <= 0.0f) && (p.health.hediffSet.BleedRateTotal <= 0.0f) || ignore_bleeding))
 				{
 
 					float orientation_factor;  //0 or 1
