@@ -37,16 +37,14 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\RimWorld\RimWorldWin_Data\Managed\Assembly-CSharp.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\RimWorldWin_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="HugsLib">
       <HintPath>..\HugsLib\Assemblies\HugsLib.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RimWorldChildren">
-      <HintPath>..\..\RimWorld\Mods\ChildrenAndPregnancy-master\Assemblies\RimWorldChildren.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\ChildrenAndPregnancy-master\Assemblies\RimWorldChildren.dll</HintPath>
     </Reference>
     <Reference Include="SexualitySpectrum">
       <HintPath>..\..\RimWorld\Mods\Romance Diversified A17\Assemblies\SexualitySpectrum.dll</HintPath>
@@ -57,8 +55,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>..\..\RimWorld\RimWorldWin_Data\Managed\UnityEngine.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\RimWorldWin_Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -371,7 +368,6 @@
     <None Include="LICENSE" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Source\Common\ABFCommon.cs" />
     <Compile Include="Source\Common\bondage_gear.cs" />
     <Compile Include="Source\Common\comfort_prisoners.cs" />
     <Compile Include="Source\Common\config.cs" />
@@ -402,7 +398,6 @@
     <Compile Include="Source\Hediffs\Hediff_MicroComputer.cs" />
     <Compile Include="Source\Hediffs\Hediff_Parasite.cs" />
     <Compile Include="Source\Hediffs\Hediff_SimpleBaby.cs" />
-    <Compile Include="Source\Hediffs\Hediff_Orgasm.cs" />
     <Compile Include="Source\Incidents\IncidentWorker_NymphJoins.cs" />
     <Compile Include="Source\Incidents\IncidentWorker_Sexualize.cs" />
     <Compile Include="Source\Incidents\IncidentWorker_TestInc.cs" />
