@@ -361,14 +361,12 @@
     <Content Include="Textures\UI\Commands\AsWhore.png" />
     <Content Include="Textures\UI\Commands\comfort_prisoner_false.png" />
     <Content Include="Textures\UI\Commands\comfort_prisoner_invisible.png" />
-    <Content Include="Textures\UI\Commands\comfort_prisoner_tagged.png" />
     <Content Include="Textures\UI\Commands\comfort_prisoner_true.png" />
     <Content Include="Textures\UI\Icons\SubcategoryIndicator.png" />
     <Content Include="todo.txt" />
     <Content Include="version.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Defs\RandomDialogues.xml" />
     <None Include="Languages\Japanese\Keyed\RimJobWorld.xml.bak" />
     <None Include="LICENSE" />
   </ItemGroup>
@@ -418,7 +416,6 @@
     <Compile Include="Source\Jobs\JobDriver_LovinPP.cs" />
     <Compile Include="Source\Jobs\JobDriver_NymphJoinInBed.cs" />
     <Compile Include="Source\Jobs\JobDriver_RandomRape.cs" />
-    <Compile Include="Source\Jobs\JobDriver_RapeEnemyByAnimal.cs" />
     <Compile Include="Source\Jobs\JobDriver_RapeEnemy.cs" />
     <Compile Include="Source\Jobs\JobDriver_RapeEnemyToParasite.cs" />
     <Compile Include="Source\Jobs\JobDriver_RapeEnemyByInsect.cs" />

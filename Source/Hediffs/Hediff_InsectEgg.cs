@@ -132,5 +132,10 @@ namespace rjw
 		{
 			return parentDef == defnam || parentDefs.Contains(defnam);
 		}
+		public override string DebugString()
+		{
+			return base.DebugString() + " Age:"+ this.ageTicks + "\nFertilized:"+ (father != null).ToString();
+
+		}
 	}
 }

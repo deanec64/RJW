@@ -1,7 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <RecipeDefs>
+  <RecipeDef Abstract="True" Name="RJW_RemoveEnemyImplants" ParentName="SurgeryFlesh">
+    <effectWorking>Surgery</effectWorking>
+    <soundWorking>Recipe_Surgery</soundWorking>
+    <workSpeedStat>MedicalOperationSpeed</workSpeedStat>
+    <workSkill>Medicine</workSkill>
+    <workSkillLearnFactor>16</workSkillLearnFactor>
+    <appliedOnFixedBodyParts>
+      <li>Genitals</li>
+      <li>Anus</li>
+    </appliedOnFixedBodyParts>
+    <recipeUsers>
+      <li>Human</li>
+    </recipeUsers>
+  </RecipeDef>
 
-  <RecipeDef Abstract="True" ParentName="SurgeryFlesh" Name="RJW_RemoveInsectEgg">
+  <RecipeDef Abstract="True" ParentName="RJW_RemoveEnemyImplants" Name="RJW_RemoveInsectEgg">
     <label>remove insect egg</label>
     <description>Removes insect egg.</description>
     <workerClass>Recipe_RemoveHediff</workerClass>
@@ -50,7 +64,7 @@
   </RecipeDef>
   
   
-  <RecipeDef ParentName="SurgeryFlesh">
+  <RecipeDef ParentName="RJW_RemoveEnemyImplants">
     <defName>RemoveMicroComputer</defName>
     <label>remove MicroComputer</label>
     <description>Removes MicroComputer.</description>
