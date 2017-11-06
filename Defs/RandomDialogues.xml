@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
+	<!--
   <rjw.RandomDialoguesDef>
     <DefName>rape0</DefName>
     <label>RD before rape</label>
@@ -27,5 +27,5 @@
     <RD18>Rape</RD18>
     <RD19>Rape</RD19>
   </rjw.RandomDialoguesDef>
-
+-->
 </Defs>

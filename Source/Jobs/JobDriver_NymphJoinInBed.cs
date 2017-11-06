@@ -46,7 +46,8 @@ namespace rjw
 			yield return Toils_Goto.GotoThing(ipartner, PathEndMode.OnCell);
 			yield return new Toil
 			{
-				initAction = delegate {
+				initAction = delegate
+				{
 					Log.Message("JobDriver_NymphJoinInBed::MakeNewToils() - setting initAction");
 					ticks_left = (int)(2500.0f * Rand.Range(0.30f, 1.30f));
 					var gettin_loved = new Job(xxx.gettin_loved, pawn, Bed);
@@ -57,7 +58,8 @@ namespace rjw
 			var do_lovin = new Toil();
 			do_lovin.defaultCompleteMode = ToilCompleteMode.Never;
 			do_lovin.FailOn(() => (Partner.CurJob == null) || (Partner.CurJob.def != xxx.gettin_loved));
-			do_lovin.AddPreTickAction(delegate {
+			do_lovin.AddPreTickAction(delegate
+			{
 				--ticks_left;
 				if (ticks_left <= 0)
 					ReadyForNextToil();
@@ -68,7 +70,8 @@ namespace rjw
 			yield return do_lovin;
 			yield return new Toil
 			{
-				initAction = delegate {
+				initAction = delegate
+				{
 					Log.Message("JobDriver_NymphJoinInBed::MakeNewToils() - setting pawn.got_some_lovin memory in second initAction");
 					var sex_mem = (Thought_Memory)ThoughtMaker.MakeThought(ThoughtDefOf.GotSomeLovin);
 					var pawn_memories = pawn.needs.mood.thoughts.memories as MemoryThoughtHandler;

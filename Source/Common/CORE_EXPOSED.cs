@@ -18,16 +18,17 @@ using RimWorld;
 namespace rjw_CORE_EXPOSED
 {
 
-	public static class JobDriver_Lovin {
+	public static class JobDriver_Lovin
+	{
 		public static readonly SimpleCurve LovinIntervalHoursFromAgeCurve = new SimpleCurve
 		{
-            new CurvePoint(1f,  12f),
-            new CurvePoint(16f, 6f),
-            new CurvePoint(22f, 9f),
-            new CurvePoint(30f, 12f),
-            new CurvePoint(50f, 18f),
-            new CurvePoint(75f, 24f)
-        };
+			new CurvePoint(1f,  12f),
+			new CurvePoint(16f, 6f),
+			new CurvePoint(22f, 9f),
+			new CurvePoint(30f, 12f),
+			new CurvePoint(50f, 18f),
+			new CurvePoint(75f, 24f)
+		};
 	}
 
 	public static class LovePartnerRelationUtility
@@ -36,26 +37,28 @@ namespace rjw_CORE_EXPOSED
 		{
 			float num = 1f;
 			num /= 1f - pawn.health.hediffSet.PainTotal;
-			float efficiency = pawn.health.capacities.GetLevel (PawnCapacityDefOf.Consciousness);
-			if (efficiency < 0.5f) {
+			float efficiency = pawn.health.capacities.GetLevel(PawnCapacityDefOf.Consciousness);
+			if (efficiency < 0.5f)
+			{
 				num /= efficiency * 2f;
 			}
 
-			if (!pawn.RaceProps.Humanlike) {
-				return num*4f;
+			if (!pawn.RaceProps.Humanlike)
+			{
+				return num * 4f;
 			}
-            if (RimWorld.LovePartnerRelationUtility.ExistingLovePartner(pawn)!=null)
-            {
-                num *= 2f; //This is a factor which makes pawns with love partners less likely to do fappin/random raping/rapingCP/beastiality/necro.
-            }
-            else if (pawn.gender == Gender.Male)
-            {
-                num /= 1.25f; //This accounts for single men
-            }
+			if (RimWorld.LovePartnerRelationUtility.ExistingLovePartner(pawn) != null)
+			{
+				num *= 2f; //This is a factor which makes pawns with love partners less likely to do fappin/random raping/rapingCP/beastiality/necro.
+			}
+			else if (pawn.gender == Gender.Male)
+			{
+				num /= 1.25f; //This accounts for single men
+			}
 			return num / GenMath.FlatHill(0.0001f, 8f, 13f, 28f, 50f, 0.15f, pawn.ageTracker.AgeBiologicalYearsFloat);
 		}
 	}
-	
+
 	public static class MedicalRecipesUtility
 	{
 		public static bool IsCleanAndDroppable(Pawn pawn, BodyPartRecord part)
@@ -66,8 +69,8 @@ namespace rjw_CORE_EXPOSED
 		public static bool IsClean(Pawn pawn, BodyPartRecord part)
 		{
 			return !pawn.Dead && !(from x in pawn.health.hediffSet.hediffs
-				where x.Part == part
-				select x).Any<Hediff>();
+								   where x.Part == part
+								   select x).Any<Hediff>();
 		}
 
 		public static void RestorePartAndSpawnAllPreviousParts(Pawn pawn, BodyPartRecord part, IntVec3 pos, Map map)
@@ -93,8 +96,8 @@ namespace rjw_CORE_EXPOSED
 				return;
 			}
 			IEnumerable<Hediff> enumerable = from x in pawn.health.hediffSet.hediffs
-			where x.Part == part
-			select x;
+											 where x.Part == part
+											 select x;
 			foreach (Hediff current in enumerable)
 			{
 				if (current.def.spawnThingOnRemoved != null)
@@ -109,7 +112,8 @@ namespace rjw_CORE_EXPOSED
 		}
 	}
 
-	public class Recipe_RemoveBodyPart : Recipe_Surgery {
+	public class Recipe_RemoveBodyPart : Recipe_Surgery
+	{
 		private const float ViolationGoodwillImpact = 20f;
 
 		public override IEnumerable<BodyPartRecord> GetPartsToApplyOn(Pawn pawn, RecipeDef recipe)
@@ -193,7 +197,7 @@ namespace rjw_CORE_EXPOSED
 				return "RemoveOrgan".Translate();
 			}
 			return "Amputate".Translate();
-		}	
+		}
 	}
 
 }

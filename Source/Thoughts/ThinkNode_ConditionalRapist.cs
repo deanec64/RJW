@@ -6,21 +6,23 @@ using Verse;
 using Verse.AI;
 using RimWorld;
 
-namespace rjw {
-	public class ThinkNode_ConditionalRapist : ThinkNode_Conditional {
+namespace rjw
+{
+	public class ThinkNode_ConditionalRapist : ThinkNode_Conditional
+	{
 
-		protected override bool Satisfied (Pawn p)
-        {
-            if (!xxx.config.random_rape_enabled)
-                return false;
+		protected override bool Satisfied(Pawn p)
+		{
+			if (!xxx.config.random_rape_enabled)
+				return false;
 			if (Mod_Settings.WildMode) return true;
 			if (!xxx.is_rapist(p))
-                return false;
-            if (!xxx.isSingleOrPartnerNotHere(p))
-            {
-                return false;
-            }
-            else return true;
+				return false;
+			if (!xxx.isSingleOrPartnerNotHere(p))
+			{
+				return false;
+			}
+			else return true;
 		}
 
 	}

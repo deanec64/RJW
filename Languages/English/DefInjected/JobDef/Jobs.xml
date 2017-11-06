@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-  <Fappin.reportString>fappin'.</Fappin.reportString>
+	<Fappin.reportString>fappin'.</Fappin.reportString>
 
 
-  <!-- No longer need to override this def since the additional code is patched into the original driver
+	<!-- No longer need to override this def since the additional code is patched into the original driver
   <JobDef>
     <defName>Lovin</defName>
     <driverClass>rjw.JobDriver_LovinPP</driverClass>
@@ -13,21 +13,21 @@
     <casualInterruptible>false</casualInterruptible>
   </JobDef> -->
 
-  <NymphJoinInBed.reportString>lovin'.</NymphJoinInBed.reportString>
-  <ComfortPrisonerRapin.reportString>rapin'.</ComfortPrisonerRapin.reportString>
-  <GettinLoved.reportString>lovin'.</GettinLoved.reportString>
-  <GettinRaped.reportString>gettin' raped.</GettinRaped.reportString>
-  <StruggleInBondageGear.reportString>struggling</StruggleInBondageGear.reportString>
-  <UnlockBondageGear.reportString>unlocking</UnlockBondageGear.reportString>
-  <GiveBondageGear.reportString>equipping</GiveBondageGear.reportString>
-  <ViolateCorpse.reportString>violating corpse</ViolateCorpse.reportString>
-  <Beastiality.reportString>lovin' animal</Beastiality.reportString>
-  <RandomRape.reportString>randomly raping</RandomRape.reportString>
-  <WhoreIsServingVisitors.reportString>serving visitors</WhoreIsServingVisitors.reportString>
-  <InvitingVisitors.reportString>attempting hookup</InvitingVisitors.reportString>
+	<NymphJoinInBed.reportString>lovin'.</NymphJoinInBed.reportString>
+	<ComfortPrisonerRapin.reportString>rapin'.</ComfortPrisonerRapin.reportString>
+	<GettinLoved.reportString>lovin'.</GettinLoved.reportString>
+	<GettinRaped.reportString>gettin' raped.</GettinRaped.reportString>
+	<StruggleInBondageGear.reportString>struggling</StruggleInBondageGear.reportString>
+	<UnlockBondageGear.reportString>unlocking</UnlockBondageGear.reportString>
+	<GiveBondageGear.reportString>equipping</GiveBondageGear.reportString>
+	<ViolateCorpse.reportString>violating corpse</ViolateCorpse.reportString>
+	<Beastiality.reportString>lovin' animal</Beastiality.reportString>
+	<RandomRape.reportString>randomly raping</RandomRape.reportString>
+	<WhoreIsServingVisitors.reportString>serving visitors</WhoreIsServingVisitors.reportString>
+	<InvitingVisitors.reportString>attempting hookup</InvitingVisitors.reportString>
 
 
-  <!-- <JobDef>
+	<!-- <JobDef>
     <defName>ComfortPrisonerGangRapin</defName>
     <driverClass>rjw.JobDriver_ComfortPrisonerGangRapin</driverClass>
     <reportString>gang rapin'.</reportString>
