@@ -16,10 +16,10 @@ namespace rjw
 		{
 			//Log.Message("JobGiver_Beastiality::find_target( " + pawn.NameStringShort + " ) called");
 			Pawn found = null;
-			var best_distance = 1.0e6f;
+			var best_distance = 50f;
 			var best_fuckability = 0.1f; // Don't rape animals with 0% fuckability
 
-			foreach (Pawn target in m.mapPawns.AllPawns.Where(x => xxx.is_animal(x) && xxx.can_get_raped(x) && pawn.CanReserve(x, 1, 0) && (Rand.Value > 0.5f))) //Added randomizer. We don't need to check all animals on the map, do we?
+			foreach (Pawn target in m.mapPawns.AllPawns.Where(x => xxx.is_animal(x) && xxx.can_get_raped(x) && pawn.CanReserve(x, 1, 0) && (x.gender != pawn.gender) && (Rand.Value > 0.5f))) //Added randomizer. We don't need to check all animals on the map, do we?
 			{
 				if (target != null && !target.Position.IsForbidden(pawn))
 				{
