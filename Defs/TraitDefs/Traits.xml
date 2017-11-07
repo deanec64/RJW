@@ -2,7 +2,7 @@
 <TraitDefs>
 
 	<TraitDef>
-		<defName>nymphomaniac</defName>
+		<defName>Nymphomaniac</defName>
 		<commonality>0.1</commonality>
 		<commonalityFemale>0.08</commonalityFemale>
 		<degreeDatas>
@@ -21,7 +21,7 @@
 	</TraitDef>
 
 	<TraitDef>
-		<defName>rapist</defName>
+		<defName>Rapist</defName>
 		<commonality>0.1</commonality>
 		<commonalityFemale>0.02</commonalityFemale>
 		<degreeDatas>
@@ -39,7 +39,7 @@
 	</TraitDef>
 
 	<TraitDef>
-		<defName>necrophiliac</defName>
+		<defName>Necrophiliac</defName>
 		<commonality>0.05</commonality>
 		<commonalityFemale>0</commonalityFemale>
 		<degreeDatas>
@@ -51,7 +51,7 @@
 	</TraitDef>
 
 	<TraitDef>
-		<defName>zoophiliac</defName>
+		<defName>Zoophiliac</defName>
 		<commonality>0.03</commonality>
 		<commonalityFemale>0</commonalityFemale>
 		<degreeDatas>
