@@ -379,8 +379,8 @@ namespace rjw
 			}
 			else if (is_animal(pawn) && config.animals_enabled)
 			{
-				float combatPower = pawn.kindDef.combatPower;
-				float bodySize = pawn.RaceProps.baseBodySize;
+				//float combatPower = pawn.kindDef.combatPower;
+				//float bodySize = pawn.RaceProps.baseBodySize;
 				//Log.Message("[RJW]xxx::can_get_raped - animal pawn - vulnerability is "+ get_vulnerability(pawn));
 				return true;
 				//return combatPower <= 80 && bodySize <= 1.2 && bodySize >= 0.25 && (get_sex_ability(pawn) > 0.0f) && !is_mechanoid(pawn) && (Mod_Settings.Rapee_MinVulnerability_animals < 0 ? false : get_vulnerability(pawn) >= Mod_Settings.Rapee_MinVulnerability_animals);

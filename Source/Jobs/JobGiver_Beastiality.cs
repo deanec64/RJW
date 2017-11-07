@@ -19,28 +19,31 @@ namespace rjw
 			var best_distance = 1.0e6f;
 			var best_fuckability = 0.1f; // Don't rape animals with 0% fuckability
 
-			foreach (Pawn target in m.mapPawns.AllPawns.Where(x => xxx.is_animal(x) && xxx.can_get_raped(x) && pawn.CanReserve(x, 1, 0)))
+			foreach (Pawn target in m.mapPawns.AllPawns.Where(x => xxx.is_animal(x) && xxx.can_get_raped(x) && pawn.CanReserve(x, 1, 0) && (Rand.Value > 0.5f))) //Added randomizer. We don't need to check all animals on the map, do we?
 			{
-				if (!target.Position.IsForbidden(pawn))
+				if (target != null && !target.Position.IsForbidden(pawn))
 				{
-					// prefer domesticated animals over wild animals
+					float tamed = (target.Faction == pawn.Faction ? 1f : 0f);
 					float wildness = target.RaceProps.wildness;
 					float petness = target.RaceProps.petness;
-					float temperment = (petness <= 0 ? wildness / 0.1f : wildness / petness);
+					//float temperment = (petness <= 0 ? wildness / 0.1f : wildness / petness);
 					//Log.Message("[RJW]JobGiver_Beastiality::find_target wildness is " + wildness);
 					//Log.Message("[RJW]JobGiver_Beastiality::find_target petness is " + petness);
 					//Log.Message("[RJW]JobGiver_Beastiality::find_target temperment is " + temperment);
-					float distance = pawn.Position.DistanceToSquared(target.Position) * temperment;
+
+					float distance = pawn.Position.DistanceToSquared(target.Position);
 					//Log.Message("[RJW]JobGiver_Beastiality::find_target distance is " + distance);
+
 					var fuc = xxx.would_fuck(pawn, target);
-					if ((xxx.config.zoophis_always_rape || (fuc > best_fuckability && (Rand.Value < fuc))) && distance < best_distance)
+					fuc = fuc + (fuc * petness) - (fuc * wildness) + tamed;
+
+					if ((xxx.config.zoophis_always_rape || fuc > best_fuckability) && distance < best_distance)
 					{
 						found = target;
 						best_distance = distance;
 						best_fuckability = fuc;
 					}
 				}
-
 			}
 
 			return found;
