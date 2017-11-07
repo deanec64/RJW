@@ -115,7 +115,7 @@ namespace rjw
 					defaultLabel = "comfort colonist";
 				}
 			}
-			return ((p != null) && (!comfort_prisoners.is_designated(p)) && ((p.IsColonist || p.Faction == Faction.OfPlayer) || (xxx.is_animal(p)) || (p.IsColonist || p.Faction == Faction.OfPlayer))); //TODO: Rape target button?
+			return ((p != null) && (!comfort_prisoners.is_designated(p)) && ((p.IsColonist || p.Faction == Faction.OfPlayer) || (xxx.is_animal(p)) || (p.IsPrisonerOfColony))); //TODO: Rape target button?
 		}
 
 		public override void DesignateThing(Thing t)
