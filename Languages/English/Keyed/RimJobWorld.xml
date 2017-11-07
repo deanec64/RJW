@@ -7,7 +7,7 @@
 	<sexneed_decay_rate_desc>0% for no decay.
 1000000% for Rapeturnus Planet.
 	</sexneed_decay_rate_desc>
-	<NymphsJoin>nymphomaniacs</NymphsJoin>
+	<NymphsJoin>Nymphomaniacs</NymphsJoin>
 	<NymphsJoin_desc>Spawns pawns with nymphomaniac trait to join the colony.</NymphsJoin_desc>
 	<STD_FromFloors>STDs from environment</STD_FromFloors>
 	<STD_FromFloors_desc>Pawns will catch STDs from dirty environment.</STD_FromFloors_desc>

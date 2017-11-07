@@ -26,7 +26,7 @@
 		<commonalityFemale>0.02</commonalityFemale>
 		<degreeDatas>
 			<li>
-				<label>rapist</label>
+				<label>Rapist</label>
 				<description>NAME doesn't take &#34;No&#34; as an answer.</description>
 			</li>
 		</degreeDatas>
@@ -44,7 +44,7 @@
 		<commonalityFemale>0</commonalityFemale>
 		<degreeDatas>
 			<li>
-				<label>necrophiliac</label>
+				<label>Necrophiliac</label>
 				<description>Dead people can't say no, can they?</description>
 			</li>
 		</degreeDatas>
@@ -56,7 +56,7 @@
 		<commonalityFemale>0</commonalityFemale>
 		<degreeDatas>
 			<li>
-				<label>zoophiliac</label>
+				<label>Zoophiliac</label>
 				<description>NAME likes to walk on the wild side.</description>
 			</li>
 		</degreeDatas>
