@@ -11,8 +11,8 @@
 	<NymphsJoin_desc>Spawns pawns with nymphomaniac trait to join the colony.</NymphsJoin_desc>
 	<STD_FromFloors>STDs from environment</STD_FromFloors>
 	<STD_FromFloors_desc>Pawns will catch STDs from dirty environment.</STD_FromFloors_desc>
-	<PrisonersBeating>Comfort prisoners beating</PrisonersBeating>
-	<PrisonersBeating_desc>Pawns will beat the hell out of comfort prisoners while raping them.</PrisonersBeating_desc>
+	<PrisonersBeating>Rape beatings</PrisonersBeating>
+	<PrisonersBeating_desc>Pawns will beat the hell out of victims while raping them.</PrisonersBeating_desc>
 	<OffspringLookLikeTheirMother>Genetic inheritance (%)</OffspringLookLikeTheirMother>
 	<OffspringLookLikeTheirMother_desc>100% means born babies will look exactly like their mothers. Set it to 0% for random appearance.
 
