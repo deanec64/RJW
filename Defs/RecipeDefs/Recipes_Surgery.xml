@@ -8,33 +8,28 @@
 		<workSpeedStat>MedicalOperationSpeed</workSpeedStat>
 		<workSkill>Medicine</workSkill>
 		<workSkillLearnFactor>16</workSkillLearnFactor>
+		<recipeUsers>
+			<li>Human</li>
+			<li>Animal</li>
+		</recipeUsers>
 	</RecipeDef>
 
 	<RecipeDef Abstract="True" Name="SexReassignment" ParentName="SurgeryFlesh">
 		<appliedOnFixedBodyParts>
 			<li>Genitals</li>
 		</appliedOnFixedBodyParts>
-		<recipeUsers>
-			<li>Human</li>
-		</recipeUsers>
 	</RecipeDef>
 
 	<RecipeDef Abstract="True" Name="BreastSurgery" ParentName="SurgeryFlesh">
 		<appliedOnFixedBodyParts>
 			<li>Chest</li>
 		</appliedOnFixedBodyParts>
-		<recipeUsers>
-			<li>Human</li>
-		</recipeUsers>
 	</RecipeDef>
 
 	<RecipeDef Abstract="True" Name="AnalSurgery" ParentName="SurgeryFlesh">
 		<appliedOnFixedBodyParts>
 			<li>Anus</li>
 		</appliedOnFixedBodyParts>
-		<recipeUsers>
-			<li>Human</li>
-		</recipeUsers>
 	</RecipeDef>
 
 	<!-- Attach natural privates -->
@@ -1104,11 +1099,8 @@
 		<description>Prevents reproduction without removing genitals.</description>
 		<jobString>sterilizing.</jobString>
 		<workAmount>1000</workAmount>
-		<recipeUsers>
-			<li>Human</li>
-		</recipeUsers>
 		<appliedOnFixedBodyParts>
-			<li>Pelvis</li>
+			<li>Genitals</li>
 		</appliedOnFixedBodyParts>
 		<addsHediff>Sterilized</addsHediff>
 		<workerClass>Recipe_InstallImplant</workerClass>
