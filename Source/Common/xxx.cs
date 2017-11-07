@@ -30,10 +30,10 @@ namespace rjw
 
 		public const float no_partner_ability = 0.8f;
 
-		public readonly static TraitDef nymphomaniac = TraitDef.Named("nymphomaniac");
-		public readonly static TraitDef rapist = TraitDef.Named("rapist");
-		public readonly static TraitDef necrophiliac = TraitDef.Named("necrophiliac");
-		public readonly static TraitDef zoophiliac = TraitDef.Named("zoophiliac");
+		public readonly static TraitDef nymphomaniac = TraitDef.Named("Nymphomaniac");
+		public readonly static TraitDef rapist = TraitDef.Named("Rapist");
+		public readonly static TraitDef necrophiliac = TraitDef.Named("Necrophiliac");
+		public readonly static TraitDef zoophiliac = TraitDef.Named("Zoophiliac");
 		//RomanceDiversified Traits
 		public static TraitDef straight;
 		public static TraitDef bisexual;
@@ -192,7 +192,7 @@ namespace rjw
 
 		public static bool is_masochist(Pawn pawn)
 		{
-			return (pawn != null && pawn.story != null && pawn.story.traits != null && pawn.story.traits.HasTrait(TraitDef.Named("masochist")));
+			return (pawn != null && pawn.story != null && pawn.story.traits != null && pawn.story.traits.HasTrait(TraitDef.Named("Masochist")));
 		}
 
 		public static bool is_nympho(Pawn pawn)
@@ -1201,11 +1201,11 @@ namespace rjw
 					price *= (whore.story.traits.DegreeOfTrait(TraitDefOf.Beauty) > 0) ? 1.5f : 0;
 					price *= (whore.story.traits.DegreeOfTrait(TraitDefOf.Beauty) == 2) ? 2 : 1;
 				}
-				if (whore.story.traits.HasTrait(TraitDef.Named("masochist")))
+				if (whore.story.traits.HasTrait(TraitDef.Named("Masochist")))
 				{
 					price *= .95f;
 				}
-				if (whore.story.traits.HasTrait(TraitDef.Named("nymphomaniac")))
+				if (whore.story.traits.HasTrait(TraitDef.Named("Nymphomaniac")))
 				{
 					price *= .7f;
 				}
