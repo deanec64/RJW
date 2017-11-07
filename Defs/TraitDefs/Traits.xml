@@ -2,7 +2,7 @@
 <TraitDefs>
 
 	<TraitDef>
-		<defName>Nymphomaniac</defName>
+		<defName>nymphomaniac</defName>
 		<commonality>0.1</commonality>
 		<commonalityFemale>0.08</commonalityFemale>
 		<degreeDatas>
@@ -21,12 +21,12 @@
 	</TraitDef>
 
 	<TraitDef>
-		<defName>Rapist</defName>
+		<defName>rapist</defName>
 		<commonality>0.1</commonality>
 		<commonalityFemale>0.02</commonalityFemale>
 		<degreeDatas>
 			<li>
-				<label>Rapist</label>
+				<label>rapist</label>
 				<description>NAME doesn't take &#34;No&#34; as an answer.</description>
 			</li>
 		</degreeDatas>
@@ -39,24 +39,24 @@
 	</TraitDef>
 
 	<TraitDef>
-		<defName>Necrophiliac</defName>
+		<defName>necrophiliac</defName>
 		<commonality>0.05</commonality>
 		<commonalityFemale>0</commonalityFemale>
 		<degreeDatas>
 			<li>
-				<label>Necrophiliac</label>
+				<label>necrophiliac</label>
 				<description>Dead people can't say no, can they?</description>
 			</li>
 		</degreeDatas>
 	</TraitDef>
 
 	<TraitDef>
-		<defName>Zoophiliac</defName>
+		<defName>zoophiliac</defName>
 		<commonality>0.03</commonality>
 		<commonalityFemale>0</commonalityFemale>
 		<degreeDatas>
 			<li>
-				<label>Zoophiliac</label>
+				<label>zoophiliac</label>
 				<description>NAME likes to walk on the wild side.</description>
 			</li>
 		</degreeDatas>

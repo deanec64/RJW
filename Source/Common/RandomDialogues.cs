@@ -73,13 +73,13 @@ namespace rjw
                         traitDefName = psubject.random_pick_a_trait();
                         switch (traitDefName)
                         {
-                            case "Nymphomaniac":
+                            case "nymphomaniac":
                                 break;
-                            case "Rapist":
+                            case "rapist":
                                 break;
-                            case "Necrophiliac":
+                            case "necrophiliac":
                                 break;
-                            case "Zoophiliac":
+                            case "zoophiliac":
                                 break;
                             case "Bloodlust":
                                 break;
@@ -87,7 +87,7 @@ namespace rjw
                                 break;
                             case "Cannibal":
                                 break;
-                            case "Masochist":
+                            case "masochist":
                                 break;
                             case "Prosthophile":
                                 break;
