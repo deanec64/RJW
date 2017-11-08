@@ -8,28 +8,33 @@
 		<workSpeedStat>MedicalOperationSpeed</workSpeedStat>
 		<workSkill>Medicine</workSkill>
 		<workSkillLearnFactor>16</workSkillLearnFactor>
-		<recipeUsers>
-			<li>Human</li>
-			<li>Animal</li>
-		</recipeUsers>
 	</RecipeDef>
 
 	<RecipeDef Abstract="True" Name="SexReassignment" ParentName="SurgeryFlesh">
 		<appliedOnFixedBodyParts>
 			<li>Genitals</li>
 		</appliedOnFixedBodyParts>
+		<recipeUsers>
+			<li>Human</li>
+		</recipeUsers>
 	</RecipeDef>
 
 	<RecipeDef Abstract="True" Name="BreastSurgery" ParentName="SurgeryFlesh">
 		<appliedOnFixedBodyParts>
 			<li>Chest</li>
 		</appliedOnFixedBodyParts>
+		<recipeUsers>
+			<li>Human</li>
+		</recipeUsers>
 	</RecipeDef>
 
 	<RecipeDef Abstract="True" Name="AnalSurgery" ParentName="SurgeryFlesh">
 		<appliedOnFixedBodyParts>
 			<li>Anus</li>
 		</appliedOnFixedBodyParts>
+		<recipeUsers>
+			<li>Human</li>
+		</recipeUsers>
 	</RecipeDef>
 
 	<!-- Attach natural privates -->
@@ -1099,6 +1104,58 @@
 		<description>Prevents reproduction without removing genitals.</description>
 		<jobString>sterilizing.</jobString>
 		<workAmount>1000</workAmount>
+		<recipeUsers>
+			<li>Human</li>
+			<li>Alphabeaver</li>
+			<li>Barghest</li>
+			<li>Behir</li>
+			<li>Cassowary</li>
+			<li>Cat</li>
+			<li>Chicken</li>
+			<li>Chinchilla</li>
+			<li>Chipmunk</li>
+			<li>Emu</li>
+			<li>Ermine</li>
+			<li>Fishercat</li>
+			<li>Feenix</li>
+			<li>FoxArctic</li>
+			<li>FoxFennec</li>
+			<li>FoxRed</li>
+			<li>FRaptor</li>
+			<li>GermanShepherd</li>
+			<li>GreenWyvern</li>
+			<li>Hare</li>
+			<li>Horse</li>
+			<li>Husky</li>
+			<li>Jackalope</li>
+			<li>Iguana</li>
+			<li>Kirin</li>
+			<li>LabradorRetriever</li>
+			<li>Lacosdile</li>
+			<li>Lynx</li>
+			<li>Meerkat</li>
+			<li>Megabadger</li>
+			<li>Monkey</li>
+			<li>Nightling</li>
+			<li>Ostrich</li>
+			<li>Panther</li>
+			<li>Ptarmigan</li>
+			<li>Rimwolf</li>
+			<li>SmilodonPop</li>
+			<li>Snowhare</li>
+			<li>SnowJackalope</li>
+			<li>SnowLeopard</li>
+			<li>Squirrel</li>
+			<li>Tiger</li>
+			<li>Tortoise</li>
+			<li>Turkey</li>
+			<li>Warg</li>
+			<li>WhiteTiger</li>
+			<li>WolfArctic</li>
+			<li>WolfTimber</li>
+			<li>WoolyHorse</li>
+			<li>YorkshireTerrier</li>
+		</recipeUsers>
 		<appliedOnFixedBodyParts>
 			<li>Genitals</li>
 		</appliedOnFixedBodyParts>
