@@ -38,6 +38,7 @@
     </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\RimWorldWin_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="HugsLib">
       <HintPath>..\HugsLib\Assemblies\HugsLib.dll</HintPath>
@@ -45,6 +46,7 @@
     </Reference>
     <Reference Include="RimWorldChildren">
       <HintPath>..\ChildrenAndPregnancy-master\Assemblies\RimWorldChildren.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="SexualitySpectrum">
       <HintPath>..\..\RimWorld\Mods\Romance Diversified A17\Assemblies\SexualitySpectrum.dll</HintPath>
@@ -56,6 +58,7 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
       <HintPath>..\..\RimWorldWin_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
