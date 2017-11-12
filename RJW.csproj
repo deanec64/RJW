@@ -11,8 +11,8 @@
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>false</DebugSymbols>
-    <DebugType>none</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
@@ -90,10 +90,15 @@
     <Content Include="Defs\HediffDefs\Hediffs_SimpleBaby.xml" />
     <Content Include="Defs\HediffDefs\Hediffs_STDs.xml" />
     <Content Include="Defs\HediffDefs\Hediffs_Sterilized.xml" />
+    <Content Include="Defs\HediffDefs\Hediffs_EnemyImplants.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Defs\HediffGiverSetDefs\HediffGiverSets.xml" />
     <Content Include="Defs\IncidentDef\Incidents.xml" />
     <Content Include="Defs\InteractionDef\Interactions.xml" />
-    <Content Include="Defs\JobDefs\Jobs.xml" />
+    <Content Include="Defs\JobDefs\Jobs.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Defs\MiscTranslationDef\MiscTranslationDefs.xml" />
     <Content Include="Defs\Motes\Motes.xml" />
     <Content Include="Defs\Needs\Needs.xml" />
@@ -101,6 +106,7 @@
     <Content Include="Defs\PawnKinds\PawnKinds.xml" />
     <Content Include="Defs\RecipeDefs\Recipes_Prosthetics.xml" />
     <Content Include="Defs\RecipeDefs\Recipes_Surgery.xml" />
+    <Content Include="Defs\RecipeDefs\Recipes_RemoveEnemyImplants.xml" />
     <Content Include="Defs\RecordDef\Records_GetRaped.xml" />
     <Content Include="Defs\ResearchProjectDefs\ResearchProjects_XxXx.xml" />
     <Content Include="Defs\ResearchProjectDefs\ResearchTabs.xml" />
@@ -112,7 +118,9 @@
     <Content Include="Defs\STDs.xml" />
     <Content Include="Defs\ThingDefs\Items_PrivateParts.xml" />
     <Content Include="Defs\ThingDefs\ThingsDef_XXX.xml" />
-    <Content Include="Defs\ThinkTreeDefs\ThinkTrees.xml" />
+    <Content Include="Defs\ThinkTreeDefs\ThinkTrees.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Defs\ThoughtDefs\Thoughts.xml" />
     <Content Include="Defs\TraitDefs\Traits.xml" />
     <Content Include="Defs\WorkGiverDefs\WorkGivers.xml" />
@@ -210,6 +218,7 @@
     <Content Include="Languages\English\DefInjected\HediffDef\Hediffs_SimpleBaby.xml" />
     <Content Include="Languages\English\DefInjected\HediffDef\Hediffs_STDs.xml" />
     <Content Include="Languages\English\DefInjected\HediffDef\Hediffs_Sterilized.xml" />
+    <Content Include="Languages\English\DefInjected\HediffDef\Hediff_EnemyImplants.xml" />
     <Content Include="Languages\English\DefInjected\IncidentDef\Incidents.xml" />
     <Content Include="Languages\English\DefInjected\InteractionDef\Interactions.xml" />
     <Content Include="Languages\English\DefInjected\JobDef\Jobs.xml" />
@@ -357,19 +366,16 @@
     <Content Include="Textures\UI\Commands\AsWhore.png" />
     <Content Include="Textures\UI\Commands\comfort_prisoner_false.png" />
     <Content Include="Textures\UI\Commands\comfort_prisoner_invisible.png" />
-    <Content Include="Textures\UI\Commands\comfort_prisoner_tagged.png" />
     <Content Include="Textures\UI\Commands\comfort_prisoner_true.png" />
     <Content Include="Textures\UI\Icons\SubcategoryIndicator.png" />
     <Content Include="todo.txt" />
     <Content Include="version.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Defs\RandomDialoguesxml" />
     <None Include="Languages\Japanese\Keyed\RimJobWorld.xml.bak" />
     <None Include="LICENSE" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Source\Common\ABFCommon.cs" />
     <Compile Include="Source\Common\bondage_gear.cs" />
     <Compile Include="Source\Common\comfort_prisoners.cs" />
     <Compile Include="Source\Common\config.cs" />
@@ -391,9 +397,15 @@
     <Compile Include="Source\Harmony\patches_need.cs" />
     <Compile Include="Source\Harmony\patches_pregnancy.cs" />
     <Compile Include="Source\Harmony\patches_ABF.cs" />
+    <Compile Include="Source\Hediffs\HediffDef_EnemyImplants.cs" />
     <Compile Include="Source\Hediffs\Hediff_ID.cs" />
     <Compile Include="Source\Hediffs\Hediff_InitPrivates.cs" />
+    <Compile Include="Source\Hediffs\Hediff_MCEvents.cs" />
+    <Compile Include="Source\Hediffs\Hediff_MechImplants.cs" />
+    <Compile Include="Source\Hediffs\Hediff_InsectEgg.cs" />
     <Compile Include="Source\Hediffs\Hediff_InvisibleImplant.cs" />
+    <Compile Include="Source\Hediffs\Hediff_MicroComputer.cs" />
+    <Compile Include="Source\Hediffs\Hediff_Parasite.cs" />
     <Compile Include="Source\Hediffs\Hediff_SimpleBaby.cs" />
     <Compile Include="Source\Incidents\IncidentWorker_NymphJoins.cs" />
     <Compile Include="Source\Incidents\IncidentWorker_Sexualize.cs" />
@@ -408,8 +420,9 @@
     <Compile Include="Source\Jobs\JobDriver_LovinPP.cs" />
     <Compile Include="Source\Jobs\JobDriver_NymphJoinInBed.cs" />
     <Compile Include="Source\Jobs\JobDriver_RandomRape.cs" />
-    <Compile Include="Source\Jobs\JobDriver_Rape.cs" />
     <Compile Include="Source\Jobs\JobDriver_RapeEnemy.cs" />
+    <Compile Include="Source\Jobs\JobDriver_RapeEnemyByAnimal.cs" />
+    <Compile Include="Source\Jobs\JobDriver_RapeEnemyToParasite.cs" />
     <Compile Include="Source\Jobs\JobDriver_RapeEnemyByInsect.cs" />
     <Compile Include="Source\Jobs\JobDriver_RapeEnemyByMech.cs" />
     <Compile Include="Source\Jobs\JobDriver_StruggleInBondageGear.cs" />
@@ -424,7 +437,7 @@
     <Compile Include="Source\Jobs\JobGiver_RapeEnemy.cs" />
     <Compile Include="Source\Jobs\JobGiver_ViolateCorpse.cs" />
     <Compile Include="Source\Jobs\JobGiver_WhoreInvitingVisitors.cs" />
-    <Compile Include="Source\Jobs\LordJob_RapeColonists.cs" />
+    <Compile Include="Source\Jobs\JobDef_RapeEnemy.cs" />
     <Compile Include="Source\Needs\Need_Sex.cs" />
     <Compile Include="Source\Needs\PawnCapacityWorker_Fertility.cs" />
     <Compile Include="Source\Pawns\nymph_backstories.cs" />
