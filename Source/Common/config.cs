@@ -7,6 +7,7 @@ using RimWorld;
 
 namespace rjw
 {
+	/*
 	public class config : Def
 	{
 
@@ -59,5 +60,5 @@ namespace rjw
 		public float nymph_spawn_with_std_mul;
 		//public float chance_to_rim;
 
-	}
+	}*/
 }

@@ -1,3 +1,6 @@
+v1.5.4j changes:
+- Experimental fix for sex need affecting underaged pawns.
+
 v1.5.4i changes:
 - Disabled log messages.
 - Added comfort colonist and comfort animal buttons. (NOTE: comfort animal button is still experimental and might not work as intended)
