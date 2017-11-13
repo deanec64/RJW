@@ -1,5 +1,7 @@
 v1.5.4j changes:
-- Experimental fix for sex need affecting underaged pawns.
+- Fixed sex need moods affecting under-aged pawns bug.
+- Under-aged sex need is now frozen. (Will make it hidden for under-aged pawns in the future)
+- Fixed reappearing masochist social thoughts bug.
 
 v1.5.4i changes:
 - Disabled log messages.
