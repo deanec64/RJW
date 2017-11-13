@@ -8,8 +8,8 @@ v1.5.4i changes:
 - Added comfort colonist and comfort animal buttons. (NOTE: comfort animal button is still experimental and might not work as intended)
 - Tweaked comfort prisoner rape mechanism.
 - Overhauled bestiality rape mechanism:
-  - Zoophiliacs will now prefer tamed colonist animals. (Preferrence: Tamed > domesticated > wild)
-  - They will now prefer animals of their opposite sex. (Will make it based on Romance Diversitified's sexual orientation in the future)
+  - Zoophiliacs will now prefer tamed colony animals. (Preference: Tamed > petness > wildness)
+  - They will now prefer animals of their opposite sex. (Will make it based on Romance Diversified's sexual orientation in the future)
   - The search distance is now narrowed to 50 squares. Your zoophiliacs will go deer hunting at the corner of the map no more.
   - Added random twist. Zoophiliacs will sometimes go deer hunting even though the colony has tamed animals.
   - Zoophiliacs won't be picky about their victim's size. Make sure you have enough tamed animals to decrease the chance of them banging a rhino and end up dying in the process.
