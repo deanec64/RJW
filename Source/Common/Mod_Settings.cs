@@ -1,5 +1,4 @@
-﻿using System;
-using HugsLib;
+﻿using HugsLib;
 using HugsLib.Core;
 using HugsLib.Settings;
 using Verse;
@@ -39,54 +38,53 @@ namespace rjw
 		public static float Rapee_MinVulnerability_animals;
 
 		// Feature Toggles
-		public bool animals_enabled; // New
+		public bool animals_enabled; // Updated
 
-		public bool comfort_prisoners_enabled; // New
-		public bool colonists_can_be_comfort_prisoners; // New
-		public bool cum_enabled; // New
-		public bool rape_me_sticky_enabled; // New
-		public bool sounds_enabled; // New
-		public bool stds_enabled; // New
-		public bool bondage_gear_enabled; // New
-		public bool nymph_joiners_enabled; // New
-		public bool whore_beds_enabled; // New
-		public bool necro_enabled; // New
-		public bool beastiality_enabled; // New
-		public bool random_rape_enabled; // New
-		public bool always_accept_whores; // New
-		public bool nymphs_always_JoinInBed; // New
-		public bool zoophis_always_rape; // New
-		public bool rapists_always_rape; // New
-		public bool pawns_always_do_fapping; // New
-		public bool pawns_always_rapeCP; // New
-		public bool whores_always_findjob; // New
+		public bool comfort_prisoners_enabled; // Updated
+		public bool ComfortColonist; // New
+		public bool ComfortAnimal; // New
+		public bool cum_enabled; // Updated
+		public bool rape_me_sticky_enabled; // Updated
+		public bool sounds_enabled; // Updated
+		public bool stds_enabled; // Updated
+		public bool bondage_gear_enabled; // Updated
+		public bool nymph_joiners_enabled; // Updated
+		public bool whore_beds_enabled; // Updated
+		public bool necro_enabled; // Updated
+		public bool beastiality_enabled; // Updated
+		public bool random_rape_enabled; // Updated
+		public bool always_accept_whores; // Updated
+		public bool nymphs_always_JoinInBed; // Updated
+		public bool zoophis_always_rape; // Updated
+		public bool rapists_always_rape; // Updated
+		public bool pawns_always_do_fapping; // Updated
+		public bool pawns_always_rapeCP; // Updated
+		public bool whores_always_findjob; // Updated
 
 		// Display Toggles
-		public bool show_regular_dick_and_vag; // New
+		public bool show_regular_dick_and_vag; // Updated
 
 		// STD config
-		public bool std_show_roll_to_catch; // New
+		public bool std_show_roll_to_catch; // Updated
 
-		public float std_min_severity_to_pitch; // New
-		public float std_env_pitch_cleanliness_exaggeration; // New
-		public float std_env_pitch_dirtiness_exaggeration; // New
-		public float std_outdoor_cleanliness; // New
+		public float std_min_severity_to_pitch; // Updated
+		public float std_env_pitch_cleanliness_exaggeration; // Updated
+		public float std_env_pitch_dirtiness_exaggeration; // Updated
+		public float std_outdoor_cleanliness; // Updated
 
 		// Age Config
-		//public int sex_free_for_all_age;
-		//public int sex_minimum_age;
 
-		public float significant_pain_threshold;    // 0.6
-		public float extreme_pain_threshold;        // 0.8
-		public float base_chance_to_hit_prisoner;   // 50
-		public int min_ticks_between_hits;          // 500
-		public int max_ticks_between_hits;          // 700
+		public float significant_pain_threshold; // Updated
+		public float extreme_pain_threshold; // Updated
+		public float base_chance_to_hit_prisoner; // Updated
+		public int min_ticks_between_hits; // Updated
+		public int max_ticks_between_hits; // Updated
 
-		public float max_nymph_fraction;
-		public float opp_inf_initial_immunity;
-		public float comfort_prisoner_rape_mtbh_mul;
-		public float whore_mtbh_mul;
-		public float nymph_spawn_with_std_mul;
+		public float max_nymph_fraction; // Updated
+		public float opp_inf_initial_immunity; // Updated
+		public float comfort_prisoner_rape_mtbh_mul; // Updated
+		public float whore_mtbh_mul; // Updated
+		public float nymph_spawn_with_std_mul; // Updated
 
 		//Mod Settings handles
 		private SettingHandle<bool> option_WildMode;
@@ -249,7 +247,7 @@ namespace rjw
             Logger.Message("WorldLoaded() called");
             base.WorldLoaded();
         }
-        */
+        
 
 		private void MakeSettingsCategoryToggle(string labelId, Action buttonAction)
 		{
@@ -261,5 +259,6 @@ namespace rjw
 				return false;
 			};
 		}
+		*/
 	}
 }

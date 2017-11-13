@@ -70,7 +70,6 @@
     <Content Include="Assemblies\ArchitectSense.dll" />
     <Content Include="Assemblies\RJW.dll" />
     <Content Include="changelog.txt" />
-    <Content Include="compatibility.txt" />
     <Content Include="credits.txt" />
     <Content Include="Defs\Body\InsectBodyParts.xml" />
     <Content Include="Defs\Body\MechBodyParts.xml" />
