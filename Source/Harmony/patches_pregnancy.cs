@@ -20,6 +20,7 @@ namespace rjw
 		[HarmonyPrefix]
 		static bool on_begin_DoBirthSpawn(ref Pawn mother, ref Pawn father)
 		{
+			//TODO: Set pregnant hediff to torso
 			//Log.Message("patches_pregnancy::PATCH_Hediff_Pregnant::DoBirthSpawn() called");
 			var mother_name = (mother != null) ? mother.NameStringShort : "NULL";
 			var father_name = (father != null) ? father.NameStringShort : "NULL";

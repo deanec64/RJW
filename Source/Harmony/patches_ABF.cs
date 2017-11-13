@@ -11,7 +11,7 @@ using Verse.AI;
 
 namespace rjw
 {
-
+	//TODO: Remove this patch for compatibility with other mods and add them to genital helper class.
 	[HarmonyPatch(typeof(PawnGenerator), "GeneratePawn", new Type[] { typeof(PawnGenerationRequest) })]
 	static class Patches_ABF_PawnMakeRaper
 	{
