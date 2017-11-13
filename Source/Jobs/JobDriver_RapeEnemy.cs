@@ -1,24 +1,20 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
-
+using RimWorld;
 using Verse;
 using Verse.AI;
-using RimWorld;
 using Verse.Sound;
 
 namespace rjw
 {
 	public class JobDriver_RapeEnemy : JobDriver_Rape
 	{
-
 		public override void roll_to_hit(Pawn rapist, Pawn p)
 		{
 			if (!Mod_Settings.prisoner_beating)
 			{
 				return;
 			}
-
 
 			float rand_value = Rand.Value;
 			float victim_pain = p.health.hediffSet.PainTotal;
@@ -53,7 +49,6 @@ namespace rjw
 			this.FailOn(() => !pawn.CanReserve(Target, comfort_prisoners.max_rapists_per_prisoner, 0)); // Fail if someone else reserves the Target before the pawn arrives
 			yield return Toils_Goto.GotoThing(iTarget, PathEndMode.OnCell);
 
-
 			var rape = new Toil();
 			rape.initAction = delegate
 			{
@@ -72,7 +67,6 @@ namespace rjw
 					dri.rapist_count += 1;
 					dri.increase_time(duration);
 				}
-
 			};
 			rape.tickAction = delegate
 			{
@@ -85,7 +79,6 @@ namespace rjw
 			};
 			rape.AddFinishAction(delegate
 			{
-
 				//// Trying to add some interactions and social logs
 				xxx.processAnalSex(pawn, Target, ref isAnalSex, pawnHasPenis);
 
@@ -114,7 +107,6 @@ namespace rjw
 				defaultCompleteMode = ToilCompleteMode.Instant
 			};
 		}
-
 
 		public override void aftersex(Pawn pawn, Pawn part, bool violent = false, bool isCoreLovin = false, bool isAnalSex = false)
 		{
@@ -171,12 +163,10 @@ namespace rjw
 			std.roll_to_catch(pawn, part);
 		}
 
-
 		public override void think_after_sex(Pawn pawn, Pawn part, bool violent = false, bool isCoreLovin = false)
 		{
 			//--Log.Message("[ABF]JobDriver_RapeEnemy::think_after_sex( " + pawn.NameStringShort + ", " + part.NameStringShort + ", " + violent + " ) called");
 			//--Log.Message("[ABF]JobDriver_RapeEnemy::think_after_sex( " + pawn.NameStringShort + ", " + part.NameStringShort + ", " + violent + " ) - setting part thoughts");
-
 
 			// partner thoughts
 			if (!xxx.is_animal(part) && violent && !part.Dead && !isCoreLovin)
@@ -193,14 +183,6 @@ namespace rjw
 
 					var part_thought_about_rapist = (!xxx.is_masochist(part)) ? xxx.hate_my_rapist : xxx.kinda_like_my_rapist;
 					part.needs.mood.thoughts.memories.TryGainMemory(part_thought_about_rapist, pawn);
-				}
-
-				foreach (var bystander in part.Map.mapPawns.SpawnedPawnsInFaction(pawn.Faction))
-				{
-					if ((bystander != pawn) && (bystander != part) && !xxx.is_animal(bystander))
-					{
-						part.needs.mood.thoughts.memories.TryGainMemory(xxx.allowed_me_to_get_raped, bystander);
-					}
 				}
 			}
 
@@ -237,22 +219,9 @@ namespace rjw
 						var memory = (Thought_Memory)ThoughtMaker.MakeThought(ThoughtDefOf.GotSomeLovin);
 						pawn.needs.mood.thoughts.memories.TryGainMemory(memory, part);
 						part.needs.mood.thoughts.memories.TryGainMemory(memory, pawn);
-
 					}
 				}
-
 			}
 		}
-
-
-
-
-
-
-
-
-
-
-
 	}
 }
