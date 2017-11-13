@@ -30,7 +30,7 @@ namespace rjw
 		private static float decay_per_day = 0.3f;
 		private float decay_rate_modifier = Mod_Settings.sexneed_decay_rate;
 
-		private float sex_min_age = (float)Mod_Settings.sex_minimum_age;
+		private static float sex_min_age = (float)Mod_Settings.sex_minimum_age;
 
 		//private int startInterval = Find.TickManager.TicksGame;
 		//private static int tickInterval = 10;
@@ -38,7 +38,7 @@ namespace rjw
 
 		//private int std_tick = 1;
 
-		private SimpleCurve sex_need_factor_from_age = new SimpleCurve
+		private static SimpleCurve sex_need_factor_from_age = new SimpleCurve
 		{
 			new CurvePoint(sex_min_age, 0f),
 			new CurvePoint(18f, 1.00f),
@@ -135,7 +135,8 @@ namespace rjw
 		public override void NeedInterval() //150 ticks between each calls
 		{
 			if (isInvisible) return;
-
+						
+			sex_min_age = (float)Mod_Settings.sex_minimum_age;
 			float age = pawn.ageTracker.AgeBiologicalYearsFloat;
 
 			if (needsex_tick <= 0 && age > Mod_Settings.sex_minimum_age)
