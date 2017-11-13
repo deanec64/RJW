@@ -102,7 +102,7 @@ namespace rjw
 			{
 				initAction = delegate
 				 {
-					 Log.Message("[RJW]JobDriver_WhoreIsServingVisitors::MakeNewToils() - gotoWhoreBed initAction is called");
+					 //Log.Message("[RJW]JobDriver_WhoreIsServingVisitors::MakeNewToils() - gotoWhoreBed initAction is called");
 					 Actor.pather.StartPath(WhoreSleepSpot, PathEndMode.OnCell);
 					 Actor.Reserve(Partner, 1, 0);
 					 Partner.pather.StartPath(Actor, PathEndMode.Touch);
