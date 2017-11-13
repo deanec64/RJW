@@ -1,15 +1,9 @@
-﻿using System;
-using System.Text;
-using UnityEngine;
-
+﻿using System.Collections.Generic;
 using Verse;
-using RimWorld;
-using RimWorld.Planet;
-using System.Collections.Generic;
 
 namespace rjw
 {
-	class Hediff_MechImplants : HediffWithComps
+	internal class Hediff_MechImplants : HediffWithComps
 	{
 		public override bool TryMergeWith(Hediff other)
 		{
@@ -18,7 +12,7 @@ namespace rjw
 	}
 
 	[StaticConstructorOnStartup]
-	class HediffDef_MechImplants : HediffDef_EnemyImplants
+	internal class HediffDef_MechImplants : HediffDef_EnemyImplants
 	{
 		public List<string> randomHediffDefs = new List<string>();
 		public int minEventInterval = 30000;

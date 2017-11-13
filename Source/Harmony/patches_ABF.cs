@@ -34,7 +34,7 @@ namespace rjw
 	}
 
 	[HarmonyPatch(typeof(LordJob_AssaultColony), "CreateGraph")]
-	static class Patches_ABF_AssaultColonyForRape
+	internal static class Patches_ABF_AssaultColonyForRape
 	{
 		public static void Postfix(StateGraph __result)
 		{
@@ -60,7 +60,8 @@ namespace rjw
 				}
 			}
 		}
-		static bool HasDesignatedTransition(Transition t)
+
+		private static bool HasDesignatedTransition(Transition t)
 		{
 			if (t.target == null) return false;
 			if (t.target.GetType() == typeof(LordToil_KidnapCover)) return true;
@@ -72,6 +73,7 @@ namespace rjw
 			return false;
 		}
 	}
+
 	/*
 	[HarmonyPatch(typeof(JobGiver_Manhunter), "TryGiveJob")]
 	static class Patches_ABF_MunHunt

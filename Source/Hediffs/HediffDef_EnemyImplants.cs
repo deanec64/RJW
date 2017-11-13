@@ -1,16 +1,10 @@
-﻿using System;
-using System.Text;
-using UnityEngine;
-
+﻿using System.Collections.Generic;
 using Verse;
-using RimWorld;
-using RimWorld.Planet;
-using System.Collections.Generic;
 
 namespace rjw
 {
 	[StaticConstructorOnStartup]
-	class HediffDef_EnemyImplants : HediffDef
+	internal class HediffDef_EnemyImplants : HediffDef
 	{
 		public string parentDef = "";
 		public List<string> parentDefs = new List<string>();
@@ -22,7 +16,7 @@ namespace rjw
 	}
 
 	[StaticConstructorOnStartup]
-	class HediffDef_InsectEgg : HediffDef_EnemyImplants
+	internal class HediffDef_InsectEgg : HediffDef_EnemyImplants
 	{
 		public int bornTick = 900000;//1 Quadrum
 		public int abortTick = 60000;//1 day

@@ -1,21 +1,18 @@
-﻿using System;
-using System.Text;
-using UnityEngine;
-
-using Verse;
+﻿using System.Collections.Generic;
 using RimWorld;
 using RimWorld.Planet;
-using System.Collections.Generic;
+using Verse;
 
 namespace rjw
 {
-	class Hediff_InsectEgg : HediffWithComps
+	internal class Hediff_InsectEgg : HediffWithComps
 	{
 		/*public override void Tick()
 		{
 			base.Tick();
 			Log.Message("[RJW]Hediff_InsectEgg::Tick() - InsectEgg growing");
 		}*/
+
 		protected int bornTick
 		{
 			get
@@ -23,6 +20,7 @@ namespace rjw
 				return ((HediffDef_InsectEgg)this.def).bornTick;
 			}
 		}
+
 		protected int abortTick
 		{
 			get
@@ -30,6 +28,7 @@ namespace rjw
 				return ((HediffDef_InsectEgg)this.def).abortTick;
 			}
 		}
+
 		public Pawn father;
 		public Pawn mother;
 
@@ -40,6 +39,7 @@ namespace rjw
 				return ((HediffDef_InsectEgg)def).parentDef;
 			}
 		}
+
 		public List<string> parentDefs
 		{
 			get
@@ -47,11 +47,13 @@ namespace rjw
 				return ((HediffDef_InsectEgg)def).parentDefs;
 			}
 		}
+
 		public override void PostAdd(DamageInfo? dinfo)
 		{
 			//Log.Message("[RJW]Hediff_InsectEgg::PostAdd() - added parentDef:" + parentDef+"");
 			base.PostAdd(dinfo);
 		}
+
 		public override void Tick()
 		{
 			this.ageTicks++;
@@ -81,6 +83,7 @@ namespace rjw
 			Scribe_References.Look<Pawn>(ref this.father, "father", false);
 			Scribe_References.Look<Pawn>(ref this.mother, "mother", false);
 		}
+
 		public void BirthBaby()
 		{
 			Log.Message("[RJW]Hediff_InsectEgg::BirthBaby() - Egg of " + parentDef + " in " + pawn.ToString() + " birth!");
@@ -110,6 +113,7 @@ namespace rjw
 			}
 			pawn.health.RemoveHediff(this);
 		}
+
 		public void Fertilize(Pawn f)
 		{
 			if (father != null)
@@ -132,10 +136,10 @@ namespace rjw
 		{
 			return parentDef == defnam || parentDefs.Contains(defnam);
 		}
+
 		public override string DebugString()
 		{
-			return base.DebugString() + " Age:"+ this.ageTicks + "\nFertilized:"+ (father != null).ToString();
-
+			return base.DebugString() + " Age:" + this.ageTicks + "\nFertilized:" + (father != null).ToString();
 		}
 	}
 }
