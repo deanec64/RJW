@@ -2,34 +2,34 @@
 
 <Patch>
 
-	<Operation Class="PatchOperationAdd">
-		<xpath>*/BodyDef[defName = "BeetleLikeWithClaw"]/corePart/parts</xpath>
-		<value>
-			<li>
-				<def>InsectGenitals</def>
-				<coverage>0.01</coverage>
-				<depth>Inside</depth>
-			</li>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationAdd">
-		<xpath>*/BodyDef[defName = "MechanicalCentipede"]/corePart/parts</xpath>
-		<value>
-			<li>
-				<def>InsectGenitals</def>
-				<coverage>0.01</coverage>
-				<depth>Inside</depth>
-			</li>
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationAdd">
-		<xpath>*/BodyDef[defName = "Scyther"]/corePart/parts</xpath>
-		<value>
-			<li>
-				<def>InsectGenitals</def>
-				<coverage>0.01</coverage>
-				<depth>Inside</depth>
-			</li>
-		</value>
-	</Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>*/BodyDef[defName = "BeetleLikeWithClaw"]/corePart/parts</xpath>
+    <value>
+      <li>
+        <def>MechGenitals</def>
+        <coverage>0.01</coverage>
+        <depth>Inside</depth>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>*/BodyDef[defName = "MechanicalCentipede"]/corePart/parts</xpath>
+    <value>
+      <li>
+        <def>MechGenitals</def>
+        <coverage>0.01</coverage>
+        <depth>Inside</depth>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>*/BodyDef[defName = "Scyther"]/corePart/parts</xpath>
+    <value>
+      <li>
+        <def>MechGenitals</def>
+        <coverage>0.01</coverage>
+        <depth>Inside</depth>
+      </li>
+    </value>
+  </Operation>
 </Patch>
