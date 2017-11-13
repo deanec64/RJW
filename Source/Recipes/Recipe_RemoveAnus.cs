@@ -1,16 +1,11 @@
-﻿
-using System;
-using System.Linq;
-using System.Collections.Generic;
-
-using Verse;
+﻿using System.Collections.Generic;
 using RimWorld;
+using Verse;
 
 namespace rjw
 {
 	public class Recipe_RemoveAnus : rjw_CORE_EXPOSED.Recipe_RemoveBodyPart
 	{
-
 		// Quick and dirty method to guess whether the player is harvesting the genitals or amputating them
 		// due to infection. The core code can't do this properly because it considers the private part
 		// hediffs as "unclean".
@@ -50,6 +45,5 @@ namespace rjw
 					((part != xxx.anus) || (!Genital_Helper.anus_blocked(p))))
 					yield return part;
 		}
-
 	}
 }

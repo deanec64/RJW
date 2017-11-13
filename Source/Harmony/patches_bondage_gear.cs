@@ -1,26 +1,20 @@
-﻿
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Reflection;
-using System.Text;
-
-using Verse;
-using Verse.AI;
+using Harmony;
 using RimWorld;
 using RimWorld.Planet;
-
-using Harmony;
+using Verse;
+using Verse.AI;
 
 namespace rjw
 {
-
 	[HarmonyPatch(typeof(Pawn_ApparelTracker))]
 	[HarmonyPatch("Wear")]
-	static class PATCH_Pawn_ApparelTracker_Wear
+	internal static class PATCH_Pawn_ApparelTracker_Wear
 	{
 		// Prevents pawns from equipping a piece of apparel if it conflicts with some locked apparel that they're already wearing
 		[HarmonyPrefix]
-		static bool prevent_wear_by_gear(Pawn_ApparelTracker __instance, ref Apparel newApparel)
+		private static bool prevent_wear_by_gear(Pawn_ApparelTracker __instance, ref Apparel newApparel)
 		{
 			var tra = __instance;
 			// Log.Message ("Pawn_ApparelTracker.Wear called for " + newApparel.Label + " on " + tra.pawn.NameStringShort);
@@ -36,7 +30,7 @@ namespace rjw
 
 		// Add the appropriate hediff when gear is worn
 		[HarmonyPostfix]
-		static void on_wear(Pawn_ApparelTracker __instance, Apparel newApparel)
+		private static void on_wear(Pawn_ApparelTracker __instance, Apparel newApparel)
 		{
 			var tra = __instance;
 			if ((newApparel.def is bondage_gear_def def) &&
@@ -50,10 +44,10 @@ namespace rjw
 	// Remove the hediff when the gear is removed
 	[HarmonyPatch(typeof(Pawn_ApparelTracker))]
 	[HarmonyPatch("Remove")]
-	static class PATCH_Pawn_ApparelTracker_Remove
+	internal static class PATCH_Pawn_ApparelTracker_Remove
 	{
 		[HarmonyPostfix]
-		static void on_remove(Pawn_ApparelTracker __instance, Apparel ap)
+		private static void on_remove(Pawn_ApparelTracker __instance, Apparel ap)
 		{
 			var tra = __instance;
 			// Log.Message ("Pawn_ApparelTracker.Remove called for " + ap.Label + " on " + tra.pawn.NameStringShort);
@@ -64,10 +58,10 @@ namespace rjw
 
 	// Patch the TryDrop method so that locked apparel cannot be dropped by JobDriver_RemoveApparel or by stripping
 	// a corpse or downed pawn
-	static class PATCH_Pawn_ApparelTracker_TryDrop
+	internal static class PATCH_Pawn_ApparelTracker_TryDrop
 	{
 		// Can't call MakeByRefType in an attribute, which is why this method is necessary.
-		static MethodInfo get_target()
+		private static MethodInfo get_target()
 		{
 			return typeof(Pawn_ApparelTracker).GetMethod("TryDrop", new Type[] {
 				typeof(Apparel),
@@ -123,20 +117,20 @@ namespace rjw
 	// info from the equipped apparel.
 	[HarmonyPatch(typeof(WITab_Caravan_Gear))]
 	[HarmonyPatch("TryEquipDraggedItem")]
-	static class PATCH_WITab_Caravan_Gear_TryEquipDraggedItem
+	internal static class PATCH_WITab_Caravan_Gear_TryEquipDraggedItem
 	{
-		static Thing get_dragged_item(WITab_Caravan_Gear tab)
+		private static Thing get_dragged_item(WITab_Caravan_Gear tab)
 		{
 			return (Thing)typeof(WITab_Caravan_Gear).GetField("draggedItem", xxx.ins_public_or_no).GetValue(tab);
 		}
 
-		static void set_dragged_item(WITab_Caravan_Gear tab, Thing t)
+		private static void set_dragged_item(WITab_Caravan_Gear tab, Thing t)
 		{
 			typeof(WITab_Caravan_Gear).GetField("draggedItem", xxx.ins_public_or_no).SetValue(tab, t);
 		}
 
 		[HarmonyPrefix]
-		static bool prevent_locked_apparel_conflict(WITab_Caravan_Gear __instance, ref Pawn p)
+		private static bool prevent_locked_apparel_conflict(WITab_Caravan_Gear __instance, ref Pawn p)
 		{
 			if (__instance == null) return true;
 			if (get_dragged_item(__instance) is Apparel dragged_app && p.apparel != null && dragged_app.has_lock())
@@ -159,10 +153,10 @@ namespace rjw
 	// TODO: Find out when this method is actually called (probably doesn't matter but still)
 	[HarmonyPatch(typeof(Dialog_FormCaravan))]
 	[HarmonyPatch("RemoveFromCorpseIfPossible")]
-	static class PATCH_Dialog_FormCaravan_RemoveFromCorpseIfPossible
+	internal static class PATCH_Dialog_FormCaravan_RemoveFromCorpseIfPossible
 	{
 		[HarmonyPrefix]
-		static bool prevent_locked_apparel_removal(Dialog_FormCaravan __instance, Thing thing)
+		private static bool prevent_locked_apparel_removal(Dialog_FormCaravan __instance, Thing thing)
 		{
 			var app = thing as Apparel;
 			return (app == null) || (!app.has_lock());
@@ -175,16 +169,16 @@ namespace rjw
 	// and use it to unlock the apparel
 	[HarmonyPatch(typeof(ITab_Pawn_Gear))]
 	[HarmonyPatch("InterfaceDrop")]
-	static class PATCH_ITab_Pawn_Gear_InterfaceDrop
+	internal static class PATCH_ITab_Pawn_Gear_InterfaceDrop
 	{
-		static Pawn SelPawnForGear(ITab_Pawn_Gear tab)
+		private static Pawn SelPawnForGear(ITab_Pawn_Gear tab)
 		{
 			var pro = typeof(ITab_Pawn_Gear).GetProperty("SelPawnForGear", xxx.ins_public_or_no);
 			return (Pawn)pro.GetValue(tab, null);
 		}
 
 		[HarmonyPrefix]
-		static bool drop_locked_apparel(ITab_Pawn_Gear __instance, Thing t)
+		private static bool drop_locked_apparel(ITab_Pawn_Gear __instance, Thing t)
 		{
 			var tab = __instance;
 			var app = t as Apparel;
@@ -209,9 +203,9 @@ namespace rjw
 	// optimize away locked apparel won't work here because prisoners don't check GetSpecialApparelScoreOffset.
 	[HarmonyPatch(typeof(JobGiver_PrisonerGetDressed))]
 	[HarmonyPatch("FindGarmentCoveringPart")]
-	static class PATCH_JobGiver_PrisonerGetDressed_FindGarmentCoveringPart
+	internal static class PATCH_JobGiver_PrisonerGetDressed_FindGarmentCoveringPart
 	{
-		static bool conflicts(Pawn_ApparelTracker tra, Apparel new_app)
+		private static bool conflicts(Pawn_ApparelTracker tra, Apparel new_app)
 		{
 			foreach (var worn_app in tra.WornApparel)
 				if (worn_app.has_lock() && (!ApparelUtility.CanWearTogether(worn_app.def, new_app.def)))
@@ -221,7 +215,7 @@ namespace rjw
 		}
 
 		[HarmonyPrefix]
-		static bool prevent_locked_apparel_conflict(JobGiver_PrisonerGetDressed __instance, Pawn pawn, BodyPartGroupDef bodyPartGroupDef, ref Apparel __result)
+		private static bool prevent_locked_apparel_conflict(JobGiver_PrisonerGetDressed __instance, Pawn pawn, BodyPartGroupDef bodyPartGroupDef, ref Apparel __result)
 		{
 			// If the prisoner is not wearing locked apparel then just run the regular method
 			if (!pawn.is_wearing_locked_apparel())
@@ -251,5 +245,4 @@ namespace rjw
 			}
 		}
 	}
-
 }

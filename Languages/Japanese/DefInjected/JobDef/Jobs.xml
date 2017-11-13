@@ -3,7 +3,6 @@
 
   <Fappin.reportString>オナニー中</Fappin.reportString>
 
-
   <!-- No longer need to override this def since the additional code is patched into the original driver
   <JobDef>
     <defName>Lovin</defName>
@@ -26,12 +25,10 @@
   <WhoreIsServingVisitors.reportString>訪問者をもてなしている</WhoreIsServingVisitors.reportString>
   <InvitingVisitors.reportString>売春相手を探している</InvitingVisitors.reportString>
 
-
   <!-- <JobDef>
     <defName>ComfortPrisonerGangRapin</defName>
     <driverClass>rjw.JobDriver_ComfortPrisonerGangRapin</driverClass>
     <reportString>gang rapin'.</reportString>
     <casualInterruptible>false</casualInterruptible>
   </JobDef> -->
-
 </LanguageData>

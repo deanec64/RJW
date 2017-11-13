@@ -1,19 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using RimWorld;
-using Verse;
 using HugsLib;
-using HugsLib.Settings;
-using UnityEngine.SceneManagement;
 using HugsLib.Core;
+using HugsLib.Settings;
+using Verse;
 
 namespace rjw
 {
 	public class Mod_Settings : ModBase
 	{
-
 		public override string ModIdentifier
 		{
 			get
@@ -46,6 +40,7 @@ namespace rjw
 
 		// Feature Toggles
 		public bool animals_enabled; // New
+
 		public bool comfort_prisoners_enabled; // New
 		public bool colonists_can_be_comfort_prisoners; // New
 		public bool cum_enabled; // New
@@ -71,6 +66,7 @@ namespace rjw
 
 		// STD config
 		public bool std_show_roll_to_catch; // New
+
 		public float std_min_severity_to_pitch; // New
 		public float std_env_pitch_cleanliness_exaggeration; // New
 		public float std_env_pitch_dirtiness_exaggeration; // New
@@ -94,6 +90,7 @@ namespace rjw
 
 		//Mod Settings handles
 		private SettingHandle<bool> option_WildMode;
+
 		private SettingHandle<int> option_sexneed_decay_rate;
 		private SettingHandle<bool> option_nymphs_join;
 		private SettingHandle<bool> option_STD_floor_catch;
@@ -183,10 +180,8 @@ namespace rjw
 			Log.Message("NonFutaWomenRaping_MaxVulnerability = " + NonFutaWomenRaping_MaxVulnerability);
 			Log.Message("Rapee_MinVulnerability_human = " + Rapee_MinVulnerability_human);
 			Log.Message("Rapee_MinVulnerability_animals = " + Rapee_MinVulnerability_animals);
-
 		}
 
-		
 		public override void MapLoaded(Map map)
 		{
 			Log.Message("[RJW] Settings loaded:");
@@ -216,50 +211,52 @@ namespace rjw
         public override void FixedUpdate() {
             base.FixedUpdate();
         }
-      
+
         public override void MapComponentsInitializing(Map map) {
             Logger.Message("MapComponentsInitializing() called");
             base.MapComponentsInitializing(map);
         }
-     
+
         public override void MapDiscarded(Map map) {
             Logger.Message("MapDiscarded() called");
             base.MapDiscarded(map);
         }
-     
+
         public override void MapGenerated(Map map) {
             Logger.Message("MapGenerated() called");
             base.MapGenerated(map);
         }
-        
+
         public override void MapLoaded(Map map) {
             Logger.Message("MapLoaded() called");
             base.MapLoaded(map);
         }
-     
+
         public override void OnGUI() {
             base.OnGUI();
         }
-       
+
         public override void SceneLoaded(Scene scene) {
             Logger.Message("SceneLoaded() called");
             base.SceneLoaded(scene);
         }
-     
+
         public override void Tick(int currentTick) {
             base.Tick(currentTick);
         }
-      
+
         public override void WorldLoaded() {
             Logger.Message("WorldLoaded() called");
             base.WorldLoaded();
         }
         */
+
 		private void MakeSettingsCategoryToggle(string labelId, Action buttonAction)
 		{
 			var toolToggle = Settings.GetHandle<bool>(labelId, labelId.Translate(), null);
 			toolToggle.Unsaved = true;
-			toolToggle.CustomDrawer = rect => {
+			toolToggle.CustomDrawer = rect =>
+			{
 				if (Widgets.ButtonText(rect, "setting_showToggles_btn".Translate())) buttonAction();
 				return false;
 			};

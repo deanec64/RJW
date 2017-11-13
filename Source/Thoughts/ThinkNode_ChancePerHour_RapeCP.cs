@@ -1,18 +1,13 @@
-﻿
-using System;
-using System.Collections.Generic;
-
+﻿using System;
+using RimWorld;
 using UnityEngine;
-
 using Verse;
 using Verse.AI;
-using RimWorld;
 
 namespace rjw
 {
 	public class ThinkNode_ChancePerHour_RapeCP : ThinkNode_ChancePerHour
 	{
-
 		protected override float MtbHours(Pawn pawn)
 		{
 			if (pawn is null)
@@ -85,6 +80,7 @@ namespace rjw
             pawn.mindState.thinkData[UniqueSaveKey] = val;
         }
         */
+
 		//↓Use the base: ThinkNode_ChancePerHour
 		public override ThinkResult TryIssueJobPackage(Pawn pawn, JobIssueParams jobParams)
 		{

@@ -5,11 +5,8 @@
   <TestInc.letterText>Something Happened</TestInc.letterText>
   <TestInc.letterLabel>Something Happened</TestInc.letterLabel>
 
-
   <!-- I dont think this is needed anymore -->
 
   <SexualizeThePawns.label>sexualize the pawns</SexualizeThePawns.label>
   <NymphJoins.label>nymph joins</NymphJoins.label>
-
-
 </LanguageData>

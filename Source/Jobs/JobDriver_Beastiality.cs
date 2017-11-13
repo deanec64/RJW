@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿using System.Collections.Generic;
+using RimWorld;
 using Verse;
 using Verse.AI;
-using Verse.Sound;
-using RimWorld;
 
 namespace rjw
 {
 	public class JobDriver_Beastiality : JobDriver
 	{
-
 		private int duration;
 
 		private int ticks_between_hearts;
@@ -55,7 +49,6 @@ namespace rjw
 			ticks_between_thrusts = 100;
 			bool pawnHasPenis = Genital_Helper.has_penis(pawn);
 
-
 			if (xxx.is_bloodlust(pawn))
 				ticks_between_hits = (int)(ticks_between_hits * 0.75);
 			if (xxx.is_brawler(pawn))
@@ -67,7 +60,6 @@ namespace rjw
 			yield return Toils_Reserve.Reserve(iprisoner, 1, 0);
 			//Log.Message("[RJW] JobDriver_Beastiality::MakeNewToils() - moving towards animal");
 			yield return Toils_Goto.GotoThing(iprisoner, PathEndMode.OnCell);
-
 
 			var rape = new Toil();
 			rape.initAction = delegate
@@ -99,7 +91,6 @@ namespace rjw
                             pawn.apparel.Remove(apparel);
                         }
                 */
-
 			};
 			rape.tickAction = delegate
 			{
@@ -122,7 +113,6 @@ namespace rjw
 					(animal.jobs.curDriver != null) &&
 					(animal.jobs.curDriver as JobDriver_GettinRaped != null))
 					(animal.jobs.curDriver as JobDriver_GettinRaped).rapist_count -= 1;
-
 			});
 			rape.defaultCompleteMode = ToilCompleteMode.Delay;
 			rape.defaultDuration = duration;
@@ -152,6 +142,5 @@ namespace rjw
 				defaultCompleteMode = ToilCompleteMode.Instant
 			};
 		}
-
 	}
 }

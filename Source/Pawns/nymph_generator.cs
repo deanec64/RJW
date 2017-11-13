@@ -1,18 +1,12 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Reflection;
-
-using UnityEngine;
-
-using Verse;
+﻿using System.Collections.Generic;
 using RimWorld;
+using UnityEngine;
+using Verse;
 
 namespace rjw
 {
 	public static class nymph_generator
 	{
-
 		private static bool is_trait_conflicting_or_duplicate(Pawn p, Trait t)
 		{
 			foreach (var existing in p.story.traits.allTraits)
@@ -29,7 +23,7 @@ namespace rjw
 			p.story.childhood = gen_sto.child;
 			p.story.adulthood = gen_sto.adult;
 
-			//The mod More Trait Slots will adjust the max number of traits pawn can get, and therefore, 
+			//The mod More Trait Slots will adjust the max number of traits pawn can get, and therefore,
 			//I need to collect pawns' traits and assign other_traits back to the pawn after adding the nymph_story traits.
 			Stack<Trait> other_traits = new Stack<Trait>();
 			int numberOfTotalTraits = 0;
@@ -56,7 +50,6 @@ namespace rjw
 					p.story.traits.GainTrait(t);
 				++trait_count;
 			}
-
 		}
 
 		private static int sum_previous_gains(SkillDef def, Pawn_StoryTracker sto, Pawn_AgeTracker age)
@@ -99,7 +92,6 @@ namespace rjw
 					if (rv < pas_cha.major) rec.passion = Passion.Major;
 					else if (rv < pas_cha.minor) rec.passion = Passion.Minor;
 					else rec.passion = Passion.None;
-
 				}
 				else
 					rec.passion = Passion.None;
@@ -144,6 +136,5 @@ namespace rjw
 			GenSpawn.Spawn(p, spawn_loc, m);
 			return p;
 		}
-
 	}
 }

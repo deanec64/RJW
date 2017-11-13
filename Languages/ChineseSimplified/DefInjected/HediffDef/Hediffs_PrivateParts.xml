@@ -5,11 +5,9 @@
 
   <DummyPrivates.label>伪私处（用于生成真私处，debug用的）</DummyPrivates.label>
 
-
   <!-- Regular privates -->
 
   <Penis.label>阴茎</Penis.label>
-
 
   <!-- Additional dick sizes -->
 
@@ -25,7 +23,6 @@
   <TightVagina.label>紧致的阴道</TightVagina.label>
   <LooseVagina.label>松弛的阴道</LooseVagina.label>
 
-
   <!-- Natural Breasts -->
 
   <Breasts.label>乳房</Breasts.label>
@@ -33,13 +30,11 @@
   <LargeBreasts.label>大乳房</LargeBreasts.label>
   <HugeBreasts.label>巨乳房</HugeBreasts.label>
 
-
   <!-- Natural anuses -->
 
   <Anus.label>肛门</Anus.label>
   <TightAnus.label>紧致的肛门</TightAnus.label>
   <LooseAnus.label>松弛的肛门</LooseAnus.label>
-
 
   <!-- Simple prosthetic privates -->
 
@@ -48,13 +43,10 @@
   <HydraulicBreasts.label>液压乳房</HydraulicBreasts.label>
   <HydraulicAnus.label>液压肛门</HydraulicAnus.label>
 
-
   <!-- Bionic privates -->
 
   <BionicPenis.label>仿生阴茎</BionicPenis.label>
   <BionicVagina.label>仿生阴道</BionicVagina.label>
   <BionicBreasts.label>仿生乳房</BionicBreasts.label>
   <BionicAnus.label>仿生肛门</BionicAnus.label>
-
-
 </LanguageData>

@@ -1,14 +1,12 @@
-﻿using System;
-using System.Linq;
-using Verse;
-
+﻿using System.Linq;
 using Harmony;
 using RimWorld;
+using Verse;
 
 namespace rjw
 {
 	[HarmonyPatch(typeof(PawnBioAndNameGenerator), "SetBackstoryInSlot")]
-	static class Patch_PawnBioAndNameGenerator_SetBackstoryInSlot  //This is used to make sure the generator will set Backstories based on the backstoryCategory of the pawns' kindDef
+	internal static class Patch_PawnBioAndNameGenerator_SetBackstoryInSlot  //This is used to make sure the generator will set Backstories based on the backstoryCategory of the pawns' kindDef
 	{
 		// Unmodified Version(from XnopeCore):
 		// Prefix patch:
@@ -16,7 +14,7 @@ namespace rjw
 		// and only failing that does it select based on faction;
 		// failing THAT, defaults.
 		[HarmonyPrefix]
-		static bool OnBegin_SetBackstoryInSlot(Pawn pawn, BackstorySlot slot, ref Backstory backstory)
+		private static bool OnBegin_SetBackstoryInSlot(Pawn pawn, BackstorySlot slot, ref Backstory backstory)
 		{
 			if ((from kvp in BackstoryDatabase.allBackstories
 				 where kvp.Value.shuffleable
@@ -31,6 +29,7 @@ namespace rjw
 			// Defaulting to original function.
 			return true;
 		}
+
 		/* RJW Version:
         private readonly static PawnKindDef Nymph_pkd = PawnKindDef.Named("Nymph");
 
@@ -56,10 +55,10 @@ namespace rjw
 
 	// This will generate backstories and traits for the pawns not spawned through the IncidentWorker_NymphJoins
 	[HarmonyPatch(typeof(PawnGenerator), "GenerateNewNakedPawn")]
-	static class Patch_PawnGenerator_GenerateNewNakedPawn
+	internal static class Patch_PawnGenerator_GenerateNewNakedPawn
 	{
 		[HarmonyPrefix]
-		static void OnBegin_GenerateNewNakedPawn(ref PawnGenerationRequest request)
+		private static void OnBegin_GenerateNewNakedPawn(ref PawnGenerationRequest request)
 		{
 			//Log.Message("[RJW]Patch_PawnGenerator_GenerateNewNakedPawn::OnBegin_GenerateNewNakedPawn is called0");
 			PawnGenerationRequest PGR = request;
@@ -101,20 +100,17 @@ namespace rjw
 		}
 	}
 
-
 	// This will generate backstories and traits for the pawns not spawned through the IncidentWorker_NymphJoins
 	[HarmonyPatch(typeof(PawnGenerator), "GenerateTraits")]
-	static class Patch_PawnGenerator_GenerateTraits
+	internal static class Patch_PawnGenerator_GenerateTraits
 	{
 		[HarmonyPostfix]
-		static void After_GenerateTraits(Pawn pawn, PawnGenerationRequest request)
+		private static void After_GenerateTraits(Pawn pawn, PawnGenerationRequest request)
 		{
 			if (request.KindDef != null && request.KindDef.defName == "Nymph" && request.Faction != Faction.OfPlayer)
 			{
 				nymph_generator.set_story(pawn);
-
 			}
 		}
 	}
-
 }

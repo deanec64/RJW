@@ -1,18 +1,11 @@
-﻿
+﻿using System.Collections.Generic;
 using RimWorld;
 using Verse;
-
-using System;
-using System.Collections.Generic;
-
-using UnityEngine;
-
 
 namespace rjw
 {
 	public class Need_Sex : Need_Seeker
 	{
-
 		private bool isHuman => xxx.is_human(pawn);
 
 		private bool isFemale => xxx.is_female(pawn);
@@ -34,7 +27,6 @@ namespace rjw
 
 		//private int startInterval = Find.TickManager.TicksGame;
 		//private static int tickInterval = 10;
-
 
 		//private int std_tick = 1;
 
@@ -60,8 +52,6 @@ namespace rjw
 			*/
 		};
 
-
-
 		/* Edited by nizhuan-jjr : Animals' Sex Need is removed now
         private static readonly SimpleCurve animal_sex_need_factor_from_age = new SimpleCurve
         {
@@ -73,19 +63,33 @@ namespace rjw
             new CurvePoint(30f, 0.90f),
             new CurvePoint(40f, 0.50f),
             new CurvePoint(60f, 0.20f),
-
         };
         */
 
-		public float thresh_frustrated() { return 0.05f; }
+		public float thresh_frustrated()
+		{
+			return 0.05f;
+		}
 
-		public float thresh_horny() { return 0.25f; }
+		public float thresh_horny()
+		{
+			return 0.25f;
+		}
 
-		public float thresh_neutral() { return 0.50f; }
+		public float thresh_neutral()
+		{
+			return 0.50f;
+		}
 
-		public float thresh_satisfied() { return 0.75f; }
+		public float thresh_satisfied()
+		{
+			return 0.75f;
+		}
 
-		public float thresh_ahegao() { return 0.95f; }
+		public float thresh_ahegao()
+		{
+			return 0.95f;
+		}
 
 		public Need_Sex(Pawn pawn) : base(pawn)
 		{
@@ -123,8 +127,10 @@ namespace rjw
 				{
 					case 0:
 						return 0.75f;
+
 					case 1:
 						return 1.4f;
+
 					case 2:
 						return 2f;
 				}
@@ -135,7 +141,7 @@ namespace rjw
 		public override void NeedInterval() //150 ticks between each calls
 		{
 			if (isInvisible) return;
-						
+
 			sex_min_age = (float)Mod_Settings.sex_minimum_age;
 			float age = pawn.ageTracker.AgeBiologicalYearsFloat;
 
@@ -146,7 +152,6 @@ namespace rjw
 
 				if (!def.freezeWhileSleeping || pawn.Awake())
 				{
-
 					decay_rate_modifier = Mod_Settings.sexneed_decay_rate;
 
 					//every 200 calls will have a real functioning call
@@ -172,7 +177,6 @@ namespace rjw
 				//Log.Message("[RJW]Need_Sex::NeedInterval is called1");
 				std.update(pawn);
 
-
 				// the bootstrap of the mapInjector will only be triggered once per visible pawn.
 				if (!BootStrapTriggered)
 				{
@@ -180,7 +184,6 @@ namespace rjw
 					xxx.bootstrap(pawn.Map);
 					BootStrapTriggered = true;
 				}
-
 			}
 			else
 			{
@@ -189,6 +192,5 @@ namespace rjw
 			}
 			//Log.Message("[RJW]Need_Sex::NeedInterval is called2 - needsex_tick is "+needsex_tick);
 		}
-
 	}
 }

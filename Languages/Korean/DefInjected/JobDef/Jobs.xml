@@ -3,7 +3,6 @@
 
   <Fappin.reportString>자위 중.</Fappin.reportString>
 
-
   <!-- No longer need to override this def since the additional code is patched into the original driver
   <JobDef>
     <defName>Lovin</defName>
@@ -25,6 +24,4 @@
   <RandomRape.reportString>강간 중.</RandomRape.reportString>
   <WhoreIsServingVisitors.reportString>봉사 중.</WhoreIsServingVisitors.reportString>
   <InvitingVisitors.reportString>유혹 중.</InvitingVisitors.reportString>
-
-
 </LanguageData>

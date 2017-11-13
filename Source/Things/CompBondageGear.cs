@@ -1,11 +1,7 @@
-﻿
-using System;
-using System.Linq;
-using System.Collections.Generic;
-
+﻿using System.Collections.Generic;
+using RimWorld;
 using Verse;
 using Verse.AI;
-using RimWorld;
 
 // Adds options to the right-click menu for bondage gear to equip the gear on prisoners
 namespace rjw

@@ -1,20 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 
 using UnityEngine;
 
 using Verse;
 using Verse.AI;
-using RimWorld;
 
 namespace rjw
 {
 	public class ThinkNode_ChancePerHour_Beastiality : ThinkNode_ChancePerHour
 	{
-
 		protected override float MtbHours(Pawn pawn)
 		{
 			// Use the fappin mtb hours as the base number b/c it already accounts for things like age
@@ -63,6 +57,7 @@ namespace rjw
 
 			return base_mtb * desire_factor * personality_factor * fun_factor * gender_factor;
 		}
+
 		public override ThinkResult TryIssueJobPackage(Pawn pawn, JobIssueParams jobParams)
 		{
 			try

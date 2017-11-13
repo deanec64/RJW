@@ -1,17 +1,10 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Reflection;
-
+﻿using RimWorld;
 using Verse;
-using RimWorld;
 
 namespace rjw
 {
 	public class IncidentWorker_NymphJoins : IncidentWorker
 	{
-
-
 		protected override bool CanFireNowSub(IIncidentTarget target)
 		{
 			if (Mod_Settings.nymphos)
@@ -69,6 +62,5 @@ namespace rjw
 
 			return true;
 		}
-
 	}
 }

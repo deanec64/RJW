@@ -580,7 +580,6 @@
 		<addsHediff>LargeBreasts</addsHediff>
 	</RecipeDef>
 
-
 	<RecipeDef ParentName="BreastSurgery">
 		<defName>AttachHugeBreasts</defName>
 		<label>attach huge breasts</label>
@@ -616,8 +615,6 @@
 		</fixedIngredientFilter>
 		<addsHediff>HugeBreasts</addsHediff>
 	</RecipeDef>
-
-
 
 	<RecipeDef ParentName="AnalSurgery">
 		<defName>AttachAnus</defName>
@@ -726,7 +723,6 @@
 		</fixedIngredientFilter>
 		<addsHediff>TightAnus</addsHediff>
 	</RecipeDef>
-
 
 	<!-- Attach simple prosthetic privates -->
 
@@ -1178,6 +1174,4 @@
 			</categories>
 		</fixedIngredientFilter>
 	</RecipeDef>
-
-
 </RecipeDefs>

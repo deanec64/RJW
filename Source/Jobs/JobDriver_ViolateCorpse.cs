@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-
+﻿using System.Collections.Generic;
+using RimWorld;
 using Verse;
 using Verse.AI;
 using Verse.Sound;
-using RimWorld;
 
 namespace rjw
 {
 	public class JobDriver_ViolateCorpse : JobDriver
 	{
-
 		private int duration;
 
 		private int ticks_between_hearts;
@@ -55,7 +52,6 @@ namespace rjw
 			pawn.Drawer.rotator.FaceCell(corpse.Position);
 		}
 
-
 		protected override IEnumerable<Toil> MakeNewToils()
 		{
 			//Log.Message("[RJW] JobDriver_ViolateCorpse::MakeNewToils() called");
@@ -63,7 +59,6 @@ namespace rjw
 			ticks_between_hearts = Rand.RangeInclusive(70, 130);
 			ticks_between_hits = Rand.Range(xxx.config.min_ticks_between_hits, xxx.config.max_ticks_between_hits);
 			ticks_between_thrusts = 100;
-
 
 			if (xxx.is_bloodlust(pawn))
 				ticks_between_hits = (int)(ticks_between_hits * 0.75);
@@ -75,7 +70,6 @@ namespace rjw
 			this.FailOn(() => !pawn.CanReserve(corpse, 1, 0));  // Fail if someone else reserves the prisoner before the pawn arrives
 																//Log.Message("[RJW] JobDriver_ViolateCorpse::MakeNewToils() - moving towards corpse");
 			yield return Toils_Goto.GotoThing(iprisoner, PathEndMode.OnCell);
-
 
 			var rape = new Toil();
 			rape.initAction = delegate
@@ -98,9 +92,6 @@ namespace rjw
 				corpse.Strip();
 
 				//pawn.apparel.WornApparel.RemoveAll(null);
-
-
-
 			};
 			rape.tickAction = delegate
 			{
@@ -155,6 +146,5 @@ namespace rjw
 				defaultCompleteMode = ToilCompleteMode.Instant
 			};
 		}
-
 	}
 }

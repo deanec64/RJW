@@ -1,10 +1,8 @@
-﻿
-using Verse;
+﻿using Verse;
 using Verse.AI.Group;
 
 namespace rjw
 {
-
 	public class Trigger_SexSatisfy : TriggerFilter
 	{
 		private const int CheckInterval = 120;
@@ -18,7 +16,6 @@ namespace rjw
 			currentTick = 0;
 		}
 
-
 		public override bool AllowActivation(Lord lord, TriggerSignal signal)
 		{
 			currentTick++;
@@ -29,7 +26,6 @@ namespace rjw
 				{
 					/*foreach(Pawn p in lord.Map.mapPawns.PawnsInFaction(Faction.OfPlayer))
                     {
-
                     }*/
 					Need_Sex n = pawn.needs.TryGetNeed<Need_Sex>();
 					if (n != null && pawn.gender == Gender.Male && !pawn.Downed)

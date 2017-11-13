@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using Verse;
-using Verse.Sound;
-
-using RimWorld;
-
-namespace rjw
+﻿namespace rjw
 {
 	/*This is useless for now.
 	public class Verb_Fuck : Verb

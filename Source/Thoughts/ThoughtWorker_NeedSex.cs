@@ -1,15 +1,10 @@
-﻿
-using System;
-using System.Collections.Generic;
-
+﻿using RimWorld;
 using Verse;
-using RimWorld;
 
 namespace rjw
 {
 	public class ThoughtWorker_NeedSex : ThoughtWorker
 	{
-
 		protected override ThoughtState CurrentStateInternal(Pawn p)
 		{
 			var sex_need = p.needs.TryGetNeed<Need_Sex>();
@@ -31,6 +26,5 @@ namespace rjw
 			else
 				return ThoughtState.Inactive;
 		}
-
 	}
 }

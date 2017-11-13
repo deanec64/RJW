@@ -1,15 +1,10 @@
-﻿
-using System;
-using System.Collections.Generic;
-
+﻿using RimWorld;
 using Verse;
-using RimWorld;
 
 namespace rjw
 {
 	public class ThoughtWorker_WastingAway : ThoughtWorker
 	{
-
 		protected override ThoughtState CurrentStateInternal(Pawn p)
 		{
 			if (!std.is_wasting_away(p))
@@ -17,6 +12,5 @@ namespace rjw
 			else
 				return ThoughtState.ActiveAtStage(0);
 		}
-
 	}
 }

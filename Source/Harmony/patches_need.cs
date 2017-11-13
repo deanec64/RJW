@@ -1,9 +1,4 @@
-﻿
-using RimWorld;
-using Verse;
-using Harmony;
-
-namespace rjw
+﻿namespace rjw
 {
 	/*
     [HarmonyPatch(typeof(Pawn_NeedsTracker))]
@@ -12,10 +7,8 @@ namespace rjw
     {
         [HarmonyPostfix]
         static void on_postfix(Pawn_NeedsTracker __instance, NeedDef nd, ref bool __result){
-            
             Pawn p=(Pawn)(typeof(Pawn_NeedsTracker).GetField("pawn", xxx.ins_public_or_no).GetValue(__instance));
             __result = __result && (nd.defName != "Sex" || (p!=null && p.Map!=null));
-
         }
     }
     */

@@ -1,11 +1,7 @@
-﻿
-using System;
-using System.Linq;
-using System.Collections.Generic;
-
+﻿using System.Collections.Generic;
+using RimWorld;
 using Verse;
 using Verse.AI;
-using RimWorld;
 
 namespace rjw
 {

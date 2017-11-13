@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <InteractionDefs>
 
-
 	<InteractionDef>
 		<defName>AnalSex</defName>
 		<label>anal sex</label>
@@ -22,5 +21,4 @@
 			</rulesStrings>
 		</logRulesRecipient>
 	</InteractionDef>
-
 </InteractionDefs>

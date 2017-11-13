@@ -1,9 +1,6 @@
-﻿
-using System;
-using System.Collections.Generic;
-
-using Verse;
+﻿using System.Collections.Generic;
 using RimWorld;
+using Verse;
 
 namespace rjw
 {
@@ -28,7 +25,6 @@ namespace rjw
 
 	public static class nymph_backstories
 	{
-
 		public struct child
 		{
 			public static Backstory vatgrown_sex_slave;
@@ -60,7 +56,6 @@ namespace rjw
 					bs.SetTitle("Vat-Grown Sex Slave");
 					bs.SetTitleShort("SexSlave");
 					bs.baseDesc = "NAME is made as a sex machine, rather than a human.During HIS growing period in the factory, HE was taught plenty of social skills and sex skills, just to satisfy various sex demands.";
-
 				}
 				// bs.skillGains = new Dictionary<string, int> ();
 				bs.skillGains.Add("Social", 8);
@@ -83,7 +78,6 @@ namespace rjw
 				BackstoryDatabase.AddBackstory(bs);
 				child.vatgrown_sex_slave = bs;
 				//--Log.Message("[RJW]nymph_backstories::init() succeed0");
-
 			}
 			{
 				Backstory bs = new Backstory();
@@ -104,7 +98,6 @@ namespace rjw
 						"\"Wanna fight?\" HE challenges. You already know what HE means: a few minutes of play wrestling and then you take HIM, or, if you hesitate, HE takes you.\n" +
 						"Though NAME can be hard to get along with you've come to appreciate how HE's more practical than the others.\n" +
 						"You explain to HIM, \"See these things here? They need to be over there\" and \"Those people are trying to kill us, so let's kill them first.\" HECAP listens, and does what is necessary.";
-
 				}
 				bs.skillGains.Add("Social", -3);
 				bs.skillGains.Add("Shooting", 4);
@@ -285,8 +278,6 @@ namespace rjw
 				adult.broken = bs;
 				//--Log.Message("[RJW]nymph_backstories::init() succeed5");
 			}
-
-
 		}
 
 		public static nymph_passion_chances get_passion_chances(Backstory child_bs, Backstory adult_bs, SkillDef skill_def)
@@ -382,6 +373,5 @@ namespace rjw
 
 			return tr;
 		}
-
 	}
 }

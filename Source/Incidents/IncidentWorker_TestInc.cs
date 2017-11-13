@@ -1,15 +1,11 @@
-﻿
-using System;
-using UnityEngine;
-
-using Verse;
+﻿using System;
 using RimWorld;
+using Verse;
 
 namespace rjw
 {
 	public class IncidentWorker_TestInc : IncidentWorker
 	{
-
 		public static void list_backstories()
 		{
 			foreach (var bs in BackstoryDatabase.allBackstories.Values)
@@ -86,6 +82,5 @@ namespace rjw
 
 			return true;
 		}
-
 	}
 }

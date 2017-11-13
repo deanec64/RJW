@@ -1,12 +1,9 @@
-﻿
-
-using Verse;
+﻿using Verse;
 
 namespace rjw
 {
-	class JobDriver_RapeEnemyByInsect : JobDriver_RapeEnemy
+	internal class JobDriver_RapeEnemyByInsect : JobDriver_RapeEnemy
 	{
-
 		public override void aftersex(Pawn pawn, Pawn part, bool violent = false, bool isCoreLovin = false, bool isAnalSex = false)
 		{
 			base.aftersex(pawn, part, violent, isCoreLovin, isAnalSex);

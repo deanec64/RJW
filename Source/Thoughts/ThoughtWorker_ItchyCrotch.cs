@@ -1,11 +1,10 @@
-﻿using Verse;
-using RimWorld;
+﻿using RimWorld;
+using Verse;
 
 namespace rjw
 {
 	public class ThoughtWorker_ItchyCrotch : ThoughtWorker
 	{
-
 		protected override ThoughtState CurrentStateInternal(Pawn p)
 		{
 			var sev = std.genital_rash_severity(p);
@@ -17,6 +16,5 @@ namespace rjw
 			else
 				return ThoughtState.ActiveAtStage(1);
 		}
-
 	}
 }

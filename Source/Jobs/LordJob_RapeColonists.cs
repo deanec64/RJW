@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
+﻿using RimWorld;
 using Verse;
 using Verse.AI;
 using Verse.AI.Group;
-using RimWorld;
 
 namespace rjw
 {
@@ -26,6 +22,7 @@ namespace rjw
 		public LordJob_RapeColonists()
 		{
 		}
+
 		public LordJob_RapeColonists(Faction assaulterFaction, bool canKidnap = true, bool canTimeoutOrFlee = true, bool useAvoidGridSmart = false, bool canSteal = true)
 		{
 			this.assaulterFaction = assaulterFaction;
@@ -34,6 +31,7 @@ namespace rjw
 			this.useAvoidGridSmart = useAvoidGridSmart;
 			this.canSteal = canSteal;
 		}
+
 		public override StateGraph CreateGraph()
 		{
 			var rapers = this.lord.ownedPawns;

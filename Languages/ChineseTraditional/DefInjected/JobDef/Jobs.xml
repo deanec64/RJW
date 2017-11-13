@@ -3,7 +3,6 @@
 
   <Fappin.reportString>fappin'.</Fappin.reportString>
 
-
   <!-- No longer need to override this def since the additional code is patched into the original driver
   <JobDef>
     <defName>Lovin</defName>
@@ -25,7 +24,6 @@
   <RandomRape.reportString>randomly raping</RandomRape.reportString>
   <WhoreIsServingVisitors.reportString>serving visitors</WhoreIsServingVisitors.reportString>
   <InvitingVisitors.reportString>attempting hookup</InvitingVisitors.reportString>
-
 
   <!-- <JobDef>
     <defName>ComfortPrisonerGangRapin</defName>
@@ -65,5 +63,4 @@
 		<path>GiveBondageGear.reportString</path>
 		<trans>穿戴束縛具</trans>
 	</rep>-->
-
 </LanguageData>

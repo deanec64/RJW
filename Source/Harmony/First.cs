@@ -1,23 +1,17 @@
-﻿
-using System;
-using System.Linq;
+﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
-
-using Verse;
-using RimWorld;
-
 using Harmony;
+using RimWorld;
+using Verse;
 
 namespace rjw
 {
-
 	[StaticConstructorOnStartup]
-	static class First
+	internal static class First
 	{
-
 		// Generate a HediffGiver for the dummy hediff, then inject it into the OrganicStandard HediffGiverSet
-		static void inject_sexualizer()
+		private static void inject_sexualizer()
 		{
 			//--Log.Message("First::inject_sexualizer() called");
 			/* Edited by nizhuan-jjr: I'm using the xpath approach to do this
@@ -43,9 +37,8 @@ namespace rjw
             */
 		}
 
-		static void show_bpr(String body_part_record_def_name)
+		private static void show_bpr(String body_part_record_def_name)
 		{
-
 			var bpr = BodyDefOf.Human.AllParts.Find((BodyPartRecord can) => String.Equals(can.def.defName, body_part_record_def_name));
 			//--Log.Message(body_part_record_def_name + " BPR internals:");
 			//--Log.Message("  def: " + bpr.def.ToString());
@@ -79,8 +72,7 @@ namespace rjw
 			Genital_Helper.inject_anus(target);
 		}
 
-
-		static void inject_recipes()
+		private static void inject_recipes()
 		{
 			//--Log.Message("[RJW] First::inject_recipes");
 			var cra_spo = DefDatabase<ThingDef>.GetNamed("CraftingSpot");
@@ -104,8 +96,6 @@ namespace rjw
 			(bio_ben ?? mac_ben).AllRecipes.Add(DefDatabase<RecipeDef>.GetNamed("MakeBionicAnus"));
 			(bio_ben ?? mac_ben).AllRecipes.Add(DefDatabase<RecipeDef>.GetNamed("MakeBionicBreasts"));
 
-
-
 			// Inject the bondage gear recipes into their appropriate benches
 			if (xxx.config.bondage_gear_enabled)
 			{
@@ -116,7 +106,7 @@ namespace rjw
 			}
 		}
 
-		static void inject_items()
+		private static void inject_items()
 		{
 			//--Log.Message("[RJW] First::inject_items() called");
 			/* Just use the Def to add ThingDef
@@ -143,10 +133,9 @@ namespace rjw
                 }
             }
             */
-
 		}
 
-		static void show_bs(Backstory bs)
+		private static void show_bs(Backstory bs)
 		{
 			//--Log.Message("Backstory \"" + bs.Title + "\" internals:");
 			//--Log.Message("  identifier: " + bs.identifier);
@@ -166,7 +155,8 @@ namespace rjw
 			//--Log.Message("  disallowedTraits: " + ((bs.disallowedTraits == null) ? "null" : bs.disallowedTraits.ToString()));
 			//--Log.Message("  shuffleable: " + bs.shuffleable.ToString());
 		}
-		static void CheckingCompatibleMods()
+
+		private static void CheckingCompatibleMods()
 		{
 			try
 			{
@@ -180,14 +170,12 @@ namespace rjw
 				{
 					xxx.RomanceDiversifiedIsActive = false;
 					//--Log.Message("[RJW]RomanceDiversified is not detected.0");
-
 				}
 				else
 				{
 					xxx.RomanceDiversifiedIsActive = true;
 					//--Log.Message("[RJW]RomanceDiversified is detected.");
 				}
-
 			}
 			catch (Exception)
 			{
@@ -213,7 +201,6 @@ namespace rjw
 					xxx.RimWorldChildrenIsActive = true;
 					//--Log.Message("[RJW]Children&Pregnancy is detected.");
 				}
-
 			}
 			catch (Exception)
 			{
@@ -231,7 +218,6 @@ namespace rjw
 			//CheckModRequirements();
 			//CheckIncompatibleMods();
 			CheckingCompatibleMods();
-
 
 			inject_sexualizer();
 			//inject_genitals();
@@ -270,7 +256,6 @@ namespace rjw
 					}
 				}
 			}
-
 		}
 
 		internal static void CheckIncompatibleMods()

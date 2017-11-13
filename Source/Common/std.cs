@@ -1,17 +1,12 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
-using UnityEngine;
-
-using Verse;
-using Verse.AI;
 using RimWorld;
+using UnityEngine;
+using Verse;
 
 namespace rjw
 {
-
 	public class std_def : Verse.Def
 	{
 		public HediffDef hediff_def;
@@ -26,7 +21,6 @@ namespace rjw
 
 	public static class std
 	{
-
 		public static std_def hiv;
 		public static std_def herpes;
 		public static std_def warts;
@@ -39,8 +33,6 @@ namespace rjw
 			herpes = DefDatabase<std_def>.GetNamed("Herpes");
 			warts = DefDatabase<std_def>.GetNamed("Warts");
 			syphilis = DefDatabase<std_def>.GetNamed("Syphilis");
-
-
 		}
 
 		public static List<std_def> all
@@ -83,14 +75,12 @@ namespace rjw
 			var existing = get_infection(p, sd);
 			if (existing == null)
 			{
-
 				var part = (sd.applied_on_genitals) ? xxx.genitals : null;
 				p.health.AddHediff(sd.hediff_def, part);
 				if (include_coinfection && (sd.cohediff_def != null))
 					p.health.AddHediff(sd.cohediff_def, part);
 				//Log.Message("[RJW]std::infect genitals std");
 				return get_infection(p, sd);
-
 			}
 			else
 				return existing;
@@ -198,18 +188,17 @@ namespace rjw
 						(p.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.WoundInfection) == null) && // If the pawn already has a wound infection, we can't properly set the immunity for the new one
 						(p.health.immunity.GetImmunity(HediffDefOf.WoundInfection) <= 0.0f))
 					{ // Dont spawn infection if pawn already has immunity
-
 						p.health.AddHediff(HediffDefOf.WoundInfection, part);
 						p.health.HealthTick(); // Creates the immunity record
 						var ir = p.health.immunity.GetImmunityRecord(HediffDefOf.WoundInfection);
 						if (ir != null)
 							ir.immunity = xxx.config.opp_inf_initial_immunity;
 						Find.LetterStack.ReceiveLetter("Opportunistic Infection", "RJW_Opportunistic_Infection_Message".Translate(new object[] { p.NameStringShort }), LetterDefOf.BadNonUrgent, null);
-
 					}
 				}
 			}
 		}
+
 		public static void roll_to_catch(Pawn catcher, Pawn pitcher)
 		{
 			var has_artificial_genitals = catcher.health.hediffSet.HasDirectlyAddedPartFor(xxx.genitals);
@@ -238,60 +227,56 @@ namespace rjw
 			if (xxx.config.std_show_roll_to_catch)
 				//--Log.Message(catcher.NameStringShort + " is rolling to catch STDs (cleanliness factor: " + cleanliness_factor.ToString() + ")" + ((!has_artificial_genitals) ? "" : " (has artificial genitals)"));
 
-			foreach (var sd in all)
-			{
-				if (!catcher.health.hediffSet.HasHediff(sd.hediff_def))
+				foreach (var sd in all)
 				{
-					if (catcher.health.immunity.GetImmunity(sd.hediff_def) <= 0.0f)
+					if (!catcher.health.hediffSet.HasHediff(sd.hediff_def))
 					{
-
-						var catch_chance = sd.catch_chance * (sd.applied_on_genitals ? on_genitals : thru_genitals);
-						var catch_rv = Rand.Value;
-						if (xxx.config.std_show_roll_to_catch)
-							//--Log.Message("  Chance to catch " + sd.label + ": " + catch_chance.ToStringPercent() + "; rolled: " + catch_rv.ToString());
-						if (catch_rv < catch_chance)
+						if (catcher.health.immunity.GetImmunity(sd.hediff_def) <= 0.0f)
 						{
-
-							String pitch_source; float pitch_chance;
-							{
-								if (get_severity(pitcher, sd) >= xxx.config.std_min_severity_to_pitch)
-								{
-									pitch_source = pitcher.NameStringShort;
-									pitch_chance = 1.0f;
-								}
-								else
-								{
-									pitch_source = "the environment";
-									pitch_chance = sd.environment_pitch_chance * cleanliness_factor;
-									if (!Mod_Settings.std_floor)
-									{
-										pitch_chance = -9001f;
-									}
-								}
-							}
-							var pitch_rv = Rand.Value;
-
+							var catch_chance = sd.catch_chance * (sd.applied_on_genitals ? on_genitals : thru_genitals);
+							var catch_rv = Rand.Value;
 							if (xxx.config.std_show_roll_to_catch)
-								//--Log.Message("    Chance to pitch (from " + pitch_source + "): " + pitch_chance.ToStringPercent() + "; rolled: " + pitch_rv.ToString());
-							if (pitch_rv < pitch_chance)
-							{
-								infect(catcher, sd);
-								show_infection_letter(catcher, sd, pitch_source, catch_chance * pitch_chance);
-								//if (xxx.config.std_show_roll_to_catch)
-									//--Log.Message("      INFECTED!");
-							}
+								//--Log.Message("  Chance to catch " + sd.label + ": " + catch_chance.ToStringPercent() + "; rolled: " + catch_rv.ToString());
+								if (catch_rv < catch_chance)
+								{
+									String pitch_source; float pitch_chance;
+									{
+										if (get_severity(pitcher, sd) >= xxx.config.std_min_severity_to_pitch)
+										{
+											pitch_source = pitcher.NameStringShort;
+											pitch_chance = 1.0f;
+										}
+										else
+										{
+											pitch_source = "the environment";
+											pitch_chance = sd.environment_pitch_chance * cleanliness_factor;
+											if (!Mod_Settings.std_floor)
+											{
+												pitch_chance = -9001f;
+											}
+										}
+									}
+									var pitch_rv = Rand.Value;
 
+									if (xxx.config.std_show_roll_to_catch)
+										//--Log.Message("    Chance to pitch (from " + pitch_source + "): " + pitch_chance.ToStringPercent() + "; rolled: " + pitch_rv.ToString());
+										if (pitch_rv < pitch_chance)
+										{
+											infect(catcher, sd);
+											show_infection_letter(catcher, sd, pitch_source, catch_chance * pitch_chance);
+											//if (xxx.config.std_show_roll_to_catch)
+											//--Log.Message("      INFECTED!");
+										}
+								}
 						}
-
-					}
-					//else
+						//else
 						//if (xxx.config.std_show_roll_to_catch)
 						//--Log.Message("  Still immune to " + sd.label);
-				}
-				//else
+					}
+					//else
 					//if (xxx.config.std_show_roll_to_catch)
 					//--Log.Message("  Already infected with " + sd.label);
-			}
+				}
 		}
 
 		public static void generate_on(Pawn p)
@@ -317,7 +302,6 @@ namespace rjw
 			var syp = p.health.hediffSet.GetFirstHediffOfDef(syphilis.hediff_def);
 			if ((syp != null) && (syp.Severity >= 0.60f) && (!syp.FullyImmune()))
 			{
-
 				// A 30% chance per day of getting any permanent damage works out to ~891 in 1 million for each roll
 				// The equation is (1-x)^(60000/150)=.7
 				// Important Note:
@@ -364,9 +348,7 @@ namespace rjw
 						Find.LetterStack.ReceiveLetter(syphilis.label + " Damage", "RJW_Syphilis_Damage_Message".Translate(new object[] { p.NameStringShort, (p.gender == Gender.Male ? "Prohis".Translate() : "Proher".Translate()), part.def.label, syphilis.label }), LetterDefOf.BadNonUrgent, p);
 					}
 				}
-
 			}
 		}
-
 	}
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using RimWorld;
+
 //using static RimWorld.Planet.CaravanInventoryUtility;
 using RimWorldChildren;
 using UnityEngine;
@@ -44,7 +45,7 @@ namespace rjw
 
 		public static bool RimWorldChildrenIsActive; //A dirty way to check if the mod is active
 
-													 //The Hediff to prevent reproduction
+		//The Hediff to prevent reproduction
 		public readonly static HediffDef sterilized = HediffDef.Named("Sterilized");
 
 		//The Hediff for broken body(resulted from being raped as CP for too many times)

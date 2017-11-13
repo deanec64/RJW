@@ -1,5 +1,4 @@
-﻿
-using Verse;
+﻿using Verse;
 using Verse.AI;
 
 namespace rjw
@@ -32,7 +31,6 @@ namespace rjw
 
 		public virtual void think_after_sex(Pawn pawn, Pawn part, bool violent = false, bool isCoreLovin = false)
 		{
-
 		}
 
 		public virtual void aftersex(Pawn pawn, Pawn part, bool violent = false, bool isCoreLovin = false, bool isAnalSex = false)
@@ -48,7 +46,6 @@ namespace rjw
 			}
 		}
 
-
 		// Should move these function to common
 		public static bool ImplantToGenital(string defName, Pawn target)
 		{
@@ -58,6 +55,7 @@ namespace rjw
 
 			return false;
 		}
+
 		public static bool ImplantToAnal(string defName, Pawn target)
 		{
 			HediffDef privates = HediffDef.Named(defName);

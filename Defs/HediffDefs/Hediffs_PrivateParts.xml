@@ -23,7 +23,6 @@
 		</addedPartProps>
 	</HediffDef>
 
-
 	<!-- Dummy hediff: Triggers creation of real privates for newly created pawns -->
 	<HediffDef>
 		<hediffClass>rjw.Hediff_InitPrivates</hediffClass>
@@ -36,7 +35,6 @@
 			<partEfficiency>1.0</partEfficiency>
 		</addedPartProps>
 	</HediffDef>
-
 
 	<!-- Regular privates -->
 	<HediffDef ParentName="NaturalRegularPrivatePartBase">
@@ -157,7 +155,6 @@
 		</stages>
 		<spawnThingOnRemoved>DragonPenis</spawnThingOnRemoved>
 	</HediffDef>
-
 
 	<HediffDef ParentName="NaturalRegularPrivatePartBase">
 		<defName>Vagina</defName>
@@ -369,7 +366,6 @@
 		</stages>
 		<spawnThingOnRemoved>HydraulicAnus</spawnThingOnRemoved>
 	</HediffDef>
-
 
 	<!-- Bionic privates -->
 	<HediffDef ParentName="ArtificialPrivatePartBase">

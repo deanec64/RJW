@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
+﻿using System.Collections.Generic;
+using RimWorld;
 using Verse;
 using Verse.AI;
-using RimWorld;
-
 
 namespace rjw
 {
-
 	public class JobDriver_WhoreIsServingVisitors : JobDriver
 	{
 		private TargetIndex PartnerInd = TargetIndex.A;
@@ -48,9 +43,9 @@ namespace rjw
 			get
 			{
 				return (IntVec3)CurJob.GetTarget(SlotInd);
-
 			}
 		}
+
 		public override void ExposeData()
 		{
 			base.ExposeData();
@@ -121,7 +116,6 @@ namespace rjw
 					}
 				},
 				defaultCompleteMode = ToilCompleteMode.PatherArrival
-
 			};
 			gotoWhoreBed.FailOnWhorebedNoLongerUsable(BedInd, Bed);
 			yield return gotoWhoreBed;
@@ -147,7 +141,6 @@ namespace rjw
 					{
 						//--Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - waitInBed, tickAction pass");
 						ticksLeftThisToil = 0;
-
 					}
 				},
 				defaultCompleteMode = ToilCompleteMode.Delay,
@@ -204,8 +197,6 @@ namespace rjw
 					//--Log.Message("[RJW] JobDriver_WhoreIsServingVisitors::MakeNewToils() - finished loveToil");
 					//// Trying to add some interactions and social logs
 					//xxx.processAnalSex(Partner, Actor, ref isAnalSex, partnerHasPenis);
-
-
 				});
 				loveToil.AddFailCondition(() => Partner.Dead || !IsInOrByBed(Bed, Partner));
 				loveToil.socialMode = RandomSocialMode.Off;

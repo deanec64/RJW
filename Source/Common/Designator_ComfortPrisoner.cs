@@ -1,14 +1,12 @@
-﻿
-using Verse;
+﻿using System;
 using RimWorld;
-using System;
 using UnityEngine;
+using Verse;
 
 namespace rjw
 {
 	public abstract class Designator_Toggle : Command
 	{
-
 		public Designator_Toggle()
 		{
 			this.activateSound = SoundDefOf.SelectDesignator;
@@ -55,13 +53,11 @@ namespace rjw
 			Command_Toggle command_Toggle = other as Command_Toggle;
 			return command_Toggle != null && command_Toggle.isActive() == this.isActive();
 		}
-
 	}
 
 	public class Designator_ComfortPrisoner : Designator
 	{
 		private static readonly MiscTranslationDef MTdef = DefDatabase<MiscTranslationDef>.GetNamedSilentFail("DesignatorComfortPrisoner");
-
 
 		public Designator_ComfortPrisoner()
 		{
@@ -77,7 +73,7 @@ namespace rjw
 			// soundDragSustain = SoundDefOf.DesignateDragStandard;
 			// soundDragChanged = SoundDefOf.DesignateDragStandardChanged;
 			// useMouseIcon = false;
-			// soundSucceeded = SoundDefOf.DesignateClaim;			
+			// soundSucceeded = SoundDefOf.DesignateClaim;
 		}
 
 		public Func<bool> isActive;
@@ -92,9 +88,14 @@ namespace rjw
 			return result;
 		}
 
-		public override AcceptanceReport CanDesignateCell(IntVec3 c) { return false; }
+		public override AcceptanceReport CanDesignateCell(IntVec3 c)
+		{
+			return false;
+		}
 
-		public override void DesignateSingleCell(IntVec3 c) { }
+		public override void DesignateSingleCell(IntVec3 c)
+		{
+		}
 
 		public override AcceptanceReport CanDesignateThing(Thing t)
 		{

@@ -105,17 +105,16 @@
 		<driverClass>rjw.JobDriver_RapeEnemy</driverClass>
 		<reportString>rapin' enemy</reportString>
 	</JobDef>
-	
+
 	<JobDef>
 		<defName>RapeEnemyByInsect</defName>
 		<driverClass>rjw.JobDriver_RapeEnemyByInsect</driverClass>
 		<reportString>rapin' enemy</reportString>
 	</JobDef>
-	
+
 	<JobDef>
 		<defName>RapeEnemyByMech</defName>
 		<driverClass>rjw.JobDriver_RapeEnemyByMech</driverClass>
 		<reportString>rapin' enemy</reportString>
 	</JobDef>
-
 </JobDefs>

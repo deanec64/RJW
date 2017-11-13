@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-using Verse;
-using RimWorld;
+﻿using Verse;
 
 namespace rjw
 {
-	
 	public class config : Def
 	{
-
 		// Feature Toggles
 		public bool animals_enabled;
+
 		public bool comfort_prisoners_enabled;
 		public bool colonists_can_be_comfort_prisoners;
 		public bool cum_enabled;
@@ -38,6 +32,7 @@ namespace rjw
 
 		// STD config
 		public bool std_show_roll_to_catch;
+
 		public float std_min_severity_to_pitch;
 		public float std_env_pitch_cleanliness_exaggeration;
 		public float std_env_pitch_dirtiness_exaggeration;
@@ -59,6 +54,5 @@ namespace rjw
 		public float whore_mtbh_mul;
 		public float nymph_spawn_with_std_mul;
 		//public float chance_to_rim;
-
 	}
 }

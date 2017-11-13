@@ -1,16 +1,10 @@
-﻿
-using System;
-using System.Collections.Generic;
-
+﻿using RimWorld;
 using Verse;
-using Verse.AI;
-using RimWorld;
 
 namespace rjw
 {
 	public class ThinkNode_ConditionalRapist : ThinkNode_Conditional
 	{
-
 		protected override bool Satisfied(Pawn p)
 		{
 			if (!xxx.config.random_rape_enabled)
@@ -24,6 +18,5 @@ namespace rjw
 			}
 			else return true;
 		}
-
 	}
 }

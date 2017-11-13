@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -40,6 +39,7 @@ namespace rjw
 				return DrawColorTwo;
 			}
 		}
+
 		private bool PlayerCanSeeOwners
 		{
 			get
@@ -58,6 +58,7 @@ namespace rjw
 				return false;
 			}
 		}
+
 		private Vector3 GetMultiOwnersLabelScreenPosFor(int slotIndex)
 		{
 			IntVec3 sleepingSlotPos = GetSleepingSlotPos(slotIndex);
@@ -78,6 +79,7 @@ namespace rjw
 			}
 			return (Vector3)vector2;
 		}
+
 		private Vector3 AdjustOwnerLabelPosToAvoidOverlapping(Vector3 screenPos, int slotIndex)
 		{
 			Text.Font = GameFont.Tiny;
@@ -105,7 +107,6 @@ namespace rjw
 			}
 			return screenPos;
 		}
-
 
 		public new IEnumerable<Pawn> AssigningCandidates
 		{
@@ -223,7 +224,7 @@ namespace rjw
 
             if (xxx.config.whore_beds_enabled && def.building.bed_humanlike)
             {
-                yield return 
+                yield return
                     new Command_Toggle
                     {
                         defaultLabel = "CommandBedSetAsWhoreLabel".Translate(),
@@ -292,6 +293,5 @@ namespace rjw
             }
             */
 		}
-
 	}
 }

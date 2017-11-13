@@ -1,11 +1,5 @@
-﻿
-using System;
-using System.Linq;
-using System.Collections.Generic;
-
+﻿using RimWorld;
 using Verse;
-using Verse.AI;
-using RimWorld;
 
 namespace rjw
 {
@@ -18,6 +12,7 @@ namespace rjw
 				return -79;
 			}
 		}
+
 		public override void DoEffect(Pawn p)
 		{
 			base.DoEffect(p);

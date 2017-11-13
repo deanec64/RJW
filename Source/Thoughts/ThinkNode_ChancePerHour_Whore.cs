@@ -1,14 +1,4 @@
-﻿
-using System;
-using System.Collections.Generic;
-
-using UnityEngine;
-
-using Verse;
-using Verse.AI;
-using RimWorld;
-
-namespace rjw
+﻿namespace rjw
 {
 	//This class is not used now.
 	/*

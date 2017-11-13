@@ -106,7 +106,7 @@
 		</tradeTags>
 		<tradeNeverStack>true</tradeNeverStack>
 		<comps>
-			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Forbiddable" />
 			<li Class="rjw.CompProperties_HoloCryptoStamped" />
 			<li Class="CompProperties_Usable">
 				<compClass>rjw.CompBondageGear</compClass>
@@ -227,5 +227,4 @@
 		<gives_gagged_moodlet>false</gives_gagged_moodlet>
 		<blocks_genitals>true</blocks_genitals>
 	</rjw.bondage_gear_def>
-
 </ThingDefs>

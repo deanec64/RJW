@@ -1,11 +1,5 @@
-﻿
-using System;
-using System.Linq;
-using System.Collections.Generic;
-
+﻿using RimWorld;
 using Verse;
-using Verse.AI;
-using RimWorld;
 
 namespace rjw
 {
@@ -62,7 +56,6 @@ namespace rjw
 				}
 				else if (PawnUtility.ShouldSendNotificationAbout(p))
 					Messages.Message("Couldn't drop " + locked_app.def.label, p, MessageSound.Negative);
-
 			}
 			else if (any_locked)
 				Messages.Message("The key doesn't fit!", p, MessageSound.Negative);

@@ -7,10 +7,8 @@
   <Vulnerability.label>vulnerability</Vulnerability.label>
   <Vulnerability.description>Measures how likely a pawn is to be taken advantage of sexually</Vulnerability.description>
 
-
   <!--<rep>
 		<path>SexAbility.label</path>
 		<trans>性能力</trans>
 	</rep>-->
-
 </LanguageData>

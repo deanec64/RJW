@@ -51,7 +51,6 @@
   <AttachDragonPenis.description>성기를 이식합니다.</AttachDragonPenis.description>
   <AttachDragonPenis.jobString>성기 이식 중.</AttachDragonPenis.jobString>
 
-
   <!-- Breasts -->
 
   <AttachSmallBreasts.label>가슴(절벽) 이식</AttachSmallBreasts.label>
@@ -82,7 +81,6 @@
   <AttachTightAnus.description>항문을 이식합니다.</AttachTightAnus.description>
   <AttachTightAnus.jobString>항문 이식 중.</AttachTightAnus.jobString>
 
-
   <!-- Attach simple prosthetic privates -->
 
   <InstallHydraulicVagina.label>실리콘 보지 이식</InstallHydraulicVagina.label>
@@ -100,7 +98,6 @@
   <AttachPegDick.label>목봉 장착</AttachPegDick.label>
   <AttachPegDick.description>목봉을 장착합니다.</AttachPegDick.description>
   <AttachPegDick.jobString>목봉 장착 중.</AttachPegDick.jobString>
-
 
   <!-- Attach bionic privates -->
 
@@ -120,7 +117,6 @@
   <InstallBionicAnus.description>항문을 이식합니다.</InstallBionicAnus.description>
   <InstallBionicAnus.jobString>항문 이식 중.</InstallBionicAnus.jobString>
 
-
   <!-- Remove privates -->
 
   <Nullify.label>성기 적출</Nullify.label>
@@ -135,12 +131,9 @@
   <RemoveAnus.description>항문을 적출합니다.</RemoveAnus.description>
   <RemoveAnus.jobString>항문 적출 중.</RemoveAnus.jobString>
 
-
   <!-- targetsBodyPart>true</targetsBodyPart -->
 
   <Sterilization.label>불임 시술</Sterilization.label>
   <Sterilization.description>불의의 사태를 방지합니다.</Sterilization.description>
   <Sterilization.jobString>불임 시술 중.</Sterilization.jobString>
-
-
 </LanguageData>

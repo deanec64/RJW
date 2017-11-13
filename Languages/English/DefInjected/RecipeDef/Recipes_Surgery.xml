@@ -51,7 +51,6 @@
 	<AttachDragonPenis.description>Attaches a Dragon penis.</AttachDragonPenis.description>
 	<AttachDragonPenis.jobString>Attaching Dragon penis.</AttachDragonPenis.jobString>
 
-
 	<!-- Breasts -->
 
 	<AttachSmallBreasts.label>attach small breasts</AttachSmallBreasts.label>
@@ -82,7 +81,6 @@
 	<AttachTightAnus.description>Attaches a tight anus.</AttachTightAnus.description>
 	<AttachTightAnus.jobString>Attaching a tight anus.</AttachTightAnus.jobString>
 
-
 	<!-- Attach simple prosthetic privates -->
 
 	<InstallHydraulicVagina.label>install hydraulic vagina</InstallHydraulicVagina.label>
@@ -100,7 +98,6 @@
 	<AttachPegDick.label>attach peg dick</AttachPegDick.label>
 	<AttachPegDick.description>Attaches a peg dick.</AttachPegDick.description>
 	<AttachPegDick.jobString>Attaching peg dick.</AttachPegDick.jobString>
-
 
 	<!-- Attach bionic privates -->
 
@@ -120,7 +117,6 @@
 	<InstallBionicAnus.description>Installs a bionic anus.</InstallBionicAnus.description>
 	<InstallBionicAnus.jobString>Installing bionic anus.</InstallBionicAnus.jobString>
 
-
 	<!-- Remove privates -->
 
 	<Nullify.label>nullify</Nullify.label>
@@ -135,14 +131,11 @@
 	<RemoveAnus.description>Removes anus.</RemoveAnus.description>
 	<RemoveAnus.jobString>Removing anus.</RemoveAnus.jobString>
 
-
 	<!-- targetsBodyPart>true</targetsBodyPart -->
 
 	<Sterilization.label>sterilization</Sterilization.label>
 	<Sterilization.description>Prevents reproduction without removing genitals.</Sterilization.description>
 	<Sterilization.jobString>sterilizing.</Sterilization.jobString>
 
-
 	<!-- sterilization -->
-
 </LanguageData>

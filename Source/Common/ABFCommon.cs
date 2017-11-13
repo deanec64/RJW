@@ -1,17 +1,12 @@
-﻿
-using System;
-using System.Collections.Generic;
-
-using Verse;
-using Verse.AI;
+﻿using System;
 using RimWorld;
 using UnityEngine;
+using Verse;
 
 namespace rjw
 {
 	public class ABFCommon
 	{
-
 		public static bool is_Insect(Pawn pawn)
 		{
 			if (pawn.def == ThingDef.Named("Megascarab"))
@@ -28,6 +23,7 @@ namespace rjw
 			}
 			return false;
 		}
+
 		public static float would_fuck_ignoreSatisfy(Pawn fucker, Pawn p, bool invert_opinion = false)
 		{
 			if (xxx.is_mechanoid(fucker) && xxx.is_female(p) && xxx.is_human(p))

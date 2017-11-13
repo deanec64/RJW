@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿using System.Linq;
+using RimWorld;
 using Verse;
 using Verse.AI;
-using RimWorld;
 
 namespace rjw
 {
 	public class JobGiver_Beastiality : ThinkNode_JobGiver
 	{
-
 		public static Pawn find_target(Pawn pawn, Map m)
 		{
 			//Log.Message("JobGiver_Beastiality::find_target( " + pawn.NameStringShort + " ) called");
@@ -54,7 +49,6 @@ namespace rjw
 			//--Log.Message("[RJW] JobGiver_Beastiality::TryGiveJob( " + p.NameStringShort + " ) called");
 			if ((Find.TickManager.TicksGame >= p.mindState.canLovinTick) && (p.CurJob == null))
 			{
-
 				if (xxx.is_healthy(p) && xxx.can_rape(p, true))
 				{
 					var target = find_target(p, p.Map);
@@ -69,7 +63,6 @@ namespace rjw
 							p.mindState.canLovinTick = Find.TickManager.TicksGame + 5;
 						else
 							p.mindState.canLovinTick = Find.TickManager.TicksGame + Rand.Range(150, 300);
-
 					}
 				}
 			}

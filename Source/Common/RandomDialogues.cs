@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using RimWorld;
-using Verse;
-using Harmony;
+﻿using Verse;
 
 namespace rjw
 {
@@ -15,6 +8,7 @@ namespace rjw
 		Love = 1,
 		Other = 2
 	}
+
 	public sealed class RandomDialoguesDef : Def
 	{
 		public RandomDialogueJobType JobType;
@@ -52,7 +46,7 @@ namespace rjw
         //public readonly static RandomDialoguesDef love0;
         //public readonly static RandomDialoguesDef love1;
         //public readonly static RandomDialoguesDef love2;
-        
+
         //public readonly static RandomDialoguesDef other0;
         //public readonly static RandomDialoguesDef other1;
         //public readonly static RandomDialoguesDef other2;
@@ -75,41 +69,55 @@ namespace rjw
                         {
                             case "Nymphomaniac":
                                 break;
+
                             case "Rapist":
                                 break;
+
                             case "Necrophiliac":
                                 break;
+
                             case "Zoophiliac":
                                 break;
+
                             case "Bloodlust":
                                 break;
+
                             case "Psychopath":
                                 break;
+
                             case "Cannibal":
                                 break;
+
                             case "Masochist":
                                 break;
+
                             case "Prosthophile":
                                 break;
+
                             case "Prosthophobe":
                                 break;
+
                             case "Jealous":
                                 break;
+
                             case "Gay":
                                 break;
+
                             default:
                                 break;
                         }
                     }
                     if (xxx.has_traits(pobject))
                     {
-
                     }
                     return;
+
                 case 1:
                     return;
+
                 case 2:
                     return;
+
                 default:
                     Log.Error("[RJW]RandomDialogues::processBeforeDialogue - Type not found");
                     return;
@@ -122,15 +130,17 @@ namespace rjw
             {
                 case 0:
                     return;
+
                 case 1:
                     return;
+
                 case 2:
                     return;
+
                 default:
                     Log.Error("[RJW]RandomDialogues::processBeforeDialogue - Type not found");
                     return;
             }
-
         }
 
         public static void processAfterDialogue(Pawn psubject, Pawn pobject, int Type = 4)
@@ -139,15 +149,17 @@ namespace rjw
             {
                 case 0:
                     return;
+
                 case 1:
                     return;
+
                 case 2:
                     return;
+
                 default:
                     Log.Error("[RJW]RandomDialogues::processBeforeDialogue - Type not found");
                     return;
             }
-
         }
     }
     */

@@ -51,7 +51,6 @@
   <AttachDragonPenis.description>安装龙阴茎</AttachDragonPenis.description>
   <AttachDragonPenis.jobString>正在安装龙阴茎</AttachDragonPenis.jobString>
 
-
   <!-- Breasts -->
 
   <AttachSmallBreasts.label>安装小乳房</AttachSmallBreasts.label>
@@ -82,7 +81,6 @@
   <AttachTightAnus.description>安装紧致的肛门</AttachTightAnus.description>
   <AttachTightAnus.jobString>正在安装紧致的肛门</AttachTightAnus.jobString>
 
-
   <!-- Attach simple prosthetic privates -->
 
   <InstallHydraulicVagina.label>安装液压阴道</InstallHydraulicVagina.label>
@@ -100,7 +98,6 @@
   <AttachPegDick.label>安装木制阴茎</AttachPegDick.label>
   <AttachPegDick.description>安装木制阴茎</AttachPegDick.description>
   <AttachPegDick.jobString>正在安装木制阴茎</AttachPegDick.jobString>
-
 
   <!-- Attach bionic privates -->
 
@@ -120,7 +117,6 @@
   <InstallBionicAnus.description>安装仿生肛门</InstallBionicAnus.description>
   <InstallBionicAnus.jobString>正在安装仿生肛门</InstallBionicAnus.jobString>
 
-
   <!-- Remove privates -->
 
   <Nullify.label>移除性器官</Nullify.label>
@@ -135,14 +131,11 @@
   <RemoveAnus.description>移除肛门</RemoveAnus.description>
   <RemoveAnus.jobString>正在移除肛门</RemoveAnus.jobString>
 
-
   <!-- targetsBodyPart>true</targetsBodyPart -->
 
   <Sterilization.label>做结扎手术</Sterilization.label>
   <Sterilization.description>通过手术可以在不切除器官的情况下永久性地阻止怀孕</Sterilization.description>
   <Sterilization.jobString>正在做结扎手术</Sterilization.jobString>
 
-
   <!-- sterilization -->
-
 </LanguageData>

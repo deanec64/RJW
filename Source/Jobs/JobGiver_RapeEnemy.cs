@@ -1,9 +1,7 @@
-﻿
-using System;
-
+﻿using System;
+using RimWorld;
 using Verse;
 using Verse.AI;
-using RimWorld;
 
 namespace rjw
 {
@@ -19,7 +17,6 @@ namespace rjw
 			{
 				if (p.health.capacities.CanBeAwake && xxx.can_rape(p))
 				{
-
 					var downedPlayer = find_victim(p, p.Map);
 
 					if (downedPlayer != null)
@@ -41,7 +38,6 @@ namespace rjw
 						//Log.Message("[ABF] JobGiver_RapeEnemy::TryGiveJob( " + p.NameStringShort + " ) - unable to find victim");
 						p.mindState.canLovinTick = Find.TickManager.TicksGame + 1;
 					}
-
 				}
 				//else { Log.Message("[ABF] JobGiver_RapeEnemy::TryGiveJob( " + p.NameStringShort + " ) - can not rape"); }
 			}
@@ -73,7 +69,6 @@ namespace rjw
 						{
 							best_rapee = target;
 							best_fuckability = fuc;
-
 						}
 						//else { Log.Message("[ABF] JobGiver_RapeEnemy::TryGiveJob( " + rapist.NameStringShort + " -> " + target.NameStringShort + " ) - is not good for me "+ "( " + fuc + " )"); }
 					}
@@ -83,19 +78,20 @@ namespace rjw
 			}
 			return best_rapee;
 		}
+
 		public bool is_easy_to_rape(Pawn p)
 		{
 			return xxx.can_get_raped(p) && p.Downed;
 		}
+
 		public double Distance(IntVec3 a, IntVec3 b)
 		{
 			return Math.Sqrt((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y));
 		}
+
 		public double SqrDistance(IntVec3 a, IntVec3 b)
 		{
 			return (a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y);
 		}
-
 	}
-
 }

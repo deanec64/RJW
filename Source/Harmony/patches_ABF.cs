@@ -1,19 +1,15 @@
-﻿using Harmony;
-using System;
-using System.Linq;
-using System.Reflection;
-using Verse;
-using RimWorld;
-using RimWorld.Planet;
+﻿using System;
 using System.Collections.Generic;
+using Harmony;
+using RimWorld;
+using Verse;
 using Verse.AI.Group;
-using Verse.AI;
 
 namespace rjw
 {
 	//TODO: Remove this patch for compatibility with other mods and add them to genital helper class.
 	[HarmonyPatch(typeof(PawnGenerator), "GeneratePawn", new Type[] { typeof(PawnGenerationRequest) })]
-	static class Patches_ABF_PawnMakeRaper
+	internal static class Patches_ABF_PawnMakeRaper
 	{
 		public static void Postfix(Pawn __result, ref PawnGenerationRequest request)
 		{
@@ -33,13 +29,12 @@ namespace rjw
 					//need.ForceSetLevel(Rand.Range(0f,1f));
 					need.ForceSetLevel(Rand.Range(0.01f, 0.2f));
 				}
-
 			}
 		}
 	}
 
 	[HarmonyPatch(typeof(LordJob_AssaultColony), "CreateGraph")]
-	static class atches_ABF_AssaultColonyForRape
+	internal static class atches_ABF_AssaultColonyForRape
 	{
 		public static void Postfix(StateGraph __result)
 		{
@@ -64,7 +59,8 @@ namespace rjw
 				}
 			}
 		}
-		static bool HasDesignatedTransition(Transition t)
+
+		private static bool HasDesignatedTransition(Transition t)
 		{
 			if (t.target == null) return false;
 			if (t.target.GetType() == typeof(LordToil_KidnapCover)) return true;
@@ -76,6 +72,4 @@ namespace rjw
 			return false;
 		}
 	}
-
-
 }

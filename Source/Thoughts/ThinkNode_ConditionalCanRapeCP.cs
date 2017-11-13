@@ -1,6 +1,5 @@
-﻿
+﻿using RimWorld;
 using Verse;
-using RimWorld;
 
 namespace rjw
 {
@@ -44,7 +43,6 @@ namespace rjw
 				return xxx.isSingleOrPartnerNotHere(pawn);
 			}
 			else return false;
-
 		}
 	}
 }

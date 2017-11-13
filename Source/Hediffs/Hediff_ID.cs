@@ -1,16 +1,9 @@
-﻿
-using System;
-using System.Collections.Generic;
-
-using Verse;
-using Verse.AI;
-using RimWorld;
+﻿using Verse;
 
 namespace rjw
 {
 	public class Hediff_ID : Hediff
 	{
-
 		public override string LabelBase
 		{
 			get
@@ -21,6 +14,5 @@ namespace rjw
 					return "AIDS";
 			}
 		}
-
 	}
 }

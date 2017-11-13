@@ -1,17 +1,12 @@
-﻿
-using System;
-using System.Linq;
-using System.Collections.Generic;
-
+﻿using System.Linq;
+using RimWorld;
 using Verse;
 using Verse.AI;
-using RimWorld;
 
 namespace rjw
 {
 	public class JobGiver_RandomRape : ThinkNode_JobGiver
 	{
-
 		public static Pawn find_victim(Pawn rapist, Map m)
 		{
 			Pawn best_rapee = null;
@@ -40,13 +35,10 @@ namespace rjw
 
 			if ((Find.TickManager.TicksGame >= p.mindState.canLovinTick) && (p.CurJob == null))
 			{
-
 				// don't allow pawns marked as comfort prisoners to rape others
 				if (xxx.is_healthy(p) && xxx.can_rape(p, true))
 				{
-
 					var prisoner = find_victim(p, p.Map);
-
 
 					if (prisoner != null)
 					{
@@ -60,7 +52,6 @@ namespace rjw
 							p.mindState.canLovinTick = Find.TickManager.TicksGame + 5;
 						else p.mindState.canLovinTick = Find.TickManager.TicksGame + Rand.Range(75, 150);
 					}
-
 				}
 			}
 
