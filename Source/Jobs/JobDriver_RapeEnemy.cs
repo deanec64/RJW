@@ -22,9 +22,11 @@ namespace rjw
 
 		protected bool isAnalSex = false;
 
+		protected bool requierCanRape = true;
+
 		public virtual bool CanUseThisJobForPawn(Pawn rapist)
 		{
-			return true;
+			return xxx.is_human(rapist);
 		}
 
 		public virtual void think_after_sex(Pawn pawn, Pawn part, bool violent = false, bool isCoreLovin = false)
@@ -227,7 +229,7 @@ namespace rjw
 		public virtual Pawn FindVictim(Pawn rapist, Map m, float targetAcquireRadius)
 		{
 			if (rapist == null || m == null) return null;
-			if (!xxx.can_rape(rapist)) return null;
+			if (!xxx.can_rape(rapist) && requierCanRape) return null;
 			Pawn best_rapee = null;
 			var best_fuckability = 0.20f; // Don't rape prisoners with <20% fuckability
 			foreach (var target in m.mapPawns.AllPawns)
