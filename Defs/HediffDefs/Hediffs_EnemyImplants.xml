@@ -38,8 +38,7 @@
     </parentDefs>
     <tendable>false</tendable>
   </HediffDef>
-  
-  
+
   <HediffDef ParentName="RJW_ImplantMech">
     <hediffClass>rjw.Hediff_MicroComputer</hediffClass>
     <defName>RJW_MicroComputer</defName>

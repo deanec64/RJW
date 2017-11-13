@@ -1,22 +1,15 @@
-﻿
-using RimWorld;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
 using Verse;
-using Verse.AI;
-using Verse.Sound;
-
-
 
 namespace rjw
 {
-	class JobDef_RapeEnemy : JobDef
+	internal class JobDef_RapeEnemy : JobDef
 	{
 		public List<string> TargetDefNames = new List<string>();
 		public float targetAcquireRadius = 60f;
 		public int priority = 0;
+
 		protected JobDriver_RapeEnemy intance
 		{
 			get
@@ -28,16 +21,17 @@ namespace rjw
 				return _tmpInstance;
 			}
 		}
+
 		private JobDriver_RapeEnemy _tmpInstance;
 
 		public virtual bool CanUseThisJobForPawn(Pawn rapist)
 		{
 			return intance.CanUseThisJobForPawn(rapist) || TargetDefNames.Contains(rapist.def.defName);
 		}
+
 		public virtual Pawn FindVictim(Pawn rapist, Map m)
 		{
 			return intance.FindVictim(rapist, m, targetAcquireRadius);
 		}
-
 	}
 }

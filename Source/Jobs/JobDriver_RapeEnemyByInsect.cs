@@ -1,21 +1,20 @@
-﻿
-
-using RimWorld;
-using System.Linq;
+﻿using System.Linq;
 using Verse;
 
 namespace rjw
 {
-    class JobDriver_RapeEnemyByInsect : JobDriver_RapeEnemy
-    {
+	internal class JobDriver_RapeEnemyByInsect : JobDriver_RapeEnemy
+	{
 		public JobDriver_RapeEnemyByInsect()
 		{
 			this.requierCanRape = false;
 		}
+
 		public override bool CanUseThisJobForPawn(Pawn rapist)
 		{
 			return xxx.is_insect(rapist);
 		}
+
 		protected override void Impregnate(Pawn pawn, Pawn part, bool isAnalSex)
 		{
 			if (xxx.is_human(part))

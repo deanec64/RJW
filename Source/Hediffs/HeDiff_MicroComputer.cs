@@ -1,15 +1,9 @@
-﻿using System;
-using System.Text;
-using UnityEngine;
-
+﻿using System.Collections.Generic;
 using Verse;
-using RimWorld;
-using RimWorld.Planet;
-using System.Collections.Generic;
 
 namespace rjw
 {
-	class Hediff_MicroComputer : Hediff_MechImplants
+	internal class Hediff_MicroComputer : Hediff_MechImplants
 	{
 		protected int nextEventTick = 60000;
 
@@ -18,11 +12,13 @@ namespace rjw
 			base.ExposeData();
 			Scribe_Values.Look<int>(ref this.nextEventTick, "nextEventTick", 60000, false);
 		}
+
 		public override void PostMake()
 		{
 			base.PostMake();
 			nextEventTick = Rand.Range(mcDef.minEventInterval, mcDef.maxEventInterval);
 		}
+
 		public override void Tick()
 		{
 			base.Tick();
@@ -43,14 +39,17 @@ namespace rjw
 				}
 			}
 		}
+
 		protected HediffDef_MechImplants mcDef
 		{
 			get { return ((HediffDef_MechImplants)def); }
 		}
+
 		protected List<string> randomEffects
 		{
-			get{ return mcDef.randomHediffDefs; }
+			get { return mcDef.randomHediffDefs; }
 		}
+
 		protected string randomEffect
 		{
 			get { return randomEffects.RandomElement<string>(); }

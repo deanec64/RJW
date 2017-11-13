@@ -38,7 +38,7 @@
       </categories>
     </fixedIngredientFilter>
   </RecipeDef>
-  
+
   <RecipeDef ParentName="RJW_RemoveInsectEgg">
     <defName>RemoveMegascarabEgg</defName>
     <label>remove insect egg</label>
@@ -46,7 +46,7 @@
     <jobString>Removing insect egg.</jobString>
     <removesHediff>RJW_MegascarabEgg</removesHediff>
   </RecipeDef>
-  
+
   <RecipeDef ParentName="RJW_RemoveInsectEgg">
     <defName>RemoveMegaspiderEgg</defName>
     <label>remove insect egg</label>
@@ -54,7 +54,7 @@
     <jobString>Removing insect egg.</jobString>
     <removesHediff>RJW_MegaspiderEgg</removesHediff>
   </RecipeDef>
-  
+
   <RecipeDef ParentName="RJW_RemoveInsectEgg">
     <defName>RemoveSpelopedeEgg</defName>
     <label>remove insect egg</label>
@@ -62,8 +62,7 @@
     <jobString>Removing insect egg.</jobString>
     <removesHediff>RJW_SpelopedeEgg</removesHediff>
   </RecipeDef>
-  
-  
+
   <RecipeDef ParentName="RJW_RemoveEnemyImplants">
     <defName>RemoveMicroComputer</defName>
     <label>remove MicroComputer</label>

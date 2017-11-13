@@ -1,7 +1,6 @@
-﻿
-using RimWorld;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using RimWorld;
 using Verse;
 using Verse.AI;
 using Verse.Sound;
@@ -50,6 +49,7 @@ namespace rjw
 				}
 			}
 		}
+
 		protected readonly SimpleCurve LovinIntervalHoursFromAgeCurve = new SimpleCurve
 		{
 			new CurvePoint(1f,  12f),
@@ -109,6 +109,7 @@ namespace rjw
 			Impregnate(pawn, part, isAnalSex);
 			Log.Message("[RJW]" + this.GetType().ToString() + "::aftersex( " + pawn_name + ", " + part_name + " ) - checking disease");
 		}
+
 		protected virtual void Impregnate(Pawn pawn, Pawn part, bool isAnalSex)
 		{
 			if (xxx.is_animal(pawn) || xxx.is_animal(part)) return;
@@ -144,7 +145,6 @@ namespace rjw
 			this.FailOn(() => !pawn.CanReserve(Target, comfort_prisoners.max_rapists_per_prisoner, 0)); // Fail if someone else reserves the Target before the pawn arrives
 			yield return Toils_Goto.GotoThing(iTarget, PathEndMode.OnCell);
 
-
 			var rape = new Toil();
 			rape.initAction = delegate
 			{
@@ -163,7 +163,6 @@ namespace rjw
 					dri.rapist_count += 1;
 					dri.increase_time(duration);
 				}
-
 			};
 			rape.tickAction = delegate
 			{
@@ -176,7 +175,6 @@ namespace rjw
 			};
 			rape.AddFinishAction(delegate
 			{
-
 				//// Trying to add some interactions and social logs
 				xxx.processAnalSex(pawn, Target, ref isAnalSex, pawnHasPenis);
 
@@ -207,12 +205,12 @@ namespace rjw
 		}
 
 		// Should move these function to common
-		public static bool PlantSomething(HediffDef def, Pawn target,bool isToAnal = false, int amount = 1)
+		public static bool PlantSomething(HediffDef def, Pawn target, bool isToAnal = false, int amount = 1)
 		{
 			if (def == null) return false;
 			if (!isToAnal && !Genital_Helper.has_vagina(target)) return false;
 			if (isToAnal && !Genital_Helper.has_anus(target)) return false;
-			BodyPartRecord genitalPart = (isToAnal)? Genital_Helper.get_anus(target) : Genital_Helper.get_genitals(target);
+			BodyPartRecord genitalPart = (isToAnal) ? Genital_Helper.get_anus(target) : Genital_Helper.get_genitals(target);
 			if (genitalPart != null || genitalPart.parts.Count != 0)
 			{
 				for (int i = 0; i < amount; i++)
@@ -225,7 +223,6 @@ namespace rjw
 			return false;
 		}
 
-
 		public virtual Pawn FindVictim(Pawn rapist, Map m, float targetAcquireRadius)
 		{
 			if (rapist == null || m == null) return null;
@@ -235,7 +232,7 @@ namespace rjw
 			foreach (var target in m.mapPawns.AllPawns)
 			{
 				//if (target.Faction != Faction.OfPlayer) continue;
-				if (rapist.Faction == target.Faction || (!FactionUtility.HostileTo(rapist.Faction, target.Faction) && rapist.Faction != null) ) continue;
+				if (rapist.Faction == target.Faction || (!FactionUtility.HostileTo(rapist.Faction, target.Faction) && rapist.Faction != null)) continue;
 
 				if (IntVec3Utility.ManhattanDistanceFlat(target.Position, rapist.Position) >= targetAcquireRadius) continue; //Too far to fuck i think.
 
@@ -251,7 +248,6 @@ namespace rjw
 						{
 							best_rapee = target;
 							best_fuckability = fuc;
-
 						}
 						//else { Log.Message("[ABF] JobGiver_RapeEnemy::TryGiveJob( " + rapist.NameStringShort + " -> " + target.NameStringShort + " ) - is not good for me "+ "( " + fuc + " )"); }
 					}
@@ -262,11 +258,13 @@ namespace rjw
 			//Log.Message("[RJW]"+this.GetType().ToString()+"::TryGiveJob( " + rapist.NameStringShort + " -> " + best_rapee.NameStringShort + " ) - fuckability:" + best_fuckability + " ");
 			return best_rapee;
 		}
+
 		public virtual float GetFuckability(Pawn rapist, Pawn target)
 		{
 			//Log.Message("[RJW]JobDriver_RapeEnemy::GetFuckability(" + rapist.ToString() + "," + target.ToString() + ")");
-			return xxx.would_fuck(rapist, target,false,true);
+			return xxx.would_fuck(rapist, target, false, true);
 		}
+
 		protected bool Can_rape_Easily(Pawn p)
 		{
 			return xxx.can_get_raped(p) && p.Downed;

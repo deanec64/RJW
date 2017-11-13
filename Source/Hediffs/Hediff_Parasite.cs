@@ -1,15 +1,11 @@
 ﻿using RimWorld;
 using RimWorld.Planet;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
 using Verse;
 
 namespace rjw
 {
-	class Hediff_Parasite : Hediff_Pregnant
+	internal class Hediff_Parasite : Hediff_Pregnant
 	{
 		new public static void DoBirthSpawn(Pawn mother, Pawn father)
 		{

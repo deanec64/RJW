@@ -1,22 +1,19 @@
-﻿
-
-using System;
-using System.Linq;
+﻿using System;
 using Verse;
 
 namespace rjw
 {
-    class JobDriver_RapeEnemyToParasite : JobDriver_RapeEnemy
+	internal class JobDriver_RapeEnemyToParasite : JobDriver_RapeEnemy
 	{
 		public JobDriver_RapeEnemyToParasite()
 		{
 			this.requierCanRape = false;
 		}
+
 		public override bool CanUseThisJobForPawn(Pawn rapist)
 		{
 			return false;
 		}
-
 
 		protected override void Impregnate(Pawn pawn, Pawn part, bool isAnalSex)
 		{

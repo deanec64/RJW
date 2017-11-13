@@ -247,7 +247,6 @@ namespace rjw
             Logger.Message("WorldLoaded() called");
             base.WorldLoaded();
         }
-        
 
 		private void MakeSettingsCategoryToggle(string labelId, Action buttonAction)
 		{
