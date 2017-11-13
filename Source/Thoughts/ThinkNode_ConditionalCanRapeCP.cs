@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using Verse;
 
+//TODO: Fix this class
 namespace rjw
 {
 	public class ThinkNode_ConditionalCanRapeCP : ThinkNode_Conditional
