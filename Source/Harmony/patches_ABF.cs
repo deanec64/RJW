@@ -34,12 +34,13 @@ namespace rjw
 	}
 
 	[HarmonyPatch(typeof(LordJob_AssaultColony), "CreateGraph")]
-	internal static class atches_ABF_AssaultColonyForRape
+	static class Patches_ABF_AssaultColonyForRape
 	{
 		public static void Postfix(StateGraph __result)
 		{
 			//--Log.Message("[ABF]AssaultColonyForRape::CreateGraph");
 			if (__result == null) return;
+			//Log.Message("[RJW]AssaultColonyForRape::CreateGraph");
 			foreach (var trans in __result.transitions)
 			{
 				if (HasDesignatedTransition(trans))
@@ -59,8 +60,7 @@ namespace rjw
 				}
 			}
 		}
-
-		private static bool HasDesignatedTransition(Transition t)
+		static bool HasDesignatedTransition(Transition t)
 		{
 			if (t.target == null) return false;
 			if (t.target.GetType() == typeof(LordToil_KidnapCover)) return true;
@@ -72,4 +72,17 @@ namespace rjw
 			return false;
 		}
 	}
+	/*
+	[HarmonyPatch(typeof(JobGiver_Manhunter), "TryGiveJob")]
+	static class Patches_ABF_MunHunt
+	{
+		public static void Postfix(Job __result, ref Pawn pawn)
+		{
+			Log.Message("[RJW]Patches_ABF_MunHunt::Postfix called");
+			if (__result == null) return;
+
+			if (__result.def == JobDefOf.Wait || __result.def == JobDefOf.Goto) __result = null;
+		}
+	}
+	*/
 }

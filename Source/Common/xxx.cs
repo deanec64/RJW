@@ -237,7 +237,11 @@ namespace rjw
 			//Edited by nizhuan-jjr:to make Misc.Robots not allowed to have sex. This change makes those robots not counted as animals.
 			return pawn.RaceProps.Animal;
 		}
-
+		public static bool is_insect(Pawn pawn)
+		{
+			//Added by Hoge: Insects are also animal. you need check is_insect before is_animal.
+			return pawn.RaceProps.FleshType.defName == "Insectoid";
+		}
 		public static bool is_mechanoid(Pawn pawn)
 		{//Added by nizhuan-jjr:to make Misc.Robots not allowed to have sex. Note:Misc.MAI is not a mechanoid.
 			return pawn.RaceProps.IsMechanoid;
@@ -394,7 +398,7 @@ namespace rjw
 		}
 
 		// Returns how fuckable 'fucker' thinks 'p' is on a scale from 0.0 to 1.0
-		public static float would_fuck(Pawn fucker, Pawn p, bool invert_opinion = false)
+		public static float would_fuck(Pawn fucker, Pawn p, bool invert_opinion = false, bool ignore_bleeding = false)
 		{
 			var fucker_age = fucker.ageTracker.AgeBiologicalYears;
 			var p_age = p.ageTracker.AgeBiologicalYears;
@@ -438,7 +442,7 @@ namespace rjw
 			{
 				if ((!(fucker.Dead || p.Dead)) &&
 					(!(fucker.needs.food.Starving || p.needs.food.Starving)) &&
-					(fucker.health.hediffSet.BleedRateTotal <= 0.0f) && (p.health.hediffSet.BleedRateTotal <= 0.0f))
+					( (fucker.health.hediffSet.BleedRateTotal <= 0.0f) && (p.health.hediffSet.BleedRateTotal <= 0.0f) || ignore_bleeding))
 				{
 					float orientation_factor;  //0 or 1
 					{
@@ -719,8 +723,9 @@ namespace rjw
 
 			//--Log.Message("xxx::think_after_sex( " + pawn.NameStringShort + ", " + part.NameStringShort + ", " + violent + " ) - setting pawn thoughts");
 			// pawn thoughts
-			// Edited by nizhuan-jjr:The two types of stole_sone_lovin are violent due to the description, so I make sure the thought would only trigger after violent behaviors.
-			if (!xxx.is_animal(pawn) && violent)
+			// Edited by nizhuan-jjr:The two types of stole_sone_lovin are violent due to the description, so I make sure the thought would only trigger after violent behaviors. 
+			// Edited by hoge: !is_animal is include mech. mech has no mood.
+			if (xxx.is_human(pawn) && violent)
 			{
 				var pawn_thought = (xxx.is_rapist(pawn) || xxx.is_bloodlust(pawn)) ? xxx.bloodlust_stole_some_lovin : xxx.stole_some_lovin;
 				pawn.needs.mood.thoughts.memories.TryGainMemory(pawn_thought);
@@ -749,11 +754,14 @@ namespace rjw
 					part.needs.mood.thoughts.memories.TryGainMemory(part_thought_about_rapist, pawn);
 				}
 
-				foreach (var bystander in part.Map.mapPawns.SpawnedPawnsInFaction(part.Faction))
+				if (part.Faction != null) //wild animals faction is null. should check.
 				{
-					if ((bystander != pawn) && (bystander != part) && !xxx.is_animal(bystander) && !xxx.is_masochist(part))
+					foreach (var bystander in part.Map.mapPawns.SpawnedPawnsInFaction(part.Faction))
 					{
-						part.needs.mood.thoughts.memories.TryGainMemory(xxx.allowed_me_to_get_raped, bystander);
+						if ((bystander != pawn) && (bystander != part) && !xxx.is_animal(bystander) && !xxx.is_masochist(part))
+						{
+							part.needs.mood.thoughts.memories.TryGainMemory(xxx.allowed_me_to_get_raped, bystander);
+						}
 					}
 				}
 			}
