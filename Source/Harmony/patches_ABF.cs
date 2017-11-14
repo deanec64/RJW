@@ -8,8 +8,9 @@ using Verse.AI.Group;
 namespace rjw
 {
 	//TODO: Remove this patch for compatibility with other mods and add them to genital helper class.
+	/*
 	[HarmonyPatch(typeof(PawnGenerator), "GeneratePawn", new Type[] { typeof(PawnGenerationRequest) })]
-	internal static class Patches_ABF_PawnMakeRaper
+	internal static class Patches_GenerateRapist
 	{
 		public static void Postfix(Pawn __result, ref PawnGenerationRequest request)
 		{
@@ -31,10 +32,10 @@ namespace rjw
 				}
 			}
 		}
-	}
+	}*/
 
 	[HarmonyPatch(typeof(LordJob_AssaultColony), "CreateGraph")]
-	internal static class Patches_ABF_AssaultColonyForRape
+	internal static class Patches_AssaultColonyForRape
 	{
 		public static void Postfix(StateGraph __result)
 		{

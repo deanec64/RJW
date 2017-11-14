@@ -238,7 +238,8 @@ namespace rjw
 
 		public static void sexualize(Pawn pawn)
 		{
-			if (pawn.RaceProps.hasGenders && (!xxx.is_mechanoid(pawn) || !xxx.is_animal(pawn)) && !is_sexualized(pawn))
+			//if (pawn.RaceProps.hasGenders && (!xxx.is_mechanoid(pawn) || !xxx.is_animal(pawn)) && !is_sexualized(pawn))
+			if ((pawn.RaceProps.hasGenders || !xxx.is_animal(pawn)) && !is_sexualized(pawn))
 			{
 				sexualize_pawn(pawn);
 			}
@@ -433,6 +434,12 @@ namespace rjw
 			add_genitals(pawn);
 			add_breasts(pawn);
 			add_anus(pawn);
+
+			var sex_need = pawn.needs.TryGetNeed<Need_Sex>();
+			if (pawn.Faction != null && !pawn.Faction.IsPlayer && sex_need != null)
+			{
+				sex_need.ForceSetLevel(Rand.Range(0.01f, 0.5f));
+			}
 		}
 
 		public static void inject_genitals(BodyDef target)

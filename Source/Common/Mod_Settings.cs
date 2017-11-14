@@ -88,7 +88,6 @@ namespace rjw
 
 		//Mod Settings handles
 		private SettingHandle<bool> option_WildMode;
-
 		private SettingHandle<int> option_sexneed_decay_rate;
 		private SettingHandle<bool> option_nymphs_join;
 		private SettingHandle<bool> option_STD_floor_catch;
@@ -147,7 +146,7 @@ namespace rjw
 		{
 			base.SettingsChanged();
 			WildMode = option_WildMode.Value;
-			sexneed_decay_rate = (float)(option_sexneed_decay_rate.Value / 100);
+			sexneed_decay_rate = ((float)option_sexneed_decay_rate.Value) / 100f;
 			nymphos = option_nymphs_join.Value;
 			std_floor = option_STD_floor_catch.Value;
 			prisoner_beating = option_rape_beating.Value;
@@ -158,9 +157,9 @@ namespace rjw
 			pregnancy_use_parent_method = option_pregnancy_use_parent_method.Value;
 			sex_free_for_all_age = (uint)option_sex_free_for_all_age.Value;
 			sex_minimum_age = (uint)option_sex_minimum_age.Value;
-			NonFutaWomenRaping_MaxVulnerability = (float)(option_NonFutaWomenRaping_MaxVulnerability.Value / 100);
-			Rapee_MinVulnerability_human = (float)(option_Rapee_MinVulnerability_human.Value / 100);
-			Rapee_MinVulnerability_animals = (float)(option_Rapee_MinVulnerability_animals.Value / 100);
+			NonFutaWomenRaping_MaxVulnerability = ((float)option_NonFutaWomenRaping_MaxVulnerability.Value) / 100f;
+			Rapee_MinVulnerability_human = ((float)option_Rapee_MinVulnerability_human.Value) / 100f;
+			Rapee_MinVulnerability_animals = ((float)option_Rapee_MinVulnerability_animals.Value) / 100f;
 
 			Log.Message("[RJW] Settings Changed:");
 			Log.Message("WildMode = " + WildMode);
