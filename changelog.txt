@@ -1,10 +1,15 @@
 v1.5.4j changes:
 - Insects will now inject their eggs while raping your incapacitated colonists. (by hogehoge1942)
-- Mechnoids will inject microcomputers that vibrate and teleport pawns' cum somewhere on the map while raping your incapacitated colonists. (by hogehoge1942)
+- Mechanoids will inject microcomputers that vibrate and teleport pawns' cum somewhere on the map while raping your incapacitated colonists. (by hogehoge1942)
 - Added surgeries to remove insect eggs and microcomputers by hogehoge1942.
 - Fixed sex need moods affecting under-aged pawns bug.
 - Under-aged sex need is now frozen. (Will make it hidden for under-aged pawns in the future)
 - Fixed reappearing masochist social thoughts bug.
+- Disabled intrusive whore failed hookup notifications.
+- Enabled mechanoids private parts. They will now have artificial genitals/breasts/anuses.
+- Fixed sex need decay rate reverting back to default value.
+- Fixed mod settings bug.
+- Increased max rapists per comfort prisoner to 6. (Will make an option for it in the future)
 
 v1.5.4i changes:
 - Disabled log messages.
