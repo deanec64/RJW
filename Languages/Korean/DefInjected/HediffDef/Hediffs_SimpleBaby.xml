@@ -6,7 +6,10 @@
   <RJW_BabyState.stages.1.label>유아</RJW_BabyState.stages.1.label>
   <RJW_BabyState.stages.2.label>어린이</RJW_BabyState.stages.2.label>
 
+
   <!-- This only exists separately from BabyState to get around a bug making children drop their weapons on savegame load. -->
 
   <RJW_NoManipulationFlag.label>조작 금지</RJW_NoManipulationFlag.label>
+
+
 </LanguageData>

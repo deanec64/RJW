@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Used for JobDriver_RapeEnemyByInsect. Insects plant egg when success rape. -->
+
+  <RJW_MegascarabEgg.label>메가스캐럽 알</RJW_MegascarabEgg.label>
+  <RJW_MegaspiderEgg.label>메가스파이더 알</RJW_MegaspiderEgg.label>
+  <RJW_SpelopedeEgg.label>스펠로피드 알</RJW_SpelopedeEgg.label>
+
+
+  <!-- Used for JobDriver_RapeEnemyByMech. Mechs implant things when success rape. -->
+
+  <RJW_MicroComputer.label>나노컴퓨터</RJW_MicroComputer.label>
+
+  <Parasite.label>임신</Parasite.label>
+  <Parasite.comps.0.discoverLetterLabel>숙주 {0}</Parasite.comps.0.discoverLetterLabel>
+  <Parasite.comps.0.discoverLetterText>{0}의 체내에 벌레 알이 주입됐습니다!</Parasite.comps.0.discoverLetterText>
+  <Parasite.stages.0.label>잠복기</Parasite.stages.0.label>
+  <Parasite.stages.1.label>성장기</Parasite.stages.1.label>
+  <Parasite.stages.2.label>부화기</Parasite.stages.2.label>
+
+
+</LanguageData>

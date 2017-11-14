@@ -3,6 +3,7 @@
 
   <Fappin.reportString>자위 중.</Fappin.reportString>
 
+
   <!-- No longer need to override this def since the additional code is patched into the original driver
   <JobDef>
     <defName>Lovin</defName>
@@ -24,4 +25,11 @@
   <RandomRape.reportString>강간 중.</RandomRape.reportString>
   <WhoreIsServingVisitors.reportString>봉사 중.</WhoreIsServingVisitors.reportString>
   <InvitingVisitors.reportString>유혹 중.</InvitingVisitors.reportString>
+  <RapeEnemy.reportString>적을 강간하는 중.</RapeEnemy.reportString>
+  <RapeEnemyByInsect.reportString>인간을 강간하는 중.</RapeEnemyByInsect.reportString>
+  <RapeEnemyByAnimal.reportString>인간을 강간하는 중.</RapeEnemyByAnimal.reportString>
+  <RapeEnemyByMech.reportString>인간을 강간하는 중.</RapeEnemyByMech.reportString>
+  <RapeEnemyToParasite.reportString>인간을 강간하는 중.</RapeEnemyToParasite.reportString>
+
+
 </LanguageData>

@@ -30,6 +30,7 @@
   <DragonPenis.label>자지(용)</DragonPenis.label>
   <DragonPenis.description>동물의 것을 닮은 유전자 개조 성기입니다만, 실존하는 동물이 아니로군요. 어쨌거나 이름답게 매우 두껍고 단단합니다.</DragonPenis.description>
 
+
   <!-- Natural Vaginas -->
 
   <Vagina.label>보지(평범함)</Vagina.label>
@@ -40,6 +41,7 @@
 
   <LooseVagina.label>보지(헐거움)</LooseVagina.label>
   <LooseVagina.description>성행위를 위한 기관입니다.</LooseVagina.description>
+
 
   <!-- Natural Breasts -->
 
@@ -55,6 +57,7 @@
   <HugeBreasts.label>가슴(폭유)</HugeBreasts.label>
   <HugeBreasts.description>한 쌍의 지방 덩어리입니다. 굉장히 큽니다.</HugeBreasts.description>
 
+
   <!-- Natural Anuses -->
 
   <Anus.label>항문(평범함)</Anus.label>
@@ -66,25 +69,30 @@
   <LooseAnus.label>항문(헐거움)</LooseAnus.label>
   <LooseAnus.description>그냥 도넛...은 아니고 자세히 보니 괄약근 덩어리가 맞습니다.</LooseAnus.description>
 
+
   <!-- Simple prosthetic penises -->
 
   <PegDick.label>목봉</PegDick.label>
   <PegDick.description>고자들을 위해 고안된 목재 딜도입니다. 주기적으로 따뜻한 물에 담가놓는걸 추천합니다.</PegDick.description>
+
 
   <!-- Simple prosthetic vaginas -->
 
   <HydraulicVagina.label>실리콘 보지</HydraulicVagina.label>
   <HydraulicVagina.description>다소 어설프게 마감된 보철 여성기입니다. 그래도 꽤 흡입력이 있습니다.</HydraulicVagina.description>
 
+
   <!-- Simple prosthetic breasts -->
 
   <HydraulicBreasts.label>실리콘 가슴</HydraulicBreasts.label>
   <HydraulicBreasts.description>다소 어설프게 마감된 보철 유방입니다. 감촉이 아쉽지만 상대에게 액체를 뿌릴 수 있는 기능이 있습니다.</HydraulicBreasts.description>
 
+
   <!-- Simple prosthetic anuses -->
 
   <HydraulicAnus.label>실리콘 항문</HydraulicAnus.label>
   <HydraulicAnus.description>다소 어설프게 마감된 보철 항문입니다. 그래도 꽤 흡입력이 있습니다.</HydraulicAnus.description>
+
 
   <!-- Bionic penises -->
 
@@ -95,6 +103,7 @@
       - 최첨단 신경 인터페이스가 쾌감을 증폭시킵니다.
     </BionicPenis.description>
 
+
   <!-- Bionic vaginas -->
 
   <BionicVagina.label>쾌락 보지</BionicVagina.label>
@@ -104,12 +113,14 @@
     - 보로-그라파이트 슈도플러드를 이용한 자동 윤활 기능. 끈적이지 않고 매끄럽습니다.
     - 상대방의 신상을 식별하여 페이스북 친구로 자동 등록해줍니다.</BionicVagina.description>
 
+
   <!-- Bionic breasts -->
 
   <BionicBreasts.label>쾌락 가슴</BionicBreasts.label>
   <BionicBreasts.description>첨단 기술로 개발된 인공 유방입니다. 다음과 같은 특징이 있습니다.
       - 어떤 크기로도 확장이나 축소가 가능합니다.
     </BionicBreasts.description>
+
 
   <!-- Bionic anuses -->
 
@@ -118,4 +129,6 @@
       - 자동 압력 보정 기능으로 어떤 크기의 남성기도 감당 가능합니다.
       - 보로-그라파이트 슈도플러드를 이용한 자동 윤활 기능. 끈적이지 않고 매끄럽습니다.
     </BionicAnus.description>
+
+
 </LanguageData>
