@@ -15,7 +15,7 @@ namespace rjw
 				// don't allow pawns marked as comfort prisoners to rape others
 				if (!comfort_prisoners.is_designated(p) && 
 					((xxx.is_healthy(p) && 
-					xxx.can_rape(p) && 
+					xxx.can_rape(p, true) && 
 					xxx.is_nympho_or_rapist_or_zoophiliac(p) && 
 					p.Faction.IsPlayer) || wildmode))
 				{
