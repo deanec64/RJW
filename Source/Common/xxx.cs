@@ -756,7 +756,7 @@ namespace rjw
 					part.needs.mood.thoughts.memories.TryGainMemory(part_thought_about_rapist, pawn);
 				}
 
-				if (part.Faction != null) //wild animals faction is null. should check.
+				if (part.Faction != null && part.Map != null) //wild animals faction is null. should check.
 				{
 					foreach (var bystander in part.Map.mapPawns.SpawnedPawnsInFaction(part.Faction))
 					{
@@ -814,26 +814,32 @@ namespace rjw
 			var pawn_name = (pawn != null) ? pawn.NameStringShort : "NULL";
 			var part_name = (pawn != null) ? part.NameStringShort : "NULL";
 			//--Log.Message("xxx::aftersex( " + pawn_name + ", " + part_name + " ) called");
-			pawn.Drawer.rotator.Face(part.DrawPos);
-			pawn.Drawer.rotator.FaceCell(part.Position);
 
-			part.Drawer.rotator.Face(pawn.DrawPos);
-			part.Drawer.rotator.FaceCell(pawn.Position);
+			bool bothInMap = (pawn.Map != null && part.Map != null); // false when called this function for despawned pawn
 
-			if (violent)
+			if (bothInMap)
 			{
-				pawn.Drawer.Notify_MeleeAttackOn(part);
-			}
+				pawn.Drawer.rotator.Face(part.DrawPos);
+				pawn.Drawer.rotator.FaceCell(part.Position);
 
-			if (xxx.config.sounds_enabled)
-			{
-				SoundDef.Named("Cum").PlayOneShot(new TargetInfo(part.Position, pawn.Map, false));
+				part.Drawer.rotator.Face(pawn.DrawPos);
+				part.Drawer.rotator.FaceCell(pawn.Position);
+
+				if (violent)
+				{
+					pawn.Drawer.Notify_MeleeAttackOn(part);
+				}
+
+				if (xxx.config.sounds_enabled)
+				{
+					SoundDef.Named("Cum").PlayOneShot(new TargetInfo(part.Position, pawn.Map, false));
+				}
 			}
 
 			bool pawnIsAnimal = is_animal(pawn);
 			bool partIsAnimal = is_animal(part);
 			//--Log.Message("xxx::aftersex( " + pawn_name + ", " + part_name + " ) - applying cum effect");
-			if (xxx.config.cum_enabled)
+			if (xxx.config.cum_enabled && bothInMap)
 			{
 				int pawn_cum = pawnIsAnimal ? 4 : Math.Min((int)(pawn.RaceProps.lifeExpectancy / pawn.ageTracker.AgeBiologicalYears), 2);
 				int part_cum = partIsAnimal ? 4 : Math.Min((int)(part.RaceProps.lifeExpectancy / part.ageTracker.AgeBiologicalYears), 2);
