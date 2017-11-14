@@ -1,16 +1,11 @@
-﻿
-using System;
-using System.Collections.Generic;
-
+﻿using RimWorld;
 using Verse;
 using Verse.AI;
-using RimWorld;
 
 namespace rjw
 {
 	public class JobGiver_NymphJoinInBed : ThinkNode_JobGiver
 	{
-
 		private static bool roll_to_skip(Pawn nymph, Pawn p)
 		{
 			var fuckability = xxx.would_fuck(nymph, p); // 0.0 to 1.0
@@ -92,7 +87,6 @@ namespace rjw
 							}
 						}
 					}
-
 				}
 			}
 

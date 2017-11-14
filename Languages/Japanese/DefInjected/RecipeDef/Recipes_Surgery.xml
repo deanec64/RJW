@@ -51,7 +51,6 @@
   <AttachDragonPenis.description>龍のペニスを取り付けます</AttachDragonPenis.description>
   <AttachDragonPenis.jobString>龍のペニスを取り付けている</AttachDragonPenis.jobString>
 
-
   <!-- Breasts -->
 
   <AttachSmallBreasts.label>貧乳</AttachSmallBreasts.label>
@@ -82,7 +81,6 @@
   <AttachTightAnus.description>狭い肛門を取り付けます</AttachTightAnus.description>
   <AttachTightAnus.jobString>狭い肛門を取り付けている</AttachTightAnus.jobString>
 
-
   <!-- Attach simple prosthetic privates -->
 
   <InstallHydraulicVagina.label>install 人工膣</InstallHydraulicVagina.label>
@@ -100,7 +98,6 @@
   <AttachPegDick.label>人工ペニス</AttachPegDick.label>
   <AttachPegDick.description>人工ペニスを取り付けます</AttachPegDick.description>
   <AttachPegDick.jobString>人工ペニスを取り付けている</AttachPegDick.jobString>
-
 
   <!-- Attach bionic privates -->
 
@@ -120,7 +117,6 @@
   <InstallBionicAnus.description>ハイテク人工肛門を取り付けます</InstallBionicAnus.description>
   <InstallBionicAnus.jobString>ハイテク人工肛門を取り付けている</InstallBionicAnus.jobString>
 
-
   <!-- Remove privates -->
 
   <Nullify.label>生殖器を切除する</Nullify.label>
@@ -135,14 +131,11 @@
   <RemoveAnus.description>肛門を取り除きます</RemoveAnus.description>
   <RemoveAnus.jobString>肛門を切除している</RemoveAnus.jobString>
 
-
   <!-- targetsBodyPart>true</targetsBodyPart -->
 
   <Sterilization.label>避妊手術</Sterilization.label>
   <Sterilization.description>性器を取り除かずに、妊娠しない体にします</Sterilization.description>
   <Sterilization.jobString>避妊手術を行っている</Sterilization.jobString>
 
-
   <!-- sterilization -->
-
 </LanguageData>

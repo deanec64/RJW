@@ -1,8 +1,8 @@
-﻿using RimWorld;
-using Verse;
-using System;
-using System.Text;
+﻿using System;
 using System.Collections.Generic;
+using System.Text;
+using RimWorld;
+using Verse;
 
 namespace rjw
 {
@@ -14,6 +14,7 @@ namespace rjw
 		public const int Teenager = 3;
 		public const int Adult = 4;
 	}
+
 	public class Hediff_SimpleBaby : HediffWithComps
 	{
 		// Keeps track of what stage the pawn has grown to
@@ -57,6 +58,7 @@ namespace rjw
 		{
 			GrowUpTo(stage, true);
 		}
+
 		internal void GrowUpTo(int stage, bool generated)
 		{
 			grown_to = stage;
@@ -229,7 +231,7 @@ namespace rjw
 					pawn.health.AddHediff(HediffDef.Named("BabyState"), null, null);
 				}
 				if (pawn.ageTracker.CurLifeStageIndex <= 1)
-				{   //The UnhappBaby feature is not included in RJW, but will 
+				{   //The UnhappBaby feature is not included in RJW, but will
 					// Check if the baby is hungry, and if so, add the whiny baby hediff
 					if (pawn.needs.food != null && (pawn.needs.food.CurLevelPercentage < pawn.needs.food.PercentageThreshHungry ||
 						pawn.needs.joy.CurLevelPercentage < 0.1f) &&
@@ -241,8 +243,6 @@ namespace rjw
 					}
 				}
 			}
-
-
 		}
 
 		public override void PostTick()
@@ -275,4 +275,3 @@ namespace rjw
 		}
 	}
 }
-

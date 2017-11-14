@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <RemoveMegascarabEgg.label>벌레 알 적출</RemoveMegascarabEgg.label>
+  <RemoveMegascarabEgg.description>벌레 알을 적출합니다.</RemoveMegascarabEgg.description>
+  <RemoveMegascarabEgg.jobString>벌레 알 적출 중.</RemoveMegascarabEgg.jobString>
+
+  <RemoveMegaspiderEgg.label>벌레 알 적출</RemoveMegaspiderEgg.label>
+  <RemoveMegaspiderEgg.description>벌레 알을 적출합니다.</RemoveMegaspiderEgg.description>
+  <RemoveMegaspiderEgg.jobString>벌레 알 적출 중.</RemoveMegaspiderEgg.jobString>
+
+  <RemoveSpelopedeEgg.label>벌레 알 적출</RemoveSpelopedeEgg.label>
+  <RemoveSpelopedeEgg.description>벌레 알을 적출합니다.</RemoveSpelopedeEgg.description>
+  <RemoveSpelopedeEgg.jobString>벌레 알 적출 중.</RemoveSpelopedeEgg.jobString>
+
+  <RemoveMicroComputer.label>나노컴퓨터 적출</RemoveMicroComputer.label>
+  <RemoveMicroComputer.description>나노컴퓨터를 적출합니다.</RemoveMicroComputer.description>
+  <RemoveMicroComputer.jobString>나노컴퓨터 적출 중.</RemoveMicroComputer.jobString>
+
+
+</LanguageData>

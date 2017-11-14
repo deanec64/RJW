@@ -1,20 +1,15 @@
-﻿using RimWorld;
-using System;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Collections.Generic;
-
-using UnityEngine;
+using RimWorld;
 using Verse;
 using Verse.AI;
 
-
-
 namespace rjw
 {
-
 	public class JobGiver_WhoreInvitingVisitors : ThinkNode_JobGiver
 	{
 		public static int percentRate = 100;
+
 		private static bool Roll_to_skip(Pawn p, Pawn whore)
 		{
 			float fuckability = xxx.would_fuck(p, whore); // 0.0 to 1.
@@ -46,10 +41,10 @@ namespace rjw
         }
         */
 
-
 		private sealed class FindAttractivePawnHelper
 		{
 			internal Pawn p1;
+
 			internal bool TraitCheckFail(Pawn p)
 			{
 				if (!xxx.has_traits(p))
@@ -62,11 +57,9 @@ namespace rjw
 					result = p.story.traits.HasTrait(xxx.asexual) ||
 						((p.story.traits.HasTrait(xxx.straight) || p1.story.traits.HasTrait(xxx.straight))
 						&& (p.gender == p1.gender));
-
 				}
 				if ((p.story.traits.HasTrait(TraitDefOf.Gay) || p1.story.traits.HasTrait(TraitDefOf.Gay)) && (p.gender != p1.gender))
 				{
-
 					return true;
 				}
 				return result;
@@ -90,8 +83,8 @@ namespace rjw
 				}
 				return false;
 			}
-
 		}
+
 		public static Pawn FindAttractivePawn(Pawn p1, out int price)
 		{
 			price = 0;
@@ -182,6 +175,5 @@ namespace rjw
 			}
 			return null;
 		}
-
 	}
 }

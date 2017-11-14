@@ -3,7 +3,6 @@ using Verse;
 
 namespace rjw
 {
-
 	public sealed class MiscTranslationDef : Def
 	{
 		public Type targetClass;

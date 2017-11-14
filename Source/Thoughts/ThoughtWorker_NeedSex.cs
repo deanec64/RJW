@@ -1,19 +1,15 @@
-﻿
-using System;
-using System.Collections.Generic;
-
+﻿using RimWorld;
 using Verse;
-using RimWorld;
 
 namespace rjw
 {
 	public class ThoughtWorker_NeedSex : ThoughtWorker
 	{
-
 		protected override ThoughtState CurrentStateInternal(Pawn p)
 		{
 			var sex_need = p.needs.TryGetNeed<Need_Sex>();
-			if (sex_need != null)
+			var p_age = p.ageTracker.AgeBiologicalYears;
+			if (sex_need != null && p_age > Mod_Settings.sex_minimum_age)
 			{
 				var lev = sex_need.CurLevel;
 				if (lev <= sex_need.thresh_frustrated())
@@ -30,6 +26,5 @@ namespace rjw
 			else
 				return ThoughtState.Inactive;
 		}
-
 	}
 }

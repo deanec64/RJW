@@ -1,20 +1,15 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
 using System.Reflection;
+using RimWorld;
 
+//using static RimWorld.Planet.CaravanInventoryUtility;
+using RimWorldChildren;
 using UnityEngine;
-
 using Verse;
 using Verse.AI;
 using Verse.Sound;
-using RimWorld;
-using RimWorld.Planet;
-//using static RimWorld.Planet.CaravanInventoryUtility;
-
-using RimWorldChildren;
 
 namespace rjw
 {
@@ -34,8 +29,10 @@ namespace rjw
 		public readonly static TraitDef rapist = TraitDef.Named("Rapist");
 		public readonly static TraitDef necrophiliac = TraitDef.Named("Necrophiliac");
 		public readonly static TraitDef zoophiliac = TraitDef.Named("Zoophiliac");
+
 		//RomanceDiversified Traits
 		public static TraitDef straight;
+
 		public static TraitDef bisexual;
 		public static TraitDef asexual;
 		public static TraitDef faithful;
@@ -45,9 +42,12 @@ namespace rjw
 
 		//Children&Pregnancy Hediffs
 		public static HediffDef babystate;
+
 		public static bool RimWorldChildrenIsActive; //A dirty way to check if the mod is active
-													 //The Hediff to prevent reproduction
+
+		//The Hediff to prevent reproduction
 		public readonly static HediffDef sterilized = HediffDef.Named("Sterilized");
+
 		//The Hediff for broken body(resulted from being raped as CP for too many times)
 		public readonly static HediffDef feelingBroken = HediffDef.Named("FeelingBroken");
 
@@ -55,6 +55,7 @@ namespace rjw
 
 		// Will be set in init. Can't be set earlier because the genitals part has to be injected first.
 		public static BodyPartRecord genitals = null;
+
 		public static BodyPartRecord breasts = null;
 		public static BodyPartRecord anus = null;
 
@@ -101,6 +102,7 @@ namespace rjw
 
 		//Anal raping related
 		public readonly static RulePackDef analSexSucceeded = RulePackDef.Named("AnalSexSucceeded");
+
 		public readonly static RulePackDef analSexFailed = RulePackDef.Named("AnalSexFailed");
 		public readonly static InteractionDef analSex = DefDatabase<InteractionDef>.GetNamed("AnalSex");
 
@@ -149,6 +151,7 @@ namespace rjw
 		{
 			return (pawn != null && pawn.story != null && pawn.story.traits != null);
 		}
+
 		public static string random_pick_a_trait(this Pawn pawn)
 		{
 			return pawn.story.traits.allTraits.RandomElement().def.defName;
@@ -189,7 +192,6 @@ namespace rjw
 			return (pawn != null && pawn.story != null && pawn.story.traits != null && pawn.story.traits.HasTrait(zoophiliac));
 		}
 
-
 		public static bool is_masochist(Pawn pawn)
 		{
 			return (pawn != null && pawn.story != null && pawn.story.traits != null && pawn.story.traits.HasTrait(TraitDef.Named("Masochist")));
@@ -218,6 +220,7 @@ namespace rjw
 		{
 			return (xxx.RomanceDiversifiedIsActive && pawn != null && pawn.story != null && pawn.story.traits != null && pawn.story.traits.HasTrait(asexual));
 		}
+
 		public static bool is_bisexual(Pawn pawn)
 		{
 			return (xxx.RomanceDiversifiedIsActive && pawn != null && pawn.story != null && pawn.story.traits != null && pawn.story.traits.HasTrait(bisexual));
@@ -230,29 +233,32 @@ namespace rjw
 
 		public static bool is_animal(Pawn pawn)
 		{
-
 			//return !pawn.RaceProps.Humanlike;
 			//Edited by nizhuan-jjr:to make Misc.Robots not allowed to have sex. This change makes those robots not counted as animals.
 			return pawn.RaceProps.Animal;
 		}
+
 		public static bool is_insect(Pawn pawn)
 		{
 			//Added by Hoge: Insects are also animal. you need check is_insect before is_animal.
 			return pawn.RaceProps.FleshType.defName == "Insectoid";
 		}
-		public static bool is_mechanoid(Pawn pawn)
-		{//Added by nizhuan-jjr:to make Misc.Robots not allowed to have sex. Note:Misc.MAI is not a mechanoid. 
 
+		public static bool is_mechanoid(Pawn pawn)
+		{//Added by nizhuan-jjr:to make Misc.Robots not allowed to have sex. Note:Misc.MAI is not a mechanoid.
 			return pawn.RaceProps.IsMechanoid;
 		}
+
 		public static bool is_tooluser(Pawn pawn)
 		{
 			return pawn.RaceProps.ToolUser;
 		}
+
 		public static bool is_human(Pawn pawn)
 		{
 			return pawn.RaceProps.Humanlike;//||pawn.kindDef.race == ThingDefOf.Human
 		}
+
 		public static bool is_female(Pawn pawn)
 		{
 			return pawn.gender == Gender.Female;
@@ -265,9 +271,10 @@ namespace rjw
 				(p.health.hediffSet.BleedRateTotal <= 0.0f) &&
 				(p.health.hediffSet.PainTotal < config.significant_pain_threshold);
 		}
+
 		public static bool is_healthy_enough(Pawn p)
 		{
-			return (!p.Dead) && p.health.capacities.CanBeAwake && (p.health.hediffSet.BleedRateTotal <= 0.0f);  //don't care the pain level
+			return (!p.Dead) && p.health.capacities.CanBeAwake && (p.health.hediffSet.BleedRateTotal <= 0.0f);
 		}
 
 		public static float need_some_sex(Pawn pawn)
@@ -285,7 +292,6 @@ namespace rjw
 				}
 			}
 			return horniness_degree;
-
 		}
 
 		public static bool HasNonPolyPartner(Pawn p)
@@ -384,10 +390,11 @@ namespace rjw
 			}
 			else if (is_animal(pawn) && config.animals_enabled)
 			{
-				float combatPower = pawn.kindDef.combatPower;
-				float bodySize = pawn.RaceProps.baseBodySize;
+				//float combatPower = pawn.kindDef.combatPower;
+				//float bodySize = pawn.RaceProps.baseBodySize;
 				//Log.Message("[RJW]xxx::can_get_raped - animal pawn - vulnerability is "+ get_vulnerability(pawn));
-				return combatPower <= 80 && bodySize <= 1.2 && bodySize >= 0.25 && (get_sex_ability(pawn) > 0.0f) && !is_mechanoid(pawn) && (Mod_Settings.Rapee_MinVulnerability_animals < 0 ? false : get_vulnerability(pawn) >= Mod_Settings.Rapee_MinVulnerability_animals);
+				return true;
+				//return combatPower <= 80 && bodySize <= 1.2 && bodySize >= 0.25 && (get_sex_ability(pawn) > 0.0f) && !is_mechanoid(pawn) && (Mod_Settings.Rapee_MinVulnerability_animals < 0 ? false : get_vulnerability(pawn) >= Mod_Settings.Rapee_MinVulnerability_animals);
 			}
 			return false;
 		}
@@ -437,9 +444,8 @@ namespace rjw
 			{
 				if ((!(fucker.Dead || p.Dead)) &&
 					(!(fucker.needs.food.Starving || p.needs.food.Starving)) &&
-					( (fucker.health.hediffSet.BleedRateTotal <= 0.0f) && (p.health.hediffSet.BleedRateTotal <= 0.0f) || ignore_bleeding))
+					((fucker.health.hediffSet.BleedRateTotal <= 0.0f) && (p.health.hediffSet.BleedRateTotal <= 0.0f) || ignore_bleeding))
 				{
-
 					float orientation_factor;  //0 or 1
 					{
 						Gender seeking = (!is_gay(fucker)) ? opposite_gender(fucker.gender) : fucker.gender;
@@ -530,12 +536,15 @@ namespace rjw
 							case 3:
 								horniness_factor = 1.5f;
 								break;
+
 							case 2:
 								horniness_factor = 1.3f;
 								break;
+
 							case 1:
 								horniness_factor = 1.1f;
 								break;
+
 							default:
 								horniness_factor = 1f;
 								break;
@@ -559,7 +568,6 @@ namespace rjw
 							{
 								vulnerability_factor = 1.5f + 0.5f * Mathf.InverseLerp(vulnerabilityFucker, 3f, vulnerabilityP);
 							}
-
 						}
 					}
 					//Log.Message("would_fuck() - horniness_factor = " + horniness_factor.ToString());
@@ -570,7 +578,6 @@ namespace rjw
 					//--Log.Message("would_fuck( " + fucker.NameStringShort + ", " + p.NameStringShort + " ) - prenymph_att = " + prenymph_att.ToString() + ", final_att = " + final_att.ToString());
 
 					return final_att;
-
 				}
 				else
 					return 0.0f;
@@ -630,7 +637,6 @@ namespace rjw
 					if (pawn.needs.joy != null)
 						pawn.needs.joy.CurLevel += pawn_satisfaction * 0.50f;       // convert half of satisfaction to joy
 				}
-
 			}
 
 			//if (part != null && part.needs != null && !part.Dead && !isCoreLovin) {
@@ -645,11 +651,9 @@ namespace rjw
 					if (part.needs.joy != null)
 						part.needs.joy.CurLevel += part_satisfaction * 0.50f;       // convert half of satisfaction to joy
 				}
-
 			}
 
 			//--Log.Message("xxx::satisfy( " + pawn_name + ", " + part_name + ", " + violent + " ) - pawn_satisfaction = " + pawn_satisfaction + ", part_satisfaction = " + part_satisfaction);
-
 		}
 
 		public static bool bed_has_at_least_two_occupants(Building_Bed bed)
@@ -702,7 +706,6 @@ namespace rjw
 			}
 		}
 
-
 		public static void sexTick(Pawn pawn, Pawn partner)
 		{
 			pawn.Drawer.rotator.Face(partner.DrawPos);
@@ -722,7 +725,7 @@ namespace rjw
 
 			//--Log.Message("xxx::think_after_sex( " + pawn.NameStringShort + ", " + part.NameStringShort + ", " + violent + " ) - setting pawn thoughts");
 			// pawn thoughts
-			// Edited by nizhuan-jjr:The two types of stole_sone_lovin are violent due to the description, so I make sure the thought would only trigger after violent behaviors. 
+			// Edited by nizhuan-jjr:The two types of stole_sone_lovin are violent due to the description, so I make sure the thought would only trigger after violent behaviors.
 			// Edited by hoge: !is_animal is include mech. mech has no mood.
 			if (xxx.is_human(pawn) && violent)
 			{
@@ -799,10 +802,8 @@ namespace rjw
 						var memory = (Thought_Memory)ThoughtMaker.MakeThought(ThoughtDefOf.GotSomeLovin);
 						pawn.needs.mood.thoughts.memories.TryGainMemory(memory, part);
 						part.needs.mood.thoughts.memories.TryGainMemory(memory, pawn);
-
 					}
 				}
-
 			}
 		}
 
@@ -875,7 +876,7 @@ namespace rjw
 			necro.Drawer.rotator.Face(corpse.DrawPos);
 			necro.Drawer.rotator.FaceCell(corpse.Position);
 
-			/* Although violent, there's no need to attack the corpse 
+			/* Although violent, there's no need to attack the corpse
             if (violent)
             {
                 necro.Drawer.Notify_MeleeAttackOn(corpse);
@@ -967,7 +968,6 @@ namespace rjw
 			hediff_pregnant.father = male;
 			female.health.AddHediff(hediff_pregnant);
 			//--Log.Message("[RJW] Impregnation succeeded. Chance was " + pregnancy_chance + " vs " + pregnancy_threshold);
-
 		}
 
 		public static void TryImpregnate_RimWorldChildren(Pawn female, Pawn male)
@@ -1002,7 +1002,6 @@ namespace rjw
 			hediff_Pregnant.father = male;
 			female.health.AddHediff(hediff_Pregnant, torso, null);
 			//--Log.Message("[RJW] C&P impregnation succeeded. Chance was " + pregnancy_chance + " vs " + pregnancy_threshold);
-
 		}
 
 		//============↓======Section of utilities of CP Rape system===============↓==================
@@ -1025,9 +1024,9 @@ namespace rjw
 				}
 				PlayLogEntry_Interaction playLogEntry = new PlayLogEntry_Interaction(analSex, pawn, Prisoner, extraSentencePacks);
 				Find.PlayLog.Add(playLogEntry);
-
 			}
 		}
+
 		// Returns the designated pawn if the comfort prisoner designation is still valid
 		public static Pawn check_cp_designation(Map m, Designation des)
 		{
@@ -1054,19 +1053,28 @@ namespace rjw
 				{
 					if ((q != rapist) && rapist.CanReserve(q, comfort_prisoners.max_rapists_per_prisoner, 0) && (!q.Position.IsForbidden(rapist)) && is_healthy_enough(q) && can_get_raped(q))
 					{
-						if (!is_animal(q) || is_zoophiliac(rapist))
-						{
-							var fuc = would_fuck(rapist, q, true);
-							//var log_msg = rapist.Name + " -> " + q.Name + " (" + fuc.ToString() + " / " + best_fuckability.ToString() + ")";
-							//Log.Message(log_msg);
+						var fuc = would_fuck(rapist, q, true);
+						//var log_msg = rapist.Name + " -> " + q.Name + " (" + fuc.ToString() + " / " + best_fuckability.ToString() + ")";
+						//Log.Message(log_msg);
 
-							if (xxx.config.pawns_always_rapeCP || (fuc > best_fuckability) && (Rand.Value < fuc))
-							{
-								best_rapee = q;
-								best_fuckability = fuc;
-							}
+						if (xxx.config.pawns_always_rapeCP || (fuc > best_fuckability) && (Rand.Value < fuc))
+						{
+							best_rapee = q;
+							best_fuckability = fuc;
 						}
 
+						//if (!is_animal(q) || is_zoophiliac(rapist))
+						//{
+						//	var fuc = would_fuck(rapist, q, true);
+						//	//var log_msg = rapist.Name + " -> " + q.Name + " (" + fuc.ToString() + " / " + best_fuckability.ToString() + ")";
+						//	//Log.Message(log_msg);
+
+						//	if (xxx.config.pawns_always_rapeCP || (fuc > best_fuckability) && (Rand.Value < fuc))
+						//	{
+						//		best_rapee = q;
+						//		best_fuckability = fuc;
+						//	}
+						//}
 					}
 				}
 				else
@@ -1081,6 +1089,7 @@ namespace rjw
 					m.designationManager.RemoveDesignation(invalid_des);
 			return best_rapee;
 		}
+
 		//============↑======Section of utilities of CP Rape system===============↑==================
 		//============↓======Section of utilities of the whore system===============↓==================
 		public static void FailOnWhorebedNoLongerUsable(this Toil toil, TargetIndex whorebedIndex, Building_WhoreBed whorebed)
@@ -1104,6 +1113,7 @@ namespace rjw
 			}
 			return null;
 		}
+
 		/* I used the above one to find whore bed since the whores need to be assigned an whorebed to make them as whores.
         public static Building_WhoreBed FindRandomWhoreBed(Pawn pawn)
         {
@@ -1149,9 +1159,9 @@ namespace rjw
 					}
 				}
 				return bed.GetSleepingSlotPos(slotIndex);
-
 			}
 		}
+
 		/*
         public static IntVec3 SleepPosOfAssignedPawn(this Building_WhoreBed bed, Pawn pawn)
         {
@@ -1171,10 +1181,10 @@ namespace rjw
                     }
                 }
                 return bed.GetSleepingSlotPos(slotIndex);
-
             }
         }
         */
+
 		public static bool CanUse(Pawn pawn, Building_WhoreBed whorebed)
 		{
 			bool flag = pawn.CanReserveAndReach(whorebed, PathEndMode.InteractionCell, Danger.Unspecified, 1) && !whorebed.IsForbidden(pawn) && whorebed.AssignedPawns.Contains(pawn);
@@ -1247,13 +1257,12 @@ namespace rjw
 					//--Log.Message("[RJW]CanAfford:: caravan cannot afford the price");
 					return false;
 				}
-
 			}
 			else return true;
 		}
 
 		//priceOfWhore is assumed >=0, and targetPawn is assumed to be able to pay the price(either by caravan, or by himself)
-		//This means that targetPawn has total stackcount of silvers >= priceOfWhore. 
+		//This means that targetPawn has total stackcount of silvers >= priceOfWhore.
 		public static bool PayPriceToWhore(Pawn targetPawn, int priceOfWhore, Pawn whore)
 		{
 			if (targetPawn.Faction == whore.Faction || priceOfWhore == 0)
@@ -1389,6 +1398,7 @@ namespace rjw
 			num2 /= 1.5f;
 			return (Rand.Range(0f, 1f) < num2);
 		}
+
 		//===========↑=======Section of utilities of the whore system====================↑=============
 		/*
         //============↓======Section of Building_WhoreBed system===============↓=============
@@ -1415,7 +1425,6 @@ namespace rjw
             spawnedBed.HitPoints = bed.HitPoints;
             spawnedBed.ForPrisoners = bed.ForPrisoners;
 
-
             var compQuality = spawnedBed.TryGetComp<CompQuality>();
 
             if (compQuality != null) compQuality.SetQuality(bed.GetComp<CompQuality>().Quality, ArtGenerationContext.Outsider);
@@ -1441,6 +1450,7 @@ namespace rjw
         }
         //===========↑=======Section of Building_WhoreBed system====================↑=============
 		*/
+
 		//============↓======Section of processing the broken body system===============↓=============
 		public static bool BodyIsBroken(Pawn p)
 		{
@@ -1468,13 +1478,11 @@ namespace rjw
 						if (!p.health.hediffSet.HasHediff(feelingBroken))
 						{
 							p.health.AddHediff(feelingBroken, torso);
-
 						}
 						else
 						{
 							p.health.hediffSet.GetFirstHediffOfDef(feelingBroken).Severity = 0.1f;
 						}
-
 					}
 					else if (numberOfRapesSuffered < 1000)
 					{
@@ -1494,14 +1502,12 @@ namespace rjw
 					if (!p.health.hediffSet.HasHediff(feelingBroken))
 					{
 						p.health.AddHediff(feelingBroken, torso);
-
 					}
 					p.health.hediffSet.GetFirstHediffOfDef(feelingBroken).Severity = 0.5f;
-
 				}
-
 			}
 		}
+
 		public static void ExtraSatisfyForBrokenCP(Pawn p)
 		{
 			if (!BodyIsBroken(p) || p.needs is null || p.needs.joy is null)
@@ -1511,10 +1517,12 @@ namespace rjw
 			{
 				case 0:
 					break;
+
 				case 1:
 					p.needs.TryGetNeed<Need_Sex>().CurLevel += pawn_satisfaction;
 					p.needs.joy.CurLevel += pawn_satisfaction * 0.50f;       // convert half of satisfaction to joy
 					break;
+
 				case 2:
 					pawn_satisfaction *= 2f;
 					p.needs.TryGetNeed<Need_Sex>().CurLevel += pawn_satisfaction;
@@ -1522,7 +1530,7 @@ namespace rjw
 					break;
 			}
 		}
+
 		//============↑======Section of processing the broken body system===============↑=============
 	}
-
 }

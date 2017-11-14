@@ -1,16 +1,12 @@
-﻿
-using System;
-using System.Collections.Generic;
-
+﻿using System.Collections.Generic;
+using RimWorld;
 using Verse;
 using Verse.AI;
-using RimWorld;
 
 namespace rjw
 {
 	public class JobDriver_ComfortPrisonerRapin : JobDriver
 	{
-
 		private int duration;
 
 		private int ticks_between_hearts;
@@ -50,7 +46,6 @@ namespace rjw
 			{
 				return;
 			}
-
 
 			float rand_value = Rand.Value;
 			float victim_pain = p.health.hediffSet.PainTotal;
@@ -100,7 +95,6 @@ namespace rjw
 			this.FailOn(() => !pawn.CanReserve(Prisoner, comfort_prisoners.max_rapists_per_prisoner, 0)); // Fail if someone else reserves the prisoner before the pawn arrives
 			yield return Toils_Goto.GotoThing(iprisoner, PathEndMode.OnCell);
 
-
 			var rape = new Toil();
 			rape.initAction = delegate
 			{
@@ -108,7 +102,6 @@ namespace rjw
 				pawn.Reserve(Prisoner, comfort_prisoners.max_rapists_per_prisoner, 0);
 				if (!pawnHasPenis)
 					Prisoner.Drawer.rotator.Face(pawn.DrawPos);
-
 
 				//Log.Message("JobDriver_ComfortPrisonerRapin::MakeNewToils() - Setting victim job driver");
 				var dri = Prisoner.jobs.curDriver as JobDriver_GettinRaped;
@@ -133,13 +126,11 @@ namespace rjw
                                 Apparel apparel = pawn.apparel.WornApparel.RandomElement<Apparel>();
                                 pawn.apparel.Remove(apparel);
                                 if (pawn.inventory != null && pawn.inventory.innerContainer != null) {
-
                                     pawn.inventory.innerContainer.TryAdd(apparel);
                                 }
                             }
                         }
                 */
-
 			};
 			rape.tickAction = delegate
 			{
@@ -152,7 +143,6 @@ namespace rjw
 			};
 			rape.AddFinishAction(delegate
 			{
-
 				//// Trying to add some interactions and social logs
 				xxx.processAnalSex(pawn, Prisoner, ref isAnalSex, pawnHasPenis);
 				//Log.Message("JobDriver_ComfortPrisonerRapin::MakeNewToils() - Clearing victim job");
@@ -164,7 +154,6 @@ namespace rjw
 					xxx.processBrokenBody(Prisoner);
 					xxx.ExtraSatisfyForBrokenCP(Prisoner);
 				}
-
 			});
 			rape.defaultCompleteMode = ToilCompleteMode.Delay;
 			rape.defaultDuration = duration;
@@ -182,12 +171,9 @@ namespace rjw
 						//xxx.aftersex (Prisoner, pawn, true);
 						Prisoner.mindState.canLovinTick = Find.TickManager.TicksGame + xxx.generate_min_ticks_to_next_lovin(Prisoner);
 					}
-
-
 				},
 				defaultCompleteMode = ToilCompleteMode.Instant
 			};
 		}
-
 	}
 }

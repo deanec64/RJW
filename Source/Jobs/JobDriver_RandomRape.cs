@@ -1,16 +1,12 @@
-﻿
-using System;
-using System.Collections.Generic;
-
+﻿using System.Collections.Generic;
+using RimWorld;
 using Verse;
 using Verse.AI;
-using RimWorld;
 
 namespace rjw
 {
 	public class JobDriver_RandomRape : JobDriver
 	{
-
 		private int duration;
 
 		private int ticks_between_hearts;
@@ -50,7 +46,6 @@ namespace rjw
 			{
 				return;
 			}
-
 
 			float rand_value = Rand.Value;
 			float victim_pain = p.health.hediffSet.PainTotal;
@@ -100,7 +95,6 @@ namespace rjw
 			this.FailOn(() => !pawn.CanReserve(Prisoner, comfort_prisoners.max_rapists_per_prisoner, 0)); // Fail if someone else reserves the prisoner before the pawn arrives
 			yield return Toils_Goto.GotoThing(iprisoner, PathEndMode.OnCell);
 
-
 			var rape = new Toil();
 			rape.initAction = delegate
 			{
@@ -135,7 +129,6 @@ namespace rjw
 				//    Apparel apparel = pawn.apparel.WornApparel.RemoveAll(null);
 				//    pawn.apparel.Remove(apparel);
 				//}
-
 			};
 			rape.tickAction = delegate
 			{
@@ -148,7 +141,6 @@ namespace rjw
 			};
 			rape.AddFinishAction(delegate
 			{
-
 				//// Trying to add some interactions and social logs
 				xxx.processAnalSex(pawn, Prisoner, ref isAnalSex, pawnHasPenis);
 
@@ -185,6 +177,5 @@ namespace rjw
 				defaultCompleteMode = ToilCompleteMode.Instant
 			};
 		}
-
 	}
 }

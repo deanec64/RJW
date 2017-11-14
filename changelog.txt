@@ -1,5 +1,28 @@
-v1.5.4i
-- 
+v1.5.4j changes:
+- Insects will now inject their eggs while raping your incapacitated colonists. (by hogehoge1942)
+- Mechanoids will now inject microcomputers that vibrate and teleport pawns' cum somewhere on the map while raping your incapacitated colonists. (by hogehoge1942)
+- Added surgeries to remove insect eggs and microcomputers by hogehoge1942.
+- Fixed sex need moods affecting under-aged pawns bug.
+- Under-aged sex need is now frozen. (Will make it hidden for under-aged pawns in the future)
+- Fixed reappearing masochist social thoughts bug.
+- Disabled intrusive whore failed hookup notifications.
+- Enabled mechanoids private parts. They will now have artificial genitals/breasts/anuses.
+- Fixed sex need decay rate reverting to default value.
+- Fixed mod settings bug.
+- Increased max rapists per comfort prisoner to 6. (Will make an option for it in the future)
+
+v1.5.4i changes:
+- Disabled log messages.
+- Added comfort colonist and comfort animal buttons. (NOTE: comfort animal button is still experimental and might not work as intended)
+- Tweaked comfort prisoner rape mechanism.
+- Overhauled bestiality rape mechanism:
+  - Zoophiliacs will now prefer tamed colony animals. (Preference: Tamed > petness > wildness)
+  - They will now prefer animals of their opposite sex. (Will make it based on Romance Diversified's sexual orientation in the future)
+  - The search distance is now narrowed to 50 squares. Your zoophiliacs will go deer hunting at the corner of the map no more.
+  - Added random twist. Zoophiliacs will sometimes go deer hunting even though the colony has tamed animals.
+  - Zoophiliacs won't be picky about their victim's size. Make sure you have enough tamed animals to decrease the chance of them banging a rhino and end up dying in the process.
+- Added an option to sterilize vanilla animals. (modded animals coming soon)
+- Edited some descriptions in the mod settings. 
 
 v1.5.4h changes:
 - Fixed nymph joining bed and no effect bug.
@@ -25,10 +48,10 @@ v1.5.4f changes:
 v1.5.4e changes:
 - Added sex need decay option. You can change it anytime.
 - Overhauled mod settings: 
-	- Edited titles & descriptions.
-	- Added plus & minus buttons.
-	- Added validators.
-	- Optimized live ingame changes.
+  - Edited titles & descriptions.
+  - Added plus & minus buttons.
+  - Added validators.
+  - Optimized live in-game changes.
 
 v1.5.4d changes:
 - Removed toggle whore bed button that's applied to all beds as it causes errors.
@@ -45,16 +68,13 @@ v1.5.4b changes:
 - Mod directory optimization.
 - Some value optimization.
 - Minor bugfixes.
-- Temporary fix for ingame notification bug.
+- Temporary fix for in-game notification bug.
 - Fixed reappearing double pregnancy bug.
 
 v1.5.3 changes:
 - Fixed a critical bug that pregnancy coefficients didn't work
 - Tweaked many values
 - Added a compatibility patch for the mod Misc.MAI so that MAI will spawn with private hediffs without reloading the save. The patch is in the file BodyPatches.xml.
-Note:If you have Misc.MAI, please load it before RJW. If you don't have it, a red line warning will pop like this:
-[Rimjobworld] Patch operation Verse.PatchOperationAdd(*/ThingDef[thingClass = "AIPawn.AIPawn"]/race) failed
-Just ignore it.
 - You may add your own private hediffs' patch to your modded race. The MAI patch is an example. 
 - Added some in-game notifications when you try to manually make your pawns rape CP.
 - Added some in-game messages about anal sex
@@ -71,93 +91,68 @@ v1.5.1 changes:
 - fixed the performance issue, 
 - allow you to install penis to women to make futas(so that you should no longer complain why women can't rape), 
 - allow you to toggle whether non-futa women can rape(but still need traits like rapists or nymphos), 
--other bugfixs
+- other bugfixes
 
-v1.4 to v1.5:
-  - Tons of bugfix(ex. losing apparel when raping, normal loving has the "stole some lovin" buff, etc.)
-	- Tons of balance adjustments to make things reasonable and realistic
-  - Added chinese simplified translations by nizhuan-jjr
-	- Added options to change pregnancy coefficient for human or animals
-	- Added sterilization surgery for preventing pregnancy without removing genitals
-	- Added broken body system(CP being raped a lot will have a broken body hediff, which makes their sex need drop fast, but will give them mood buff while in the state)
-	- Added a lite version of children growing system(if you use Children&Pregnancy, this system will be taken over.)
-	- Fuckers generally need to have a penis to rape. However, CP raping and random raping can allow the fucker to be non-futa woemn with vulnerability not larger than a value you can set in the setting. 
-	- For the CP raping, non-futa women need to have traits like rapist or nymphomaniac.
-	- Randomly generated women won't have necrophiliac and zoophiliac traits.
-	- You can add penis to women to make futas through surgeries.
-	- Pawns who have love partners won't fuck CP
-	- Completed the whore system(Pawns who are assigned whorebeds will be the whores, they'll try to hookup with those in need of sex. 
-If visitors are from other factions, they will pay a price to the whore after sex. The price is determined based on many details of the whore.)
-	- Completed behaviors for necrophiliac
-	- Some code optimization
-	- Added rotting to the private parts by SuperHotSausage
-	- Tweaked bodyparts' weights by SuperHotSausage
-	- Optimized the xpath method by SuperHotSausage
-	- Greatly enhance compatibility with the Birds and the Bees, RomanceDiversified, Children&Pregnancy, and many other mods(Please put RJW after those mods for better game experience)
+v1.5 changes:
+- Tons of bugfix(ex. losing apparel when raping, normal loving has the "stole some lovin" buff, etc.)
+- Tons of balance adjustments to make things reasonable and realistic
+- Added chinese simplified translations by nizhuan-jjr
+- Added options to change pregnancy coefficient for human or animals
+- Added sterilization surgery for preventing pregnancy without removing genitals
+- Added broken body system(CP being raped a lot will have a broken body hediff, which makes their sex need drop fast, but will give them mood buff while in the state)
+- Added a lite version of children growing system(if you use Children&Pregnancy, this system will be taken over.)
+- Fuckers generally need to have a penis to rape. However, CP raping and random raping can allow the fucker to be non-futa woemn with vulnerability not larger than a value you can set in the setting. 
+- For the CP raping, non-futa women need to have traits like rapist or nymphomaniac.
+- Randomly generated women won't have necrophiliac and zoophiliac traits.
+- You can add penis to women to make futas through surgeries.
+- Pawns who have love partners won't fuck CP
+- Completed the whore system(Pawns who are assigned whore beds will be the whores, they'll try to hookup with those in need of sex. 
+- If visitors are from other factions, they will pay a price to the whore after sex. The price is determined based on many details of the whore.)
+- Completed behaviors for necrophiliac
+- Some code optimization
+- Added rotting to the private parts by SuperHotSausage
+- Tweaked body-parts' weights by SuperHotSausage
+- Optimized the xpath method by SuperHotSausage
+- Greatly enhance compatibility with the Birds and the Bees, RomanceDiversified, Children&Pregnancy, and many other mods(Please put RJW after those mods for better game experience)
 
-Here's an overview about the behaviors introduced by RJW(with default setting):
-There are 3 types of rapes(i.e. can beat targets) in RJW:
-a)Random rape ( applied to penis-owned rapists or non-futa female rapists with vulnerability <= NonFutaWomenRaping_MaxVulnerability)
-Targets: small and decile animals(only with zoophiliac trait) with vulnerability >=Rapee_MinVulnerability_animals, human with vulnerability >=Rapee_MinVulnerability_human
-b)CP rape (applied to player's penis-owned colonists, male animals, and non futa-female rapists or nymphos with vulnerability <= NonFutaWomenRaping_MaxVulnerability)
-Targets:The pawns you designated as comfort prisoners.
-c)Corpse rape (applied to penis-owned necrophiliacs)
-Targets:Corpse
+v1.4 changes:
+- Refactored source files
+- Added chinese translations by Alanetsai
+- Adjusted selection criteria to prefer fresh corpses
+- Fixed apparel bug with animal attackers
 
-There is 3 types of loving in RJW:
-a)Nymph-join-bed lovin(applied to genitals-owned horny nymphos)
-Targets:horny people laying in the bed
-b)Whores service(applied to player's genitals-owned whores)
-Targets: Priority gives to the guest caravans, then to your colonists. 
-c)Zoophiliac lovin (applied to penis-owned zoophiliacs or non-futa female zoophiliacs with vulnerability <= NonFutaWomenRaping_MaxVulnerability)
-Targets: normal-sized animals with vulnerability >=Rapee_MinVulnerability_animals
-Note:non-skill factor of vulnerability is 0.9
+v1.3 changes:
+- Added breast and anus body parts, along with hydraulic/bionic alternatives
+- Added necrophilia
+- Added random rapes
+- Exposed more constants in configuration file
 
-Traits distribution is:
-a)rapists:male 0.1, female :0.02
-b)nymph:male 0.1, female 0.08
-c)necro:male 0.05, female 0
-d)zooph:male 0.03, female 0
+v1.2 changes:
+- Updated to A17
+- Enabled comfort prisoner designation on all colony pawns, prisoners, and faction animals
+- Enabled pregnancy for raped pawns via RimWorldChildren
+- Updated mod options
 
-
-v1.3 to v1.4:
-  - Refactored source files
-  - Added chinese translations by Alanetsai
-  - Adjusted selection criteria to prefer fresh corpses
-  - Fixed apparel bug with animal attackers
-
-v1.2 to v1.3:
-  - Added breast and anus body parts, along with hydraulic/bionic alternatives
-  - Added necrophilia
-  - Added random rapes
-  - Exposed more constants in configuration file
-
-v1.1 to v1.2:
-  - Updated to A17
-  - Enabled comfort prisoner designation on all colony pawns, prisoners, and faction animals
-  - Enabled pregnancy for raped pawns via RimWorldChildren
-  - Updated mod options
-
-v1.0 to v1.1:
-Added bondage gear
-  - Implemented special apparel type which applies a HeDiff when it's equipped
-  - Implemented locked apparel system which makes certain apparel unremovable except with a special "holokey" item
-  - Implemented new ThingComp which attaches a unique hex ID & engraved name to items
-  - Implemented more ThingComps which allow items to be used on prisoners (or in the case of apparel the item is equipped on the prisoner)
-  - Finally with all the infrastructure done, added the actual bondage gear
-    - Armbinder which prevents manipulation and any sort of verb casting
-    - Gag which prevents talking and reduces eating
-    - Chastity belt which prevents sex, masturbation, and operations on the genitals
-  - Added surgery recipes to remove gear without the key at the cost of permanent damage to the bound pawn
-  - Added recipes to produce the gear (and an intermediate product, the hololock)
-Started using the Harmony library to patch methods
-  - No longer need to override the Lovin' JobDef thanks to patches in JobDriver_Lovin.MakeNewToils and JobDriver.Cleanup. This should
-    increase compatibility with other mods and hopefully will work smoothly and not blow up in my face.
-  - Patched a bunch of methods to enable bondage gear
-  - Created a custom build of Harmony because the regular one wasn't able to find libmono.so on my Linux system
-Pawns (except w/ Bloodlust or Psychopath) are less likely to hit a prisoner they're raping if the prisoner is already in significant pain
-Nymphs won't join-in-bed colonists who are in significant pain
-STD balance changes
+v1.1 changes:
+- Added bondage gear
+- Implemented special apparel type which applies a HeDiff when it's equipped
+- Implemented locked apparel system which makes certain apparel unremovable except with a special "holokey" item
+- Implemented new ThingComp which attaches a unique hex ID & engraved name to items
+- Implemented more ThingComps which allow items to be used on prisoners (or in the case of apparel the item is equipped on the prisoner)
+- Finally with all the infrastructure done, added the actual bondage gear
+  - Armbinder which prevents manipulation and any sort of verb casting
+  - Gag which prevents talking and reduces eating
+  - Chastity belt which prevents sex, masturbation, and operations on the genitals
+- Added surgery recipes to remove gear without the key at the cost of permanent damage to the bound pawn
+- Added recipes to produce the gear (and an intermediate product, the hololock)
+- Started using the Harmony library to patch methods
+- No longer need to override the Lovin' JobDef thanks to patches in JobDriver_Lovin.MakeNewToils and JobDriver.Cleanup. This should
+- increase compatibility with other mods and hopefully will work smoothly and not blow up in my face.
+- Patched a bunch of methods to enable bondage gear
+- Created a custom build of Harmony because the regular one wasn't able to find libmono.so on my Linux system
+- Pawns (except w/ Bloodlust or Psychopath) are less likely to hit a prisoner they're raping if the prisoner is already in significant pain
+- Nymphs won't join-in-bed colonists who are in significant pain
+- STD balance changes
   - Infections won't pass between pawns unless the severity is at least 21%
   - Accelerated course of warts by 50% and syphilis by ~20%
   - Reworked env pitch chances: base chance is lower and room cleanliness now has a much greater impact
@@ -165,27 +160,26 @@ STD balance changes
   - Pawns cannot be infected if they have any lingering immunity
   - Syphilis starts at 20% severity (but it isn't more dangerous since the other stats have been adjusted to compensate)
   - Syphilis can be cured if its severity is pushed below 1% even without immunity
-STD defs are loaded from XML instead of hardcoded
-Added some config options related to STDs
-Sex need won't decline on pawns under age 15
-Renamed "age_of_consent" to "sex_free_for_all_age" and reduced value from 20 to 19
-Prisoners under the FFA age cannot be designated for rape
+- STD defs are loaded from XML instead of hardcoded
+- Added some config options related to STDs
+- Sex need won't decline on pawns under age 15
+- Renamed "age_of_consent" to "sex_free_for_all_age" and reduced value from 20 to 19
+- Prisoners under the FFA age cannot be designated for rape
 
-v0.9 to v1.0:
-Reduced the chance of food poisoning from rimming from 5% to 0.75%
-Added age_of_consent, max_nymph_fraction, and opp_inf_initial_immunity to XML config
-Pawns whose genitals have been removed or destroyed can now still be raped
-The "Raped" debuff now stacks
-Fixed incompatibilities with Prepare Carefully
-  - Mod no longer prevents the PC menu from opening
-  - Reworked bootstrap code so the privates will be re-added after PC removed them (this won't happen in the PC menu, though, only
-    once the pawns appear on the map)
-  - Fixed a crash that occured when PC tried to generate tooltips for bionic privates
-Fixed derp-tier programming that boosted severity instead of immunity on opportunistic infections
-Sex satisfaction now depends on the average of the two pawn's abilities instead of their product
-Flesh coverage stats for the torso are now correctly set when the genitals part is inserted
-Fixed warts and syphilis not being curable and rebalanced them a bit
-Sex need now decreases faster when it's high and slower when it's low
-Nymphs now won't fuck pawns outside their allowed area
-Fixed "allowed me to get raped" thought appearing on masochists
-Nymph join event baseChance reduced from 1.0 to 0.67 and minRefireDays increased from 2 to 6
+v1.0 changes:
+- Reduced the chance of food poisoning from rimming from 5% to 0.75%
+- Added age_of_consent, max_nymph_fraction, and opp_inf_initial_immunity to XML config
+- Pawns whose genitals have been removed or destroyed can now still be raped
+- The "Raped" debuff now stacks
+- Fixed incompatibilities with Prepare Carefully
+- Mod no longer prevents the PC menu from opening
+- Reworked bootstrap code so the privates will be re-added after PC removed them (this won't happen in the PC menu, though, only once the pawns appear on the map)
+- Fixed a crash that occurred when PC tried to generate tooltips for bionic privates
+- Fixed derp-tier programming that boosted severity instead of immunity on opportunistic infections
+- Sex satisfaction now depends on the average of the two pawn's abilities instead of their product
+- Flesh coverage stats for the torso are now correctly set when the genitals part is inserted
+- Fixed warts and syphilis not being curable and rebalanced them a bit
+- Sex need now decreases faster when it's high and slower when it's low
+- Nymphs now won't fuck pawns outside their allowed area
+- Fixed "allowed me to get raped" thought appearing on masochists
+- Nymph join event baseChance reduced from 1.0 to 0.67 and minRefireDays increased from 2 to 6

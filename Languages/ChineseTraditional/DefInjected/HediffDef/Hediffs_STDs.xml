@@ -42,7 +42,6 @@
   <Syphilis.stages.4.label>extreme</Syphilis.stages.4.label>
   <Syphilis.stages.5.label>extreme</Syphilis.stages.5.label>
 
-
   <!--<rep>
 		<path>AcuteHIV.label</path>
 		<trans>急性HIV感染</trans>
@@ -187,5 +186,4 @@
 		<path>Syphilis.stages.5.label</path>
 		<trans>極重度3</trans>
 	</rep>-->
-
 </LanguageData>

@@ -1,16 +1,11 @@
-﻿
-using System;
-using System.Linq;
-using System.Collections.Generic;
-
-using Verse;
+﻿using System.Collections.Generic;
 using RimWorld;
+using Verse;
 
 namespace rjw
 {
 	public class Recipe_InstallPrivates_Male : Recipe_InstallArtificialBodyPart
 	{
-
 		public override IEnumerable<BodyPartRecord> GetPartsToApplyOn(Pawn p, RecipeDef r)
 		{
 			var gen_blo = Genital_Helper.genitals_blocked(p);
@@ -27,6 +22,5 @@ namespace rjw
 						yield return part;
 			}
 		}
-
 	}
 }

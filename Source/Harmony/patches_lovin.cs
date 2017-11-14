@@ -1,24 +1,19 @@
-﻿
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Reflection;
-
+using Harmony;
+using RimWorld;
 using Verse;
 using Verse.AI;
-using RimWorld;
-
-using Harmony;
 
 namespace rjw
 {
-
 	// Add a fail condition to JobDriver_Lovin that prevents pawns from lovin' if they aren't physically able
 	[HarmonyPatch(typeof(JobDriver_Lovin))]
 	[HarmonyPatch("MakeNewToils")]
-	static class PATCH_JobDriver_Lovin_MakeNewToils
+	internal static class PATCH_JobDriver_Lovin_MakeNewToils
 	{
 		[HarmonyPrefix]
-		static bool on_begin_lovin(JobDriver_Lovin __instance)
+		private static bool on_begin_lovin(JobDriver_Lovin __instance)
 		{
 			//Log.Message("[RJW]patches_lovin::PATCH_JobDriver_Lovin_MakeNewToils is called0");
 			//if (__instance == null) return true;
@@ -26,9 +21,6 @@ namespace rjw
 			return true;
 		}
 	}
-
-
-
 
 	//JobDriver_DoLovinCasual from RomanceDiversified should have handled whether pawns can do casual lovin,
 	//so I don't bothered to do a check here,unless some bugs occur due to this.
@@ -40,19 +32,18 @@ namespace rjw
 	// job was interrupted somehow.
 	[HarmonyPatch(typeof(JobDriver))]
 	[HarmonyPatch("Cleanup")]
-	static class PATCH_JobDriver_Cleanup
+	internal static class PATCH_JobDriver_Cleanup
 	{
-
 		private readonly static Type JobDriverDoLovinCasual = AccessTools.TypeByName("JobDriver_DoLovinCasual");
 
-		static Pawn find_partner(JobDriver_Lovin lov)
+		private static Pawn find_partner(JobDriver_Lovin lov)
 		{
 			var any_ins = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
 			return (Pawn)(typeof(JobDriver_Lovin).GetProperty("Partner", any_ins).GetValue(lov, null));
 		}
 
 		[HarmonyPrefix]
-		static bool on_cleanup_driver(JobDriver __instance, JobCondition condition)
+		private static bool on_cleanup_driver(JobDriver __instance, JobCondition condition)
 		{
 			if (__instance == null) return true;
 			var lov = __instance as JobDriver_Lovin;
@@ -77,7 +68,6 @@ namespace rjw
 																				 //lov.pawn.mindState.canLovinTick = Find.TickManager.TicksGame + xxx.generate_min_ticks_to_next_lovin(lov.pawn);
 																				 //casuallovin_par.mindState.canLovinTick = Find.TickManager.TicksGame + xxx.generate_min_ticks_to_next_lovin(casuallovin_par);
 				}
-
 			}
 			return true;
 		}

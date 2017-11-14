@@ -1,17 +1,14 @@
-﻿
-using System;
-using System.Linq;
+﻿using System;
 using System.Collections.Generic;
-
+using System.Linq;
+using RimWorld;
 using Verse;
 using Verse.AI;
-using RimWorld;
 
 namespace rjw
 {
 	public class JobDriver_GettinRaped : JobDriver
 	{
-
 		private int ticks_between_hearts;
 
 		private int ticks_remaining = 10;
@@ -57,8 +54,6 @@ namespace rjw
 						}
 					}
 				}
-
-
 			};
 			get_raped.tickAction = delegate
 			{
@@ -133,6 +128,7 @@ namespace rjw
             */
 		}
 	}
+
 	//create a dummy container to solve the problem of storage of taken-off apparels
 	public class RJW_DummyContainer : IExposable, IThingHolder, ILoadReferenceable
 	{
@@ -146,14 +142,17 @@ namespace rjw
 			innerContainer = new ThingOwner<Apparel>(this, false, LookMode.Deep);
 			UID = "RJW_DUMMY_CONTAINER" + Find.TickManager.TicksGame;
 		}
+
 		public void GetChildHolders(List<IThingHolder> outChildren)
 		{
 			ThingOwnerUtility.AppendThingHoldersFromThings(outChildren, GetDirectlyHeldThings());
 		}
+
 		public ThingOwner GetDirectlyHeldThings()
 		{
 			return innerContainer;
 		}
+
 		public IThingHolder ParentHolder
 		{
 			get
@@ -161,16 +160,17 @@ namespace rjw
 				return ParentHolder;
 			}
 		}
+
 		public void ExposeData()
 		{
 			innerContainer.ExposeData();
 			Scribe_Collections.Look<Apparel>(ref forcedApparel, "forcedApparel", LookMode.Reference, new object[0]);
 			Scribe_Values.Look<String>(ref UID, "UID", "", false);
 		}
+
 		public string GetUniqueLoadID()
 		{
 			return UID;
 		}
-
 	}
 }

@@ -3,7 +3,6 @@
 
 	<Fappin.reportString>fappin'.</Fappin.reportString>
 
-
 	<!-- No longer need to override this def since the additional code is patched into the original driver
   <JobDef>
     <defName>Lovin</defName>
@@ -26,12 +25,10 @@
 	<WhoreIsServingVisitors.reportString>serving visitors</WhoreIsServingVisitors.reportString>
 	<InvitingVisitors.reportString>attempting hookup</InvitingVisitors.reportString>
 
-
 	<!-- <JobDef>
     <defName>ComfortPrisonerGangRapin</defName>
     <driverClass>rjw.JobDriver_ComfortPrisonerGangRapin</driverClass>
     <reportString>gang rapin'.</reportString>
     <casualInterruptible>false</casualInterruptible>
   </JobDef> -->
-
 </LanguageData>

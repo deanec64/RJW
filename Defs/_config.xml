@@ -8,7 +8,7 @@
     Pregnancy
     Bondage
     Visual
-    
+
   -->
 
 	<rjw.config>
@@ -51,7 +51,7 @@
 		<!-- Pawns under the free-for-all age can only fuck other pawns that are within two years of age of themselves
          and cannot be designated for rape.  Due to the implementation of the HugsLibInj's setting, it's useless now.
     <sex_free_for_all_age>16</sex_free_for_all_age>-->
-		<!-- Minimum age for pawns to have sex. Due to the implementation of the HugsLibInj's setting, it's useless now. 
+		<!-- Minimum age for pawns to have sex. Due to the implementation of the HugsLibInj's setting, it's useless now.
     <sex_minimum_age>12</sex_minimum_age>-->
 
 		<!-- Nymphs won't join-in-bed colonists above this threshold and raping pawns are less likely to hit prisoners
@@ -69,5 +69,4 @@
 		<min_ticks_between_hits>500</min_ticks_between_hits>
 		<max_ticks_between_hits>700</max_ticks_between_hits>
 	</rjw.config>
-
 </Defs>

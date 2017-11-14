@@ -1,20 +1,14 @@
-﻿
-using System;
-using System.Collections.Generic;
-
+﻿using RimWorld;
 using Verse;
-using RimWorld;
 
 namespace rjw
 {
 	public class ThoughtWorker_Bound : ThoughtWorker
 	{
-
 		protected override ThoughtState CurrentStateInternal(Pawn p)
 		{
 			if (p.apparel != null)
 			{
-
 				bool bound = false, gagged = false;
 				foreach (var app in p.apparel.WornApparel)
 				{
@@ -32,7 +26,6 @@ namespace rjw
 					return ThoughtState.ActiveAtStage(1);
 				else if (bound)
 					return ThoughtState.ActiveAtStage(0);
-
 			}
 			return ThoughtState.Inactive;
 		}

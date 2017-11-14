@@ -1,16 +1,12 @@
-﻿
-using System;
-using System.Collections.Generic;
-
+﻿using System.Collections.Generic;
+using RimWorld;
 using Verse;
 using Verse.AI;
-using RimWorld;
 
 namespace rjw
 {
 	public class JobDriver_NymphJoinInBed : JobDriver
 	{
-
 		private const int ticks_between_hearts = 100;
 
 		private int ticks_left;
@@ -99,6 +95,5 @@ namespace rjw
 				defaultCompleteMode = ToilCompleteMode.Instant
 			};
 		}
-
 	}
 }

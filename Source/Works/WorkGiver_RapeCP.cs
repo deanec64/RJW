@@ -1,11 +1,9 @@
 ﻿using RimWorld;
-using System;
 using Verse;
 using Verse.AI;
 
 namespace rjw
 {
-
 	public class WorkGiver_RapeCP : WorkGiver_Scanner
 	{
 		public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)
@@ -58,7 +56,6 @@ namespace rjw
 			return new Job(xxx.comfort_prisoner_rapin, t);
 		}
 
-
 		public override int LocalRegionsToScanFirst =>
 			4;
 
@@ -68,5 +65,4 @@ namespace rjw
 		public override ThingRequest PotentialWorkThingRequest =>
 			ThingRequest.ForGroup(ThingRequestGroup.Pawn);
 	}
-
 }

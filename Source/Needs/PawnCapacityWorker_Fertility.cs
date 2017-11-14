@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 using Verse;
 
@@ -31,6 +30,7 @@ namespace rjw
 			}
 			else return 0f;
 		}
+
 		public override bool CanHaveCapacity(BodyDef body)
 		{
 			//return true;

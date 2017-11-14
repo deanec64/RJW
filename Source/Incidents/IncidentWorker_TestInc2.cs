@@ -1,9 +1,6 @@
-﻿
-using System;
+﻿using RimWorld;
 using UnityEngine;
-
 using Verse;
-using RimWorld;
 
 namespace rjw
 {
@@ -15,9 +12,9 @@ namespace rjw
 			float a = Mathf.InverseLerp(0, 2, 3); //gives 1
 			float b = Mathf.InverseLerp(0.2f, 2, 0.1f); //gives 0
 			float c = Mathf.InverseLerp(2f, 1, 2.5f); //gives 0
-			//--Log.Message("[RJW]TestInc2::test_function is called - value a is " + a);
-			//--Log.Message("[RJW]TestInc2::test_function is called - value b is " + b);
-			//--Log.Message("[RJW]TestInc2::test_function is called - value c is " + c);
+													  //--Log.Message("[RJW]TestInc2::test_function is called - value a is " + a);
+													  //--Log.Message("[RJW]TestInc2::test_function is called - value b is " + b);
+													  //--Log.Message("[RJW]TestInc2::test_function is called - value c is " + c);
 		}
 
 		// Gives the wanted information of the selected thing
@@ -33,6 +30,7 @@ namespace rjw
 				}
 			}
 		}
+
 		public override bool TryExecute(IncidentParms parms)
 		{
 			var m = (Map)parms.target;
@@ -41,6 +39,5 @@ namespace rjw
 
 			return true;
 		}
-
 	}
 }

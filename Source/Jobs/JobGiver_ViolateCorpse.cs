@@ -1,23 +1,17 @@
-﻿
-using System;
-using System.Collections.Generic;
-
+﻿using RimWorld;
 using Verse;
 using Verse.AI;
-using RimWorld;
 
 namespace rjw
 {
 	public class JobGiver_ViolateCorpse : ThinkNode_JobGiver
 	{
-
 		public static Corpse find_corpse(Pawn rapist, Map m)
 		{
 			//Log.Message("JobGiver_ViolateCorpse::find_corpse( " + rapist.NameStringShort + " ) called");
 			Corpse found = null;
 			var best_distance = 1.0e6f;
 			int best_freshness = 100;
-
 
 			foreach (Corpse corpse in m.listerThings.ThingsOfDef(ThingDef.Named("Human_Corpse")))
 			{
@@ -44,7 +38,6 @@ namespace rjw
 			//--Log.Message("[RJW] JobGiver_ViolateCorpse::TryGiveJob( " + p.NameStringShort + " ) called");
 			if ((Find.TickManager.TicksGame >= p.mindState.canLovinTick) && (p.CurJob == null))
 			{
-
 				if (xxx.is_healthy(p) && xxx.can_rape(p) && !comfort_prisoners.is_designated(p))
 				{
 					var target = find_corpse(p, p.Map);

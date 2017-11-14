@@ -12,7 +12,7 @@
 					<subNodes>
 						<li Class="rjw.ThinkNode_ChancePerHour_Necro">
 							<subNodes>
-								<li Class="rjw.JobGiver_ViolateCorpse"/>
+								<li Class="rjw.JobGiver_ViolateCorpse" />
 							</subNodes>
 						</li>
 					</subNodes>
@@ -31,7 +31,7 @@
 					<subNodes>
 						<li Class="rjw.ThinkNode_ChancePerHour_Beastiality">
 							<subNodes>
-								<li Class="rjw.JobGiver_Beastiality"/>
+								<li Class="rjw.JobGiver_Beastiality" />
 							</subNodes>
 						</li>
 					</subNodes>
@@ -50,7 +50,7 @@
 					<subNodes>
 						<li Class="rjw.ThinkNode_ChancePerHour_RandomRape">
 							<subNodes>
-								<li Class="rjw.JobGiver_RandomRape"/>
+								<li Class="rjw.JobGiver_RandomRape" />
 							</subNodes>
 						</li>
 					</subNodes>
@@ -192,7 +192,6 @@
 		</thinkRoot>
 	</ThinkTreeDef>
 
-
 	<!-- Whores will always look for sex if they have nothing else to do -->
 	<ThinkTreeDef>
 		<defName>WhoreJobTree</defName>
@@ -208,5 +207,4 @@
 			</subNodes>
 		</thinkRoot>
 	</ThinkTreeDef>
-
 </ThinkTrees>

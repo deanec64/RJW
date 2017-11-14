@@ -57,7 +57,6 @@
 		</researchPrerequisites>
 	</ThingDef>
 
-
 	<ThingDef ParentName="FurnitureBase">
 		<defName>BedWhore</defName>
 		<label>whore bed</label>
@@ -250,5 +249,4 @@
 			<li>Royal_Bed_Whore</li>
 		</researchPrerequisites>
 	</ThingDef>
-
 </ThingDefs>

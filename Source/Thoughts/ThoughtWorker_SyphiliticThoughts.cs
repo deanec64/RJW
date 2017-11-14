@@ -1,15 +1,10 @@
-﻿
-using System;
-using System.Collections.Generic;
-
+﻿using RimWorld;
 using Verse;
-using RimWorld;
 
 namespace rjw
 {
 	public class ThoughtWorker_SyphiliticThoughts : ThoughtWorker
 	{
-
 		protected override ThoughtState CurrentStateInternal(Pawn p)
 		{
 			var syp = p.health.hediffSet.GetFirstHediffOfDef(std.syphilis.hediff_def);
@@ -22,6 +17,5 @@ namespace rjw
 			}
 			return ThoughtState.Inactive;
 		}
-
 	}
 }

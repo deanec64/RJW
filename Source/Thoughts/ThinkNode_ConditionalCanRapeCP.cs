@@ -1,7 +1,7 @@
-﻿
+﻿using RimWorld;
 using Verse;
-using RimWorld;
 
+//TODO: Fix this class
 namespace rjw
 {
 	public class ThinkNode_ConditionalCanRapeCP : ThinkNode_Conditional
@@ -44,7 +44,6 @@ namespace rjw
 				return xxx.isSingleOrPartnerNotHere(pawn);
 			}
 			else return false;
-
 		}
 	}
 }

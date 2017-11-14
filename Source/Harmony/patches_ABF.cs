@@ -1,20 +1,16 @@
-﻿using Harmony;
-using System;
-using System.Linq;
-using System.Reflection;
-using Verse;
-using RimWorld;
-using RimWorld.Planet;
+﻿using System;
 using System.Collections.Generic;
-using rjw;
+using Harmony;
+using RimWorld;
+using Verse;
 using Verse.AI.Group;
-using Verse.AI;
 
 namespace rjw
 {
-
+	//TODO: Remove this patch for compatibility with other mods and add them to genital helper class.
+	/*
 	[HarmonyPatch(typeof(PawnGenerator), "GeneratePawn", new Type[] { typeof(PawnGenerationRequest) })]
-	static class Patches_ABF_PawnMakeRaper
+	internal static class Patches_GenerateRapist
 	{
 		public static void Postfix(Pawn __result, ref PawnGenerationRequest request)
 		{
@@ -34,18 +30,18 @@ namespace rjw
 					//need.ForceSetLevel(Rand.Range(0f,1f));
 					need.ForceSetLevel(Rand.Range(0.01f, 0.2f));
 				}
-
 			}
 		}
-	}
+	}*/
 
 	[HarmonyPatch(typeof(LordJob_AssaultColony), "CreateGraph")]
-	static class Patches_ABF_AssaultColonyForRape
+	internal static class Patches_AssaultColonyForRape
 	{
 		public static void Postfix(StateGraph __result)
 		{
+			//--Log.Message("[ABF]AssaultColonyForRape::CreateGraph");
 			if (__result == null) return;
-			Log.Message("[RJW]AssaultColonyForRape::CreateGraph");
+			//Log.Message("[RJW]AssaultColonyForRape::CreateGraph");
 			foreach (var trans in __result.transitions)
 			{
 				if (HasDesignatedTransition(trans))
@@ -61,11 +57,12 @@ namespace rjw
 							t.filters.Add(new Trigger_SexSatisfy(0.3f));
 						}
 					}
-					Log.Message("[RJW]AssaultColonyForRape::CreateGraph Adding SexSatisfyTrigger to " + trans.ToString());
+					//--Log.Message("[ABF]AssaultColonyForRape::CreateGraph Adding SexSatisfyTrigger to " + trans.ToString());
 				}
 			}
 		}
-		static bool HasDesignatedTransition(Transition t)
+
+		private static bool HasDesignatedTransition(Transition t)
 		{
 			if (t.target == null) return false;
 			if (t.target.GetType() == typeof(LordToil_KidnapCover)) return true;
@@ -77,6 +74,7 @@ namespace rjw
 			return false;
 		}
 	}
+
 	/*
 	[HarmonyPatch(typeof(JobGiver_Manhunter), "TryGiveJob")]
 	static class Patches_ABF_MunHunt

@@ -16,7 +16,6 @@
 		</tags>
 	</BodyPartDef>
 
-
 	<BodyPartDef>
 		<defName>Chest</defName>
 		<label>chest</label>
@@ -29,7 +28,6 @@
 		<bleedingRateMultiplier>1.0</bleedingRateMultiplier>
 	</BodyPartDef>
 
-
 	<BodyPartDef>
 		<defName>Anus</defName>
 		<label>anus</label>
@@ -41,5 +39,4 @@
 		<dontSuggestAmputation>false</dontSuggestAmputation>
 		<bleedingRateMultiplier>1.0</bleedingRateMultiplier>
 	</BodyPartDef>
-
 </BodyPartDefs>

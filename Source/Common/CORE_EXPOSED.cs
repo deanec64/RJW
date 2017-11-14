@@ -1,5 +1,4 @@
-﻿
-/*
+﻿/*
  *
  *
  * ALL THE CODE IN THIS FILE HAS JUST BEEN COPIED FROM THE DECOMPILED CORE ASSEMBLY.
@@ -9,15 +8,13 @@
  */
 
 using System;
-using System.Linq;
 using System.Collections.Generic;
-
-using Verse;
+using System.Linq;
 using RimWorld;
+using Verse;
 
 namespace rjw_CORE_EXPOSED
 {
-
 	public static class JobDriver_Lovin
 	{
 		public static readonly SimpleCurve LovinIntervalHoursFromAgeCurve = new SimpleCurve
@@ -199,5 +196,4 @@ namespace rjw_CORE_EXPOSED
 			return "Amputate".Translate();
 		}
 	}
-
 }

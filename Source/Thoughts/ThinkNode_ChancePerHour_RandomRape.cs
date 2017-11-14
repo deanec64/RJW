@@ -1,18 +1,13 @@
-﻿
-using System;
-using System.Collections.Generic;
-
+﻿using System;
+using RimWorld;
 using UnityEngine;
-
 using Verse;
 using Verse.AI;
-using RimWorld;
 
 namespace rjw
 {
 	public class ThinkNode_ChancePerHour_RandomRape : ThinkNode_ChancePerHour
 	{
-
 		protected override float MtbHours(Pawn pawn)
 		{
 			if (pawn == null)
@@ -65,6 +60,7 @@ namespace rjw
 
 			return base_mtb * desire_factor * personality_factor * fun_factor * gender_factor;
 		}
+
 		public override ThinkResult TryIssueJobPackage(Pawn pawn, JobIssueParams jobParams)
 		{
 			try
@@ -73,8 +69,8 @@ namespace rjw
 			}
 			catch (NullReferenceException e)
 			{
-				//--Log.Message("[RJW]ThinkNode_ChancePerHour_RandomRape:TryIssueJobPackage - error message" + e.Message);
-				//--Log.Message("[RJW]ThinkNode_ChancePerHour_RandomRape:TryIssueJobPackage - error stacktrace" + e.StackTrace);
+				Log.Message("[RJW]ThinkNode_ChancePerHour_RandomRape:TryIssueJobPackage - error message" + e.Message);
+				Log.Message("[RJW]ThinkNode_ChancePerHour_RandomRape:TryIssueJobPackage - error stacktrace" + e.StackTrace);
 				return ThinkResult.NoJob; ;
 			}
 		}

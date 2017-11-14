@@ -1,16 +1,12 @@
-﻿
-using System;
-using System.Collections.Generic;
-
+﻿using System.Collections.Generic;
+using RimWorld;
 using Verse;
 using Verse.AI;
-using RimWorld;
 
 namespace rjw
 {
 	public class JobDriver_GettinLoved : JobDriver
 	{
-
 		private TargetIndex ipartner = TargetIndex.A;
 
 		private TargetIndex ibed = TargetIndex.B;
@@ -41,7 +37,7 @@ namespace rjw
 				//yield return Toils_Reserve.Reserve(ipartner, 1, 0);
 				//yield return Toils_Reserve.Reserve(ibed, Bed.SleepingSlotsCount, 0);
 				//Toil get_loved = Toils_LayDown.LayDown(ibed, true, false, false, false);
-				//get_loved.FailOn(() => (Partner.CurJob.def != xxx.nymph_rapin)); 
+				//get_loved.FailOn(() => (Partner.CurJob.def != xxx.nymph_rapin));
 				//get_loved.defaultCompleteMode = ToilCompleteMode.Never;
 				//get_loved.initAction = delegate {
 				//    Log.Message("[RJW]JobDriver_GettinLoved::MakeNewToils - nymph section is called");
@@ -52,7 +48,6 @@ namespace rjw
 				//});
 				//get_loved.socialMode = RandomSocialMode.Off;
 				//yield return get_loved;
-
 
 				this.FailOnDespawnedOrNull(ipartner);
 				this.FailOn(() => !Partner.health.capacities.CanBeAwake);
@@ -69,8 +64,6 @@ namespace rjw
 				});
 				get_loved.socialMode = RandomSocialMode.Off;
 				yield return get_loved;
-
-
 			}
 			else if (Partner.CurJob.def == xxx.whore_is_serving_visitors)
 			{
@@ -95,10 +88,7 @@ namespace rjw
 				});
 				get_loved.socialMode = RandomSocialMode.Off;
 				yield return get_loved;
-
 			}
-
 		}
-
 	}
 }

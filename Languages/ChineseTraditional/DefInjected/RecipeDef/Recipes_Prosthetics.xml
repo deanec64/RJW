@@ -41,7 +41,6 @@
   <MakeBionicAnus.description>Crafts a bionic anus from hyperweave, plasteel, and components.</MakeBionicAnus.description>
   <MakeBionicAnus.jobString>Crafting bionic anus.</MakeBionicAnus.jobString>
 
-
   <!--<rep>
 		<path>MakeHydraulicVagina.label</path>
 		<trans>用鋼鐵製作假陰道</trans>
@@ -58,5 +57,4 @@
 		<path>MakeBionicPenis.label</path>
 		<trans>製作仿生陰莖</trans>
 	</rep>-->
-
 </LanguageData>

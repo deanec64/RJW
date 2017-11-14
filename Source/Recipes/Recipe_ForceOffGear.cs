@@ -1,16 +1,11 @@
-﻿
-using System;
-using System.Linq;
-using System.Collections.Generic;
-
-using Verse;
+﻿using System.Collections.Generic;
 using RimWorld;
+using Verse;
 
 namespace rjw
 {
 	public class Recipe_ForceOffGear : Recipe_Surgery
 	{
-
 		public static bool is_wearing(Pawn p, ThingDef apparel_def)
 		{
 			if (p.apparel != null)
@@ -62,7 +57,6 @@ namespace rjw
 				(p.apparel != null) &&
 				(!CheckSurgeryFail(surgeon, p, ingredients, find_part_record(r.failure_affects, p))))
 			{
-
 				// Remove apparel
 				foreach (var app in p.apparel.WornApparel)
 					if (app.def == r.removes_apparel)
@@ -87,7 +81,6 @@ namespace rjw
 					apply_burns(p, r.major_burns_on, 0.30f, 0.60f);
 				if (r.minor_burns_on != null)
 					apply_burns(p, r.minor_burns_on, 0.15f, 0.35f);
-
 			}
 		}
 	}

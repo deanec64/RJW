@@ -1,14 +1,10 @@
-﻿using RimWorld;
-using System;
-using System.Linq;
-using System.Collections.Generic;
-
+﻿using System.Collections.Generic;
+using RimWorld;
 using Verse;
 using Verse.AI;
 
 namespace rjw
 {
-
 	public class JobDriver_InvitingVisitors : JobDriver
 	{
 		public bool successfulPass = true;
@@ -23,6 +19,7 @@ namespace rjw
 		}
 
 		private TargetIndex TargetPawnIndex = TargetIndex.A;
+
 		private Pawn Whore
 		{
 			get => GetActor();
@@ -48,7 +45,6 @@ namespace rjw
 			else return false;
 		}
 
-
 		protected override IEnumerable<Toil> MakeNewToils()
 		{
 			this.FailOnDespawnedOrNull(TargetPawnIndex);
@@ -66,7 +62,6 @@ namespace rjw
 				MoteMaker.ThrowMetaIcon(Whore.Position, Whore.Map, ThingDefOf.Mote_Heart);
 			};
 			yield return TryItOn;
-
 
 			Toil AwaitResponse = new Toil();
 			AwaitResponse.AddFailCondition(() => !successfulPass);
@@ -94,7 +89,8 @@ namespace rjw
 						TargetPawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDef.Named("FailedHookupAttemptOnMe"), Whore);
 						extraSentencePacks.Add(RulePackDef.Named("HookupFailed"));
 					}
-					Messages.Message("RJW_VisitorRejectWhore".Translate(new object[] { TargetPawn.NameStringShort, Whore.NameStringShort }), TargetPawn, MessageSound.Silent);
+					//Disabled rejection notifications
+					//Messages.Message("RJW_VisitorRejectWhore".Translate(new object[] { TargetPawn.NameStringShort, Whore.NameStringShort }), TargetPawn, MessageSound.Silent);
 				}
 				if (xxx.RomanceDiversifiedIsActive)
 				{
@@ -125,10 +121,6 @@ namespace rjw
 				}
 			};
 			yield return BothGoToBed;
-
 		}
-
-
-
 	}
 }

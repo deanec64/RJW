@@ -1,17 +1,12 @@
-﻿
-using System;
-using System.Linq;
-using System.Collections.Generic;
-
+﻿using System.Collections.Generic;
+using RimWorld;
 using Verse;
 using Verse.AI;
-using RimWorld;
 
 namespace rjw
 {
 	public class JobDriver_UseItemOn : JobDriver_UseItem
 	{
-
 		public static Toil pickup_item(Pawn p, Thing item)
 		{
 			return new Toil
@@ -51,7 +46,6 @@ namespace rjw
 			if (tar == null)
 				foreach (var toil in base.MakeNewToils())
 					yield return toil;
-
 			else
 			{
 				// Find the pawn to use the item on.
@@ -122,9 +116,7 @@ namespace rjw
 					},
 					defaultCompleteMode = ToilCompleteMode.Instant
 				};
-
 			}
 		}
-
 	}
 }

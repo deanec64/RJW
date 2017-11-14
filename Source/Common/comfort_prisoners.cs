@@ -1,22 +1,15 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-using UnityEngine;
+﻿using UnityEngine;
 
 using Verse;
-using Verse.AI;
-using RimWorld;
 
 namespace rjw
 {
-
 	[StaticConstructorOnStartup]
 	internal static class comfort_prisoner_true_tex
 	{
 		public static Texture2D gizmo = ContentFinder<Texture2D>.Get("UI/Commands/comfort_prisoner_true");
 	}
+
 	[StaticConstructorOnStartup]
 	internal static class comfort_prisoner_false_tex
 	{
@@ -31,8 +24,7 @@ namespace rjw
 
 	public static class comfort_prisoners
 	{
-
-		public const int max_rapists_per_prisoner = 2;// original value is 6
+		public const int max_rapists_per_prisoner = 6;//TODO: make option
 
 		public static DesignationDef designation_def = DefDatabase<DesignationDef>.GetNamed("ComfortPrisoner");
 
@@ -46,7 +38,5 @@ namespace rjw
 
 			return false;
 		}
-
 	}
-
 }

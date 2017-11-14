@@ -7,7 +7,6 @@
 		<workSkill>Crafting</workSkill>
 	</RecipeDef>
 
-
 	<RecipeDef ParentName="MakePrivates">
 		<defName>MakePegDick</defName>
 		<label>carve peg dick</label>
@@ -457,6 +456,4 @@
 			<BionicAnus>1</BionicAnus>
 		</products>
 	</RecipeDef>
-
-
 </RecipeDefs>

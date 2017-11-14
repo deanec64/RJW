@@ -87,7 +87,6 @@
   <ViolatedCorpse.stages.0.labelSocial>had sex with a corpse</ViolatedCorpse.stages.0.labelSocial>
   <ViolatedCorpse.stages.0.description>{0} wasn't the only thing that was stiff if you know what I mean...</ViolatedCorpse.stages.0.description>
 
-
   <!--<rep>
 		<path>NeedSex.stages.0.label</path>
 		<trans>慾求不満</trans>
@@ -172,5 +171,4 @@
 		<path>BloodlustStoleSomeLovin.stages.0.label</path>
 		<trans>用俘虜洩欲(嗜血)</trans>
 	</rep>-->
-
 </LanguageData>

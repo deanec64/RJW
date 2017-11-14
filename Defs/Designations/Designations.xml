@@ -12,5 +12,4 @@
 		<texturePath>UI/Commands/comfort_prisoner_invisible</texturePath>
 		<targetType>Thing</targetType>
 	</DesignationDef>
-
 </DesignationDefs>

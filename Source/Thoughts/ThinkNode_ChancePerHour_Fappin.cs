@@ -1,16 +1,11 @@
-﻿
-using System;
-using System.Collections.Generic;
-
+﻿using RimWorld;
 using Verse;
 using Verse.AI;
-using RimWorld;
 
 namespace rjw
 {
 	public class ThinkNode_ChancePerHour_Fappin : ThinkNode_ChancePerHour
 	{
-
 		public static float get_fappin_mtb_hours(Pawn p)
 		{
 			if (p is null || p.Dead)

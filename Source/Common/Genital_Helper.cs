@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-
-using Verse;
+﻿using System.Linq;
 using RimWorld;
-
-using Harmony;
-
+using Verse;
 
 namespace rjw
 {
-	static class Genital_Helper
+	internal static class Genital_Helper
 	{
 		public static HediffDef penis = HediffDef.Named("Penis");
 		public static HediffDef micropenis = HediffDef.Named("Micropenis");
@@ -41,7 +34,6 @@ namespace rjw
 		public static HediffDef bionic_anus = HediffDef.Named("BionicAnus");
 
 		public static HediffDef dummy_privates_initializer = DefDatabase<HediffDef>.GetNamed("DummyPrivates");
-
 
 		public static BodyPartRecord get_genitals(Pawn pawn)
 		{
@@ -216,6 +208,7 @@ namespace rjw
 						   (hed.Part == penisPart) &&
 						   hed.def.defName.ToLower().Contains("penis"));
 		}
+
 		public static bool has_vagina(Pawn pawn)
 		{
 			BodyPartRecord vaginaPart = get_genitals(pawn);
@@ -245,11 +238,13 @@ namespace rjw
 
 		public static void sexualize(Pawn pawn)
 		{
-			if (pawn.RaceProps.hasGenders && (!xxx.is_mechanoid(pawn) || !xxx.is_animal(pawn)) && !is_sexualized(pawn))
+			//if (pawn.RaceProps.hasGenders && (!xxx.is_mechanoid(pawn) || !xxx.is_animal(pawn)) && !is_sexualized(pawn))
+			if ((pawn.RaceProps.hasGenders || !xxx.is_animal(pawn)) && !is_sexualized(pawn))
 			{
 				sexualize_pawn(pawn);
 			}
 		}
+
 		public static void sexualize_VisiblePawns()
 		{
 			foreach (Pawn p in Find.VisibleMap.mapPawns.AllPawnsSpawned)
@@ -308,7 +303,6 @@ namespace rjw
 					privates = pawn.gender == Gender.Male ? peg_penis : hydraulic_vagina;
 				else
 					privates = pawn.gender == Gender.Male ? bionic_penis : bionic_vagina;
-
 			}
 			else
 			{
@@ -317,7 +311,6 @@ namespace rjw
 			}
 			//Log.Message("Genital_Helper::add_genitals( " + pawn.NameStringShort + " ) - adding hediff");
 			pawn.health.AddHediff(privates, genitalPart);
-
 		}
 
 		public static void add_breasts(Pawn pawn)
@@ -426,7 +419,6 @@ namespace rjw
 			}
 
 			pawn.health.AddHediff(asshole, anusPart);
-
 		}
 
 		public static void sexualize_pawn(Pawn pawn)
@@ -443,6 +435,11 @@ namespace rjw
 			add_breasts(pawn);
 			add_anus(pawn);
 
+			var sex_need = pawn.needs.TryGetNeed<Need_Sex>();
+			if (pawn.Faction != null && !pawn.Faction.IsPlayer && sex_need != null)
+			{
+				sex_need.ForceSetLevel(Rand.Range(0.01f, 0.5f));
+			}
 		}
 
 		public static void inject_genitals(BodyDef target)
@@ -452,7 +449,6 @@ namespace rjw
 
 			if (tor_rec != null)
 			{
-
 				var gen_rec = new BodyPartRecord
 				{
 					def = DefDatabase<BodyPartDef>.GetNamed("Genitals"),
@@ -485,7 +481,6 @@ namespace rjw
 				//tor_rec.absoluteFleshCoverage = tor_rec.absoluteCoverage * tor_rec.fleshCoverage;
 
 				target.AllParts.Add(gen_rec);
-
 			}
 			else
 				Log.Error("[RJW] Failed to find the \"Torso\" BodyPartRecord");
@@ -498,7 +493,6 @@ namespace rjw
 
 			if (tor_rec != null)
 			{
-
 				var gen_rec = new BodyPartRecord
 				{
 					def = DefDatabase<BodyPartDef>.GetNamed("Chest"),
@@ -531,7 +525,6 @@ namespace rjw
 				//tor_rec.absoluteFleshCoverage = tor_rec.absoluteCoverage * tor_rec.fleshCoverage;
 
 				target.AllParts.Add(gen_rec);
-
 			}
 			else
 				Log.Error("[RJW] Failed to find the \"Torso\" BodyPartRecord");
@@ -544,7 +537,6 @@ namespace rjw
 
 			if (tor_rec != null)
 			{
-
 				var gen_rec = new BodyPartRecord
 				{
 					def = DefDatabase<BodyPartDef>.GetNamed("Anus"),
@@ -577,7 +569,6 @@ namespace rjw
 				//tor_rec.absoluteFleshCoverage = tor_rec.absoluteCoverage * tor_rec.fleshCoverage;
 
 				target.AllParts.Add(gen_rec);
-
 			}
 			else
 				Log.Error("[RJW] Failed to find the \"Torso\" BodyPartRecord");

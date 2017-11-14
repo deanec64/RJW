@@ -1,15 +1,11 @@
-﻿
-using System;
-using System.Linq;
+﻿using System;
 using System.Collections.Generic;
-
+using RimWorld;
 using Verse;
 using Verse.AI;
-using RimWorld;
 
 namespace rjw
 {
-
 	public static class bondage_gear_tradeability
 	{
 		public static void init()
@@ -62,13 +58,10 @@ namespace rjw
 		{
 			if ((tar != null) && (!p.CanReserve(tar)))
 				return new FloatMenuOption(label + " (" + "Reserved".Translate() + ")", null, MenuOptionPriority.DisabledOption);
-
 			else if ((tar != null) && (!p.CanReach(tar, PathEndMode.Touch, Danger.Deadly)))
 				return new FloatMenuOption(label + " (" + "NoPath".Translate() + ")", null, MenuOptionPriority.DisabledOption);
-
 			else if ((required_work != null) && p.story.WorkTypeIsDisabled(required_work))
 				return new FloatMenuOption(label + " (" + "CannotPrioritizeWorkTypeDisabled".Translate(new object[] { required_work.gerundLabel }) + ")", null, MenuOptionPriority.DisabledOption);
-
 			else
 				return new FloatMenuOption(
 					label,
@@ -165,5 +158,4 @@ namespace rjw
 		public List<BodyPartDef> major_burns_on = null;
 		public List<BodyPartDef> minor_burns_on = null;
 	}
-
 }

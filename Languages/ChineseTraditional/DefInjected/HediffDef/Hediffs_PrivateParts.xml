@@ -5,11 +5,9 @@
 
   <DummyPrivates.label>dummy privates</DummyPrivates.label>
 
-
   <!-- Regular privates -->
 
   <Penis.label>penis</Penis.label>
-
 
   <!-- Additional dick sizes -->
 
@@ -25,7 +23,6 @@
   <TightVagina.label>tight vagina</TightVagina.label>
   <LooseVagina.label>loose vagina</LooseVagina.label>
 
-
   <!-- Natural Breasts -->
 
   <Breasts.label>breasts</Breasts.label>
@@ -33,13 +30,11 @@
   <LargeBreasts.label>large breasts</LargeBreasts.label>
   <HugeBreasts.label>huge breasts</HugeBreasts.label>
 
-
   <!-- Natural anuses -->
 
   <Anus.label>anus</Anus.label>
   <TightAnus.label>tight anus</TightAnus.label>
   <LooseAnus.label>loose anus</LooseAnus.label>
-
 
   <!-- Simple prosthetic privates -->
 
@@ -48,14 +43,12 @@
   <HydraulicBreasts.label>hydraulic breasts</HydraulicBreasts.label>
   <HydraulicAnus.label>hydraulic anus</HydraulicAnus.label>
 
-
   <!-- Bionic privates -->
 
   <BionicPenis.label>bionic penis</BionicPenis.label>
   <BionicVagina.label>bionic vagina</BionicVagina.label>
   <BionicBreasts.label>bionic breasts</BionicBreasts.label>
   <BionicAnus.label>bionic anus</BionicAnus.label>
-
 
   <!--<rep>
 		<path>Micropenis.label</path>
@@ -117,5 +110,4 @@
 		<path>HydraulicVagina.label</path>
 		<trans>鋼製假陰道</trans>
 	</rep>-->
-
 </LanguageData>

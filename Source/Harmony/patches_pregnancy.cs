@@ -1,25 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using UnityEngine;
+﻿using System.Collections.Generic;
 using Harmony;
-using Verse;
-using Verse.AI;
 using RimWorld;
 using RimWorld.Planet;
-
+using UnityEngine;
+using Verse;
 
 namespace rjw
 {
-
 	[HarmonyPatch(typeof(Hediff_Pregnant), "DoBirthSpawn")]
-	static class PATCH_Hediff_Pregnant_DoBirthSpawn
+	internal static class PATCH_Hediff_Pregnant_DoBirthSpawn
 	{
 		[HarmonyPrefix]
-		static bool on_begin_DoBirthSpawn(ref Pawn mother, ref Pawn father)
+		private static bool on_begin_DoBirthSpawn(ref Pawn mother, ref Pawn father)
 		{
+			//TODO: Set pregnant hediff to torso
 			//Log.Message("patches_pregnancy::PATCH_Hediff_Pregnant::DoBirthSpawn() called");
 			var mother_name = (mother != null) ? mother.NameStringShort : "NULL";
 			var father_name = (father != null) ? father.NameStringShort : "NULL";
@@ -54,7 +48,6 @@ namespace rjw
 			}
 
 			//Log.Message("Hediff_Pregnancy::DoBirthSpawn( " + mother_name + ", " + father_name + ", " + chance_successful + " ) - creating spawn request");
-
 
 			List<Pawn> siblings = new List<Pawn>();
 			for (int i = 0; i < litter_size; i++)
@@ -128,7 +121,6 @@ namespace rjw
             //    }
             //}
             return true;
-            
         }
     }
     */
@@ -162,7 +154,6 @@ namespace rjw
                 }
                 if (__instance.apparelGraphics != null) {
                     Log.Message("   __instance.apparelGraphic is present");
-                    
                 } else {
                     Log.Message("   __instance.apparelGraphic is null");
                 }
@@ -171,11 +162,8 @@ namespace rjw
                 } else {
                     Log.Message("   __instance.rottingGraphic is null");
                 }
-
-                
             }
 
- 
             if (__instance.pawn.RaceProps.Humanlike && __instance.pawn.ageTracker.CurLifeStageIndex < 4) {
                 Log.Message("PATCH_PawnGraphicSet_ResolveAllGraphics::ResolveAllGraphics() - adjusting draw size for " + __instance.pawn.NameStringShort + "");
                 if (__instance != null) {
@@ -184,14 +172,11 @@ namespace rjw
                     Log.Message("   current size = " + x + "/" + y + ", new size = " + x * 0.5f + "/" + y * 0.5f);
                 } else {
                     Log.Message("   __instance == null");
-                
                 }
-
             }
 
             return true;
         }
     }
     */
-
 }

@@ -1,11 +1,7 @@
-﻿
-using System;
-using System.Linq;
-using System.Collections.Generic;
-
+﻿using System.Collections.Generic;
+using RimWorld;
 using Verse;
 using Verse.AI;
-using RimWorld;
 
 // Adds unlock options to right-click menu for holokeys.
 namespace rjw
@@ -21,7 +17,6 @@ namespace rjw
 		{
 			if (!p.CanReserve(parent))
 				yield return new FloatMenuOption(FloatMenuOptionLabel + " (" + "Reserved".Translate() + ")", null, MenuOptionPriority.DisabledOption);
-
 			else if (p.CanReach(parent, PathEndMode.Touch, Danger.Deadly))
 			{
 				// Option for the pawn to use the key on themself

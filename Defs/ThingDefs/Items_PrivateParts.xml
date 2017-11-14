@@ -20,7 +20,7 @@
 			<li>BodyPartOrImplant</li>
 		</tradeTags>
 		<comps>
-			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Forbiddable" />
 		</comps>
 		<pathCost>10</pathCost>
 	</ThingDef>
@@ -49,7 +49,6 @@
 			<DeteriorationRate>2.0</DeteriorationRate>
 		</statBases>
 	</ThingDef>
-
 
 	<!-- Natural Penises -->
 	<ThingDef ParentName="rjw_BodyPartNaturalBase">
@@ -329,7 +328,6 @@
 		</statBases>
 	</ThingDef>
 
-
 	<!-- Simple prosthetic penises -->
 	<ThingDef ParentName="rjw_BodyPartArtificialBase">
 		<defName>PegDick</defName>
@@ -467,5 +465,4 @@
 			<Mass>0.1</Mass>
 		</statBases>
 	</ThingDef>
-
 </ThingDefs>

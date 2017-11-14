@@ -48,7 +48,7 @@
   <PawnCantRapeCP0>小人不需要性，或不够健康，或不能强奸。</PawnCantRapeCP0>
   <PawnCantRapeCP1>小人不是单身，或有伴侣在地图内。</PawnCantRapeCP1>
   <PawnCantRapeCP2>小人不是恋兽癖，所以不能强奸动物。</PawnCantRapeCP2>
-  
+
   <!-- Anal Sex Notificaitons-->
   <AnalSexSucceeded>{0} 成功肛交了 {1}.</AnalSexSucceeded>
   <AnalSexFailed>{0} 没能成功肛交 {1}.</AnalSexFailed>

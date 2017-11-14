@@ -1,15 +1,9 @@
-﻿
-using System;
-using System.Collections.Generic;
-
-using Verse;
-using RimWorld;
+﻿using Verse;
 
 namespace rjw
 {
 	public class Hediff_RegularPrivatesImplant : Hediff_Implant
 	{
-
 		public override bool Visible
 		{
 			get
@@ -17,6 +11,5 @@ namespace rjw
 				return xxx.config.show_regular_dick_and_vag;
 			}
 		}
-
 	}
 }

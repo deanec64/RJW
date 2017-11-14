@@ -3,7 +3,6 @@
 
   <Fappin.reportString>自慰中。</Fappin.reportString>
 
-
   <!-- No longer need to override this def since the additional code is patched into the original driver
   <JobDef>
     <defName>Lovin</defName>
@@ -26,12 +25,10 @@
   <WhoreIsServingVisitors.reportString>服务客人中。</WhoreIsServingVisitors.reportString>
   <InvitingVisitors.reportString>招徕客人中。</InvitingVisitors.reportString>
 
-
   <!-- <JobDef>
     <defName>ComfortPrisonerGangRapin</defName>
     <driverClass>rjw.JobDriver_ComfortPrisonerGangRapin</driverClass>
     <reportString>gang rapin'.</reportString>
     <casualInterruptible>false</casualInterruptible>
   </JobDef> -->
-
 </LanguageData>

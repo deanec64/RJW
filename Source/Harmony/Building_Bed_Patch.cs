@@ -5,7 +5,6 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 
-
 namespace rjw
 {
     public static class Building_Bed_Patch
