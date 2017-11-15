@@ -73,6 +73,8 @@ namespace rjw
 		public readonly static ThoughtDef stole_some_lovin = DefDatabase<ThoughtDef>.GetNamed("StoleSomeLovin");
 		public readonly static ThoughtDef bloodlust_stole_some_lovin = DefDatabase<ThoughtDef>.GetNamed("BloodlustStoleSomeLovin");
 		public readonly static ThoughtDef violated_corpse = DefDatabase<ThoughtDef>.GetNamed("ViolatedCorpse");
+		public readonly static ThoughtDef FortunateGaveVirgin = DefDatabase<ThoughtDef>.GetNamed("FortunateGaveVirgin");
+		public readonly static ThoughtDef UnfortunateLostVirgin = DefDatabase<ThoughtDef>.GetNamed("UnfortunateLostVirgin");
 
 		public readonly static JobDef fappin = DefDatabase<JobDef>.GetNamed("Fappin");
 		public readonly static JobDef gettin_loved = DefDatabase<JobDef>.GetNamed("GettinLoved");
@@ -97,6 +99,22 @@ namespace rjw
 		public readonly static StatDef vulnerability_stat = StatDef.Named("Vulnerability");
 
 		public readonly static RecordDef GetRapedAsComfortPrisoner = DefDatabase<RecordDef>.GetNamed("GetRapedAsComfortPrisoner");
+		public readonly static RecordDef CountOfFappin = DefDatabase<RecordDef>.GetNamed("CountOfFappin");
+		public readonly static RecordDef CountOfSex = DefDatabase<RecordDef>.GetNamed("CountOfSex");
+		public readonly static RecordDef CountOfSexWithAnimals = DefDatabase<RecordDef>.GetNamed("CountOfSexWithAnimals");
+		public readonly static RecordDef CountOfSexWithInsects = DefDatabase<RecordDef>.GetNamed("CountOfSexWithInsects");
+		public readonly static RecordDef CountOfSexWithOthers = DefDatabase<RecordDef>.GetNamed("CountOfSexWithOthers");
+		public readonly static RecordDef CountOfSexWithCorpse = DefDatabase<RecordDef>.GetNamed("CountOfSexWithCorpse");
+		public readonly static RecordDef CountOfWhore = DefDatabase<RecordDef>.GetNamed("CountOfWhore");
+		public readonly static RecordDef CountOfRaped = DefDatabase<RecordDef>.GetNamed("CountOfRaped");
+		public readonly static RecordDef CountOfBeenRaped = DefDatabase<RecordDef>.GetNamed("CountOfBeenRaped");
+		public readonly static RecordDef CountOfRapedAnimals = DefDatabase<RecordDef>.GetNamed("CountOfRapedAnimals");
+		public readonly static RecordDef CountOfBeenRapedByAnimals = DefDatabase<RecordDef>.GetNamed("CountOfBeenRapedByAnimals");
+		public readonly static RecordDef CountOfRapedInsects = DefDatabase<RecordDef>.GetNamed("CountOfRapedInsects");
+		public readonly static RecordDef CountOfBeenRapedByInsects = DefDatabase<RecordDef>.GetNamed("CountOfBeenRapedByInsects");
+		public readonly static RecordDef CountOfRapedOthers = DefDatabase<RecordDef>.GetNamed("CountOfRapedOthers");
+		public readonly static RecordDef CountOfBeenRapedByOthers = DefDatabase<RecordDef>.GetNamed("CountOfBeenRapedByOthers");
+		public readonly static RecordDef EarnedMoneyByWhore = DefDatabase<RecordDef>.GetNamed("EarnedMoneyByWhore");
 
 		public readonly static ThingDef cum = ThingDef.Named("FilthCum");
 
@@ -275,6 +293,25 @@ namespace rjw
 		public static bool is_healthy_enough(Pawn p)
 		{
 			return (!p.Dead) && p.health.capacities.CanBeAwake && (p.health.hediffSet.BleedRateTotal <= 0.0f);
+		}
+
+		public static bool is_Virgin(Pawn p)
+		{
+			return p.records.GetValue(GetRapedAsComfortPrisoner) == 0 &&
+					p.records.GetValue(CountOfSex) == 0 &&
+					p.records.GetValue(CountOfSexWithAnimals) == 0 &&
+					p.records.GetValue(CountOfSexWithInsects) == 0 &&
+					p.records.GetValue(CountOfSexWithOthers) == 0 &&
+					p.records.GetValue(CountOfSexWithCorpse) == 0 &&
+					p.records.GetValue(CountOfWhore) == 0 &&
+					p.records.GetValue(CountOfRaped) == 0 &&
+					p.records.GetValue(CountOfBeenRaped) == 0 &&
+					p.records.GetValue(CountOfRapedAnimals) == 0 &&
+					p.records.GetValue(CountOfBeenRapedByAnimals) == 0 &&
+					p.records.GetValue(CountOfRapedInsects) == 0 &&
+					p.records.GetValue(CountOfBeenRapedByInsects) == 0 &&
+					p.records.GetValue(CountOfRapedOthers) == 0 &&
+					p.records.GetValue(CountOfBeenRapedByOthers) == 0;
 		}
 
 		public static float need_some_sex(Pawn pawn)
@@ -652,7 +689,7 @@ namespace rjw
 						part.needs.joy.CurLevel += part_satisfaction * 0.50f;       // convert half of satisfaction to joy
 				}
 			}
-
+			UpdateRecords(pawn, part, violent, isCoreLovin);
 			//--Log.Message("xxx::satisfy( " + pawn_name + ", " + part_name + ", " + violent + " ) - pawn_satisfaction = " + pawn_satisfaction + ", part_satisfaction = " + part_satisfaction);
 		}
 
@@ -815,7 +852,7 @@ namespace rjw
 			var part_name = (pawn != null) ? part.NameStringShort : "NULL";
 			//--Log.Message("xxx::aftersex( " + pawn_name + ", " + part_name + " ) called");
 
-			bool bothInMap = (pawn.Map != null && part.Map != null); // false when called this function for despawned pawn
+			bool bothInMap = (pawn.Map != null && part.Map != null); //Added by Hoge. false when called this function for despawned pawn: using for background rape like a kidnappee
 
 			if (bothInMap)
 			{
@@ -909,6 +946,87 @@ namespace rjw
 			//The dead have no hediff, so no need to roll_to_catch; TO DO: add a roll_to_catch_from_corpse to std
 			//Log.Message("xxx::aftersex( " + necro_name + ", " + corpse_name + "[a deadpawn name]" + " ) - checking disease");
 			//std.roll_to_catch(necro, deadpawn);
+		}
+
+		//UpdateRecords functions Added by hoge.
+		public static void UpdateRecords(Pawn pawn, int price)
+		{
+			pawn.records.AddTo(EarnedMoneyByWhore,price);
+		}
+
+
+		
+		public static void UpdateRecords(Pawn pawn, Pawn part, bool isRape = false,bool isLoveSex = false)
+		{
+			UpdateRecordsInternal(pawn, part, isRape, isLoveSex, true);
+			UpdateRecordsInternal(part, pawn, isRape, isLoveSex, false);
+		}
+
+		private static void UpdateRecordsInternal(Pawn pawn, Pawn part, bool isRape, bool isLoveSex, bool pawnIsRaper)
+		{
+			if (pawn == null) return;
+			if (pawn.health.Dead) return;
+
+			if (part == null)
+			{
+				pawn.records.Increment(CountOfFappin);
+				return;
+			}
+
+			bool isVirginSex = xxx.is_Virgin(pawn); //need copy value before count increase.
+			ThoughtDef currentThought = null;
+
+			if (!isRape)
+			{
+				if (xxx.is_human(part))
+				{
+					pawn.records.Increment(part.health.Dead? CountOfSexWithCorpse : CountOfSex);
+					currentThought = isLoveSex? FortunateGaveVirgin : null;
+				}
+				else if (xxx.is_insect(part))
+				{
+					pawn.records.Increment(CountOfSexWithAnimals);
+				}
+				else if (xxx.is_animal(part))
+				{
+					pawn.records.Increment(CountOfSexWithInsects);
+					currentThought = xxx.is_zoophiliac(pawn) ? FortunateGaveVirgin:null;
+				}
+				else
+				{
+					pawn.records.Increment(CountOfSexWithOthers);
+				}
+			}
+			else
+			{
+				if (!pawnIsRaper)
+				{
+					currentThought = xxx.is_masochist(pawn) ? FortunateGaveVirgin : UnfortunateLostVirgin;
+				}
+
+				if (xxx.is_human(part))
+				{
+					pawn.records.Increment(pawnIsRaper ? (part.health.Dead ? CountOfSexWithCorpse : CountOfRaped) : CountOfBeenRaped);
+					if(pawnIsRaper && (xxx.is_rapist(pawn)|| xxx.is_bloodlust(pawn))) currentThought =  FortunateGaveVirgin;
+				}
+				else if (xxx.is_insect(part))
+				{
+					pawn.records.Increment(pawnIsRaper ? CountOfRapedInsects : CountOfBeenRapedByInsects);
+				}
+				else if (xxx.is_animal(part))
+				{
+					pawn.records.Increment(pawnIsRaper ? CountOfRapedAnimals : CountOfBeenRapedByAnimals);
+					if (xxx.is_zoophiliac(pawn)) currentThought = FortunateGaveVirgin;
+				}
+				else
+				{
+					pawn.records.Increment(pawnIsRaper ? CountOfRapedOthers : CountOfBeenRapedByOthers);
+				}
+			}
+			if (isVirginSex && currentThought != null)
+			{
+				pawn.needs.mood.thoughts.memories.TryGainMemory( (Thought_Memory)ThoughtMaker.MakeThought(currentThought) , part);
+			}
 		}
 
 		public static void impregnate(Pawn pawn, Pawn part)
@@ -1269,46 +1387,46 @@ namespace rjw
 
 		//priceOfWhore is assumed >=0, and targetPawn is assumed to be able to pay the price(either by caravan, or by himself)
 		//This means that targetPawn has total stackcount of silvers >= priceOfWhore.
-		public static bool PayPriceToWhore(Pawn targetPawn, int priceOfWhore, Pawn whore)
+		public static int PayPriceToWhore(Pawn targetPawn, int priceOfWhore, Pawn whore)
 		{
+			int AmountLeft = priceOfWhore;
 			if (targetPawn.Faction == whore.Faction || priceOfWhore == 0)
 			{
 				//--Log.Message("[RJW] xxx::PayPriceToWhore - No need to pay price");
-				return true;
+				return AmountLeft;
 			}
 			//Caravan guestCaravan = Find.WorldObjects.Caravans.Where(x => x.Spawned && x.ContainsPawn(targetPawn) && x.Faction == targetPawn.Faction && !x.IsPlayerControlled).FirstOrDefault();
 			IEnumerable<Pawn> caravanAnimals = targetPawn.Map.mapPawns.PawnsInFaction(targetPawn.Faction).Where(x => is_animal(x) && x.inventory != null && x.inventory.innerContainer != null && x.inventory.innerContainer.TotalStackCountOfDef(ThingDefOf.Silver) > 0);
 
 			IEnumerable<Thing> TraderSilvers;
-			int AmountLeft = priceOfWhore;
 			if (caravanAnimals == null)
 			{
 				TraderSilvers = targetPawn.inventory.innerContainer.Where(x => x.def == ThingDefOf.Silver);
 				foreach (Thing silver in TraderSilvers)
 				{
 					if (AmountLeft <= 0)
-						return true;
+						return AmountLeft;
 					int dropAmount = silver.stackCount >= AmountLeft ? AmountLeft : silver.stackCount;
 					if (targetPawn.inventory.innerContainer.TryDrop(silver, whore.Position, whore.Map, ThingPlaceMode.Near, dropAmount, out Thing resultingSilvers))
 					{
 						if (resultingSilvers is null)
 						{
 							//--Log.Message("[RJW] xxx::PayPriceToWhore - silvers is null0");
-							return false;
+							return AmountLeft;
 						}
 						AmountLeft -= resultingSilvers.stackCount;
 						if (AmountLeft <= 0)
 						{
-							return true;
+							return AmountLeft;
 						}
 					}
 					else
 					{
 						//--Log.Message("[RJW] xxx::PayPriceToWhore - TryDrop failed0");
-						return false;
+						return AmountLeft;
 					}
 				}
-				return AmountLeft <= 0;
+				return AmountLeft;
 			}
 			else
 			{
@@ -1318,19 +1436,19 @@ namespace rjw
 					foreach (Thing silver in TraderSilvers)
 					{
 						if (AmountLeft <= 0)
-							return true;
+							return AmountLeft;
 						int dropAmount = silver.stackCount >= AmountLeft ? AmountLeft : silver.stackCount;
 						if (animal.inventory.innerContainer.TryDrop(silver, whore.Position, whore.Map, ThingPlaceMode.Near, dropAmount, out Thing resultingSilvers))
 						{
 							if (resultingSilvers is null)
 							{
 								//--Log.Message("[RJW] xxx::PayPriceToWhore - silvers is null1");
-								return false;
+								return AmountLeft;
 							}
 							AmountLeft -= resultingSilvers.stackCount;
 							if (AmountLeft <= 0)
 							{
-								return true;
+								return AmountLeft;
 							}
 						}
 						else
@@ -1340,7 +1458,7 @@ namespace rjw
 						}
 					}
 				}
-				return AmountLeft <= 0;
+				return AmountLeft;
 			}
 		}
 

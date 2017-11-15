@@ -39,7 +39,8 @@
 			</subNodes>
 		</thinkRoot>
 	</ThinkTreeDef>
-
+  
+<!--
 	<ThinkTreeDef>
 		<defName>RandomRapeTree</defName>
 		<insertTag>Humanlike_PreMain</insertTag>
@@ -58,7 +59,8 @@
 			</subNodes>
 		</thinkRoot>
 	</ThinkTreeDef>
-
+-->
+  
 	<ThinkTreeDef>
 		<defName>FapTree</defName>
 		<insertTag>Humanlike_PostMentalState</insertTag>

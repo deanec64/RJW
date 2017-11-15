@@ -18,7 +18,7 @@ namespace rjw
 	[StaticConstructorOnStartup]
 	internal class HediffDef_InsectEgg : HediffDef_EnemyImplants
 	{
-		public int bornTick = 900000;//1 Quadrum
+		public int bornTick = 180000;//3 days
 		public int abortTick = 60000;//1 day
 	}
 }

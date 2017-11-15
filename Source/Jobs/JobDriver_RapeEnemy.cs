@@ -64,7 +64,7 @@ namespace rjw
 		{
 			var pawn_name = (pawn != null) ? pawn.NameStringShort : "NULL";
 			var part_name = (pawn != null) ? part.NameStringShort : "NULL";
-			Log.Message("[RJW]" + this.GetType().ToString() + "::aftersex( " + pawn_name + ", " + part_name + " ) called");
+			//--Log.Message("[RJW]" + this.GetType().ToString() + "::aftersex( " + pawn_name + ", " + part_name + " ) called");
 			pawn.Drawer.rotator.Face(part.DrawPos);
 			pawn.Drawer.rotator.FaceCell(part.Position);
 
@@ -83,7 +83,7 @@ namespace rjw
 
 			bool pawnIsNotHuman = xxx.is_animal(pawn);
 			bool partIsNotHuman = xxx.is_animal(part);
-			Log.Message("[RJW]" + this.GetType().ToString() + "::aftersex( " + pawn_name + ", " + part_name + " ) - applying cum effect");
+			//--Log.Message("[RJW]" + this.GetType().ToString() + "::aftersex( " + pawn_name + ", " + part_name + " ) - applying cum effect");
 			if (xxx.config.cum_enabled)
 			{
 				int pawn_cum = pawnIsNotHuman ? 4 : Math.Min((int)(pawn.RaceProps.lifeExpectancy / pawn.ageTracker.AgeBiologicalYears), 2);
@@ -99,15 +99,15 @@ namespace rjw
 				}
 			}
 
-			Log.Message("[RJW]" + this.GetType().ToString() + "::aftersex( " + pawn_name + ", " + part_name + " ) - checking satisfaction");
+			//--Log.Message("[RJW]" + this.GetType().ToString() + "::aftersex( " + pawn_name + ", " + part_name + " ) - checking satisfaction");
 			xxx.satisfy(pawn, part, violent, isCoreLovin);
-			Log.Message("[RJW]" + this.GetType().ToString() + "::aftersex( " + pawn_name + ", " + part_name + " ) - checking thoughts");
+			//--Log.Message("[RJW]" + this.GetType().ToString() + "::aftersex( " + pawn_name + ", " + part_name + " ) - checking thoughts");
 			think_after_sex(pawn, part, violent, isCoreLovin);
 
 			std.roll_to_catch(pawn, part);
 
 			Impregnate(pawn, part, isAnalSex);
-			Log.Message("[RJW]" + this.GetType().ToString() + "::aftersex( " + pawn_name + ", " + part_name + " ) - checking disease");
+			//--Log.Message("[RJW]" + this.GetType().ToString() + "::aftersex( " + pawn_name + ", " + part_name + " ) - checking disease");
 		}
 
 		protected virtual void Impregnate(Pawn pawn, Pawn part, bool isAnalSex)
@@ -115,7 +115,7 @@ namespace rjw
 			if (xxx.is_animal(pawn) || xxx.is_animal(part)) return;
 			if (!isAnalSex)
 			{
-				Log.Message("[RJW]" + this.GetType().ToString() + "::aftersex( " + pawn.Name.ToStringShort + ", " + part.Name.ToStringShort + " ) - checking pregnancy");
+				//--Log.Message("[RJW]" + this.GetType().ToString() + "::aftersex( " + pawn.Name.ToStringShort + ", " + part.Name.ToStringShort + " ) - checking pregnancy");
 				xxx.impregnate(pawn, part);
 			}
 		}
@@ -143,6 +143,7 @@ namespace rjw
 
 			this.FailOnDespawnedNullOrForbidden(iTarget);
 			this.FailOn(() => !pawn.CanReserve(Target, comfort_prisoners.max_rapists_per_prisoner, 0)); // Fail if someone else reserves the Target before the pawn arrives
+			this.FailOn(() => !Target.Downed); //Stop rape when victim stand up again.
 			yield return Toils_Goto.GotoThing(iTarget, PathEndMode.OnCell);
 
 			var rape = new Toil();
@@ -236,38 +237,38 @@ namespace rjw
 
 				if (IntVec3Utility.ManhattanDistanceFlat(target.Position, rapist.Position) >= targetAcquireRadius) continue; //Too far to fuck i think.
 
-				//Log.Message("[ABF]"+this.GetType().ToString()+"::TryGiveJob( " + rapist.NameStringShort + " -> " + target.NameStringShort + " ) - checking\nCanReserve:"+ rapist.CanReserve(target, comfort_prisoners.max_rapists_per_prisoner, 0) + "\nTargetPositionForbidden:"+ target.Position.IsForbidden(rapist)+"\nCanGetRape:" + xxx.can_get_raped(target));
+				////--Log.Message("[ABF]"+this.GetType().ToString()+"::TryGiveJob( " + rapist.NameStringShort + " -> " + target.NameStringShort + " ) - checking\nCanReserve:"+ rapist.CanReserve(target, comfort_prisoners.max_rapists_per_prisoner, 0) + "\nTargetPositionForbidden:"+ target.Position.IsForbidden(rapist)+"\nCanGetRape:" + xxx.can_get_raped(target));
 				if (target != rapist && rapist.CanReserve(target, comfort_prisoners.max_rapists_per_prisoner, 0) && !target.Position.IsForbidden(rapist) && Can_rape_Easily(target))
 				{
 					if (xxx.is_human(target) || (xxx.is_zoophiliac(rapist) && xxx.is_animal(target) && xxx.config.animals_enabled))
 					{
 						var fuc = GetFuckability(rapist, target);
 						//var fuc = xxx.would_fuck(rapist, target); //Cant Use default would fuck because victims are always bleeding.
-						//Log.Message("[ABF]"+this.GetType().ToString()+ "::FindVictim( " + rapist.NameStringShort + " -> " + target.NameStringShort + " ) - fuckability:" + fuc + " ");
+						////--Log.Message("[ABF]"+this.GetType().ToString()+ "::FindVictim( " + rapist.NameStringShort + " -> " + target.NameStringShort + " ) - fuckability:" + fuc + " ");
 						if ((fuc > best_fuckability) && (Rand.Value < 0.9 * fuc))
 						{
 							best_rapee = target;
 							best_fuckability = fuc;
 						}
-						//else { Log.Message("[ABF] JobGiver_RapeEnemy::TryGiveJob( " + rapist.NameStringShort + " -> " + target.NameStringShort + " ) - is not good for me "+ "( " + fuc + " )"); }
+						//else { //--Log.Message("[ABF] JobGiver_RapeEnemy::TryGiveJob( " + rapist.NameStringShort + " -> " + target.NameStringShort + " ) - is not good for me "+ "( " + fuc + " )"); }
 					}
-					//else { Log.Message("[ABF] JobGiver_RapeEnemy::TryGiveJob( " + rapist.NameStringShort + " -> " + target.NameStringShort + " ) - is not human or not zoophilia"); }
+					//else { //--Log.Message("[ABF] JobGiver_RapeEnemy::TryGiveJob( " + rapist.NameStringShort + " -> " + target.NameStringShort + " ) - is not human or not zoophilia"); }
 				}
-				//else { Log.Message("[ABF] JobGiver_RapeEnemy::TryGiveJob( " + rapist.NameStringShort + " -> " + target.NameStringShort + " ) - is not good"); }
+				//else { //--Log.Message("[ABF] JobGiver_RapeEnemy::TryGiveJob( " + rapist.NameStringShort + " -> " + target.NameStringShort + " ) - is not good"); }
 			}
-			//Log.Message("[RJW]"+this.GetType().ToString()+"::TryGiveJob( " + rapist.NameStringShort + " -> " + best_rapee.NameStringShort + " ) - fuckability:" + best_fuckability + " ");
+			////--Log.Message("[RJW]"+this.GetType().ToString()+"::TryGiveJob( " + rapist.NameStringShort + " -> " + best_rapee.NameStringShort + " ) - fuckability:" + best_fuckability + " ");
 			return best_rapee;
 		}
 
 		public virtual float GetFuckability(Pawn rapist, Pawn target)
 		{
-			//Log.Message("[RJW]JobDriver_RapeEnemy::GetFuckability(" + rapist.ToString() + "," + target.ToString() + ")");
+			////--Log.Message("[RJW]JobDriver_RapeEnemy::GetFuckability(" + rapist.ToString() + "," + target.ToString() + ")");
 			return xxx.would_fuck(rapist, target, false, true);
 		}
 
 		protected bool Can_rape_Easily(Pawn p)
 		{
-			return xxx.can_get_raped(p) && p.Downed;
+			return xxx.can_get_raped(p) && p.Downed && !p.IsPrisonerOfColony;
 		}
 	}
 }

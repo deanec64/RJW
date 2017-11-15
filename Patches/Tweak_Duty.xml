@@ -2,59 +2,82 @@
 <Patch>
 
 	<Operation Class="PatchOperationInsert">
-		<xpath>*/DutyDef[defName = "AssaultColony"]/thinkNode/subNodes/li[2]</xpath>
+		<xpath>*/DutyDef[defName = "AssaultColony"]/thinkNode/subNodes/li[@Class="JobGiver_AIFightEnemies"]</xpath>
 		<value>
 			<li Class=" rjw.JobGiver_RapeEnemy" />
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationInsert">
-		<xpath>*/DutyDef[defName = "Defend"]/thinkNode/subNodes/li[3]</xpath>
+		<xpath>*/DutyDef[defName = "Defend"]/thinkNode/subNodes/li[@Class="ThinkNode_ForbidOutsideFlagRadius"]</xpath>
 		<value>
 			<li Class=" rjw.JobGiver_RapeEnemy" />
 		</value>
 	</Operation>
-	<Operation Class="PatchOperationInsert">
-		<xpath>*/DutyDef[defName = "HuntEnemiesIndividual"]/thinkNode/subNodes/li[2]</xpath>
-		<value>
-			<li Class=" rjw.JobGiver_RapeEnemy" />
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationInsert">
-		<xpath>*/DutyDef[defName = "DefendAndExpandHive"]/thinkNode/subNodes/li[3]</xpath>
-		<value>
-			<li Class=" rjw.JobGiver_RapeEnemy" />
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationInsert">
-		<xpath>*/DutyDef[defName = "DefendBase"]/thinkNode/subNodes/li[2]</xpath>
-		<value>
-			<li Class=" rjw.JobGiver_RapeEnemy" />
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationInsert">
-		<xpath>/ThinkTrees/ThinkTreeDef[6]/thinkRoot[@Class="ThinkNode_Tagger"]/subNodes/li[7]/subNodes/li[@Class="ThinkNode_Priority"]/subNodes/li[1]</xpath>
-		<value>
-			<li Class=" rjw.JobGiver_RapeEnemy" />
-		</value>
-	</Operation>
-	<Operation Class="PatchOperationInsert">
-		<xpath>/ThinkTrees/ThinkTreeDef[6]/thinkRoot[@Class="ThinkNode_Tagger"]/subNodes/li[8]/subNodes/li[@Class="ThinkNode_Priority"]/subNodes/li[1]</xpath>
-		<value>
-			<li Class=" rjw.JobGiver_RapeEnemy" />
-		</value>
-	</Operation>
-	<!--
   <Operation Class="PatchOperationInsert">
-      <xpath>*/DutyDef[defName = "TakeWoundedGuest"]/thinkNode/subNodes/li[0]</xpath>
-      <value>
-        <li Class=" rjw.JobGiver_RapeEnemy" />
-      </value>
+    <xpath>*/DutyDef[defName = "DefendBase"]/thinkNode/subNodes/li[@Class="JobGiver_AIDefendPoint"]</xpath>
+    <value>
+      <li Class=" rjw.JobGiver_RapeEnemy" />
+    </value>
   </Operation>
   <Operation Class="PatchOperationInsert">
-      <xpath>*/DutyDef[defName = "Kidnap"]/thinkNode/subNodes/li[0]</xpath>
-      <value>
-        <li Class=" rjw.JobGiver_RapeEnemy" />
-      </value>
+    <xpath>*/DutyDef[defName = "HuntEnemiesIndividual"]/thinkNode/subNodes/li[@Class="JobGiver_AIFightEnemies"]</xpath>
+    <value>
+      <li Class=" rjw.JobGiver_RapeEnemy" />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationInsert">
+    <xpath>*/DutyDef[defName = "DefendAndExpandHive"]/thinkNode/subNodes/li[@Class="ThinkNode_Tagger"]</xpath>
+    <value>
+      <li Class=" rjw.JobGiver_RapeEnemy" />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationInsert">
+    <xpath>*/ThinkTreeDef[defName="MentalStateNonCritical"]/thinkRoot[@Class="ThinkNode_Tagger"]/subNodes/li[state="Manhunter"]/subNodes/li[@Class="ThinkNode_Priority"]/subNodes/li[@Class="JobGiver_Manhunter"]</xpath>
+    <value>
+      <li Class=" rjw.JobGiver_RapeEnemy" />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationInsert">
+    <xpath>*/ThinkTreeDef[defName="MentalStateNonCritical"]/thinkRoot[@Class="ThinkNode_Tagger"]/subNodes/li[state="ManhunterPermanent"]/subNodes/li[@Class="ThinkNode_Priority"]/subNodes/li[@Class="JobGiver_Manhunter"]</xpath>
+    <value>
+      <li Class=" rjw.JobGiver_RapeEnemy" />
+    </value>
+  </Operation>
+  <!--
+  <Operation Class="PatchOperationInsert">
+    <xpath>*/DutyDef[defName = "Sapper"]/thinkNode/subNodes/li[Class="JobGiver_AITrashColonyClose"]</xpath>
+    <value>
+      <li Class=" rjw.JobGiver_RapeEnemy" />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationInsert">
+    <xpath>*/DutyDef[defName = "TakeWoundedGuest"]/thinkNode/subNodes/li[0]</xpath>
+    <value>
+      <li Class=" rjw.JobGiver_RapeEnemy" />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationInsert">
+    <xpath>*/DutyDef[defName = "Kidnap"]/thinkNode/subNodes/li[0]</xpath>
+    <value>
+      <li Class=" rjw.JobGiver_RapeEnemy" />
+    </value>
   </Operation>
 -->
+
+
+<!-- Added by Hoge.  Should move new Patch def.  Are there any way using ThinktreeDef?( I'm not good at thinktree Operation...-->
+  <Operation Class="PatchOperationInsert">
+    <xpath>*/ThinkTreeDef[defName="MentalStateNonCritical"]/thinkRoot[@Class="ThinkNode_Tagger"]/subNodes/li[state="WanderPsychotic"]</xpath>
+    <value>
+      <li Class="ThinkNode_ConditionalMentalState">
+        <state>RandomRape</state>
+        <subNodes>
+          <li Class="rjw.JobGiver_RandomRape" />
+          <li Class="JobGiver_WanderAnywhere">
+            <maxDanger>Deadly</maxDanger>
+          </li>
+        </subNodes>
+      </li>
+    </value>
+  </Operation>
 </Patch>
