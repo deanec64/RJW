@@ -1,12 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <MentalStateDef Abstract="True" Name="BaseMentalState">
+  <rjw.SexualMentalStateDef Abstract="True" Name="BaseMentalState">
     <minTicksBeforeRecovery>10000</minTicksBeforeRecovery>
     <stateClass>rjw.SexualMentalState</stateClass>
     <workerClass>rjw.SexualMentalStateWorker</workerClass>
     <recoveryMtbDays>0.3</recoveryMtbDays>
-  </MentalStateDef>
+    <requireCanFuck>true</requireCanFuck>
+    <requireCanBeFuck>true</requireCanBeFuck>
+    <requireCanRape>true</requireCanRape>
+    <requireCanGetRaped>true</requireCanGetRaped>
+  </rjw.SexualMentalStateDef>
 
   <rjw.SexualMentalBreakDef Abstract="True" Name="BaseSexualMentalBreak">
     <commonalityMultiplierBySexNeed>
@@ -34,7 +38,7 @@
       </points>
     </commonalityMultiplierBySexNeed>
   </rjw.SexualMentalBreakDef>
-  <MentalStateDef ParentName="BaseMentalState">
+  <rjw.SexualMentalStateDef ParentName="BaseMentalState">
     <defName>RandomRape</defName>
     <stateClass>rjw.MentalState_RandomRape</stateClass>
     <label>random raping</label>
@@ -53,7 +57,7 @@
     <recoverFromSleep>true</recoverFromSleep>
     <recoverFromDowned>true</recoverFromDowned>
     <unspawnedCanDo>true</unspawnedCanDo>
-  </MentalStateDef>
+  </rjw.SexualMentalStateDef>
 
 
 </Defs>

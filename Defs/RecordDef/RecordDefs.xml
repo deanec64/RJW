@@ -17,21 +17,21 @@
 
   <RecordDef>
     <defName>CountOfSexWithAnimals</defName>
-    <label>Count of sex</label>
+    <label>Count of sex with Animals</label>
     <description>The number of times I had sex with animals.</description>
     <type>Int</type>
   </RecordDef>
 
   <RecordDef>
     <defName>CountOfSexWithInsects</defName>
-    <label>Count of sex</label>
+    <label>Count of sex with Insects</label>
     <description>The number of times I had sex with insects.</description>
     <type>Int</type>
   </RecordDef>
 
   <RecordDef>
     <defName>CountOfSexWithOthers</defName>
-    <label>Count of sex</label>
+    <label>Count of sex with Others</label>
     <description>The number of times I had sex with other races.</description>
     <type>Int</type>
   </RecordDef>

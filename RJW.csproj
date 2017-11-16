@@ -476,6 +476,7 @@
     <Compile Include="Source\Thoughts\ThinkNode_ConditionalNecro.cs" />
     <Compile Include="Source\Thoughts\ThinkNode_ConditionalNympho.cs" />
     <Compile Include="Source\Thoughts\ThinkNode_ConditionalRapist.cs" />
+    <Compile Include="Source\Thoughts\ThinkNode_ConditionalTrait.cs" />
     <Compile Include="Source\Thoughts\ThinkNode_ConditionalWhore.cs" />
     <Compile Include="Source\Thoughts\ThoughtWorker_Bound.cs" />
     <Compile Include="Source\Thoughts\ThoughtWorker_FeelingBroken.cs" />

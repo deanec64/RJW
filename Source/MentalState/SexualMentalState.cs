@@ -28,7 +28,19 @@ namespace rjw
 	{
 		public override bool StateCanOccur(Pawn pawn)
 		{
-			return xxx.need_some_sex(pawn) >= 1f && base.StateCanOccur(pawn);
+			SexualMentalStateDef d = this.def as SexualMentalStateDef;
+			if (d == null)
+			{
+				return xxx.need_some_sex(pawn) >= 1f && base.StateCanOccur(pawn);
+			}
+			else
+			{
+				return xxx.need_some_sex(pawn) >= 1f && base.StateCanOccur(pawn) &&
+					(!d.requireCanFuck || xxx.can_fuck(pawn)) &&
+					(!d.requireCanBeFuck || xxx.can_be_fucked(pawn)) &&
+					(!d.requireCanRape || xxx.can_rape(pawn)) &&
+					(!d.requireCanGetRaped || xxx.can_get_raped(pawn) );
+			}
 		}
 	}
 
@@ -46,21 +58,15 @@ namespace rjw
 			}
 		}
 	}
+	public class SexualMentalStateDef : MentalStateDef
+	{
+		public bool requireCanFuck = false;
+		public bool requireCanBeFuck = false;
+		public bool requireCanRape = false;
+		public bool requireCanGetRaped = false;
+	}
 	public class SexualMentalBreakDef : MentalBreakDef
 	{
 		public SimpleCurve commonalityMultiplierBySexNeed;
-	}
-	public class ThinkNode_ConditionalTrait : ThinkNode_Priority
-	{
-		private TraitDef trait;
-		public override ThinkResult TryIssueJobPackage(Pawn pawn, JobIssueParams jobParams){
-		
-			if((pawn.story!= null) &&
-				(pawn.story.traits.HasTrait(this.trait)))
-			{
-				return base.TryIssueJobPackage(pawn, jobParams);
-			}
-			return ThinkResult.NoJob;
-		}
 	}
 }
