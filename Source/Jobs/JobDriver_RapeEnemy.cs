@@ -130,6 +130,7 @@ namespace rjw
 
 		protected override IEnumerable<Toil> MakeNewToils()
 		{
+			//Log.Message("[RJW] JobDriver_RandomRape::MakeNewToils() called");
 			duration = (int)(2000.0f * Rand.Range(0.50f, 0.90f));
 			ticks_between_hearts = Rand.RangeInclusive(70, 130);
 			ticks_between_hits = Rand.Range(xxx.config.min_ticks_between_hits, xxx.config.max_ticks_between_hits);
@@ -142,28 +143,35 @@ namespace rjw
 				ticks_between_hits = (int)(ticks_between_hits * 0.90);
 
 			this.FailOnDespawnedNullOrForbidden(iTarget);
-			this.FailOn(() => !pawn.CanReserve(Target, comfort_prisoners.max_rapists_per_prisoner, 0)); // Fail if someone else reserves the Target before the pawn arrives
-			this.FailOn(() => !Target.Downed); //Stop rape when victim stand up again.
+			this.FailOn(() => (!Target.health.capacities.CanBeAwake)); // || (!comfort_prisoners.is_designated (Prisoner)));
+			this.FailOn(() => !pawn.CanReserve(Target, comfort_prisoners.max_rapists_per_prisoner, 0)); // Fail if someone else reserves the prisoner before the pawn arrives
 			yield return Toils_Goto.GotoThing(iTarget, PathEndMode.OnCell);
+			yield return new Toil
+			{
+				initAction = delegate
+				{
+					pawn.Reserve(Target, comfort_prisoners.max_rapists_per_prisoner, 0);
+					if (!pawnHasPenis)
+						Target.Drawer.rotator.Face(pawn.DrawPos);
+					var dri = Target.jobs.curDriver as JobDriver_GettinRaped;
+					if (dri == null)
+					{
+						var gettin_raped = new Job(xxx.gettin_raped);
+						Target.jobs.StartJob(gettin_raped, JobCondition.InterruptForced, null, false, true, null);
+						(Target.jobs.curDriver as JobDriver_GettinRaped).increase_time(duration);
+					}
+					else
+					{
+						dri.rapist_count += 1;
+						dri.increase_time(duration);
+					}
+				},
+				defaultCompleteMode = ToilCompleteMode.Instant
+			};
 
 			var rape = new Toil();
 			rape.initAction = delegate
 			{
-				pawn.Reserve(Target, comfort_prisoners.max_rapists_per_prisoner, 0);
-				if (!pawnHasPenis)
-					Target.Drawer.rotator.Face(pawn.DrawPos);
-				var dri = Target.jobs.curDriver as JobDriver_GettinRaped;
-				if (dri == null)
-				{
-					var gettin_raped = new Job(xxx.gettin_raped);
-					Target.jobs.StartJob(gettin_raped, JobCondition.InterruptForced, null, false, true, null);
-					(Target.jobs.curDriver as JobDriver_GettinRaped).increase_time(duration);
-				}
-				else
-				{
-					dri.rapist_count += 1;
-					dri.increase_time(duration);
-				}
 			};
 			rape.tickAction = delegate
 			{
@@ -263,7 +271,7 @@ namespace rjw
 		public virtual float GetFuckability(Pawn rapist, Pawn target)
 		{
 			////--Log.Message("[RJW]JobDriver_RapeEnemy::GetFuckability(" + rapist.ToString() + "," + target.ToString() + ")");
-			return xxx.would_fuck(rapist, target, false, true);
+			return xxx.would_fuck(rapist, target, true, true);
 		}
 
 		protected bool Can_rape_Easily(Pawn p)

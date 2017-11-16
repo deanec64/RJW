@@ -313,6 +313,15 @@ namespace rjw
 					p.records.GetValue(CountOfRapedOthers) == 0 &&
 					p.records.GetValue(CountOfBeenRapedByOthers) == 0;
 		}
+		public static bool is_gettin_rapeNow(Pawn pawn)
+		{
+			if ((pawn.jobs != null) &&
+				(pawn.jobs.curDriver != null))
+			{
+				return pawn.jobs.curDriver.GetType() == typeof(JobDriver_GettinRaped);
+			}
+			return false;
+		}
 
 		public static float need_some_sex(Pawn pawn)
 		{
@@ -1025,7 +1034,8 @@ namespace rjw
 			}
 			if (isVirginSex && currentThought != null)
 			{
-				pawn.needs.mood.thoughts.memories.TryGainMemory( (Thought_Memory)ThoughtMaker.MakeThought(currentThought) , part);
+				//added by Hoge.  This works fine.  but need balance and discuss about need this or not
+				//pawn.needs.mood.thoughts.memories.TryGainMemory( (Thought_Memory)ThoughtMaker.MakeThought(currentThought) , part);
 			}
 		}
 

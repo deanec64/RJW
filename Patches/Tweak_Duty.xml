@@ -64,23 +64,6 @@
   </Operation>
 -->
 
-
-<!-- Added by Hoge.  Should move new Patch def.  Are there any way using ThinktreeDef?( I'm not good at thinktree Operation...-->
-  <Operation Class="PatchOperationInsert">
-    <xpath>*/ThinkTreeDef[defName="MentalStateNonCritical"]/thinkRoot[@Class="ThinkNode_Tagger"]/subNodes/li[state="WanderPsychotic"]</xpath>
-    <value>
-      <li Class="ThinkNode_ConditionalMentalState">
-        <state>RandomRape</state>
-        <subNodes>
-          <li Class="rjw.JobGiver_RandomRape" />
-          <li Class="JobGiver_WanderAnywhere">
-            <maxDanger>Deadly</maxDanger>
-          </li>
-        </subNodes>
-      </li>
-    </value>
-  </Operation>
-  
   <Operation Class="PatchOperationInsert">
     <xpath>*/ThinkTreeDef[defName="MentalStateCritical"]/thinkRoot[@Class="ThinkNode_Tagger"]/subNodes/li[state="Berserk"]/subNodes/li/subNodes/li[@Class="JobGiver_Berserk"]</xpath>
     <value>
