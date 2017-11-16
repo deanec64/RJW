@@ -11,8 +11,8 @@
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
@@ -441,6 +441,7 @@
     <Compile Include="Source\Jobs\JobGiver_WhoreInvitingVisitors.cs" />
     <Compile Include="Source\Jobs\JobDef_RapeEnemy.cs" />
     <Compile Include="Source\MentalState\MentalState_RandomRape.cs" />
+    <Compile Include="Source\MentalState\SexualMentalState.cs" />
     <Compile Include="Source\Needs\Need_Sex.cs" />
     <Compile Include="Source\Needs\PawnCapacityWorker_Fertility.cs" />
     <Compile Include="Source\Pawns\nymph_backstories.cs" />

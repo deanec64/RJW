@@ -80,4 +80,16 @@
       </li>
     </value>
   </Operation>
+  
+  <Operation Class="PatchOperationInsert">
+    <xpath>*/ThinkTreeDef[defName="MentalStateCritical"]/thinkRoot[@Class="ThinkNode_Tagger"]/subNodes/li[state="Berserk"]/subNodes/li/subNodes/li[@Class="JobGiver_Berserk"]</xpath>
+    <value>
+      <li Class="rjw.ThinkNode_ConditionalTrait">
+        <trait>Rapist</trait>
+        <subNodes>
+          <li Class="rjw.JobGiver_RandomRape" />
+        </subNodes>
+      </li>
+    </value>
+  </Operation>
 </Patch>
