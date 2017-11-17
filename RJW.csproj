@@ -11,8 +11,8 @@
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
@@ -37,7 +37,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\RimWorld\RimWorldWin_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\RimWorldWin_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="HugsLib">
@@ -45,7 +45,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="RimWorldChildren">
-      <HintPath>..\..\RimWorld\Mods\ChildrenAndPregnancy-master\Assemblies\RimWorldChildren.dll</HintPath>
+      <HintPath>..\ChildrenAndPregnancy-master\Assemblies\RimWorldChildren.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="SexualitySpectrum">
@@ -57,7 +57,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>..\..\RimWorld\RimWorldWin_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>..\..\RimWorldWin_Data\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
@@ -70,6 +70,7 @@
     <Content Include="Assemblies\ArchitectSense.dll" />
     <Content Include="Assemblies\RJW.dll" />
     <Content Include="changelog.txt" />
+    <Content Include="compatibility.txt" />
     <Content Include="credits.txt" />
     <Content Include="Defs\Body\InsectBodyParts.xml" />
     <Content Include="Defs\Body\MechBodyParts.xml" />
@@ -98,6 +99,7 @@
     <Content Include="Defs\JobDefs\Jobs.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Defs\MentalState\MentalStateDefs.xml" />
     <Content Include="Defs\MiscTranslationDef\MiscTranslationDefs.xml" />
     <Content Include="Defs\Motes\Motes.xml" />
     <Content Include="Defs\Needs\Needs.xml" />
@@ -106,6 +108,7 @@
     <Content Include="Defs\RecipeDefs\Recipes_Prosthetics.xml" />
     <Content Include="Defs\RecipeDefs\Recipes_Surgery.xml" />
     <Content Include="Defs\RecipeDefs\Recipes_RemoveEnemyImplants.xml" />
+    <Content Include="Defs\RecordDef\RecordDefs.xml" />
     <Content Include="Defs\RecordDef\Records_GetRaped.xml" />
     <Content Include="Defs\ResearchProjectDefs\ResearchProjects_XxXx.xml" />
     <Content Include="Defs\ResearchProjectDefs\ResearchTabs.xml" />
@@ -371,7 +374,6 @@
     <Content Include="version.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Defs\RandomDialoguesxml" />
     <None Include="Languages\Japanese\Keyed\RimJobWorld.xml.bak" />
     <None Include="LICENSE" />
   </ItemGroup>
@@ -438,6 +440,8 @@
     <Compile Include="Source\Jobs\JobGiver_ViolateCorpse.cs" />
     <Compile Include="Source\Jobs\JobGiver_WhoreInvitingVisitors.cs" />
     <Compile Include="Source\Jobs\JobDef_RapeEnemy.cs" />
+    <Compile Include="Source\MentalState\MentalState_RandomRape.cs" />
+    <Compile Include="Source\MentalState\SexualMentalState.cs" />
     <Compile Include="Source\Needs\Need_Sex.cs" />
     <Compile Include="Source\Needs\PawnCapacityWorker_Fertility.cs" />
     <Compile Include="Source\Pawns\nymph_backstories.cs" />
@@ -472,6 +476,7 @@
     <Compile Include="Source\Thoughts\ThinkNode_ConditionalNecro.cs" />
     <Compile Include="Source\Thoughts\ThinkNode_ConditionalNympho.cs" />
     <Compile Include="Source\Thoughts\ThinkNode_ConditionalRapist.cs" />
+    <Compile Include="Source\Thoughts\ThinkNode_ConditionalTrait.cs" />
     <Compile Include="Source\Thoughts\ThinkNode_ConditionalWhore.cs" />
     <Compile Include="Source\Thoughts\ThoughtWorker_Bound.cs" />
     <Compile Include="Source\Thoughts\ThoughtWorker_FeelingBroken.cs" />

@@ -46,7 +46,7 @@ namespace rjw
 			else
 			{
 				//Log.Message("[RJW]" + this.GetType().ToString() + "::TryGiveJob( " + p.NameStringShort + " ) - unable to find victim");
-				p.mindState.canLovinTick = Find.TickManager.TicksGame + 1;
+				p.mindState.canLovinTick = Find.TickManager.TicksGame + Rand.Range(75, 150);
 			}
 			//else {  Log.Message("[RJW] JobGiver_RapeEnemy::TryGiveJob( " + p.NameStringShort + " ) - too fast to play next"); }
 

@@ -28,6 +28,17 @@
 			<li>
 				<label>rapist</label>
 				<description>NAME doesn't take &#34;No&#34; as an answer.</description>
+        <allowedMentalBreaks>
+          <li>RandomRape</li>
+        </allowedMentalBreaks>
+        <randomMentalState>RandomRape</randomMentalState>
+        <randomMentalStateMtbDaysMoodCurve>
+          <points>
+            <li>(0, 15)</li>
+            <li>(50, 50)</li>
+            <li>(100, 100)</li>
+          </points>
+        </randomMentalStateMtbDaysMoodCurve>
 			</li>
 		</degreeDatas>
 		<conflictingTraits>

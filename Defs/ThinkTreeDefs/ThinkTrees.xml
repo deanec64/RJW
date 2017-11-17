@@ -39,26 +39,29 @@
 			</subNodes>
 		</thinkRoot>
 	</ThinkTreeDef>
+  
 
 	<ThinkTreeDef>
 		<defName>RandomRapeTree</defName>
 		<insertTag>Humanlike_PreMain</insertTag>
 		<insertPriority>16</insertPriority>
-		<thinkRoot Class="ThinkNode_Priority">
+		<thinkRoot Class="ThinkNode_Tagger">
+      <tagToGive>InMentalState</tagToGive>
 			<subNodes>
-				<li Class="rjw.ThinkNode_ConditionalRapist">
-					<subNodes>
-						<li Class="rjw.ThinkNode_ChancePerHour_RandomRape">
-							<subNodes>
-								<li Class="rjw.JobGiver_RandomRape" />
-							</subNodes>
-						</li>
-					</subNodes>
-				</li>
+        <li Class="ThinkNode_ConditionalMentalState">
+          <state>RandomRape</state>
+          <subNodes>
+            <li Class="rjw.JobGiver_RandomRape" />
+            <li Class="JobGiver_WanderAnywhere">
+              <maxDanger>Deadly</maxDanger>
+            </li>
+          </subNodes>
+        </li>
 			</subNodes>
 		</thinkRoot>
 	</ThinkTreeDef>
 
+  
 	<ThinkTreeDef>
 		<defName>FapTree</defName>
 		<insertTag>Humanlike_PostMentalState</insertTag>

@@ -24,17 +24,17 @@ namespace rjw
 					HediffDef_InsectEgg egg = (from x in DefDatabase<HediffDef_InsectEgg>.AllDefs where x.IsParent(pawn.def.defName) select x).RandomElement<HediffDef_InsectEgg>();
 					if (egg != null)
 					{
-						Log.Message("[RJW]JobDriver_RapeEnemyByInsect::aftersex() - Planting egg " + egg.ToString());
+						//Log.Message("[RJW]JobDriver_RapeEnemyByInsect::aftersex() - Planting egg " + egg.ToString());
 						PlantSomething(egg, part, isAnalSex, Rand.Range(1, 2));
 					}
-					else
+					/*else
 					{
 						Log.Message("[RJW]JobDriver_RapeEnemyByInsect::aftersex() - There is no EggData of " + pawn.def.defName);
-					}
+					}*/
 				}
 				else
 				{
-					Log.Message("[RJW]JobDriver_RapeEnemyByInsect::aftersex() - Fertilize eggs");
+					//Log.Message("[RJW]JobDriver_RapeEnemyByInsect::aftersex() - Fertilize eggs");
 					foreach (var egg in (from x in part.health.hediffSet.GetHediffs<Hediff_InsectEgg>() where x.IsParent(pawn.def.defName) select x))
 					{
 						egg.Fertilize(pawn);

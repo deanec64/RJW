@@ -15,16 +15,19 @@
     <defName>RJW_MegascarabEgg</defName>
     <label>Megascarab's Egg</label>
     <parentDef>Megascarab</parentDef>
+    <bornTick>500000</bornTick>
   </HediffDef>
   <HediffDef ParentName="RJW_ImplantEgg">
     <defName>RJW_MegaspiderEgg</defName>
     <label>Megaspider's Egg</label>
     <parentDef>Megaspider</parentDef>
+    <bornTick>700000</bornTick>
   </HediffDef>
   <HediffDef ParentName="RJW_ImplantEgg">
     <defName>RJW_SpelopedeEgg</defName>
     <label>Spelopede's Egg</label>
     <parentDef>Spelopede</parentDef>
+    <bornTick>600000</bornTick>
   </HediffDef>
 
   <!--Used for JobDriver_RapeEnemyByMech. Mechs implant things when success rape.-->

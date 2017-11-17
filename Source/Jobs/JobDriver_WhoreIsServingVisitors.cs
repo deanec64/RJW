@@ -214,7 +214,8 @@ namespace rjw
 						Partner.mindState.canLovinTick = Find.TickManager.TicksGame + xxx.generate_min_ticks_to_next_lovin(Partner);
 
 						//Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - Partner should pay the price now in afterSex.initAction");
-						if (xxx.PayPriceToWhore(Partner, price, Actor))
+						int remainPrice = xxx.PayPriceToWhore(Partner, price, Actor);
+						if (remainPrice <= 0)
 						{
 							//--Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - Paying price is success");
 						}
@@ -222,6 +223,7 @@ namespace rjw
 						{
 							//--Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - Paying price failed");
 						}
+						xxx.UpdateRecords(Actor, price-remainPrice);
 					},
 					defaultCompleteMode = ToilCompleteMode.Instant
 				};

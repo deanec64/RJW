@@ -94,26 +94,35 @@ namespace rjw
 			this.FailOn(() => (!Prisoner.health.capacities.CanBeAwake)); // || (!comfort_prisoners.is_designated (Prisoner)));
 			this.FailOn(() => !pawn.CanReserve(Prisoner, comfort_prisoners.max_rapists_per_prisoner, 0)); // Fail if someone else reserves the prisoner before the pawn arrives
 			yield return Toils_Goto.GotoThing(iprisoner, PathEndMode.OnCell);
+			yield return new Toil
+			{
+				initAction = delegate
+				{
+					pawn.Reserve(Prisoner, comfort_prisoners.max_rapists_per_prisoner, 0);
+					if (!pawnHasPenis)
+						Prisoner.Drawer.rotator.Face(pawn.DrawPos);
+					var dri = Prisoner.jobs.curDriver as JobDriver_GettinRaped;
+					if (dri == null)
+					{
+						var gettin_raped = new Job(xxx.gettin_raped);
+						Prisoner.jobs.StartJob(gettin_raped, JobCondition.InterruptForced, null, false, true, null);
+						(Prisoner.jobs.curDriver as JobDriver_GettinRaped).increase_time(duration);
+					}
+					else
+					{
+						dri.rapist_count += 1;
+						dri.increase_time(duration);
+					}
+				},
+				defaultCompleteMode = ToilCompleteMode.Instant
+			};
 
 			var rape = new Toil();
+			rape.FailOn(() => (Prisoner.CurJob == null) || (Prisoner.CurJob.def != xxx.gettin_raped));
 			rape.initAction = delegate
 			{
-				pawn.Reserve(Prisoner, comfort_prisoners.max_rapists_per_prisoner, 0);
-				if (!pawnHasPenis)
-					Prisoner.Drawer.rotator.Face(pawn.DrawPos);
-				var dri = Prisoner.jobs.curDriver as JobDriver_GettinRaped;
-				if (dri == null)
-				{
-					var gettin_raped = new Job(xxx.gettin_raped);
-					Prisoner.jobs.StartJob(gettin_raped, JobCondition.InterruptForced, null, false, true, null);
-					(Prisoner.jobs.curDriver as JobDriver_GettinRaped).increase_time(duration);
-				}
-				else
-				{
-					dri.rapist_count += 1;
-					dri.increase_time(duration);
-				}
 
+				Messages.Message("Rapin'Now".Translate(new object[] { pawn.LabelIndefinite(), Prisoner.LabelIndefinite() }).CapitalizeFirst(), Prisoner, MessageSound.Negative);
 				// Try to take off the attacker's clothing
 				/* Edited by nizhuan-jjr: No Dropping Clothes on attackers!
                         worn_apparel = pawn.apparel.WornApparel.ListFullCopy<Apparel>();
