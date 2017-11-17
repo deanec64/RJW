@@ -411,7 +411,7 @@ namespace rjw
 			{
 				return true;
 			}
-			else if (is_human(pawn))
+			else if (!is_animal(pawn) && !is_mechanoid(pawn))
 			{
 				int age = pawn.ageTracker.AgeBiologicalYears;
 				return (age >= Mod_Settings.sex_minimum_age) && (need_some_sex(pawn) > 0) && (!Genital_Helper.genitals_blocked(pawn))
