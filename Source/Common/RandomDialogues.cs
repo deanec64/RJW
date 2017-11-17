@@ -2,6 +2,7 @@
 
 namespace rjw
 {
+	/* TO BE FINISHED
 	public enum RandomDialogueJobType
 	{
 		Rape = 0,
@@ -34,7 +35,7 @@ namespace rjw
 		public string RD19;
 	}
 
-	/* TO BE FINISHED
+	
     [DefOf]
     public static class RandomDialoguesDefOf
     {
