@@ -93,16 +93,12 @@ namespace rjw
 				{
 					bs.SetTitle("Feisty Nymph");
 					bs.SetTitleShort("Nymph");
-					bs.baseDesc = "NAME struts around the colony like a conqueror examining a newly annexed territory. You try to focus on your work but HE won't let you.\n" +
-						"\"I heard what you said about me!\" HE accuses. You didn't say anything about HIM. HECAP knows that. " +
-						"\"Wanna fight?\" HE challenges. You already know what HE means: a few minutes of play wrestling and then you take HIM, or, if you hesitate, HE takes you.\n" +
-						"Though NAME can be hard to get along with you've come to appreciate how HE's more practical than the others.\n" +
-						"You explain to HIM, \"See these things here? They need to be over there\" and \"Those people are trying to kill us, so let's kill them first.\" HECAP listens, and does what is necessary.";
+					bs.baseDesc = "NAME struts around the colony like a conqueror examining a newly annexed territory. You try to focus on your work but HE won't let you.\n" + "\"I heard what you said about me!\" HE accuses. You didn't say anything about HIM. HECAP knows that. " + "\"Wanna fight?\" HE challenges. You already know what HE means: a few minutes of play wrestling and then you take HIM, or, if you hesitate, HE takes you.\n" + "Though NAME can be hard to get along with you've come to appreciate how HE's more practical than the others.\n" + "You explain to HIM, \"See these things here? They need to be over there\" and \"Those people are trying to kill us, so let's kill them first.\" HECAP listens, and does what is necessary.";
 				}
 				bs.skillGains.Add("Social", -3);
 				bs.skillGains.Add("Shooting", 4);
 				bs.skillGains.Add("Melee", 6);
-				bs.workDisables = (WorkTags.Cleaning | WorkTags.Animals | WorkTags.Caring | WorkTags.Artistic | WorkTags.ManualSkilled);
+				bs.workDisables = (WorkTags.Cleaning | WorkTags.Animals | WorkTags.Caring | WorkTags.Artistic | WorkTags.ManualSkilled); 
 				bs.requiredWorkTags = WorkTags.None;
 				bs.slot = BackstorySlot.Adulthood;
 				bs.spawnCategories = new List<string>() { "rjw_nymphsCategory", "Slave" }; // Not necessary (I think)
@@ -136,11 +132,7 @@ namespace rjw
 				{
 					bs.SetTitle("Curious Nymph");
 					bs.SetTitleShort("Nymph");
-					bs.baseDesc =
-						"Hold the covering plate back and place the actuator in slot C. Line the rod up. No, that won't do, it needs to be perfect. Now pop the JC-444 chip in place. \n" +
-						"Solder the orange wire to pin #16 and the striped wire to pin #5. \n" +
-						"Suddenly, there HE is. You aren't surprised to see NAME, you just didn't hear HIM approach. By now you're used to it. \n" +
-						"You continue your work in silence as HE hovers over you, her large eyes fixated on the rapid, rythmic, deliberate motions of your hands.";
+					bs.baseDesc = "Hold the covering plate back and place the actuator in slot C. Line the rod up. No, that won't do, it needs to be perfect. Now pop the JC-444 chip in place. \n" + "Solder the orange wire to pin #16 and the striped wire to pin #5. \n" + "Suddenly, there HE is. You aren't surprised to see NAME, you just didn't hear HIM approach. By now you're used to it. \n" + "You continue your work in silence as HE hovers over you, her large eyes fixated on the rapid, rythmic, deliberate motions of your hands.";
 				}
 				bs.skillGains.Add("Construction", 2);
 				bs.skillGains.Add("Crafting", 6);
@@ -178,9 +170,7 @@ namespace rjw
 				{
 					bs.SetTitle("Tender Nymph");
 					bs.SetTitleShort("Nymph");
-					bs.baseDesc = "NAME has a pair of charming eyes, and HIS voice is soft and sweet. Due to HIS previous nurse job, HE tends people quite well.\n"
-					+ "HE's crouched in the corner, hands over HIS ears and tears in HIS eyes."
-					+ "You don't understand, then you notice it: the distant sound of the pained squeals of pigs being slaughtered.";
+					bs.baseDesc = "NAME has a pair of charming eyes, and HIS voice is soft and sweet. Due to HIS previous nurse job, HE tends people quite well.\n" + "HE's crouched in the corner, hands over HIS ears and tears in HIS eyes." + "You don't understand, then you notice it: the distant sound of the pained squeals of pigs being slaughtered.";
 				}
 				bs.skillGains.Add("Medicine", 4);
 				bs.workDisables = (WorkTags.Animals | WorkTags.Artistic | WorkTags.Hauling | WorkTags.Violent | WorkTags.ManualSkilled);
@@ -254,8 +244,7 @@ namespace rjw
 				{
 					bs.SetTitle("Broken Nymph");
 					bs.SetTitleShort("Nymph");
-					bs.baseDesc = "Maybe NAME suffered some terrible things, HE looks rather emaciated, and no one wants to speak with HIM.\n" +
-						"HECAP only behaves a bit vivaciously while staring at some rod-like stuffs.";
+					bs.baseDesc = "Maybe NAME suffered some terrible things, HE looks rather emaciated, and no one wants to speak with HIM.\n" + "HECAP only behaves a bit vivaciously while staring at some rod-like stuffs.";
 				}
 				bs.skillGains.Add("Social", -5);
 				bs.skillGains.Add("Artistic", 8);
