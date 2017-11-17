@@ -452,7 +452,6 @@
     <Compile Include="Source\Needs\PawnCapacityWorker_Fertility.cs" />
     <Compile Include="Source\Pawns\nymph_backstories.cs" />
     <Compile Include="Source\Pawns\nymph_generator.cs" />
-    <Compile Include="Source\Properties\AssemblyInfo.cs" />
     <Compile Include="Source\Recipes\chastity_belt.cs" />
     <Compile Include="Source\Recipes\Recipe_ForceOffGear.cs" />
     <Compile Include="Source\Recipes\Recipe_InstallAnus.cs" />
