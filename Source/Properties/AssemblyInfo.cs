@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("RimJobWorld")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Adult mod for Rimworld")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("RimJobWorld")]

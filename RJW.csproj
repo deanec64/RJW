@@ -71,9 +71,14 @@
     <Content Include="Assemblies\RJW.dll" />
     <Content Include="changelog.txt" />
     <Content Include="credits.txt" />
+    <Content Include="Defs\Body\PrivatePartGroups.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Defs\Body\InsectBodyParts.xml" />
     <Content Include="Defs\Body\MechBodyParts.xml" />
-    <Content Include="Defs\Body\PrivateParts.xml" />
+    <Content Include="Defs\Body\PrivateParts.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Defs\BondageGear\Hediffs.xml" />
     <Content Include="Defs\BondageGear\Items.xml" />
     <Content Include="Defs\BondageGear\Recipes_Production.xml" />
@@ -85,7 +90,9 @@
     <Content Include="Defs\Designations\Designations.xml" />
     <Content Include="Defs\HediffDefs\Hediffs_FeelingBroken.xml" />
     <Content Include="Defs\HediffDefs\Hediffs_Other.xml" />
-    <Content Include="Defs\HediffDefs\Hediffs_PrivateParts.xml" />
+    <Content Include="Defs\HediffDefs\Hediffs_PrivateParts.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Defs\HediffDefs\Hediffs_SimpleBaby.xml" />
     <Content Include="Defs\HediffDefs\Hediffs_STDs.xml" />
     <Content Include="Defs\HediffDefs\Hediffs_Sterilized.xml" />
@@ -101,7 +108,7 @@
     <Content Include="Defs\MiscTranslationDef\MiscTranslationDefs.xml" />
     <Content Include="Defs\Motes\Motes.xml" />
     <Content Include="Defs\Needs\Needs.xml" />
-    <Content Include="Defs\PawnCapacity.xml" />
+    <Content Include="Defs\PawnCapacityDefs\PawnCapacity.xml" />
     <Content Include="Defs\PawnKinds\PawnKinds.xml" />
     <Content Include="Defs\RecipeDefs\Recipes_Prosthetics.xml" />
     <Content Include="Defs\RecipeDefs\Recipes_Surgery.xml" />
@@ -322,7 +329,9 @@
     <Content Include="Languages\Korean\DefInjected\WorkGiverDef\WorkGivers.xml" />
     <Content Include="Languages\Korean\Keyed\RimJobWorld.xml" />
     <Content Include="Patches\AddBodyPartsToInsect.xml" />
-    <Content Include="Patches\BodyPatches.xml" />
+    <Content Include="Patches\BodyPatches.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Patches\Tweak_Duty.xml" />
     <Content Include="Sounds\Sex\blowjob.wav" />
     <Content Include="Sounds\Sex\cum.wav" />
@@ -376,6 +385,7 @@
     <None Include="LICENSE" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\Common\bondage_gear.cs" />
     <Compile Include="Source\Common\comfort_prisoners.cs" />
     <Compile Include="Source\Common\config.cs" />
