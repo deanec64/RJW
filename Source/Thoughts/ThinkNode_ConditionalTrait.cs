@@ -7,18 +7,24 @@ using Verse.AI;
 
 namespace rjw
 {
-	public class ThinkNode_ConditionalTrait : ThinkNode_Priority
+	public class ThinkNode_ConditionalTrait : ThinkNode_Conditional
 	{
 		private TraitDef trait;
-		public override ThinkResult TryIssueJobPackage(Pawn pawn, JobIssueParams jobParams)
+		public override ThinkNode DeepCopy(bool resolve = true)
 		{
-
-			if ((pawn.story != null) &&
-				(pawn.story.traits.HasTrait(this.trait)))
+			ThinkNode_ConditionalTrait thinkNode_ConditionalTrait = (ThinkNode_ConditionalTrait)base.DeepCopy(resolve);
+			thinkNode_ConditionalTrait.trait = this.trait;
+			return thinkNode_ConditionalTrait;
+		}
+		protected override bool Satisfied(Pawn pawn)
+		{
+			if (trait == null)
+			if (pawn.story != null)
 			{
-				return base.TryIssueJobPackage(pawn, jobParams);
+				Log.Message(pawn.NameStringShort+" has trait" + this.trait.defName + ":" + pawn.story.traits.HasTrait(this.trait));
+				return pawn.story.traits.HasTrait(this.trait);
 			}
-			return ThinkResult.NoJob;
+			return false;
 		}
 	}
 }

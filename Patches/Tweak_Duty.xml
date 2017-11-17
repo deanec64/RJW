@@ -70,7 +70,7 @@
       <li Class="rjw.ThinkNode_ConditionalTrait">
         <trait>Rapist</trait>
         <subNodes>
-          <li Class="rjw.JobGiver_RandomRape" />
+          <li Class="rjw.JobGiver_RapeEnemy" />
         </subNodes>
       </li>
     </value>

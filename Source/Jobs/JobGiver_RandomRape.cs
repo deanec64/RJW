@@ -17,7 +17,7 @@ namespace rjw
 				{
 					if (xxx.config.rapists_always_rape || (!xxx.is_animal(target) || xxx.is_zoophiliac(rapist)))
 					{
-						var fuc = xxx.would_fuck(rapist, target, true,true);
+						var fuc = xxx.would_fuck(rapist, target, true);
 						if ((fuc > best_fuckability) && (Rand.Value < fuc))
 						{
 							best_rapee = target;

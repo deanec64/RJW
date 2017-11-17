@@ -172,6 +172,7 @@ namespace rjw
 			var rape = new Toil();
 			rape.initAction = delegate
 			{
+				Messages.Message("Rapin'Now".Translate(new object[] { pawn.LabelIndefinite(), Target.LabelIndefinite() }).CapitalizeFirst(), Target, MessageSound.Negative);
 			};
 			rape.tickAction = delegate
 			{
@@ -241,7 +242,8 @@ namespace rjw
 			foreach (var target in m.mapPawns.AllPawns)
 			{
 				//if (target.Faction != Faction.OfPlayer) continue;
-				if (rapist.Faction == target.Faction || (!FactionUtility.HostileTo(rapist.Faction, target.Faction) && rapist.Faction != null)) continue;
+				//if (rapist.Faction == target.Faction || (!FactionUtility.HostileTo(rapist.Faction, target.Faction) && rapist.Faction != null)) continue;
+				if(!rapist.HostileTo(target)) continue;
 
 				if (IntVec3Utility.ManhattanDistanceFlat(target.Position, rapist.Position) >= targetAcquireRadius) continue; //Too far to fuck i think.
 

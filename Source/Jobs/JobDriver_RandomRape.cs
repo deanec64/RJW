@@ -122,6 +122,7 @@ namespace rjw
 			rape.initAction = delegate
 			{
 
+				Messages.Message("Rapin'Now".Translate(new object[] { pawn.LabelIndefinite(), Prisoner.LabelIndefinite() }).CapitalizeFirst(), Prisoner, MessageSound.Negative);
 				// Try to take off the attacker's clothing
 				/* Edited by nizhuan-jjr: No Dropping Clothes on attackers!
                         worn_apparel = pawn.apparel.WornApparel.ListFullCopy<Apparel>();
