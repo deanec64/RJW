@@ -2,36 +2,36 @@
 
 <Defs>
   <!--Used for JobDriver_RapeEnemyByInsect. Insects plant egg when success rape.-->
-  <HediffDef Name="RJW_ImplantEgg" Abstract="True" Class="rjw.HediffDef_InsectEgg">
+  <rjw.HediffDef_InsectEgg Name="RJW_ImplantEgg" Abstract="True">
     <defName>RJW_InsectEgg</defName>
     <hediffClass>rjw.Hediff_InsectEgg</hediffClass>
     <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
     <initialSeverity>0.1</initialSeverity>
     <isBad>true</isBad>
     <tendable>false</tendable>
-  </HediffDef>
+  </rjw.HediffDef_InsectEgg>
 
-  <HediffDef ParentName="RJW_ImplantEgg">
+  <rjw.HediffDef_InsectEgg ParentName="RJW_ImplantEgg">
     <defName>RJW_MegascarabEgg</defName>
     <label>Megascarab's Egg</label>
     <parentDef>Megascarab</parentDef>
     <bornTick>500000</bornTick>
-  </HediffDef>
-  <HediffDef ParentName="RJW_ImplantEgg">
+  </rjw.HediffDef_InsectEgg>
+  <rjw.HediffDef_InsectEgg ParentName="RJW_ImplantEgg">
     <defName>RJW_MegaspiderEgg</defName>
     <label>Megaspider's Egg</label>
     <parentDef>Megaspider</parentDef>
     <bornTick>700000</bornTick>
-  </HediffDef>
-  <HediffDef ParentName="RJW_ImplantEgg">
+  </rjw.HediffDef_InsectEgg>
+  <rjw.HediffDef_InsectEgg ParentName="RJW_ImplantEgg">
     <defName>RJW_SpelopedeEgg</defName>
     <label>Spelopede's Egg</label>
     <parentDef>Spelopede</parentDef>
     <bornTick>600000</bornTick>
-  </HediffDef>
+  </rjw.HediffDef_InsectEgg>
 
   <!--Used for JobDriver_RapeEnemyByMech. Mechs implant things when success rape.-->
-  <HediffDef Name="RJW_ImplantMech" Abstract="True" Class="rjw.HediffDef_MechImplants">
+  <rjw.HediffDef_EnemyImplants Name="RJW_ImplantMech" Abstract="True">
     <hediffClass>rjw.Hediff_MechImplants</hediffClass>
     <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
     <initialSeverity>0.1</initialSeverity>
@@ -40,9 +40,9 @@
       <li>Mechanoid_Centipede</li>
     </parentDefs>
     <tendable>false</tendable>
-  </HediffDef>
+  </rjw.HediffDef_EnemyImplants>
 
-  <HediffDef ParentName="RJW_ImplantMech">
+  <rjw.HediffDef_EnemyImplants ParentName="RJW_ImplantMech">
     <hediffClass>rjw.Hediff_MicroComputer</hediffClass>
     <defName>RJW_MicroComputer</defName>
     <tendable>false</tendable>
@@ -54,9 +54,9 @@
       <li>RJW_Orgasm</li>
       <li>TransportCums</li>
     </randomHediffDefs>
-  </HediffDef>
+  </rjw.HediffDef_EnemyImplants>
 
-  <HediffDef>
+  <rjw.HediffDef_EnemyImplants>
     <defName>Parasite</defName>
     <hediffClass>rjw.Hediff_Parasite</hediffClass>
     <defaultLabelColor>(0.7, 1.0, 0.7)</defaultLabelColor>
@@ -97,5 +97,5 @@
         </capMods>
       </li>
     </stages>
-  </HediffDef>
+  </rjw.HediffDef_EnemyImplants>
 </Defs>

@@ -10,12 +10,12 @@
 			Pawn casterPawn = base.CasterPawn;
 
 			Thing thing = this.currentTarget.Thing;
-			casterPawn.Drawer.rotator.Face(thing.DrawPos);
+			casterpawn.rotationTracker.Face(thing.DrawPos);
 
 			this.SoundJuicy().PlayOneShot(new TargetInfo(thing.Position, casterPawn.Map, false));
 			casterPawn.Drawer.Notify_MeleeAttackOn(thing);
 
-			casterPawn.Drawer.rotator.FaceCell(thing.Position);
+			casterpawn.rotationTracker.FaceCell(thing.Position);
 			if (casterPawn.caller != null) {
 				casterPawn.caller.Notify_DidMeleeAttack();
 			}

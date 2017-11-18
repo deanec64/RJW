@@ -36,8 +36,13 @@ namespace rjw
 		{
 			get
 			{
-				return (Pawn)(CurJob.GetTarget(iprisoner));
+				return (Pawn)(job.GetTarget(iprisoner));
 			}
+		}
+
+		public override bool TryMakePreToilReservations()
+		{
+			return this.pawn.Reserve(this.animal, this.job, 1, -1, null);
 		}
 
 		protected override IEnumerable<Toil> MakeNewToils()
@@ -65,9 +70,9 @@ namespace rjw
 			rape.initAction = delegate
 			{
 				//Log.Message("[RJW] JobDriver_Beastiality::MakeNewToils() - reserving animal");
-				pawn.Reserve(animal, 1, 0); // animal rapin seems like a solitary activity
-				if (!pawnHasPenis)
-					animal.Drawer.rotator.Face(pawn.DrawPos);
+				//pawn.Reserve(animal, 1, 0); // animal rapin seems like a solitary activity
+				//if (!pawnHasPenis)
+				//	animal.rotationTracker.Face(pawn.DrawPos);
 
 				//--Log.Message("[RJW] JobDriver_Beastiality::MakeNewToils() - Setting animal job driver");
 				var dri = animal.jobs.curDriver as JobDriver_GettinRaped;

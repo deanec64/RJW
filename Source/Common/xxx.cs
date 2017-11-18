@@ -754,7 +754,7 @@ namespace rjw
 
 		public static void sexTick(Pawn pawn, Pawn partner)
 		{
-			pawn.Drawer.rotator.Face(partner.DrawPos);
+			pawn.rotationTracker.Face(partner.DrawPos);
 
 			if (xxx.config.sounds_enabled)
 			{
@@ -762,7 +762,7 @@ namespace rjw
 			}
 
 			pawn.Drawer.Notify_MeleeAttackOn(partner);
-			pawn.Drawer.rotator.FaceCell(partner.Position);
+			pawn.rotationTracker.FaceCell(partner.Position);
 		}
 
 		public static void think_after_sex(Pawn pawn, Pawn part, bool violent = false, bool isCoreLovin = false)
@@ -865,11 +865,11 @@ namespace rjw
 
 			if (bothInMap)
 			{
-				pawn.Drawer.rotator.Face(part.DrawPos);
-				pawn.Drawer.rotator.FaceCell(part.Position);
+				pawn.rotationTracker.Face(part.DrawPos);
+				pawn.rotationTracker.FaceCell(part.Position);
 
-				part.Drawer.rotator.Face(pawn.DrawPos);
-				part.Drawer.rotator.FaceCell(pawn.Position);
+				part.rotationTracker.Face(pawn.DrawPos);
+				part.rotationTracker.FaceCell(pawn.Position);
 
 				if (violent)
 				{
@@ -925,8 +925,8 @@ namespace rjw
 			Pawn deadpawn = (corpse != null && corpse.InnerPawn != null) ? corpse.InnerPawn : null;
 			var corpse_name = (deadpawn != null) ? deadpawn.NameStringShort : "NULL";
 			//--Log.Message("xxx::aftersex( " + necro_name + ", " + corpse_name + "[a deadpawn name]" + " ) called");
-			necro.Drawer.rotator.Face(corpse.DrawPos);
-			necro.Drawer.rotator.FaceCell(corpse.Position);
+			necro.rotationTracker.Face(corpse.DrawPos);
+			necro.rotationTracker.FaceCell(corpse.Position);
 
 			/* Although violent, there's no need to attack the corpse
             if (violent)
@@ -1149,12 +1149,12 @@ namespace rjw
 				{
 					extraSentencePacks.Add(analSexSucceeded);
 					AnalSexSuccess = true;
-					Messages.Message("AnalSexSucceeded".Translate(new object[] { pawn.NameStringShort, Prisoner.NameStringShort }), MessageSound.Benefit);
+					Messages.Message("AnalSexSucceeded".Translate(new object[] { pawn.NameStringShort, Prisoner.NameStringShort }), MessageTypeDefOf.PositiveEvent);
 				}
 				else
 				{
 					extraSentencePacks.Add(analSexFailed);
-					Messages.Message("AnalSexFailed".Translate(new object[] { pawn.NameStringShort, Prisoner.NameStringShort }), MessageSound.Silent);
+					Messages.Message("AnalSexFailed".Translate(new object[] { pawn.NameStringShort, Prisoner.NameStringShort }), MessageTypeDefOf.SilentInput);
 				}
 				PlayLogEntry_Interaction playLogEntry = new PlayLogEntry_Interaction(analSex, pawn, Prisoner, extraSentencePacks);
 				Find.PlayLog.Add(playLogEntry);

@@ -50,12 +50,12 @@ namespace rjw
 			}
 		}
 
-		public override void ApplyOnPawn(Pawn p, BodyPartRecord null_part, Pawn surgeon, List<Thing> ingredients)
+		public override void ApplyOnPawn(Pawn p, BodyPartRecord null_part, Pawn surgeon, List<Thing> ingredients,Bill bill)
 		{
 			var r = (force_off_gear_def)recipe;
 			if ((surgeon != null) &&
 				(p.apparel != null) &&
-				(!CheckSurgeryFail(surgeon, p, ingredients, find_part_record(r.failure_affects, p))))
+				(!CheckSurgeryFail(surgeon, p, ingredients, find_part_record(r.failure_affects, p),bill)))
 			{
 				// Remove apparel
 				foreach (var app in p.apparel.WornApparel)

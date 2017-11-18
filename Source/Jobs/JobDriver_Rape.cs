@@ -38,8 +38,13 @@ namespace rjw
 		{
 			get
 			{
-				return (Pawn)(CurJob.GetTarget(iTarget));
+				return (Pawn)(job.GetTarget(iTarget));
 			}
+		}
+
+		public override bool TryMakePreToilReservations()
+		{
+			return this.pawn.Reserve(this.Target, this.job, comfort_prisoners.max_rapists_per_prisoner, -1, null);
 		}
 
 		public static void roll_to_hit(Pawn rapist, Pawn p)
@@ -100,9 +105,9 @@ namespace rjw
 			{
 				initAction = delegate
 				{
-					pawn.Reserve(Target, comfort_prisoners.max_rapists_per_prisoner, 0);
-					if (!pawnHasPenis)
-						Target.Drawer.rotator.Face(pawn.DrawPos);
+					//pawn.Reserve(Target, comfort_prisoners.max_rapists_per_prisoner, 0);
+					//if (!pawnHasPenis)
+					//	Target.rotationTracker.Face(pawn.DrawPos);
 					var dri = Target.jobs.curDriver as JobDriver_GettinRaped;
 					if (dri == null)
 					{
@@ -123,7 +128,7 @@ namespace rjw
 			rape.FailOn(() => (Target.CurJob == null) || (Target.CurJob.def != xxx.gettin_raped));
 			rape.initAction = delegate
 			{
-				Messages.Message("Rapin'Now".Translate(new object[] { pawn.LabelIndefinite(), Target.LabelIndefinite() }).CapitalizeFirst(), Target, MessageSound.Negative);
+				Messages.Message("Rapin'Now".Translate(new object[] { pawn.LabelIndefinite(), Target.LabelIndefinite() }).CapitalizeFirst(), Target,MessageTypeDefOf.NegativeEvent);
 
 			};
 			rape.tickAction = delegate
@@ -175,11 +180,11 @@ namespace rjw
 			var pawn_name = (pawn != null) ? pawn.NameStringShort : "NULL";
 			var part_name = (pawn != null) ? part.NameStringShort : "NULL";
 			//--Log.Message("[RJW]" + this.GetType().ToString() + "::aftersex( " + pawn_name + ", " + part_name + " ) called");
-			pawn.Drawer.rotator.Face(part.DrawPos);
-			pawn.Drawer.rotator.FaceCell(part.Position);
+			pawn.rotationTracker.Face(part.DrawPos);
+			pawn.rotationTracker.FaceCell(part.Position);
 
-			part.Drawer.rotator.Face(pawn.DrawPos);
-			part.Drawer.rotator.FaceCell(pawn.Position);
+			part.rotationTracker.Face(pawn.DrawPos);
+			part.rotationTracker.FaceCell(pawn.Position);
 
 			if (violent)
 			{
@@ -230,5 +235,4 @@ namespace rjw
 			}
 		}
 	}
-}
 }

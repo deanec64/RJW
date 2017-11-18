@@ -14,7 +14,7 @@ namespace rjw
 			{
 				num = 1;
 			}
-			PawnGenerationRequest request = new PawnGenerationRequest(father.kindDef, father.Faction, PawnGenerationContext.NonPlayer, -1, false, true, false, false, true, false, 1f, false, true, true, false, false, null, null, null, null, null, null);
+			PawnGenerationRequest request = new PawnGenerationRequest(father.kindDef, father.Faction, PawnGenerationContext.NonPlayer, -1, false, true, false, false, true, false, 1f, false, true, true, false, false, false,false, null, null, null, null);
 			Pawn pawn = null;
 			for (int i = 0; i < num; i++)
 			{

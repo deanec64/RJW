@@ -49,7 +49,7 @@
     <nameColor>(0.5, 0.9, 0.5)</nameColor>
     <beginLetterLabel>random raping</beginLetterLabel>
     <beginLetter>{0} is raping randomly.</beginLetter>
-    <beginLetterDef>BadNonUrgent</beginLetterDef>
+    <beginLetterDef>ThreatSmall</beginLetterDef>
     <recoveryMessage>{0} is no longer rape randomly.</recoveryMessage>
     <baseInspectLine>Mental state: Random Rape</baseInspectLine>
     <recoverFromSleep>true</recoverFromSleep>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ThingDefs>
+<Defs>
 
 	<ThingDef>
 		<defName>Hololock</defName>
@@ -71,7 +71,7 @@
 		<tradeability>Sellable</tradeability>
 		<comps>
 			<li Class="CompProperties_Forbiddable" />
-			<li Class="rjw.CompProperties_HoloCryptoStamped" />
+			<li Class="CompProperties_HoloCryptoStamped" />
 			<li Class="CompProperties_Usable">
 				<compClass>rjw.CompStampedApparelKey</compClass>
 				<useJob>UnlockBondageGear</useJob>
@@ -107,7 +107,7 @@
 		<tradeNeverStack>true</tradeNeverStack>
 		<comps>
 			<li Class="CompProperties_Forbiddable" />
-			<li Class="rjw.CompProperties_HoloCryptoStamped" />
+			<li Class="CompProperties_HoloCryptoStamped" />
 			<li Class="CompProperties_Usable">
 				<compClass>rjw.CompBondageGear</compClass>
 				<useJob>GiveBondageGear</useJob>
@@ -227,4 +227,4 @@
 		<gives_gagged_moodlet>false</gives_gagged_moodlet>
 		<blocks_genitals>true</blocks_genitals>
 	</rjw.bondage_gear_def>
-</ThingDefs>
+</Defs>

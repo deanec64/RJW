@@ -104,6 +104,7 @@
     <Content Include="Defs\Motes\Motes.xml" />
     <Content Include="Defs\Needs\Needs.xml" />
     <Content Include="Defs\PawnCapacity.xml" />
+    <Content Include="Defs\PawnCapacityDefs\PawnCapacity.xml" />
     <Content Include="Defs\PawnKinds\PawnKinds.xml" />
     <Content Include="Defs\RecipeDefs\Recipes_Prosthetics.xml" />
     <Content Include="Defs\RecipeDefs\Recipes_Surgery.xml" />
