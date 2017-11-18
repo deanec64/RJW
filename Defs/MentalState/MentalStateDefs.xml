@@ -16,7 +16,7 @@
     <commonalityMultiplierBySexNeed>
       <points>
         <li>(0, 1)</li>
-        <li>(100, 0)</li>
+        <li>(50, 0)</li>
       </points>
     </commonalityMultiplierBySexNeed>
   </rjw.SexualMentalBreakDef>
@@ -27,9 +27,8 @@
   <rjw.SexualMentalBreakDef ParentName="BaseSexualMentalBreak">
     <defName>RandomRape</defName>
     <mentalState>RandomRape</mentalState>
-    <baseCommonality>1.5</baseCommonality>
+    <baseCommonality>10000.5</baseCommonality>
     <intensity>Extreme</intensity>
-    <requiredTrait>Rapist</requiredTrait>
     <commonalityMultiplierBySexNeed>
       <points>
         <li>(0, 2)</li>
@@ -44,9 +43,9 @@
     <category>Indulgent</category>
     <prisonersCanDo>false</prisonersCanDo>
     <colonistsOnly>true</colonistsOnly>
-    <minTicksBeforeRecovery>4000</minTicksBeforeRecovery>
-    <maxTicksBeforeRecovery>15000</maxTicksBeforeRecovery>
-    <recoveryMtbDays>0.1</recoveryMtbDays>
+    <minTicksBeforeRecovery>30000</minTicksBeforeRecovery>
+    <recoveryMtbDays>0.8</recoveryMtbDays>
+    <maxTicksBeforeRecovery>80000</maxTicksBeforeRecovery>
     <nameColor>(0.5, 0.9, 0.5)</nameColor>
     <beginLetterLabel>random raping</beginLetterLabel>
     <beginLetter>{0} is raping randomly.</beginLetter>

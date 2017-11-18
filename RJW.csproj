@@ -422,6 +422,7 @@
     <Compile Include="Source\Jobs\JobDriver_LovinPP.cs" />
     <Compile Include="Source\Jobs\JobDriver_NymphJoinInBed.cs" />
     <Compile Include="Source\Jobs\JobDriver_RandomRape.cs" />
+    <Compile Include="Source\Jobs\JobDriver_Rape.cs" />
     <Compile Include="Source\Jobs\JobDriver_RapeEnemy.cs" />
     <Compile Include="Source\Jobs\JobDriver_RapeEnemyByAnimal.cs" />
     <Compile Include="Source\Jobs\JobDriver_RapeEnemyToParasite.cs" />

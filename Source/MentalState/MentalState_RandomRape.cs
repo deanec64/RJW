@@ -18,11 +18,13 @@ namespace rjw
 		}
 		public override bool ForceHostileTo(Thing t)
 		{
+			
 			if ((this.pawn.jobs != null) &&
 				(this.pawn.jobs.curDriver != null) &&
 				(this.pawn.jobs.curDriver as JobDriver_RandomRape != null))
 			{
-				return true;
+				var jd = this.pawn.jobs.curDriver as JobDriver_RandomRape;
+				return jd.Target.Faction == t.Faction;
 			}
 			return false;
 		}
@@ -33,7 +35,8 @@ namespace rjw
 				(this.pawn.jobs.curDriver != null) &&
 				(this.pawn.jobs.curDriver as JobDriver_RandomRape != null))
 			{
-				return true;
+				var jd = this.pawn.jobs.curDriver as JobDriver_RandomRape;
+				return jd.Target.Faction == f;
 			}
 			return false;
 		}

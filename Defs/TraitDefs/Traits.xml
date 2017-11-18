@@ -34,9 +34,9 @@
         <randomMentalState>RandomRape</randomMentalState>
         <randomMentalStateMtbDaysMoodCurve>
           <points>
-            <li>(0, 15)</li>
-            <li>(50, 50)</li>
-            <li>(100, 100)</li>
+            <li>(0, 7.5)</li>
+            <li>(50, 25)</li>
+            <li>(100, 50)</li>
           </points>
         </randomMentalStateMtbDaysMoodCurve>
 			</li>
