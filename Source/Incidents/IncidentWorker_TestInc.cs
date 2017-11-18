@@ -26,7 +26,8 @@ namespace rjw
 
 			for (int i = 1; i <= 10; ++i)
 				nymph_generator.spawn_new(loc, ref m);
-			Find.LetterStack.ReceiveLetter("Nymphs!", "A whole group of nymphs has wandered into your colony.", LetterDefOf.BadNonUrgent, null);
+			//Find.LetterStack.ReceiveLetter("Nymphs!", "A whole group of nymphs has wandered into your colony.", LetterDefOf.BadNonUrgent, null);
+			Find.LetterStack.ReceiveLetter("Nymphs!", "A whole group of nymphs has wandered into your colony.", LetterDefOf.NegativeEvent, null);
 		}
 
 		// Applies permanent damage to a randomly chosen colonist, to test that this works
@@ -69,7 +70,7 @@ namespace rjw
 			}
 		}
 
-		public override bool TryExecute(IncidentParms parms)
+		protected override bool TryExecuteWorker(IncidentParms parms)
 		{
 			var m = (Map)parms.target;
 

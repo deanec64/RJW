@@ -31,7 +31,7 @@ namespace rjw
 			}
 		}
 
-		public override bool TryExecute(IncidentParms parms)
+		protected override bool TryExecuteWorker(IncidentParms parms)
 		{
 			var m = (Map)parms.target;
 

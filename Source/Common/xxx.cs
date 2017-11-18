@@ -5,7 +5,7 @@ using System.Reflection;
 using RimWorld;
 
 //using static RimWorld.Planet.CaravanInventoryUtility;
-using RimWorldChildren;
+//using RimWorldChildren;
 using UnityEngine;
 using Verse;
 using Verse.AI;
@@ -709,6 +709,7 @@ namespace rjw
 		public static void sexTick(Pawn pawn, Pawn partner)
 		{
 			pawn.Drawer.rotator.Face(partner.DrawPos);
+			//pawn.Drawer.
 
 			if (xxx.config.sounds_enabled)
 			{

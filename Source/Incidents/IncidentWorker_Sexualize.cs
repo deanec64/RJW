@@ -5,10 +5,10 @@ namespace rjw
 {
 	public class IncidentWorker_Sexualize : IncidentWorker
 	{
-		public override bool TryExecute(IncidentParms parms)
+		protected override bool TryExecuteWorker(IncidentParms parms)
 		{
 			Genital_Helper.sexualize_everyone();
-			Find.LetterStack.ReceiveLetter("Sexualization Complete", "All pawns have been sexualized.", LetterDefOf.Good, null);
+			Find.LetterStack.ReceiveLetter("Sexualization Complete", "All pawns have been sexualized.", LetterDefOf.PositiveEvent, null);
 			return true;
 		}
 	}

@@ -33,23 +33,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>..\HugsLib\Assemblies\0Harmony.dll</HintPath>
+      <HintPath>..\..\RimWorld B18\Mods\HugsLib\Assemblies\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\RimWorld\RimWorldWin_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\RimWorld B18\RimWorldWin_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="HugsLib">
-      <HintPath>..\HugsLib\Assemblies\HugsLib.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="RimWorldChildren">
-      <HintPath>..\..\RimWorld\Mods\ChildrenAndPregnancy-master\Assemblies\RimWorldChildren.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="SexualitySpectrum">
-      <HintPath>..\..\RimWorld\Mods\Romance Diversified A17\Assemblies\SexualitySpectrum.dll</HintPath>
+      <HintPath>..\..\RimWorld B18\Mods\HugsLib\Assemblies\HugsLib.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -57,7 +49,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>..\..\RimWorld\RimWorldWin_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>..\..\RimWorld B18\RimWorldWin_Data\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

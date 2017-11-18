@@ -41,11 +41,11 @@ Valid range: 0 - 100%</PregnantCoeffecientForAnimals_desc>
 
 Valid range: 0 - 300%</NonFutaWomenRaping_MaxVulnerability_desc>
 	<Rapee_MinVulnerability_human>'To-be raped' vulnerability (%)</Rapee_MinVulnerability_human>
-	<Rapee_MinVulnerability_human_desc>Human pawns with vulnerabilty higher than this will be raping targets.<br /><br />To check 'vulnerability' status, go to 'view information about this object' > stats.<br /><br />
+	<Rapee_MinVulnerability_human_desc>Human pawns with vulnerability higher than this will be raping targets.<br /><br />To check 'vulnerability' status, go to 'view information about this object' > stats.<br /><br />
 
 Valid range: 0 - 300%</Rapee_MinVulnerability_human_desc>
 	<Rapee_MinVulnerability_animals>Animals' to-be-raped vulnerability (%)</Rapee_MinVulnerability_animals>
-	<Rapee_MinVulnerability_animals_desc>Animals with vulnerabilty higher than this will be raping targets for zoophiliacs.<br /><br />To check 'vulnerability' status, go to 'view information about this object' > stats.<br /><br />
+	<Rapee_MinVulnerability_animals_desc>Animals with vulnerability higher than this will be raping targets for zoophiliacs.<br /><br />To check 'vulnerability' status, go to 'view information about this object' > stats.<br /><br />
 
 Valid range: 0 - 300%</Rapee_MinVulnerability_animals_desc>
 

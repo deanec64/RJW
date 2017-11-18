@@ -26,7 +26,8 @@ namespace rjw
 		{
 			get
 			{
-				return (Building_Bed)((Thing)base.CurJob.GetTarget(ibed));
+				//return (Building_Bed)((Thing)base.CurJob.GetTarget(ibed));
+				return (Building_Bed)((Thing)this.job.GetTarget(ibed));
 			}
 		}
 
