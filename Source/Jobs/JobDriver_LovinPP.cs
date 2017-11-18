@@ -15,7 +15,7 @@ namespace rjw {
 		{
 			get
 			{
-				return (Pawn)((Thing)base.CurJob.GetTarget(TargetIndex.A));
+				return (Pawn)((Thing)base.job.GetTarget(TargetIndex.A));
 			}
 		}
 

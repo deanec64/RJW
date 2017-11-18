@@ -169,7 +169,7 @@ namespace rjw
 						needsex_tick_timer;
 					CurLevel -= fall_per_call * decay_rate_modifier;
 					// Each day has 60000 ticks, each hour has 2500 ticks, so each hour has 50/3 calls, in other words, each call takes .06 hour.
-					Log.Message("[RJW] " + pawn.NameStringShort + "'s sex need stats:: Decay/call: " + fall_per_call * decay_rate_modifier + ", Cur.lvl: " + CurLevel + ", Dec. rate: " + decay_rate_modifier);
+					//Log.Message("[RJW] " + pawn.NameStringShort + "'s sex need stats:: Decay/call: " + fall_per_call * decay_rate_modifier + ", Cur.lvl: " + CurLevel + ", Dec. rate: " + decay_rate_modifier);
 				}
 
 				// I just put this here so that it gets called on every pawn on a regular basis. There's probably a

@@ -15,6 +15,12 @@ namespace rjw
 			}
 		}
 
+		public override bool TryMakePreToilReservations()
+		{
+			return this.pawn.Reserve(this.target_gear, this.job, 1, -1, null);
+		}
+
+
 		protected override IEnumerable<Toil> MakeNewToils()
 		{
 			yield return new Toil
@@ -33,7 +39,7 @@ namespace rjw
 					if (PawnUtility.ShouldSendNotificationAbout(pawn))
 					{
 						var pro = (pawn.gender == Gender.Male) ? "his" : "her";
-						Messages.Message(pawn.NameStringShort + " struggles to remove " + pro + " " + target_gear.def.label + ". It's no use!", pawn, MessageSound.Negative);
+						Messages.Message(pawn.NameStringShort + " struggles to remove " + pro + " " + target_gear.def.label + ". It's no use!", pawn, MessageTypeDefOf.NegativeEvent);
 					}
 				},
 				defaultCompleteMode = ToilCompleteMode.Instant

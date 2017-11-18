@@ -25,7 +25,7 @@ namespace rjw
 				return false;
 		}
 
-		public override bool TryExecute(IncidentParms parms)
+		protected override bool TryExecuteWorker(IncidentParms parms)
 		{
 			//Log.Message("IncidentWorker_NymphJoins::TryExecute() called");
 
@@ -58,7 +58,7 @@ namespace rjw
 
 			var p = nymph_generator.spawn_new(loc, ref m);
 
-			Find.LetterStack.ReceiveLetter("Nymph Joins", "A wandering nymph has decided to join your colony.", LetterDefOf.Good, p);
+			Find.LetterStack.ReceiveLetter("Nymph Joins", "A wandering nymph has decided to join your colony.", LetterDefOf.PositiveEvent, p);
 
 			return true;
 		}

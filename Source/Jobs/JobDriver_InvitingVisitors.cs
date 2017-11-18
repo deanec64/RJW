@@ -45,6 +45,10 @@ namespace rjw
 			else return false;
 		}
 
+		public override bool TryMakePreToilReservations()
+		{
+			return this.pawn.Reserve(this.TargetPawn, this.job, 1, -1, null) && this.pawn.Reserve(this.Whore, this.job, 1, -1, null);
+		}
 		protected override IEnumerable<Toil> MakeNewToils()
 		{
 			this.FailOnDespawnedOrNull(TargetPawnIndex);
@@ -78,7 +82,7 @@ namespace rjw
 					{
 						extraSentencePacks.Add(RulePackDef.Named("HookupSucceeded"));
 					}
-					Messages.Message("RJW_VisitorAcceptWhore".Translate(new object[] { TargetPawn.NameStringShort, Whore.NameStringShort }), TargetPawn, MessageSound.Benefit);
+					Messages.Message("RJW_VisitorAcceptWhore".Translate(new object[] { TargetPawn.NameStringShort, Whore.NameStringShort }), TargetPawn, MessageTypeDefOf.TaskCompletion);
 				}
 				else
 				{
@@ -90,7 +94,7 @@ namespace rjw
 						extraSentencePacks.Add(RulePackDef.Named("HookupFailed"));
 					}
 					//Disabled rejection notifications
-					//Messages.Message("RJW_VisitorRejectWhore".Translate(new object[] { TargetPawn.NameStringShort, Whore.NameStringShort }), TargetPawn, MessageSound.Silent);
+					//Messages.Message("RJW_VisitorRejectWhore".Translate(new object[] { TargetPawn.NameStringShort, Whore.NameStringShort }), TargetPawn, MessageTypeDefOf.SilentInput);
 				}
 				if (xxx.RomanceDiversifiedIsActive)
 				{

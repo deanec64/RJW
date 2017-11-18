@@ -19,10 +19,10 @@ namespace rjw
 			var tra = __instance;
 			// Log.Message ("Pawn_ApparelTracker.Wear called for " + newApparel.Label + " on " + tra.pawn.NameStringShort);
 			foreach (var app in tra.WornApparel)
-				if (app.has_lock() && (!ApparelUtility.CanWearTogether(newApparel.def, app.def)))
+				if (app.has_lock() && (!ApparelUtility.CanWearTogether(newApparel.def, app.def, tra.pawn.RaceProps.body)))
 				{
 					if (PawnUtility.ShouldSendNotificationAbout(tra.pawn))
-						Messages.Message(tra.pawn.NameStringShort + " can't wear " + newApparel.def.label + " (blocked by " + app.def.label + ")", tra.pawn, MessageSound.Negative);
+						Messages.Message(tra.pawn.NameStringShort + " can't wear " + newApparel.def.label + " (blocked by " + app.def.label + ")", tra.pawn, MessageTypeDefOf.NegativeEvent);
 					return false;
 				}
 			return true;
@@ -137,7 +137,7 @@ namespace rjw
 			{
 				foreach (var equipped_app in p.apparel.WornApparel)
 				{
-					if (equipped_app.has_lock() && (!ApparelUtility.CanWearTogether(dragged_app.def, equipped_app.def)))
+					if (equipped_app.has_lock() && (!ApparelUtility.CanWearTogether(dragged_app.def, equipped_app.def,p.RaceProps.body)))
 					{
 						set_dragged_item(__instance, null);
 						return false;
@@ -208,7 +208,7 @@ namespace rjw
 		private static bool conflicts(Pawn_ApparelTracker tra, Apparel new_app)
 		{
 			foreach (var worn_app in tra.WornApparel)
-				if (worn_app.has_lock() && (!ApparelUtility.CanWearTogether(worn_app.def, new_app.def)))
+				if (worn_app.has_lock() && (!ApparelUtility.CanWearTogether(worn_app.def, new_app.def, tra.pawn.RaceProps.body)))
 					return true;
 
 			return false;

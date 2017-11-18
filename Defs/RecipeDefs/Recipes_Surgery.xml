@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<RecipeDefs>
+<Defs>
 
 	<!-- From core -->
 	<RecipeDef Abstract="True" Name="SurgeryFlesh">
@@ -1174,4 +1174,4 @@
 			</categories>
 		</fixedIngredientFilter>
 	</RecipeDef>
-</RecipeDefs>
+</Defs>

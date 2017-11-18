@@ -15,7 +15,7 @@ namespace rjw
 		{
 			get
 			{
-				return (Pawn)(CurJob.GetTarget(ipartner));
+				return (Pawn)(job.GetTarget(ipartner));
 			}
 		}
 
@@ -23,8 +23,13 @@ namespace rjw
 		{
 			get
 			{
-				return (Building_Bed)(CurJob.GetTarget(ibed));
+				return (Building_Bed)(job.GetTarget(ibed));
 			}
+		}
+
+		public override bool TryMakePreToilReservations()
+		{
+			return this.pawn.Reserve(this.Partner, this.job, 1, -1, null) && this.pawn.Reserve(this.Bed, this.job, 1, -1, null);
 		}
 
 		protected override IEnumerable<Toil> MakeNewToils()

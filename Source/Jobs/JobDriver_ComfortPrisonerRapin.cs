@@ -36,8 +36,13 @@ namespace rjw
 		{
 			get
 			{
-				return (Pawn)(CurJob.GetTarget(iprisoner));
+				return (Pawn)(job.GetTarget(iprisoner));
 			}
+		}
+
+		public override bool TryMakePreToilReservations()
+		{
+			return this.pawn.Reserve(this.Prisoner, this.job, comfort_prisoners.max_rapists_per_prisoner, -1, null);
 		}
 
 		public static void roll_to_hit(Pawn rapist, Pawn p)
@@ -99,9 +104,9 @@ namespace rjw
 			rape.initAction = delegate
 			{
 				//Log.Message("JobDriver_ComfortPrisonerRapin::MakeNewToils() - reserving prisoner");
-				pawn.Reserve(Prisoner, comfort_prisoners.max_rapists_per_prisoner, 0);
+				//pawn.Reserve(Prisoner, comfort_prisoners.max_rapists_per_prisoner, 0);
 				if (!pawnHasPenis)
-					Prisoner.Drawer.rotator.Face(pawn.DrawPos);
+					Prisoner.rotationTracker.Face(pawn.DrawPos);
 
 				//Log.Message("JobDriver_ComfortPrisonerRapin::MakeNewToils() - Setting victim job driver");
 				var dri = Prisoner.jobs.curDriver as JobDriver_GettinRaped;

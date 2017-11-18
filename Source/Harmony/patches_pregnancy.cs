@@ -44,7 +44,7 @@ namespace rjw
 			//Log.Message("Hediff_Pregnancy::DoBirthSpawn( " + mother_name + ", " + father_name + ", " + chance_successful + " ) - generating baby pawns");
 			if (self.Visible && PawnUtility.ShouldSendNotificationAbout(mother))
 			{
-				Messages.Message("GivingBirth".Translate(new object[] { mother.LabelIndefinite() }).CapitalizeFirst(), mother, MessageSound.Standard);
+				Messages.Message("GivingBirth".Translate(new object[] { mother.LabelIndefinite() }).CapitalizeFirst(), mother, MessageTypeDefOf.NeutralEvent);
 			}
 
 			//Log.Message("Hediff_Pregnancy::DoBirthSpawn( " + mother_name + ", " + father_name + ", " + chance_successful + " ) - creating spawn request");
@@ -57,7 +57,7 @@ namespace rjw
 				{
 					spawn_parent = father;
 				}
-				PawnGenerationRequest request = new PawnGenerationRequest(spawn_parent.kindDef, spawn_parent.Faction, PawnGenerationContext.NonPlayer, spawn_parent.Map.Tile, false, true, false, false, false, false, 1, false, true, true, false, false, null, 0, 0, null, skin_whiteness, last_name);
+				PawnGenerationRequest request = new PawnGenerationRequest(spawn_parent.kindDef, spawn_parent.Faction, PawnGenerationContext.NonPlayer, spawn_parent.Map.Tile, false, true, false, false, false, false, 1, false, true, true, false, false,false,false, null,null, 0, 0, null, skin_whiteness, last_name);
 
 				//Log.Message("Hediff_GenericPregnancy::DoBirthSpawn( " + mother_name + ", " + father_name + ", " + chance_successful + " ) - spawning baby");
 				Pawn baby = PawnGenerator.GeneratePawn(request);

@@ -122,7 +122,10 @@ namespace rjw
 												 true, // Allow food
 												 true, // Inhabitant
 												 false, // Been in Cryosleep
+												 false,
+												 false,
 												 c => (c.story.bodyType == BodyType.Female) || (c.story.bodyType == BodyType.Thin), // Validator
+												 null,
 												 null, // Fixed biological age
 												 null, // Fixed chronological age
 												 Gender.Female, // Fixed gender

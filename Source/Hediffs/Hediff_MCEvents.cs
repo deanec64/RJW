@@ -1,5 +1,7 @@
-﻿using System.Linq;
+﻿using RimWorld;
+using System.Linq;
 using Verse;
+using Verse.AI;
 
 namespace rjw
 {
@@ -7,7 +9,7 @@ namespace rjw
 	{
 		public override void PostAdd(DamageInfo? dinfo)
 		{
-			Messages.Message("FeltOrgasm".Translate(new object[] { this.pawn.LabelIndefinite() }).CapitalizeFirst(), pawn, MessageSound.Standard);
+			Messages.Message("FeltOrgasm".Translate(new object[] { this.pawn.LabelIndefinite() }).CapitalizeFirst(), pawn, MessageTypeDefOf.NeutralEvent);
 		}
 	}
 
@@ -17,7 +19,7 @@ namespace rjw
 		{
 			if (pawn.gender == Gender.Female)
 			{
-				Messages.Message("CumsTransported".Translate(new object[] { this.pawn.LabelIndefinite() }).CapitalizeFirst(), pawn, MessageSound.Standard);
+				Messages.Message("CumsTransported".Translate(new object[] { this.pawn.LabelIndefinite() }).CapitalizeFirst(), pawn, MessageTypeDefOf.NeutralEvent);
 				Pawn cumSender = (from p in Find.WorldPawns.AllPawnsAlive where p.gender == Gender.Male select p).RandomElement<Pawn>();
 				Log.Message("[RJW]" + this.GetType().ToString() + "PostAdd() - Sending " + cumSender.NameStringShort + "'s cum into " + pawn.NameStringShort + "'s vagina");
 				xxx.impregnate(pawn, cumSender);

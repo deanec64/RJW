@@ -26,8 +26,12 @@ namespace rjw
 		{
 			get
 			{
-				return (Building_Bed)((Thing)base.CurJob.GetTarget(ibed));
+				return (Building_Bed)((Thing)base.job.GetTarget(ibed));
 			}
+		}
+		public override bool TryMakePreToilReservations()
+		{
+			return this.pawn.Reserve(this.Bed, this.job, 1, -1, null);
 		}
 
 		protected override IEnumerable<Toil> MakeNewToils()

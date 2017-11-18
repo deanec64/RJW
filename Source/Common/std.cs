@@ -97,7 +97,7 @@ namespace rjw
 				info.AppendLine(); info.AppendLine();
 				info.Append(sd.description);
 			}
-			Find.LetterStack.ReceiveLetter("Infection: " + sd.label, info.ToString(), LetterDefOf.BadNonUrgent, p);
+			Find.LetterStack.ReceiveLetter("Infection: " + sd.label, info.ToString(), LetterDefOf.ThreatSmall, p);
 		}
 
 		public static void update(Pawn p)
@@ -193,7 +193,7 @@ namespace rjw
 						var ir = p.health.immunity.GetImmunityRecord(HediffDefOf.WoundInfection);
 						if (ir != null)
 							ir.immunity = xxx.config.opp_inf_initial_immunity;
-						Find.LetterStack.ReceiveLetter("Opportunistic Infection", "RJW_Opportunistic_Infection_Message".Translate(new object[] { p.NameStringShort }), LetterDefOf.BadNonUrgent, null);
+						Find.LetterStack.ReceiveLetter("Opportunistic Infection", "RJW_Opportunistic_Infection_Message".Translate(new object[] { p.NameStringShort }), LetterDefOf.ThreatSmall, null);
 					}
 				}
 			}
@@ -211,7 +211,7 @@ namespace rjw
             if (Genital_Helper.has_anus(catcher)&&(Rand.Value < xxx.config.chance_to_rim) && (!pitcher.health.hediffSet.HasHediff(HediffDefOf.FoodPoisoning))) {
                 pitcher.health.AddHediff(HediffDefOf.FoodPoisoning);
                 if (PawnUtility.ShouldSendNotificationAbout(pitcher)) {
-                    Messages.Message("RJW_Poisoned_by_Rimming_Message".Translate(new object[] {pitcher.NameStringShort, catcher.NameStringShort}), pitcher, MessageSound.Negative);
+                    Messages.Message("RJW_Poisoned_by_Rimming_Message".Translate(new object[] {pitcher.NameStringShort, catcher.NameStringShort}), pitcher, MessageTypeDefOf.NegativeEvent);
                 }
             }
             */
@@ -345,7 +345,7 @@ namespace rjw
 						inj.Severity = sev;
 						inj.TryGetComp<HediffComp_GetsOld>().IsOld = true;
 						p.health.AddHediff(inj, part, null);
-						Find.LetterStack.ReceiveLetter(syphilis.label + " Damage", "RJW_Syphilis_Damage_Message".Translate(new object[] { p.NameStringShort, (p.gender == Gender.Male ? "Prohis".Translate() : "Proher".Translate()), part.def.label, syphilis.label }), LetterDefOf.BadNonUrgent, p);
+						Find.LetterStack.ReceiveLetter(syphilis.label + " Damage", "RJW_Syphilis_Damage_Message".Translate(new object[] { p.NameStringShort, (p.gender == Gender.Male ? "Prohis".Translate() : "Proher".Translate()), part.def.label, syphilis.label }), LetterDefOf.ThreatSmall, p);
 					}
 				}
 			}

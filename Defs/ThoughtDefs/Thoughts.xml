@@ -312,4 +312,33 @@
 			</li>
 		</stages>
 	</ThoughtDef>
+
+  <!-- Added by Hoge.  Some mood about Virgin. I think need balancing-->
+  <ThoughtDef>
+    <defName>FortunateGaveVirgin</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>10.0</durationDays>
+    <stages>
+      <li>
+        <label>Gave virgin</label>
+        <labelSocial>gave virgin</labelSocial>
+        <description>I gave my virgin.</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>UnfortunateLostVirgin</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>30.0</durationDays>
+    <stages>
+      <li>
+        <label>Lost virgin</label>
+        <labelSocial>lost virgin</labelSocial>
+        <description>I lost my virgin.</description>
+        <baseMoodEffect>-20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
 </Defs>

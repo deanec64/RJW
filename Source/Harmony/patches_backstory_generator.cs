@@ -87,7 +87,10 @@ namespace rjw
 												 PGR.AllowFood, // Allow food
 												 PGR.Inhabitant, // Inhabitant
 												 PGR.CertainlyBeenInCryptosleep, // Been in Cryosleep
+												 PGR.ForceRedressWorldPawnIfFormerColonist, //forceRedressWorldPawnIfFormerColonist
+												 PGR.WorldPawnFactionDoesntMatter, //worldPawnFactionDoesntMatter
 												 c => (c.story.bodyType == BodyType.Female) || (c.story.bodyType == BodyType.Thin), // Validator
+												 PGR.MinChanceToRedressWorldPawn,
 												 PGR.FixedBiologicalAge, // Fixed biological age
 												 PGR.FixedChronologicalAge, // Fixed chronological age
 												 Gender.Female, // Fixed gender

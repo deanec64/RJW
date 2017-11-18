@@ -25,6 +25,10 @@ namespace rjw
 				ticks_remaining = min_ticks_remaining;
 		}
 
+		public override bool TryMakePreToilReservations()
+		{
+			return true;
+		}
 		protected override IEnumerable<Toil> MakeNewToils()
 		{
 			ticks_between_hearts = Rand.RangeInclusive(70, 130);
@@ -37,7 +41,7 @@ namespace rjw
 				pawn.pather.StopDead();
 				pawn.jobs.curDriver.layingDown = Verse.AI.LayingDownState.NotLaying;
 				pawn.jobs.curDriver.asleep = false;
-				pawn.mindState.awokeVoluntarily = false;
+				//pawn.mindState.awokeVoluntarily = false;
 				// Added by nizhuan-jjr: human pawns get raped will put on clothes again.
 				if (!xxx.is_animal(pawn))
 				{
