@@ -13,10 +13,10 @@ namespace rjw
 			{
 				//Log.Message("[RJW] JobGiver_ComfortPrisonerRape::TryGiveJob( " + p.NameStringShort + " ) called1");
 				// don't allow pawns marked as comfort prisoners to rape others
-				if (!comfort_prisoners.is_designated(p) && 
-					((xxx.is_healthy(p) && 
-					xxx.can_rape(p, true) && 
-					xxx.is_nympho_or_rapist_or_zoophiliac(p) && 
+				if (!comfort_prisoners.is_designated(p) &&
+					((xxx.is_healthy(p) &&
+					xxx.can_rape(p, true) &&
+					xxx.is_nympho_or_rapist_or_zoophiliac(p) &&
 					p.Faction.IsPlayer) || wildmode))
 				{
 					//Log.Message("[RJW] JobGiver_ComfortPrisonerRape::TryGiveJob( " + p.NameStringShort + " ) called2");
@@ -24,18 +24,18 @@ namespace rjw
 					//Log.Message("[RJW] JobGiver_ComfortPrisonerRape::TryGiveJob( " + p.NameStringShort + " ) called3 - ("+((prisoner==null)? "NULL":prisoner.NameStringShort)+") is the prisoner");
 					if (target != null)
 					{
-						if (xxx.is_human(target) && (xxx.is_rapist(p) || xxx.is_nympho(p) || wildmode)) //TODO: make a designation target for animals
-						{
-							return new Job(xxx.comfort_prisoner_rapin, target);
-						}
-						else if (xxx.is_animal(target) && (xxx.is_zoophiliac(p) || wildmode))
+						if (((!xxx.is_animal(target) && (xxx.is_rapist(p) || xxx.is_nympho(p))) || (xxx.is_animal(target) && xxx.is_zoophiliac(p))) || wildmode) //TODO: make a designation target for animals
 						{
 							return new Job(xxx.comfort_prisoner_rapin, target);
 						}
 						else if (xxx.config.pawns_always_rapeCP)
+						{
 							p.mindState.canLovinTick = Find.TickManager.TicksGame + 5;
+						}
 						else
+						{
 							p.mindState.canLovinTick = Find.TickManager.TicksGame + Rand.Range(75, 150);
+						}
 					}
 				}
 			}
