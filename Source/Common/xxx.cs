@@ -313,6 +313,7 @@ namespace rjw
 					p.records.GetValue(CountOfRapedOthers) == 0 &&
 					p.records.GetValue(CountOfBeenRapedByOthers) == 0;
 		}
+
 		public static bool is_gettin_rapeNow(Pawn pawn)
 		{
 			if ((pawn.jobs != null) &&
@@ -960,12 +961,10 @@ namespace rjw
 		//UpdateRecords functions Added by hoge.
 		public static void UpdateRecords(Pawn pawn, int price)
 		{
-			pawn.records.AddTo(EarnedMoneyByWhore,price);
+			pawn.records.AddTo(EarnedMoneyByWhore, price);
 		}
 
-
-		
-		public static void UpdateRecords(Pawn pawn, Pawn part, bool isRape = false,bool isLoveSex = false)
+		public static void UpdateRecords(Pawn pawn, Pawn part, bool isRape = false, bool isLoveSex = false)
 		{
 			UpdateRecordsInternal(pawn, part, isRape, isLoveSex, true);
 			UpdateRecordsInternal(part, pawn, isRape, isLoveSex, false);
@@ -989,8 +988,8 @@ namespace rjw
 			{
 				if (xxx.is_human(part))
 				{
-					pawn.records.Increment(part.health.Dead? CountOfSexWithCorpse : CountOfSex);
-					currentThought = isLoveSex? FortunateGaveVirgin : null;
+					pawn.records.Increment(part.health.Dead ? CountOfSexWithCorpse : CountOfSex);
+					currentThought = isLoveSex ? FortunateGaveVirgin : null;
 				}
 				else if (xxx.is_insect(part))
 				{
@@ -999,7 +998,7 @@ namespace rjw
 				else if (xxx.is_animal(part))
 				{
 					pawn.records.Increment(CountOfSexWithInsects);
-					currentThought = xxx.is_zoophiliac(pawn) ? FortunateGaveVirgin:null;
+					currentThought = xxx.is_zoophiliac(pawn) ? FortunateGaveVirgin : null;
 				}
 				else
 				{
@@ -1016,7 +1015,7 @@ namespace rjw
 				if (xxx.is_human(part))
 				{
 					pawn.records.Increment(pawnIsRaper ? (part.health.Dead ? CountOfSexWithCorpse : CountOfRaped) : CountOfBeenRaped);
-					if(pawnIsRaper && (xxx.is_rapist(pawn)|| xxx.is_bloodlust(pawn))) currentThought =  FortunateGaveVirgin;
+					if (pawnIsRaper && (xxx.is_rapist(pawn) || xxx.is_bloodlust(pawn))) currentThought = FortunateGaveVirgin;
 				}
 				else if (xxx.is_insect(part))
 				{
@@ -1072,7 +1071,7 @@ namespace rjw
 				{
 					try
 					{
-						TryImpregnate_RimWorldChildren(female, male);
+						//TryImpregnate_RimWorldChildren(female, male);
 						return;
 					}
 					catch (System.TypeLoadException)
@@ -1091,6 +1090,7 @@ namespace rjw
 			float ReproductionFactor = Math.Min(male.health.capacities.GetLevel(reproduction), female.health.capacities.GetLevel(reproduction));
 			float pregnancy_threshold = fertility * ReproductionFactor;
 			float pregnancy_chance = Rand.Value;
+			BodyPartRecord torso = female.RaceProps.body.AllParts.Find(x => x.def == BodyPartDefOf.Torso);
 
 			if (pregnancy_chance > pregnancy_threshold)
 			{
@@ -1100,10 +1100,11 @@ namespace rjw
 
 			Hediff_Pregnant hediff_pregnant = (Hediff_Pregnant)HediffMaker.MakeHediff(HediffDef.Named("Pregnant"), female);
 			hediff_pregnant.father = male;
-			female.health.AddHediff(hediff_pregnant);
+			female.health.AddHediff(hediff_pregnant, torso, null);
 			//--Log.Message("[RJW] Impregnation succeeded. Chance was " + pregnancy_chance + " vs " + pregnancy_threshold);
 		}
 
+		/*
 		public static void TryImpregnate_RimWorldChildren(Pawn female, Pawn male)
 		{
 			// fertility check
@@ -1136,7 +1137,7 @@ namespace rjw
 			hediff_Pregnant.father = male;
 			female.health.AddHediff(hediff_Pregnant, torso, null);
 			//--Log.Message("[RJW] C&P impregnation succeeded. Chance was " + pregnancy_chance + " vs " + pregnancy_threshold);
-		}
+		}*/
 
 		//============↓======Section of utilities of CP Rape system===============↓==================
 		public static void processAnalSex(Pawn pawn, Pawn Prisoner, ref bool AnalSexSuccess, bool pawnHasPenis = true)

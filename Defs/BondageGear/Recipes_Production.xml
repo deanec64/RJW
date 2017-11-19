@@ -48,10 +48,7 @@
 			<Hololock>1</Hololock>
 		</products>
 		<skillRequirements>
-			<li>
-				<skill>Crafting</skill>
-				<minLevel>6</minLevel>
-			</li>
+			<Crafting>6</Crafting>
 		</skillRequirements>
 		<workSkill>Crafting</workSkill>
 	</RecipeDef>
@@ -102,10 +99,7 @@
 			<Armbinder>1</Armbinder>
 		</products>
 		<skillRequirements>
-			<li>
-				<skill>Crafting</skill>
-				<minLevel>6</minLevel>
-			</li>
+			<Crafting>6</Crafting>
 		</skillRequirements>
 		<workSkill>Crafting</workSkill>
 	</RecipeDef>
@@ -156,10 +150,7 @@
 			<Gag>1</Gag>
 		</products>
 		<skillRequirements>
-			<li>
-				<skill>Crafting</skill>
-				<minLevel>4</minLevel>
-			</li>
+			<Crafting>4</Crafting>
 		</skillRequirements>
 		<workSkill>Crafting</workSkill>
 	</RecipeDef>
@@ -201,10 +192,7 @@
 			<ChastityBelt>1</ChastityBelt>
 		</products>
 		<skillRequirements>
-			<li>
-				<skill>Crafting</skill>
-				<minLevel>6</minLevel>
-			</li>
+			<Crafting>4</Crafting>
 		</skillRequirements>
 		<workSkill>Crafting</workSkill>
 	</RecipeDef>

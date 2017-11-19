@@ -42,10 +42,7 @@
 		<soundWorking>Recipe_Machining</soundWorking>
 		<workAmount>7000</workAmount>
 		<skillRequirements>
-			<li>
-				<skill>Crafting</skill>
-				<minLevel>7</minLevel>
-			</li>
+			<Crafting>7</Crafting>
 		</skillRequirements>
 		<ingredients>
 			<li>
@@ -93,10 +90,7 @@
 		<soundWorking>Recipe_Machining</soundWorking>
 		<workAmount>4000</workAmount>
 		<skillRequirements>
-			<li>
-				<skill>Crafting</skill>
-				<minLevel>4</minLevel>
-			</li>
+			<Crafting>4</Crafting>
 		</skillRequirements>
 		<ingredients>
 			<li>
@@ -135,10 +129,7 @@
 		<soundWorking>Recipe_Machining</soundWorking>
 		<workAmount>11000</workAmount>
 		<skillRequirements>
-			<li>
-				<skill>Crafting</skill>
-				<minLevel>7</minLevel>
-			</li>
+			<Crafting>7</Crafting>
 		</skillRequirements>
 		<ingredients>
 			<li>
@@ -186,10 +177,7 @@
 		<soundWorking>Recipe_Machining</soundWorking>
 		<workAmount>4000</workAmount>
 		<skillRequirements>
-			<li>
-				<skill>Crafting</skill>
-				<minLevel>4</minLevel>
-			</li>
+			<Crafting>4</Crafting>
 		</skillRequirements>
 		<ingredients>
 			<li>
@@ -228,10 +216,7 @@
 		<soundWorking>Recipe_Machining</soundWorking>
 		<workAmount>11000</workAmount>
 		<skillRequirements>
-			<li>
-				<skill>Crafting</skill>
-				<minLevel>7</minLevel>
-			</li>
+			<Crafting>7</Crafting>
 		</skillRequirements>
 		<ingredients>
 			<li>
@@ -279,10 +264,7 @@
 		<soundWorking>Recipe_Machining</soundWorking>
 		<workAmount>4000</workAmount>
 		<skillRequirements>
-			<li>
-				<skill>Crafting</skill>
-				<minLevel>4</minLevel>
-			</li>
+			<Crafting>4</Crafting>
 		</skillRequirements>
 		<ingredients>
 			<li>
@@ -321,10 +303,7 @@
 		<soundWorking>Recipe_Machining</soundWorking>
 		<workAmount>11000</workAmount>
 		<skillRequirements>
-			<li>
-				<skill>Crafting</skill>
-				<minLevel>7</minLevel>
-			</li>
+			<Crafting>7</Crafting>
 		</skillRequirements>
 		<ingredients>
 			<li>
@@ -372,10 +351,7 @@
 		<soundWorking>Recipe_Machining</soundWorking>
 		<workAmount>4000</workAmount>
 		<skillRequirements>
-			<li>
-				<skill>Crafting</skill>
-				<minLevel>4</minLevel>
-			</li>
+			<Crafting>4</Crafting>
 		</skillRequirements>
 		<ingredients>
 			<li>
@@ -414,10 +390,7 @@
 		<soundWorking>Recipe_Machining</soundWorking>
 		<workAmount>11000</workAmount>
 		<skillRequirements>
-			<li>
-				<skill>Crafting</skill>
-				<minLevel>7</minLevel>
-			</li>
+			<Crafting>7</Crafting>
 		</skillRequirements>
 		<ingredients>
 			<li>

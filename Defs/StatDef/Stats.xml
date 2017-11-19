@@ -30,8 +30,8 @@
 		<skillNeedFactors>
 			<li Class="SkillNeed_BaseBonus">
 				<skill>Melee</skill>
-				<baseFactor>1.00</baseFactor>
-				<bonusFactor>-0.06</bonusFactor>
+				<baseValue>1.00</baseValue>
+				<bonusPerLevel>-0.06</bonusPerLevel>
 			</li>
 		</skillNeedFactors>
 		<capacityFactors>
