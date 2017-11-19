@@ -3,70 +3,70 @@
 
 	<RecordDef>
 		<defName>CountOfFappin</defName>
-		<label>fappin' done</label>
+		<label>fappin&#39; done</label>
 		<description>The number of times I masturbated.</description>
 		<type>Int</type>
 	</RecordDef>
 
 	<RecordDef>
 		<defName>CountOfSex</defName>
-		<label>lovin' made</label>
+		<label>lovin&#39; made</label>
 		<description>The number of love-making I did.</description>
 		<type>Int</type>
 	</RecordDef>
 
 	<RecordDef>
 		<defName>CountOfSexWithOthers</defName>
-		<label>lovin' made (humanlikes)<</label>
+		<label>lovin&#39; made (humanlikes)<</label>
 		<description>The number of love-making I did with humanlikes.</description>
 		<type>Int</type>
 	</RecordDef>
 
 	<RecordDef>
 		<defName>CountOfSexWithAnimals</defName>
-		<label>lovin' made (animals)</label>
+		<label>lovin&#39; made (animals)</label>
 		<description>The number of love-making I did with animals.</description>
 		<type>Int</type>
 	</RecordDef>
 
 	<RecordDef>
 		<defName>CountOfSexWithInsects</defName>
-		<label>lovin' made (insects)<</label>
+		<label>lovin&#39; made (insects)<</label>
 		<description>The number of love-making I did with insects.</description>
 		<type>Int</type>
 	</RecordDef>
 
 	<RecordDef>
 		<defName>CountOfRaped</defName>
-		<label>rapin' done</label>
+		<label>rapin&#39; done</label>
 		<description>The number of times I raped.</description>
 		<type>Int</type>
 	</RecordDef>
 
 	<RecordDef>
 		<defName>CountOfRapedOthers</defName>
-		<label>rapin' done (humanlikes)</label>
+		<label>rapin&#39; done (humanlikes)</label>
 		<description>The number of times I raped humanlikes.</description>
 		<type>Int</type>
 	</RecordDef>
 
 	<RecordDef>
 		<defName>CountOfRapedAnimals</defName>
-		<label>rapin' done (animals)</label>
+		<label>rapin&#39; done (animals)</label>
 		<description>The number of times I raped animals.</description>
 		<type>Int</type>
 	</RecordDef>
 
 	<RecordDef>
 		<defName>CountOfRapedInsects</defName>
-		<label>rapin' done (insects)</label>
+		<label>rapin&#39; done (insects)</label>
 		<description>The number of times I raped insects.</description>
 		<type>Int</type>
 	</RecordDef>
 
 	<RecordDef>
 		<defName>CountOfSexWithCorpse</defName>
-		<label>rapin' (corpses)<</label>
+		<label>rapin&#39; (corpses)<</label>
 		<description>The number of times I raped corpses.</description>
 		<type>Int</type>
 	</RecordDef>
@@ -108,14 +108,14 @@
 
 	<RecordDef>
 		<defName>CountOfWhore</defName>
-		<label>whorin'</label>
+		<label>whorin&#39;</label>
 		<description>The number of times I sold myself.</description>
 		<type>Int</type>
 	</RecordDef>
 
 	<RecordDef>
 		<defName>EarnedMoneyByWhore</defName>
-		<label>whorin' silver</label>
+		<label>whorin&#39; silver</label>
 		<description>The total price of earned by whore.</description>
 		<type>Int</type>
 	</RecordDef>
