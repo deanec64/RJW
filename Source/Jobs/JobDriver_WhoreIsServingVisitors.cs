@@ -26,7 +26,7 @@ namespace rjw
 		{
 			get
 			{
-				return (Building_WhoreBed)(CurJob.GetTarget(BedInd));
+				return (Building_WhoreBed)(job.GetTarget(BedInd));
 			}
 		}
 
@@ -34,7 +34,7 @@ namespace rjw
 		{
 			get
 			{
-				return (Pawn)(CurJob.GetTarget(PartnerInd));
+				return (Pawn)(job.GetTarget(PartnerInd));
 			}
 		}
 
@@ -42,7 +42,7 @@ namespace rjw
 		{
 			get
 			{
-				return (IntVec3)CurJob.GetTarget(SlotInd);
+				return (IntVec3)job.GetTarget(SlotInd);
 			}
 		}
 
@@ -87,6 +87,10 @@ namespace rjw
 			}
 			return false;
 		}
+		public override bool TryMakePreToilReservations()
+		{
+			return this.pawn.Reserve(this.Partner, this.job, 1, -1, null) && this.pawn.Reserve(this.Bed, this.job, 1, -1, null);
+		}
 
 		protected override IEnumerable<Toil> MakeNewToils()
 		{
@@ -104,7 +108,7 @@ namespace rjw
 				 {
 					 //Log.Message("[RJW]JobDriver_WhoreIsServingVisitors::MakeNewToils() - gotoWhoreBed initAction is called");
 					 Actor.pather.StartPath(WhoreSleepSpot, PathEndMode.OnCell);
-					 Actor.Reserve(Partner, 1, 0);
+					 //Actor.Reserve(Partner, 1, 0);
 					 Partner.pather.StartPath(Actor, PathEndMode.Touch);
 				 },
 				tickAction = delegate
@@ -175,7 +179,7 @@ namespace rjw
 							}
 						}
 						if (!partnerHasPenis)
-							Actor.Drawer.rotator.Face(Partner.DrawPos);
+							Actor.rotationTracker.Face(Partner.DrawPos);
 					},
 					defaultCompleteMode = ToilCompleteMode.Never, //Changed from Delay
 				};
@@ -214,7 +218,8 @@ namespace rjw
 						Partner.mindState.canLovinTick = Find.TickManager.TicksGame + xxx.generate_min_ticks_to_next_lovin(Partner);
 
 						//Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - Partner should pay the price now in afterSex.initAction");
-						if (xxx.PayPriceToWhore(Partner, price, Actor))
+						int remainPrice = xxx.PayPriceToWhore(Partner, price, Actor);
+						if (remainPrice <= 0)
 						{
 							//--Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - Paying price is success");
 						}
@@ -222,6 +227,7 @@ namespace rjw
 						{
 							//--Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - Paying price failed");
 						}
+						xxx.UpdateRecords(Actor, price-remainPrice);
 					},
 					defaultCompleteMode = ToilCompleteMode.Instant
 				};

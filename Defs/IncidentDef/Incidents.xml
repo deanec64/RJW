@@ -9,7 +9,7 @@
 		<workerClass>rjw.IncidentWorker_TestInc</workerClass>
 		<letterLabel>Something Happened</letterLabel>
 		<letterText>Something Happened</letterText>
-		<letterDef>BadNonUrgent</letterDef>
+		<letterDef>ThreatSmall</letterDef>
 		<baseChance>0.0</baseChance>
 		<minRefireDays>9999</minRefireDays>
 	</IncidentDef>
@@ -22,7 +22,7 @@
 		<workerClass>rjw.IncidentWorker_TestInc2</workerClass>
 		<letterLabel>Something Happened2</letterLabel>
 		<letterText>Something Happened2</letterText>
-		<letterDef>BadNonUrgent</letterDef>
+		<letterDef>ThreatSmall</letterDef>
 		<baseChance>0.0</baseChance>
 		<minRefireDays>9999</minRefireDays>
 	</IncidentDef>

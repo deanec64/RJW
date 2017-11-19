@@ -18,11 +18,11 @@ namespace rjw
 			return true;
 		}
 
-		public override void ApplyOnPawn(Pawn p, BodyPartRecord part, Pawn doer, List<Thing> ingredients)
+		public override void ApplyOnPawn(Pawn p, BodyPartRecord part, Pawn doer, List<Thing> ingredients,Bill bill)
 		{
 			var har = is_harvest(p, part);
 
-			base.ApplyOnPawn(p, part, doer, ingredients);
+			base.ApplyOnPawn(p, part, doer, ingredients,bill);
 
 			if (har)
 			{

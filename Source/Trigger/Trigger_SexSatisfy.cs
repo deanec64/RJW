@@ -28,7 +28,8 @@ namespace rjw
                     {
                     }*/
 					Need_Sex n = pawn.needs.TryGetNeed<Need_Sex>();
-					if (n != null && pawn.gender == Gender.Male && !pawn.Downed)
+					//if (n != null && pawn.gender == Gender.Male && !pawn.Downed)
+					if(xxx.can_rape(pawn))
 					{
 						avgValue = (avgValue == null) ? n.CurLevel : (avgValue + n.CurLevel) / 2f;
 					}

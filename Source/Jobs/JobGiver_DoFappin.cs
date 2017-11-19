@@ -32,7 +32,7 @@ namespace rjw
 
 					if (xxx.config.pawns_always_do_fapping || (no_partner || is_frustrated))
 					{
-						p.mindState.awokeVoluntarily = true;
+						//p.mindState.awokeVoluntarily = true;
 						return new Job(xxx.fappin, bed);
 					}
 				}

@@ -48,17 +48,17 @@ namespace rjw
 				GenThing.TryDropAndSetForbidden(locked_app, p.Position, p.MapHeld, ThingPlaceMode.Near, out dropped, false); //this will create a new key somehow.
 				if (dropped != null)
 				{
-					Messages.Message("Unlocked " + locked_app.def.label, p, MessageSound.Silent);
+					Messages.Message("Unlocked " + locked_app.def.label, p, MessageTypeDefOf.SilentInput);
 					//parent.DeSpawn();
 					IntVec3 keyPostition = parent.Position;
 					parent.Destroy();
 					keyPostition.GetFirstThing(p.MapHeld, xxx.holokey).Destroy();  // so I need this line to despawn the new generated key.
 				}
 				else if (PawnUtility.ShouldSendNotificationAbout(p))
-					Messages.Message("Couldn't drop " + locked_app.def.label, p, MessageSound.Negative);
+					Messages.Message("Couldn't drop " + locked_app.def.label, p, MessageTypeDefOf.NegativeEvent);
 			}
 			else if (any_locked)
-				Messages.Message("The key doesn't fit!", p, MessageSound.Negative);
+				Messages.Message("The key doesn't fit!", p, MessageTypeDefOf.NegativeEvent);
 		}
 	}
 }

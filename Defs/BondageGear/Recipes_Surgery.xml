@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<RecipeDefs>
+<Defs>
 
 	<rjw.force_off_gear_def Abstract="True" Name="ForceOffGenericGear">
 		<workerClass>rjw.Recipe_ForceOffGear</workerClass>
@@ -91,4 +91,4 @@
 			<li>RightLeg</li>
 		</minor_burns_on>
 	</rjw.force_off_gear_def>
-</RecipeDefs>
+</Defs>

@@ -29,7 +29,7 @@ namespace rjw
 		{
 			get
 			{
-				return base.CurJob.GetTarget(iitem).Thing;
+				return base.job.GetTarget(iitem).Thing;
 			}
 		}
 
@@ -37,7 +37,7 @@ namespace rjw
 		{
 			get
 			{
-				return base.CurJob.GetTarget(itar).Thing;
+				return base.job.GetTarget(itar).Thing;
 			}
 		}
 

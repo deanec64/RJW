@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ThingDefs>
+<Defs>
 
 	<!-- ThingDef base fFrom core -->
 	<ThingDef Name="rjw_BodyPartBase" Abstract="True">
@@ -465,4 +465,4 @@
 			<Mass>0.1</Mass>
 		</statBases>
 	</ThingDef>
-</ThingDefs>
+</Defs>

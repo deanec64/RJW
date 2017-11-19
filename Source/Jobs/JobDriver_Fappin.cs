@@ -30,6 +30,10 @@ namespace rjw
 				return (Building_Bed)((Thing)this.job.GetTarget(ibed));
 			}
 		}
+		public override bool TryMakePreToilReservations()
+		{
+			return this.pawn.Reserve(this.Bed, this.job, 1, -1, null);
+		}
 
 		protected override IEnumerable<Toil> MakeNewToils()
 		{

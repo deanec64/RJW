@@ -35,13 +35,13 @@ namespace rjw
 		{
 			get
 			{
-				return (Corpse)(CurJob.GetTarget(iprisoner));
+				return (Corpse)(job.GetTarget(iprisoner));
 			}
 		}
 
 		public static void sexTick(Pawn pawn, Thing corpse)
 		{
-			pawn.Drawer.rotator.Face(corpse.DrawPos);
+			pawn.rotationTracker.Face(corpse.DrawPos);
 
 			if (xxx.config.sounds_enabled)
 			{
@@ -49,9 +49,13 @@ namespace rjw
 			}
 
 			pawn.Drawer.Notify_MeleeAttackOn(corpse);
-			pawn.Drawer.rotator.FaceCell(corpse.Position);
+			pawn.rotationTracker.FaceCell(corpse.Position);
 		}
 
+		public override bool TryMakePreToilReservations()
+		{
+			return this.pawn.Reserve(this.corpse, this.job, 1, -1, null);
+		}
 		protected override IEnumerable<Toil> MakeNewToils()
 		{
 			//Log.Message("[RJW] JobDriver_ViolateCorpse::MakeNewToils() called");
@@ -75,7 +79,7 @@ namespace rjw
 			rape.initAction = delegate
 			{
 				//Log.Message("[RJW] JobDriver_ViolateCorpse::MakeNewToils() - reserving corpse");
-				pawn.Reserve(corpse, 1, 0); // corpse rapin seems like a solitary activity
+				//pawn.Reserve(corpse, 1, 0); // corpse rapin seems like a solitary activity
 
 				// Try to take off the attacker's clothing
 				//Log.Message("[RJW] JobDriver_ViolateCorpse::MakeNewToils() - stripping necro lover");

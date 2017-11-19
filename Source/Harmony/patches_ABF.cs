@@ -4,6 +4,7 @@ using Harmony;
 using RimWorld;
 using Verse;
 using Verse.AI.Group;
+using System.Reflection;
 
 namespace rjw
 {
@@ -88,4 +89,21 @@ namespace rjw
 		}
 	}
 	*/
+
+	//temporaly added code.  Adding record will make savedata error...
+	[HarmonyPatch(typeof(DefMap<RecordDef, float>), "ExposeData")]
+	internal static class Patches_DefMapTweak
+	{
+		public static bool Prefix(DefMap<RecordDef, float> __instance)
+		{
+			var field = __instance.GetType().GetField("values", BindingFlags.GetField | BindingFlags.SetField | BindingFlags.NonPublic | BindingFlags.Instance);
+			var l = (field.GetValue(__instance) as List<float>);
+			while (l.Count < DefDatabase<RecordDef>.DefCount)
+			{
+				l.Add(0f);
+			}
+			//field.SetValue(__instance, (int)() + 1);
+			return true;
+		}
+	}
 }

@@ -70,7 +70,7 @@ namespace rjw
 				{
 					if (this.ageTicks >= abortTick)
 					{
-						Messages.Message("EggDead".Translate(new object[] { this.pawn.LabelIndefinite() }).CapitalizeFirst(), MessageSound.Standard);
+						Messages.Message("EggDead".Translate(new object[] { this.pawn.LabelIndefinite() }).CapitalizeFirst(), MessageTypeDefOf.SituationResolved);
 						pawn.health.RemoveHediff(this);
 					}
 				}
@@ -87,7 +87,7 @@ namespace rjw
 		public void BirthBaby()
 		{
 			Log.Message("[RJW]Hediff_InsectEgg::BirthBaby() - Egg of " + parentDef + " in " + pawn.ToString() + " birth!");
-			PawnGenerationRequest request = new PawnGenerationRequest(PawnKindDef.Named(parentDef), Faction.OfInsects, PawnGenerationContext.NonPlayer, pawn.Map.Tile, false, true, false, false, false, false, 0, false, true, true, false, false, null, 0, 0, null, null, null);
+			PawnGenerationRequest request = new PawnGenerationRequest(PawnKindDef.Named(parentDef), Faction.OfInsects, PawnGenerationContext.NonPlayer, pawn.Map.Tile, false, true, false, false, false, false, 0, false, true, true, false, false, false, false, null, null, null, null);
 
 			//Log.Message("Hediff_GenericPregnancy::DoBirthSpawn( " + mother_name + ", " + father_name + ", " + chance_successful + " ) - spawning baby");
 			Pawn baby = PawnGenerator.GeneratePawn(request);
@@ -109,7 +109,7 @@ namespace rjw
 
 			if (this.Visible && baby != null)
 			{
-				Messages.Message("MessageGaveBirth".Translate(new object[] { this.pawn.LabelIndefinite() }).CapitalizeFirst(), baby, MessageSound.Standard);
+				Messages.Message("MessageGaveBirth".Translate(new object[] { this.pawn.LabelIndefinite() }).CapitalizeFirst(), baby, MessageTypeDefOf.NeutralEvent);
 			}
 			pawn.health.RemoveHediff(this);
 		}
