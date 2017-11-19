@@ -53,7 +53,7 @@
 		<initialSeverity>0.001</initialSeverity>
 		<stages>
 			<li>
-				<everVisible>false</everVisible>
+				<!--<everVisible>false</everVisible>-->
 				<capMods>
 					<li>
 						<capacity>Manipulation</capacity>

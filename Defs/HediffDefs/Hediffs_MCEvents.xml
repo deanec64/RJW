@@ -21,19 +21,19 @@
         <capMods>
           <li>
             <capacity>Consciousness</capacity>
-            <PostFactor>0.9</PostFactor>
+            <postFactor>0.9</postFactor>
           </li>
           <li>
             <capacity>Manipulation</capacity>
-            <PostFactor>0.9</PostFactor>
+            <postFactor>0.9</postFactor>
           </li>
           <li>
             <capacity>Moving</capacity>
-            <PostFactor>0.9</PostFactor>
+            <postFactor>0.9</postFactor>
           </li>
           <li>
             <capacity>Talking</capacity>
-            <PostFactor>0.9</PostFactor>
+            <postFactor>0.9</postFactor>
           </li>
         </capMods>
         <statOffsets>
@@ -46,19 +46,19 @@
         <capMods>
           <li>
             <capacity>Consciousness</capacity>
-            <PostFactor>0.65</PostFactor>
+            <postFactor>0.65</postFactor>
           </li>
           <li>
             <capacity>Manipulation</capacity>
-            <PostFactor>0.65</PostFactor>
+            <postFactor>0.65</postFactor>
           </li>
           <li>
             <capacity>Moving</capacity>
-            <PostFactor>0.65</PostFactor>
+            <postFactor>0.65</postFactor>
           </li>
           <li>
             <capacity>Talking</capacity>
-            <PostFactor>0.65</PostFactor>
+            <postFactor>0.65</postFactor>
           </li>
         </capMods>
         <statOffsets>
@@ -71,19 +71,19 @@
         <capMods>
           <li>
             <capacity>Consciousness</capacity>
-            <PostFactor>0.3</PostFactor>
+            <postFactor>0.3</postFactor>
           </li>
           <li>
             <capacity>Manipulation</capacity>
-            <PostFactor>0.65</PostFactor>
+            <postFactor>0.65</postFactor>
           </li>
           <li>
             <capacity>Moving</capacity>
-            <PostFactor>0.2</PostFactor>
+            <postFactor>0.2</postFactor>
           </li>
           <li>
             <capacity>Talking</capacity>
-            <PostFactor>0.5</PostFactor>
+            <postFactor>0.5</postFactor>
           </li>
         </capMods>
         <statOffsets>

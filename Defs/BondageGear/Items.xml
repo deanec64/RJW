@@ -71,7 +71,7 @@
 		<tradeability>Sellable</tradeability>
 		<comps>
 			<li Class="CompProperties_Forbiddable" />
-			<li Class="CompProperties_HoloCryptoStamped" />
+			<li Class="rjw.CompProperties_HoloCryptoStamped" />
 			<li Class="CompProperties_Usable">
 				<compClass>rjw.CompStampedApparelKey</compClass>
 				<useJob>UnlockBondageGear</useJob>
@@ -107,7 +107,7 @@
 		<tradeNeverStack>true</tradeNeverStack>
 		<comps>
 			<li Class="CompProperties_Forbiddable" />
-			<li Class="CompProperties_HoloCryptoStamped" />
+			<li Class="rjw.CompProperties_HoloCryptoStamped" />
 			<li Class="CompProperties_Usable">
 				<compClass>rjw.CompBondageGear</compClass>
 				<useJob>GiveBondageGear</useJob>

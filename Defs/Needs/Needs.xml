@@ -2,7 +2,7 @@
 <Defs>
 
 	<NeedDef>
-		<DefName>Sex</DefName>
+		<defName>Sex</defName>
 		<needClass>rjw.Need_Sex</needClass>
 		<label>sex</label>
 		<description>Represents fulfillment of sexual need, which is gained by doing sexual related activities and declined by time &amp; turn-ons. Sleeping pauses the need.</description>

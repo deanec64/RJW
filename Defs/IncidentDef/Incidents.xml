@@ -5,7 +5,9 @@
 		<defName>TestInc</defName>
 		<label>test inc</label>
 		<category>Misc</category>
-		<targetType>MapPlayerHome</targetType>
+		<targetTypes>
+			<li>MapPlayerHome</li>
+		</targetTypes>
 		<workerClass>rjw.IncidentWorker_TestInc</workerClass>
 		<letterLabel>Something Happened</letterLabel>
 		<letterText>Something Happened</letterText>
@@ -18,7 +20,9 @@
 		<defName>TestInc2</defName>
 		<label>test inc2</label>
 		<category>Misc</category>
-		<targetType>MapPlayerHome</targetType>
+		<targetTypes>
+			<li>MapPlayerHome</li>
+		</targetTypes>
 		<workerClass>rjw.IncidentWorker_TestInc2</workerClass>
 		<letterLabel>Something Happened2</letterLabel>
 		<letterText>Something Happened2</letterText>
@@ -32,7 +36,9 @@
 		<defName>SexualizeThePawns</defName>
 		<label>sexualize the pawns</label>
 		<category>Misc</category>
-		<targetType>World</targetType>
+		<targetTypes>
+			<li>World</li>
+		</targetTypes>
 		<workerClass>rjw.IncidentWorker_Sexualize</workerClass>
 		<baseChance>0.0</baseChance>
 		<minRefireDays>9999</minRefireDays>
@@ -42,7 +48,9 @@
 		<defName>NymphJoins</defName>
 		<label>nymph joins</label>
 		<category>AllyArrival</category>
-		<targetType>MapPlayerHome</targetType>
+		<targetTypes>
+			<li>MapPlayerHome</li>
+		</targetTypes>
 		<workerClass>rjw.IncidentWorker_NymphJoins</workerClass>
 		<baseChance>0.67</baseChance>
 		<minRefireDays>6</minRefireDays>
