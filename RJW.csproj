@@ -18,7 +18,7 @@
     <AssemblyFileVersionSettings>None.None.IncrementOnDemand.None</AssemblyFileVersionSettings>
     <AssemblyInfoVersionSettings>None.None.IncrementOnDemand.None</AssemblyInfoVersionSettings>
     <PrimaryVersionType>AssemblyVersionAttribute</PrimaryVersionType>
-    <AssemblyVersion>1.6.0.434</AssemblyVersion>
+    <AssemblyVersion>1.6.0.435</AssemblyVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -69,7 +69,6 @@
     <Content Include="About\About.xml" />
     <Content Include="About\Preview.png" />
     <Content Include="Assemblies\%24HugsLibChecker.dll" />
-    <Content Include="Assemblies\ArchitectSense.dll" />
     <Content Include="Assemblies\RJW.dll" />
     <Content Include="changelog.txt" />
     <Content Include="credits.txt" />
