@@ -27,14 +27,15 @@
 		<maxValue>3.0</maxValue>
 		<noSkillFactor>0.9</noSkillFactor>
 		<toStringStyle>PercentTwo</toStringStyle>
-		<skillNeedFactors>
+		<neverDisabled>true</neverDisabled>
+		<skillNeedOffsets>
 			<li Class="SkillNeed_BaseBonus">
 				<skill>Melee</skill>
 				<baseValue>1.00</baseValue>
 				<bonusPerLevel>-0.06</bonusPerLevel>
 			</li>
-		</skillNeedFactors>
-		<capacityFactors>
+		</skillNeedOffsets>
+		<capacityOffsets>
 			<li>
 				<capacity>Sight</capacity>
 				<useReciprocal>true</useReciprocal>
@@ -53,6 +54,6 @@
 				<weight>0.8</weight>
 				<max>1.5</max>
 			</li>
-		</capacityFactors>
+		</capacityOffsets>
 	</StatDef>
 </Defs>
