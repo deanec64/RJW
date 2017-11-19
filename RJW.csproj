@@ -18,7 +18,7 @@
     <AssemblyFileVersionSettings>None.None.IncrementOnDemand.None</AssemblyFileVersionSettings>
     <AssemblyInfoVersionSettings>None.None.IncrementOnDemand.None</AssemblyInfoVersionSettings>
     <PrimaryVersionType>AssemblyVersionAttribute</PrimaryVersionType>
-    <AssemblyVersion>1.6.0.435</AssemblyVersion>
+    <AssemblyVersion>1.6.0.436</AssemblyVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -500,10 +500,7 @@
     <Compile Include="Source\Trigger\Trigger_SexSatisfy.cs" />
     <Compile Include="Source\Works\WorkGiver_RapeCP.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Source\bin\Debug\" />
-    <Folder Include="Source\bin\Release\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>
     <VisualStudio AllowExistingFolder="true" />
