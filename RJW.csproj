@@ -120,7 +120,6 @@
     <Content Include="Defs\RecipeDefs\Recipes_Surgery.xml" />
     <Content Include="Defs\RecipeDefs\Recipes_RemoveEnemyImplants.xml" />
     <Content Include="Defs\RecordDef\RecordDefs.xml" />
-    <Content Include="Defs\RecordDef\Records_GetRaped.xml" />
     <Content Include="Defs\ResearchProjectDefs\ResearchProjects_XxXx.xml" />
     <Content Include="Defs\ResearchProjectDefs\ResearchTabs.xml" />
     <Content Include="Defs\RulePackDefs\RulePacks_AnalRape.xml" />

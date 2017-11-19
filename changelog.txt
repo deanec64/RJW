@@ -1,3 +1,6 @@
+v1.6.0 changes
+- Updated to B18. The mod is in unstable state and will generate exceptions.
+
 v1.5.4j changes:
 - Insects will now inject their eggs while raping your incapacitated colonists. (by hogehoge1942)
 - Mechanoids will now inject microcomputers that vibrate and teleport pawns' cum somewhere on the map while raping your incapacitated colonists. (by hogehoge1942)
