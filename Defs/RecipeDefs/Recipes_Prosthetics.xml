@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<thingDefs>
+<Defs>
 
 	<RecipeDef Abstract="True" Name="MakePrivates">
 		<workSpeedStat>SmithingSpeed</workSpeedStat>
@@ -429,4 +429,4 @@
 			<BionicAnus>1</BionicAnus>
 		</products>
 	</RecipeDef>
-</thingDefs>
+</Defs>

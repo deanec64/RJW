@@ -93,6 +93,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Defs\HediffDefs\Hediffs_FeelingBroken.xml" />
+    <Content Include="Defs\HediffDefs\Hediffs_MCEvents.xml" />
     <Content Include="Defs\HediffDefs\Hediffs_Other.xml" />
     <Content Include="Defs\HediffDefs\Hediffs_PrivateParts.xml">
       <SubType>Designer</SubType>
@@ -109,6 +110,7 @@
     <Content Include="Defs\JobDefs\Jobs.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Defs\MentalState\MentalStateDefs.xml" />
     <Content Include="Defs\MiscTranslationDef\MiscTranslationDefs.xml" />
     <Content Include="Defs\Motes\Motes.xml" />
     <Content Include="Defs\Needs\Needs.xml" />
@@ -117,6 +119,7 @@
     <Content Include="Defs\RecipeDefs\Recipes_Prosthetics.xml" />
     <Content Include="Defs\RecipeDefs\Recipes_Surgery.xml" />
     <Content Include="Defs\RecipeDefs\Recipes_RemoveEnemyImplants.xml" />
+    <Content Include="Defs\RecordDef\RecordDefs.xml" />
     <Content Include="Defs\RecordDef\Records_GetRaped.xml" />
     <Content Include="Defs\ResearchProjectDefs\ResearchProjects_XxXx.xml" />
     <Content Include="Defs\ResearchProjectDefs\ResearchTabs.xml" />
@@ -125,7 +128,7 @@
     <Content Include="Defs\RulePackDefs\RulePacks_EngravedNames.xml" />
     <Content Include="Defs\SoundDef\SoundDef_XXX.xml" />
     <Content Include="Defs\StatDef\Stats.xml" />
-    <Content Include="Defs\STDs.xml" />
+    <Content Include="Defs\STDDefs\STDs.xml" />
     <Content Include="Defs\ThingDefs\Items_PrivateParts.xml" />
     <Content Include="Defs\ThingDefs\ThingsDef_XXX.xml" />
     <Content Include="Defs\ThinkTreeDefs\ThinkTrees.xml">

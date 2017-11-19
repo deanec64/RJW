@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<InteractionDefs>
+<Defs>
 
 	<InteractionDef>
 		<defName>AnalSex</defName>
@@ -21,4 +21,4 @@
 			</rulesStrings>
 		</logRulesRecipient>
 	</InteractionDef>
-</InteractionDefs>
+</Defs>
