@@ -10,8 +10,8 @@ namespace rjw
 		{
 			//Log.Message("JobGiver_ViolateCorpse::find_corpse( " + rapist.NameStringShort + " ) called");
 			Corpse found = null;
-			var best_distance = 1.0e6f;
-			int best_freshness = 100;
+			var best_distance = 100f;
+			int best_freshness = 10;
 
 			foreach (Corpse corpse in m.listerThings.ThingsOfDef(ThingDef.Named("Human_Corpse")))
 			{
@@ -21,7 +21,7 @@ namespace rjw
 					int freshness = corpse.GetRotStage().ChangeType<int>();
 					var distance = rapist.Position.DistanceToSquared(corpse.Position);
 					//Log.Message("   " + corpse.InnerPawn.NameStringShort + " =  " + freshness + "/" + distance + ",  best =  " + best_freshness + "/" + best_distance);
-					if (freshness < best_freshness || (freshness <= best_freshness && distance < best_distance))
+					if (freshness > best_freshness && distance < best_distance)
 					{
 						found = corpse;
 						best_freshness = freshness;
@@ -35,13 +35,13 @@ namespace rjw
 
 		protected override Job TryGiveJob(Pawn p)
 		{
-			//--Log.Message("[RJW] JobGiver_ViolateCorpse::TryGiveJob( " + p.NameStringShort + " ) called");
+			Log.Message("[RJW] JobGiver_ViolateCorpse::TryGiveJob( " + p.NameStringShort + " ) called");
 			if ((Find.TickManager.TicksGame >= p.mindState.canLovinTick) && (p.CurJob == null))
 			{
 				if (xxx.is_healthy(p) && xxx.can_rape(p) && !comfort_prisoners.is_designated(p))
 				{
 					var target = find_corpse(p, p.Map);
-					//--Log.Message("[RJW] JobGiver_ViolateCorpse::TryGiveJob - target is " + (target == null ? "NULL" : "Found"));
+					Log.Message("[RJW] JobGiver_ViolateCorpse::TryGiveJob - target is " + (target == null ? "NULL" : "Found"));
 					if (target != null)
 					{
 						return new Job(xxx.violate_corpse, target);

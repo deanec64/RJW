@@ -9,7 +9,7 @@ namespace rjw
 	{
 		public static Pawn find_target(Pawn pawn, Map m)
 		{
-			//Log.Message("JobGiver_Beastiality::find_target( " + pawn.NameStringShort + " ) called");
+			//--Log.Message("JobGiver_Beastiality::find_target( " + pawn.NameStringShort + " ) called");
 			Pawn found = null;
 			var best_distance = 50f;
 			var best_fuckability = 0.1f; // Don't rape animals with 0% fuckability
@@ -46,13 +46,13 @@ namespace rjw
 
 		protected override Job TryGiveJob(Pawn p)
 		{
-			//--Log.Message("[RJW] JobGiver_Beastiality::TryGiveJob( " + p.NameStringShort + " ) called");
+			Log.Message("[RJW] JobGiver_Beastiality::TryGiveJob( " + p.NameStringShort + " ) called");
 			if ((Find.TickManager.TicksGame >= p.mindState.canLovinTick) && (p.CurJob == null))
 			{
 				if (xxx.is_healthy(p) && xxx.can_rape(p, true))
 				{
 					var target = find_target(p, p.Map);
-					//--Log.Message("[RJW] JobGiver_Beastiality::TryGiveJob - target is " + (target == null ? "NULL" : target.NameStringShort));
+					Log.Message("[RJW] JobGiver_Beastiality::TryGiveJob - target is " + (target == null ? "NULL" : target.NameStringShort));
 					if (target != null)
 					{
 						return new Job(xxx.beastiality, target);
