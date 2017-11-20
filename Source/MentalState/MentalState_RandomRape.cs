@@ -27,6 +27,19 @@ namespace rjw
 			return false;
 		}
 
+		public override void MentalStateTick()
+		{
+			if (this.pawn.IsHashIntervalTick(150))
+			{
+				if (xxx.need_some_sex(pawn) < 1f)
+				{
+					this.RecoverFromState();
+					return;
+				}
+			}
+			base.MentalStateTick();
+		}
+
 		public override bool ForceHostileTo(Faction f)
 		{
 			if ((this.pawn.jobs != null) &&
