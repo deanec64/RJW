@@ -58,6 +58,8 @@ namespace rjw
 						}
 					}
 				}
+				Messages.Message("GetinRapedNow".Translate(new object[] { pawn.LabelIndefinite() }).CapitalizeFirst(), pawn, MessageTypeDefOf.NegativeEvent);
+
 			};
 			get_raped.tickAction = delegate
 			{

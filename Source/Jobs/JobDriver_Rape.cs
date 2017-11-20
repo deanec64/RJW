@@ -105,8 +105,6 @@ namespace rjw
 			var rape = new Toil();
 			rape.initAction = delegate
 			{
-				Messages.Message("Rapin'Now".Translate(new object[] { pawn.LabelIndefinite(), Target.LabelIndefinite() }).CapitalizeFirst(), Target,MessageTypeDefOf.NegativeEvent);
-
 				//pawn.Reserve(Target, comfort_prisoners.max_rapists_per_prisoner, 0);
 				//if (!pawnHasPenis)
 				//	Target.rotationTracker.Face(pawn.DrawPos);

@@ -18,23 +18,26 @@ namespace rjw
 		}
 		public override bool ForceHostileTo(Thing t)
 		{
+			/*
+			//planning random raper hostile to other colonists. but now, injured raper wont rape.
 			if ((this.pawn.jobs != null) &&
 				(this.pawn.jobs.curDriver != null) &&
 				(this.pawn.jobs.curDriver as JobDriver_Rape != null))
 			{
 				return true;
-			}
+			}*/
 			return false;
 		}
 
 		public override bool ForceHostileTo(Faction f)
 		{
+			/*
 			if ((this.pawn.jobs != null) &&
 				(this.pawn.jobs.curDriver != null) &&
 				(this.pawn.jobs.curDriver as JobDriver_Rape != null))
 			{
 				return true;
-			}
+			}*/
 			return false;
 		}
 
