@@ -72,7 +72,7 @@
 				<subNodes>
 					<li Class="ThinkNode_Priority">
 						<subNodes>
-							<li Class="JobGiver_Rape" />
+							<li Class="rjw.JobGiver_Rape" />
 							<li Class="JobGiver_WanderAnywhere">
 								<maxDanger>Deadly</maxDanger>
 							</li>
