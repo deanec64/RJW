@@ -27,6 +27,7 @@
 		<maxValue>3.0</maxValue>
 		<noSkillFactor>0.9</noSkillFactor>
 		<toStringStyle>PercentTwo</toStringStyle>
+		<neverDisabled>true</neverDisabled>
 		<skillNeedFactors>
 			<li Class="SkillNeed_BaseBonus">
 				<skill>Melee</skill>
