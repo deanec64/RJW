@@ -33,7 +33,7 @@
 	</Operation>
 	<Operation Class="PatchOperationInsert">
 		<xpath>*/ThinkTreeDef[defName="MentalStateNonCritical"]/thinkRoot[@Class="ThinkNode_Tagger"]/subNodes/li[stateClass="MentalState_Manhunter"]/subNodes/li[@Class="ThinkNode_Priority"]/subNodes/li[@Class="JobGiver_Manhunter"]</xpath>
-    <!--/Defs[1]/ThinkTreeDef[7]/thinkRoot[1]/subNodes[1]/li[7]/subNodes[1]/li[1]/subNodes[1]/li[2]/@Class-->
+		<!--/Defs[1]/ThinkTreeDef[7]/thinkRoot[1]/subNodes[1]/li[7]/subNodes[1]/li[1]/subNodes[1]/li[2]/@Class-->
 		<value>
 			<li Class="rjw.JobGiver_RapeEnemy" />
 		</value>
@@ -64,13 +64,20 @@
 		</value>
 	</Operation>-->
 
-  <Operation Class="PatchOperationInsert">
-    <xpath>*/ThinkTreeDef[defName="MentalStateCritical"]/thinkRoot[@Class="ThinkNode_Tagger"]/subNodes/li[state="Berserk"]/subNodes/li/subNodes/li[@Class="JobGiver_Berserk"]</xpath>
-    <value>
-      <li Class="rjw.ThinkNode_ConditionalTrait">
-        <trait>Rapist</trait>
+	<Operation Class="PatchOperationAdd">
+		<xpath>*/ThinkTreeDef[defName="MentalStateCritical"]/thinkRoot[@Class="ThinkNode_Tagger"]/subNodes</xpath>
+		<value>
+			<li Class="ThinkNode_ConditionalMentalState">
+				<state>RandomRape</state>
 				<subNodes>
-					<li Class="rjw.JobGiver_RapeEnemy" />
+					<li Class="ThinkNode_Priority">
+						<subNodes>
+							<li Class="rjw.JobGiver_RandomRape" />
+							<li Class="JobGiver_WanderAnywhere">
+								<maxDanger>Deadly</maxDanger>
+							</li>
+						</subNodes>
+					</li>
 				</subNodes>
 			</li>
 		</value>

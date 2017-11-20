@@ -81,7 +81,7 @@
 
 	<JobDef>
 		<defName>RandomRape</defName>
-		<driverClass>rjw.JobDriver_RandomRape</driverClass>
+		<driverClass>rjw.JobDriver_Rape</driverClass>
 		<reportString>randomly raping</reportString>
 		<casualInterruptible>false</casualInterruptible>
 	</JobDef>
