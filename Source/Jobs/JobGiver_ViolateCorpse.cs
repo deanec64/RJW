@@ -10,8 +10,8 @@ namespace rjw
 		{
 			//Log.Message("JobGiver_ViolateCorpse::find_corpse( " + rapist.NameStringShort + " ) called");
 			Corpse found = null;
-			var best_distance = 1.0e6f;
-			int best_freshness = 100;
+			var best_distance = 100f;
+			int best_freshness = 10;
 
 			foreach (Corpse corpse in m.listerThings.ThingsOfDef(ThingDef.Named("Human_Corpse")))
 			{
@@ -21,7 +21,7 @@ namespace rjw
 					int freshness = corpse.GetRotStage().ChangeType<int>();
 					var distance = rapist.Position.DistanceToSquared(corpse.Position);
 					//Log.Message("   " + corpse.InnerPawn.NameStringShort + " =  " + freshness + "/" + distance + ",  best =  " + best_freshness + "/" + best_distance);
-					if (freshness < best_freshness || (freshness <= best_freshness && distance < best_distance))
+					if (freshness > best_freshness && distance < best_distance)
 					{
 						found = corpse;
 						best_freshness = freshness;

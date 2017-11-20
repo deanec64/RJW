@@ -151,6 +151,7 @@ namespace rjw
 			{
 				return null;
 			}
+			
 			if (Find.TickManager.TicksGame >= pawn.mindState.canLovinTick && pawn.CurJob == null)
 			{
 				int price;
