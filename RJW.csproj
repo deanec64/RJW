@@ -43,15 +43,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>..\..\RimWorld B18\Mods\HugsLib\Assemblies\0Harmony.dll</HintPath>
+      <HintPath>..\HugsLib\Assemblies\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\RimWorld B18\RimWorldWin_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\RimWorldWin_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="HugsLib">
-      <HintPath>..\..\RimWorld B18\Mods\HugsLib\Assemblies\HugsLib.dll</HintPath>
+      <HintPath>..\HugsLib\Assemblies\HugsLib.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -59,7 +59,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>..\..\RimWorld B18\RimWorldWin_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>..\..\RimWorldWin_Data\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
@@ -109,7 +109,9 @@
     <Content Include="Defs\JobDefs\Jobs.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Defs\MentalState\MentalStateDefs.xml" />
+    <Content Include="Defs\MentalState\MentalStateDefs.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Defs\MiscTranslationDef\MiscTranslationDefs.xml" />
     <Content Include="Defs\Motes\Motes.xml" />
     <Content Include="Defs\Needs\Needs.xml" />
@@ -133,7 +135,9 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Defs\ThoughtDefs\Thoughts.xml" />
-    <Content Include="Defs\TraitDefs\Traits.xml" />
+    <Content Include="Defs\TraitDefs\Traits.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Defs\WorkGiverDefs\WorkGivers.xml" />
     <Content Include="Defs\_config.xml" />
     <Content Include="Languages\ChineseSimplified\DefInjected\BodyPartDef\PrivateParts.xml" />
@@ -337,7 +341,9 @@
     <Content Include="Patches\BodyPatches.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Patches\Tweak_Duty.xml" />
+    <Content Include="Patches\Tweak_Duty.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Sounds\Sex\blowjob.wav" />
     <Content Include="Sounds\Sex\cum.wav" />
     <Content Include="Sounds\Sex\kucyu04.wav" />
