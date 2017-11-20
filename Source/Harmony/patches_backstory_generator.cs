@@ -2,57 +2,12 @@
 using Harmony;
 using RimWorld;
 using Verse;
+using System;
+using System.Collections.Generic;
 
 namespace rjw
 {
-	[HarmonyPatch(typeof(PawnBioAndNameGenerator), "SetBackstoryInSlot")]
-	internal static class Patch_PawnBioAndNameGenerator_SetBackstoryInSlot  //This is used to make sure the generator will set Backstories based on the backstoryCategory of the pawns' kindDef
-	{
-		// Unmodified Version(from XnopeCore):
-		// Prefix patch:
-		// selects a backstory based on a pawn's kind rather than faction,
-		// and only failing that does it select based on faction;
-		// failing THAT, defaults.
-		[HarmonyPrefix]
-		private static bool OnBegin_SetBackstoryInSlot(Pawn pawn, BackstorySlot slot, ref Backstory backstory)
-		{
-			if ((from kvp in BackstoryDatabase.allBackstories
-				 where kvp.Value.shuffleable
-					  && kvp.Value.spawnCategories.Contains(pawn.kindDef.backstoryCategory) // changed
-					  && kvp.Value.slot == slot
-					  && (slot != BackstorySlot.Adulthood || !kvp.Value.requiredWorkTags.OverlapsWithOnAnyWorkType(pawn.story.childhood.workDisables))
-				 select kvp.Value).TryRandomElement(out backstory))
-			{
-				// Found backstory from PawnKindDef, cancelling original function.
-				return false;
-			}
-			// Defaulting to original function.
-			return true;
-		}
-
-		/* RJW Version:
-        private readonly static PawnKindDef Nymph_pkd = PawnKindDef.Named("Nymph");
-
-        [HarmonyPrefix]
-        static bool OnBegin_SetBackstoryInSlot(Pawn pawn, BackstorySlot slot, ref Backstory backstory)  //This takes care of randomly spawned Nymph
-        {
-            if (xxx.is_female(pawn) &&  pawn.kindDef== Nymph_pkd &&
-                (from kvp in BackstoryDatabase.allBackstories
-                 where kvp.Value.shuffleable                                                // Since I haven't changed the shuffleable in nymph_backstories.cs, I don't use this version here.
-                      && kvp.Value.spawnCategories.Contains(pawn.kindDef.backstoryCategory) // I should change the backstoryCategory of PawnKinds.xml to be rjw_nymphsCategory
-                      && kvp.Value.slot == slot
-                      && (slot != BackstorySlot.Adulthood || !kvp.Value.requiredWorkTags.OverlapsWithOnAnyWorkType(pawn.story.childhood.workDisables))
-                 select kvp.Value).TryRandomElement(out backstory))
-            {
-                // Found backstory from PawnKindDef, cancelling original function.
-                return false;
-            }
-            // Defaulting to original function.
-            return true;
-        }
-        */
-	}
-
+	
 	// This will generate backstories and traits for the pawns not spawned through the IncidentWorker_NymphJoins
 	[HarmonyPatch(typeof(PawnGenerator), "GenerateNewNakedPawn")]
 	internal static class Patch_PawnGenerator_GenerateNewNakedPawn
