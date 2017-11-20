@@ -14,7 +14,7 @@ namespace rjw
 		{
 			if (this.pawn.IsHashIntervalTick(150))
 			{
-				if (xxx.need_some_sex(pawn) < 1f)
+				if (xxx.need_some_sex(pawn) < 2f)
 				{
 					this.RecoverFromState();
 					return;

@@ -40,44 +40,25 @@
 		</thinkRoot>
 	</ThinkTreeDef>
 
-	<ThinkTreeDef>
-		<defName>RandomRapeTree</defName>
+  <!-- use this allow rapist randomrape whenever he want.(everyone in wildmode -->
+	<!--<ThinkTreeDef>
+		<defName>NormalRandomRapeTree</defName>
 		<insertTag>Humanlike_PreMain</insertTag>
 		<insertPriority>16</insertPriority>
-		<thinkRoot Class="ThinkNode_Tagger">
-			<tagToGive>InMentalState</tagToGive>
+		<thinkRoot Class="ThinkNode_Priority">
 			<subNodes>
-				<li Class="ThinkNode_ConditionalMentalState">
-					<state>RandomRape</state>
+				<li Class="rjw.ThinkNode_ConditionalRapist">
 					<subNodes>
-						<!-- We can't put GetRest in the priority sorter because then the player can just assign the pawn to sleep, and they'll go to sleep immediately and end the binging state. So, instead, we have the pawn sleep if and only if exhausted-->
-						<li Class="ThinkNode_ConditionalNeedPercentageAbove">
-							<need>Rest</need>
-							<threshold>0.05</threshold>
-							<invert>true</invert>
+						<li Class="rjw.ThinkNode_ChancePerHour_RandomRape">
 							<subNodes>
-								<li Class="JobGiver_GetRest" />
+								<li Class="rjw.JobGiver_RandomRape"/>
 							</subNodes>
 						</li>
-						<li Class="ThinkNode_PrioritySorter">
-							<minPriority>0.5</minPriority>
-							<subNodes>
-								<li Class="JobGiver_GetFood" />
-								<li Class="JobGiver_SatisfyChemicalNeed" />
-								<li Class="ThinkNode_Priority_GetJoy">
-									<subNodes>
-										<li Class="JobGiver_GetJoy" />
-									</subNodes>
-								</li>
-							</subNodes>
-						</li>
-						<li Class="rjw.JobGiver_RandomRape" />
-						<li Class="JobGiver_WanderColony" />
 					</subNodes>
 				</li>
 			</subNodes>
 		</thinkRoot>
-	</ThinkTreeDef>
+	</ThinkTreeDef>-->
 
 	<ThinkTreeDef>
 		<defName>FapTree</defName>
