@@ -42,7 +42,7 @@ namespace rjw
 
 		public override bool TryMakePreToilReservations()
 		{
-			return this.pawn.Reserve(this.Prisoner, this.job, comfort_prisoners.max_rapists_per_prisoner, -1, null);
+			return this.pawn.Reserve(this.Prisoner, this.job, comfort_prisoners.max_rapists_per_prisoner, 0, null);
 		}
 
 		public static void roll_to_hit(Pawn rapist, Pawn p)

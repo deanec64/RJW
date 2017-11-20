@@ -44,7 +44,7 @@ namespace rjw
 
 		public override bool TryMakePreToilReservations()
 		{
-			return this.pawn.Reserve(this.Target, this.job, comfort_prisoners.max_rapists_per_prisoner, -1, null);
+			return this.pawn.Reserve(this.Target, this.job, comfort_prisoners.max_rapists_per_prisoner, 0, null);
 		}
 
 		public static void roll_to_hit(Pawn rapist, Pawn p)
@@ -101,35 +101,28 @@ namespace rjw
 			this.FailOn(() => (!Target.health.capacities.CanBeAwake)); // || (!comfort_prisoners.is_designated (Prisoner)));
 			this.FailOn(() => !pawn.CanReserve(Target, comfort_prisoners.max_rapists_per_prisoner, 0)); // Fail if someone else reserves the prisoner before the pawn arrives
 			yield return Toils_Goto.GotoThing(iTarget, PathEndMode.OnCell);
-			yield return new Toil
-			{
-				initAction = delegate
-				{
-					//pawn.Reserve(Target, comfort_prisoners.max_rapists_per_prisoner, 0);
-					//if (!pawnHasPenis)
-					//	Target.rotationTracker.Face(pawn.DrawPos);
-					var dri = Target.jobs.curDriver as JobDriver_GettinRaped;
-					if (dri == null)
-					{
-						var gettin_raped = new Job(xxx.gettin_raped);
-						Target.jobs.StartJob(gettin_raped, JobCondition.InterruptForced, null, false, true, null);
-						(Target.jobs.curDriver as JobDriver_GettinRaped).increase_time(duration);
-					}
-					else
-					{
-						dri.rapist_count += 1;
-						dri.increase_time(duration);
-					}
-				},
-				defaultCompleteMode = ToilCompleteMode.Instant
-			};
 
 			var rape = new Toil();
-			rape.FailOn(() => (Target.CurJob == null) || (Target.CurJob.def != xxx.gettin_raped));
 			rape.initAction = delegate
 			{
 				Messages.Message("Rapin'Now".Translate(new object[] { pawn.LabelIndefinite(), Target.LabelIndefinite() }).CapitalizeFirst(), Target,MessageTypeDefOf.NegativeEvent);
 
+				//pawn.Reserve(Target, comfort_prisoners.max_rapists_per_prisoner, 0);
+				//if (!pawnHasPenis)
+				//	Target.rotationTracker.Face(pawn.DrawPos);
+				var dri = Target.jobs.curDriver as JobDriver_GettinRaped;
+				if (dri == null)
+				{
+					var gettin_raped = new Job(xxx.gettin_raped);
+					Target.jobs.StartJob(gettin_raped, JobCondition.InterruptForced, null, false, true, null);
+					(Target.jobs.curDriver as JobDriver_GettinRaped).increase_time(duration);
+				}
+				else
+				{
+					dri.rapist_count += 1;
+					dri.increase_time(duration);
+				}
+				rape.FailOn(() => (Target.CurJob == null) || (Target.CurJob.def != xxx.gettin_raped));
 			};
 			rape.tickAction = delegate
 			{
@@ -160,7 +153,7 @@ namespace rjw
 			{
 				initAction = delegate
 				{
-					aftersex(pawn, Target, true, true, isAnalSex);
+					aftersex(pawn, Target, true, isAnalSex: isAnalSex);
 					pawn.mindState.canLovinTick = Find.TickManager.TicksGame + xxx.generate_min_ticks_to_next_lovin(pawn);
 					if (!Target.Dead)
 					{

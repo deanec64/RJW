@@ -31,11 +31,11 @@ namespace rjw
 			SexualMentalStateDef d = this.def as SexualMentalStateDef;
 			if (d == null)
 			{
-				return xxx.need_some_sex(pawn) >= 1f && base.StateCanOccur(pawn);
+				return base.StateCanOccur(pawn);
 			}
 			else
 			{
-				return xxx.need_some_sex(pawn) >= 1f && base.StateCanOccur(pawn) &&
+				return base.StateCanOccur(pawn) &&
 					(!d.requireCanFuck || xxx.can_fuck(pawn)) &&
 					(!d.requireCanBeFuck || xxx.can_be_fucked(pawn)) &&
 					(!d.requireCanRape || xxx.can_rape(pawn)) &&

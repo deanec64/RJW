@@ -15,7 +15,7 @@
 	<rjw.SexualMentalBreakDef Abstract="True" Name="BaseSexualMentalBreak">
 		<commonalityMultiplierBySexNeed>
 			<points>
-				<li>(0, 1)</li>
+				<li>(0, 2)</li>
 				<li>(50, 0)</li>
 			</points>
 		</commonalityMultiplierBySexNeed>
@@ -27,7 +27,7 @@
 	<rjw.SexualMentalBreakDef ParentName="BaseSexualMentalBreak">
 		<defName>RandomRape</defName>
 		<mentalState>RandomRape</mentalState>
-		<baseCommonality>10000.5</baseCommonality>
+		<baseCommonality>1.5</baseCommonality>
 		<intensity>Extreme</intensity>
 		<commonalityMultiplierBySexNeed>
 			<points>
