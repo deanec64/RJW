@@ -34,7 +34,7 @@
 				<baseValue>1.00</baseValue>
 				<bonusPerLevel>-0.06</bonusPerLevel>
 			</li>
-		</skillNeedFactors>
+		</skillNeedOffset>
 		<capacityFactors>
 			<li>
 				<capacity>Sight</capacity>
