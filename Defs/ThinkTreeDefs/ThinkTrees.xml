@@ -39,6 +39,25 @@
 			</subNodes>
 		</thinkRoot>
 	</ThinkTreeDef>
+
+	<!--<ThinkTreeDef>
+		<defName>NormalRandomRapeTree</defName>
+		<insertTag>Humanlike_PreMain</insertTag>
+		<insertPriority>16</insertPriority>
+		<thinkRoot Class="ThinkNode_Priority">
+			<subNodes>
+				<li Class="rjw.ThinkNode_ConditionalRapist">
+					<subNodes>
+						<li Class="rjw.ThinkNode_ChancePerHour_RandomRape">
+							<subNodes>
+								<li Class="rjw.JobGiver_RandomRape"/>
+							</subNodes>
+						</li>
+					</subNodes>
+				</li>
+			</subNodes>
+		</thinkRoot>
+	</ThinkTreeDef>-->
   
 
 	<ThinkTreeDef>
