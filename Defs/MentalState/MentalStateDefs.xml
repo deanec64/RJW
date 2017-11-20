@@ -21,9 +21,6 @@
 		</commonalityMultiplierBySexNeed>
 	</rjw.SexualMentalBreakDef>
 
-
-
-
 	<rjw.SexualMentalBreakDef ParentName="BaseSexualMentalBreak">
 		<defName>RandomRape</defName>
 		<mentalState>RandomRape</mentalState>
@@ -36,10 +33,11 @@
 			</points>
 		</commonalityMultiplierBySexNeed>
 	</rjw.SexualMentalBreakDef>
+
 	<rjw.SexualMentalStateDef ParentName="BaseMentalState">
 		<defName>RandomRape</defName>
 		<stateClass>rjw.MentalState_RandomRape</stateClass>
-		<label>random raping</label>
+		<label>random rape</label>
 		<category>Indulgent</category>
 		<prisonersCanDo>false</prisonersCanDo>
 		<colonistsOnly>true</colonistsOnly>
@@ -47,15 +45,13 @@
 		<recoveryMtbDays>0.8</recoveryMtbDays>
 		<maxTicksBeforeRecovery>80000</maxTicksBeforeRecovery>
 		<nameColor>(0.5, 0.9, 0.5)</nameColor>
-		<beginLetterLabel>random raping</beginLetterLabel>
-		<beginLetter>{0} is raping randomly.</beginLetter>
+		<beginLetterLabel>random rape</beginLetterLabel>
+		<beginLetter>{0} is sexually frustrated and will rape anyone.</beginLetter>
 		<beginLetterDef>ThreatSmall</beginLetterDef>
-		<recoveryMessage>{0} is no longer rape randomly.</recoveryMessage>
+		<recoveryMessage>{0} is sexually satisfied</recoveryMessage>
 		<baseInspectLine>Mental state: Random Rape</baseInspectLine>
 		<recoverFromSleep>true</recoverFromSleep>
 		<!--<recoverFromDowned>true</recoverFromDowned>-->
 		<unspawnedCanDo>true</unspawnedCanDo>
 	</rjw.SexualMentalStateDef>
-
-
 </Defs>

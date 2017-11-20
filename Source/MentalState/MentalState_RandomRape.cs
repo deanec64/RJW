@@ -20,7 +20,7 @@ namespace rjw
 		{
 			if ((this.pawn.jobs != null) &&
 				(this.pawn.jobs.curDriver != null) &&
-				(this.pawn.jobs.curDriver as JobDriver_RandomRape != null))
+				(this.pawn.jobs.curDriver as JobDriver_Rape != null))
 			{
 				return true;
 			}
@@ -31,7 +31,7 @@ namespace rjw
 		{
 			if ((this.pawn.jobs != null) &&
 				(this.pawn.jobs.curDriver != null) &&
-				(this.pawn.jobs.curDriver as JobDriver_RandomRape != null))
+				(this.pawn.jobs.curDriver as JobDriver_Rape != null))
 			{
 				return true;
 			}
