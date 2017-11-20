@@ -89,7 +89,7 @@ namespace rjw
 		}
 		public override bool TryMakePreToilReservations()
 		{
-			return this.pawn.Reserve(this.Partner, this.job, 1, 0, null) && this.pawn.Reserve(this.Bed, this.job, this.Bed.SleepingSlotsCount + 1, -1, null);
+			return this.pawn.Reserve(this.Partner, this.job, 1, -1, null);
 		}
 
 		protected override IEnumerable<Toil> MakeNewToils()
@@ -99,7 +99,7 @@ namespace rjw
 			this.FailOn(() => Actor is null || !xxx.CanUse(Actor, Bed) || !Actor.CanReserve(Partner));
 			int price = Bed.priceOfWhore;
 			yield return Toils_Reserve.Reserve(PartnerInd, 1, 0);
-			yield return Toils_Reserve.Reserve(BedInd, Bed.SleepingSlotsCount, 0);
+			//yield return Toils_Reserve.Reserve(BedInd, Bed.SleepingSlotsCount, 0);
 			bool partnerHasPenis = Genital_Helper.has_penis(Partner);
 
 			Toil gotoWhoreBed = new Toil
