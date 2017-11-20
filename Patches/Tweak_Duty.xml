@@ -31,13 +31,13 @@
 			<li Class="rjw.JobGiver_RapeEnemy" />
 		</value>
 	</Operation>
-	<!--<Operation Class="PatchOperationInsert">
-		<xpath>*/ThinkTreeDef[defName="MentalStateNonCritical"]/thinkRoot[@Class="ThinkNode_Tagger"]/subNodes/li[state="Manhunter"]/subNodes/li[@Class="ThinkNode_Priority"]/subNodes/li[@Class="JobGiver_Manhunter"]</xpath>
-		/Defs[1]/ThinkTreeDef[7]/thinkRoot[1]/subNodes[1]/li[7]/subNodes[1]/li[1]/subNodes[1]/li[2]/@Class
+	<Operation Class="PatchOperationInsert">
+		<xpath>*/ThinkTreeDef[defName="MentalStateNonCritical"]/thinkRoot[@Class="ThinkNode_Tagger"]/subNodes/li[stateClass="MentalState_Manhunter"]/subNodes/li[@Class="ThinkNode_Priority"]/subNodes/li[@Class="JobGiver_Manhunter"]</xpath>
+    <!--/Defs[1]/ThinkTreeDef[7]/thinkRoot[1]/subNodes[1]/li[7]/subNodes[1]/li[1]/subNodes[1]/li[2]/@Class-->
 		<value>
 			<li Class="rjw.JobGiver_RapeEnemy" />
 		</value>
-	</Operation>-->
+	</Operation>
 	<!--<Operation Class="PatchOperationInsert">
 		<xpath>*/ThinkTreeDef[defName="MentalStateNonCritical"]/thinkRoot[@Class="ThinkNode_Tagger"]/subNodes/li[state="ManhunterPermanent"]/subNodes/li[@Class="ThinkNode_Priority"]/subNodes/li[@Class="JobGiver_Manhunter"]</xpath>
 		<value>
@@ -68,7 +68,8 @@
 		<xpath>*/ThinkTreeDef[defName="MentalStateCritical"]/thinkRoot[@Class="ThinkNode_Tagger"]/subNodes/li[state="Berserk"]/subNodes/li/subNodes/li[@Class="JobGiver_Berserk"]</xpath>
 		<value>
 			<li Class="ThinkNode_TraitBehaviors">
-				--><!--<trait>Rapist</trait>--><!--
+				-->
+    <!--<trait>Rapist</trait>--><!--
 				<subNodes>
 					<li Class="rjw.JobGiver_RapeEnemy" />
 				</subNodes>

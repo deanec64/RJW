@@ -15,7 +15,7 @@ namespace rjw
 
 		private int ticks_between_thrusts;
 
-		protected TargetIndex iTarget = TargetIndex.A;
+		protected TargetIndex iprisoner = TargetIndex.A;
 
 		private bool isAnalSex = false;
 
@@ -32,17 +32,17 @@ namespace rjw
 			new CurvePoint(75f, 24f)
 		};
 
-		protected Pawn Target
+		protected Pawn Prisoner
 		{
 			get
 			{
-				return (Pawn)(job.GetTarget(iTarget));
+				return (Pawn)(job.GetTarget(iprisoner));
 			}
 		}
 
 		public override bool TryMakePreToilReservations()
 		{
-			return this.pawn.Reserve(this.Target, this.job, comfort_prisoners.max_rapists_per_prisoner, 0, null);
+			return this.pawn.Reserve(this.Prisoner, this.job, comfort_prisoners.max_rapists_per_prisoner, 0, null);
 		}
 
 		public static void roll_to_hit(Pawn rapist, Pawn p)
@@ -95,10 +95,10 @@ namespace rjw
 				ticks_between_hits = (int)(ticks_between_hits * 0.90);
 
 			//Log.Message("JobDriver_ComfortPrisonerRapin::MakeNewToils() - setting fail conditions");
-			this.FailOnDespawnedNullOrForbidden(iTarget);
-			this.FailOn(() => (!Target.health.capacities.CanBeAwake) || (!comfort_prisoners.is_designated(Target)));
-			this.FailOn(() => !pawn.CanReserve(Target, comfort_prisoners.max_rapists_per_prisoner, 0)); // Fail if someone else reserves the prisoner before the pawn arrives
-			yield return Toils_Goto.GotoThing(iTarget, PathEndMode.OnCell);
+			this.FailOnDespawnedNullOrForbidden(iprisoner);
+			this.FailOn(() => (!Prisoner.health.capacities.CanBeAwake) || (!comfort_prisoners.is_designated(Prisoner)));
+			this.FailOn(() => !pawn.CanReserve(Prisoner, comfort_prisoners.max_rapists_per_prisoner, 0)); // Fail if someone else reserves the prisoner before the pawn arrives
+			yield return Toils_Goto.GotoThing(iprisoner, PathEndMode.OnCell);
 
 			var rape = new Toil();
 			rape.initAction = delegate
@@ -106,15 +106,15 @@ namespace rjw
 				//Log.Message("JobDriver_ComfortPrisonerRapin::MakeNewToils() - reserving prisoner");
 				//pawn.Reserve(Prisoner, comfort_prisoners.max_rapists_per_prisoner, 0);
 				if (!pawnHasPenis)
-					Target.rotationTracker.Face(pawn.DrawPos);
+					Prisoner.rotationTracker.Face(pawn.DrawPos);
 
 				//Log.Message("JobDriver_ComfortPrisonerRapin::MakeNewToils() - Setting victim job driver");
-				var dri = Target.jobs.curDriver as JobDriver_GettinRaped;
+				var dri = Prisoner.jobs.curDriver as JobDriver_GettinRaped;
 				if (dri == null)
 				{
 					var gettin_raped = new Job(xxx.gettin_raped);
-					Target.jobs.StartJob(gettin_raped, JobCondition.InterruptForced, null, false, true, null);
-					(Target.jobs.curDriver as JobDriver_GettinRaped).increase_time(duration);
+					Prisoner.jobs.StartJob(gettin_raped, JobCondition.InterruptForced, null, false, true, null);
+					(Prisoner.jobs.curDriver as JobDriver_GettinRaped).increase_time(duration);
 				}
 				else
 				{
@@ -142,22 +142,22 @@ namespace rjw
 				if (pawn.IsHashIntervalTick(ticks_between_hearts))
 					MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, ThingDefOf.Mote_Heart);
 				if (pawn.IsHashIntervalTick(ticks_between_thrusts))
-					xxx.sexTick(pawn, Target);
+					xxx.sexTick(pawn, Prisoner);
 				if (pawn.IsHashIntervalTick(ticks_between_hits))
-					roll_to_hit(pawn, Target);
+					roll_to_hit(pawn, Prisoner);
 			};
 			rape.AddFinishAction(delegate
 			{
 				//// Trying to add some interactions and social logs
-				xxx.processAnalSex(pawn, Target, ref isAnalSex, pawnHasPenis);
+				xxx.processAnalSex(pawn, Prisoner, ref isAnalSex, pawnHasPenis);
 				//Log.Message("JobDriver_ComfortPrisonerRapin::MakeNewToils() - Clearing victim job");
-				if ((Target.jobs != null) &&
-				(Target.jobs.curDriver != null) &&
-				(Target.jobs.curDriver as JobDriver_GettinRaped != null))
+				if ((Prisoner.jobs != null) &&
+				(Prisoner.jobs.curDriver != null) &&
+				(Prisoner.jobs.curDriver as JobDriver_GettinRaped != null))
 				{
-					(Target.jobs.curDriver as JobDriver_GettinRaped).rapist_count -= 1;
-					xxx.processBrokenBody(Target);
-					xxx.ExtraSatisfyForBrokenCP(Target);
+					(Prisoner.jobs.curDriver as JobDriver_GettinRaped).rapist_count -= 1;
+					xxx.processBrokenBody(Prisoner);
+					xxx.ExtraSatisfyForBrokenCP(Prisoner);
 				}
 			});
 			rape.defaultCompleteMode = ToilCompleteMode.Delay;
@@ -169,12 +169,12 @@ namespace rjw
 				initAction = delegate
 				{
 					//Log.Message("JobDriver_ComfortPrisonerRapin::MakeNewToils() - Calling aftersex");
-					xxx.aftersex(pawn, Target, true, isAnalSex: isAnalSex);
+					xxx.aftersex(pawn, Prisoner, true, isAnalSex: isAnalSex);
 					pawn.mindState.canLovinTick = Find.TickManager.TicksGame + xxx.generate_min_ticks_to_next_lovin(pawn);
-					if (!Target.Dead)
+					if (!Prisoner.Dead)
 					{
 						//xxx.aftersex (Prisoner, pawn, true);
-						Target.mindState.canLovinTick = Find.TickManager.TicksGame + xxx.generate_min_ticks_to_next_lovin(Target);
+						Prisoner.mindState.canLovinTick = Find.TickManager.TicksGame + xxx.generate_min_ticks_to_next_lovin(Prisoner);
 					}
 				},
 				defaultCompleteMode = ToilCompleteMode.Instant
