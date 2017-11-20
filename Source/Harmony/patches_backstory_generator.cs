@@ -5,9 +5,11 @@ using Verse;
 
 namespace rjw
 {
+	/*
 	[HarmonyPatch(typeof(PawnBioAndNameGenerator), "SetBackstoryInSlot")]
 	internal static class Patch_PawnBioAndNameGenerator_SetBackstoryInSlot  //This is used to make sure the generator will set Backstories based on the backstoryCategory of the pawns' kindDef
 	{
+		
 		// Unmodified Version(from XnopeCore):
 		// Prefix patch:
 		// selects a backstory based on a pawn's kind rather than faction,
@@ -50,8 +52,8 @@ namespace rjw
             // Defaulting to original function.
             return true;
         }
-        */
-	}
+        
+	}*/
 
 	// This will generate backstories and traits for the pawns not spawned through the IncidentWorker_NymphJoins
 	[HarmonyPatch(typeof(PawnGenerator), "GenerateNewNakedPawn")]
