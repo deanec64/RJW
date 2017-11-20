@@ -15,7 +15,7 @@
 	<rjw.SexualMentalBreakDef Abstract="True" Name="BaseSexualMentalBreak">
 		<commonalityMultiplierBySexNeed>
 			<points>
-				<li>(0, 1)</li>
+				<li>(0, 2)</li>
 				<li>(50, 0)</li>
 			</points>
 		</commonalityMultiplierBySexNeed>
