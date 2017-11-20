@@ -32,7 +32,7 @@ namespace rjw
 		}
 		public override bool TryMakePreToilReservations()
 		{
-			return this.pawn.Reserve(this.Bed, this.job, 1, -1, null);
+			return this.pawn.Reserve(this.Bed, this.job, this.Bed.SleepingSlotsCount, 0, null);
 		}
 
 		protected override IEnumerable<Toil> MakeNewToils()
