@@ -27,7 +27,7 @@
 	<rjw.SexualMentalBreakDef ParentName="BaseSexualMentalBreak">
 		<defName>RandomRape</defName>
 		<mentalState>RandomRape</mentalState>
-		<baseCommonality>10000.5</baseCommonality>
+		<baseCommonality>1.5</baseCommonality>
 		<intensity>Extreme</intensity>
 		<commonalityMultiplierBySexNeed>
 			<points>
