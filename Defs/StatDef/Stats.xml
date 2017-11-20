@@ -28,13 +28,13 @@
 		<noSkillFactor>0.9</noSkillFactor>
 		<toStringStyle>PercentTwo</toStringStyle>
 		<neverDisabled>true</neverDisabled>
-		<skillNeedOffset>
+		<skillNeedFactors>
 			<li Class="SkillNeed_BaseBonus">
 				<skill>Melee</skill>
 				<baseValue>1.00</baseValue>
 				<bonusPerLevel>-0.06</bonusPerLevel>
 			</li>
-		</skillNeedOffset>
+		</skillNeedFactors>
 		<capacityFactors>
 			<li>
 				<capacity>Sight</capacity>
