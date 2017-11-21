@@ -142,7 +142,7 @@
 		<defName>GotRaped</defName>
 		<thoughtClass>Thought_Memory</thoughtClass>
 		<durationDays>22.0</durationDays>
-		<stackLimit>5</stackLimit>
+		<stackLimit>100</stackLimit>
 		<stackedEffectMultiplier>0.4</stackedEffectMultiplier>
 		<stages>
 			<li>
