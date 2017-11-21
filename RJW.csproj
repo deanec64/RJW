@@ -18,7 +18,7 @@
     <AssemblyFileVersionSettings>None.None.IncrementOnDemand.None</AssemblyFileVersionSettings>
     <AssemblyInfoVersionSettings>None.None.IncrementOnDemand.None</AssemblyInfoVersionSettings>
     <PrimaryVersionType>AssemblyVersionAttribute</PrimaryVersionType>
-    <AssemblyVersion>1.6.0.459</AssemblyVersion>
+    <AssemblyVersion>1.6.0.473</AssemblyVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -414,6 +414,7 @@
     <Compile Include="Source\Common\Verb_Fuck.cs" />
     <Compile Include="Source\Common\xxx.cs" />
     <Compile Include="Source\Harmony\Building_Bed_Patch.cs" />
+    <Compile Include="Source\Harmony\Custom_UI_BackgroundMain.cs" />
     <Compile Include="Source\Harmony\First.cs" />
     <Compile Include="Source\Harmony\patches_ABF.cs" />
     <Compile Include="Source\Harmony\patches_backstory_generator.cs" />
