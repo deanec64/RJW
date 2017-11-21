@@ -1,4 +1,9 @@
-v1.6.0 changes
+v1.6.0
+Known bugs (new):
+- Exception: Whore unable to reserve target. To avoid this, don't assign more than one whore.
+- Sometimes on a rare occasion, there gonna be exceptions about pawns unable to reserve things.
+
+Changes:
 - Compatibility patch for Rimworld B18.
 - Updated Korean translation by NEPH.
 - Fixed visitors & traders raping CPs bug.
@@ -9,8 +14,6 @@ v1.6.0 changes
 - Added a notification when somebody is getting raped.
 - Changed some descriptions.
 
-KNOWN NEW BUG:
-- Exception: Whore unable to reserve target. To avoid this, don't assign more than one whore.
 
 v1.5.4j changes:
 - Insects will now inject their eggs while raping your incapacitated colonists. (by hogehoge1942)
