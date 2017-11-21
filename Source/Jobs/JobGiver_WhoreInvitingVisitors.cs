@@ -112,15 +112,12 @@ namespace rjw
 			{
 				guestsSpawned.TryRandomElement(out result);
 			}
-			if (result != null)
+			if (result != null && p1.CanReserve(result, 1, 0))
 			{
 				return result;
 			}
 			//--Log.Message("[RJW] JobGiver_WhoreInvitingVisitors::FindAttractivePawn - found no visitors");
-			if (!p1.CanReserve(result, 1, 0))
-			{
-				return null;
-			}
+		
 			if (!xxx.WillPawnTryHookup(p1))
 			{
 				return null;
