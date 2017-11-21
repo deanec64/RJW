@@ -44,7 +44,7 @@ namespace rjw
 					Log.Message("[RJW] JobGiver_ViolateCorpse::TryGiveJob - target is " + (target == null ? "NULL" : "Found"));
 					if (target != null)
 					{
-						Messages.Message(p.NameStringShort + " is trying to rape a corpse", p, MessageTypeDefOf.NeutralEvent);
+						Messages.Message(p.NameStringShort + " is trying to rape a corpse.", p, MessageTypeDefOf.NeutralEvent);
 						return new Job(xxx.violate_corpse, target);
 					}
 					else

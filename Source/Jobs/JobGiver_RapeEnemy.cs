@@ -42,7 +42,7 @@ namespace rjw
 			{
 				//Log.Message("[RJW]" + this.GetType().ToString() + "::TryGiveJob( " + p.NameStringShort + " ) - found victim " + downedPlayer.NameStringShort);
 				p.mindState.canLovinTick = Find.TickManager.TicksGame + Rand.Range(75, 150);
-				Messages.Message(p.NameStringShort + " is trying to rape " + downedPlayer.NameStringShort, p, MessageTypeDefOf.NegativeEvent);
+				Messages.Message(p.NameStringShort + " is trying to rape " + downedPlayer.NameStringShort + ".", p, MessageTypeDefOf.NegativeEvent);
 				return new Job(rapeEnemyJobDef, downedPlayer);
 			}
 			else

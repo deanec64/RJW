@@ -27,7 +27,7 @@ namespace rjw
 					{
 						if (((!xxx.is_animal(target) && (xxx.is_rapist(p) || xxx.is_nympho(p))) || (xxx.is_animal(target) && xxx.is_zoophiliac(p))) || wildmode) //TODO: make a designation target for animals
 						{
-							Messages.Message(p.NameStringShort + " is trying to rape " + target.NameStringShort, p, MessageTypeDefOf.NeutralEvent);
+							Messages.Message(p.NameStringShort + " is trying to rape " + target.NameStringShort + ".", p, MessageTypeDefOf.NeutralEvent);
 							return new Job(xxx.comfort_prisoner_rapin, target);
 						}
 						else if (xxx.config.pawns_always_rapeCP)

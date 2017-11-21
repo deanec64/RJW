@@ -43,7 +43,7 @@ namespace rjw
 					if (prisoner != null)
 					{
 						//--Log.Message("[RJW] JobGiver_RandomRape::TryGiveJob( " + p.NameStringShort + " ) - found victim " + prisoner.NameStringShort);
-						Messages.Message(p.NameStringShort + " is trying to rape " + prisoner.NameStringShort, p, MessageTypeDefOf.NegativeEvent);
+						Messages.Message(p.NameStringShort + " is trying to rape " + prisoner.NameStringShort + ".", p, MessageTypeDefOf.NegativeEvent);
 						return new Job(xxx.random_rape, prisoner);
 					}
 					else

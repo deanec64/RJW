@@ -55,7 +55,7 @@ namespace rjw
 					Log.Message("[RJW] JobGiver_Beastiality::TryGiveJob - target is " + (target == null ? "NULL" : target.NameStringShort));
 					if (target != null)
 					{
-						Messages.Message(p.NameStringShort + " is trying to rape " + target.NameStringShort, p, MessageTypeDefOf.NeutralEvent);
+						Messages.Message(p.NameStringShort + " is trying to rape " + target.NameStringShort + ".", p, MessageTypeDefOf.NeutralEvent);
 						return new Job(xxx.beastiality, target);
 					}
 					else
