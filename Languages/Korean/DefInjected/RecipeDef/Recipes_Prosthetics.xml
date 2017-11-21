@@ -9,6 +9,14 @@
   <MakeBionicPenis.description>성감을 극대화시켜주는 생체공학 강화 자지를 합성합니다.</MakeBionicPenis.description>
   <MakeBionicPenis.jobString>강화 자지 합성 중.</MakeBionicPenis.jobString>
 
+  <!--[Duplicated] <MakeHydraulicVagina.label>craft hydraulic vagina</MakeHydraulicVagina.label>-->
+  <!--[Duplicated] <MakeHydraulicVagina.description>Crafts a hydraulic vagina from steel and components.</MakeHydraulicVagina.description>-->
+  <!--[Duplicated] <MakeHydraulicVagina.jobString>Crafting hydraulic vagina.</MakeHydraulicVagina.jobString>-->
+
+  <!--[Duplicated] <MakeBionicVagina.label>craft bionic vagina</MakeBionicVagina.label>-->
+  <!--[Duplicated] <MakeBionicVagina.description>Crafts a bionic vagina from hyperweave, plasteel, and components.</MakeBionicVagina.description>-->
+  <!--[Duplicated] <MakeBionicVagina.jobString>Crafting bionic vagina.</MakeBionicVagina.jobString>-->
+
   <MakeHydraulicVagina.label>실리콘 보지 제작</MakeHydraulicVagina.label>
   <MakeHydraulicVagina.description>어설프지만 그럭저럭 쓸만한 실리콘 보지를 제작합니다.</MakeHydraulicVagina.description>
   <MakeHydraulicVagina.jobString>실리콘 보지 제작 중.</MakeHydraulicVagina.jobString>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <RandomRape.label>강간 충동</RandomRape.label>
+  <RandomRape.beginLetterLabel>강간 충동</RandomRape.beginLetterLabel>
+  <RandomRape.beginLetter>{0}가 강간할 대상을 찾습니다!</RandomRape.beginLetter>
+  <RandomRape.recoveryMessage>{0}는 욕구를 해소했습니다.</RandomRape.recoveryMessage>
+  <RandomRape.baseInspectLine>정신 상태: 강간 충동</RandomRape.baseInspectLine>
+
+
+</LanguageData>

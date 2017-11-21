@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Used for JobDriver_RapeEnemyByInsect. Insects plant egg when success rape. -->
+
+  <RJW_MegascarabEgg.label>메가스캐럽 알</RJW_MegascarabEgg.label>
+  <RJW_MegaspiderEgg.label>메가스파이더 알</RJW_MegaspiderEgg.label>
+  <RJW_SpelopedeEgg.label>스펠로피드 알</RJW_SpelopedeEgg.label>
+
+
+</LanguageData>

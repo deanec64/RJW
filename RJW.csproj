@@ -316,12 +316,17 @@
     <Content Include="Languages\Korean\DefInjected\RecipeDef\Recipes_Production.xml" />
     <Content Include="Languages\Korean\DefInjected\RecipeDef\Recipes_Prosthetics.xml" />
     <Content Include="Languages\Korean\DefInjected\RecipeDef\Recipes_Surgery.xml" />
+    <Content Include="Languages\Korean\DefInjected\RecordDef\RecordDefs.xml" />
     <Content Include="Languages\Korean\DefInjected\RecordDef\Records_GetRaped.xml" />
     <Content Include="Languages\Korean\DefInjected\ResearchProjectDef\ResearchProjects_XxXx.xml" />
     <Content Include="Languages\Korean\DefInjected\ResearchTabDef\ResearchTabs.xml" />
     <Content Include="Languages\Korean\DefInjected\rjw.bondage_gear_def\Items.xml" />
     <Content Include="Languages\Korean\DefInjected\rjw.force_off_gear_def\Recipes_Surgery.xml" />
+    <Content Include="Languages\Korean\DefInjected\rjw.HediffDef_EnemyImplants\Hediffs_EnemyImplants.xml" />
+    <Content Include="Languages\Korean\DefInjected\rjw.HediffDef_InsectEgg\Hediffs_EnemyImplants.xml" />
+    <Content Include="Languages\Korean\DefInjected\rjw.HediffDef_MechImplants\Hediffs_EnemyImplants.xml" />
     <Content Include="Languages\Korean\DefInjected\rjw.MiscTranslationDef\MiscTranslationDefs.xml" />
+    <Content Include="Languages\Korean\DefInjected\rjw.SexualMentalStateDef\MentalStateDefs.xml" />
     <Content Include="Languages\Korean\DefInjected\rjw.std_def\STDs.xml" />
     <Content Include="Languages\Korean\DefInjected\RulePackDef\RulePacks_AnalRape.xml" />
     <Content Include="Languages\Korean\DefInjected\RulePackDef\RulePacks_AnalSex.xml" />

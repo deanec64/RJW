@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <CountOfFappin.label>자위 경험</CountOfFappin.label>
+  <CountOfFappin.description>자위 경험 횟수입니다.</CountOfFappin.description>
+
+  <CountOfSex.label>사랑 나눔 경험</CountOfSex.label>
+  <CountOfSex.description>누군가와 사랑을 나눈 횟수입니다.</CountOfSex.description>
+
+  <CountOfSexWithOthers.label>인간과의 섹스</CountOfSexWithOthers.label>
+  <CountOfSexWithOthers.description>인간과 사랑을 나눈 횟수입니다.</CountOfSexWithOthers.description>
+
+  <CountOfSexWithAnimals.label>짐승과의 섹스</CountOfSexWithAnimals.label>
+  <CountOfSexWithAnimals.description>동물과 사랑을 나눈 횟수입니다.</CountOfSexWithAnimals.description>
+
+  <CountOfSexWithInsects.label>곤충과의 섹스</CountOfSexWithInsects.label>
+  <CountOfSexWithInsects.description>곤충과 사랑을 나눈 횟수입니다.</CountOfSexWithInsects.description>
+
+  <CountOfRaped.label>강간 경험</CountOfRaped.label>
+  <CountOfRaped.description>누군가를 강간한 횟수입니다.</CountOfRaped.description>
+
+  <CountOfRapedOthers.label>사람 강간</CountOfRapedOthers.label>
+  <CountOfRapedOthers.description>인간을 강간한 횟수입니다.</CountOfRapedOthers.description>
+
+  <CountOfRapedAnimals.label>짐승 강간</CountOfRapedAnimals.label>
+  <CountOfRapedAnimals.description>짐승을 강간한 횟수입니다.</CountOfRapedAnimals.description>
+  
+  <CountOfRapedInsects.label>곤충 강간</CountOfRapedInsects.label>
+  <CountOfRapedInsects.description>곤충을 강간한 횟수입니다.</CountOfRapedInsects.description>
+
+  <CountOfSexWithCorpse.label>시체 강간</CountOfSexWithCorpse.label>
+  <CountOfSexWithCorpse.description>시체를 강간한 횟수입니다.</CountOfSexWithCorpse.description>
+
+  <CountOfBeenRaped.label>강간당한 경험</CountOfBeenRaped.label>
+  <CountOfBeenRaped.description>누군가에게 강간당한 횟수입니다.</CountOfBeenRaped.description>
+
+  <CountOfBeenRapedByOthers.label>사람에게 강간당함</CountOfBeenRapedByOthers.label>
+  <CountOfBeenRapedByOthers.description>인간에게 강간당한 횟수입니다.</CountOfBeenRapedByOthers.description>
+
+  <CountOfBeenRapedByAnimals.label>짐승에게 강간당함</CountOfBeenRapedByAnimals.label>
+  <CountOfBeenRapedByAnimals.description>짐승에게 강간당한 횟수입니다.</CountOfBeenRapedByAnimals.description>
+
+  <CountOfBeenRapedByInsects.label>곤충에게 강간당함</CountOfBeenRapedByInsects.label>
+  <CountOfBeenRapedByInsects.description>곤충에게 강간당한 횟수입니다.</CountOfBeenRapedByInsects.description>
+
+  <GetRapedAsComfortPrisoner.label>성노예 경험</GetRapedAsComfortPrisoner.label>
+  <GetRapedAsComfortPrisoner.description>성노예로서 활동한 횟수입니다.</GetRapedAsComfortPrisoner.description>
+
+  <CountOfWhore.label>매춘 경험</CountOfWhore.label>
+  <CountOfWhore.description>창부로서 활동한 횟수입니다.</CountOfWhore.description>
+
+  <EarnedMoneyByWhore.label>매춘 수익</EarnedMoneyByWhore.label>
+  <EarnedMoneyByWhore.description>몸을 팔아 벌어들인 돈입니다.</EarnedMoneyByWhore.description>
+
+
+</LanguageData>

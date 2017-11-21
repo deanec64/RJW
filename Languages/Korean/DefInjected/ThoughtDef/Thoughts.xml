@@ -92,4 +92,15 @@
   <Fapped.stages.0.description>옆구리가 허전해.</Fapped.stages.0.description>
 
 
+  <!-- Added by Hoge.  Some mood about Virgin. I think need balancing -->
+
+  <FortunateGaveVirgin.stages.0.label>순결을 바침</FortunateGaveVirgin.stages.0.label>
+  <FortunateGaveVirgin.stages.0.labelSocial>순결을 바침</FortunateGaveVirgin.stages.0.labelSocial>
+  <FortunateGaveVirgin.stages.0.description>후회는 없어. 사랑을 위해서라면 기꺼이 희생하겠어.</FortunateGaveVirgin.stages.0.description>
+
+  <UnfortunateLostVirgin.stages.0.label>순결을 잃음</UnfortunateLostVirgin.stages.0.label>
+  <UnfortunateLostVirgin.stages.0.labelSocial>순결을 잃음</UnfortunateLostVirgin.stages.0.labelSocial>
+  <UnfortunateLostVirgin.stages.0.description>난 끝났어.</UnfortunateLostVirgin.stages.0.description>
+
+
 </LanguageData>
