@@ -112,7 +112,7 @@ namespace rjw
 				//--Log.Message("[RJW]JobDriver_InvitingVisitors::MakeNewToils - BothGoToBed - initAction is called0");
 				if (successfulPass)
 				{
-					if (!xxx.CanUse(Whore, TargetBed))
+					if (!xxx.CanUse(Whore, TargetBed) && Whore.CanReserve(TargetPawn, 1, 0))
 					{
 						//--Log.Message("[RJW]JobDriver_InvitingVisitors::MakeNewToils - BothGoToBed - cannot use the whore bed");
 						return;
