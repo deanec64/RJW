@@ -21,11 +21,7 @@
 		<targetClass>rjw.nymph_backstories</targetClass>
 		<label>Feisty Nymph</label>
 		<description>
-			NAME struts around the colony like a conqueror examining a newly annexed territory. You try to focus on your work but HE won't let you.\n
-			"I heard what you said about me!" HE accuses. You didn't say anything about HIM. HECAP knows that.
-			"Wanna fight?" HE challenges. You already know what HE means: a few minutes of play wrestling and then you take HIM, or, if you hesitate, HE takes you. \n
-			Though NAME can be hard to get along with you've come to appreciate how HE's more practical than the others.\n
-			You explain to HIM, "See these things here? They need to be over there" and "Those people are trying to kill us, so let's kill them first." HECAP listens, and does what is necessary.
+			NAME struts around the colony like a conqueror examining a newly annexed territory. You try to focus on your work but HE won't let you.\n"I heard what you said about me!" HE accuses. You didn't say anything about HIM. HECAP knows that. "Wanna fight?" HE challenges. You already know what HE means: a few minutes of play wrestling and then you take HIM, or, if you hesitate, HE takes you.\n Though NAME can be hard to get along with you've come to appreciate how HE's more practical than the others.\n You explain to HIM, "See these things here? They need to be over there" and "Those people are trying to kill us, so let's kill them first." HECAP listens, and does what is necessary.
 		</description>
 		<stringA>Nymph</stringA>
 	</rjw.MiscTranslationDef>
@@ -35,10 +31,7 @@
 		<targetClass>rjw.nymph_backstories</targetClass>
 		<label>Curious Nymph</label>
 		<description>
-			Hold the covering plate back and place the actuator in slot C. Line the rod up. No, that won't do, it needs to be perfect. Now pop the JC-444 chip in place.\n
-			Solder the orange wire to pin #16 and the striped wire to pin #5.\n
-			Suddenly, there HE is. You aren't surprised to see NAME, you just didn't hear HIM approach. By now you're used to it.\n
-			You continue your work in silence as HE hovers over you, her large eyes fixated on the rapid, rythmic, deliberate motions of your hands.
+			Hold the covering plate back and place the actuator in slot C. Line the rod up. No, that won't do, it needs to be perfect. Now pop the JC-444 chip in place.\n Solder the orange wire to pin #16 and the striped wire to pin #5.\n Suddenly, there HE is. You aren't surprised to see NAME, you just didn't hear HIM approach. By now you're used to it.\n You continue your work in silence as HE hovers over you, her large eyes fixated on the rapid, rythmic, deliberate motions of your hands.
 		</description>
 		<stringA>Nymph</stringA>
 	</rjw.MiscTranslationDef>
@@ -68,8 +61,7 @@
 		<targetClass>rjw.nymph_backstories</targetClass>
 		<label>Broken Nymph</label>
 		<description>
-			Maybe NAME suffered some terrible things, HE looks rather emaciated, and no one wants to speak with HIM.\n
-			HECAP only behaves a bit vivaciously while staring at some rod-like stuffs.
+			Maybe NAME suffered some terrible things, HE looks rather emaciated, and no one wants to speak with HIM.\n HECAP only behaves a bit vivaciously while staring at some rod-like stuffs.
 		</description>
 		<stringA>Nymph</stringA>
 	</rjw.MiscTranslationDef>
