@@ -14,7 +14,7 @@ namespace rjw
 			{
 				//Log.Message("[RJW] JobGiver_ComfortPrisonerRape::TryGiveJob( " + p.NameStringShort + " ) called1");
 				// don't allow pawns marked as comfort prisoners to rape others
-				if (p != null && !comfort_prisoners.is_designated(p) &&
+				if (p != null && (!comfort_prisoners.is_designated(p) || wildmode) &&
 					((xxx.is_healthy(p) &&
 					xxx.can_rape(p, true) &&
 					xxx.is_nympho_or_rapist_or_zoophiliac(p) &&

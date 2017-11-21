@@ -117,6 +117,10 @@ namespace rjw
 				return result;
 			}
 			//--Log.Message("[RJW] JobGiver_WhoreInvitingVisitors::FindAttractivePawn - found no visitors");
+			if (!p1.CanReserve(result, 1, 0))
+			{
+				return null;
+			}
 			if (!xxx.WillPawnTryHookup(p1))
 			{
 				return null;
@@ -151,7 +155,7 @@ namespace rjw
 			{
 				return null;
 			}
-			
+
 			if (Find.TickManager.TicksGame >= pawn.mindState.canLovinTick && pawn.CurJob == null)
 			{
 				int price;
