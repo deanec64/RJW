@@ -143,7 +143,7 @@ namespace rjw
 
 		protected override Job TryGiveJob(Pawn pawn)
 		{
-			//Log.Message("[RJW] JobGiver_WhoreInvitingVisitors::TryGiveJob( " + pawn.NameStringShort + " ) called0");
+			Log.Message("[RJW] JobGiver_WhoreInvitingVisitors::TryGiveJob( " + pawn.NameStringShort + " ) called0");
 			if (pawn == null || !InteractionUtility.CanInitiateInteraction(pawn))
 			{
 				return null;
@@ -157,7 +157,7 @@ namespace rjw
 			{
 				int price;
 				Pawn pawn2 = FindAttractivePawn(pawn, out price);
-				//--Log.Message("[RJW] JobGiver_WhoreInvitingVisitors::TryGiveJob( " + pawn.NameStringShort + " ) called1 - pawn2 is " + (pawn2 == null ? "NULL" : pawn2.NameStringShort));
+				Log.Message("[RJW] JobGiver_WhoreInvitingVisitors::TryGiveJob( " + pawn.NameStringShort + " ) called1 - pawn2 is " + (pawn2 == null ? "NULL" : pawn2.NameStringShort));
 				if (pawn2 == null)
 				{
 					return null;
