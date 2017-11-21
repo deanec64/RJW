@@ -5,6 +5,9 @@ Known bugs (new):
 
 Changes:
 - Compatibility patch for Rimworld B18.
+- Removed integration with Children & Pregnancy mod.
+- Removed integration with Architect Sense mod.
+- Removed integration with Romance Diversified mod.
 - Updated Korean translation by NEPH.
 - Fixed visitors & traders raping CPs bug.
 - Fixed nymphs backstory layout bug.
@@ -13,7 +16,6 @@ Changes:
 - Added a notification when somebody is attempting a rape.
 - Added a notification when somebody is getting raped.
 - Changed some descriptions.
-
 
 v1.5.4j changes:
 - Insects will now inject their eggs while raping your incapacitated colonists. (by hogehoge1942)
