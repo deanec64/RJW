@@ -2,41 +2,66 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C753241B-F4C2-477D-B7FD-3A25E228D3BA}</ProjectGuid>
+    <ProjectGuid>{22F82FFF-8BD4-4CEE-9F22-C7DA71281E72}</ProjectGuid>
     <OutputType>Library</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
-    <AssemblyName>ClassLibrary</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <AssemblyName>RJW</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <ShouldCreateLogs>True</ShouldCreateLogs>
+    <AdvancedSettingsExpanded>True</AdvancedSettingsExpanded>
+    <UpdateAssemblyVersion>True</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>True</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>True</UpdateAssemblyInfoVersion>
+    <AssemblyVersionSettings>None.None.IncrementOnDemand.Increment</AssemblyVersionSettings>
+    <AssemblyFileVersionSettings>None.None.IncrementOnDemand.None</AssemblyFileVersionSettings>
+    <AssemblyInfoVersionSettings>None.None.IncrementOnDemand.None</AssemblyInfoVersionSettings>
+    <PrimaryVersionType>AssemblyVersionAttribute</PrimaryVersionType>
+    <AssemblyVersion>1.6.0.474</AssemblyVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <FileAlignment>4096</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>Assemblies\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <RootNamespace>RimJobWorld.Main</RootNamespace>
+    <RootNamespace>rjw</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="0Harmony">
+      <HintPath>..\..\RimWorld B18\Mods\HugsLib\Assemblies\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\RimWorld B18\RimWorldWin_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="HugsLib">
+      <HintPath>..\..\RimWorld B18\Mods\HugsLib\Assemblies\HugsLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\RimWorld B18\RimWorldWin_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitattributes" />
@@ -45,12 +70,16 @@
     <Content Include="About\Preview.png" />
     <Content Include="Assemblies\%24HugsLibChecker.dll" />
     <Content Include="Assemblies\RJW.dll" />
-    <Content Include="Assemblies\RJW.pdb" />
     <Content Include="changelog.txt" />
     <Content Include="credits.txt" />
+    <Content Include="Defs\Body\PrivatePartGroups.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Defs\Body\InsectBodyParts.xml" />
     <Content Include="Defs\Body\MechBodyParts.xml" />
-    <Content Include="Defs\Body\PrivateParts.xml" />
+    <Content Include="Defs\Body\PrivateParts.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Defs\BondageGear\Hediffs.xml" />
     <Content Include="Defs\BondageGear\Items.xml" />
     <Content Include="Defs\BondageGear\Recipes_Production.xml" />
@@ -58,28 +87,39 @@
     <Content Include="Defs\BondageGear\Thoughts.xml" />
     <Content Include="Defs\ConceptDefs\Concepts_NotedOpportunistic.xml" />
     <Content Include="Defs\DamageDefs\Damage.xml" />
-    <Content Include="Defs\Designations\Designations.xml" />
-    <Content Include="Defs\HediffDefs\Hediffs_EnemyImplants.xml" />
+    <None Include="Defs\DesignationSubCategoryDefs\RJW_SubCategoryxml" />
+    <Content Include="Defs\Designations\Designations.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Defs\HediffDefs\Hediffs_FeelingBroken.xml" />
     <Content Include="Defs\HediffDefs\Hediffs_MCEvents.xml" />
     <Content Include="Defs\HediffDefs\Hediffs_Other.xml" />
-    <Content Include="Defs\HediffDefs\Hediffs_PrivateParts.xml" />
+    <Content Include="Defs\HediffDefs\Hediffs_PrivateParts.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Defs\HediffDefs\Hediffs_SimpleBaby.xml" />
     <Content Include="Defs\HediffDefs\Hediffs_STDs.xml" />
     <Content Include="Defs\HediffDefs\Hediffs_Sterilized.xml" />
+    <Content Include="Defs\HediffDefs\Hediffs_EnemyImplants.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Defs\HediffGiverSetDefs\HediffGiverSets.xml" />
     <Content Include="Defs\IncidentDef\Incidents.xml" />
     <Content Include="Defs\InteractionDef\Interactions.xml" />
-    <Content Include="Defs\JobDefs\Jobs.xml" />
-    <Content Include="Defs\MentalState\MentalStateDefs.xml" />
+    <Content Include="Defs\JobDefs\Jobs.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Defs\MentalState\MentalStateDefs.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Defs\MiscTranslationDef\MiscTranslationDefs.xml" />
     <Content Include="Defs\Motes\Motes.xml" />
     <Content Include="Defs\Needs\Needs.xml" />
     <Content Include="Defs\PawnCapacityDefs\PawnCapacity.xml" />
     <Content Include="Defs\PawnKinds\PawnKinds.xml" />
     <Content Include="Defs\RecipeDefs\Recipes_Prosthetics.xml" />
-    <Content Include="Defs\RecipeDefs\Recipes_RemoveEnemyImplants.xml" />
     <Content Include="Defs\RecipeDefs\Recipes_Surgery.xml" />
+    <Content Include="Defs\RecipeDefs\Recipes_RemoveEnemyImplants.xml" />
     <Content Include="Defs\RecordDef\RecordDefs.xml" />
     <Content Include="Defs\ResearchProjectDefs\ResearchProjects_XxXx.xml" />
     <Content Include="Defs\ResearchProjectDefs\ResearchTabs.xml" />
@@ -91,7 +131,9 @@
     <Content Include="Defs\STDDefs\STDs.xml" />
     <Content Include="Defs\ThingDefs\Items_PrivateParts.xml" />
     <Content Include="Defs\ThingDefs\ThingsDef_XXX.xml" />
-    <Content Include="Defs\ThinkTreeDefs\ThinkTrees.xml" />
+    <Content Include="Defs\ThinkTreeDefs\ThinkTrees.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Defs\ThoughtDefs\Thoughts.xml" />
     <Content Include="Defs\TraitDefs\Traits.xml" />
     <Content Include="Defs\WorkGiverDefs\WorkGivers.xml" />
@@ -189,6 +231,7 @@
     <Content Include="Languages\English\DefInjected\HediffDef\Hediffs_SimpleBaby.xml" />
     <Content Include="Languages\English\DefInjected\HediffDef\Hediffs_STDs.xml" />
     <Content Include="Languages\English\DefInjected\HediffDef\Hediffs_Sterilized.xml" />
+    <Content Include="Languages\English\DefInjected\HediffDef\Hediff_EnemyImplants.xml" />
     <Content Include="Languages\English\DefInjected\IncidentDef\Incidents.xml" />
     <Content Include="Languages\English\DefInjected\InteractionDef\Interactions.xml" />
     <Content Include="Languages\English\DefInjected\JobDef\Jobs.xml" />
@@ -214,7 +257,9 @@
     <Content Include="Languages\English\DefInjected\ThoughtDef\Thoughts.xml" />
     <Content Include="Languages\English\DefInjected\TraitDef\Traits.xml" />
     <Content Include="Languages\English\DefInjected\WorkGiverDef\WorkGivers.xml" />
-    <Content Include="Languages\English\Keyed\RimJobWorld.xml" />
+    <Content Include="Languages\English\Keyed\RimJobWorld.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Languages\Japanese\DefInjected\BodyPartDef\PrivateParts.xml" />
     <Content Include="Languages\Japanese\DefInjected\ConceptDef\Concepts.xml" />
     <Content Include="Languages\Japanese\DefInjected\ConceptDef\Concepts_NotedOpportunistic.xml" />
@@ -252,15 +297,11 @@
     <Content Include="Languages\Japanese\DefInjected\WorkGiverDef\WorkGivers.xml" />
     <Content Include="Languages\Japanese\Keyed\RimJobWorld.xml" />
     <Content Include="Languages\Korean\DefInjected\ArchitectSense.DesignationSubCategoryDef\RJW_SubCategory.xml" />
-    <Content Include="Languages\Korean\DefInjected\BodyPartDef\InsectBodyParts.xml" />
-    <Content Include="Languages\Korean\DefInjected\BodyPartDef\MechBodyParts.xml" />
     <Content Include="Languages\Korean\DefInjected\BodyPartDef\PrivateParts.xml" />
     <Content Include="Languages\Korean\DefInjected\ConceptDef\Concepts_NotedOpportunistic.xml" />
     <Content Include="Languages\Korean\DefInjected\DamageDef\Damage.xml" />
     <Content Include="Languages\Korean\DefInjected\HediffDef\Hediffs.xml" />
-    <Content Include="Languages\Korean\DefInjected\HediffDef\Hediffs_EnemyImplants.xml" />
     <Content Include="Languages\Korean\DefInjected\HediffDef\Hediffs_FeelingBroken.xml" />
-    <Content Include="Languages\Korean\DefInjected\HediffDef\Hediffs_MCEvents.xml" />
     <Content Include="Languages\Korean\DefInjected\HediffDef\Hediffs_Other.xml" />
     <Content Include="Languages\Korean\DefInjected\HediffDef\Hediffs_PrivateParts.xml" />
     <Content Include="Languages\Korean\DefInjected\HediffDef\Hediffs_SimpleBaby.xml" />
@@ -268,14 +309,12 @@
     <Content Include="Languages\Korean\DefInjected\HediffDef\Hediffs_Sterilized.xml" />
     <Content Include="Languages\Korean\DefInjected\IncidentDef\Incidents.xml" />
     <Content Include="Languages\Korean\DefInjected\InteractionDef\Interactions.xml" />
-    <Content Include="Languages\Korean\DefInjected\JobDef\ABFJobs.xml" />
     <Content Include="Languages\Korean\DefInjected\JobDef\Jobs.xml" />
     <Content Include="Languages\Korean\DefInjected\NeedDef\Needs.xml" />
     <Content Include="Languages\Korean\DefInjected\PawnCapacityDef\PawnCapacity.xml" />
     <Content Include="Languages\Korean\DefInjected\PawnKindDef\PawnKinds.xml" />
     <Content Include="Languages\Korean\DefInjected\RecipeDef\Recipes_Production.xml" />
     <Content Include="Languages\Korean\DefInjected\RecipeDef\Recipes_Prosthetics.xml" />
-    <Content Include="Languages\Korean\DefInjected\RecipeDef\Recipes_RemoveEnemyImplants.xml" />
     <Content Include="Languages\Korean\DefInjected\RecipeDef\Recipes_Surgery.xml" />
     <Content Include="Languages\Korean\DefInjected\RecordDef\RecordDefs.xml" />
     <Content Include="Languages\Korean\DefInjected\RecordDef\Records_GetRaped.xml" />
@@ -302,8 +341,12 @@
     <Content Include="Languages\Korean\DefInjected\WorkGiverDef\WorkGivers.xml" />
     <Content Include="Languages\Korean\Keyed\RimJobWorld.xml" />
     <Content Include="Patches\AddBodyPartsToInsect.xml" />
-    <Content Include="Patches\BodyPatches.xml" />
-    <Content Include="Patches\Tweak_Duty.xml" />
+    <Content Include="Patches\BodyPatches.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Patches\Tweak_Duty.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Sounds\Sex\blowjob.wav" />
     <Content Include="Sounds\Sex\cum.wav" />
     <Content Include="Sounds\Sex\kucyu04.wav" />
@@ -342,21 +385,17 @@
     <Content Include="Textures\Things\Building\Furniture\Bed\RoyalBedWhore_frontm.png" />
     <Content Include="Textures\Things\Building\Furniture\Bed\RoyalBedWhore_side.png" />
     <Content Include="Textures\Things\Building\Furniture\Bed\RoyalBedWhore_sidem.png" />
-    <Content Include="Textures\Things\Building\Furniture\Bed\WhoreSleepSpot_back.png" />
-    <Content Include="Textures\Things\Building\Furniture\Bed\WhoreSleepSpot_front.png" />
-    <Content Include="Textures\Things\Building\Furniture\Bed\WhoreSleepSpot_side.png" />
     <Content Include="Textures\UI\Commands\AsWhore.png" />
     <Content Include="Textures\UI\Commands\comfort_prisoner_false.png" />
     <Content Include="Textures\UI\Commands\comfort_prisoner_invisible.png" />
-    <Content Include="Textures\UI\Commands\comfort_prisoner_tagged.png" />
     <Content Include="Textures\UI\Commands\comfort_prisoner_true.png" />
     <Content Include="Textures\UI\Icons\SubcategoryIndicator.png" />
-    <Content Include="todo.txt" />
     <Content Include="version.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Defs\DesignationSubCategoryDefs\RJW_SubCategoryxml" />
     <None Include="Defs\RandomDialoguesxml" />
+    <None Include="Languages\Japanese\Keyed\RimJobWorld.xml.bak" />
+    <None Include="LICENSE" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -388,7 +427,7 @@
     <Compile Include="Source\Hediffs\Hediff_InvisibleImplant.cs" />
     <Compile Include="Source\Hediffs\Hediff_MCEvents.cs" />
     <Compile Include="Source\Hediffs\Hediff_MechImplants.cs" />
-    <Compile Include="Source\Hediffs\HeDiff_MicroComputer.cs" />
+    <Compile Include="Source\Hediffs\Hediff_MicroComputer.cs" />
     <Compile Include="Source\Hediffs\Hediff_Parasite.cs" />
     <Compile Include="Source\Hediffs\Hediff_SimpleBaby.cs" />
     <Compile Include="Source\Incidents\IncidentWorker_NymphJoins.cs" />
