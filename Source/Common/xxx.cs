@@ -230,7 +230,7 @@ namespace rjw
 		// Before using it, you should make sure the pawn has traits.
 		public static bool is_nympho_or_rapist_or_zoophiliac(Pawn pawn)
 		{
-			return pawn.story.traits.HasTrait(rapist) || pawn.story.traits.HasTrait(nymphomaniac) || pawn.story.traits.HasTrait(zoophiliac);
+			return (pawn != null && (pawn.story.traits.HasTrait(rapist) || pawn.story.traits.HasTrait(nymphomaniac) || pawn.story.traits.HasTrait(zoophiliac)));
 		}
 
 		//RomanceDiversified Traits

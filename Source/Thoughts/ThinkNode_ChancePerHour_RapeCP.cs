@@ -62,26 +62,7 @@ namespace rjw
 
 			return base_mtb * desire_factor * personality_factor * fun_factor * gender_factor * animal_factor;
 		}
-
-		/*
-        //↓COPY FROM the decompiled ThinkNode_ChancePerHour
-        private int GetLastTryTick(Pawn pawn)
-        {
-            int num;
-            if (pawn.mindState.thinkData.TryGetValue(UniqueSaveKey, out num))
-            {
-                return num;
-            }
-            return -99999;
-        }
-        //↓COPY FROM the decompiled ThinkNode_ChancePerHour
-        private void SetLastTryTick(Pawn pawn, int val)
-        {
-            pawn.mindState.thinkData[UniqueSaveKey] = val;
-        }
-        */
-
-		//↓Use the base: ThinkNode_ChancePerHour
+		
 		public override ThinkResult TryIssueJobPackage(Pawn pawn, JobIssueParams jobParams)
 		{
 			try
@@ -94,30 +75,6 @@ namespace rjw
 				Log.Message("[RJW]ThinkNode_ChancePerHour_RapeCP:TryIssueJobPackage - error stacktrace" + e.StackTrace);
 				return ThinkResult.NoJob; ;
 			}
-			/*
-            if (Find.TickManager.TicksGame >= (GetLastTryTick(pawn) + 2500))
-            {
-                SetLastTryTick(pawn, Find.TickManager.TicksGame);
-                float mtb = MtbHours(pawn);
-                if (mtb <= 0f)
-                {
-                    return ThinkResult.NoJob;
-                }
-                Rand.PushState();
-                int salt = Gen.HashCombineInt(UniqueSaveKey, 0x1946b7b);
-                Rand.Seed = pawn.RandSeedForHour(salt);
-                bool flag = Rand.MTBEventOccurs(mtb, 2500f, 2500f);
-                Rand.PopState();
-                if (flag)
-                {
-                    return base.TryIssueJobPackage(pawn, jobParams);
-                }
-            }
-            return ThinkResult.NoJob;
-            if (pawn == null)
-                return ThinkResult.NoJob;
-            return base.TryIssueJobPackage(pawn, jobParams);
-            */
 		}
 	}
 }
