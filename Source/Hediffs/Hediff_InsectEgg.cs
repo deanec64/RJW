@@ -31,6 +31,7 @@ namespace rjw
 
 		public Pawn father;
 		public Pawn mother;
+		public bool fertilized = false;
 
 		public string parentDef
 		{
@@ -59,7 +60,7 @@ namespace rjw
 			this.ageTicks++;
 			if (this.pawn.IsHashIntervalTick(1000))
 			{
-				if (father != null)
+				if (fertilized)
 				{
 					if (this.ageTicks >= bornTick)
 					{
@@ -82,6 +83,7 @@ namespace rjw
 			base.ExposeData();
 			Scribe_References.Look<Pawn>(ref this.father, "father", false);
 			Scribe_References.Look<Pawn>(ref this.mother, "mother", false);
+			Scribe_Values.Look<bool>(ref this.fertilized, "fertilized", false);
 		}
 
 		public void BirthBaby()
@@ -95,7 +97,10 @@ namespace rjw
 			{
 				if (pawn.RaceProps.IsFlesh)
 				{
-					pawn.relations.AddDirectRelation(PawnRelationDefOf.Parent, mother);
+					if (mother != null)
+					{
+						pawn.relations.AddDirectRelation(PawnRelationDefOf.Parent, mother);
+					}
 					if (father != null)
 					{
 						pawn.relations.AddDirectRelation(PawnRelationDefOf.Parent, father);
@@ -125,6 +130,7 @@ namespace rjw
 				father = f;
 				Log.Message("[RJW]Hediff_InsectEgg::Fertilize() - Egg in " + pawn.ToString() + " is fertilized by " + f.ToString());
 			}
+			fertilized = true;
 		}
 
 		public override bool TryMergeWith(Hediff other)
@@ -139,7 +145,7 @@ namespace rjw
 
 		public override string DebugString()
 		{
-			return base.DebugString() + " Age:" + this.ageTicks + "\nFertilized:" + (father != null).ToString();
+			return base.DebugString() + " Age:" + this.ageTicks + "\nFertilized:" + (fertilized).ToString();
 		}
 	}
 }
