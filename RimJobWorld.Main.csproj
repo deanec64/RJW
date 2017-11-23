@@ -398,7 +398,6 @@
     <Content Include="Textures\UI\Commands\comfort_prisoner_invisible.png" />
     <Content Include="Textures\UI\Commands\comfort_prisoner_true.png" />
     <Content Include="Textures\UI\Icons\SubcategoryIndicator.png" />
-    <Content Include="todo.txt" />
     <Content Include="version.txt" />
   </ItemGroup>
   <ItemGroup>
