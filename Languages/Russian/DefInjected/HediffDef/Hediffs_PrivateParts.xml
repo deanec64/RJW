@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<!-- Dummy hediff: Triggers creation of real privates for newly created pawns -->
+
+	<DummyPrivates.label>dummy privates</DummyPrivates.label>
+
+	<!-- Regular privates -->
+
+	<Penis.label>penis</Penis.label>
+
+	<!-- Additional dick sizes -->
+
+	<Micropenis.label>micropenis</Micropenis.label>
+	<SmallPenis.label>small penis</SmallPenis.label>
+	<BigPenis.label>Big Penis</BigPenis.label>
+	<HugePenis.label>Huge penis</HugePenis.label>
+	<HorsePenis.label>Horse penis</HorsePenis.label>
+	<CatPenis.label>Cat penis</CatPenis.label>
+	<DogPenis.label>Dog penis</DogPenis.label>
+	<DragonPenis.label>Dragon penis</DragonPenis.label>
+	<Vagina.label>vagina</Vagina.label>
+	<TightVagina.label>tight vagina</TightVagina.label>
+	<LooseVagina.label>loose vagina</LooseVagina.label>
+
+	<!-- Natural Breasts -->
+
+	<Breasts.label>breasts</Breasts.label>
+	<SmallBreasts.label>small breasts</SmallBreasts.label>
+	<LargeBreasts.label>large breasts</LargeBreasts.label>
+	<HugeBreasts.label>huge breasts</HugeBreasts.label>
+
+	<!-- Natural anuses -->
+
+	<Anus.label>anus</Anus.label>
+	<TightAnus.label>tight anus</TightAnus.label>
+	<LooseAnus.label>loose anus</LooseAnus.label>
+
+	<!-- Simple prosthetic privates -->
+
+	<PegDick.label>peg dick</PegDick.label>
+	<HydraulicVagina.label>hydraulic vagina</HydraulicVagina.label>
+	<HydraulicBreasts.label>hydraulic breasts</HydraulicBreasts.label>
+	<HydraulicAnus.label>hydraulic anus</HydraulicAnus.label>
+
+	<!-- Bionic privates -->
+
+	<BionicPenis.label>bionic penis</BionicPenis.label>
+	<BionicVagina.label>bionic vagina</BionicVagina.label>
+	<BionicBreasts.label>bionic breasts</BionicBreasts.label>
+	<BionicAnus.label>bionic anus</BionicAnus.label>
+</LanguageData>
