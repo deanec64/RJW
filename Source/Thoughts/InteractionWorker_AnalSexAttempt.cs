@@ -9,7 +9,7 @@ namespace rjw
 	{
 		public static bool AttemptAnalSex(Pawn rapist, Pawn victim)
 		{
-			//Log.Message(rapist.NameStringShort + " is attempting to anally rape " + victim.NameStringShort);
+			Logger.Message(rapist.NameStringShort + " is attempting to anally rape " + victim.NameStringShort);
 			return true;
 		}
 
@@ -23,7 +23,7 @@ namespace rjw
 		public override void Interacted(Pawn rapist, Pawn victim, List<RulePackDef> extraSentencePacks)
 		{
 			if (rapist == null || victim == null) return;
-			//Log.Message("[RJW] InteractionWorker_AnalRapeAttempt::Interacted( " + rapist.NameStringShort + ", " + victim.NameStringShort + " ) called");
+			Logger.Message("[RJW] InteractionWorker_AnalRapeAttempt::Interacted( " + rapist.NameStringShort + ", " + victim.NameStringShort + " ) called");
 			AttemptAnalSex(rapist, victim);
 		}
 	}

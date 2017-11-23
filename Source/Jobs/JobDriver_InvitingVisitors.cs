@@ -39,7 +39,7 @@ namespace rjw
 			}
 			if (TargetPawn.jobs.curJob == null || (TargetPawn.jobs.curJob.def == JobDefOf.WaitWander || TargetPawn.jobs.curJob.def == JobDefOf.GotoWander || TargetPawn.jobs.curJob.def.joyKind != null))
 			{
-				//--Log.Message("[RJW]JobDriver_InvitingVisitors::DoesTargetPawnAcceptAdvance() is called");
+				Logger.Message("[RJW]JobDriver_InvitingVisitors::DoesTargetPawnAcceptAdvance() is called");
 				return (xxx.WillPawnTryHookup(TargetPawn) && xxx.IsHookupAppealing(TargetPawn, Whore) && xxx.CanAfford(TargetPawn, Whore, TargetBed.priceOfWhore));
 			}
 			else return false;
@@ -62,7 +62,7 @@ namespace rjw
 			TryItOn.defaultCompleteMode = ToilCompleteMode.Delay;
 			TryItOn.initAction = delegate
 			{
-				//--Log.Message("[RJW]JobDriver_InvitingVisitors::MakeNewToils - TryItOn - initAction is called");
+				Logger.Message("[RJW]JobDriver_InvitingVisitors::MakeNewToils - TryItOn - initAction is called");
 				Whore.jobs.curDriver.ticksLeftThisToil = 50;
 				MoteMaker.ThrowMetaIcon(Whore.Position, Whore.Map, ThingDefOf.Mote_Heart);
 			};
@@ -75,7 +75,7 @@ namespace rjw
 			{
 				List<RulePackDef> extraSentencePacks = new List<RulePackDef>();
 				successfulPass = DoesTargetPawnAcceptAdvance();
-				//--Log.Message("[RJW]JobDriver_InvitingVisitors::MakeNewToils - AwaitResponse - initAction is called");
+				Logger.Message("[RJW]JobDriver_InvitingVisitors::MakeNewToils - AwaitResponse - initAction is called");
 				if (successfulPass)
 				{
 					MoteMaker.ThrowMetaIcon(TargetPawn.Position, TargetPawn.Map, ThingDefOf.Mote_Heart);
@@ -109,15 +109,15 @@ namespace rjw
 			BothGoToBed.defaultCompleteMode = ToilCompleteMode.Instant;
 			BothGoToBed.initAction = delegate
 			{
-				//--Log.Message("[RJW]JobDriver_InvitingVisitors::MakeNewToils - BothGoToBed - initAction is called0");
+				Logger.Message("[RJW]JobDriver_InvitingVisitors::MakeNewToils - BothGoToBed - initAction is called0");
 				if (successfulPass)
 				{
 					if (!xxx.CanUse(Whore, TargetBed) && Whore.CanReserve(TargetPawn, 1, 0))
 					{
-						//--Log.Message("[RJW]JobDriver_InvitingVisitors::MakeNewToils - BothGoToBed - cannot use the whore bed");
+						Logger.Message("[RJW]JobDriver_InvitingVisitors::MakeNewToils - BothGoToBed - cannot use the whore bed");
 						return;
 					}
-					//--Log.Message("[RJW]JobDriver_InvitingVisitors::MakeNewToils - BothGoToBed - initAction is called1");
+					Logger.Message("[RJW]JobDriver_InvitingVisitors::MakeNewToils - BothGoToBed - initAction is called1");
 					JobTag? tag = null;
 					Whore.jobs.jobQueue.EnqueueFirst(new Job(xxx.whore_is_serving_visitors, TargetPawn, TargetBed, TargetBed.SleepPosOfAssignedPawn(Whore)), tag);
 					//TargetPawn.jobs.jobQueue.EnqueueFirst(new Job(DefDatabase<JobDef>.GetNamed("WhoreIsServingVisitors"), Whore, TargetBed, (TargetBed.MaxAssignedPawnsCount>1)?TargetBed.GetSleepingSlotPos(1): TargetBed.)), null);

@@ -59,10 +59,10 @@ namespace rjw
 			// psychopath makes the aggressor more likely to hit the prisoner past the significant_pain_threshold
 			float beating_threshold = xxx.is_psychopath(rapist) ? xxx.config.extreme_pain_threshold : xxx.config.significant_pain_threshold;
 
-			//Log.Message("roll_to_hit:  rand = " + rand_value + ", beating_chance = " + beating_chance + ", victim_pain = " + victim_pain + ", beating_threshold = " + beating_threshold);
+			Logger.Message("roll_to_hit:  rand = " + rand_value + ", beating_chance = " + beating_chance + ", victim_pain = " + victim_pain + ", beating_threshold = " + beating_threshold);
 			if ((victim_pain < beating_threshold && rand_value < beating_chance) || (rand_value < (beating_chance / 2)))
 			{
-				//Log.Message("   done told her twice already...");
+				Logger.Message("   done told her twice already...");
 				if (InteractionUtility.TryGetRandomVerbForSocialFight(rapist, out Verb v))
 				{
 					rapist.meleeVerbs.TryMeleeAttack(p, v);
@@ -94,7 +94,7 @@ namespace rjw
 			if (xxx.is_brawler(pawn))
 				ticks_between_hits = (int)(ticks_between_hits * 0.90);
 
-			//Log.Message("JobDriver_ComfortPrisonerRapin::MakeNewToils() - setting fail conditions");
+			Logger.Message("JobDriver_ComfortPrisonerRapin::MakeNewToils() - setting fail conditions");
 			this.FailOnDespawnedNullOrForbidden(iprisoner);
 			this.FailOn(() => (!Prisoner.health.capacities.CanBeAwake) || (!comfort_prisoners.is_designated(Prisoner)));
 			this.FailOn(() => !pawn.CanReserve(Prisoner, comfort_prisoners.max_rapists_per_prisoner, 0)); // Fail if someone else reserves the prisoner before the pawn arrives
@@ -103,12 +103,12 @@ namespace rjw
 			var rape = new Toil();
 			rape.initAction = delegate
 			{
-				//Log.Message("JobDriver_ComfortPrisonerRapin::MakeNewToils() - reserving prisoner");
+				Logger.Message("JobDriver_ComfortPrisonerRapin::MakeNewToils() - reserving prisoner");
 				//pawn.Reserve(Prisoner, comfort_prisoners.max_rapists_per_prisoner, 0);
 				if (!pawnHasPenis)
 					Prisoner.rotationTracker.Face(pawn.DrawPos);
 
-				//Log.Message("JobDriver_ComfortPrisonerRapin::MakeNewToils() - Setting victim job driver");
+				Logger.Message("JobDriver_ComfortPrisonerRapin::MakeNewToils() - Setting victim job driver");
 				var dri = Prisoner.jobs.curDriver as JobDriver_GettinRaped;
 				if (dri == null)
 				{
@@ -122,7 +122,7 @@ namespace rjw
 					dri.increase_time(duration);
 				}
 
-				//Log.Message("JobDriver_ComfortPrisonerRapin::MakeNewToils() - Removing victim's clothing");
+				Logger.Message("JobDriver_ComfortPrisonerRapin::MakeNewToils() - Removing victim's clothing");
 				// Try to take off the attacker's clothing and add to inventory
 				/* Edited by nizhuan-jjr: No Dropping clothes on attackers!
                         if (pawn.apparel != null) {
@@ -150,7 +150,7 @@ namespace rjw
 			{
 				//// Trying to add some interactions and social logs
 				xxx.processAnalSex(pawn, Prisoner, ref isAnalSex, pawnHasPenis);
-				//Log.Message("JobDriver_ComfortPrisonerRapin::MakeNewToils() - Clearing victim job");
+				Logger.Message("JobDriver_ComfortPrisonerRapin::MakeNewToils() - Clearing victim job");
 				if ((Prisoner.jobs != null) &&
 				(Prisoner.jobs.curDriver != null) &&
 				(Prisoner.jobs.curDriver as JobDriver_GettinRaped != null))
@@ -168,7 +168,7 @@ namespace rjw
 			{
 				initAction = delegate
 				{
-					//Log.Message("JobDriver_ComfortPrisonerRapin::MakeNewToils() - Calling aftersex");
+					Logger.Message("JobDriver_ComfortPrisonerRapin::MakeNewToils() - Calling aftersex");
 					xxx.aftersex(pawn, Prisoner, true, isAnalSex: isAnalSex);
 					pawn.mindState.canLovinTick = Find.TickManager.TicksGame + xxx.generate_min_ticks_to_next_lovin(pawn);
 					if (!Prisoner.Dead)

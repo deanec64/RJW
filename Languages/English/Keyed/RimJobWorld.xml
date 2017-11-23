@@ -3,6 +3,8 @@
 	<!-- Settings-->
 	<WildMode_name>Wild mode</WildMode_name>
 	<WildMode_desc>EXPERIMENTAL. No rules for sex. All limiting requirements are turned off. Enjoy the wildest side of Rimworld.</WildMode_desc>
+	<DevMode_name>Development mode</DevMode_name>
+	<DevMode_desc>Enables RimJobWorld logging. You don't usually want this enabled.</DevMode_desc>
 	<sexneed_decay_rate_name>Sex need decay multiplier (%)</sexneed_decay_rate_name>
 	<sexneed_decay_rate_desc>0% for no decay.
 1000000% for Rapeturnus Planet.

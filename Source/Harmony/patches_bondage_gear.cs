@@ -17,7 +17,7 @@ namespace rjw
 		private static bool prevent_wear_by_gear(Pawn_ApparelTracker __instance, ref Apparel newApparel)
 		{
 			var tra = __instance;
-			// Log.Message ("Pawn_ApparelTracker.Wear called for " + newApparel.Label + " on " + tra.pawn.NameStringShort);
+			// Logger.Message ("Pawn_ApparelTracker.Wear called for " + newApparel.Label + " on " + tra.pawn.NameStringShort);
 			foreach (var app in tra.WornApparel)
 				if (app.has_lock() && (!ApparelUtility.CanWearTogether(newApparel.def, app.def, tra.pawn.RaceProps.body)))
 				{
@@ -50,7 +50,7 @@ namespace rjw
 		private static void on_remove(Pawn_ApparelTracker __instance, Apparel ap)
 		{
 			var tra = __instance;
-			// Log.Message ("Pawn_ApparelTracker.Remove called for " + ap.Label + " on " + tra.pawn.NameStringShort);
+			// Logger.Message ("Pawn_ApparelTracker.Remove called for " + ap.Label + " on " + tra.pawn.NameStringShort);
 			if (ap.def is bondage_gear_def def)
 				def.soul.on_remove(ap, tra.pawn);
 		}

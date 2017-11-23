@@ -58,7 +58,7 @@ namespace rjw
 		}
 		protected override IEnumerable<Toil> MakeNewToils()
 		{
-			//Log.Message("[RJW] JobDriver_ViolateCorpse::MakeNewToils() called");
+			Logger.Message("[RJW] JobDriver_ViolateCorpse::MakeNewToils() called");
 			duration = (int)(2000.0f * Rand.Range(0.50f, 0.90f));
 			ticks_between_hearts = Rand.RangeInclusive(70, 130);
 			ticks_between_hits = Rand.Range(xxx.config.min_ticks_between_hits, xxx.config.max_ticks_between_hits);
@@ -72,17 +72,17 @@ namespace rjw
 			//this.FailOnDespawnedNullOrForbidden (iprisoner);
 			//this.FailOn (() => (!Prisoner.health.capacities.CanBeAwake) || (!comfort_prisoners.is_designated (Prisoner)));
 			this.FailOn(() => !pawn.CanReserve(corpse, 1, 0));  // Fail if someone else reserves the prisoner before the pawn arrives
-																//Log.Message("[RJW] JobDriver_ViolateCorpse::MakeNewToils() - moving towards corpse");
+																Logger.Message("[RJW] JobDriver_ViolateCorpse::MakeNewToils() - moving towards corpse");
 			yield return Toils_Goto.GotoThing(iprisoner, PathEndMode.OnCell);
 
 			var rape = new Toil();
 			rape.initAction = delegate
 			{
-				//Log.Message("[RJW] JobDriver_ViolateCorpse::MakeNewToils() - reserving corpse");
+				Logger.Message("[RJW] JobDriver_ViolateCorpse::MakeNewToils() - reserving corpse");
 				//pawn.Reserve(corpse, 1, 0); // corpse rapin seems like a solitary activity
 
 				// Try to take off the attacker's clothing
-				//Log.Message("[RJW] JobDriver_ViolateCorpse::MakeNewToils() - stripping necro lover");
+				Logger.Message("[RJW] JobDriver_ViolateCorpse::MakeNewToils() - stripping necro lover");
 				/* Edited by nizhuan-jjr: No Dropping Clothes on attackers!
 						worn_apparel = pawn.apparel.WornApparel.ListFullCopy<Apparel>();
 						while (pawn.apparel != null && pawn.apparel.WornApparelCount > 0) {
@@ -92,7 +92,7 @@ namespace rjw
 				*/
 
 				// Strip the corpse
-				//Log.Message("[RJW] JobDriver_ViolateCorpse::MakeNewToils() - stripping corpse");
+				Logger.Message("[RJW] JobDriver_ViolateCorpse::MakeNewToils() - stripping corpse");
 				corpse.Strip();
 
 				//pawn.apparel.WornApparel.RemoveAll(null);
@@ -110,7 +110,7 @@ namespace rjw
 			};
 			rape.AddFinishAction(delegate
 			{
-				//Log.Message("[RJW] JobDriver_ViolateCorpse::MakeNewToils() - finished violating");
+				Logger.Message("[RJW] JobDriver_ViolateCorpse::MakeNewToils() - finished violating");
 				/*
 				if ((Prisoner.jobs != null) &&
 			    	(Prisoner.jobs.curDriver != null) &&
@@ -126,7 +126,7 @@ namespace rjw
 			{
 				initAction = delegate
 				{
-					//Log.Message("[RJW] JobDriver_ViolateCorpse::MakeNewToils() - creating aftersex toil");
+					Logger.Message("[RJW] JobDriver_ViolateCorpse::MakeNewToils() - creating aftersex toil");
 					//Addded by nizhuan-jjr: Try to apply an aftersex process for the pawn and the corpse
 					if (corpse.InnerPawn != null)
 					{
@@ -138,7 +138,7 @@ namespace rjw
 					//    Corpse.mindState.canLovinTick = Find.TickManager.TicksGame + xxx.generate_min_ticks_to_next_lovin (Corpse);
 					//}
 
-					//Log.Message("[RJW] JobDriver_ViolateCorpse::MakeNewToils() - putting clothes back on");
+					Logger.Message("[RJW] JobDriver_ViolateCorpse::MakeNewToils() - putting clothes back on");
 					/* Edited by nizhuan-jjr: No Dropping Clothes on attackers!
 							if (pawn.apparel != null) {
 								foreach (Apparel apparel in worn_apparel) {

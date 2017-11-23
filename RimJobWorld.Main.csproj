@@ -18,7 +18,7 @@
     <AssemblyFileVersionSettings>None.None.IncrementOnDemand.None</AssemblyFileVersionSettings>
     <AssemblyInfoVersionSettings>None.None.IncrementOnDemand.None</AssemblyInfoVersionSettings>
     <PrimaryVersionType>AssemblyVersionAttribute</PrimaryVersionType>
-    <AssemblyVersion>1.6.0.474</AssemblyVersion>
+    <AssemblyVersion>1.6.0.476</AssemblyVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -348,6 +348,43 @@
     <Content Include="Languages\Korean\DefInjected\TraitDef\Traits.xml" />
     <Content Include="Languages\Korean\DefInjected\WorkGiverDef\WorkGivers.xml" />
     <Content Include="Languages\Korean\Keyed\RimJobWorld.xml" />
+    <Content Include="Languages\Russian\DefInjected\BodyPartDef\PrivateParts.xml" />
+    <Content Include="Languages\Russian\DefInjected\ConceptDef\Concepts.xml" />
+    <Content Include="Languages\Russian\DefInjected\ConceptDef\Concepts_NotedOpportunistic.xml" />
+    <Content Include="Languages\Russian\DefInjected\DamageDef\Damage.xml" />
+    <Content Include="Languages\Russian\DefInjected\HediffDef\Hediffs.xml" />
+    <Content Include="Languages\Russian\DefInjected\HediffDef\Hediffs_FeelingBroken.xml" />
+    <Content Include="Languages\Russian\DefInjected\HediffDef\Hediffs_Other.xml" />
+    <Content Include="Languages\Russian\DefInjected\HediffDef\Hediffs_PrivateParts.xml" />
+    <Content Include="Languages\Russian\DefInjected\HediffDef\Hediffs_SimpleBaby.xml" />
+    <Content Include="Languages\Russian\DefInjected\HediffDef\Hediffs_STDs.xml" />
+    <Content Include="Languages\Russian\DefInjected\HediffDef\Hediffs_Sterilized.xml" />
+    <Content Include="Languages\Russian\DefInjected\IncidentDef\Incidents.xml" />
+    <Content Include="Languages\Russian\DefInjected\InteractionDef\Interactions.xml" />
+    <Content Include="Languages\Russian\DefInjected\JobDef\Jobs.xml" />
+    <Content Include="Languages\Russian\DefInjected\NeedDef\Needs.xml" />
+    <Content Include="Languages\Russian\DefInjected\PawnCapacityDef\PawnCapacity.xml" />
+    <Content Include="Languages\Russian\DefInjected\PawnKindDef\PawnKinds.xml" />
+    <Content Include="Languages\Russian\DefInjected\RecipeDef\Recipes_Production.xml" />
+    <Content Include="Languages\Russian\DefInjected\RecipeDef\Recipes_Prosthetics.xml" />
+    <Content Include="Languages\Russian\DefInjected\RecipeDef\Recipes_Surgery.xml" />
+    <Content Include="Languages\Russian\DefInjected\RecordDef\Records_GetRaped.xml" />
+    <Content Include="Languages\Russian\DefInjected\rjw.bondage_gear_def\Items.xml" />
+    <Content Include="Languages\Russian\DefInjected\rjw.force_off_gear_def\Recipes_Surgery.xml" />
+    <Content Include="Languages\Russian\DefInjected\rjw.MiscTranslationDef\MiscTranslationDefs.xml" />
+    <Content Include="Languages\Russian\DefInjected\rjw.std_def\STDs.xml" />
+    <Content Include="Languages\Russian\DefInjected\RulePackDef\RulePacks_AnalRape.xml" />
+    <Content Include="Languages\Russian\DefInjected\RulePackDef\RulePacks_AnalSex.xml" />
+    <Content Include="Languages\Russian\DefInjected\RulePackDef\RulePacks_EngravedNames.xml" />
+    <Content Include="Languages\Russian\DefInjected\StatDef\Stats.xml" />
+    <Content Include="Languages\Russian\DefInjected\ThingDef\Items.xml" />
+    <Content Include="Languages\Russian\DefInjected\ThingDef\Items_PrivateParts.xml" />
+    <Content Include="Languages\Russian\DefInjected\ThingDef\ThingsDef_XXX.xml" />
+    <Content Include="Languages\Russian\DefInjected\ThingDef\_Things_Mote.xml" />
+    <Content Include="Languages\Russian\DefInjected\ThoughtDef\Thoughts.xml" />
+    <Content Include="Languages\Russian\DefInjected\TraitDef\Traits.xml" />
+    <Content Include="Languages\Russian\DefInjected\WorkGiverDef\WorkGivers.xml" />
+    <Content Include="Languages\Russian\Keyed\RimJobWorld.xml" />
     <Content Include="Patches\AddBodyPartsToInsect.xml" />
     <Content Include="Patches\BodyPatches.xml">
       <SubType>Designer</SubType>

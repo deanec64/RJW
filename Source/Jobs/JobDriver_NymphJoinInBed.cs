@@ -37,7 +37,7 @@ namespace rjw
 
 		protected override IEnumerable<Toil> MakeNewToils()
 		{
-			//--Log.Message("JobDriver_NymphJoinInBed::MakeNewToils() called");
+			Logger.Message("JobDriver_NymphJoinInBed::MakeNewToils() called");
 			this.FailOnDespawnedOrNull(ipartner);
 			this.FailOnDespawnedOrNull(ibed);
 			this.FailOn(() => !Partner.health.capacities.CanBeAwake);
@@ -48,7 +48,7 @@ namespace rjw
 			{
 				initAction = delegate
 				{
-					//--Log.Message("JobDriver_NymphJoinInBed::MakeNewToils() - setting initAction");
+					Logger.Message("JobDriver_NymphJoinInBed::MakeNewToils() - setting initAction");
 					ticks_left = (int)(2500.0f * Rand.Range(0.30f, 1.30f));
 					var gettin_loved = new Job(xxx.gettin_loved, pawn, Bed);
 					Partner.jobs.StartJob(gettin_loved, JobCondition.InterruptForced, null, false, true, null);
@@ -72,7 +72,7 @@ namespace rjw
 			{
 				initAction = delegate
 				{
-					//--Log.Message("JobDriver_NymphJoinInBed::MakeNewToils() - setting pawn.got_some_lovin memory in second initAction");
+					Logger.Message("JobDriver_NymphJoinInBed::MakeNewToils() - setting pawn.got_some_lovin memory in second initAction");
 					var sex_mem = (Thought_Memory)ThoughtMaker.MakeThought(ThoughtDefOf.GotSomeLovin);
 					var pawn_memories = pawn.needs.mood.thoughts.memories as MemoryThoughtHandler;
 					if (pawn_memories != null)
@@ -80,20 +80,20 @@ namespace rjw
 						pawn.needs.mood.thoughts.memories.TryGainMemory(sex_mem, Partner);
 					}
 
-					//--Log.Message("JobDriver_NymphJoinInBed::MakeNewToils() - setting Partner.got_some_lovin memory in second initAction");
+					Logger.Message("JobDriver_NymphJoinInBed::MakeNewToils() - setting Partner.got_some_lovin memory in second initAction");
 					var sex_mem2 = (Thought_Memory)ThoughtMaker.MakeThought(ThoughtDefOf.GotSomeLovin); // Is this neccessary?
 					if (Partner.needs != null && Partner.needs.mood != null && Partner.needs.mood.thoughts != null)
 					{
 						Partner.needs.mood.thoughts.memories.TryGainMemory(sex_mem2, pawn);
 					}
 
-					//--Log.Message("JobDriver_NymphJoinInBed::MakeNewToils() - calling aftersex in second initAction");
+					Logger.Message("JobDriver_NymphJoinInBed::MakeNewToils() - calling aftersex in second initAction");
 					xxx.aftersex(pawn, Partner);
-					//--Log.Message("JobDriver_NymphJoinInBed::MakeNewToils() - calling aftersex again in second initAction");
+					Logger.Message("JobDriver_NymphJoinInBed::MakeNewToils() - calling aftersex again in second initAction");
 					//xxx.aftersex (Partner, pawn);
-					//--Log.Message("JobDriver_NymphJoinInBed::MakeNewToils() - setting mindstate in second initAction");
+					Logger.Message("JobDriver_NymphJoinInBed::MakeNewToils() - setting mindstate in second initAction");
 					pawn.mindState.canLovinTick = Find.TickManager.TicksGame + xxx.generate_min_ticks_to_next_lovin(pawn);
-					//--Log.Message("JobDriver_NymphJoinInBed::MakeNewToils() - setting mindstate again in second initAction");
+					Logger.Message("JobDriver_NymphJoinInBed::MakeNewToils() - setting mindstate again in second initAction");
 					Partner.mindState.canLovinTick = Find.TickManager.TicksGame + xxx.generate_min_ticks_to_next_lovin(Partner);
 				},
 				defaultCompleteMode = ToilCompleteMode.Instant

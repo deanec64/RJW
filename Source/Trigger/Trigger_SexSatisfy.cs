@@ -34,7 +34,7 @@ namespace rjw
 						avgValue = (avgValue == null) ? n.CurLevel : (avgValue + n.CurLevel) / 2f;
 					}
 				}
-				//--Log.Message("[ABF]Trigger_SexSatisfy::ActivateOn Checked value :" + avgValue + "/" + targetValue);
+				Logger.Message("[ABF]Trigger_SexSatisfy::ActivateOn Checked value :" + avgValue + "/" + targetValue);
 				return avgValue >= targetValue;
 			}
 			return currentTick >= TickTimeout;

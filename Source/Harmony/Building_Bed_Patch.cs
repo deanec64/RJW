@@ -44,7 +44,7 @@ namespace rjw
                 }
                 if (__instance!=null && xxx.config.whore_beds_enabled && !__instance.ForPrisoners && !__instance.Medical && __instance.def.building.bed_humanlike)
                 {
-                    //Log.Message("[RJW]Building_Bed_Patch::Process - before new Command_Toggle is called");
+                    Logger.Message("[RJW]Building_Bed_Patch::Process - before new Command_Toggle is called");
                     yield return
                         new Command_Toggle
                         {

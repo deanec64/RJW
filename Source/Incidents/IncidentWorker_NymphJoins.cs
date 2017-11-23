@@ -27,7 +27,7 @@ namespace rjw
 
 		protected override bool TryExecuteWorker(IncidentParms parms)
 		{
-			//Log.Message("IncidentWorker_NymphJoins::TryExecute() called");
+			Logger.Message("IncidentWorker_NymphJoins::TryExecute() called");
 
 			if (!Mod_Settings.nymphos)
 			{
@@ -38,12 +38,12 @@ namespace rjw
 
 			if (m == null)
 			{
-				//--Log.Message("IncidentWorker_NymphJoins::TryExecute() - map is null, abort!");
+				Logger.Message("IncidentWorker_NymphJoins::TryExecute() - map is null, abort!");
 				return false;
 			}
 			else
 			{
-				//--Log.Message("IncidentWorker_NymphJoins::TryExecute() - map is ok");
+				Logger.Message("IncidentWorker_NymphJoins::TryExecute() - map is ok");
 			}
 
 			IntVec3 loc;

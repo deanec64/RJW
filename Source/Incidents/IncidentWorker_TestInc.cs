@@ -9,7 +9,7 @@ namespace rjw
 		public static void list_backstories()
 		{
 			foreach (var bs in BackstoryDatabase.allBackstories.Values)
-				Log.Message("Backstory \"" + bs.Title + "\" has identifier \"" + bs.identifier + "\"");
+				Logger.Message("Backstory \"" + bs.Title + "\" has identifier \"" + bs.identifier + "\"");
 		}
 
 		public static void inject_designator()
@@ -64,7 +64,7 @@ namespace rjw
 			{
 				if (pawn.needs.TryGetNeed<Need_Sex>() != null)
 				{
-					//--Log.Message("[RJW]TestInc::reduce_sex_need_on_select is called");
+					Logger.Message("[RJW]TestInc::reduce_sex_need_on_select is called");
 					pawn.needs.TryGetNeed<Need_Sex>().CurLevel -= 0.5f;
 				}
 			}

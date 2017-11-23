@@ -79,7 +79,7 @@ namespace rjw
 				p.health.AddHediff(sd.hediff_def, part);
 				if (include_coinfection && (sd.cohediff_def != null))
 					p.health.AddHediff(sd.cohediff_def, part);
-				//Log.Message("[RJW]std::infect genitals std");
+				Logger.Message("[RJW]std::infect genitals std");
 				return get_infection(p, sd);
 			}
 			else
@@ -225,7 +225,7 @@ namespace rjw
 			}
 
 			if (xxx.config.std_show_roll_to_catch)
-				//--Log.Message(catcher.NameStringShort + " is rolling to catch STDs (cleanliness factor: " + cleanliness_factor.ToString() + ")" + ((!has_artificial_genitals) ? "" : " (has artificial genitals)"));
+				Logger.Message(catcher.NameStringShort + " is rolling to catch STDs (cleanliness factor: " + cleanliness_factor.ToString() + ")" + ((!has_artificial_genitals) ? "" : " (has artificial genitals)"));
 
 				foreach (var sd in all)
 				{
@@ -236,7 +236,7 @@ namespace rjw
 							var catch_chance = sd.catch_chance * (sd.applied_on_genitals ? on_genitals : thru_genitals);
 							var catch_rv = Rand.Value;
 							if (xxx.config.std_show_roll_to_catch)
-								//--Log.Message("  Chance to catch " + sd.label + ": " + catch_chance.ToStringPercent() + "; rolled: " + catch_rv.ToString());
+								Logger.Message("  Chance to catch " + sd.label + ": " + catch_chance.ToStringPercent() + "; rolled: " + catch_rv.ToString());
 								if (catch_rv < catch_chance)
 								{
 									String pitch_source; float pitch_chance;
@@ -259,23 +259,23 @@ namespace rjw
 									var pitch_rv = Rand.Value;
 
 									if (xxx.config.std_show_roll_to_catch)
-										//--Log.Message("    Chance to pitch (from " + pitch_source + "): " + pitch_chance.ToStringPercent() + "; rolled: " + pitch_rv.ToString());
+										Logger.Message("    Chance to pitch (from " + pitch_source + "): " + pitch_chance.ToStringPercent() + "; rolled: " + pitch_rv.ToString());
 										if (pitch_rv < pitch_chance)
 										{
 											infect(catcher, sd);
 											show_infection_letter(catcher, sd, pitch_source, catch_chance * pitch_chance);
 											//if (xxx.config.std_show_roll_to_catch)
-											//--Log.Message("      INFECTED!");
+											Logger.Message("      INFECTED!");
 										}
 								}
 						}
 						//else
 						//if (xxx.config.std_show_roll_to_catch)
-						//--Log.Message("  Still immune to " + sd.label);
+						Logger.Message("  Still immune to " + sd.label);
 					}
 					//else
 					//if (xxx.config.std_show_roll_to_catch)
-					//--Log.Message("  Already infected with " + sd.label);
+					Logger.Message("  Already infected with " + sd.label);
 				}
 		}
 

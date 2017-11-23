@@ -69,8 +69,8 @@ namespace rjw
 			}
 			catch (NullReferenceException e)
 			{
-				Log.Message("[RJW]ThinkNode_ChancePerHour_RandomRape:TryIssueJobPackage - error message" + e.Message);
-				Log.Message("[RJW]ThinkNode_ChancePerHour_RandomRape:TryIssueJobPackage - error stacktrace" + e.StackTrace);
+				Logger.Message("[RJW]ThinkNode_ChancePerHour_RandomRape:TryIssueJobPackage - error message" + e.Message);
+				Logger.Message("[RJW]ThinkNode_ChancePerHour_RandomRape:TryIssueJobPackage - error stacktrace" + e.StackTrace);
 				return ThinkResult.NoJob; ;
 			}
 		}
