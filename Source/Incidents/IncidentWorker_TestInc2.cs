@@ -12,9 +12,9 @@ namespace rjw
 			float a = Mathf.InverseLerp(0, 2, 3); //gives 1
 			float b = Mathf.InverseLerp(0.2f, 2, 0.1f); //gives 0
 			float c = Mathf.InverseLerp(2f, 1, 2.5f); //gives 0
-													  Logger.Message("[RJW]TestInc2::test_function is called - value a is " + a);
-													  Logger.Message("[RJW]TestInc2::test_function is called - value b is " + b);
-													  Logger.Message("[RJW]TestInc2::test_function is called - value c is " + c);
+													  //--Log.Message("[RJW]TestInc2::test_function is called - value a is " + a);
+													  //--Log.Message("[RJW]TestInc2::test_function is called - value b is " + b);
+													  //--Log.Message("[RJW]TestInc2::test_function is called - value c is " + c);
 		}
 
 		// Gives the wanted information of the selected thing
@@ -23,7 +23,7 @@ namespace rjw
 			Pawn p = Find.Selector.SingleSelectedThing as Pawn;
 			if (p != null)
 			{
-				Logger.Message("[RJW]TestInc2::info_on_select is called");
+				//--Log.Message("[RJW]TestInc2::info_on_select is called");
 				foreach (var q in m.mapPawns.AllPawns)
 				{
 					xxx.would_fuck(p, q, true);

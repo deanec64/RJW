@@ -9,7 +9,7 @@ namespace rjw
 	{
 		public static Pawn find_target(Pawn pawn, Map m)
 		{
-			Logger.Message("JobGiver_Beastiality::find_target( " + pawn.NameStringShort + " ) called");
+			//--Log.Message("JobGiver_Beastiality::find_target( " + pawn.NameStringShort + " ) called");
 			Pawn found = null;
 			var best_distance = 50f;
 			var best_fuckability = 0.1f; // Don't rape animals with 0% fuckability
@@ -22,11 +22,11 @@ namespace rjw
 					float wildness = target.RaceProps.wildness;
 					float petness = target.RaceProps.petness;
 					//float temperment = (petness <= 0 ? wildness / 0.1f : wildness / petness);
-					Logger.Message("[RJW]JobGiver_Beastiality::find_target wildness is " + wildness);
-					Logger.Message("[RJW]JobGiver_Beastiality::find_target petness is " + petness);
+					//--Log.Message("[RJW]JobGiver_Beastiality::find_target wildness is " + wildness);
+					//--Log.Message("[RJW]JobGiver_Beastiality::find_target petness is " + petness);
 
 					float distance = pawn.Position.DistanceToSquared(target.Position);
-					Logger.Message("[RJW]JobGiver_Beastiality::find_target distance is " + distance);
+					//--Log.Message("[RJW]JobGiver_Beastiality::find_target distance is " + distance);
 
 					var fuc = xxx.would_fuck(pawn, target);
 					fuc = fuc + (fuc * petness) - (fuc * wildness) + tamed;
@@ -45,13 +45,13 @@ namespace rjw
 
 		protected override Job TryGiveJob(Pawn p)
 		{
-			Logger.Message("[RJW] JobGiver_Beastiality::TryGiveJob( " + p.NameStringShort + " ) called");
+			//--Log.Message("[RJW] JobGiver_Beastiality::TryGiveJob( " + p.NameStringShort + " ) called");
 			if ((Find.TickManager.TicksGame >= p.mindState.canLovinTick) && (p.CurJob == null))
 			{
 				if (xxx.is_healthy(p) && xxx.can_rape(p, true))
 				{
 					var target = find_target(p, p.Map);
-					Logger.Message("[RJW] JobGiver_Beastiality::TryGiveJob - target is " + (target == null ? "NULL" : target.NameStringShort));
+					//--Log.Message("[RJW] JobGiver_Beastiality::TryGiveJob - target is " + (target == null ? "NULL" : target.NameStringShort));
 					if (target != null)
 					{
 						Messages.Message(p.NameStringShort + " is trying to rape " + target.NameStringShort + ".", p, MessageTypeDefOf.NeutralEvent);

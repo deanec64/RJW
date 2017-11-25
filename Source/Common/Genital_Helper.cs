@@ -37,10 +37,10 @@ namespace rjw
 
 		public static BodyPartRecord get_genitals(Pawn pawn)
 		{
-			Logger.Message("Genital_Helper::get_genitals( " + pawn.NameStringShort + " ) called");
+			//--Log.Message("Genital_Helper::get_genitals( " + pawn.NameStringShort + " ) called");
 			BodyPartRecord genitalPart = pawn.RaceProps.body.AllParts.Find(bpr => bpr.def.defName == "Genitals");
 
-			Logger.Message("Genital_Helper::get_genitals( " + pawn.NameStringShort + " ) - checking genitalPart");
+			//--Log.Message("Genital_Helper::get_genitals( " + pawn.NameStringShort + " ) - checking genitalPart");
 			if (genitalPart == null)
 			{
 				return null;
@@ -53,12 +53,12 @@ namespace rjw
 
 		public static BodyPartRecord get_breasts(Pawn pawn)
 		{
-			Logger.Message("[RJW] get_breasts( " + pawn.NameStringShort + " ) called");
+			//--Log.Message("[RJW] get_breasts( " + pawn.NameStringShort + " ) called");
 			BodyPartRecord breastsPart = pawn.RaceProps.body.AllParts.Find(bpr => bpr.def.defName == "Chest");
 
 			if (breastsPart == null)
 			{
-				Logger.Message("[RJW] get_breasts( " + pawn.NameStringShort + " ) - breastsPart is null");
+				//--Log.Message("[RJW] get_breasts( " + pawn.NameStringShort + " ) - breastsPart is null");
 				return null;
 			}
 			return breastsPart;
@@ -255,32 +255,32 @@ namespace rjw
 
 		public static void add_genitals(Pawn pawn)
 		{
-			Logger.Message("Genital_Helper::add_genitals( " + pawn.NameStringShort + " ) called");
+			//--Log.Message("Genital_Helper::add_genitals( " + pawn.NameStringShort + " ) called");
 			BodyPartRecord genitalPart = get_genitals(pawn);
-			Logger.Message("Genital_Helper::add_genitals( " + pawn.NameStringShort + " ) - checking genitals");
+			//--Log.Message("Genital_Helper::add_genitals( " + pawn.NameStringShort + " ) - checking genitals");
 			if (genitalPart == null)
 			{
-				Logger.Message("[RJW] sexualize_pawn( " + pawn.NameStringShort + " ) doesn't have a genitalsPart");
+				//--Log.Message("[RJW] sexualize_pawn( " + pawn.NameStringShort + " ) doesn't have a genitalsPart");
 				return;
 			}
 			else if (pawn.health.hediffSet.PartIsMissing(genitalPart))
 			{
-				Logger.Message("[RJW] sexualize_pawn( " + pawn.NameStringShort + " ) had a genital but was removed.");
+				//--Log.Message("[RJW] sexualize_pawn( " + pawn.NameStringShort + " ) had a genital but was removed.");
 				return;
 			}
 			if (has_genitals(pawn))
 			{
-				Logger.Message("[RJW] sexualize_pawn( " + pawn.NameStringShort + " ) already has genitals");
+				//--Log.Message("[RJW] sexualize_pawn( " + pawn.NameStringShort + " ) already has genitals");
 				return;
 			}
 
 			HediffDef privates;
 			double value = Rand.Value;
 
-			Logger.Message("Genital_Helper::add_genitals( " + pawn.NameStringShort + " ) - checking race");
+			//--Log.Message("Genital_Helper::add_genitals( " + pawn.NameStringShort + " ) - checking race");
 			if (pawn.RaceProps.IsMechanoid)
 			{
-				Logger.Message("Genital_Helper::add_genitals( " + pawn.NameStringShort + " ) - race is mechanoid");
+				//--Log.Message("Genital_Helper::add_genitals( " + pawn.NameStringShort + " ) - race is mechanoid");
 				if (value < 0.30)
 					privates = pawn.gender == Gender.Male ? peg_penis : hydraulic_vagina;
 				else
@@ -288,7 +288,7 @@ namespace rjw
 			}
 			else if (pawn.RaceProps.Humanlike)
 			{
-				Logger.Message("Genital_Helper::add_genitals( " + pawn.NameStringShort + " ) - race is humanlike");
+				//--Log.Message("Genital_Helper::add_genitals( " + pawn.NameStringShort + " ) - race is humanlike");
 				if (value < 0.10)
 					privates = pawn.gender == Gender.Male ? micropenis : loose_vagina;
 				else if (value < 0.20)
@@ -306,35 +306,35 @@ namespace rjw
 			}
 			else
 			{
-				Logger.Message("Genital_Helper::add_genitals( " + pawn.NameStringShort + " ) - race is something else");
+				//--Log.Message("Genital_Helper::add_genitals( " + pawn.NameStringShort + " ) - race is something else");
 				privates = pawn.gender == Gender.Male ? penis : vagina;
 			}
-			Logger.Message("Genital_Helper::add_genitals( " + pawn.NameStringShort + " ) - adding hediff");
+			//--Log.Message("Genital_Helper::add_genitals( " + pawn.NameStringShort + " ) - adding hediff");
 			pawn.health.AddHediff(privates, genitalPart);
 		}
 
 		public static void add_breasts(Pawn pawn)
 		{
-			Logger.Message("[RJW] add_breasts( " + pawn.NameStringShort + " ) called");
+			//--Log.Message("[RJW] add_breasts( " + pawn.NameStringShort + " ) called");
 			BodyPartRecord breastsPart = get_breasts(pawn);
 
 			if (breastsPart == null)
 			{
-				Logger.Message("[RJW] add_breasts( " + pawn.NameStringShort + " ) - pawn doesn't have a breastsPart");
+				//--Log.Message("[RJW] add_breasts( " + pawn.NameStringShort + " ) - pawn doesn't have a breastsPart");
 				return;
 			}
 			else if (pawn.health.hediffSet.PartIsMissing(breastsPart))
 			{
-				Logger.Message("[RJW] sexualize_pawn( " + pawn.NameStringShort + " ) had breasts but were removed.");
+				//--Log.Message("[RJW] sexualize_pawn( " + pawn.NameStringShort + " ) had breasts but were removed.");
 				return;
 			}
 			if (has_breasts(pawn))
 			{
-				Logger.Message("[RJW] add_breasts( " + pawn.NameStringShort + " ) - pawn already has breasts");
+				//--Log.Message("[RJW] add_breasts( " + pawn.NameStringShort + " ) - pawn already has breasts");
 				return;
 			}
 
-			Logger.Message("[RJW] add_breasts( " + pawn.NameStringShort + " ) - checking gender");
+			//--Log.Message("[RJW] add_breasts( " + pawn.NameStringShort + " ) - checking gender");
 
 			if (pawn.gender == Gender.Female)
 			{
@@ -377,17 +377,17 @@ namespace rjw
 
 			if (anusPart == null)
 			{
-				Logger.Message("[RJW] sexualize_pawn( " + pawn.NameStringShort + " ) doesn't have an anusPart");
+				//--Log.Message("[RJW] sexualize_pawn( " + pawn.NameStringShort + " ) doesn't have an anusPart");
 				return;
 			}
 			else if (pawn.health.hediffSet.PartIsMissing(anusPart))
 			{
-				Logger.Message("[RJW] sexualize_pawn( " + pawn.NameStringShort + " ) had an anus but was removed.");
+				//--Log.Message("[RJW] sexualize_pawn( " + pawn.NameStringShort + " ) had an anus but was removed.");
 				return;
 			}
 			if (has_anus(pawn))
 			{
-				Logger.Message("[RJW] sexualize_pawn( " + pawn.NameStringShort + " ) already has an anus");
+				//--Log.Message("[RJW] sexualize_pawn( " + pawn.NameStringShort + " ) already has an anus");
 				return;
 			}
 
@@ -423,11 +423,11 @@ namespace rjw
 
 		public static void sexualize_pawn(Pawn pawn)
 		{
-			Logger.Message("[RJW] sexualize_pawn( " + pawn.NameStringShort + " ) called");
+			//--Log.Message("[RJW] sexualize_pawn( " + pawn.NameStringShort + " ) called");
 
 			if (!pawn.RaceProps.hasGenders)
 			{
-				Logger.Message("[RJW] sexualize_pawn() - unable to sexualize genderless pawn " + pawn.NameStringShort);
+				//--Log.Message("[RJW] sexualize_pawn() - unable to sexualize genderless pawn " + pawn.NameStringShort);
 				return;
 			}
 
@@ -444,7 +444,7 @@ namespace rjw
 
 		public static void inject_genitals(BodyDef target)
 		{
-			Logger.Message("[RJW] inject_genitals() called");
+			//--Log.Message("[RJW] inject_genitals() called");
 			BodyPartRecord tor_rec = target.corePart;
 
 			if (tor_rec != null)
@@ -488,7 +488,7 @@ namespace rjw
 
 		public static void inject_breasts(BodyDef target)
 		{
-			Logger.Message("[RJW] inject_breasts() called");
+			//--Log.Message("[RJW] inject_breasts() called");
 			BodyPartRecord tor_rec = target.corePart;
 
 			if (tor_rec != null)
@@ -532,7 +532,7 @@ namespace rjw
 
 		public static void inject_anus(BodyDef target)
 		{
-			Logger.Message("[RJW] inject_anus() called");
+			//--Log.Message("[RJW] inject_anus() called");
 			BodyPartRecord tor_rec = target.corePart;
 
 			if (tor_rec != null)

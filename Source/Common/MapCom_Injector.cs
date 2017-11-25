@@ -25,11 +25,11 @@ namespace rjw
 			if (!triggered_after_load)
 			{
 				triggered_after_load = true;
-				Logger.Message("[RJW]MapCom_Injector::triggered after load");
+				//--Log.Message("[RJW]MapCom_Injector::triggered after load");
 
 				if (Genital_Helper.pawns_require_sexualization())
 				{
-					Logger.Message("[RJW]MapCom_Injector::sexualize everyone");
+					//--Log.Message("[RJW]MapCom_Injector::sexualize everyone");
 					Genital_Helper.sexualize_everyone();
 				}
 			}

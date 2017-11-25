@@ -90,7 +90,7 @@ namespace rjw
 			price = 0;
 			if (p1 == null)
 			{
-				Logger.Message("[RJW] JobGiver_WhoreInvitingVisitors::FindAttractivePawn - p1 is null");
+				//--Log.Message("[RJW] JobGiver_WhoreInvitingVisitors::FindAttractivePawn - p1 is null");
 				return null;
 			}
 			FindAttractivePawnHelper findPawnHelper = new FindAttractivePawnHelper
@@ -116,7 +116,7 @@ namespace rjw
 			{
 				return result;
 			}
-			Logger.Message("[RJW] JobGiver_WhoreInvitingVisitors::FindAttractivePawn - found no visitors");
+			//--Log.Message("[RJW] JobGiver_WhoreInvitingVisitors::FindAttractivePawn - found no visitors");
 		
 			if (!xxx.WillPawnTryHookup(p1))
 			{
@@ -143,7 +143,7 @@ namespace rjw
 
 		protected override Job TryGiveJob(Pawn pawn)
 		{
-			Logger.Message("[RJW] JobGiver_WhoreInvitingVisitors::TryGiveJob( " + pawn.NameStringShort + " ) called0");
+			//--Log.Message("[RJW] JobGiver_WhoreInvitingVisitors::TryGiveJob( " + pawn.NameStringShort + " ) called0");
 			if (pawn == null || !InteractionUtility.CanInitiateInteraction(pawn))
 			{
 				return null;
@@ -157,7 +157,7 @@ namespace rjw
 			{
 				int price;
 				Pawn pawn2 = FindAttractivePawn(pawn, out price);
-				Logger.Message("[RJW] JobGiver_WhoreInvitingVisitors::TryGiveJob( " + pawn.NameStringShort + " ) called1 - pawn2 is " + (pawn2 == null ? "NULL" : pawn2.NameStringShort));
+				//--Log.Message("[RJW] JobGiver_WhoreInvitingVisitors::TryGiveJob( " + pawn.NameStringShort + " ) called1 - pawn2 is " + (pawn2 == null ? "NULL" : pawn2.NameStringShort));
 				if (pawn2 == null)
 				{
 					return null;
@@ -165,13 +165,13 @@ namespace rjw
 				Building_WhoreBed whorebed = xxx.FindWhoreBed(pawn);
 				if ((whorebed == null) || !xxx.CanUse(pawn, whorebed) || (100f * Rand.Value) > percentRate)
 				{
-					Logger.Message("resetting ticks");
+					//--Log.Message("resetting ticks");
 					if (xxx.config.whores_always_findjob)
 						pawn.mindState.canLovinTick = Find.TickManager.TicksGame + 5;
 					else pawn.mindState.canLovinTick = Find.TickManager.TicksGame + Rand.Range(75, 150);
 					return null;
 				}
-				Logger.Message("[RJW] JobGiver_WhoreInvitingVisitors::TryGiveJob( " + pawn.NameStringShort + " ) called2 - " + pawn2.NameStringShort + " is pawn2.");
+				//--Log.Message("[RJW] JobGiver_WhoreInvitingVisitors::TryGiveJob( " + pawn.NameStringShort + " ) called2 - " + pawn2.NameStringShort + " is pawn2.");
 				whorebed.priceOfWhore = price;
 				return new Job(xxx.inviting_visitors, pawn2, whorebed);
 			}

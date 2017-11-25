@@ -10,7 +10,7 @@ namespace rjw
 		/*public override void Tick()
 		{
 			base.Tick();
-			Logger.Message("[RJW]Hediff_InsectEgg::Tick() - InsectEgg growing");
+			//--Log.Message("[RJW]Hediff_InsectEgg::Tick() - InsectEgg growing");
 		}*/
 
 		protected int bornTick
@@ -51,7 +51,7 @@ namespace rjw
 
 		public override void PostAdd(DamageInfo? dinfo)
 		{
-			Logger.Message("[RJW]Hediff_InsectEgg::PostAdd() - added parentDef:" + parentDef+"");
+			//--Log.Message("[RJW]Hediff_InsectEgg::PostAdd() - added parentDef:" + parentDef+"");
 			base.PostAdd(dinfo);
 		}
 
@@ -88,10 +88,10 @@ namespace rjw
 
 		public void BirthBaby()
 		{
-			Logger.Message("[RJW]Hediff_InsectEgg::BirthBaby() - Egg of " + parentDef + " in " + pawn.ToString() + " birth!");
+			//--Log.Message("[RJW]Hediff_InsectEgg::BirthBaby() - Egg of " + parentDef + " in " + pawn.ToString() + " birth!");
 			PawnGenerationRequest request = new PawnGenerationRequest(PawnKindDef.Named(parentDef), Faction.OfInsects, PawnGenerationContext.NonPlayer, pawn.Map.Tile, false, true, false, false, false, false, 0, false, true, true, false, false, false, false, null, null, null, null);
 
-			//Logger.Message("Hediff_GenericPregnancy::DoBirthSpawn( " + mother_name + ", " + father_name + ", " + chance_successful + " ) - spawning baby");
+			////--Log.Message("Hediff_GenericPregnancy::DoBirthSpawn( " + mother_name + ", " + father_name + ", " + chance_successful + " ) - spawning baby");
 			Pawn baby = PawnGenerator.GeneratePawn(request);
 			if (PawnUtility.TrySpawnHatchedOrBornPawn(baby, pawn))
 			{
@@ -128,7 +128,7 @@ namespace rjw
 			else
 			{
 				father = f;
-				Logger.Message("[RJW]Hediff_InsectEgg::Fertilize() - Egg in " + pawn.ToString() + " is fertilized by " + f.ToString());
+				//--Log.Message("[RJW]Hediff_InsectEgg::Fertilize() - Egg in " + pawn.ToString() + " is fertilized by " + f.ToString());
 			}
 			fertilized = true;
 		}

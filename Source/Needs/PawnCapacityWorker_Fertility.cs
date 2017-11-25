@@ -9,7 +9,7 @@ namespace rjw
 		public override float CalculateCapacityLevel(HediffSet diffSet, List<PawnCapacityUtility.CapacityImpactor> impactors = null)
 		{
 			//return 1.0f;
-			Logger.Message("[RJW]PawnCapacityWorker_Fertility::CalculateCapacityLevel is called0");
+			//--Log.Message("[RJW]PawnCapacityWorker_Fertility::CalculateCapacityLevel is called0");
 			//return 1f;
 			Pawn p = diffSet.pawn;
 			if (p == null)
@@ -23,9 +23,9 @@ namespace rjw
 					return 0f;
 				}
 				float result = PawnCapacityUtility.CalculateTagEfficiency(diffSet, "RJW_FertilitySource", 1f, impactors); //This should be a value ranged in [0,1]. It seems always to be 1.
-																														  Logger.Message("[RJW]PawnCapacityWorker_Fertility::CalculateCapacityLevel is called1 - result is "+ result);
+																														  //--Log.Message("[RJW]PawnCapacityWorker_Fertility::CalculateCapacityLevel is called1 - result is "+ result);
 				result *= GenMath.FlatHill(14f, 20f, 30f, 50f, p.ageTracker.AgeBiologicalYearsFloat); //This adds an aging factor to Fertility
-																									  Logger.Message("[RJW]PawnCapacityWorker_Fertility::CalculateCapacityLevel is called2 - result is " + result);
+																									  //--Log.Message("[RJW]PawnCapacityWorker_Fertility::CalculateCapacityLevel is called2 - result is " + result);
 				return result;
 			}
 			else return 0f;

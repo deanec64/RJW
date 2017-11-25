@@ -33,7 +33,7 @@ namespace rjw
 					}
 					else
 					{
-						Logger.Message("[RJW]" + this.GetType().ToString() + "::Tick() - There is no Random Effect");
+						//--Log.Message("[RJW]" + this.GetType().ToString() + "::Tick() - There is no Random Effect");
 					}
 					this.ageTicks = 0;
 				}

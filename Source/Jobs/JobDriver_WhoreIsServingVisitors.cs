@@ -106,7 +106,7 @@ namespace rjw
 			{
 				initAction = delegate
 				 {
-					 Logger.Message("[RJW]JobDriver_WhoreIsServingVisitors::MakeNewToils() - gotoWhoreBed initAction is called");
+					 //--Log.Message("[RJW]JobDriver_WhoreIsServingVisitors::MakeNewToils() - gotoWhoreBed initAction is called");
 					 Actor.pather.StartPath(WhoreSleepSpot, PathEndMode.OnCell);
 					 //Actor.Reserve(Partner, 1, 0);
 					 Partner.pather.StartPath(Actor, PathEndMode.Touch);
@@ -116,7 +116,7 @@ namespace rjw
 					if (Partner.IsHashIntervalTick(150))
 					{
 						Partner.pather.StartPath(Actor, PathEndMode.Touch);
-						Logger.Message(Partner.NameStringShort + ": I'm following the whore");
+						//--Log.Message(Partner.NameStringShort + ": I'm following the whore");
 					}
 				},
 				defaultCompleteMode = ToilCompleteMode.PatherArrival
@@ -128,7 +128,7 @@ namespace rjw
 			{
 				initAction = delegate
 				{
-					Logger.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - waitInBed, initAction is called");
+					//--Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - waitInBed, initAction is called");
 					ticksLeftThisToil = 5000;
 					ticks_left = (int)(2000.0f * Rand.Range(0.30f, 1.30f));
 					//Actor.pather.StopDead();  //Let's just make whores standing at the bed
@@ -143,7 +143,7 @@ namespace rjw
 					Actor.GainComfortFromCellIfPossible();
 					if (IsInOrByBed(Bed, Partner))
 					{
-						Logger.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - waitInBed, tickAction pass");
+						//--Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - waitInBed, tickAction pass");
 						ticksLeftThisToil = 0;
 					}
 				},
@@ -161,7 +161,7 @@ namespace rjw
 					{
 						//Actor.jobs.curDriver.ticksLeftThisToil = 1200;
 						//Using ticks_left to control the time of sex
-						Logger.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - loveToil, setting initAction");
+						//--Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - loveToil, setting initAction");
 						if (xxx.HasNonPolyPartner(Actor))
 						{
 							Pawn pawn = LovePartnerRelationUtility.ExistingLovePartner(Actor);
@@ -198,7 +198,7 @@ namespace rjw
 				});
 				loveToil.AddFinishAction(delegate
 				{
-					Logger.Message("[RJW] JobDriver_WhoreIsServingVisitors::MakeNewToils() - finished loveToil");
+					//--Log.Message("[RJW] JobDriver_WhoreIsServingVisitors::MakeNewToils() - finished loveToil");
 					//// Trying to add some interactions and social logs
 					//xxx.processAnalSex(Partner, Actor, ref isAnalSex, partnerHasPenis);
 				});
@@ -210,22 +210,22 @@ namespace rjw
 				{
 					initAction = delegate
 					{
-						Logger.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - calling aftersex in afterSex.initAction");
+						//--Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - calling aftersex in afterSex.initAction");
 						xxx.aftersex(Partner, Actor, false, false, isAnalSex);
-						Logger.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - setting mindstate in second initAction");
+						//--Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - setting mindstate in second initAction");
 						Actor.mindState.canLovinTick = Find.TickManager.TicksGame + xxx.generate_min_ticks_to_next_lovin(Actor);
-						Logger.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - setting mindstate again in second initAction");
+						//--Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - setting mindstate again in second initAction");
 						Partner.mindState.canLovinTick = Find.TickManager.TicksGame + xxx.generate_min_ticks_to_next_lovin(Partner);
 
-						Logger.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - Partner should pay the price now in afterSex.initAction");
+						//--Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - Partner should pay the price now in afterSex.initAction");
 						int remainPrice = xxx.PayPriceToWhore(Partner, price, Actor);
 						if (remainPrice <= 0)
 						{
-							Logger.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - Paying price is success");
+							//--Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - Paying price is success");
 						}
 						else
 						{
-							Logger.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - Paying price failed");
+							//--Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - Paying price failed");
 						}
 						xxx.UpdateRecords(Actor, price-remainPrice);
 					},

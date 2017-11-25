@@ -13,7 +13,7 @@ namespace rjw
 		// Generate a HediffGiver for the dummy hediff, then inject it into the OrganicStandard HediffGiverSet
 		private static void inject_sexualizer()
 		{
-			Logger.Message("First::inject_sexualizer() called");
+			//--Log.Message("First::inject_sexualizer() called");
 			/* Edited by nizhuan-jjr: I'm using the xpath approach to do this
             var hgs = DefDatabase<HediffGiverSetDef>.GetNamed("OrganicStandard");
             if (hgs != null) {
@@ -40,19 +40,19 @@ namespace rjw
 		private static void show_bpr(String body_part_record_def_name)
 		{
 			var bpr = BodyDefOf.Human.AllParts.Find((BodyPartRecord can) => String.Equals(can.def.defName, body_part_record_def_name));
-			//Logger.Message(body_part_record_def_name + " BPR internals:");
-			//Logger.Message("  def: " + bpr.def.ToString());
-			//Logger.Message("  parts: " + bpr.parts.ToString());
-			//Logger.Message("  parts.count: " + bpr.parts.Count.ToString());
-			//Logger.Message("  height: " + bpr.height.ToString());
-			//Logger.Message("  depth: " + bpr.depth.ToString());
-			//Logger.Message("  coverage: " + bpr.coverage.ToString());
-			//Logger.Message("  groups: " + bpr.groups.ToString());
-			//Logger.Message("  groups.count: " + bpr.groups.Count.ToString());
-			//Logger.Message("  parent: " + bpr.parent.ToString());
-			//Logger.Message ("  fleshCoverage: " + bpr.fleshCoverage.ToString ());
-			//Logger.Message ("  absoluteCoverage: " + bpr.absoluteCoverage.ToString ());
-			//Logger.Message ("  absoluteFleshCoverage: " + bpr.absoluteFleshCoverage.ToString ());
+			////--Log.Message(body_part_record_def_name + " BPR internals:");
+			////--Log.Message("  def: " + bpr.def.ToString());
+			////--Log.Message("  parts: " + bpr.parts.ToString());
+			////--Log.Message("  parts.count: " + bpr.parts.Count.ToString());
+			////--Log.Message("  height: " + bpr.height.ToString());
+			////--Log.Message("  depth: " + bpr.depth.ToString());
+			////--Log.Message("  coverage: " + bpr.coverage.ToString());
+			////--Log.Message("  groups: " + bpr.groups.ToString());
+			////--Log.Message("  groups.count: " + bpr.groups.Count.ToString());
+			////--Log.Message("  parent: " + bpr.parent.ToString());
+			////--Log.Message ("  fleshCoverage: " + bpr.fleshCoverage.ToString ());
+			////--Log.Message ("  absoluteCoverage: " + bpr.absoluteCoverage.ToString ());
+			////--Log.Message ("  absoluteFleshCoverage: " + bpr.absoluteFleshCoverage.ToString ());
 		}
 
 		// Generate a BodyPartRecord for the genitals part and inject it into the Human BodyDef. By adding the
@@ -61,7 +61,7 @@ namespace rjw
 		// I don't think this is used anymore
 		public static void inject_genitals(BodyDef target = null)
 		{
-			Logger.Message("[RJW] First::inject_genitals() called");
+			//--Log.Message("[RJW] First::inject_genitals() called");
 			if (target == null)
 			{
 				target = BodyDefOf.Human;
@@ -74,7 +74,7 @@ namespace rjw
 
 		private static void inject_recipes()
 		{
-			Logger.Message("[RJW] First::inject_recipes");
+			//--Log.Message("[RJW] First::inject_recipes");
 			var cra_spo = DefDatabase<ThingDef>.GetNamed("CraftingSpot");
 			var mac_ben = DefDatabase<ThingDef>.GetNamed("TableMachining");
 			var tai_ben = DefDatabase<ThingDef>.GetNamed("ElectricTailoringBench");
@@ -108,7 +108,7 @@ namespace rjw
 
 		private static void inject_items()
 		{
-			Logger.Message("[RJW] First::inject_items() called");
+			//--Log.Message("[RJW] First::inject_items() called");
 			/* Just use the Def to add ThingDef
             if (xxx.config.whore_beds_enabled)
             {
@@ -137,23 +137,23 @@ namespace rjw
 
 		private static void show_bs(Backstory bs)
 		{
-			Logger.Message("Backstory \"" + bs.Title + "\" internals:");
-			Logger.Message("  identifier: " + bs.identifier);
-			Logger.Message("  slot: " + bs.slot.ToString());
-			Logger.Message("  Title: " + bs.Title);
-			Logger.Message("  TitleShort: " + bs.TitleShort);
-			Logger.Message("  baseDesc: " + bs.baseDesc);
-			Logger.Message("  skillGains: " + ((bs.skillGains == null) ? "null" : bs.skillGains.ToString()));
-			Logger.Message("  skillGainsResolved: " + ((bs.skillGainsResolved == null) ? "null" : bs.skillGainsResolved.ToString()));
-			Logger.Message("  workDisables: " + bs.workDisables.ToString());
-			Logger.Message("  requiredWorkTags: " + bs.requiredWorkTags.ToString());
-			Logger.Message("  spawnCategories: " + bs.spawnCategories.ToString());
-			Logger.Message("  bodyTypeGlobal: " + bs.bodyTypeGlobal.ToString());
-			Logger.Message("  bodyTypeFemale: " + bs.bodyTypeFemale.ToString());
-			Logger.Message("  bodyTypeMale: " + bs.bodyTypeMale.ToString());
-			Logger.Message("  forcedTraits: " + ((bs.forcedTraits == null) ? "null" : bs.forcedTraits.ToString()));
-			Logger.Message("  disallowedTraits: " + ((bs.disallowedTraits == null) ? "null" : bs.disallowedTraits.ToString()));
-			Logger.Message("  shuffleable: " + bs.shuffleable.ToString());
+			//--Log.Message("Backstory \"" + bs.Title + "\" internals:");
+			//--Log.Message("  identifier: " + bs.identifier);
+			//--Log.Message("  slot: " + bs.slot.ToString());
+			//--Log.Message("  Title: " + bs.Title);
+			//--Log.Message("  TitleShort: " + bs.TitleShort);
+			//--Log.Message("  baseDesc: " + bs.baseDesc);
+			//--Log.Message("  skillGains: " + ((bs.skillGains == null) ? "null" : bs.skillGains.ToString()));
+			//--Log.Message("  skillGainsResolved: " + ((bs.skillGainsResolved == null) ? "null" : bs.skillGainsResolved.ToString()));
+			//--Log.Message("  workDisables: " + bs.workDisables.ToString());
+			//--Log.Message("  requiredWorkTags: " + bs.requiredWorkTags.ToString());
+			//--Log.Message("  spawnCategories: " + bs.spawnCategories.ToString());
+			//--Log.Message("  bodyTypeGlobal: " + bs.bodyTypeGlobal.ToString());
+			//--Log.Message("  bodyTypeFemale: " + bs.bodyTypeFemale.ToString());
+			//--Log.Message("  bodyTypeMale: " + bs.bodyTypeMale.ToString());
+			//--Log.Message("  forcedTraits: " + ((bs.forcedTraits == null) ? "null" : bs.forcedTraits.ToString()));
+			//--Log.Message("  disallowedTraits: " + ((bs.disallowedTraits == null) ? "null" : bs.disallowedTraits.ToString()));
+			//--Log.Message("  shuffleable: " + bs.shuffleable.ToString());
 		}
 
 		private static void CheckingCompatibleMods()
@@ -169,12 +169,12 @@ namespace rjw
 				if (xxx.straight is null)
 				{
 					xxx.RomanceDiversifiedIsActive = false;
-					Logger.Message("[RJW]RomanceDiversified is not detected.0");
+					//--Log.Message("[RJW]RomanceDiversified is not detected.0");
 				}
 				else
 				{
 					xxx.RomanceDiversifiedIsActive = true;
-					Logger.Message("[RJW]RomanceDiversified is detected.");
+					//--Log.Message("[RJW]RomanceDiversified is detected.");
 				}
 			}
 			catch (Exception)
@@ -186,7 +186,7 @@ namespace rjw
 				xxx.faithful = null;
 				xxx.philanderer = null;
 				xxx.polyamorous = null;
-				Logger.Message("[RJW]RomanceDiversified is not detected.1");
+				//--Log.Message("[RJW]RomanceDiversified is not detected.1");
 			}
 			try
 			{
@@ -194,25 +194,25 @@ namespace rjw
 				if (xxx.babystate is null)
 				{
 					xxx.RimWorldChildrenIsActive = false;
-					Logger.Message("[RJW]Children&Pregnancy is not detected.0");
+					//--Log.Message("[RJW]Children&Pregnancy is not detected.0");
 				}
 				else
 				{
 					xxx.RimWorldChildrenIsActive = true;
-					Logger.Message("[RJW]Children&Pregnancy is detected.");
+					//--Log.Message("[RJW]Children&Pregnancy is detected.");
 				}
 			}
 			catch (Exception)
 			{
 				xxx.RimWorldChildrenIsActive = false; //A dirty way to check if the mod is active
 				xxx.babystate = null;
-				Logger.Message("[RJW]Children&Pregnancy is not detected.1");
+				//--Log.Message("[RJW]Children&Pregnancy is not detected.1");
 			}
 		}
 
 		static First()
 		{
-			Logger.Message("[RJW] First::First() called");
+			//--Log.Message("[RJW] First::First() called");
 
 			// check for required mods
 			//CheckModRequirements();
@@ -236,7 +236,7 @@ namespace rjw
 
 		internal static void CheckModRequirements()
 		{
-			Logger.Message("First::CheckModRequirements() called");
+			//--Log.Message("First::CheckModRequirements() called");
 			List<string> required_mods = new List<string> {
 				"HugsLib",
 			};
@@ -260,7 +260,7 @@ namespace rjw
 
 		internal static void CheckIncompatibleMods()
 		{
-			Logger.Message("First::CheckIncompatibleMods() called");
+			//--Log.Message("First::CheckIncompatibleMods() called");
 			List<string> incompatible_mods = new List<string> {
 				"Bogus Test Mod That Doesn't Exist"
 			};

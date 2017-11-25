@@ -16,7 +16,7 @@ namespace rjw
 			if (!comfort_prisoners.is_designated(target)) return false;
 			if (!xxx.is_healthy_enough(target) || target.Position.IsForbidden(pawn))
 			{
-				Logger.Message("[RJW]WorkGiver_RapeCP::HasJobOnThing called0 - target isn't healthy enough or is in a forbidden position.");
+				//--Log.Message("[RJW]WorkGiver_RapeCP::HasJobOnThing called0 - target isn't healthy enough or is in a forbidden position.");
 				//if (Find.Selector.SingleSelectedThing==pawn)
 				//    Messages.Message("PawnCantRapeCP".Translate(), target, MessageSound.RejectInput);
 				return false;
@@ -24,26 +24,26 @@ namespace rjw
 			if (comfort_prisoners.is_designated(pawn)) return false;
 			if (xxx.need_some_sex(pawn) < 1 || !xxx.is_healthy(pawn) || !xxx.can_rape(pawn, xxx.has_traits(pawn) && xxx.is_nympho_or_rapist_or_zoophiliac(pawn)))
 			{
-				Logger.Message("[RJW]WorkGiver_RapeCP::HasJobOnThing called1 - pawn don't need sex or is not healthy, or cannot rape");
+				//--Log.Message("[RJW]WorkGiver_RapeCP::HasJobOnThing called1 - pawn don't need sex or is not healthy, or cannot rape");
 				//if (Find.Selector.SingleSelectedThing == pawn)
 				//    Messages.Message("PawnCantRapeCP0".Translate(), pawn, MessageSound.RejectInput);
 				return false;
 			}
 			if (!xxx.isSingleOrPartnerNotHere(pawn))
 			{
-				Logger.Message("[RJW]WorkGiver_RapeCP::HasJobOnThing called2 - pawn is not single or has partner around");
+				//--Log.Message("[RJW]WorkGiver_RapeCP::HasJobOnThing called2 - pawn is not single or has partner around");
 				//if (Find.Selector.SingleSelectedThing == pawn)
 				//    Messages.Message("PawnCantRapeCP1".Translate(), pawn, MessageSound.RejectInput);
 				return false;
 			}
 			if (xxx.is_animal(target) && !xxx.is_zoophiliac(pawn))
 			{
-				Logger.Message("[RJW]WorkGiver_RapeCP::HasJobOnThing called3 - pawn is not zoophiliac so can't rape animal");
+				//--Log.Message("[RJW]WorkGiver_RapeCP::HasJobOnThing called3 - pawn is not zoophiliac so can't rape animal");
 				//if (Find.Selector.SingleSelectedThing == pawn)
 				//    Messages.Message("PawnCantRapeCP2".Translate(), pawn, MessageSound.RejectInput);
 				return false;
 			}
-			Logger.Message("[RJW]WorkGiver_RapeCP::HasJobOnThing called4");
+			//--Log.Message("[RJW]WorkGiver_RapeCP::HasJobOnThing called4");
 			float fuckability = xxx.would_fuck(pawn, target, true);
 			bool roll_to_skip = xxx.config.pawns_always_rapeCP ? true : fuckability >= 0.1f && Rand.Value < fuckability;
 
@@ -52,7 +52,7 @@ namespace rjw
 
 		public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
 		{
-			Logger.Message("[RJW]WorkGiver_RapeCP::JobOnThing(" + pawn.NameStringShort + "," + t.ToStringSafe() + ") is called.");
+			//--Log.Message("[RJW]WorkGiver_RapeCP::JobOnThing(" + pawn.NameStringShort + "," + t.ToStringSafe() + ") is called.");
 			return new Job(xxx.comfort_prisoner_rapin, t);
 		}
 

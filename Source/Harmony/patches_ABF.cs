@@ -40,9 +40,9 @@ namespace rjw
 	{
 		public static void Postfix(StateGraph __result)
 		{
-			Logger.Message("[ABF]AssaultColonyForRape::CreateGraph");
+			//--Log.Message("[ABF]AssaultColonyForRape::CreateGraph");
 			if (__result == null) return;
-			Logger.Message("[RJW]AssaultColonyForRape::CreateGraph");
+			//--Log.Message("[RJW]AssaultColonyForRape::CreateGraph");
 			foreach (var trans in __result.transitions)
 			{
 				if (HasDesignatedTransition(trans))
@@ -58,7 +58,7 @@ namespace rjw
 							t.filters.Add(new Trigger_SexSatisfy(0.3f));
 						}
 					}
-					Logger.Message("[ABF]AssaultColonyForRape::CreateGraph Adding SexSatisfyTrigger to " + trans.ToString());
+					//--Log.Message("[ABF]AssaultColonyForRape::CreateGraph Adding SexSatisfyTrigger to " + trans.ToString());
 				}
 			}
 		}
@@ -82,7 +82,7 @@ namespace rjw
 	{
 		public static void Postfix(Job __result, ref Pawn pawn)
 		{
-			Logger.Message("[RJW]Patches_ABF_MunHunt::Postfix called");
+			//--Log.Message("[RJW]Patches_ABF_MunHunt::Postfix called");
 			if (__result == null) return;
 
 			if (__result.def == JobDefOf.Wait || __result.def == JobDefOf.Goto) __result = null;

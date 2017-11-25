@@ -8,7 +8,7 @@ namespace rjw
 	{
 		protected override Job TryGiveJob(Pawn p)
 		{
-			Logger.Message("[RJW] JobGiver_RapeEnemy::TryGiveJob( " + p.NameStringShort + " ) called");
+			//--Log.Message("[RJW] JobGiver_RapeEnemy::TryGiveJob( " + p.NameStringShort + " ) called");
 			if (!p.health.capacities.CanBeAwake || Find.TickManager.TicksGame < p.mindState.canLovinTick || p.CurJob != null) return null;
 
 			JobDef_RapeEnemy rapeEnemyJobDef = null;
@@ -35,22 +35,22 @@ namespace rjw
 				//Log.Warning("[RJW] JobGiver_RapeEnemy::ChoosedJobDef( " + p.ToString()+ " ) no defined JobDef_RapeEnemy for him.");
 				return null;
 			}
-			Logger.Message("[RJW] JobGiver_RapeEnemy::ChoosedJobDef( " + p.ToString() + " ) - " + rapeEnemyJobDef.ToString() + " choosed");
+			//--Log.Message("[RJW] JobGiver_RapeEnemy::ChoosedJobDef( " + p.ToString() + " ) - " + rapeEnemyJobDef.ToString() + " choosed");
 			var downedPlayer = rapeEnemyJobDef.FindVictim(p, p.Map);
 
 			if (downedPlayer != null)
 			{
-				Logger.Message("[RJW]" + this.GetType().ToString() + "::TryGiveJob( " + p.NameStringShort + " ) - found victim " + downedPlayer.NameStringShort);
+				//--Log.Message("[RJW]" + this.GetType().ToString() + "::TryGiveJob( " + p.NameStringShort + " ) - found victim " + downedPlayer.NameStringShort);
 				p.mindState.canLovinTick = Find.TickManager.TicksGame + Rand.Range(75, 150);
 				Messages.Message(p.NameStringShort + " is trying to rape " + downedPlayer.NameStringShort + ".", p, MessageTypeDefOf.NegativeEvent);
 				return new Job(rapeEnemyJobDef, downedPlayer);
 			}
 			else
 			{
-				Logger.Message("[RJW]" + this.GetType().ToString() + "::TryGiveJob( " + p.NameStringShort + " ) - unable to find victim");
+				//--Log.Message("[RJW]" + this.GetType().ToString() + "::TryGiveJob( " + p.NameStringShort + " ) - unable to find victim");
 				p.mindState.canLovinTick = Find.TickManager.TicksGame + Rand.Range(75, 150);
 			}
-			//else {  Logger.Message("[RJW] JobGiver_RapeEnemy::TryGiveJob( " + p.NameStringShort + " ) - too fast to play next"); }
+			//else {  //--Log.Message("[RJW] JobGiver_RapeEnemy::TryGiveJob( " + p.NameStringShort + " ) - too fast to play next"); }
 
 			return null;
 		}

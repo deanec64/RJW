@@ -147,7 +147,7 @@ namespace rjw
 
 			if (needsex_tick <= 0 && age > Mod_Settings.sex_minimum_age)
 			{
-				Logger.Message("[RJW]Need_Sex::NeedInterval is called0 - pawn is "+pawn.NameStringShort);
+				//--Log.Message("[RJW]Need_Sex::NeedInterval is called0 - pawn is "+pawn.NameStringShort);
 				needsex_tick = needsex_tick_timer;
 
 				if (!def.freezeWhileSleeping || pawn.Awake())
@@ -169,18 +169,18 @@ namespace rjw
 						needsex_tick_timer;
 					CurLevel -= fall_per_call * decay_rate_modifier;
 					// Each day has 60000 ticks, each hour has 2500 ticks, so each hour has 50/3 calls, in other words, each call takes .06 hour.
-					Logger.Message("[RJW] " + pawn.NameStringShort + "'s sex need stats:: Decay/call: " + fall_per_call * decay_rate_modifier + ", Cur.lvl: " + CurLevel + ", Dec. rate: " + decay_rate_modifier);
+					//--Log.Message("[RJW] " + pawn.NameStringShort + "'s sex need stats:: Decay/call: " + fall_per_call * decay_rate_modifier + ", Cur.lvl: " + CurLevel + ", Dec. rate: " + decay_rate_modifier);
 				}
 
 				// I just put this here so that it gets called on every pawn on a regular basis. There's probably a
 				// better way to do this sort of thing, but whatever. This works.
-				Logger.Message("[RJW]Need_Sex::NeedInterval is called1");
+				//--Log.Message("[RJW]Need_Sex::NeedInterval is called1");
 				std.update(pawn);
 
 				// the bootstrap of the mapInjector will only be triggered once per visible pawn.
 				if (!BootStrapTriggered)
 				{
-					Logger.Message("[RJW]Need_Sex::NeedInterval::calling boostrap - pawn is " + pawn.NameStringShort);
+					//--Log.Message("[RJW]Need_Sex::NeedInterval::calling boostrap - pawn is " + pawn.NameStringShort);
 					xxx.bootstrap(pawn.Map);
 					BootStrapTriggered = true;
 				}
@@ -190,7 +190,7 @@ namespace rjw
 				needsex_tick--;
 				decay_rate_modifier = Mod_Settings.sexneed_decay_rate;
 			}
-			Logger.Message("[RJW]Need_Sex::NeedInterval is called2 - needsex_tick is "+needsex_tick);
+			//--Log.Message("[RJW]Need_Sex::NeedInterval is called2 - needsex_tick is "+needsex_tick);
 		}
 	}
 }

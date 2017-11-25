@@ -8,7 +8,7 @@ namespace rjw
 	{
 		protected override Job TryGiveJob(Pawn p)
 		{
-			Logger.Message("[RJW] JobGiver_DoFappin::TryGiveJob( " + p.NameStringShort + " ) called");
+			//--Log.Message("[RJW] JobGiver_DoFappin::TryGiveJob( " + p.NameStringShort + " ) called");
 			if ((Find.TickManager.TicksGame >= p.mindState.canLovinTick) &&
 				(p.CurJob != null))
 			{

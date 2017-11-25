@@ -10,11 +10,11 @@ namespace rjw
 	{
 		public override void PostAdd(DamageInfo? dinfo)
 		{
-			Logger.Message("[RJW]Hediff_InitPrivates::PostAdd is called0 - pawn is " + pawn.NameStringShort);
+			//--Log.Message("[RJW]Hediff_InitPrivates::PostAdd is called0 - pawn is " + pawn.NameStringShort);
 			if (!Genital_Helper.is_sexualized(pawn))
 			{
 				Genital_Helper.sexualize(pawn);
-				Logger.Message("[RJW]Hediff_InitPrivates::PostAdd is called1 - pawn is " + pawn.NameStringShort);
+				//--Log.Message("[RJW]Hediff_InitPrivates::PostAdd is called1 - pawn is " + pawn.NameStringShort);
 
 				std.generate_on(pawn);
 			}

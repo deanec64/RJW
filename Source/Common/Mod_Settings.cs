@@ -17,7 +17,7 @@ namespace rjw
 
 		public override VersionShort GetVersion()
 		{
-			Logger.Message("GetVersion() called");
+			//--Log.Message("GetVersion() called");
 			return base.GetVersion();
 		}
 
@@ -110,13 +110,13 @@ namespace rjw
 
 		public override void Initialize()
 		{
-			Logger.Message("Initialize() called");
+			//--Log.Message("Initialize() called");
 			base.Initialize();
 		}
 
 		public override void DefsLoaded()
 		{
-			Logger.Message("DefsLoaded() called");
+			//--Log.Message("DefsLoaded() called");
 
 			this.option_WildMode = Settings.GetHandle<bool>("WildMode", "WildMode_name".Translate(), "WildMode_desc".Translate(), false);
 			this.option_sexneed_decay_rate = Settings.GetHandle<int>("sexneed_decay_rate", "sexneed_decay_rate_name".Translate(), "sexneed_decay_rate_desc".Translate(), 100, Validators.IntRangeValidator(0, 1000000));
@@ -168,44 +168,44 @@ namespace rjw
 			Rapee_MinVulnerability_animals = ((float)option_Rapee_MinVulnerability_animals.Value) / 100f;
 			DevMode = option_DevMode.Value;
 
-			Logger.Message("[RJW] Settings Changed:");
-			Logger.Message("WildMode = " + WildMode);
-			Logger.Message("sexneed_decay_rate = " + sexneed_decay_rate);
-			Logger.Message("nymphos = " + nymphos);
-			Logger.Message("std_floor = " + std_floor);
-			Logger.Message("prisoner_beating = " + prisoner_beating);
-			Logger.Message("pregnancy_weight_parent = " + pregnancy_weight_parent);
-			Logger.Message("pregnancy_weight_species = " + pregnancy_weight_species);
-			Logger.Message("pregnancy_coefficient_human = " + pregnancy_coefficient_human);
-			Logger.Message("pregnancy_coefficient_animals = " + pregnancy_coefficient_animals);
-			Logger.Message("pregnancy_use_parent_method = " + pregnancy_use_parent_method);
-			Logger.Message("sex_free_for_all_age = " + sex_free_for_all_age);
-			Logger.Message("sex_minimum_age = " + sex_minimum_age);
-			Logger.Message("NonFutaWomenRaping_MaxVulnerability = " + NonFutaWomenRaping_MaxVulnerability);
-			Logger.Message("Rapee_MinVulnerability_human = " + Rapee_MinVulnerability_human);
-			Logger.Message("Rapee_MinVulnerability_animals = " + Rapee_MinVulnerability_animals);
-			Logger.Message("DevMode = " + DevMode);
+			//--Log.Message("[RJW] Settings Changed:");
+			//--Log.Message("WildMode = " + WildMode);
+			//--Log.Message("sexneed_decay_rate = " + sexneed_decay_rate);
+			//--Log.Message("nymphos = " + nymphos);
+			//--Log.Message("std_floor = " + std_floor);
+			//--Log.Message("prisoner_beating = " + prisoner_beating);
+			//--Log.Message("pregnancy_weight_parent = " + pregnancy_weight_parent);
+			//--Log.Message("pregnancy_weight_species = " + pregnancy_weight_species);
+			//--Log.Message("pregnancy_coefficient_human = " + pregnancy_coefficient_human);
+			//--Log.Message("pregnancy_coefficient_animals = " + pregnancy_coefficient_animals);
+			//--Log.Message("pregnancy_use_parent_method = " + pregnancy_use_parent_method);
+			//--Log.Message("sex_free_for_all_age = " + sex_free_for_all_age);
+			//--Log.Message("sex_minimum_age = " + sex_minimum_age);
+			//--Log.Message("NonFutaWomenRaping_MaxVulnerability = " + NonFutaWomenRaping_MaxVulnerability);
+			//--Log.Message("Rapee_MinVulnerability_human = " + Rapee_MinVulnerability_human);
+			//--Log.Message("Rapee_MinVulnerability_animals = " + Rapee_MinVulnerability_animals);
+			//--Log.Message("DevMode = " + DevMode);
 		}
 
 		public override void MapLoaded(Map map)
 		{
-			Logger.Message("[RJW] Settings loaded:");
-			Logger.Message("WildMode = " + WildMode);
-			Logger.Message("sexneed_decay_rate = " + sexneed_decay_rate);
-			Logger.Message("nymphos = " + nymphos);
-			Logger.Message("std_floor = " + std_floor);
-			Logger.Message("prisoner_beating = " + prisoner_beating);
-			Logger.Message("pregnancy_weight_parent = " + pregnancy_weight_parent);
-			Logger.Message("pregnancy_weight_species = " + pregnancy_weight_species);
-			Logger.Message("pregnancy_coefficient_human = " + pregnancy_coefficient_human);
-			Logger.Message("pregnancy_coefficient_animals = " + pregnancy_coefficient_animals);
-			Logger.Message("pregnancy_use_parent_method = " + pregnancy_use_parent_method);
-			Logger.Message("sex_free_for_all_age = " + sex_free_for_all_age);
-			Logger.Message("sex_minimum_age = " + sex_minimum_age);
-			Logger.Message("NonFutaWomenRaping_MaxVulnerability = " + NonFutaWomenRaping_MaxVulnerability);
-			Logger.Message("Rapee_MinVulnerability_human = " + Rapee_MinVulnerability_human);
-			Logger.Message("Rapee_MinVulnerability_animals = " + Rapee_MinVulnerability_animals);
-			Logger.Message("DevMode = " + DevMode);
+			//--Log.Message("[RJW] Settings loaded:");
+			//--Log.Message("WildMode = " + WildMode);
+			//--Log.Message("sexneed_decay_rate = " + sexneed_decay_rate);
+			//--Log.Message("nymphos = " + nymphos);
+			//--Log.Message("std_floor = " + std_floor);
+			//--Log.Message("prisoner_beating = " + prisoner_beating);
+			//--Log.Message("pregnancy_weight_parent = " + pregnancy_weight_parent);
+			//--Log.Message("pregnancy_weight_species = " + pregnancy_weight_species);
+			//--Log.Message("pregnancy_coefficient_human = " + pregnancy_coefficient_human);
+			//--Log.Message("pregnancy_coefficient_animals = " + pregnancy_coefficient_animals);
+			//--Log.Message("pregnancy_use_parent_method = " + pregnancy_use_parent_method);
+			//--Log.Message("sex_free_for_all_age = " + sex_free_for_all_age);
+			//--Log.Message("sex_minimum_age = " + sex_minimum_age);
+			//--Log.Message("NonFutaWomenRaping_MaxVulnerability = " + NonFutaWomenRaping_MaxVulnerability);
+			//--Log.Message("Rapee_MinVulnerability_human = " + Rapee_MinVulnerability_human);
+			//--Log.Message("Rapee_MinVulnerability_animals = " + Rapee_MinVulnerability_animals);
+			//--Log.Message("DevMode = " + DevMode);
 			base.MapLoaded(map);
 		}
 
@@ -219,22 +219,22 @@ namespace rjw
         }
 
         public override void MapComponentsInitializing(Map map) {
-            Logger.Message("MapComponentsInitializing() called");
+            //--Log.Message("MapComponentsInitializing() called");
             base.MapComponentsInitializing(map);
         }
 
         public override void MapDiscarded(Map map) {
-            Logger.Message("MapDiscarded() called");
+            //--Log.Message("MapDiscarded() called");
             base.MapDiscarded(map);
         }
 
         public override void MapGenerated(Map map) {
-            Logger.Message("MapGenerated() called");
+            //--Log.Message("MapGenerated() called");
             base.MapGenerated(map);
         }
 
         public override void MapLoaded(Map map) {
-            Logger.Message("MapLoaded() called");
+            //--Log.Message("MapLoaded() called");
             base.MapLoaded(map);
         }
 
@@ -243,7 +243,7 @@ namespace rjw
         }
 
         public override void SceneLoaded(Scene scene) {
-            Logger.Message("SceneLoaded() called");
+            //--Log.Message("SceneLoaded() called");
             base.SceneLoaded(scene);
         }
 
@@ -252,7 +252,7 @@ namespace rjw
         }
 
         public override void WorldLoaded() {
-            Logger.Message("WorldLoaded() called");
+            //--Log.Message("WorldLoaded() called");
             base.WorldLoaded();
         }
 

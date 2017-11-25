@@ -210,7 +210,7 @@ namespace rjw
 
 		public void TickRare()
 		{
-			Logger.Message("[RJW]Hediff_SimpleBaby::TickRare is called");
+			//--Log.Message("[RJW]Hediff_SimpleBaby::TickRare is called");
 			if (pawn.ageTracker.CurLifeStageIndex > Grown_To)
 			{
 				GrowUpTo(Grown_To + 1, false);
@@ -238,7 +238,7 @@ namespace rjw
 						!pawn.health.hediffSet.HasHediff(HediffDef.Named("UnhappyBaby"))
 					)
 					{
-						Logger.Message("Adding unhappy baby hediff");
+						//--Log.Message("Adding unhappy baby hediff");
 						pawn.health.AddHediff(HediffDef.Named("UnhappyBaby"), null, null);
 					}
 				}
@@ -258,7 +258,7 @@ namespace rjw
             }
             */
 			//This void call every frame. should not logmes no reason
-			Logger.Message("[RJW]Hediff_SimpleBaby::PostTick is called");
+			//--Log.Message("[RJW]Hediff_SimpleBaby::PostTick is called");
 			base.PostTick();
 			if (pawn.Spawned)
 			{

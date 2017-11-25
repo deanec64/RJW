@@ -61,10 +61,10 @@ namespace rjw
 			// psychopath makes the aggressor more likely to hit the prisoner past the significant_pain_threshold
 			float beating_threshold = xxx.is_psychopath(rapist) ? xxx.config.extreme_pain_threshold : xxx.config.significant_pain_threshold;
 
-			Logger.Message("roll_to_hit:  rand = " + rand_value + ", beating_chance = " + beating_chance + ", victim_pain = " + victim_pain + ", beating_threshold = " + beating_threshold);
+			//--Log.Message("roll_to_hit:  rand = " + rand_value + ", beating_chance = " + beating_chance + ", victim_pain = " + victim_pain + ", beating_threshold = " + beating_threshold);
 			if ((victim_pain < beating_threshold && rand_value < beating_chance) || (rand_value < (beating_chance / 2)))
 			{
-				Logger.Message("   done told her twice already...");
+				//--Log.Message("   done told her twice already...");
 				if (InteractionUtility.TryGetRandomVerbForSocialFight(rapist, out Verb v))
 				{
 					rapist.meleeVerbs.TryMeleeAttack(p, v);
@@ -85,7 +85,7 @@ namespace rjw
 
 		protected override IEnumerable<Toil> MakeNewToils()
 		{
-			Logger.Message("[RJW] JobDriver_RandomRape::MakeNewToils() called");
+			//--Log.Message("[RJW] JobDriver_RandomRape::MakeNewToils() called");
 			duration = (int)(2000.0f * Rand.Range(0.50f, 0.90f));
 			ticks_between_hearts = Rand.RangeInclusive(70, 130);
 			ticks_between_hits = Rand.Range(xxx.config.min_ticks_between_hits, xxx.config.max_ticks_between_hits);
@@ -170,7 +170,7 @@ namespace rjw
 		{
 			var pawn_name = (pawn != null) ? pawn.NameStringShort : "NULL";
 			var part_name = (pawn != null) ? part.NameStringShort : "NULL";
-			Logger.Message("[RJW]" + this.GetType().ToString() + "::aftersex( " + pawn_name + ", " + part_name + " ) called");
+			//--Log.Message("[RJW]" + this.GetType().ToString() + "::aftersex( " + pawn_name + ", " + part_name + " ) called");
 			pawn.rotationTracker.Face(part.DrawPos);
 			pawn.rotationTracker.FaceCell(part.Position);
 
@@ -189,7 +189,7 @@ namespace rjw
 
 			bool pawnIsNotHuman = xxx.is_animal(pawn);
 			bool partIsNotHuman = xxx.is_animal(part);
-			Logger.Message("[RJW]" + this.GetType().ToString() + "::aftersex( " + pawn_name + ", " + part_name + " ) - applying cum effect");
+			//--Log.Message("[RJW]" + this.GetType().ToString() + "::aftersex( " + pawn_name + ", " + part_name + " ) - applying cum effect");
 			if (xxx.config.cum_enabled)
 			{
 				int pawn_cum = pawnIsNotHuman ? 4 : Math.Min((int)(pawn.RaceProps.lifeExpectancy / pawn.ageTracker.AgeBiologicalYears), 2);
@@ -205,15 +205,15 @@ namespace rjw
 				}
 			}
 
-			Logger.Message("[RJW]" + this.GetType().ToString() + "::aftersex( " + pawn_name + ", " + part_name + " ) - checking satisfaction");
+			//--Log.Message("[RJW]" + this.GetType().ToString() + "::aftersex( " + pawn_name + ", " + part_name + " ) - checking satisfaction");
 			xxx.satisfy(pawn, part, violent, isCoreLovin);
-			Logger.Message("[RJW]" + this.GetType().ToString() + "::aftersex( " + pawn_name + ", " + part_name + " ) - checking thoughts");
+			//--Log.Message("[RJW]" + this.GetType().ToString() + "::aftersex( " + pawn_name + ", " + part_name + " ) - checking thoughts");
 			think_after_sex(pawn, part, violent, isCoreLovin);
 
 			std.roll_to_catch(pawn, part);
 
 			Impregnate(pawn, part, isAnalSex);
-			Logger.Message("[RJW]" + this.GetType().ToString() + "::aftersex( " + pawn_name + ", " + part_name + " ) - checking disease");
+			//--Log.Message("[RJW]" + this.GetType().ToString() + "::aftersex( " + pawn_name + ", " + part_name + " ) - checking disease");
 		}
 
 		protected virtual void Impregnate(Pawn pawn, Pawn part, bool isAnalSex)
@@ -221,7 +221,7 @@ namespace rjw
 			if (xxx.is_animal(pawn) || xxx.is_animal(part)) return;
 			if (!isAnalSex)
 			{
-				Logger.Message("[RJW]" + this.GetType().ToString() + "::aftersex( " + pawn.Name.ToStringShort + ", " + part.Name.ToStringShort + " ) - checking pregnancy");
+				//--Log.Message("[RJW]" + this.GetType().ToString() + "::aftersex( " + pawn.Name.ToStringShort + ", " + part.Name.ToStringShort + " ) - checking pregnancy");
 				xxx.impregnate(pawn, part);
 			}
 		}

@@ -47,14 +47,14 @@ namespace rjw
 
 		protected override Job TryGiveJob(Pawn p)
 		{
-			Logger.Message("[RJW] JobGiver_NymphJoinInBed( " + p.NameStringShort + " ) called");
+			//--Log.Message("[RJW] JobGiver_NymphJoinInBed( " + p.NameStringShort + " ) called");
 
 			if ((Find.TickManager.TicksGame >= p.mindState.canLovinTick) && (p.CurJob == null))
 			{
-				Logger.Message("   checking nympho and abilities");
+				//--Log.Message("   checking nympho and abilities");
 				if (xxx.is_nympho(p) && p.health.capacities.CanBeAwake && xxx.can_fuck(p))
 				{
-					Logger.Message("   finding partner");
+					//--Log.Message("   finding partner");
 					var partner = find_pawn_to_fuck(p, p.Map);
 
 					Building_Bed bed = null;
@@ -64,24 +64,24 @@ namespace rjw
 						bed = ((JobDriver_LayDown)partner.jobs.curDriver).Bed;
 					}
 
-					Logger.Message("   checking partner");
+					//--Log.Message("   checking partner");
 					if (partner != null)
 					{
-						Logger.Message("   checking partner's job");
+						//--Log.Message("   checking partner's job");
 						if (partner.CurJob != null)
 						{
-							Logger.Message("   checking partner again");
+							//--Log.Message("   checking partner again");
 							if ((partner != null))
 							{
-								Logger.Message("   checking bed");
+								//--Log.Message("   checking bed");
 								if ((bed != null))
 								{
-									Logger.Message("   returning job");
+									//--Log.Message("   returning job");
 									return new Job(DefDatabase<JobDef>.GetNamed("NymphJoinInBed"), partner, bed);
 								}
 								else
 								{
-									Logger.Message("   resetting ticks");
+									//--Log.Message("   resetting ticks");
 									p.mindState.canLovinTick = Find.TickManager.TicksGame + Rand.Range(75, 150);
 								}
 							}
