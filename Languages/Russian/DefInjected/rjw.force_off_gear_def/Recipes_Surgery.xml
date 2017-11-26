@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-	<ForceOffArmbinder.label>force off armbinder</ForceOffArmbinder.label>
-	<ForceOffArmbinder.description>Forcibly removes an armbinder without the key at the cost of significant damage to the wearer.</ForceOffArmbinder.description>
-	<ForceOffArmbinder.jobString>Forcibly removing armbinder.</ForceOffArmbinder.jobString>
+	<ForceOffArmbinder.label>принудительно снять наручники</ForceOffArmbinder.label>
+	<ForceOffArmbinder.description>Принудительно снимает наручники без ключа, нанося значительный ущерб пользователю.</ForceOffArmbinder.description>
+	<ForceOffArmbinder.jobString>Принудительно снимает наручники.</ForceOffArmbinder.jobString>
 
-	<ForceOffGag.label>force off gag</ForceOffGag.label>
-	<ForceOffGag.description>Forcibly removes a gag without the key at the cost of significant damage to the wearer.</ForceOffGag.description>
-	<ForceOffGag.jobString>Forcibly removing gag.</ForceOffGag.jobString>
+	<ForceOffGag.label>принудительно снять кляп</ForceOffGag.label>
+	<ForceOffGag.description>Принудительно снимает кляп без ключа, нанося значительный ущерб пользователю.</ForceOffGag.description>
+	<ForceOffGag.jobString>Принудительно снимает кляп.</ForceOffGag.jobString>
 
-	<ForceOffChastityBelt.label>force off chastity belt</ForceOffChastityBelt.label>
-	<ForceOffChastityBelt.description>Forcibly removes a chastity belt without the key at the cost of significant damage to the wearer.</ForceOffChastityBelt.description>
-	<ForceOffChastityBelt.jobString>Forcibly removing chastity belt.</ForceOffChastityBelt.jobString>
+	<ForceOffChastityBelt.label>принудительно снять пояс верности</ForceOffChastityBelt.label>
+	<ForceOffChastityBelt.description>Принудительно снимает пояс верности без ключа, нанося значительный ущерб пользователю.</ForceOffChastityBelt.description>
+	<ForceOffChastityBelt.jobString>Принудительно снимает пояс верности.</ForceOffChastityBelt.jobString>
 </LanguageData>

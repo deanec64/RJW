@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-	<Fappin.reportString>fappin'.</Fappin.reportString>
+	<Fappin.reportString>Онанирует.</Fappin.reportString>
 
 	<!-- No longer need to override this def since the additional code is patched into the original driver
   <JobDef>
@@ -12,18 +12,18 @@
     <casualInterruptible>false</casualInterruptible>
   </JobDef> -->
 
-	<NymphJoinInBed.reportString>lovin'.</NymphJoinInBed.reportString>
-	<ComfortPrisonerRapin.reportString>rapin'.</ComfortPrisonerRapin.reportString>
-	<GettinLoved.reportString>lovin'.</GettinLoved.reportString>
-	<GettinRaped.reportString>gettin' raped.</GettinRaped.reportString>
-	<StruggleInBondageGear.reportString>struggling</StruggleInBondageGear.reportString>
-	<UnlockBondageGear.reportString>unlocking</UnlockBondageGear.reportString>
-	<GiveBondageGear.reportString>equipping</GiveBondageGear.reportString>
-	<ViolateCorpse.reportString>violating corpse</ViolateCorpse.reportString>
-	<Beastiality.reportString>lovin' animal</Beastiality.reportString>
-	<RandomRape.reportString>randomly raping</RandomRape.reportString>
-	<WhoreIsServingVisitors.reportString>serving visitors</WhoreIsServingVisitors.reportString>
-	<InvitingVisitors.reportString>attempting hookup</InvitingVisitors.reportString>
+	<NymphJoinInBed.reportString>занимается сексом</NymphJoinInBed.reportString>
+	<ComfortPrisonerRapin.reportString>насилует</ComfortPrisonerRapin.reportString>
+	<GettinLoved.reportString>занимается сексом</GettinLoved.reportString>
+	<GettinRaped.reportString>жертва изнасилования</GettinRaped.reportString>
+	<StruggleInBondageGear.reportString>бореться</StruggleInBondageGear.reportString>
+	<UnlockBondageGear.reportString>снимает блокировку</UnlockBondageGear.reportString>
+	<GiveBondageGear.reportString>Одевает</GiveBondageGear.reportString>
+	<ViolateCorpse.reportString>Трахает труп.</ViolateCorpse.reportString>
+	<Beastiality.reportString>Трахает животное.</Beastiality.reportString>
+	<RandomRape.reportString>Случайное изнасилование.</RandomRape.reportString>
+	<WhoreIsServingVisitors.reportString>Обслуживает посетителей.</WhoreIsServingVisitors.reportString>
+	<InvitingVisitors.reportString>Пытается подцепить.</InvitingVisitors.reportString>
 
 	<!-- <JobDef>
     <defName>ComfortPrisonerGangRapin</defName>
