@@ -31,5 +31,7 @@ SuperHotSausage        Coding, stuff
 Sidfu                  Coding, XML modding
 NEPH                   Graphics & textures, testing, Korean translation
 hogehoge1942           Coding, Japanese translation
+TheSleeplessSorclock   Coding
+asdiky                 Russian translation
 
 And anyone we might have missed.

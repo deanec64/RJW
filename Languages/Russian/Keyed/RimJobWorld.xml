@@ -1,74 +1,74 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 	<!-- Settings-->
-	<WildMode_name>Wild mode</WildMode_name>
-	<WildMode_desc>EXPERIMENTAL. No rules for sex. All limiting requirements are turned off. Enjoy the wildest side of Rimworld.</WildMode_desc>
-	<sexneed_decay_rate_name>Sex need decay multiplier (%)</sexneed_decay_rate_name>
-	<sexneed_decay_rate_desc>0% for no decay.
-1000000% for Rapeturnus Planet.
+	<WildMode_name>Дикий мод</WildMode_name>
+	<WildMode_desc>ЭКСПЕРЕМЕНТАЛЬНО. Нет правил для секса. Все ограничения сняты. Наслаждайтесь дикой стороной RimWorld.</WildMode_desc>
+	<sexneed_decay_rate_name>Секс требует множитель ?распада? Sex need decay multiplier (%)</sexneed_decay_rate_name>
+	<sexneed_decay_rate_desc>0% для отсутствия множителя.
+1000000% для Rapeturnus Planet.
 	</sexneed_decay_rate_desc>
-	<NymphsJoin>Nymphomaniacs</NymphsJoin>
-	<NymphsJoin_desc>Spawns pawns with nymphomaniac trait to join the colony.</NymphsJoin_desc>
-	<STD_FromFloors>STDs from environment</STD_FromFloors>
-	<STD_FromFloors_desc>Pawns will catch STDs from dirty environment.</STD_FromFloors_desc>
-	<PrisonersBeating>Rape beatings</PrisonersBeating>
-	<PrisonersBeating_desc>Pawns will beat the hell out of victims while raping them.</PrisonersBeating_desc>
-	<OffspringLookLikeTheirMother>Genetic inheritance (%)</OffspringLookLikeTheirMother>
-	<OffspringLookLikeTheirMother_desc>100% means born babies will look exactly like their mothers. Set it to 0% for random appearance.
+	<NymphsJoin>Нимфоманы.</NymphsJoin>
+	<NymphsJoin_desc>Позволяет нимфоманам присоединиться к колонии.</NymphsJoin_desc>
+	<STD_FromFloors>Половое заболевание из окружения.</STD_FromFloors>
+	<STD_FromFloors_desc>Существа могут подцепить половое заболевание от грязной окружающей среды.</STD_FromFloors_desc>
+	<PrisonersBeating>Избивание при изнасиловании.</PrisonersBeating>
+	<PrisonersBeating_desc>Насильники будут выбивать дурь из своих жертв.</PrisonersBeating_desc>
+	<OffspringLookLikeTheirMother>Генетическое наследование (%)</OffspringLookLikeTheirMother>
+	<OffspringLookLikeTheirMother_desc>100% означает что дети будут выглядеть точно так же как их матери. Установите 0% для случайного внешнего вида.
+	
+Возможные значения: 0 - 100%</OffspringLookLikeTheirMother_desc>
+	<OffspringIsHuman>Наследование человеческого ДНК (%)</OffspringIsHuman>
+	<OffspringIsHuman_desc>100% означает что все новорожденные будут людьми. 0% для случайного монстра.
 
-Valid range: 0 - 100%</OffspringLookLikeTheirMother_desc>
-	<OffspringIsHuman>Human DNA inheritance (%)</OffspringIsHuman>
-	<OffspringIsHuman_desc>100% means born babies will be humans. Set it to 0% for random monster.
+Возможные значения: 0 - 100%</OffspringIsHuman_desc>
+	<PregnantCoeffecientForHuman>Шанс оплодотворения человека (%)</PregnantCoeffecientForHuman>
+	<PregnantCoeffecientForHuman_desc>Шанс оплодотворения человека в процентах.<br /><br />
 
-Valid range: 0 - 100%</OffspringIsHuman_desc>
-	<PregnantCoeffecientForHuman>Human Pregnancy chances (%)</PregnantCoeffecientForHuman>
-	<PregnantCoeffecientForHuman_desc>Human pregnancy chances in percent.<br /><br />
-
-Valid range: 0 - 100%
+Возможные значения: 0 - 100%
 </PregnantCoeffecientForHuman_desc>
-	<PregnantCoeffecientForAnimals>Animal pregnancy chances (%)</PregnantCoeffecientForAnimals>
-	<PregnantCoeffecientForAnimals_desc>Animal pregnancy chances in percent.<br /><br />
+	<PregnantCoeffecientForAnimals>Шанс оплодотворения животного (%)</PregnantCoeffecientForAnimals>
+	<PregnantCoeffecientForAnimals_desc>Шанс оплодотворения животного в процентах.<br /><br />
 
-Valid range: 0 - 100%</PregnantCoeffecientForAnimals_desc>
-	<UseParentMethod>Babies race</UseParentMethod>
-	<UseParentMethod_desc>Born babies will have the same race as their mothers.</UseParentMethod_desc>
-	<SexFreeForAllAge>Free sex min. age</SexFreeForAllAge>
-	<SexFreeForAllAge_desc>Pawns younger than this will only have sex with pawns with 2 years age difference.</SexFreeForAllAge_desc>
-	<SexMinimumAge>Sex min. age</SexMinimumAge>
-	<SexMinimumAge_desc>Pawns younger than this will not have sex at all.</SexMinimumAge_desc>
-	<NonFutaWomenRaping_MaxVulnerability>Girls go rapin' (%)</NonFutaWomenRaping_MaxVulnerability>
-	<NonFutaWomenRaping_MaxVulnerability_desc>Only women with vulnerability lower than this will ever rape others.<br /><br />To check 'vulnerability' status, go to 'view information about this object' > stats.<br /><br />
+Возможные значения: 0 - 100%</PregnantCoeffecientForAnimals_desc>
+	<UseParentMethod>Раса ребенка</UseParentMethod>
+	<UseParentMethod_desc>Новорожденные будут той же расы, что и мать.</UseParentMethod_desc>
+	<SexFreeForAllAge>Минимальный возраст свободного занятия сексом.</SexFreeForAllAge>
+	<SexFreeForAllAge_desc>Существа младше этого возраста будут заниматься сексом только с существми разница в возрасте с которыми не больше 2 лет.</SexFreeForAllAge_desc>
+	<SexMinimumAge>Минимальный возраст занятия сексом.</SexMinimumAge>
+	<SexMinimumAge_desc>Существа младше этого возраста не будут заниматься сексом.</SexMinimumAge_desc>
+	<NonFutaWomenRaping_MaxVulnerability>Девушки начинаю насиловать с (%)</NonFutaWomenRaping_MaxVulnerability>
+	<NonFutaWomenRaping_MaxVulnerability_desc>Только женщины с восприимчивость ниже чем указанная, будут насиловать других.<br /><br /> Для проверки статуса 'Восприимчивости' перейдите  'просмотреть информацию об объекте' > статус.<br /><br />
 
-Valid range: 0 - 300%</NonFutaWomenRaping_MaxVulnerability_desc>
-	<Rapee_MinVulnerability_human>'To-be raped' vulnerability (%)</Rapee_MinVulnerability_human>
-	<Rapee_MinVulnerability_human_desc>Human pawns with vulnerability higher than this will be raping targets.<br /><br />To check 'vulnerability' status, go to 'view information about this object' > stats.<br /><br />
+Возможные значения: 0 - 300%</NonFutaWomenRaping_MaxVulnerability_desc>
+	<Rapee_MinVulnerability_human>Вероятность быть изнасилованным (%)</Rapee_MinVulnerability_human>
+	<Rapee_MinVulnerability_human_desc>Люди восприимчивость которых выше чем это значение будут изнасилованы.<br /><br />Для проверки статуса 'Восприимчивости' перейдите  'просмотреть информацию об объекте' > статус.<br /><br />
 
-Valid range: 0 - 300%</Rapee_MinVulnerability_human_desc>
-	<Rapee_MinVulnerability_animals>Animals' to-be-raped vulnerability (%)</Rapee_MinVulnerability_animals>
-	<Rapee_MinVulnerability_animals_desc>Animals with vulnerability higher than this will be raping targets for zoophiliacs.<br /><br />To check 'vulnerability' status, go to 'view information about this object' > stats.<br /><br />
+Возможные значения: 0 - 300%</Rapee_MinVulnerability_human_desc>
+	<Rapee_MinVulnerability_animals>Вероятность быть изнасилованным животные (%)</Rapee_MinVulnerability_animals>
+	<Rapee_MinVulnerability_animals_desc>Животные с восприимчивостью выше чем данная будут целями для изнасилования Зоофилами.<br /><br />Для проверки статуса 'Восприимчивости' перейдите  'просмотреть информацию об объекте' > статус.<br /><br />
 
-Valid range: 0 - 300%</Rapee_MinVulnerability_animals_desc>
+Возможные значения: 0 - 300%</Rapee_MinVulnerability_animals_desc>
 
 	<!-- Bed -->
-	<ForWhoreUse>For Whore Use</ForWhoreUse>
-	<WhoreBedFormat>whore {0}</WhoreBedFormat>
-	<CommandBedSetAsWhoreLabel>For whores</CommandBedSetAsWhoreLabel>
-	<CommandBedSetAsWhoreDesc>Whether this bed is for whores.</CommandBedSetAsWhoreDesc>
+	<ForWhoreUse>Для шлюх</ForWhoreUse>
+	<WhoreBedFormat>Шлюха{0}</WhoreBedFormat>
+	<CommandBedSetAsWhoreLabel>Для шлюх</CommandBedSetAsWhoreLabel>
+	<CommandBedSetAsWhoreDesc>Это кровать для шлюх.</CommandBedSetAsWhoreDesc>
 
 	<!-- std.cs -->
-	<RJW_Opportunistic_Infection_Message>{0} has developed an infection due to the weakened immune system.</RJW_Opportunistic_Infection_Message>
-	<!--RJW_Poisoned_by_Rimming_Message>{0} has gotten food poisoning by rimming {1}</RJW_Poisoned_by_Rimming_Message-->
-	<RJW_Syphilis_Damage_Message>{0} has suffered permanent damage to {1} {2} due to an advanced {3} infection.</RJW_Syphilis_Damage_Message>
+	<RJW_Opportunistic_Infection_Message>{0} развилась инфекция из-за ослабленной иммунной системы.</RJW_Opportunistic_Infection_Message>
+	<!--RJW_Poisoned_by_Rimming_Message>{0} отравился во время римминга {1}</RJW_Poisoned_by_Rimming_Message-->
+	<RJW_Syphilis_Damage_Message>{0} получил {1} {2} постоянного урона из-за развивающейся {3} инфекции.</RJW_Syphilis_Damage_Message>
 
 	<!--Whore Activities-->
-	<RJW_VisitorAcceptWhore>{0} accepted the deal {1} offered.</RJW_VisitorAcceptWhore>
-	<RJW_VisitorRejectWhore>{0} rejected the deal {1} offered.</RJW_VisitorRejectWhore>
+	<RJW_VisitorAcceptWhore>{0} принял предложение {1}.</RJW_VisitorAcceptWhore>
+	<RJW_VisitorRejectWhore>{0} отклонил предложение {1}.</RJW_VisitorRejectWhore>
 
 	<!-- Notifications on right-clicking CP -->
-	<PawnCantRapeCP>The target isn't healthy enough or is in a forbidden position.</PawnCantRapeCP>
-	<PawnCantRapeCP0>The pawn don't need sex, is not healthy, or cannot rape.</PawnCantRapeCP0>
-	<PawnCantRapeCP1>The pawn is not single or has his partner around.</PawnCantRapeCP1>
-	<PawnCantRapeCP2>The pawn is not zoophiliac so can't rape animals.</PawnCantRapeCP2>
+	<PawnCantRapeCP>Цель не достаточно здоровла или находится на запрещенной территории.</PawnCantRapeCP>
+	<PawnCantRapeCP0>Существу не нужен секс, не здоров, не может насиловать.</PawnCantRapeCP0>
+	<PawnCantRapeCP1>Существо не одно, или партнер рядом.</PawnCantRapeCP1>
+	<PawnCantRapeCP2>Существо не зоофил, не может насиловать животных.</PawnCantRapeCP2>
 
 	<!-- Anal Sex Notificaitons-->
 	<AnalSexSucceeded> </AnalSexSucceeded>

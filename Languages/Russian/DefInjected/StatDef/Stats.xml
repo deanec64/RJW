@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-	<SexAbility.label>sex ability</SexAbility.label>
-	<SexAbility.description>Measures whether or not a pawn is capable of sex, and how good they are at it</SexAbility.description>
+	<SexAbility.label>сексуальные навыки</SexAbility.label>
+	<SexAbility.description>Отображает на сколько поселенец хорош в сексе</SexAbility.description>
 
 	<Vulnerability.label>vulnerability</Vulnerability.label>
-	<Vulnerability.description>Measures how likely a pawn is to be taken advantage of sexually</Vulnerability.description>
+	<Vulnerability.description>Отображает на сколько вероятен захват сексуального пруимущества.</Vulnerability.description>
 </LanguageData>
