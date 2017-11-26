@@ -18,7 +18,7 @@
     <AssemblyFileVersionSettings>None.None.IncrementOnDemand.None</AssemblyFileVersionSettings>
     <AssemblyInfoVersionSettings>None.None.IncrementOnDemand.None</AssemblyInfoVersionSettings>
     <PrimaryVersionType>AssemblyVersionAttribute</PrimaryVersionType>
-    <AssemblyVersion>1.6.0.481</AssemblyVersion>
+    <AssemblyVersion>1.6.0.482</AssemblyVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -134,6 +134,7 @@
     <Content Include="Defs\RulePackDefs\RulePacks_AnalRape.xml" />
     <Content Include="Defs\RulePackDefs\RulePacks_AnalSex.xml" />
     <Content Include="Defs\RulePackDefs\RulePacks_EngravedNames.xml" />
+    <Content Include="Defs\Skilldefs\Skills.xml" />
     <Content Include="Defs\SoundDefs\SoundDef_XXX.xml" />
     <Content Include="Defs\StatDefs\Stats.xml" />
     <Content Include="Defs\STDDefs\STDs.xml" />
@@ -553,9 +554,7 @@
     <Compile Include="Source\Trigger\Trigger_SexSatisfy.cs" />
     <Compile Include="Source\Works\WorkGiver_RapeCP.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Defs\Skilldefs\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>
     <VisualStudio AllowExistingFolder="true" />
