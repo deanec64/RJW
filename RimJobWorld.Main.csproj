@@ -80,12 +80,12 @@
     <Content Include="Assemblies\RJW.dll" />
     <Content Include="changelog.txt" />
     <Content Include="credits.txt" />
-    <Content Include="Defs\Body\PrivatePartGroups.xml">
+    <Content Include="Defs\Bodies\PrivatePartGroups.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Defs\Body\InsectBodyParts.xml" />
-    <Content Include="Defs\Body\MechBodyParts.xml" />
-    <Content Include="Defs\Body\PrivateParts.xml">
+    <Content Include="Defs\Bodies\InsectBodyParts.xml" />
+    <Content Include="Defs\Bodies\MechBodyParts.xml" />
+    <Content Include="Defs\Bodies\PrivateParts.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Defs\BondageGear\Hediffs.xml" />
@@ -134,8 +134,8 @@
     <Content Include="Defs\RulePackDefs\RulePacks_AnalRape.xml" />
     <Content Include="Defs\RulePackDefs\RulePacks_AnalSex.xml" />
     <Content Include="Defs\RulePackDefs\RulePacks_EngravedNames.xml" />
-    <Content Include="Defs\SoundDef\SoundDef_XXX.xml" />
-    <Content Include="Defs\StatDef\Stats.xml" />
+    <Content Include="Defs\SoundDefs\SoundDef_XXX.xml" />
+    <Content Include="Defs\StatDefs\Stats.xml" />
     <Content Include="Defs\STDDefs\STDs.xml" />
     <Content Include="Defs\ThingDefs\Items_PrivateParts.xml" />
     <Content Include="Defs\ThingDefs\ThingsDef_XXX.xml" />
@@ -553,7 +553,9 @@
     <Compile Include="Source\Trigger\Trigger_SexSatisfy.cs" />
     <Compile Include="Source\Works\WorkGiver_RapeCP.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Defs\Skilldefs\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>
     <VisualStudio AllowExistingFolder="true" />
