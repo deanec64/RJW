@@ -15,7 +15,7 @@ namespace rjw
 		[HarmonyPrefix]
 		private static bool on_begin_lovin(JobDriver_Lovin __instance)
 		{
-			//Log.Message("[RJW]patches_lovin::PATCH_JobDriver_Lovin_MakeNewToils is called0");
+			//--Log.Message("[RJW]patches_lovin::PATCH_JobDriver_Lovin_MakeNewToils is called0");
 			//if (__instance == null) return true;
 			__instance.FailOn(() => (!xxx.can_fuck(__instance.pawn)));
 			return true;

@@ -106,7 +106,7 @@ namespace rjw
 			{
 				initAction = delegate
 				 {
-					 //Log.Message("[RJW]JobDriver_WhoreIsServingVisitors::MakeNewToils() - gotoWhoreBed initAction is called");
+					 //--Log.Message("[RJW]JobDriver_WhoreIsServingVisitors::MakeNewToils() - gotoWhoreBed initAction is called");
 					 Actor.pather.StartPath(WhoreSleepSpot, PathEndMode.OnCell);
 					 //Actor.Reserve(Partner, 1, 0);
 					 Partner.pather.StartPath(Actor, PathEndMode.Touch);
@@ -116,7 +116,7 @@ namespace rjw
 					if (Partner.IsHashIntervalTick(150))
 					{
 						Partner.pather.StartPath(Actor, PathEndMode.Touch);
-						//Log.Message(Partner.NameStringShort + ": I'm following the whore");
+						//--Log.Message(Partner.NameStringShort + ": I'm following the whore");
 					}
 				},
 				defaultCompleteMode = ToilCompleteMode.PatherArrival
@@ -210,14 +210,14 @@ namespace rjw
 				{
 					initAction = delegate
 					{
-						//Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - calling aftersex in afterSex.initAction");
+						//--Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - calling aftersex in afterSex.initAction");
 						xxx.aftersex(Partner, Actor, false, false, isAnalSex);
-						//Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - setting mindstate in second initAction");
+						//--Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - setting mindstate in second initAction");
 						Actor.mindState.canLovinTick = Find.TickManager.TicksGame + xxx.generate_min_ticks_to_next_lovin(Actor);
-						//Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - setting mindstate again in second initAction");
+						//--Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - setting mindstate again in second initAction");
 						Partner.mindState.canLovinTick = Find.TickManager.TicksGame + xxx.generate_min_ticks_to_next_lovin(Partner);
 
-						//Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - Partner should pay the price now in afterSex.initAction");
+						//--Log.Message("JobDriver_WhoreIsServingVisitors::MakeNewToils() - Partner should pay the price now in afterSex.initAction");
 						int remainPrice = xxx.PayPriceToWhore(Partner, price, Actor);
 						if (remainPrice <= 0)
 						{

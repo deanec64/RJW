@@ -15,12 +15,12 @@ namespace rjw
 		[HarmonyPrefix]
 		private static void OnBegin_GenerateNewNakedPawn(ref PawnGenerationRequest request)
 		{
-			//Log.Message("[RJW]Patch_PawnGenerator_GenerateNewNakedPawn::OnBegin_GenerateNewNakedPawn is called0");
+			//--Log.Message("[RJW]Patch_PawnGenerator_GenerateNewNakedPawn::OnBegin_GenerateNewNakedPawn is called0");
 			PawnGenerationRequest PGR = request;
 			PawnKindDef pkd = PGR.KindDef;
 			if (pkd != null && pkd.defName == "Nymph")
 			{
-				//Log.Message("[RJW]Patch_PawnGenerator_GenerateNewNakedPawn::OnBegin_GenerateNewNakedPawn is called1");
+				//--Log.Message("[RJW]Patch_PawnGenerator_GenerateNewNakedPawn::OnBegin_GenerateNewNakedPawn is called1");
 				if (pkd.minGenerationAge != 20)
 				{
 					//--Log.Message("[RJW]Patch_PawnGenerator_GenerateNewNakedPawn::OnBegin_GenerateNewNakedPawn is called2");

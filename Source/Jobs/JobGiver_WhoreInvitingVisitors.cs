@@ -143,7 +143,7 @@ namespace rjw
 
 		protected override Job TryGiveJob(Pawn pawn)
 		{
-			Log.Message("[RJW] JobGiver_WhoreInvitingVisitors::TryGiveJob( " + pawn.NameStringShort + " ) called0");
+			//--Log.Message("[RJW] JobGiver_WhoreInvitingVisitors::TryGiveJob( " + pawn.NameStringShort + " ) called0");
 			if (pawn == null || !InteractionUtility.CanInitiateInteraction(pawn))
 			{
 				return null;
@@ -157,7 +157,7 @@ namespace rjw
 			{
 				int price;
 				Pawn pawn2 = FindAttractivePawn(pawn, out price);
-				Log.Message("[RJW] JobGiver_WhoreInvitingVisitors::TryGiveJob( " + pawn.NameStringShort + " ) called1 - pawn2 is " + (pawn2 == null ? "NULL" : pawn2.NameStringShort));
+				//--Log.Message("[RJW] JobGiver_WhoreInvitingVisitors::TryGiveJob( " + pawn.NameStringShort + " ) called1 - pawn2 is " + (pawn2 == null ? "NULL" : pawn2.NameStringShort));
 				if (pawn2 == null)
 				{
 					return null;
@@ -165,7 +165,7 @@ namespace rjw
 				Building_WhoreBed whorebed = xxx.FindWhoreBed(pawn);
 				if ((whorebed == null) || !xxx.CanUse(pawn, whorebed) || (100f * Rand.Value) > percentRate)
 				{
-					//Log.Message("resetting ticks");
+					//--Log.Message("resetting ticks");
 					if (xxx.config.whores_always_findjob)
 						pawn.mindState.canLovinTick = Find.TickManager.TicksGame + 5;
 					else pawn.mindState.canLovinTick = Find.TickManager.TicksGame + Rand.Range(75, 150);

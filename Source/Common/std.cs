@@ -79,7 +79,7 @@ namespace rjw
 				p.health.AddHediff(sd.hediff_def, part);
 				if (include_coinfection && (sd.cohediff_def != null))
 					p.health.AddHediff(sd.cohediff_def, part);
-				//Log.Message("[RJW]std::infect genitals std");
+				//--Log.Message("[RJW]std::infect genitals std");
 				return get_infection(p, sd);
 			}
 			else

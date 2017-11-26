@@ -40,19 +40,19 @@ namespace rjw
 		private static void show_bpr(String body_part_record_def_name)
 		{
 			var bpr = BodyDefOf.Human.AllParts.Find((BodyPartRecord can) => String.Equals(can.def.defName, body_part_record_def_name));
-			//--Log.Message(body_part_record_def_name + " BPR internals:");
-			//--Log.Message("  def: " + bpr.def.ToString());
-			//--Log.Message("  parts: " + bpr.parts.ToString());
-			//--Log.Message("  parts.count: " + bpr.parts.Count.ToString());
-			//--Log.Message("  height: " + bpr.height.ToString());
-			//--Log.Message("  depth: " + bpr.depth.ToString());
-			//--Log.Message("  coverage: " + bpr.coverage.ToString());
-			//--Log.Message("  groups: " + bpr.groups.ToString());
-			//--Log.Message("  groups.count: " + bpr.groups.Count.ToString());
-			//--Log.Message("  parent: " + bpr.parent.ToString());
-			//Log.Message ("  fleshCoverage: " + bpr.fleshCoverage.ToString ());
-			//Log.Message ("  absoluteCoverage: " + bpr.absoluteCoverage.ToString ());
-			//Log.Message ("  absoluteFleshCoverage: " + bpr.absoluteFleshCoverage.ToString ());
+			////--Log.Message(body_part_record_def_name + " BPR internals:");
+			////--Log.Message("  def: " + bpr.def.ToString());
+			////--Log.Message("  parts: " + bpr.parts.ToString());
+			////--Log.Message("  parts.count: " + bpr.parts.Count.ToString());
+			////--Log.Message("  height: " + bpr.height.ToString());
+			////--Log.Message("  depth: " + bpr.depth.ToString());
+			////--Log.Message("  coverage: " + bpr.coverage.ToString());
+			////--Log.Message("  groups: " + bpr.groups.ToString());
+			////--Log.Message("  groups.count: " + bpr.groups.Count.ToString());
+			////--Log.Message("  parent: " + bpr.parent.ToString());
+			////--Log.Message ("  fleshCoverage: " + bpr.fleshCoverage.ToString ());
+			////--Log.Message ("  absoluteCoverage: " + bpr.absoluteCoverage.ToString ());
+			////--Log.Message ("  absoluteFleshCoverage: " + bpr.absoluteFleshCoverage.ToString ());
 		}
 
 		// Generate a BodyPartRecord for the genitals part and inject it into the Human BodyDef. By adding the

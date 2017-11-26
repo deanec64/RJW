@@ -15,29 +15,29 @@ namespace rjw
 			}
 			if (pawn == null || pawn.Faction == null)
 			{
-				//Log.Message("[RJW]ThinkNode_ConditionalCanRapeCP::satisfied called 0");
+				//--Log.Message("[RJW]ThinkNode_ConditionalCanRapeCP::satisfied called 0");
 				return false;
 			}
 			// Due to the existence of whore system, no longer allow pawns from other factions to rape comfort prisoners
 			if (Mod_Settings.WildMode) return true;
 			if (!pawn.Faction.IsPlayer)
 			{
-				//Log.Message("[RJW]ThinkNode_ConditionalCanRapeCP::satisfied called 1");
+				//--Log.Message("[RJW]ThinkNode_ConditionalCanRapeCP::satisfied called 1");
 				return false;
 			}
 			if (pawn.Map == null || pawn.Map != Find.VisibleMap)
 			{
-				//Log.Message("[RJW]ThinkNode_ConditionalCanRapeCP::satisfied called 2");
+				//--Log.Message("[RJW]ThinkNode_ConditionalCanRapeCP::satisfied called 2");
 				return false;
 			}
 			if (pawn.IsPrisonerOfColony)
 			{
-				//Log.Message("[RJW]ThinkNode_ConditionalCanRapeCP::satisfied called 3");
+				//--Log.Message("[RJW]ThinkNode_ConditionalCanRapeCP::satisfied called 3");
 				return false;
 			}
 			if (xxx.config.animals_enabled && xxx.is_animal(pawn))
 			{
-				//Log.Message("[RJW]ThinkNode_ConditionalCanRapeCP::satisfied called 4");
+				//--Log.Message("[RJW]ThinkNode_ConditionalCanRapeCP::satisfied called 4");
 				return true;
 			}
 			else if (xxx.is_human(pawn))

@@ -61,10 +61,10 @@ namespace rjw
 			// psychopath makes the aggressor more likely to hit the prisoner past the significant_pain_threshold
 			float beating_threshold = xxx.is_psychopath(rapist) ? xxx.config.extreme_pain_threshold : xxx.config.significant_pain_threshold;
 
-			//Log.Message("roll_to_hit:  rand = " + rand_value + ", beating_chance = " + beating_chance + ", victim_pain = " + victim_pain + ", beating_threshold = " + beating_threshold);
+			//--Log.Message("roll_to_hit:  rand = " + rand_value + ", beating_chance = " + beating_chance + ", victim_pain = " + victim_pain + ", beating_threshold = " + beating_threshold);
 			if ((victim_pain < beating_threshold && rand_value < beating_chance) || (rand_value < (beating_chance / 2)))
 			{
-				//Log.Message("   done told her twice already...");
+				//--Log.Message("   done told her twice already...");
 				if (InteractionUtility.TryGetRandomVerbForSocialFight(rapist, out Verb v))
 				{
 					rapist.meleeVerbs.TryMeleeAttack(p, v);
@@ -85,7 +85,7 @@ namespace rjw
 
 		protected override IEnumerable<Toil> MakeNewToils()
 		{
-			//Log.Message("[RJW] JobDriver_RandomRape::MakeNewToils() called");
+			//--Log.Message("[RJW] JobDriver_RandomRape::MakeNewToils() called");
 			duration = (int)(2000.0f * Rand.Range(0.50f, 0.90f));
 			ticks_between_hearts = Rand.RangeInclusive(70, 130);
 			ticks_between_hits = Rand.Range(xxx.config.min_ticks_between_hits, xxx.config.max_ticks_between_hits);
@@ -101,6 +101,8 @@ namespace rjw
 			this.FailOn(() => (!Target.health.capacities.CanBeAwake)); // || (!comfort_prisoners.is_designated (Prisoner)));
 			this.FailOn(() => !pawn.CanReserve(Target, comfort_prisoners.max_rapists_per_prisoner, 0)); // Fail if someone else reserves the prisoner before the pawn arrives
 			yield return Toils_Goto.GotoThing(iTarget, PathEndMode.OnCell);
+
+			Messages.Message(pawn.NameStringShort + " is trying to rape " + Target.NameStringShort + ".", pawn, MessageTypeDefOf.NegativeEvent);
 
 			var rape = new Toil();
 			rape.initAction = delegate

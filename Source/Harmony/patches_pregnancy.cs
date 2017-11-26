@@ -14,7 +14,7 @@ namespace rjw
 		private static bool on_begin_DoBirthSpawn(ref Pawn mother, ref Pawn father)
 		{
 			//TODO: Set pregnant hediff to torso
-			//Log.Message("patches_pregnancy::PATCH_Hediff_Pregnant::DoBirthSpawn() called");
+			//--Log.Message("patches_pregnancy::PATCH_Hediff_Pregnant::DoBirthSpawn() called");
 			var mother_name = (mother != null) ? mother.NameStringShort : "NULL";
 			var father_name = (father != null) ? father.NameStringShort : "NULL";
 
@@ -41,13 +41,13 @@ namespace rjw
 			string last_name = null;
 
 			// send a message about giving birth
-			//Log.Message("Hediff_Pregnancy::DoBirthSpawn( " + mother_name + ", " + father_name + ", " + chance_successful + " ) - generating baby pawns");
+			////--Log.Message("Hediff_Pregnancy::DoBirthSpawn( " + mother_name + ", " + father_name + ", " + chance_successful + " ) - generating baby pawns");
 			if (self.Visible && PawnUtility.ShouldSendNotificationAbout(mother))
 			{
 				Messages.Message("GivingBirth".Translate(new object[] { mother.LabelIndefinite() }).CapitalizeFirst(), mother, MessageTypeDefOf.NeutralEvent);
 			}
 
-			//Log.Message("Hediff_Pregnancy::DoBirthSpawn( " + mother_name + ", " + father_name + ", " + chance_successful + " ) - creating spawn request");
+			////--Log.Message("Hediff_Pregnancy::DoBirthSpawn( " + mother_name + ", " + father_name + ", " + chance_successful + " ) - creating spawn request");
 
 			List<Pawn> siblings = new List<Pawn>();
 			for (int i = 0; i < litter_size; i++)
@@ -59,7 +59,7 @@ namespace rjw
 				}
 				PawnGenerationRequest request = new PawnGenerationRequest(spawn_parent.kindDef, spawn_parent.Faction, PawnGenerationContext.NonPlayer, spawn_parent.Map.Tile, false, true, false, false, false, false, 1, false, true, true, false, false,false,false, null,null, 0, 0, null, skin_whiteness, last_name);
 
-				//Log.Message("Hediff_GenericPregnancy::DoBirthSpawn( " + mother_name + ", " + father_name + ", " + chance_successful + " ) - spawning baby");
+				////--Log.Message("Hediff_GenericPregnancy::DoBirthSpawn( " + mother_name + ", " + father_name + ", " + chance_successful + " ) - spawning baby");
 				Pawn baby = PawnGenerator.GeneratePawn(request);
 
 				if (PawnUtility.TrySpawnHatchedOrBornPawn(baby, mother))
@@ -102,7 +102,7 @@ namespace rjw
 				}
 			}
 
-			//Log.Message("Hediff_Pregnancy::DoBirthSpawn( " + mother_name + ", " + father_name + ", " + chance_successful + " ) - removing pregnancy");
+			////--Log.Message("Hediff_Pregnancy::DoBirthSpawn( " + mother_name + ", " + father_name + ", " + chance_successful + " ) - removing pregnancy");
 			mother.health.RemoveHediff(self);
 
 			return false;
@@ -115,7 +115,7 @@ namespace rjw
         [HarmonyPrefix]
         static bool on_begin_Tick( Hediff_Pregnant __instance ) {
             //if (__instance.pawn.IsHashIntervalTick(1000)) {
-            //    //Log.Message("patches_pregnancy::PATCH_Hediff_Pregnant::Tick( " + __instance.pawn.NameStringShort + " ) - gestation_progress = " + __instance.GestationProgress);
+            //    //--Log.Message("patches_pregnancy::PATCH_Hediff_Pregnant::Tick( " + __instance.pawn.NameStringShort + " ) - gestation_progress = " + __instance.GestationProgress);
             //    if (__instance.Severity < 0.95f) {
             //        __instance.Severity = 0.95f;
             //    }
@@ -130,7 +130,7 @@ namespace rjw
     class PATCH_PawnRenderer_RenderPawnInternal {
         [HarmonyPrefix]
         static bool on_begin_RenderPawnInternal(PawnRenderer __instance, Vector3 rootLoc, Quaternion quat, bool renderBody, Rot4 bodyFacing, Rot4 headFacing, RotDrawMode bodyDrawType = RotDrawMode.Fresh, bool portrait = false, bool headStump = false) {
-            Log.Message("PATCH_PawnRenderer_RenderPawnInternal() called");
+            //--Log.Message("PATCH_PawnRenderer_RenderPawnInternal() called");
 
             return true;
         }
@@ -140,38 +140,38 @@ namespace rjw
     class PATCH_PawnGraphicSet_ResolveAllGraphics {
         [HarmonyPrefix]
         static bool on_begin_ResolveAllGraphics(PawnGraphicSet __instance) {
-            Log.Message("PATCH_PawnGraphicSet_ResolveAllGraphics::ResolveAllGraphics() called");
+            //--Log.Message("PATCH_PawnGraphicSet_ResolveAllGraphics::ResolveAllGraphics() called");
             if (__instance.pawn.RaceProps.Humanlike && __instance.pawn.ageTracker.CurLifeStageIndex < 4) {
-                Log.Message("   " + __instance.pawn.NameStringShort + ":  humanlike = true, lifeStage = " + __instance.pawn.ageTracker.CurLifeStageIndex);
+                //--Log.Message("   " + __instance.pawn.NameStringShort + ":  humanlike = true, lifeStage = " + __instance.pawn.ageTracker.CurLifeStageIndex);
                 if (__instance.nakedGraphic != null) {
                     if (__instance.nakedGraphic.drawSize != null) {
                         __instance.nakedGraphic.drawSize *= 0.5f;
                     } else {
-                        Log.Message("   __instance.nakedGraphic.drawSize is null");
+                        //--Log.Message("   __instance.nakedGraphic.drawSize is null");
                     }
                 } else {
-                    Log.Message("   __instance.nakedGraphic is null");
+                    //--Log.Message("   __instance.nakedGraphic is null");
                 }
                 if (__instance.apparelGraphics != null) {
-                    Log.Message("   __instance.apparelGraphic is present");
+                    //--Log.Message("   __instance.apparelGraphic is present");
                 } else {
-                    Log.Message("   __instance.apparelGraphic is null");
+                    //--Log.Message("   __instance.apparelGraphic is null");
                 }
                 if (__instance.rottingGraphic != null) {
-                    Log.Message("   __instance.rottingGraphic is present");
+                    //--Log.Message("   __instance.rottingGraphic is present");
                 } else {
-                    Log.Message("   __instance.rottingGraphic is null");
+                    //--Log.Message("   __instance.rottingGraphic is null");
                 }
             }
 
             if (__instance.pawn.RaceProps.Humanlike && __instance.pawn.ageTracker.CurLifeStageIndex < 4) {
-                Log.Message("PATCH_PawnGraphicSet_ResolveAllGraphics::ResolveAllGraphics() - adjusting draw size for " + __instance.pawn.NameStringShort + "");
+                //--Log.Message("PATCH_PawnGraphicSet_ResolveAllGraphics::ResolveAllGraphics() - adjusting draw size for " + __instance.pawn.NameStringShort + "");
                 if (__instance != null) {
                     var x = __instance.nakedGraphic.drawSize.x;
                     var y = __instance.nakedGraphic.drawSize.y;
-                    Log.Message("   current size = " + x + "/" + y + ", new size = " + x * 0.5f + "/" + y * 0.5f);
+                    //--Log.Message("   current size = " + x + "/" + y + ", new size = " + x * 0.5f + "/" + y * 0.5f);
                 } else {
-                    Log.Message("   __instance == null");
+                    //--Log.Message("   __instance == null");
                 }
             }
 
