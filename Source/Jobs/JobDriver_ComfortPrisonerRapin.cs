@@ -99,6 +99,7 @@ namespace rjw
 			this.FailOn(() => (!Prisoner.health.capacities.CanBeAwake) || (!comfort_prisoners.is_designated(Prisoner)));
 			this.FailOn(() => !pawn.CanReserve(Prisoner, comfort_prisoners.max_rapists_per_prisoner, 0)); // Fail if someone else reserves the prisoner before the pawn arrives
 			yield return Toils_Goto.GotoThing(iprisoner, PathEndMode.OnCell);
+			Messages.Message(pawn.NameStringShort + " is trying to rape " + Prisoner.NameStringShort + ".", pawn, MessageTypeDefOf.NeutralEvent);
 
 			var rape = new Toil();
 			rape.initAction = delegate

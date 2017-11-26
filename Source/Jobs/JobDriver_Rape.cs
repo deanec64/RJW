@@ -102,6 +102,8 @@ namespace rjw
 			this.FailOn(() => !pawn.CanReserve(Target, comfort_prisoners.max_rapists_per_prisoner, 0)); // Fail if someone else reserves the prisoner before the pawn arrives
 			yield return Toils_Goto.GotoThing(iTarget, PathEndMode.OnCell);
 
+			Messages.Message(pawn.NameStringShort + " is trying to rape " + Target.NameStringShort + ".", pawn, MessageTypeDefOf.NegativeEvent);
+
 			var rape = new Toil();
 			rape.initAction = delegate
 			{

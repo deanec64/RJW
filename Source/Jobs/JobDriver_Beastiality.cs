@@ -65,6 +65,7 @@ namespace rjw
 			yield return Toils_Reserve.Reserve(iprisoner, 1, 0);
 			//--Log.Message("[RJW] JobDriver_Beastiality::MakeNewToils() - moving towards animal");
 			yield return Toils_Goto.GotoThing(iprisoner, PathEndMode.OnCell);
+			Messages.Message(pawn.NameStringShort + " is trying to rape " + animal.NameStringShort + ".", pawn, MessageTypeDefOf.NeutralEvent);
 
 			var rape = new Toil();
 			rape.initAction = delegate

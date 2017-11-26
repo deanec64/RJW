@@ -74,6 +74,7 @@ namespace rjw
 			this.FailOn(() => !pawn.CanReserve(corpse, 1, 0));  // Fail if someone else reserves the prisoner before the pawn arrives
 																//--Log.Message("[RJW] JobDriver_ViolateCorpse::MakeNewToils() - moving towards corpse");
 			yield return Toils_Goto.GotoThing(iprisoner, PathEndMode.OnCell);
+			Messages.Message(pawn.NameStringShort + " is trying to rape a corpse.", pawn, MessageTypeDefOf.NeutralEvent);
 
 			var rape = new Toil();
 			rape.initAction = delegate
