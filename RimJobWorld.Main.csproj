@@ -96,7 +96,7 @@
     <Content Include="Defs\BondageGear\Thoughts.xml" />
     <Content Include="Defs\ConceptDefs\Concepts_NotedOpportunistic.xml" />
     <Content Include="Defs\DamageDefs\Damage.xml" />
-    <None Include="Defs\DesignationSubCategoryDefs\RJW_SubCategoryxml" />
+    <Content Include="Defs\DesignationSubCategoryDefs\RJW_SubCategory.xml" />
     <Content Include="Defs\Designations\Designations.xml">
       <SubType>Designer</SubType>
     </Content>
