@@ -62,7 +62,7 @@ namespace rjw
 
 			return base_mtb * desire_factor * personality_factor * fun_factor * gender_factor * animal_factor;
 		}
-		
+
 		public override ThinkResult TryIssueJobPackage(Pawn pawn, JobIssueParams jobParams)
 		{
 			try

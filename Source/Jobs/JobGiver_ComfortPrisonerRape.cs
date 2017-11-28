@@ -15,11 +15,11 @@ namespace rjw
 				// don't allow pawns marked as comfort prisoners to rape others
 				if (p != null)
 				{
-					if ((!comfort_prisoners.is_designated(p) || wildmode) &&
-					    ((xxx.is_healthy(p) &&
-					      xxx.can_rape(p, true) &&
-					      xxx.is_nympho_or_rapist_or_zoophiliac(p) &&
-					      p.Faction.IsPlayer) || wildmode))
+					if (!comfort_prisoners.is_designated(p)
+						&& ((xxx.is_healthy(p) 
+						&& xxx.can_rape(p, true) 
+						&& xxx.is_nympho_or_rapist_or_zoophiliac(p) 
+						&& p.Faction.IsPlayer) || wildmode))
 					{
 						//--Log.Message("[RJW] JobGiver_ComfortPrisonerRape::TryGiveJob( " + p.NameStringShort + " ) called2");
 						Pawn target = xxx.find_prisoner_to_rape(p, p.Map);

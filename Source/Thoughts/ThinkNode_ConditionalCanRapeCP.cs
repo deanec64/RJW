@@ -1,5 +1,4 @@
-﻿using RimWorld;
-using Verse;
+﻿using Verse;
 using Verse.AI;
 
 //TODO: Fix this class
@@ -18,8 +17,12 @@ namespace rjw
 				//--Log.Message("[RJW]ThinkNode_ConditionalCanRapeCP::satisfied called 0");
 				return false;
 			}
-			// Due to the existence of whore system, no longer allow pawns from other factions to rape comfort prisoners
-			if (Mod_Settings.WildMode) return true;
+			if (Mod_Settings.WildMode)
+			{
+				return true;
+			}
+			// Due to the existence of whore system, no longer allow pawns from other factions to
+			// rape comfort prisoners
 			if (!pawn.Faction.IsPlayer)
 			{
 				//--Log.Message("[RJW]ThinkNode_ConditionalCanRapeCP::satisfied called 1");
@@ -30,7 +33,7 @@ namespace rjw
 				//--Log.Message("[RJW]ThinkNode_ConditionalCanRapeCP::satisfied called 2");
 				return false;
 			}
-			if (pawn.IsPrisonerOfColony)
+			if (pawn.IsPrisonerOfColony) //TODO: Edit this
 			{
 				//--Log.Message("[RJW]ThinkNode_ConditionalCanRapeCP::satisfied called 3");
 				return false;
