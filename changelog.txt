@@ -1,3 +1,8 @@
+v1.6.1
+- Reintegrated with Architect Sense mod by Fluffy.
+- 
+
+
 v1.6.0
 Known bugs (new):
 - Exception: Whore unable to reserve target. To avoid this, don't assign more than one whore.
