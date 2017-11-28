@@ -102,19 +102,20 @@ namespace rjw
 				return null;
 			}
 			price = xxx.PriceOfWhore(p1);
+
 			int priceOfWhore = price;
 			IEnumerable<Pawn> guestsSpawned = p1.Map.mapPawns.AllPawnsSpawned;
 			guestsSpawned = (guestsSpawned.Except(guestsSpawned.Where(findPawnHelper.TraitCheckFail)).Where(findPawnHelper.FactionCheckPass));
 			if (guestsSpawned.Count() > 0)
-				guestsSpawned = guestsSpawned.Where((x => !x.Position.IsForbidden(p1) && (!LovePartnerRelationUtility.HasAnyLovePartner(x) || x != LovePartnerRelationUtility.ExistingLovePartner(p1)) && Roll_to_skip(x, p1) && xxx.CanAfford(x, p1, priceOfWhore)));
-			Pawn result = null;
+				guestsSpawned = guestsSpawned.Where((x => !x.Position.IsForbidden(p1) && (!LovePartnerRelationUtility.HasAnyLovePartner(x) || x != LovePartnerRelationUtility.ExistingLovePartner(p1)) && Roll_to_skip(x, p1) && xxx.CanAfford(x, p1, priceOfWhore) && p1.CanReserve(x, 1, 0)));
+			Pawn whoreTarget = null;
 			if (guestsSpawned.Count() > 0)
 			{
-				guestsSpawned.TryRandomElement(out result);
+				guestsSpawned.TryRandomElement(out whoreTarget);
 			}
-			if (result != null && p1.CanReserve(result, 1, 0))
+			if (whoreTarget != null)
 			{
-				return result;
+				return whoreTarget;
 			}
 			//--Log.Message("[RJW] JobGiver_WhoreInvitingVisitors::FindAttractivePawn - found no visitors");
 		
@@ -122,23 +123,23 @@ namespace rjw
 			{
 				return null;
 			}
-			result = null;
+			whoreTarget = null;
 			IEnumerable<Pawn> freeColonistsSpawned = findPawnHelper.p1.Map.mapPawns.FreeColonistsSpawned;
-			freeColonistsSpawned = (freeColonistsSpawned.Except(freeColonistsSpawned.Where(findPawnHelper.TraitCheckFail)).Where(x => findPawnHelper.RelationCheckPass(x) && !x.Position.IsForbidden(p1) && Roll_to_skip(x, p1)));
-			if (freeColonistsSpawned == null || freeColonistsSpawned.Count() == 0)
+			freeColonistsSpawned = (freeColonistsSpawned.Except(freeColonistsSpawned.Where(findPawnHelper.TraitCheckFail)).Where(x => findPawnHelper.RelationCheckPass(x) && !x.Position.IsForbidden(p1) && Roll_to_skip(x, p1) && p1.CanReserve(x, 1, 0)));
+			if (freeColonistsSpawned == null || !freeColonistsSpawned.Any())
 			{
 				return null;
 			}
-			freeColonistsSpawned.TryRandomElement(out result);
-			if (result == null)
+			freeColonistsSpawned.TryRandomElement(out whoreTarget);
+			if (whoreTarget == null)
 			{
 				return null;
 			}
-			if (p1.relations.SecondaryRomanceChanceFactor(result) < 0.05f)
+			if (p1.relations.SecondaryRomanceChanceFactor(whoreTarget) < 0.05f)
 			{
 				return null;
 			}
-			return result;
+			return whoreTarget;
 		}
 
 		protected override Job TryGiveJob(Pawn pawn)
