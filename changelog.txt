@@ -1,5 +1,6 @@
 v1.6.1
 - Reintegrated with Architect Sense mod by Fluffy.
+- Fixed null reference exception on CP rape function.
 - 
 
 
