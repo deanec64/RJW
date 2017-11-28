@@ -17,6 +17,7 @@ namespace rjw
 				Log.Message("[RJW]ThinkNode_ConditionalCanRapeCP::satisfied called 0 : " + pawn.NameStringShort);
 				return false;
 			}
+
 			if (Mod_Settings.WildMode)
 			{
 				return true;
@@ -41,7 +42,7 @@ namespace rjw
 			if (xxx.config.animals_enabled && xxx.is_animal(pawn))
 			{
 				Log.Message("[RJW]ThinkNode_ConditionalCanRapeCP::satisfied called 4 : " + pawn.NameStringShort);
-				return true;
+				return false; // disabled animals raping CP.
 			}
 			else if (xxx.is_human(pawn))
 			{
