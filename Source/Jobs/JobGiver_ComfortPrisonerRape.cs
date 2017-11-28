@@ -8,7 +8,7 @@ namespace rjw
 		protected override Job TryGiveJob(Pawn p)
 		{
 			bool wildmode = Mod_Settings.WildMode;
-			//--Log.Message("[RJW] JobGiver_ComfortPrisonerRape::TryGiveJob( " + p.NameStringShort + " ) called0");
+			Log.Message("[RJW] JobGiver_ComfortPrisonerRape::TryGiveJob( " + p.NameStringShort + " ) called0");
 			if ((Find.TickManager.TicksGame >= p.mindState.canLovinTick) && (p.CurJob == null))
 			{
 				//--Log.Message("[RJW] JobGiver_ComfortPrisonerRape::TryGiveJob( " + p.NameStringShort + " ) called1");
@@ -21,9 +21,9 @@ namespace rjw
 						&& xxx.is_nympho_or_rapist_or_zoophiliac(p) 
 						&& p.Faction.IsPlayer) || wildmode))
 					{
-						//--Log.Message("[RJW] JobGiver_ComfortPrisonerRape::TryGiveJob( " + p.NameStringShort + " ) called2");
+						Log.Message("[RJW] JobGiver_ComfortPrisonerRape::TryGiveJob( " + p.NameStringShort + " ) called2");
 						Pawn target = xxx.find_prisoner_to_rape(p, p.Map);
-						//--Log.Message("[RJW] JobGiver_ComfortPrisonerRape::TryGiveJob( " + p.NameStringShort + " ) called3 - (" + ((target == null) ? "NULL" : target.NameStringShort)+") is the prisoner");
+						Log.Message("[RJW] JobGiver_ComfortPrisonerRape::TryGiveJob( " + p.NameStringShort + " ) called3 - (" + ((target == null) ? "NULL" : target.NameStringShort)+") is the prisoner");
 						if (target != null)
 						{
 							if (((!xxx.is_animal(target) && (xxx.is_rapist(p) || xxx.is_nympho(p))) ||
