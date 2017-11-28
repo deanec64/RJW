@@ -1,11 +1,11 @@
 v1.6.1
-- Reintegrated with Architect Sense mod by Fluffy. The whore beds is now regrouped into one category.
+- Reintegrated with Architect Sense mod by Fluffy. The whore beds are now regrouped into one category.
 - Fixed null reference exception on CP rape function.
 - Fixed whore reservation bug. It's now safe to assign more than one whore.
 - Fixed rape notification bug.
 - Minor 'mod settings' layout fix.
 - Added Russian translation by asdiky.
-- Added possibility to add more skill slot in the character tab. (there are no new skills yet)
+- Added possibility to add more skill slot to the character tab. (there are no new skills yet)
 
 v1.6.0
 Known bugs (new):
