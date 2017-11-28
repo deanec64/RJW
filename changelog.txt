@@ -1,7 +1,7 @@
 v1.6.1
 - Reintegrated with Architect Sense mod by Fluffy.
 - Fixed null reference exception on CP rape function.
-- 
+- Fixed whore reservation bug. It's now safe to assign more than one whore.
 
 
 v1.6.0
