@@ -48,6 +48,7 @@ namespace rjw
 					}
 					else
 					{
+						//TODO: Remove this later (Hoge's recommendation)
 						//--Log.Message("[RJW] JobGiver_RandomRape::TryGiveJob( " + p.NameStringShort + " ) - unable to find victim");
 						if (xxx.config.rapists_always_rape)
 							p.mindState.canLovinTick = Find.TickManager.TicksGame + 5;
