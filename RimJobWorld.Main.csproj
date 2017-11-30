@@ -135,7 +135,7 @@
     <Content Include="Defs\RulePackDefs\RulePacks_AnalRape.xml" />
     <Content Include="Defs\RulePackDefs\RulePacks_AnalSex.xml" />
     <Content Include="Defs\RulePackDefs\RulePacks_EngravedNames.xml" />
-    <Content Include="Defs\Skilldefs\Skills.xml" />
+    <None Include="Defs\Skilldefs\Skillsxml" />
     <Content Include="Defs\SoundDefs\SoundDef_XXX.xml" />
     <Content Include="Defs\StatDefs\Stats.xml" />
     <Content Include="Defs\STDDefs\STDs.xml" />
