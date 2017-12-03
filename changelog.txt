@@ -1,5 +1,5 @@
 v1.6.1a
-- Disabled dummy sex skill (it was experimental and was accidentally included in the 1.6.1-experimental). If you are updating from version 1.6.1-experimental, you'll experience missing reference error. It's save to ignore it. Make a new save and reload it, and you'll see no more error.
+- Disabled dummy sex skill (it was experimental and was accidentally included in the 1.6.1-experimental). If you are updating from version 1.6.1-experimental, you'll experience missing reference errors about sex skill. It's safe to ignore them. Make a new save and reload it, and you'll see no more error.
 
 v1.6.1-exp
 - Reintegrated with Architect Sense mod by Fluffy. The whore beds are now regrouped into one category.
