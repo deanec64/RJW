@@ -47,7 +47,7 @@ namespace rjw
 
 		protected override IEnumerable<Toil> MakeNewToils()
 		{
-			//Log.Message("[RJW] JobDriver_Beastiality::MakeNewToils() called");
+			//--Log.Message("[RJW] JobDriver_Beastiality::MakeNewToils() called");
 			duration = (int)(2500.0f * Rand.Range(0.50f, 0.90f));
 			ticks_between_hearts = Rand.RangeInclusive(70, 130);
 			ticks_between_hits = Rand.Range(xxx.config.min_ticks_between_hits, xxx.config.max_ticks_between_hits);
@@ -63,13 +63,14 @@ namespace rjw
 			//this.FailOn (() => (!Prisoner.health.capacities.CanBeAwake) || (!comfort_prisoners.is_designated (Prisoner)));
 			this.FailOn(() => !pawn.CanReserve(animal, 1, 0));  // Fail if someone else reserves the prisoner before the pawn arrives
 			yield return Toils_Reserve.Reserve(iprisoner, 1, 0);
-			//Log.Message("[RJW] JobDriver_Beastiality::MakeNewToils() - moving towards animal");
+			//--Log.Message("[RJW] JobDriver_Beastiality::MakeNewToils() - moving towards animal");
 			yield return Toils_Goto.GotoThing(iprisoner, PathEndMode.OnCell);
+			Messages.Message(pawn.NameStringShort + " is trying to rape " + animal.NameStringShort + ".", pawn, MessageTypeDefOf.NeutralEvent);
 
 			var rape = new Toil();
 			rape.initAction = delegate
 			{
-				//Log.Message("[RJW] JobDriver_Beastiality::MakeNewToils() - reserving animal");
+				//--Log.Message("[RJW] JobDriver_Beastiality::MakeNewToils() - reserving animal");
 				//pawn.Reserve(animal, 1, 0); // animal rapin seems like a solitary activity
 				//if (!pawnHasPenis)
 				//	animal.rotationTracker.Face(pawn.DrawPos);
@@ -88,7 +89,7 @@ namespace rjw
 					dri.increase_time(duration);
 				}
 				// Try to take off the attacker's clothing
-				//Log.Message("[RJW] JobDriver_Beastiality::MakeNewToils() - stripping necro lover");
+				//--Log.Message("[RJW] JobDriver_Beastiality::MakeNewToils() - stripping necro lover");
 				/* Edited by nizhuan-jjr: No Dropping Clothes on attackes!
                         worn_apparel = pawn.apparel.WornApparel.ListFullCopy<Apparel>();
                         while (pawn.apparel != null && pawn.apparel.WornApparelCount > 0) {
@@ -127,7 +128,7 @@ namespace rjw
 			{
 				initAction = delegate
 				{
-					//Log.Message("[RJW] JobDriver_Beastiality::MakeNewToils() - creating aftersex toil");
+					//--Log.Message("[RJW] JobDriver_Beastiality::MakeNewToils() - creating aftersex toil");
 					xxx.aftersex(pawn, animal, false, false, isAnalSex);
 					pawn.mindState.canLovinTick = Find.TickManager.TicksGame + xxx.generate_min_ticks_to_next_lovin(pawn);
 					if (!animal.Dead)
@@ -135,7 +136,7 @@ namespace rjw
 						animal.mindState.canLovinTick = Find.TickManager.TicksGame + xxx.generate_min_ticks_to_next_lovin(animal);
 					}
 
-					//Log.Message("[RJW] JobDriver_Beastiality::MakeNewToils() - putting clothes back on");
+					//--Log.Message("[RJW] JobDriver_Beastiality::MakeNewToils() - putting clothes back on");
 					/* Edited by nizhuan-jjr: No Dropping Clothes on attackers!
                             if (pawn.apparel != null) {
                                 foreach (Apparel apparel in worn_apparel) {

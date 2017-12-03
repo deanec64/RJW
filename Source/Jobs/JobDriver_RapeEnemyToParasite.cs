@@ -18,7 +18,7 @@ namespace rjw
 		protected override void Impregnate(Pawn pawn, Pawn part, bool isAnalSex)
 		{
 			if (pawn == null || part == null || isAnalSex) return;
-			//Log.Message("[RJW]JobDriver_RapeEnemyToParasite::impregnate( " + pawn.NameStringShort + ", " + part.NameStringShort + " ) called");
+			//--Log.Message("[RJW]JobDriver_RapeEnemyToParasite::impregnate( " + pawn.NameStringShort + ", " + part.NameStringShort + " ) called");
 
 			if (pawn.health.hediffSet.HasHediff(xxx.sterilized) || part.health.hediffSet.HasHediff(xxx.sterilized))
 				return;
@@ -38,7 +38,7 @@ namespace rjw
 			}
 			else
 			{
-				//Log.Message("[RJW] Same sex pregnancies not currently supported...");
+				//--Log.Message("[RJW] Same sex pregnancies not currently supported...");
 				return;
 			}
 
@@ -50,7 +50,7 @@ namespace rjw
 
 			if (pregnancy_chance > pregnancy_threshold)
 			{
-				//Log.Message("[RJW] Impregnation failed. Chance was " + pregnancy_chance + " vs " + pregnancy_threshold);
+				//--Log.Message("[RJW] Impregnation failed. Chance was " + pregnancy_chance + " vs " + pregnancy_threshold);
 				return;
 			}
 

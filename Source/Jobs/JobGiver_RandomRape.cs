@@ -43,11 +43,12 @@ namespace rjw
 					if (prisoner != null)
 					{
 						//--Log.Message("[RJW] JobGiver_RandomRape::TryGiveJob( " + p.NameStringShort + " ) - found victim " + prisoner.NameStringShort);
-						Messages.Message(p.NameStringShort + " is trying to rape " + prisoner.NameStringShort + ".", p, MessageTypeDefOf.NegativeEvent);
+						
 						return new Job(xxx.random_rape, prisoner);
 					}
 					else
 					{
+						//TODO: Remove this later (Hoge's recommendation)
 						//--Log.Message("[RJW] JobGiver_RandomRape::TryGiveJob( " + p.NameStringShort + " ) - unable to find victim");
 						if (xxx.config.rapists_always_rape)
 							p.mindState.canLovinTick = Find.TickManager.TicksGame + 5;

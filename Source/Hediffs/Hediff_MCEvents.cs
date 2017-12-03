@@ -24,7 +24,7 @@ namespace rjw
 				Pawn cumSender = PawnGenerator.GeneratePawn(req);
 				Find.WorldPawns.PassToWorld(cumSender);
 				//Pawn cumSender = (from p in Find.WorldPawns.AllPawnsAlive where p.gender == Gender.Male select p).RandomElement<Pawn>();
-				Log.Message("[RJW]" + this.GetType().ToString() + "PostAdd() - Sending " + cumSender.NameStringShort + "'s cum into " + pawn.NameStringShort + "'s vagina");
+				//--Log.Message("[RJW]" + this.GetType().ToString() + "PostAdd() - Sending " + cumSender.NameStringShort + "'s cum into " + pawn.NameStringShort + "'s vagina");
 				xxx.impregnate(pawn, cumSender);
 			}
 			pawn.health.RemoveHediff(this);

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-	<RapeCP.label>rape comfort prisoner</RapeCP.label>
-	<RapeCP.verb>rape</RapeCP.verb>
-	<RapeCP.gerund>raping</RapeCP.gerund>
+	<RapeCP.label>Насиловать заключенных помеченых для комфорта</RapeCP.label>
+	<RapeCP.verb>Изнасилование.</RapeCP.verb>
+	<RapeCP.gerund>Насилует.</RapeCP.gerund>
 </LanguageData>

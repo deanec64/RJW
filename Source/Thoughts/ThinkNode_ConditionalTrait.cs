@@ -21,7 +21,7 @@ namespace rjw
 			if (trait == null)
 			if (pawn.story != null)
 			{
-				Log.Message(pawn.NameStringShort+" has trait" + this.trait.defName + ":" + pawn.story.traits.HasTrait(this.trait));
+				//--Log.Message(pawn.NameStringShort+" has trait" + this.trait.defName + ":" + pawn.story.traits.HasTrait(this.trait));
 				return pawn.story.traits.HasTrait(this.trait);
 			}
 			return false;

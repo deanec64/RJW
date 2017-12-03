@@ -27,7 +27,7 @@ namespace rjw
 
 		protected override bool TryExecuteWorker(IncidentParms parms)
 		{
-			//Log.Message("IncidentWorker_NymphJoins::TryExecute() called");
+			//--Log.Message("IncidentWorker_NymphJoins::TryExecute() called");
 
 			if (!Mod_Settings.nymphos)
 			{

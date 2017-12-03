@@ -17,7 +17,7 @@ namespace rjw
 
 		public override float GetFuckability(Pawn rapist, Pawn target)
 		{
-			//Log.Message("[RJW]JobDriver_RapeEnemyByMech::GetFuckability("+ rapist.ToString()+","+ target.ToString() + ") - Force Rape");
+			//--Log.Message("[RJW]JobDriver_RapeEnemyByMech::GetFuckability("+ rapist.ToString()+","+ target.ToString() + ") - Force Rape");
 			return 1f;
 		}
 
@@ -25,10 +25,10 @@ namespace rjw
 		{
 			if (pawn.RaceProps.IsMechanoid && xxx.is_human(part))
 			{
-				//Log.Message("[RJW]JobDriver_RapeEnemyByMech::aftersex - mech raped humans");
+				//--Log.Message("[RJW]JobDriver_RapeEnemyByMech::aftersex - mech raped humans");
 				/*foreach (var item in DefDatabase<HediffDef_MechImplants>.AllDefs)
 				{
-					Log.Message(pawn.def.defName + "Getting Implants\n" +item.defName + "\nParentDef:" + item.parentDef + "\nParentDefs:" + String.Join(",",item.parentDefs.ToArray()) );
+					//--Log.Message(pawn.def.defName + "Getting Implants\n" +item.defName + "\nParentDef:" + item.parentDef + "\nParentDefs:" + String.Join(",",item.parentDefs.ToArray()) );
 				}*/
 				HediffDef_MechImplants egg = (from x in DefDatabase<HediffDef_MechImplants>.AllDefs where x.IsParent(pawn.def.defName) select x).RandomElement<HediffDef_MechImplants>();
 

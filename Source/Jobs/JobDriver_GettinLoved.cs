@@ -46,7 +46,7 @@ namespace rjw
 				//get_loved.FailOn(() => (Partner.CurJob.def != xxx.nymph_rapin));
 				//get_loved.defaultCompleteMode = ToilCompleteMode.Never;
 				//get_loved.initAction = delegate {
-				//    Log.Message("[RJW]JobDriver_GettinLoved::MakeNewToils - nymph section is called");
+				//    //--Log.Message("[RJW]JobDriver_GettinLoved::MakeNewToils - nymph section is called");
 				//};
 				//get_loved.AddPreTickAction(delegate {
 				//    if (pawn.IsHashIntervalTick(100))

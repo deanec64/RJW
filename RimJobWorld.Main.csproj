@@ -18,7 +18,7 @@
     <AssemblyFileVersionSettings>None.None.IncrementOnDemand.None</AssemblyFileVersionSettings>
     <AssemblyInfoVersionSettings>None.None.IncrementOnDemand.None</AssemblyInfoVersionSettings>
     <PrimaryVersionType>AssemblyVersionAttribute</PrimaryVersionType>
-    <AssemblyVersion>1.6.0.474</AssemblyVersion>
+    <AssemblyVersion>1.6.0.493</AssemblyVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -77,15 +77,16 @@
     <Content Include="About\About.xml" />
     <Content Include="About\Preview.png" />
     <Content Include="Assemblies\%24HugsLibChecker.dll" />
+    <Content Include="Assemblies\ArchitectSense.dll" />
     <Content Include="Assemblies\RJW.dll" />
     <Content Include="changelog.txt" />
     <Content Include="credits.txt" />
-    <Content Include="Defs\Body\PrivatePartGroups.xml">
+    <Content Include="Defs\Bodies\PrivatePartGroups.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Defs\Body\InsectBodyParts.xml" />
-    <Content Include="Defs\Body\MechBodyParts.xml" />
-    <Content Include="Defs\Body\PrivateParts.xml">
+    <Content Include="Defs\Bodies\InsectBodyParts.xml" />
+    <Content Include="Defs\Bodies\MechBodyParts.xml" />
+    <Content Include="Defs\Bodies\PrivateParts.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Defs\BondageGear\Hediffs.xml" />
@@ -95,7 +96,7 @@
     <Content Include="Defs\BondageGear\Thoughts.xml" />
     <Content Include="Defs\ConceptDefs\Concepts_NotedOpportunistic.xml" />
     <Content Include="Defs\DamageDefs\Damage.xml" />
-    <None Include="Defs\DesignationSubCategoryDefs\RJW_SubCategoryxml" />
+    <Content Include="Defs\DesignationSubCategoryDefs\RJW_SubCategory.xml" />
     <Content Include="Defs\Designations\Designations.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -134,8 +135,9 @@
     <Content Include="Defs\RulePackDefs\RulePacks_AnalRape.xml" />
     <Content Include="Defs\RulePackDefs\RulePacks_AnalSex.xml" />
     <Content Include="Defs\RulePackDefs\RulePacks_EngravedNames.xml" />
-    <Content Include="Defs\SoundDef\SoundDef_XXX.xml" />
-    <Content Include="Defs\StatDef\Stats.xml" />
+    <None Include="Defs\Skilldefs\Skillsxml" />
+    <Content Include="Defs\SoundDefs\SoundDef_XXX.xml" />
+    <Content Include="Defs\StatDefs\Stats.xml" />
     <Content Include="Defs\STDDefs\STDs.xml" />
     <Content Include="Defs\ThingDefs\Items_PrivateParts.xml" />
     <Content Include="Defs\ThingDefs\ThingsDef_XXX.xml" />
@@ -348,6 +350,43 @@
     <Content Include="Languages\Korean\DefInjected\TraitDef\Traits.xml" />
     <Content Include="Languages\Korean\DefInjected\WorkGiverDef\WorkGivers.xml" />
     <Content Include="Languages\Korean\Keyed\RimJobWorld.xml" />
+    <Content Include="Languages\Russian\DefInjected\BodyPartDef\PrivateParts.xml" />
+    <Content Include="Languages\Russian\DefInjected\ConceptDef\Concepts.xml" />
+    <Content Include="Languages\Russian\DefInjected\ConceptDef\Concepts_NotedOpportunistic.xml" />
+    <Content Include="Languages\Russian\DefInjected\DamageDef\Damage.xml" />
+    <Content Include="Languages\Russian\DefInjected\HediffDef\Hediffs.xml" />
+    <Content Include="Languages\Russian\DefInjected\HediffDef\Hediffs_FeelingBroken.xml" />
+    <Content Include="Languages\Russian\DefInjected\HediffDef\Hediffs_Other.xml" />
+    <Content Include="Languages\Russian\DefInjected\HediffDef\Hediffs_PrivateParts.xml" />
+    <Content Include="Languages\Russian\DefInjected\HediffDef\Hediffs_SimpleBaby.xml" />
+    <Content Include="Languages\Russian\DefInjected\HediffDef\Hediffs_STDs.xml" />
+    <Content Include="Languages\Russian\DefInjected\HediffDef\Hediffs_Sterilized.xml" />
+    <Content Include="Languages\Russian\DefInjected\IncidentDef\Incidents.xml" />
+    <Content Include="Languages\Russian\DefInjected\InteractionDef\Interactions.xml" />
+    <Content Include="Languages\Russian\DefInjected\JobDef\Jobs.xml" />
+    <Content Include="Languages\Russian\DefInjected\NeedDef\Needs.xml" />
+    <Content Include="Languages\Russian\DefInjected\PawnCapacityDef\PawnCapacity.xml" />
+    <Content Include="Languages\Russian\DefInjected\PawnKindDef\PawnKinds.xml" />
+    <Content Include="Languages\Russian\DefInjected\RecipeDef\Recipes_Production.xml" />
+    <Content Include="Languages\Russian\DefInjected\RecipeDef\Recipes_Prosthetics.xml" />
+    <Content Include="Languages\Russian\DefInjected\RecipeDef\Recipes_Surgery.xml" />
+    <Content Include="Languages\Russian\DefInjected\RecordDef\Records_GetRaped.xml" />
+    <Content Include="Languages\Russian\DefInjected\rjw.bondage_gear_def\Items.xml" />
+    <Content Include="Languages\Russian\DefInjected\rjw.force_off_gear_def\Recipes_Surgery.xml" />
+    <Content Include="Languages\Russian\DefInjected\rjw.MiscTranslationDef\MiscTranslationDefs.xml" />
+    <Content Include="Languages\Russian\DefInjected\rjw.std_def\STDs.xml" />
+    <Content Include="Languages\Russian\DefInjected\RulePackDef\RulePacks_AnalRape.xml" />
+    <Content Include="Languages\Russian\DefInjected\RulePackDef\RulePacks_AnalSex.xml" />
+    <Content Include="Languages\Russian\DefInjected\RulePackDef\RulePacks_EngravedNames.xml" />
+    <Content Include="Languages\Russian\DefInjected\StatDef\Stats.xml" />
+    <Content Include="Languages\Russian\DefInjected\ThingDef\Items.xml" />
+    <Content Include="Languages\Russian\DefInjected\ThingDef\Items_PrivateParts.xml" />
+    <Content Include="Languages\Russian\DefInjected\ThingDef\ThingsDef_XXX.xml" />
+    <Content Include="Languages\Russian\DefInjected\ThingDef\_Things_Mote.xml" />
+    <Content Include="Languages\Russian\DefInjected\ThoughtDef\Thoughts.xml" />
+    <Content Include="Languages\Russian\DefInjected\TraitDef\Traits.xml" />
+    <Content Include="Languages\Russian\DefInjected\WorkGiverDef\WorkGivers.xml" />
+    <Content Include="Languages\Russian\Keyed\RimJobWorld.xml" />
     <Content Include="Patches\AddBodyPartsToInsect.xml" />
     <Content Include="Patches\BodyPatches.xml">
       <SubType>Designer</SubType>
@@ -412,12 +451,14 @@
     <Compile Include="Source\Common\config.cs" />
     <Compile Include="Source\Common\CORE_EXPOSED.cs" />
     <Compile Include="Source\Common\Designator_ComfortPrisoner.cs" />
+    <Compile Include="Source\Common\ExpandedPawnCharacterCard.cs" />
     <Compile Include="Source\Common\Genital_Helper.cs" />
     <Compile Include="Source\Common\MapCom_Injector.cs" />
     <Compile Include="Source\Common\MiscTranslationDef.cs" />
     <Compile Include="Source\Common\Mod_Settings.cs" />
     <Compile Include="Source\Common\RandomDialogues.cs" />
     <Compile Include="Source\Common\std.cs" />
+    <Compile Include="Source\Common\Unprivater.cs" />
     <Compile Include="Source\Common\Verb_Fuck.cs" />
     <Compile Include="Source\Common\xxx.cs" />
     <Compile Include="Source\Harmony\Building_Bed_Patch.cs" />

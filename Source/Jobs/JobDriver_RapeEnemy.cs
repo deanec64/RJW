@@ -50,14 +50,14 @@ namespace rjw
 
 				if (IntVec3Utility.ManhattanDistanceFlat(target.Position, rapist.Position) >= targetAcquireRadius) continue; //Too far to fuck i think.
 
-				////--Log.Message("[ABF]"+this.GetType().ToString()+"::TryGiveJob( " + rapist.NameStringShort + " -> " + target.NameStringShort + " ) - checking\nCanReserve:"+ rapist.CanReserve(target, comfort_prisoners.max_rapists_per_prisoner, 0) + "\nTargetPositionForbidden:"+ target.Position.IsForbidden(rapist)+"\nCanGetRape:" + xxx.can_get_raped(target));
+				//--Log.Message("[ABF]"+this.GetType().ToString()+"::TryGiveJob( " + rapist.NameStringShort + " -> " + target.NameStringShort + " ) - checking\nCanReserve:"+ rapist.CanReserve(target, comfort_prisoners.max_rapists_per_prisoner, 0) + "\nTargetPositionForbidden:"+ target.Position.IsForbidden(rapist)+"\nCanGetRape:" + xxx.can_get_raped(target));
 				if (target != rapist && rapist.CanReserve(target, comfort_prisoners.max_rapists_per_prisoner, 0) && !target.Position.IsForbidden(rapist) && Can_rape_Easily(target))
 				{
 					if (xxx.is_human(target) || (xxx.is_zoophiliac(rapist) && xxx.is_animal(target) && xxx.config.animals_enabled))
 					{
 						var fuc = GetFuckability(rapist, target);
 						//var fuc = xxx.would_fuck(rapist, target); //Cant Use default would fuck because victims are always bleeding.
-						////--Log.Message("[ABF]"+this.GetType().ToString()+ "::FindVictim( " + rapist.NameStringShort + " -> " + target.NameStringShort + " ) - fuckability:" + fuc + " ");
+						//--Log.Message("[ABF]"+this.GetType().ToString()+ "::FindVictim( " + rapist.NameStringShort + " -> " + target.NameStringShort + " ) - fuckability:" + fuc + " ");
 						if ((fuc > best_fuckability) && (Rand.Value < 0.9 * fuc))
 						{
 							best_rapee = target;
@@ -69,13 +69,13 @@ namespace rjw
 				}
 				//else { //--Log.Message("[ABF] JobGiver_RapeEnemy::TryGiveJob( " + rapist.NameStringShort + " -> " + target.NameStringShort + " ) - is not good"); }
 			}
-			////--Log.Message("[RJW]"+this.GetType().ToString()+"::TryGiveJob( " + rapist.NameStringShort + " -> " + best_rapee.NameStringShort + " ) - fuckability:" + best_fuckability + " ");
+			//--Log.Message("[RJW]"+this.GetType().ToString()+"::TryGiveJob( " + rapist.NameStringShort + " -> " + best_rapee.NameStringShort + " ) - fuckability:" + best_fuckability + " ");
 			return best_rapee;
 		}
 
 		public virtual float GetFuckability(Pawn rapist, Pawn target)
 		{
-			////--Log.Message("[RJW]JobDriver_RapeEnemy::GetFuckability(" + rapist.ToString() + "," + target.ToString() + ")");
+			//--Log.Message("[RJW]JobDriver_RapeEnemy::GetFuckability(" + rapist.ToString() + "," + target.ToString() + ")");
 			return xxx.would_fuck(rapist, target, true, true);
 		}
 

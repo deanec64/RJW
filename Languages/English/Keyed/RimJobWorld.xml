@@ -3,10 +3,10 @@
 	<!-- Settings-->
 	<WildMode_name>Wild mode</WildMode_name>
 	<WildMode_desc>EXPERIMENTAL. No rules for sex. All limiting requirements are turned off. Enjoy the wildest side of Rimworld.</WildMode_desc>
+	<DevMode_name>Development mode</DevMode_name>
+	<DevMode_desc>Enables RimJobWorld logging. You don't usually want this enabled.</DevMode_desc>
 	<sexneed_decay_rate_name>Sex need decay multiplier (%)</sexneed_decay_rate_name>
-	<sexneed_decay_rate_desc>0% for no decay.
-1000000% for Rapeturnus Planet.
-	</sexneed_decay_rate_desc>
+	<sexneed_decay_rate_desc>0% for no decay.\n1000000% for Rapeturnus Planet.</sexneed_decay_rate_desc>
 	<NymphsJoin>Nymphomaniacs</NymphsJoin>
 	<NymphsJoin_desc>Spawns pawns with nymphomaniac trait to join the colony.</NymphsJoin_desc>
 	<STD_FromFloors>STDs from environment</STD_FromFloors>
@@ -14,22 +14,14 @@
 	<PrisonersBeating>Rape beatings</PrisonersBeating>
 	<PrisonersBeating_desc>Pawns will beat the hell out of victims while raping them.</PrisonersBeating_desc>
 	<OffspringLookLikeTheirMother>Genetic inheritance (%)</OffspringLookLikeTheirMother>
-	<OffspringLookLikeTheirMother_desc>100% means born babies will look exactly like their mothers. Set it to 0% for random appearance.
-
-Valid range: 0 - 100%</OffspringLookLikeTheirMother_desc>
+	<OffspringLookLikeTheirMother_desc>100% means born babies will look exactly like their mothers. Set it to 0% for random appearance.\n\nValid range: 0 - 100%</OffspringLookLikeTheirMother_desc>
 	<OffspringIsHuman>Human DNA inheritance (%)</OffspringIsHuman>
-	<OffspringIsHuman_desc>100% means born babies will be humans. Set it to 0% for random monster.
-
-Valid range: 0 - 100%</OffspringIsHuman_desc>
+	<OffspringIsHuman_desc>100% means born babies will be humans. Set it to 0% for random monster.\n\nValid range: 0 - 100%</OffspringIsHuman_desc>
 	<PregnantCoeffecientForHuman>Human Pregnancy chances (%)</PregnantCoeffecientForHuman>
-	<PregnantCoeffecientForHuman_desc>Human pregnancy chances in percent.<br /><br />
-
-Valid range: 0 - 100%
+	<PregnantCoeffecientForHuman_desc>Human pregnancy chances in percent.\n\nValid range: 0 - 100%
 </PregnantCoeffecientForHuman_desc>
 	<PregnantCoeffecientForAnimals>Animal pregnancy chances (%)</PregnantCoeffecientForAnimals>
-	<PregnantCoeffecientForAnimals_desc>Animal pregnancy chances in percent.<br /><br />
-
-Valid range: 0 - 100%</PregnantCoeffecientForAnimals_desc>
+	<PregnantCoeffecientForAnimals_desc>Animal pregnancy chances in percent.\n\nValid range: 0 - 100%</PregnantCoeffecientForAnimals_desc>
 	<UseParentMethod>Babies race</UseParentMethod>
 	<UseParentMethod_desc>Born babies will have the same race as their mothers.</UseParentMethod_desc>
 	<SexFreeForAllAge>Free sex min. age</SexFreeForAllAge>
@@ -37,17 +29,11 @@ Valid range: 0 - 100%</PregnantCoeffecientForAnimals_desc>
 	<SexMinimumAge>Sex min. age</SexMinimumAge>
 	<SexMinimumAge_desc>Pawns younger than this will not have sex at all.</SexMinimumAge_desc>
 	<NonFutaWomenRaping_MaxVulnerability>Girls go rapin' (%)</NonFutaWomenRaping_MaxVulnerability>
-	<NonFutaWomenRaping_MaxVulnerability_desc>Only women with vulnerability lower than this will ever rape others.<br /><br />To check 'vulnerability' status, go to 'view information about this object' > stats.<br /><br />
-
-Valid range: 0 - 300%</NonFutaWomenRaping_MaxVulnerability_desc>
+	<NonFutaWomenRaping_MaxVulnerability_desc>Only women with vulnerability lower than this will ever rape others.<br /><br />To check 'vulnerability' status, go to 'view information about this object' > stats.\n\nValid range: 0 - 300%</NonFutaWomenRaping_MaxVulnerability_desc>
 	<Rapee_MinVulnerability_human>'To-be raped' vulnerability (%)</Rapee_MinVulnerability_human>
-	<Rapee_MinVulnerability_human_desc>Human pawns with vulnerability higher than this will be raping targets.<br /><br />To check 'vulnerability' status, go to 'view information about this object' > stats.<br /><br />
-
-Valid range: 0 - 300%</Rapee_MinVulnerability_human_desc>
+	<Rapee_MinVulnerability_human_desc>Human pawns with vulnerability higher than this will be raping targets.<br /><br />To check 'vulnerability' status, go to 'view information about this object' > stats.\n\nValid range: 0 - 300%</Rapee_MinVulnerability_human_desc>
 	<Rapee_MinVulnerability_animals>Animals' to-be-raped vulnerability (%)</Rapee_MinVulnerability_animals>
-	<Rapee_MinVulnerability_animals_desc>Animals with vulnerability higher than this will be raping targets for zoophiliacs.<br /><br />To check 'vulnerability' status, go to 'view information about this object' > stats.<br /><br />
-
-Valid range: 0 - 300%</Rapee_MinVulnerability_animals_desc>
+	<Rapee_MinVulnerability_animals_desc>Animals with vulnerability higher than this will be raping targets for zoophiliacs.<br /><br />To check 'vulnerability' status, go to 'view information about this object' > stats.\n\nValid range: 0 - 300%</Rapee_MinVulnerability_animals_desc>
 
 	<!-- Bed -->
 	<ForWhoreUse>For Whore Use</ForWhoreUse>

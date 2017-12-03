@@ -13,6 +13,19 @@ using Verse.Sound;
 
 namespace rjw
 {
+	public static class Logger
+	{
+		private static LogMessageQueue messageQueueRJW = new LogMessageQueue();
+		public static void Message(string text)
+		{
+			bool DevModeEnabled = Mod_Settings.DevMode;
+			if (DevModeEnabled)
+			{
+				Debug.Log(text);
+				messageQueueRJW.Enqueue(new LogMessage(LogMessageType.Message, text, StackTraceUtility.ExtractStackTrace()));
+			}
+		}
+	}
 	public static class xxx
 	{
 		public readonly static BindingFlags ins_public_or_no = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
@@ -439,7 +452,7 @@ namespace rjw
 			{
 				//float combatPower = pawn.kindDef.combatPower;
 				//float bodySize = pawn.RaceProps.baseBodySize;
-				//Log.Message("[RJW]xxx::can_get_raped - animal pawn - vulnerability is "+ get_vulnerability(pawn));
+				//--Log.Message("[RJW]xxx::can_get_raped - animal pawn - vulnerability is "+ get_vulnerability(pawn));
 				return true;
 				//return combatPower <= 80 && bodySize <= 1.2 && bodySize >= 0.25 && (get_sex_ability(pawn) > 0.0f) && !is_mechanoid(pawn) && (Mod_Settings.Rapee_MinVulnerability_animals < 0 ? false : get_vulnerability(pawn) >= Mod_Settings.Rapee_MinVulnerability_animals);
 			}
@@ -451,7 +464,7 @@ namespace rjw
 		{
 			var fucker_age = fucker.ageTracker.AgeBiologicalYears;
 			var p_age = p.ageTracker.AgeBiologicalYears;
-			//Log.Message("[RJW]would_fuck("+fucker.NameStringShort+","+p.NameStringShort+","+invert_opinion.ToString()+") is called");
+			//--Log.Message("[RJW]would_fuck("+fucker.NameStringShort+","+p.NameStringShort+","+invert_opinion.ToString()+") is called");
 			if ((is_animal(fucker) || is_animal(p)) && !config.animals_enabled)
 			{
 				return 0f;
@@ -486,7 +499,7 @@ namespace rjw
 				}
 			}
 
-			//Log.Message("would_fuck() - age_ok = " + age_ok.ToString());
+			//--Log.Message("would_fuck() - age_ok = " + age_ok.ToString());
 			if (age_ok)
 			{
 				if ((!(fucker.Dead || p.Dead)) &&
@@ -513,10 +526,10 @@ namespace rjw
 							orientation_factor = 0.1f;
 						}
 					}
-					//Log.Message("would_fuck() - orientation_factor = " + orientation_factor.ToString());
+					//--Log.Message("would_fuck() - orientation_factor = " + orientation_factor.ToString());
 
 					float age_factor = (p.gender == Gender.Male) ? attractiveness_from_age_male.Evaluate(p_age) : attractiveness_from_age_female.Evaluate(p_age);
-					//Log.Message("would_fuck() - age_factor = " + age_factor.ToString());
+					//--Log.Message("would_fuck() - age_factor = " + age_factor.ToString());
 
 					if (xxx.is_animal(fucker))
 					{  //0;0.1 to 1
@@ -527,7 +540,7 @@ namespace rjw
 						if (!is_zoophiliac(fucker))
 							age_factor *= 0.1f;
 					}
-					//Log.Message("would_fuck() - animal age_factor = " + age_factor.ToString());
+					//--Log.Message("would_fuck() - animal age_factor = " + age_factor.ToString());
 
 					float body_factor; //0.8 to 1.25
 					{
@@ -545,7 +558,7 @@ namespace rjw
 							body_factor = 1.25f;
 						}
 					}
-					//Log.Message("would_fuck() - body_factor = " + body_factor.ToString());
+					//--Log.Message("would_fuck() - body_factor = " + body_factor.ToString());
 
 					float trait_factor;  // 0.7 to 1.3
 					{
@@ -559,7 +572,7 @@ namespace rjw
 							trait_factor = 1.0f;
 						}
 					}
-					//Log.Message("would_fuck() - trait_factor = " + trait_factor.ToString());
+					//--Log.Message("would_fuck() - trait_factor = " + trait_factor.ToString());
 
 					float opinion_factor;  //0.8 to 1.25
 					{
@@ -573,7 +586,7 @@ namespace rjw
 							opinion_factor = 1.0f;
 						}
 					}
-					//Log.Message("would_fuck() - opinion_factor = " + opinion_factor.ToString());
+					//--Log.Message("would_fuck() - opinion_factor = " + opinion_factor.ToString());
 
 					float horniness_factor; // 1 to 1.5
 					{
@@ -597,7 +610,7 @@ namespace rjw
 								break;
 						}
 					}
-					//Log.Message("would_fuck() - horniness_factor = " + horniness_factor.ToString());
+					//--Log.Message("would_fuck() - horniness_factor = " + horniness_factor.ToString());
 
 					float vulnerability_factor;  // 0.5;1.5 to 2.5
 					{
@@ -617,7 +630,7 @@ namespace rjw
 							}
 						}
 					}
-					//Log.Message("would_fuck() - horniness_factor = " + horniness_factor.ToString());
+					//--Log.Message("would_fuck() - horniness_factor = " + horniness_factor.ToString());
 
 					//The maximium would be 1.25*1.3*1.25*1.5*2.5=7.6171875; average is .5*1.025*1.025*1.25*2=1.31328125; minimium except 0 is .1*.1*.8*.7*.8*.5 = 0.00224
 					var prenymph_att = Mathf.InverseLerp(0f, 4f, base_attraction * orientation_factor * age_factor * body_factor * trait_factor * opinion_factor * horniness_factor * vulnerability_factor); // 0 to 1
@@ -954,7 +967,7 @@ namespace rjw
 			think_after_sex(necro, deadpawn, violent);
 
 			//The dead have no hediff, so no need to roll_to_catch; TO DO: add a roll_to_catch_from_corpse to std
-			//Log.Message("xxx::aftersex( " + necro_name + ", " + corpse_name + "[a deadpawn name]" + " ) - checking disease");
+			//--Log.Message("xxx::aftersex( " + necro_name + ", " + corpse_name + "[a deadpawn name]" + " ) - checking disease");
 			//std.roll_to_catch(necro, deadpawn);
 		}
 
@@ -1167,7 +1180,7 @@ namespace rjw
 		{
 			var p = des.target.Thing as Pawn;
 			//var log_msg = "check_cp_designation() - pawn.Name = " + p.Name;
-			//Log.Message(log_msg);
+			////--Log.Message(log_msg);
 
 			if ((p.Map == m) /*&& (p.IsPrisonerOfColony)*/)
 				return p;
@@ -1190,7 +1203,7 @@ namespace rjw
 					{
 						var fuc = would_fuck(rapist, q, true);
 						//var log_msg = rapist.Name + " -> " + q.Name + " (" + fuc.ToString() + " / " + best_fuckability.ToString() + ")";
-						//Log.Message(log_msg);
+						////--Log.Message(log_msg);
 
 						if (xxx.config.pawns_always_rapeCP || (fuc > best_fuckability) && (Rand.Value < fuc))
 						{
@@ -1202,7 +1215,7 @@ namespace rjw
 						//{
 						//	var fuc = would_fuck(rapist, q, true);
 						//	//var log_msg = rapist.Name + " -> " + q.Name + " (" + fuc.ToString() + " / " + best_fuckability.ToString() + ")";
-						//	//Log.Message(log_msg);
+						//	//--Log.Message(log_msg);
 
 						//	if (xxx.config.pawns_always_rapeCP || (fuc > best_fuckability) && (Rand.Value < fuc))
 						//	{
@@ -1553,10 +1566,10 @@ namespace rjw
             if (!(bed.Map is null))
             {
                 m = bed.Map;
-                Log.Message("[RJW]xxx::Swap - before GenSpawn.Spawn is called - bed.Map is not null");
+                //--Log.Message("[RJW]xxx::Swap - before GenSpawn.Spawn is called - bed.Map is not null");
             }
             var spawnedBed = (Building_Bed)GenSpawn.Spawn(newBed, bed.Position, m, bed.Rotation);
-            Log.Message("[RJW]xxx::Swap - after GenSpawn.Spawn is called");
+            //--Log.Message("[RJW]xxx::Swap - after GenSpawn.Spawn is called");
             spawnedBed.HitPoints = bed.HitPoints;
             spawnedBed.ForPrisoners = bed.ForPrisoners;
 
@@ -1567,7 +1580,7 @@ namespace rjw
             if (compArt != null)
             {
                 var art = spawnedBed.GetComp<CompArt>();
-                Log.Message("xxx::Swap(Building_Bed bed) - Calling inside the compArt part");
+                //--Log.Message("xxx::Swap(Building_Bed bed) - Calling inside the compArt part");
                 art.Initialize(compArt.Props);
                 //    Traverse.Create(art).Field("authorNameInt").SetValue(Traverse.Create(compArt).Field("authorNameInt").GetValue());
                 //    Traverse.Create(art).Field("titleInt").SetValue(Traverse.Create(compArt).Field("titleInt").GetValue());
